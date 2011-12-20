@@ -1,0 +1,5136 @@
+%% LyX 2.0.2 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[11pt,ngerman]{article}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\usepackage[a4paper]{geometry}
+\geometry{verbose,tmargin=2.6cm,bmargin=3.5cm,lmargin=2.6cm,rmargin=2.6cm}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\setlength{\parskip}{\smallskipamount}
+\setlength{\parindent}{0pt}
+\usepackage{babel}
+\usepackage{verbatim}
+\usepackage{textcomp}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{wasysym}
+\usepackage{graphicx}
+\usepackage[unicode=true,
+ bookmarks=false,
+ breaklinks=false,pdfborder={0 0 0},backref=page,colorlinks=false]
+ {hyperref}
+\usepackage{breakurl}
+
+\makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+\newcommand{\noun}[1]{\textsc{#1}}
+%% Because html converters don't know tabularnewline
+\providecommand{\tabularnewline}{\\}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
+\numberwithin{equation}{section}
+\numberwithin{figure}{section}
+\numberwithin{table}{section}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+\usepackage{tikz}
+\usepackage{latexsym,stmaryrd,stackrel,array,tabularx,multirow}
+\usepackage{polynom,amsthm}
+\usepackage{makeidx}
+
+%Inhaltsverzeichnis
+\usepackage{tocloft}
+
+\tocloftpagestyle{fancy}
+
+\renewcommand{\cftsecindent}{0 em}
+\renewcommand{\cftsecnumwidth}{1.9 em}
+
+\renewcommand{\cftsubsecindent}{1.9 em}
+\renewcommand{\cftsubsecnumwidth}{2.8 em}
+
+\renewcommand{\cftsubsubsecindent}{4.7 em}
+\renewcommand{\cftsubsubsecnumwidth}{3.2 em}
+
+
+%stackrel mit optionalem Argument (für Lyx)
+\newcommand{\sr}[3]{\stackrel[#3]{#2}{#1}}
+\newcommand{\sqrl}[2]{\sqrt[#1]{#2}}
+
+\DeclareMathOperator*{\exs}{\exists}
+\DeclareMathOperator*{\exsg}{\exists!}
+\DeclareMathOperator*{\fall}{\forall}
+%\DeclareMathOperator*{\dsum}{\bigoplus}
+\DeclareMathOperator*{\mx}{\text{max}}
+\DeclareMathOperator*{\mn}{\text{min}}
+%\DeclareMathOperator*{\dotcup}{\ensuremath{\mathaccent\cdot\cup}}
+\DeclareMathOperator*{\bcupd}{\dot{\bigcup}}
+\DeclareMathOperator*{\bcapd}{\dot{\bigcap}}
+
+%Eigene Abkürzungen
+\newcommand{\id}{\textnormal{id}}
+\newcommand{\tr}{\textnormal{tr}}
+\newcommand{\dd}{\textnormal{d}}
+\newcommand{\ord}{\textnormal{ord}}
+\newcommand{\kgV}{\textnormal{kgV}}
+\newcommand{\modu}{\textnormal{ mod }}
+\newcommand{\sgn}{\textnormal{sgn}}
+\newcommand{\im}{\textnormal{im}}
+\newcommand{\ddiv}{\textnormal{div}}
+\newcommand{\rot}{\textnormal{rot}}
+\newcommand{\Aut}{\textnormal{Aut}}
+
+\newcommand{\ii}{\textbf{i}}
+
+\newcommand{\qqed}[1][\arabic{section}.\arabic{subsection}]{\begin{flushright}\qed\ensuremath{_{\text{#1}}}\end{flushright}}
+\newcommand{\ent}{\mathrel{\widehat{=}}}
+\newcommand{\iso}{\stackrel{\sim}{\to}}
+  
+\newcommand{\mb}[1]{\ensuremath{\mathbb{#1}}} %Mengenzeichen von #1
+\newcommand{\mc}[1]{\ensuremath{\mathcal{#1}}}
+\newcommand{\mf}[1]{\ensuremath{\mathfrak{#1}}}
+
+\newcommand{\nok}[2]{\genfrac(){0pt}{}{#1}{#2}}
+\newcommand{\out}[1]{\hspace*{2.8pt}\check{\hspace*{-2.8pt}#1}}
+
+%Definitons-Zeichen
+\newcommand{\dfn}{\mathrel{\mathop:}=}
+%Menge: TODO: auch die Höhe der zweiten Hälfte für den Strich berücksichtigen!
+\newcommand{\mng}[2]{\ensuremath{\left\{#1\,\left.\vphantom{#1#2}\right|\,#2\right\}}}
+%Abbildung:
+\newcommand{\abb}[5]{#1:#2\to #3:#4\mapsto #5}
+
+\newcommand{\modulo}[2]{%
+\mbox{\raisebox{0.6ex}{\ensuremath{\displaystyle #1}}%
+{\Large /}%
+\raisebox{-0.6ex}{\ensuremath{\displaystyle #2}}%
+}%
+}
+
+\newcommand{\modlo}[2]{%
+\mbox{\raisebox{0.6ex}{\ensuremath{\displaystyle \mathbb{#1}}}%
+{\Large /}%
+\raisebox{-0.6ex}{\ensuremath{\displaystyle #2\mathbb{#1}}}%
+}%
+}
+
+\newcommand{\moduloScript}[2]{%
+\mbox{\raisebox{0.4ex}{\scriptsize\ensuremath{\displaystyle #1}}%
+{\footnotesize /}%
+\raisebox{-0.4ex}{\scriptsize\ensuremath{\displaystyle #2}}%
+}%
+}
+
+\newcommand{\modloSmall}[2]{%
+\mbox{\raisebox{0.4ex}{\scriptsize\ensuremath{\displaystyle \mathbb{#1}}}%
+{\footnotesize /}%
+\raisebox{-0.4ex}{\scriptsize\ensuremath{\displaystyle #2\mathbb{#1}}}%
+}%
+}
+
+
+\newcommand{\hsqrt}[2][{}]{\setbox0=\hbox{$\sqrt[#1]{\phantom{|}\!\! #2\hspace*{1pt}}$}\dimen0=\ht0
+  \advance\dimen0-0.2\ht0
+  \setbox2=\hbox{\vrule height\ht0 depth -\dimen0}
+  {\box0\lower0.4pt\box2}}
+
+
+\newcounter{rz}
+\newcommand{\rz}[1]{\setcounter{rz}{#1}\text{\Roman{rz}}}
+  
+ %alphabetische Aufz\"ahlung
+\newcounter{ale}
+\newcommand{\abc}{\item[\alph{ale})]\stepcounter{ale}}
+\newenvironment{abclist}{\begin{itemize} \setcounter{ale}{1}}{\end{itemize}}
+
+%klein-r\"omische Aufz\"ahlung
+\newcounter{ale2}
+\newcommand{\iii}{\item[\textnormal{\roman{ale2})}]\stepcounter{ale2}}
+\newenvironment{iiilist}{\begin{itemize} \setcounter{ale2}{1}}{\end{itemize}}
+
+% Copy from book.cls 2004/02/16 v1.4f
+
+\renewcommand\part{%
+  \clearpage
+  \thispagestyle{empty}
+  \null\vfil
+  \secdef\@part\@spart}
+
+\def\@spart#1{%
+    {\centering
+     \interlinepenalty \@M
+     \normalfont
+     \Huge \bfseries #1\par}%
+    \@endpart}
+\def\@endpart{
+\vfil
+\newpage
+}
+
+% Copy from book.cls 2004/02/16 v1.4f
+\def\@part[#1]#2{%
+  \ifnum \c@secnumdepth >-2\relax
+    \refstepcounter{part}%
+    \addcontentsline{toc}{part}{\thepart\hspace{1em}#1}%
+  \else
+    \addcontentsline{toc}{part}{#1}%
+  \fi
+%%%%% CHANGE BEGIN
+%\markboth{}{}%
+  \partmark{\thepart\hspace{1em}#1}%
+%%%%% CHANGE END
+  { \centering
+    \thispagestyle{empty}
+    \interlinepenalty \@M
+    \normalfont
+    \ifnum \c@secnumdepth >-2\relax
+      \huge\bfseries \partname\nobreakspace\thepart
+      \par
+      \vskip 20\p@
+    \fi
+    \Huge \bfseries #2\par}%
+\@endpart
+}
+% End of copy
+
+% Default definition for new command \partmark
+% to get the same behaviour as the standard book class.
+\newcommand\partmark[1]{\markboth{}{}}
+
+%
+% Now redefine the \<sectioning>mark hooks
+% to save the title of \part and \chapter
+% instead of \chapter and \section.
+%
+
+\renewcommand\partmark[1]{\markboth{#1}{}}
+\renewcommand\sectionmark[1]{\markboth{\leftmark}{\arabic{section} #1}}
+\renewcommand\subsectionmark[1]{}
+
+%Teil \alph{\part}
+\fancyhf{} %alle Kopf- und Fußzeilenfelder bereinigen
+\fancyhead[L]{\textbf{Algebra}} %Kopfzeile links
+%\fancyhead[C]{\leftmark} %zentrierte Kopfzeile
+\fancyhead[R]{\rightmark} %Kopfzeile rechts
+%\renewcommand{\headrulewidth}{0.4pt} %obere Trennlinie
+\fancyfoot[C]{\thepage\quad\!\!\!\slash\quad\!\!\!\pageref{END}} %Seitennummer
+
+%\date{Stand: \today}
+\date{}
+
+\AtBeginDocument{
+  \def\labelitemiii{\(\succ\)}
+}
+
+\makeatother
+
+\begin{document}
+%Lizenz
+%Copyright (C) 2011 Andreas Völklein.
+%Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.3 or any later version published by the Free Software Foundation;
+%with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.
+%A copy of the license is included in the section entitled "GNU Free Documentation License".
+%Der Volltext der Lizenz kann auch auf der Seite https://www.gnu.org/licenses/fdl-1.3.de.html nachgelesen werden.
+%Eine transparente Kopie dieses Dokuments kann von https://github.com/andiv/algebra heruntergeladen werden.
+
+
+
+
+
+
+
+
+\title{\textbf{\huge Algebra}}
+
+
+\author{\textit{\small gelesen von}\\
+\textit{\noun{\small Prof. Dr. Niko Naumann}}\textit{\small }\\
+\textit{\small im Wintersemester 2011/12}\\
+\textit{\small mitgeschrieben von}\\
+\textit{\noun{\small Andreas Völklein}}}
+
+\maketitle
+{\small \vfill{}
+}{\small \par}
+
+\thispagestyle{empty}
+
+\begin{center}
+{\small \includegraphics[clip,width=15cm]{unir}}
+\par\end{center}{\small \par}
+
+\noindent \begin{center}
+Stand: \today
+\par\end{center}
+
+{\small \newpage{}}{\small \par}
+
+\fancyhead[R]{Literatur}
+
+
+\subsubsection*{ACHTUNG}
+
+Diese Mitschrift ersetzt \emph{nicht} die Vorlesung.
+
+Es wird daher \emph{dringend} empfohlen, die Vorlesung zu besuchen.
+
+
+\subsubsection*{Literatur}
+\begin{itemize}
+\item \noun{Siegfried Bosch}: \emph{Algebra}, Springer, 2009\\
+ISBN 3-540-40388-4, http://dx.doi.org/10.1007/978-3-540-92812-6
+\item \noun{Gerd Fischer:} \emph{Lehrbuch der Algebra}, Vieweg + Teubner,
+2011\\
+ISBN 978-3-8348-1249-0, http://dx.doi.org/10.1007/978-3-8348-9455-7
+\item \noun{Jens C. Jantzen, Joachim Schwermer}: \emph{Algebra}, Springer,
+2006\\
+ISBN 3-540-21380-5, http://dx.doi.org/10.1007/3-540-29287-X
+\item \noun{Falko Lorenz}, \noun{Franz Lemmermeyer}: \emph{Einführung in
+die Algebra}, Spektrum, 2007/8\\
+ISBN 978-3-8274-1609-4/978-0-387-72487-4
+\item \noun{Serge Lang}: \emph{Algebra}, Springer, 2005\\
+ISBN 0-387-95385-X
+\item \noun{Michael F. Atiya, Ian G. MacDonald}: \emph{Introduction to commutative
+algebra}, Westview Press, 1994\\
+ISBN 0-201-40751-5, Lokalisierungen: Seite 36-39
+\end{itemize}
+\vfill{}
+
+
+
+\subsubsection*{Lizenz}
+
+Copyright (C) 2011 \noun{Andreas Völklein}.
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.3
+or any later version published by the Free Software Foundation;
+
+with no Invariant Sections, no Front-Cover Texts, and no Back-Cover
+Texts.
+
+A copy of the license is included in the section entitled \textquotedbl{}GNU
+Free Documentation License\textquotedbl{}.
+
+Der Volltext der Lizenz kann auch auf der Seite https://www.gnu.org/licenses/fdl-1.3.de.html
+nachgelesen werden.
+
+Eine transparente Kopie dieses Dokuments kann von https://github.com/andiv/algebra
+heruntergeladen werden.
+
+{\small \newpage{}}\fancyhead[R]{Inhaltsverzeichnis}
+\fancyhead[C]{}
+
+\tableofcontents{}\newpage{}\fancyhead[R]{\rightmark}
+%\fancyhead[C]{\leftmark}%DATE: Di 18.10.2011
+
+
+\section{Gruppentheorie I}
+
+Aus Linearer Algebra I wird vorausgesetzt:
+\begin{itemize}
+\item Gruppen,
+\item die Permutationsgruppe $\Sigma\left(X\right)$ (für eine Menge $X$)
+und
+\item Untergruppen (Abkürzung: UG).
+\end{itemize}
+
+\subsection{Definition \textmd{(Gruppenhomomorphismus)}}
+
+Seien $G,G'$ Gruppen.
+
+Ein \emph{Gruppenhomomorphismus} (\emph{von $G$ nach $G'$}) ist
+eine Abbildung $\varphi:G\rightarrow G'$ mit:
+\begin{align}
+\fall_{a,b\in G}\varphi\left(ab\right) & =\varphi\left(a\right)\cdot\varphi\left(b\right)
+\end{align}
+
+
+Ferner heißt $\varphi$
+\begin{align*}
+Mono(morphismus) & \Leftrightarrow\varphi\text{ injektiv,}\\
+Epi(morphismus) & \Leftrightarrow\varphi\text{ surjektiv,}\\
+Iso(morphismus) & \Leftrightarrow\varphi\text{ bijektiver Gruppenhomomorphismus,}\\
+Endo(morphismus) & \Leftrightarrow G=G'\text{ und}\\
+Auto(morphismus) & \Leftrightarrow\varphi\text{ Isomorphismus von }G\text{ nach }G\text{.}
+\end{align*}
+
+
+
+\subsection{Beispiel}
+
+Sei $\varphi:G\rightarrow G'$ ein Gruppenhomomorphismus. Dann gelten:
+
+\begin{iiilist}
+
+\iii ${\displaystyle \fall_{a\in G}}\varphi\left(a^{-1}\right)=\varphi\left(a\right)^{-1}$
+
+\iii $\varphi\left(e\right)=e'$ mit den neutralen Elementen $e\in G$
+und $e'\in G'$.
+
+\end{iiilist}
+
+
+\subsubsection*{Beweis}
+
+ii)\vspace*{-0.5cm}
+\begin{align*}
+e'\cdot\varphi\left(e\right) & =\varphi\left(e\right)=\varphi\left(e\cdot e\right)=\varphi\left(e\right)\cdot\varphi\left(e\right)\quad/\cdot\varphi\left(e\right)^{-1}\\
+\stackrel{\text{Kürzen}}{\Rightarrow}\quad e' & =\varphi\left(e\right)
+\end{align*}
+
+
+i)\vspace*{-0.5cm}
+\begin{align*}
+\varphi\left(a\right)\cdot\varphi\left(a\right)^{-1} & =e'\stackrel{\text{ii)}}{=}\varphi\left(e\right)=\varphi\left(a\cdot a^{-1}\right)=\varphi\left(a\right)\cdot\varphi\left(a^{-1}\right)\quad/\varphi\left(a\right)^{-1}\cdot\\
+\stackrel{\text{Kürzen}}{\Rightarrow}\quad\varphi\left(a\right)^{-1} & =\varphi\left(a^{-1}\right)
+\end{align*}
+
+
+\qqed
+
+
+\subsection{Proposition und Definition\textmd{ (Kern und Bild)}\label{sub:PuD-ker}}
+
+Sei $\varphi:G\rightarrow G'$ ein Gruppenhomomorphismus.
+
+\begin{iiilist}
+
+\iii $\ker\left(\varphi\right):=\{a\in G|\varphi\left(a\right)=e'\}\subseteq G$
+ist eine Untergruppe, der \emph{Kern von $\varphi$}, und es gilt:
+\begin{align*}
+\varphi\text{ Mono} & \Leftrightarrow\ker\left(\varphi\right)=\{e\}
+\end{align*}
+
+
+\iii $\im\left(\varphi\right)\subseteq G'$ ist eine Untergruppe.
+
+\end{iiilist}
+
+
+\subsubsection*{Beweis}
+
+Übung
+
+\qqed
+
+
+\subsection{Proposition\label{sub:Prop-gruphomG}}
+
+Sei $G$ eine Gruppe. Dann ist die Abbildung 
+\begin{align}
+\{\varphi|\varphi:\mathbb{Z}\rightarrow G\text{ Gruppenhomomorphismus}\} & \iso G,\varphi\mapsto\varphi\left(1\right)
+\end{align}
+
+
+bijektiv.
+
+
+\subsubsection*{Beweis}
+
+Lineare Algebra I
+
+\qqed
+
+
+\subsection{Beispiel und Definition\textmd{ (Automorphismengruppe, Konjugation)\label{sub:BuD-AutGrup}}}
+
+Sei $G$ eine Gruppe. Dann ist $\text{Aut}\left(G\right):=\{\varphi|\varphi:G\rightarrow G\text{ Automorphismus}\}$
+eine Gruppe bezüglich der Komposition $\circ$ mit dem neutralem Element
+$\id_{G}$ (Nebenbemerkung: im Allgemeinen ist $\text{Aut}\left(G\right)\lneqq\Sigma\left(G\right)$
+eine echte Untergruppe) und heißt die \emph{Automorphismengruppe von
+$G$.}
+
+Die Abbildung $\phi:G\rightarrow\text{Aut}\left(G\right)$, definiert
+durch $\phi\left(g\right)\left(h\right)=ghg^{-1}\,\,\fall_{g,h\in G}$
+ist wohldefiniert und ein Gruppenhomomorphismus.
+
+$\fall_{g\in G}$ heißt die Abbildung $\phi\left(g\right)$ die \emph{Konjugation
+mit $g$.}
+
+
+\subsubsection*{Beweis}
+
+$\phi$ ist wohldefiniert, das heißt $\fall_{g\in G}$ ist $\phi\left(g\right)\in\text{Aut}\left(G\right)$,
+denn:
+\begin{itemize}
+\item ${\displaystyle \fall_{h,h'\in G}:\phi\left(g\right)\left(hh'\right)=g\left(heh'\right)g^{-1}=\left(ghg^{-1}\right)\left(gh'g^{-1}\right)=\phi\left(g\right)\left(h\right)\cdot\phi\left(g\right)\left(h'\right)}$\\
+Also ist $\phi\left(g\right)$ ein Gruppenhomomorphismus.
+\item ${\displaystyle \fall_{g,h\in G}:\left(\phi\left(g\right)\circ\phi\left(g^{-1}\right)\right)\left(h\right)=g\cdot\phi\left(g^{-1}\right)\left(h\right)\cdot g^{-1}=\underbrace{gg^{-1}}_{=e}h\underbrace{\underbrace{\left(g^{-1}\right)^{-1}}_{=g}g^{-1}}_{=e}=h}$
+\\
+$\Rightarrow\,\,\phi\left(g\right)\circ\phi\left(g^{-1}\right)=\id_{G}$;
+Also ist $\phi\left(g\right)\in\text{Aut}\left(G\right)$.
+\item Für $g,g',h\in G$ gilt:
+\begin{align*}
+\left(\phi\left(g\right)\circ\phi\left(g'\right)\right)\left(h\right) & =\phi\left(g\right)\left(g'hg'^{-1}\right)=gg'hg'^{-1}g^{-1}=\left(gg'\right)h\left(gg'\right)^{-1}=\phi\left(gg'\right)\left(h\right)
+\end{align*}
+Also ist $\phi$ ein Gruppenhomomorphismus.
+\end{itemize}
+\qqed
+
+
+\subsubsection*{Beispiel}
+
+$G=\modlo{Z}{3}=\left\{ \overline{0},\overline{1},\overline{2}\right\} $;
+$\text{Aut}\left(G\right)\subseteq\Sigma\left(G\right)=\Sigma\left\{ \overline{0},\overline{1},\overline{2}\right\} =S_{3}$
+
+$\text{Aut}\left(G\right)\stackrel{\sim}{=}\left(\modlo{Z}{3}\right)^{*}=\left\{ \overline{1},\overline{2}\right\} $
+
+Insbesondere: $\left|\text{Aut}\left(G\right)\right|=2$, $\left|\Sigma\left(G\right)\right|=3!=6$
+
+
+\subsection{Proposition und Definition\textmd{ (Linksnebenklasse, Index)}\label{sub:PuD-Nebenklasse}}
+
+Seien $G$ eine Gruppe und $H\subseteq G$ eine Untergruppe. Dann
+ist die Relation $\sim$ auf $G$ definiert durch
+\begin{align}
+\fall_{g,g'\in G}g\sim g' & \Leftrightarrow g^{-1}g'\in H\label{eq:rel}
+\end{align}
+
+
+eine Äquivalenzrelation.
+
+Für $g\in G$ heißt die Äquivalenzklasse 
+\begin{align}
+ & \left[g\right]=\left\{ g'\in G|g\sim g'\right\} \stackrel{\eqref{eq:rel}}{=}\left\{ gh|h\in H\right\} =:gH\subseteq G
+\end{align}
+die \emph{Linksnebenklasse von $g$ bezüglich $H$}. Wir schreiben
+$\modulo{G}{H}:=\left\{ gH|g\in G\right\} $, und $\left(G:H\right):=\left|\modulo{G}{H}\right|$
+heißt der \emph{Index von $H$ in $G$}. Es gelten:
+
+\begin{iiilist}
+
+\iii ${\displaystyle \fall_{g,g'\in G}:gH=g'H\Leftrightarrow gH\cap g'H\not=\emptyset\Leftrightarrow g\in g'H\Leftrightarrow g^{-1}g'\in H}$
+
+\iii Für alle $g,g'\in G$ ist die Abbildung $gH\iso g'H,gh\mapsto g'h$
+bijektiv.\\
+Für $\left|H\right|<\infty$ ist $\left|gH\right|=\left|g'H\right|$.
+
+\iii ${\displaystyle G=\bcupd_{gH\in\moduloScript{G}{H}}\left(gH\right)}\qquad\qquad\text{(disjunkte Vereinigung)}$
+
+TODO: Grafik einfügen: disjunkte Vereinigung
+
+\end{iiilist}
+
+
+\subsubsection*{Beweis}
+
+Zeige zunächst, dass $\sim$ eine Äquivalenzrelation ist:
+\begin{itemize}
+\item $\sim$ ist \emph{reflexiv}: ${\displaystyle \fall_{g\in G}g\cdot g^{-1}\stackrel{H\text{ ist UG}}{=}e\in H\stackrel{\eqref{eq:rel}}{\Rightarrow}g\sim g}$
+\item $\sim$ ist \emph{symmetrisch}: ${\displaystyle \fall_{g,g'\in G}g\sim g'\stackrel{\eqref{eq:rel}}{\Rightarrow}g^{-1}\cdot g'\in H\stackrel{H\text{ ist UG}}{\Rightarrow}H\ni\left(g^{-1}\cdot g'\right)^{-1}=g'^{-1}\cdot g\stackrel{\eqref{eq:rel}}{\Rightarrow}g'\sim g}$
+\item $\sim$ ist \emph{transitiv}: Seien $g,g',g''\in G$: ${\displaystyle g\sim g'\wedge g'\sim g''\Rightarrow g^{-1}g',g'^{-1}\cdot g''\in H}$\\
+${\displaystyle \stackrel{H\text{ ist UG}}{\Rightarrow}H\ni\left(g^{-1}g'\right)\left(g'^{-1}g''\right)=g^{-1}g''\stackrel{\eqref{eq:rel}}{\Rightarrow}g\sim g''}$
+\end{itemize}
+Also ist $\sim$ eine Äquivalenzrelation.
+
+Daraus folgen direkt i) und iii).
+
+ii) ist klar.
+
+\qqed
+
+
+\subsection{Korollar \textmd{(Satz von Lagrange)\label{sub:Kor-Lagrange}}}
+
+Seien $G$ eine endliche Gruppe und $H\subseteq G$ eine Untergruppe.
+Dann gilt
+\begin{align}
+\left|G\right|= & \left(G:H\right)\cdot\left|H\right|
+\end{align}
+und insbesondere ist $\left|H\right|$ ein Teiler der Anzahl der Elemente
+von $\left|G\right|$.
+
+
+\subsubsection*{Beweis}
+
+\begin{align*}
+\left|G\right| & \stackrel{\text{\ref{sub:Nebenklasse}\,\text{iii)}}}{=}\left|\bcupd_{gH\in\moduloScript{G}{H}}\left(gH\right)\right|=\sum_{gH\in\moduloScript{G}{H}}\left|gH\right|=\left|\modulo{G}{H}\right|\cdot\left|H\right|\stackrel{\text{Def.}}{=}\left(G:H\right)\cdot\left|H\right|
+\end{align*}
+
+
+\qqed
+
+
+\subsection{Beispiel\textmd{ (Symmetrische und alternierende Gruppe vom Grad
+3)\label{sub:Bsp-sym3}}}
+
+Sei $S_{3}=\Sigma\left\{ 1,2,3\right\} $. Dann sind 
+\begin{align}
+A_{3} & :=\left\{ \sigma\in S_{3}|\text{sgn}\left(\sigma\right)=1\right\} =\left\{ 1,\underbrace{\left(\begin{array}{ccc}
+1 & 2 & 3\\
+2 & 3 & 1
+\end{array}\right)}_{=:\omega},\underbrace{\left(\begin{array}{ccc}
+1 & 2 & 3\\
+3 & 1 & 2
+\end{array}\right)}_{=:\omega\text{\texttwosuperior}}\right\} \subseteq S_{3}
+\end{align}
+und
+\begin{align}
+{\displaystyle H} & :=\left\{ 1,\underbrace{\left(\begin{array}{ccc}
+1 & 2 & 3\\
+2 & 1 & 3
+\end{array}\right)}_{=:\tau}\right\} \subseteq S_{3}
+\end{align}
+Untergruppen mit $\left|A_{3}\right|=3,\left|H\right|=2$, also:
+\begin{align*}
+\left(S_{3}:A_{3}\right) & =2 & \left(S_{3}:H\right) & =3
+\end{align*}
+Explizit gilt:
+\begin{align*}
+S_{3} & =A_{3}\,\dot{\cup}\,\tau A_{3}=H\,\dot{\cup}\,\omega H\,\dot{\cup}\,\omega\text{\texttwosuperior}H
+\end{align*}
+
+
+
+\subsection{Definition\textmd{ (Normalteiler)}\label{sub:Def-normalteiler}}
+
+Seien $G$ eine Gruppe und $H$ eine Untergruppe.
+
+Dann heißt $H$ \emph{Normalteiler }(\emph{von G}, in Zeichen: $H\unlhd G$,
+Abkürzung: NT), wenn gilt:
+\begin{align*}
+\fall_{g\in G,h\in H} & ghg^{-1}\in H
+\end{align*}
+Man sagt auch, $H$ ist \emph{stabil unter Konjugation}.
+
+
+\subsection{Beispiel}
+\begin{itemize}
+\item In einer abelschen Gruppe ist jede Untergruppe ein Normalteiler, denn
+es gilt:
+\begin{align*}
+ghg^{-1} & =h\underbrace{gg^{-1}}_{=e}=h\in H
+\end{align*}
+
+\item In \ref{sub:Bsp-sym3} gilt $A_{\text{3}}\unlhd S_{3}$, aber $H\subseteq S_{3}$
+ist kein Normalteiler.
+\end{itemize}
+
+\subsection{Proposition\textmd{ (Kern ist Normalteiler)\label{sub:Prop-kerNormalTeiler}}}
+
+Ist $\varphi:G\rightarrow G'$ ein Gruppenhomomorphismus, so ist $\ker\left(\varphi\right)\unlhd G$
+ein Normalteiler.
+
+
+\subsubsection*{Beweis}
+
+Nach \ref{sub:PuD-ker}$\,$i) ist $\ker\left(\varphi\right)\subseteq G$
+eine Untergruppe. Prüfe nun die Definition \ref{sub:Def-normalteiler}:
+\begin{align*}
+g\in G,h\in\ker\left(\varphi\right) & \Rightarrow\varphi\left(ghg^{-1}\right)=\varphi\left(g\right)\underbrace{\varphi\left(h\right)}_{=e'}\varphi\left(g\right)^{-1}=\varphi\left(g\right)\varphi\left(g\right)^{-1}=e'\Rightarrow ghg^{-1}\in\ker\left(\varphi\right)
+\end{align*}
+
+
+\qqed
+
+{\small %DATE: Fr 21.10.2011}{\small \par}
+
+
+\subsection{Beispiel und Definition\textmd{ (Zentrum)}}
+
+Ist $G$ eine Gruppe, so ist ${\displaystyle Z\left(G\right):=\left\{ g\in G\left|\fall_{h\in G}gh=hg\right.\right\} \unlhd G}$
+ein Normalteiler, das \emph{Zentrum von $G$}.
+
+
+\subsubsection*{Beispiel}
+\begin{itemize}
+\item Ist $k$ ein Körper und $n\in\mathbb{N}_{\ge1}$, dann ist $Z\left(\text{Gl}_{n}\left(k\right)\right)=k^{*}\cdot\id_{k^{n}}$
+\item $Z\left(S_{3}\right)\stackrel{\left(!\right)}{=}\left\{ e\right\} $
+\item $G=Z\left(G\right)\Leftrightarrow G$ ist abelsch.
+\end{itemize}
+
+\subsubsection*{Beweis zu \thesubsection}
+
+Für die Abbildung $\phi:G\rightarrow\text{Aut}\left(G\right)$ aus
+\ref{sub:BuD-AutGrup} sieht man leicht, dass $\ker\left(\phi\right)=Z\left(G\right)$
+ist.
+
+Also folgt die Behauptung aus \ref{sub:Prop-kerNormalTeiler}.
+
+\qqed
+
+
+\subsection{Proposition \textmd{(kanonische Projektionsabbildung)\label{sub:Prop-proj}}}
+
+Seien $G$ eine Gruppe, $N\unlhd G$ ein Normalteiler.
+
+Dann existiert genau eine Gruppenstruktur auf der Menge $\modulo{G}{N}$,
+sodass die kanonische Abbildung
+\begin{align}
+\pi: & G\rightarrow\modulo{G}{N},\pi\left(g\right)\mapsto gN
+\end{align}
+ein Gruppenhomomorphismus ist.
+
+Es gilt $\ker\left(\pi\right)=N$.
+
+
+\subsubsection*{Beweis}
+\begin{itemize}
+\item Eindeutigkeit: Falls eine solche Struktur existiert, so ist sie eindeutig
+festgelegt durch:
+\begin{align}
+\fall_{g,g'\in G} & \left(gN\right)\cdot\left(g'N\right)=\pi\left(g\right)\cdot\pi\left(g'\right)=\pi\left(gg'\right)=\left(gg'\right)\cdot N\label{eq:proj}
+\end{align}
+
+\item Existenz: Zeige nur, dass \eqref{eq:proj} wohldefiniert ist, das
+heißt:
+\begin{align}
+\fall_{g,g',g_{1},g_{1}'\in G}\,\, & \left(gN=g_{1}N\right)\wedge\left(g'N=g_{1}'N\right) & \Rightarrow\quad\left(gg'\right)N & =\left(g_{1}g_{1}'\right)N\label{eq:wohldef}
+\end{align}
+Dies ergibt sich aus folgender Überlegung:\\
+Wegen \eqref{eq:rel} in \ref{sub:PuD-Nebenklasse} betrachte:
+\begin{align*}
+\left(gg'\right)^{-1}\cdot\left(g_{1}g_{1}'\right) & =\left(g'\right)^{-1}\cdot g^{-1}\cdot g_{1}\cdot g_{1}'=\left(g'\right)^{-1}\cdot\underbrace{g_{1}'\cdot\left(g_{1}'\right)^{-1}}_{=e}\cdot\underbrace{g^{-1}\cdot g_{1}}_{=:n\in N,\text{ da }gN=g_{1}N}\cdot g_{1}'=\\
+ & =\underbrace{\left(g'\right)^{-1}\cdot g_{1}'}_{\in N\text{, da }g'N=g_{1}'N}\underbrace{\left(g_{1}'\right)^{-1}\cdot n\cdot g_{1}'}_{\in N,\text{ da }N\unlhd G}\in N
+\end{align*}
+Also gilt $\left(gg'\right)N=\left(g_{1}g_{1}'\right)N$.\\
+Ferner gilt:
+\begin{align*}
+\text{ker}\left(\pi\right) & =\left\{ g\in G|gN=\pi\left(g\right)=e'=eN=N\in\modulo{G}{N}\right\} \stackrel{\ref{sub:Nebenklasse}\,\text{i)}}{=}N
+\end{align*}
+
+\end{itemize}
+\qqed
+
+
+\subsection{Beispiel \textmd{($H$ ist kein Normalteiler)}}
+
+Sei $H=\left\{ 1,\left(12\right)\right\} \subseteq S_{3}$ wie in
+\ref{sub:Bsp-sym3}.
+
+Die \quotedblbase{}Abbildung\textquotedblleft{} $\modulo{G}{H}\times\modulo{G}{H}\dashrightarrow\modulo{G}{H},\,\left(gH,g'H\right)\mapsto\left(gg'\right)H$
+ist nicht wohldefiniert, denn es gelten
+
+%\begin{tikzpicture}\draw[style=dashed,->] (0,0) -- (0.5,0);\draw[color=white] (0,-.07) -- (.3,-.07);\end{tikzpicture}
+\begin{align*}
+eH & =\left(12\right)H
+\end{align*}
+(da $\left(12\right)\in H$) und
+\begin{align*}
+\left(123\right)H & =\left(123\right)H,
+\end{align*}
+aber $\left(e\cdot\left(123\right)\right)H\not=\left(\left(12\right)\left(123\right)\right)H$,
+denn:
+\begin{align*}
+\left(e\left(123\right)\right)^{-1}\left(12\right)\left(123\right) & =\left(132\right)\left(23\right)=\left(13\right)\not\in H
+\end{align*}
+Dieses Beispiel zeigt, dass für \eqref{eq:wohldef} im Beweis von
+\ref{sub:Prop-proj} auf die Voraussetzung \quotedblbase{}Normalteiler\textquotedblleft{}
+nicht verzichten kann, und dass $H\subseteq S_{3}$ kein Normalteiler
+ist.
+
+
+\subsection{Satz \textmd{(universelle Eigenschaft der Projektionsabbildung $\pi$)\label{sub:Satz-univEigProj}}}
+
+Seien $G$ eine Gruppe, $N\unlhd G$ ein Normalteiler und $\varphi:G\to G'$
+ein Gruppenhomomorphismus.
+
+Dann sind äquivalent:
+
+\begin{iiilist}
+
+\iii $N\subseteq\text{ker}\left(\varphi\right)$
+
+\iii ${\displaystyle \exsg_{\text{Grphom. }\overline{\varphi}:\moduloScript{G}{N}\to G'}}\varphi=\overline{\varphi}\circ\pi$ 
+
+
+\subsubsection*{Bildchen}
+
+TODO: Abb
+
+\end{iiilist}
+
+
+\subsubsection*{Beweis}
+
+Übung
+
+\qqed
+
+
+\subsection{Korollar \textmd{(Isomorphiesatz)}\label{sub:Kor-HomSatzIso}}
+
+Ist $\varphi:G\to G'$ ein Epimorphismus, so ist $\overline{\varphi}:\modulo{G}{\text{ker}\left(\varphi\right)}\to G'$
+wohldefiniert und ein Isomorphismus.
+
+
+\subsubsection*{Beweis}
+
+Nach \ref{sub:Satz-univEigProj} ist $\overline{\varphi}$ wohldefiniert
+und ein Gruppenhomorphismus.
+
+(Wähle in \ref{sub:Satz-univEigProj} $N=\text{ker}\left(\varphi\right)$)
+
+Weil $\varphi$ ein Epimorphismus ist, ist auch $\overline{\varphi}$
+ein Epimorphismus.
+
+Aus 
+\begin{align*}
+\text{ker}\left(\overline{\varphi}\right)= & \modulo{\text{ker}\left(\varphi\right)}{N}=\modulo{\text{ker}\left(\varphi\right)}{\text{ker}\left(\varphi\right)}=\left\{ e\right\} 
+\end{align*}
+und \ref{sub:PuD-ker} folgt, dass $\overline{\varphi}$ injektiv,
+also ein Isomorphismus ist.
+
+\qqed
+
+
+\subsection{Satz \textmd{(Primzahlordnung)}\label{sub:Satz-ZpZ}}
+
+Seien $G$ eine Gruppe und $p:=\left|G\right|$ eine Primzahl (Abkürzung:
+PZ). Dann gilt:
+\begin{align}
+G & \stackrel{\sim}{=}\modlo{Z}{p}
+\end{align}
+
+
+
+\subsection{Beispiel}
+
+\begin{iiilist}
+
+\iii $\modlo{Z}{2}\times\modlo{Z}{2}\not\stackrel{\sim}{=}\modlo{Z}{4}$
+(vergleiche Struktursatz für endlich erzeugte abelsche Gruppen).
+
+\iii $S_{3}\not\stackrel{\sim}{=}\modlo{Z}{6}$ (denn $S_{3}$ ist
+nicht abelsch).
+
+\end{iiilist}
+
+Beide Beispiele zeigen, dass man in \ref{sub:Satz-ZpZ} auf die Voraussetzung
+\quotedblbase{}Primzahl\textquotedblleft{} nicht verzichten kann.
+
+
+\subsubsection*{Beweis von \ref{sub:Satz-ZpZ}}
+
+Wegen $1\not=p=\left|G\right|$ existiert ein $e\not=g\in G$.
+
+Nach \ref{sub:Prop-gruphomG} existiert genau ein Gruppenhomomorphismus
+$\varphi:\mathbb{Z}\to G$ mit $\varphi\left(1\right)=g$. Es folgt
+nach \ref{sub:Kor-Lagrange}:
+\begin{align*}
+1 & \not=\left|\text{im}\left(\varphi\right)\right|\big|\left|G\right|=p
+\end{align*}
+Weil $p$ eine Primzahl ist, folgt $\left|\text{im}\left(\varphi\right)\right|=\left|G\right|$,
+das heißt $\varphi$ ist ein Epimorphismus.
+
+Nach \ref{sub:Kor-HomSatzIso} existiert ein Isomorphismus ${\displaystyle \modulo{\mathbb{Z}}{\text{ker}\left(\varphi\right)}}\stackrel{\sim}{\to}G$.
+
+Damit ist $\text{ker}\left(\varphi\right)\subseteq\mathbb{Z}$ eine
+Untergruppe vom Index $\left|G\right|=p$.
+
+Nach der Vorlesung lineare Algebra I folgt $\text{ker}\left(\varphi\right)=p\mathbb{Z}$,
+also $G\stackrel{\sim}{=}\modlo{Z}{p}$.
+
+\qqed[\ref{sub:Satz-ZpZ}]
+
+
+\subsection{Proposition und Definition \textmd{(erzeugte Untergruppe)}}
+
+Seien $G$ eine Gruppe, $x\in G$ und $\varphi:\mathbb{Z}\to G$ der
+eindeutige Gruppenhomomorphismus mit $\varphi\left(1\right)=g$.
+
+Dann ist
+\begin{align*}
+\left\langle x\right\rangle  & :=\text{im}\left(\varphi\right)=\left\{ x^{n}|n\in\mathbb{Z}\right\} \subseteq G
+\end{align*}
+die kleinste Untergruppe von $G$, die $x$ enthält.
+
+Sie heißt \emph{die von $x$ (in $G$) erzeugte Untergruppe.}
+
+
+\subsubsection*{Beweis}
+
+Wegen \ref{sub:PuD-ker} ii) ist $\left\langle x\right\rangle \subseteq G$
+eine Untergruppe und es gilt:
+\begin{align*}
+x & =\varphi\left(1\right)\in\text{im}\left(\varphi\right)=\left\langle x\right\rangle 
+\end{align*}
+Ist $H\subseteq G$ eine Untergruppe mit $x\in H$, so folgt $x^{n}\in H$
+für alle $n\in\mathbb{Z}$, das heißt $\left\langle x\right\rangle \subseteq H$.
+
+\qqed
+
+
+\subsection{Proposition und Definition \textmd{(zyklische Gruppe, Erzeuger)}\label{sub:PuD-zyklGrp}}
+
+Für eine Gruppe $G$ sind äquivalent:
+
+\begin{iiilist}
+
+\iii ${\displaystyle \exs_{x\in G}\mbox{\ensuremath{\left\langle x\right\rangle =G}}}$
+
+\iii Es gibt einen Epimorphismus $\varphi:\mathbb{Z}\to G$.
+
+\end{iiilist}
+
+In diesem Fall heißt $G$ \emph{zyklisch}, und jedes $x\in G$ mit
+$\left\langle x\right\rangle =G$ heißt \emph{Erzeuger von $G$}.
+
+
+\subsubsection*{Beweis}
+
+i) $\Rightarrow$ ii): Wähle $\varphi:\mathbb{Z}\to G$ mit $\varphi\left(1\right)=x$.
+
+ii) $\Rightarrow$ i): Wähle $x:=\varphi\left(1\right)$.
+
+\qqed
+
+
+\subsection{Satz \textmd{(Klassifizierung zyklischer Gruppen)}}
+
+Bis auf Isomorphie existieren genau die zyklischen Gruppen $\modlo{Z}{m}$
+für $m\in\mathbb{N}_{\ge1}$ und $\mathbb{Z}$ (erzeugt zum Beispiel
+durch $\overline{1}$ und 1).
+
+
+\subsubsection*{Beweis}
+
+Es ist klar, dass die angegebenen Gruppen zyklisch und paarweise nicht
+isomorph sind.
+
+Sei nun $G$ eine beliebige zyklische Gruppe, dann existiert nach
+\ref{sub:PuD-zyklGrp} ii) ein Epimorphismus $\varphi:\mathbb{Z}\to G$,
+weswegen nach \ref{sub:Kor-HomSatzIso} ein Isomorphismus $\tilde{\varphi}:\modulo{\mathbb{Z}}{\text{ker}\left(\varphi\right)}\stackrel{\sim}{\to}G$.
+
+Nun ist $\text{ker}\left(\varphi\right)\subseteq\mathbb{Z}$ eine
+Untergruppe, womit aus der linearen Algebra für ein $m\ge0$ schon
+folgt:
+\begin{align*}
+\text{ker}\left(\varphi\right) & =\left(m\right)=m\mathbb{Z}
+\end{align*}
+Daher folgt:
+\begin{align*}
+G & \stackrel{\sim}{=}\begin{cases}
+\mathbb{Z} & \text{für }m=0\\
+\modlo{Z}{m} & \text{für }m>0
+\end{cases}
+\end{align*}
+\qqed
+
+
+\subsection{Satz \textmd{(Untergruppe, Kern und Bild zyklischer Gruppen)}}
+
+Sei $G$ eine zyklische Gruppe. Dann gilt:
+
+\begin{iiilist}
+
+\iii Jede Untergruppe $H\subseteq G$ ist zyklisch.
+
+\iii Für jeden Gruppenhomomorphismus $\varphi:G\to G'$ sind $\text{ker}\left(\varphi\right)$
+und $\text{im}\left(\varphi\right)$ zyklisch.
+
+\end{iiilist}
+
+
+\subsubsection*{Beweis}
+
+\begin{iiilist}
+
+\iii Ohne Einschränkung ist $H\not=\left\{ e\right\} $. Wähle einen
+Epimorphismus $\varphi:\mathbb{Z}\to G$.
+
+Dann ist auch $\psi:=\varphi|_{\varphi^{-1}\left(H\right)}:\varphi^{-1}\left(H\right)\to H$
+ein Epimorphismus.
+
+TODO: Abb einfügen
+
+Wegen $H\not=\left\{ e\right\} $ ist $\left\{ 0\right\} \not=\varphi^{-1}\left(H\right)\subseteq\mathbb{Z}$
+eine nicht triviale Untergruppe.
+
+Daher ist $\varphi^{-1}\left(H\right)=m\mathbb{Z}$ für ein $m\ge1$,
+also:
+\begin{align*}
+\mathbb{Z} & \stackrel{\sim}{=}\varphi^{-1}\left(H\right)\\
+x & \mapsto mx
+\end{align*}
+Also ist $\psi:\mathbb{Z}\to H$ ein Epimorphismus, das heißt $H$
+ist zyklisch.
+
+\qqed[i)]
+
+\iii Ist $\psi:\mathbb{Z}\to G$ ein Epimorphismus, so auch die Komposition:
+\begin{align*}
+\mathbb{Z} & \stackrel{\psi}{\twoheadrightarrow}G\stackrel{\varphi}{\twoheadrightarrow}\text{im}\left(\varphi\right)
+\end{align*}
+Daher ist $\text{im}\left(\varphi\right)$ zyklisch.
+
+Weil $\text{ker}\left(\varphi\right)\subseteq G$ eine Untergruppe
+ist, ist $\text{ker}\left(\varphi\right)$ zyklisch nach i).
+
+\qqed[ii)]
+
+\end{iiilist}
+
+
+\subsection{Definition \textmd{(Gruppenordnung)}}
+
+Seien $G$ eine Gruppe und $x\in G$, dann heißt
+\begin{align*}
+\text{ord}\left(x\right) & :=\left|\left\langle x\right\rangle \right|\stackrel{\left(!\right)}{=}\text{min}\left\{ n\ge1|x^{n}=e\right\} \in\mathbb{N}\cup\left\{ \infty\right\} 
+\end{align*}
+\emph{die Ordnung von $x$ (in $G$).}
+
+%DATE: Di 25.10.11
+
+
+\subsection{Beispiel\label{sub:Bsp-F5*}}
+
+Betrachte $G:=\left(\modlo{Z}{5}\right)^{*}=\mathbb{F}_{5}^{*}$
+
+\noindent \begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline 
+$x\in\mathbb{F}_{5}^{*}$ & $x^{2}$ & $x^{3}$ & $x^{4}$ & $\text{ord}\left(x\right)$\tabularnewline
+\hline 
+\hline 
+$\overline{1}$ & $\overline{1}$ & $\overline{1}$ & $\overline{1}$ & 1\tabularnewline
+\hline 
+$\overline{2}$ & $\overline{4}$ & $\overline{3}$ & $\overline{1}$ & 4\tabularnewline
+\hline 
+$\overline{3}$ & $\overline{4}$ & $\overline{2}$ & $\overline{1}$ & 4\tabularnewline
+\hline 
+$\overline{4}$ & $\overline{1}$ & $\overline{4}$ & $\overline{1}$ & 2\tabularnewline
+\hline 
+\end{tabular}
+\par\end{center}
+
+Man erkennt:
+\begin{itemize}
+\item $\overline{2}$ und $\overline{3}$ sind Erzeuger von $G$, denn $\text{ord}\left(x\right)=4$.
+\item Die Ordnung $\text{ord}\left(x\right)$ ist immer ein Teiler von $4=\left|G\right|$.
+\end{itemize}
+Die Rechnung zeigt: $G=\mathbb{F}_{5}^{*}\stackrel{\sim}{=}\modlo{Z}{4}$.
+
+
+\subsection{\textmd{(kleiner Fermatscher)} Satz\label{sub:Satz-kleinFermat}}
+
+Seien $G$ eine endliche Gruppe und $x\in G$.
+
+Dann gilt $\text{ord}\left(x\right)\big|\left|G\right|$ und $x^{\left|G\right|}=e$
+in $G$.
+
+
+\subsubsection*{Beweis}
+
+Nach Definition ist $\text{ord}\left(x\right)=\left|H\right|$ für
+die Untergruppe $H:=\left\langle x\right\rangle \subseteq G$.
+
+Nun folgt $\text{ord}\left(x\right)\big|\left|G\right|$ aus \ref{sub:Kor-Lagrange}.
+
+Klar ist $x^{\text{ord}\left(x\right)}=e$, womit folgt:
+\begin{align*}
+x^{\left|G\right|} & \stackrel{\ref{sub:Kor-Lagrange}}{=}x^{\text{ord}\left(x\right)\cdot\left(G:\left\langle x\right\rangle \right)}=e^{\left(G:x\right)}=e
+\end{align*}
+
+
+\qqed
+
+
+\subsection{Korollar}
+
+\begin{iiilist}
+
+\iii Seien $n\ge1$ und $a\in\mathbb{Z}$ teilerfremd zu $n$, dann
+folgt $a^{\varphi\left(n\right)}\equiv1\text{(mod)}n$.
+
+(Hier ist $\varphi\left(n\right)$ die Eulersche $\varphi$-Funktion.)
+
+\iii Ist $p$ eine Primzahl und $a\in\mathbb{Z}$ mit $p\not=a$,
+so gilt:
+\begin{align*}
+a^{p-1} & \equiv1\left(\text{mod}\right)p
+\end{align*}
+(vergleiche \ref{sub:Bsp-F5*})
+
+\end{iiilist}
+
+
+\subsubsection*{Beweis}
+
+\begin{iiilist}
+
+\iii Wegen $\text{ggT}\left(a,n\right)=1$ ist $a\in\left(\modlo{Z}{n}\right)^{*}$
+und mit $\varphi\left(n\right):=\left|\left(\modlo{Z}{n}\right)^{*}\right|$
+folgt die Behauptung aus \ref{sub:Satz-kleinFermat}.
+
+\iii Falls $n=p$ eine Primzahl ist, gilt in i) nach linearer Algebra
+I:
+\begin{align*}
+\varphi\left(p\right) & =p-1
+\end{align*}
+
+
+\end{iiilist}
+
+\qqed
+
+
+\subsection{Proposition \textmd{(Kriterium für zyklische Gruppen)}\label{sub:Prop-GxdledGzykl}}
+
+Seien $G$ eine endliche Gruppe und für alle $d\big|\left|G\right|$
+gelte:
+\begin{align}
+\left|\left\{ x\in G|x^{d}=e\right\} \right| & \le d\label{eq:xdled}
+\end{align}
+
+
+Dann ist $G$ zyklisch.
+
+
+\subsubsection*{Beweis}
+
+Für $d\big|\left|G\right|=:n$ setze $\psi\left(d\right):=\left|\left\{ x\in G|\text{ord}\left(x\right)=d\right\} \right|$.
+
+Aus \ref{sub:Satz-kleinFermat} folgt dann:
+\begin{align}
+\sum_{1\le d|n}\psi\left(d\right) & =\left|G\right|=n\label{eq:sumpsid}
+\end{align}
+Seien $d|n$ und es gelte $\psi\left(d\right)\not=0$, das heißt es
+gibt ein $z\in G$ mit $\text{ord}\left(z\right)=d$.
+
+Aus \ref{sub:Satz-kleinFermat} folgt für alle $g\in\left\langle z\right\rangle $
+schon $g^{d}=e$.
+
+Aus $\left|\left\langle z\right\rangle \right|=d$ und \eqref{eq:xdled}
+folgt damit $\left\{ x\in G|x^{d}=e\right\} \subseteq\left\langle z\right\rangle $
+und insbesondere $\left\{ x\in G|\text{ord}\left(x\right)=d\right\} \subseteq\left\langle z\right\rangle \stackrel{\sim}{=}\modlo{Z}{d}$.
+
+Es gilt aber:
+\begin{align*}
+\left|\left\{ \omega\in\left(\modlo{Z}{d}\right)|\text{ord}\left(\omega\right)=d\right\} \right| & =\left|\left(\modlo{Z}{d}\right)^{*}\right|=\varphi\left(d\right)
+\end{align*}
+
+
+Insgesamt folgt für alle $d\in\mathbb{Z}$ mit $d\big|\left|G\right|$:
+\begin{align}
+\psi\left(d\right) & \le\varphi\left(d\right)\label{eq:psilephi}
+\end{align}
+Denn für $\psi\left(d\right)=0$ ist das trivial.
+
+Die Summation liefert:
+\begin{align*}
+\left|G\right| & \stackrel{\eqref{eq:sumpsid}}{=}\sum_{1\le d|n}\psi\left(d\right)\stackrel{\eqref{eq:psilephi}}{\le}\sum_{1\le d|n}\varphi\left(d\right)=n
+\end{align*}
+Dann muss \eqref{eq:psilephi} für alle $d|n$ eine Gleichheit sein,
+insbesondere für $d=n$ folgt wegen $1\in\left(\modlo{Z}{n}\right)^{*}$:
+\begin{align*}
+\psi\left(n\right) & =\varphi\left(n\right)=\left|\left(\modlo{Z}{n}\right)^{*}\right|\not=0
+\end{align*}
+Das heißt es gibt ein $x\in G$ mit $\text{ord}\left(x\right)=n$,
+also ist $G=\left\langle x\right\rangle $ und $G$ ist zyklisch.
+
+\qqed
+
+
+\subsection{Korollar\label{sub:Kor-endlUGzykl}}
+
+Seien $k$ ein Körper und $G\subseteq k^{*}$ eine endliche Untergruppe.
+
+Dann ist $G$ zyklisch.
+
+
+\subsubsection*{Bemerkung}
+
+Die Gruppe $\left(\modlo{Z}{8}\right)^{*}$ ist nicht zyklisch.
+
+
+\subsubsection*{Beweis von \ref{sub:Kor-endlUGzykl}}
+
+Wegen \ref{sub:Prop-GxdledGzykl} zeige nur, dass für alle $d\ge1$
+gilt:
+\begin{align*}
+\left|\left\{ x\in k^{*}|x^{d}=1\right\} \right| & \le d
+\end{align*}
+
+
+Das ist klar, denn das Polynom $T^{d}-1\in k\left[T\right]$ hat höchstens
+$d$ Nullstellen in $k$ nach linearer Algebra II.
+
+\qqed
+
+
+\subsection{Bemerkung}
+
+$\mathbb{Q}^{*}$ ist nicht zyklisch (!), also kann man in \ref{sub:Kor-endlUGzykl}
+nicht auf \quotedblbase{}endlich\textquotedblleft{} verzichten.
+
+
+\subsection{Korollar}
+
+\begin{iiilist}
+
+\iii Ist $k$ ein endlicher Körper, so ist $k^{*}$ zyklisch.
+
+\iii Ist $p$ eine Primzahl, so ist $\mathbb{F}_{p}^{*}$ zyklisch.
+(vergleiche \ref{sub:Bsp-F5*})
+
+\end{iiilist}
+
+
+\subsubsection*{Beweis}
+
+\begin{iiilist}
+
+\iii \ref{sub:Kor-endlUGzykl} für $G:=k^{*}$.
+
+\iii Folgt aus i) für $k=\mathbb{F}_{p}$.
+
+\end{iiilist}
+
+\qqed
+
+\newpage{}
+
+
+\section{Lokalisierungen\label{sec:Lokalisierungen}}
+
+
+\subsubsection*{Stichworte}
+
+(kommutativer) Ring, Ringhomomorphismus, Integritätsring (Abkürzung:
+IR), Modul, Tensorprodukt, Primideal, Einheiten, exakte Folge
+
+
+\subsubsection*{Referenz}
+
+Siehe Literaturliste am Anfang.
+
+
+\subsection{Proposition und Definition \textmd{(multiplikativ abgeschlossen)\label{sub:PuD-multAbg}}}
+
+Seien $A,B$ kommutative Ringe, $\varphi:A\to B$ ein Ringhomomorphismus
+und $S:\varphi^{-1}\left(B^{*}\right)\subseteq A$.
+
+Dann gelten:
+
+\begin{iiilist}
+
+\iii $1\in S$
+
+\iii ${\displaystyle \fall_{s,t\in S}st\in S}$
+
+\end{iiilist}
+
+Eine Teilmenge $S\subseteq A$ mit i), ii) heißt \emph{multiplikativ
+abgeschlossen}.
+
+
+\subsubsection*{Beweis}
+
+\begin{iiilist}
+
+\iii $\varphi\left(1\right)=1\in B^{*}$ $\Rightarrow$ $1\in\varphi^{-1}\left(B^{*}\right)=S$
+
+\iii $s,t\in S$ $\Rightarrow$ $\varphi\left(s\right),\varphi\left(t\right)\in B^{*}$
+$\Rightarrow$ $B^{*}\ni\varphi\left(s\right)\cdot\varphi\left(t\right)=\varphi\left(st\right)$
+$\Rightarrow$ $st\in S$
+
+\end{iiilist}
+
+\qqed
+
+
+\subsubsection*{Fixiere in Abschnitt \ref{sec:Lokalisierungen} (\nameref{sec:Lokalisierungen})}
+
+Es sei $A$ ein kommutativer Ring und $S\subseteq A$ multiplikativ
+abgeschlossen.
+
+
+\subsection{Konstruktion und Definition \textmd{(Quotientenring)\label{sub:KuD-QuotRing}}}
+
+Die Relation auf der Menge $A\times S$ definiert durch
+\begin{align}
+\fall_{\left(a,s\right),\left(h,t\right)\in A\times S}\left(a,s\right)\sim\left(b,t\right) & :\Leftrightarrow\exs_{u\in S}u\left(at-bs\right)=0\label{eq:bruchrel}
+\end{align}
+ist eine Äquivalenzrelation.
+
+Schreibe für alle $\left(a,s\right)\in A\times S$ für die Äquivalenzklasse
+${\displaystyle \left[\left(a,s\right)\right]=:\frac{a}{s}}$ von
+$\left(a,s\right)$ und:
+\begin{align*}
+S^{-1}A & :=\left\{ \frac{a}{s}\bigg|\left(a,s\right)\in A\times S\right\} 
+\end{align*}
+Damit gilt:
+\begin{align*}
+\frac{a}{s} & =\frac{b}{t}\in S^{-1}A\Leftrightarrow\exs_{u\in S}u\left(at-bs\right)=0
+\end{align*}
+
+
+Die Abbildungen
+\begin{align*}
++: & S^{-1}A\times S^{-1}A\to S^{-1}A,\left(\frac{a}{s},\frac{b}{t}\right)\mapsto\left(\frac{at+bs}{st}\right)\\
+\cdot\,: & S^{-1}A\times S^{-1}A\to S^{-1}A,\left(\frac{a}{s},\frac{b}{t}\right)\mapsto\left(\frac{ab}{st}\right)
+\end{align*}
+sind wohldefiniert und
+\begin{align*}
+ & \left(S^{-1}A,+,\cdot,\frac{0}{1},\frac{1}{1}\right)
+\end{align*}
+ist ein kommutativer Ring, der \emph{Quotientenring von $A$ bezüglich
+$S$}.
+
+
+\subsection{Beispiel \textmd{(Quotientenkörper)}}
+
+Ist $A$ in \ref{sub:KuD-QuotRing} ein Integritätsring und gilt $0\not\in S$,
+so vereinfacht sich \eqref{eq:bruchrel} zu:
+\begin{align*}
+\frac{a}{s} & =\frac{b}{t}\in S^{-1}A\Leftrightarrow at=bs\in A
+\end{align*}
+
+
+Die Teilmenge $A\setminus\left\{ 0\right\} \subseteq A$ ist multiplikativ
+abgeschlossen und der Ring
+\begin{align*}
+\text{Quot}\left(A\right) & :=\left(A\setminus\left\{ 0\right\} \right)^{-1}A=\left\{ \frac{a}{s}\bigg|a\in A,0\not=s\in A\right\} 
+\end{align*}
+heißt \emph{der Quotientenkörper von $A$}, zum Beispiel $\text{Quot}\left(\mathbb{Z}\right)=\mathbb{Q}$.
+
+
+\subsubsection*{Beweis von \ref{sub:KuD-QuotRing}}
+
+Die Reflexivität und Symmetrie von $\sim$ sind klar.
+
+Seien $a,b,c\in A$, $s,t,u\in S$ mit $\left(a,s\right)\sim\left(b,t\right)$
+und $\left(b,t\right)\sim\left(c,u\right)$. gegeben.
+
+Dann folgt aus \eqref{eq:bruchrel}, dass es $v,w\in S$ gibt mit:
+\begin{align*}
+\left(at-bs\right)\cdot v & =0\quad/\cdot uw &  &  & \left(bu-ct\right)\cdot w & =0\quad/\cdot sv\\
+atvuw & =bsvuw &  & = & \quad buwsv & =ctwsv
+\end{align*}
+Damit folgt in $A$:
+\begin{align*}
+\left(au-cs\right)tvw & =0
+\end{align*}
+
+
+Wegen $tvw\in S$ folgt aus \eqref{eq:bruchrel} schon $\left(a,s\right)\sim\left(c,u\right)$.\\
+\qqed[$\sim$ Äquivrel.]
+
+Der Rest bleibt als Übung.
+
+\qqed[\ref{sub:KuD-QuotRing}]
+
+
+\subsection{Proposition \textmd{(Universelle Eigenschaft von $S^{-1}A$)\label{sub:Prop-UnivEigSinvA}}}
+
+\begin{iiilist}
+
+\iii Die Abbildung
+\begin{align*}
+\varphi:A & \to S^{-1}A,\varphi\left(a\right):=\frac{a}{1}
+\end{align*}
+ist ein Ringhomomorphismus.
+
+\iii Für einen Ringhomomorphismus $\psi:A\to B$ (mit $B$ kommutativ)
+sind äquivalent:
+
+\begin{abclist}
+
+\abc $\psi\left(S\right)\subseteq B^{*}$
+
+\abc Es existiert genau ein Ringhomomorphismus $f:S^{-1}A\to B$
+mit $\psi=f\circ\varphi$.
+
+\end{abclist}
+
+\end{iiilist}
+
+TODO: Abbildung Homomorphiesatz
+
+
+\subsubsection*{Beispiel}
+
+Es gibt genau einen Ringhomomorphismus $\mathbb{Q}\to\mathbb{C}$,
+denn:\\
+Es gibt genau einen Ringhomomorphismus $\psi:\mathbb{Z}\to\mathbb{C}$
+und es gilt $\psi\left(\mathbb{Z}\setminus\left\{ 0\right\} \right)\subseteq\mathbb{C}^{*}$.\\
+TODO: Abb Homomorphiesatz $\psi$
+
+
+\subsubsection*{Beweis von \ref{sub:Prop-UnivEigSinvA}}
+
+\begin{iiilist}
+
+\iii ${\displaystyle \varphi:A\to S^{-1}A,a\to\frac{a}{1}}$ ist
+ein Ringhomomorphismus.
+
+Rechne zum Beispiel $\varphi\left(a\right)+\varphi\left(b\right)=\varphi\left(a+b\right)$
+nach:
+\begin{align*}
+\varphi\left(a\right)+\varphi\left(b\right) & =\frac{a}{1}+\frac{b}{1}\stackrel{\ref{sub:KuD-QuotRing}}{=}\frac{a\cdot1+b\cdot1}{1\cdot1}=\frac{a+b}{1}=\varphi\left(a+b\right)
+\end{align*}
+Der Rest geht analog.
+
+\iii b) $\Rightarrow$ a): Es gilt $\varphi\left(S\right)\subseteq\left(S^{-1}A\right)^{*}$,
+denn für alle $s\in S$ folgt in $S^{-1}A$:
+\begin{align*}
+\frac{1}{s}\cdot\varphi\left(s\right) & =\frac{1}{s}\cdot\frac{s}{1}=1
+\end{align*}
+Damit ergibt sich:
+\begin{align*}
+\psi\left(s\right) & \stackrel{\text{b)}}{=}f\left(\varphi\left(s\right)\right)\stackrel{\varphi\left(S\right)\subseteq\left(S^{-1}A\right)^{*}}{=}f\left(\left(S^{-1}A\right)^{*}\right)\stackrel{\text{klar}}{\subseteq}B^{*}
+\end{align*}
+
+
+a) $\Rightarrow$ b):
+\begin{itemize}
+\item \emph{Eindeutigkeit:} Für alle $a\in A,s\in S$ gilt:
+\begin{align*}
+f\left(\frac{a}{s}\right) & =f\left(\frac{a}{1}\cdot\left(\frac{s}{1}\right)^{-1}\right)=f\left(\varphi\left(a\right)\cdot\varphi\left(s\right)^{-1}\right)=\psi\left(a\right)\cdot\psi\left(s\right)^{-1}
+\end{align*}
+Daher ist $f$ eindeutig bestimmt.
+\item \emph{Existenz:} Zeige nur, dass die Abbildung
+\begin{align*}
+f:S^{-1}A & \dasharrow B,\frac{a}{s}\mapsto\psi\left(a\right)\cdot\psi\left(s\right)^{-1}
+\end{align*}
+wohldefiniert ist.\\
+Zunächst gilt nach a) für alle $s\in S$:
+\begin{align*}
+\psi\left(s\right)\in B^{*} & \Rightarrow\exs_{b\in B^{*}}:\underbrace{b}_{=:\psi\left(s\right)^{-1}}\cdot\psi\left(s\right)=1
+\end{align*}
+Zeige noch, dass für alle $a,b\in A$ und für alle $s,t\in S$ mit
+\begin{align*}
+\frac{a}{s} & =\frac{b}{t}
+\end{align*}
+in $S^{-1}A$ schon in $B$ gilt:
+\begin{align*}
+\psi\left(a\right)\psi\left(s\right)^{-1} & =\psi\left(b\right)\psi\left(t\right)^{-1}
+\end{align*}
+
+
+\begin{description}
+\item [{Beweis}] \textbf{}\\
+Aus $\varphi\left(S\right)\subseteq\left(S^{-1}A\right)^{*}$ in \ref{sub:KuD-QuotRing}
+folgt in $A$:
+\begin{align*}
+\exs_{u\in S}:u\left(at-bs\right) & =0
+\end{align*}
+Weil $\psi$ eindeutig ist, folgt in $B$:
+\begin{align*}
+\psi\left(u\right)\cdot\left(\psi\left(a\right)\psi\left(t\right)-\psi\left(b\right)\psi\left(s\right)\right) & =0\\
+\psi\left(a\right)\underbrace{\psi\left(t\right)}_{\in B^{*}} & =\psi\left(b\right)\underbrace{\psi\left(s\right)}_{\in B^{*}}\\
+\psi\left(a\right)\psi\left(s\right)^{-1} & =\psi\left(b\right)\psi\left(t\right)^{-1}
+\end{align*}
+\qqed
+\end{description}
+\end{itemize}
+\end{iiilist}
+
+
+\subsection{Korollar}
+
+\begin{iiilist}
+
+\iii $\ker\left(\varphi:A\to S^{-1}A\right)=\left\{ a\in A|\exs_{s\in S}:a\cdot s=0\in A\right\} $
+
+\iii $S^{-1}A=\left\{ 0\right\} \Leftrightarrow0\in S$
+
+\end{iiilist}
+
+
+\subsubsection*{Beweis}
+
+\begin{iiilist}
+
+\iii Für alle $a\in A$ gilt in $S^{-1}A$:
+\begin{align*}
+\frac{0}{1} & =\varphi\left(a\right)=\frac{a}{1}
+\end{align*}
+Dies ist nach \ref{sub:KuD-QuotRing} äquivalent dazu, dass es ein
+$s\in S$ gibt, für dass in $A$ gilt:
+\begin{align*}
+0 & =s\cdot\left(a\cdot1-0\cdot1\right)=s\cdot a
+\end{align*}
+\qqed[i)]
+
+\iii Es gilt:
+
+\begin{align*}
+S^{-1}A=\left\{ 0\right\}  & \Leftrightarrow\frac{1}{1}=\frac{0}{1}
+\end{align*}
+
+
+Dies ist definitionsgemäß äquivalent dazu, dass es ein $s\in S$ gibt
+mit:
+\begin{align*}
+0 & =s\underbrace{\left(1\cdot1-0\cdot1\right)}_{=1}=s
+\end{align*}
+Das bedeutet $s=0\in S$.
+
+\qqed[ii)]
+
+\end{iiilist}
+
+
+\subsection{Beispiel}
+
+Seien $A$ ein Integritätsring und $\mathfrak{p}\subseteq A$ ein
+Primideal.
+
+Dann ist $A\setminus\left\{ \mathfrak{p}\right\} \subseteq A$ multiplikativ
+abgeschlossen und
+\begin{align*}
+A_{\mathfrak{p}} & :=\left(A\setminus\mathfrak{p}\right)^{-1}A
+\end{align*}
+heißt \emph{Lokalisierung von $A$ bei $\mathfrak{p}$.}
+
+Es gilt $A\subseteq A_{\mathfrak{p}}\subseteq A_{\left(0\right)}=\text{Quot}\left(A\right)$.
+
+Für $A=\mathbb{Z}$ und $\mathfrak{p}=\left(p\right)$ (für $p\in\mathbb{Z}$
+prim) gilt zum Beispiel:
+\begin{align*}
+A & =\mathbb{Z}\subseteq A_{\mathfrak{p}}=\mathbb{Z}_{\left(p\right)}=\left\{ \frac{a}{b}\bigg|a,b\in\mathbb{Z},p\not|\, b\right\} \subseteq A_{\left(0\right)}=\mathbb{Q}
+\end{align*}
+Einheiten:
+\begin{align*}
+\left\{ \pm1\right\}  & \subseteq\mathbb{Z}_{\left(p\right)}^{*}\stackrel{\left(!\right)}{=}\mathbb{Z}_{\left(p\right)}\setminus\left(p\right)=\left\{ \frac{a}{b}\bigg|a,b\in\mathbb{Z},p\not|\, a,b\right\} \subseteq\mathbb{Q}\setminus\left\{ 0\right\} 
+\end{align*}
+
+
+
+\subsubsection*{Beweis}
+
+Zeige nur, dass $A\setminus\mathfrak{p}\subseteq A$ multiplikativ
+abgeschlossen ist, prüfe also die Definition \ref{sub:PuD-multAbg}
+i) und ii) für $S=A\setminus\mathfrak{p}$:
+
+\begin{iiilist}
+
+\iii $1\in A\setminus\mathfrak{p}$, sonst gilt $1\in\mathfrak{p}$,
+dass bedeutet $\mathfrak{p}=A$, weil $\mathfrak{p}$ ein Ideal ist.
+Dies steht im Widerspruch zur Definition eines \quotedblbase{}Primideals\textquotedblleft{}.
+
+\iii $s,t\in A\setminus\mathfrak{p}\Rightarrow st\in A\setminus\mathfrak{p}$,
+denn sonst wäre $st\in\mathfrak{p}$, und weil $\mathfrak{p}$ ein
+Primideal ist, folgt damit:
+\begin{align*}
+ & \left(s\in\mathfrak{p}\right)\vee\left(t\in\mathfrak{p}\right)\\
+\Rightarrow\quad & \left(s\not\in A\setminus\mathfrak{p}\right)\vee\left(t\not\in A\setminus\mathfrak{p}\right)
+\end{align*}
+Dies ist ein Widerspruch zu $s,t\in A\setminus\mathfrak{p}$.
+
+\end{iiilist}
+
+\qqed
+
+
+\subsection{Konstruktion\label{sub:Konstr-SinvM}}
+
+Seien $M$ und $N$ zwei $A$-Moduln und $S\subseteq A$ multiplikativ
+abgeschlossen.
+
+Auf der Menge $M\times S$ ist folgende Relation in $M$
+\begin{align*}
+\left(m,s\right)\sim\left(m',t\right) & :\Leftrightarrow\exs_{u\in S}:u\left(tm-sm'\right)=0
+\end{align*}
+eine Äquivalenzrelation.
+
+Schreibe $S^{-1}M:=\modulo{\left(M\times S\right)}{\sim}$ und ${\displaystyle \frac{m}{s}:=\left[\left(m,s\right)\right]\in S^{-1}M}$
+für alle $\left(m,s\right)\in M\times S$.
+
+Dann ist $S^{-1}M$ ein $S^{-1}A$-Modul vermöge:
+\begin{align*}
+\frac{m}{s}+\frac{m'}{t} & :=\frac{tm+sm'}{st}\\
+\frac{a}{s}\cdot\frac{m}{t} & :=\frac{a\cdot m}{st}
+\end{align*}
+($m,m'\in M$, $a\in A$, $s,t\in S$)
+
+Ist $\varphi:M\to N$ $A$-linear, so ist
+\begin{align*}
+S^{-1}\varphi:S^{-1}M & \to S^{-1}N\\
+\left(S^{-1}\varphi\right)\left(\frac{m}{s}\right) & :=\frac{\varphi\left(m\right)}{s}
+\end{align*}
+$S^{-1}A$-linear.
+
+
+\subsubsection*{Beweis}
+
+Analog zu \ref{sub:KuD-QuotRing}.
+
+\qqed
+
+
+\subsection{Proposition\label{sub:Prop-exaktAModuln}}
+
+Sei
+\begin{align}
+M & \stackrel{\varphi}{\to}N\stackrel{\psi}{\to}P\label{eq:mnp}
+\end{align}
+eine exakte Folge von $A$-Moduln, das heißt $\text{im}\left(\varphi\right)=\text{ker}\left(\varphi\right)$.
+
+Dann ist auch die Folge von $S^{-1}A$-Moduln
+\begin{align*}
+S^{-1}M & \stackrel{S^{-1}\varphi}{\longrightarrow}S^{-1}N\stackrel{S^{-1}\psi}{\longrightarrow}S^{-1}P
+\end{align*}
+exakt.
+
+
+\subsubsection*{Beweis}
+
+Zeige: $\text{im}\left(S^{-1}\varphi\right)=\text{ker}\left(S^{-1}\psi\right)$
+
+\quotedblbase{}$\subseteq$\textquotedblleft{}: Folgt aus:
+\begin{align*}
+S^{-1}\psi\circ S^{-1}\varphi & \stackrel{\left(!\right)}{=}S^{-1}\left(\psi\circ\varphi\right)\stackrel{\eqref{eq:mnp}\text{ exakt}}{=}S^{-1}\left(0\right)=0
+\end{align*}
+
+
+\quotedblbase{}$\supseteq$\textquotedblleft{}: Sei $x\in\text{ker}\left(S^{-1}\psi\right)$,
+dann gibt es ein $n\in N$ und ein $s\in S$ mit ${\displaystyle x=\frac{n}{s}}$,
+weswegen gilt in $S^{-1}P$:
+\begin{align*}
+0 & =\left(S^{-1}\psi\right)\left(x\right)=\left(S^{-1}\psi\right)\left(\frac{n}{s}\right)\stackrel{\ref{sub:Konstr-SinvM}}{=}\frac{\psi\left(n\right)}{s}
+\end{align*}
+Nach \ref{sub:Konstr-SinvM} gibt es ein $t\in S$, für das in $P$
+gilt:
+\begin{align*}
+\psi\left(ts\cdot n\right)=ts\cdot\psi\left(n\right) & =0
+\end{align*}
+Daher ist $ts\cdot n\in\text{ker}\left(\psi\right)\stackrel{\text{Vor.}}{=}\text{im}\left(\varphi\right)$.
+
+Also gibt es ein $m\in M$, für das in $N$ gilt:
+\begin{align*}
+\varphi\left(m\right) & =ts\cdot n
+\end{align*}
+Damit folgt:
+\begin{align*}
+\left(S^{-1}\varphi\right)\left(\frac{m}{ts^{2}}\right) & =\frac{\varphi\left(m\right)}{ts^{2}}=\frac{t\cdot s\cdot n}{ts^{2}}=\frac{n}{s}=x\in\text{im}\left(S^{-1}\varphi\right)
+\end{align*}
+\qqed
+
+
+\subsection{Proposition\label{sub:Prop-AModulnIso}}
+
+Sei $M$ ein $A$-Modul.
+
+Dann existiert genau eine $A$-lineare Abbildung
+\begin{align*}
+f:S^{-1}A\otimes_{A}M & \stackrel{\sim}{\to}S^{-1}M
+\end{align*}
+mit
+\begin{align*}
+f\left(\frac{a}{s}\otimes m\right) & =\frac{am}{s}
+\end{align*}
+für alle $a\in A,s\in S$ und $m\in M$ und $f$ ist $S^{-1}A$-linear
+und ein Isomorphismus.
+
+
+\subsubsection*{Beweis}
+
+Wegen der universellen Eigenschaft des Tensorprodukts ist die eindeutige
+Existenz von $f$ äquivalent dazu, dass die Abbildung
+\begin{align*}
+S^{-1}A\times M & \to S^{-1}M\\
+\left(\frac{a}{s},m\right) & \mapsto\frac{am}{s}
+\end{align*}
+$A$-bilinear ist. Dies sieht man leicht.
+
+$f$ ist sogar $S^{-1}A$-linear, da gilt:
+\begin{align*}
+f\left(\frac{a}{s}\cdot\left(\frac{b}{t}\otimes m\right)\right) & =f\left(\frac{ab}{st}\otimes m\right)=\frac{abm}{st}=\frac{a}{s}\cdot f\left(\frac{b}{t}\otimes m\right)
+\end{align*}
+Nach \ref{sub:Konstr-SinvM} ist klar, dass $f$ surjektiv ist, denn
+${\displaystyle \frac{m}{s}=f\left(\frac{1}{s}\otimes m\right)}$.
+\begin{description}
+\item [{Behauptung}] \hspace*{1mm}\\
+Für alle $x\in S^{-1}A\otimes_{A}M$ existieren $t\in S$ und $m\in M$
+mit:
+\begin{align*}
+x & =\frac{1}{t}\otimes m
+\end{align*}
+
+\item [{Beweis}] \hspace*{1mm}\\
+Zunächst ist $x$ eine endliche Summe
+\begin{align}
+x & =\sum_{i}\underbrace{\frac{a_{i}}{s_{i}}\otimes m_{i}}_{\text{\quotedblbase elementarer Tensor\textquotedblleft}}\label{eq:elemTensor}
+\end{align}
+mit geeigneten $a_{i}\in A,s_{i}\in S$ und $m_{i}\in M$.\\
+Definiere: (TODO: Formel überprüfen)
+\begin{align}
+t & :=\prod_{i}s_{i} & t_{i} & :=\prod_{j=1}^{i}s_{j}\in S\label{eq:tti}
+\end{align}
+Damit folgt:
+\begin{align*}
+tx & \stackrel{\eqref{eq:elemTensor}}{=}\sum_{i}\left(\frac{a_{i}}{s_{i}}\cdot t\right)\otimes m_{i}\stackrel{\eqref{eq:tti}}{=}\sum_{i}\underbrace{\left(a_{i}t_{i}\right)}_{\in A}\otimes m_{i}=\sum_{i}\left(1\otimes\left(a_{i}t_{i}m_{i}\right)\right)=1\otimes\underbrace{\left(\sum_{i}a_{i}t_{i}m_{i}\right)}_{=:m\in M}
+\end{align*}
+Daraus folgt in $S^{-1}A\otimes_{A}M$:
+\begin{align*}
+x & =\frac{1}{t}\otimes m
+\end{align*}
+\qqed[Behauptung]
+\end{description}
+\emph{$f$ ist injektiv:} Sei $x\in\text{ker}\left(f\right)$, dann
+folgt aus obiger Behauptung:
+\begin{align}
+x & =\frac{1}{t}\otimes m\label{eq:xtm}
+\end{align}
+Für geeignete $t\in S$ und $m\in M$.
+
+Damit folgt in $S^{-1}M$:
+\begin{align*}
+0 & =f\left(x\right)\stackrel{\eqref{eq:xtm}}{=}\frac{m}{t}
+\end{align*}
+Und deswegen gibt es ein $s\in S$, für das in $M$ gilt:
+\begin{align}
+0 & =s\cdot t\cdot m\label{eq:stm}
+\end{align}
+Damit ergibt sich:
+\begin{align*}
+x & \stackrel{\eqref{eq:xtm}}{=}\frac{1}{t}\otimes m=\frac{1}{t^{2}s}\otimes\underbrace{\left(stm\right)}_{=0}=0
+\end{align*}
+Es folgt $\text{ker}\left(f\right)=0$, also ist $f$ injektiv.
+
+\qqed
+
+
+\subsection{Beispiel\label{sub:Bsp-exaktFolge}}
+
+Sei $M\stackrel{\varphi}{\to}N\stackrel{\psi}{\to}P$ eine exakte
+Folge abelscher Gruppen(, das heißt $\mathbb{Z}$-Moduln).
+
+Dann ist die Folge von $\mathbb{Q}$-Vektorräumen(, das heißt $S^{-1}\mathbb{Z}$-Moduln
+für $S=\mathbb{Z}\setminus\left\{ 0\right\} $,)
+\begin{align*}
+M\otimes_{\mathbb{Z}}\mathbb{Q} & \stackrel{\varphi\otimes\text{id}_{\mathbb{Q}}}{\to}N\otimes_{\mathbb{Z}}\mathbb{Q}\stackrel{\psi\otimes\text{id}_{\mathbb{Q}}}{\to}P\otimes_{\mathbb{Z}}\mathbb{Q}
+\end{align*}
+exakt.
+
+
+\subsubsection*{Beweis}
+
+Folgt aus \ref{sub:Prop-exaktAModuln} und \ref{sub:Prop-AModulnIso}.
+
+\qqed
+
+
+\subsubsection*{Beweis von \ref{sub:Bsp-exaktFolge}}
+
+Betrachte das Diagramm:
+
+TODO: Diagramm einfügen
+
+Nach \ref{sub:Prop-exaktAModuln} mit $A=\mathbb{Z}$, $S=\mathbb{Z}\setminus\left\{ 0\right\} $
+ist die zweite Zeile exakt.
+
+Die senkrechten Isomorphismen sind wie in \ref{sub:Prop-exaktAModuln},
+beachte $S^{-1}A\stackrel{\sim}{=}\mathbb{Q}$.
+
+Man prüft, dass das Diagramm kommutiert(, das heißt prüfen, dass eines
+der Quadrate kommutiert.) (vergleiche Übungsaufgaben aus linearer
+Algebra II)
+
+Es folgt die Exaktheit der ersten Zeile.
+
+\qqed[???TODO???]
+
+\newpage{}
+
+
+\section{Der Satz von Gauß}
+
+TODO: Überschrift überprüfen
+
+
+\subsubsection*{Fixiere}
+
+$R$ ist ein faktorieller Ring. $Q:=\text{Quot}\left(R\right)=\left(R\setminus\left\{ 0\right\} \right)^{-1}R$
+und $\mathcal{P}\subseteq R$ ein Vertretersystem der Primelemente
+bis auf Assoziiertheit.
+
+
+\subsubsection*{Beispiel}
+\begin{itemize}
+\item $R=\mathbb{Z}$, $\mathcal{P}=\left\{ 2,3,5,7,\ldots\right\} $ (positive
+Primzahlen)
+\item $R=k\left[X\right]$ (für einen Körper $k$), $\mathcal{P}=\left\{ f\in R|f\text{ ist normiert und irreduzibel}\right\} $
+\item $R=\mathbb{Z}\left[\ii\right]$, $\mathcal{P}=?$
+\end{itemize}
+
+\subsection{Erinnerung}
+
+Für alle $p\in\mathcal{P}$ ist
+\begin{align*}
+\nu_{p}:\mathbb{Q}^{*} & \to\mathbb{Z}\\
+\frac{a}{b} & \mapsto\nu_{p}\left(a\right)-\nu_{p}\left(b\right)
+\end{align*}
+ ($a\not=0$) ist die \emph{$p$-adische Bewertung von ${\displaystyle \frac{a}{b}}$}
+und für alle $a\in R\setminus\left\{ 0\right\} $ ist
+\begin{align*}
+a & =\varepsilon\prod_{p\in\mathcal{P}}p^{\nu_{p}\left(a\right)}
+\end{align*}
+($\varepsilon\in R^{*}$ geeignet) die \emph{Primfaktorzerlegung}
+ein Homomorphismus.
+
+Die Abbildung 
+
+TODO: Rest einfügen
+
+Beweis von 3.7 ii)
+
+Wegen $f\not=0$ gilt nach \ref{3.3 i)}: $\fall_{p\in\mathcal{P}}:v_{p}\left(f\right)\not=\infty$.
+Es ist klar, dass für fast alle $p\in\mathcal{P}$ gilt:
+\begin{align*}
+v_{p}\left(f\right) & =0
+\end{align*}
+$\left(\text{nämlich für alle }p\in\mathcal{P}\text{, die weder Zähler noch Nenner eines Koeffiziente von \ensuremath{f}teilen}\right)$
+
+Deswegen ist $\alpha:=\prod_{p\in\mathcal{P}}p^{v_{p}\left(f\right)}\in Q^{*}$
+wohldefiniert und für $\tilde{f}:=\alpha^{-1}f$ gilt $\fall_{p\in\mathcal{P}}$:
+\begin{align*}
+v_{p}\left(f\right) & =v_{p}\left(\alpha^{-1}f\right)\stackrel{\eqref{3.3iii)}}{=}-v_{p}\left(\alpha\right)+v_{p}\left(f\right)=0
+\end{align*}
+Also ist $\tilde{f}\in R\left[X\right]$ und nach Teil i) primitiv.
+
+\qqed
+
+
+\subsubsection*{Beispiel}
+
+$f:=\frac{2}{3}x\text{\texttwosuperior}+\frac{1}{6}\in\mathbb{Q}\left[X\right]\setminus\left\{ 0\right\} \Rightarrow18\cdot f=12x\text{\texttwosuperior}+3\in\mathbb{Z}\left[X\right]$
+ist nicht primitiv; $6\cdot f=4x\text{\texttwosuperior}+1\in\mathbb{Z}\left[X\right]$
+ist primitiv.
+
+
+\subsection{Satz\textmd{ (von Gauß)}}
+
+Der Ring $R\left[X\right]$ ist faktoriell.
+
+Für alle $q\in R\left[X\right]$ sind äquivalent:
+
+\begin{iiilist}
+
+\iii $q\in R\left[X\right]$ ist ein Primelement.
+
+\iii ($q\in R\subseteq R\left[X\right]$ und $q$ ist ein Primelement.)
+oder ($q\in R\left[X\right]$ ist primitiv und $q\in Q\left[X\right]$
+ist ein Primelement)
+
+\end{iiilist}
+
+Insbesondere sind für ein primitives Polynom $f\in R\left[X\right]$
+äquivalent:
+
+\begin{abclist}
+
+\abc $f\in R\left[X\right]$ ist ein Primelement.
+
+\abc $f\in Q\left[X\right]$ ist ein Primelement.
+
+\end{abclist}
+
+
+\subsection{Beispiel}
+
+$\mathbb{Z}\left[X\right]$ ist faktoriell (aber kein Hauptidealring,
+z. B. ist $\left(2,X\right)\subseteq\mathbb{Z}\left[X\right]$ kein
+Hauptideal).
+
+Das Polynom $2X\in\mathbb{Z\left[X\right]}$ ist nicht primitiv, $2X\in\mathbb{Q\left[X\right]}$
+ist ein Primelement(, da $2\in\left(\mathbb{Q}\left[X\right]\right)^{*}=\mathbb{Q}^{*}$,
+$X\in\mathbb{Q\left[X\right]}$ ist ein Primelement), aber $2X\in\mathbb{Z\left[X\right]}$
+hat Primfaktorzerlegung $2X=2\cdot X$ in $\mathbb{Z}\left[X\right]$
+($2,X$ sind nicht assoziierte Primelemente in $\mathbb{Z}\left[X\right]$$\modulo{\mathbb{Z}\left[X\right]}{\left(2\right)}\stackrel{\sim}{=}\mathbb{F}_{2}\left[X\right]$;
+$\mathbb{Z}\left[X\right]^{*}=\mathbb{Z}^{*}=\left\{ \pm1\right\} $).
+
+
+\subsubsection*{Beweis von 3.8}
+
+ii) $\Rightarrow$ i):
+\begin{itemize}
+\item 1. Fall: Es ist $q\in R$ Primelement $\Rightarrow$ $\pi:R\left[X\right]\rightarrow TODO:$zweiter
+Pfeil)$\left(\modulo{R}{\left(q\right)}\right)\left[X\right]$ wie
+in \ref{3.2} ist surjektiv mit $\text{ker}\left(\pi\right)=\left(q\right)\subseteq R\left[X\right]$
+$\Rightarrow\left(*\right)\left(\modulo{R}{\left(q\right)}\right)\left[X\right]\stackrel{\sim}{=}\modulo{R\left[X\right]}{\left(q\right)}$.
+Wegen $q\in R$ Primelement ist die linke Seite von $(*)$ ein Integritätsring,
+also ist auch $\modulo{R\left[X\right]}{\left(q\right)}$ ein Integritätsring
+$\Leftrightarrow$ $q\in R\left[X\right]$ ist ein Primelement.
+\item 2. Fall: $q\in R\left[X\right]$ ist primitiv und $q\in Q\left[X\right]$
+ist ein Primelement. Zeige nach Definition, dass $q\in R\left[X\right]$
+ein Primelement ist.\\
+ Seien $f,g\in R\left[X\right]$ ist $q|fg$ in $R\left[X\right]$
+gegeben $\Rightarrow$ $q|fg$ in $Q\left[X\right]$ o. E.$\stackrel{q\in Q\left[X\right]}{\Rightarrow}$$q|f$
+in $Q\left[X\right]$.\\
+$\Rightarrow\left(*\right)f=qh$ in $Q\left[X\right]$, $h$ geeignet
+$\Rightarrow$ $\fall_{p\in\mathcal{P}}:0\stackrel{\left(q\text{ prim.}\right);\eqref{3.7i)}}{=}v_{p}\left(q\right)\stackrel{\left(*\right),\ref{}{3.3,iii)}}{=}-v_{p}\left(h\right)+\underbrace{v_{p}\left(f\right)}_{\ge0\left(\text{da }f\in R\left[X\right]\right)}$\\
+$\Rightarrow\fall_{p\in\mathcal{P}}:v_{p}\left(h\right)\ge0\stackrel{\ref{}3.3ii)}{\Rightarrow}h\in R\left[X\right]\Rightarrow f=qh$
+\underline{in $R\left[X\right]$} $\Rightarrow$ $q|f$ in $R\left[X\right]$.
+\end{itemize}
+\qqed $(q\in R\left[X\right]\text{ Primelement, iii)}\Rightarrow\text{ii)})$
+
+Zeige noch:
+
+Jedes $0\not=f\in R\left[X\right]\setminus R\left[X\right]^{*}$ (N.B.:
+$R\left[X\right]^{*}=R^{*}$) ist ein Produkt von Primelementen obiger
+Gestalt. (Dann folgt sowohl, dass $R\left[X\right]$ faktoriell ist,
+al auch die Implikation i)$\Rightarrow$ii)) Schreibe $f=a\cdot\tilde{f}$
+mit $a\in R,\tilde{f}\in R\left[X\right]$ primitiv (vgl. $\ref{}3.7,ii)$).
+Wegen $R$ faktoriell ist $a$ ein Produkt von Primelementen obeiger
+Gestalt, also sei ohne Einschränkung $f=\tilde{f}\in R\left[X\right]$
+primitiv.
+
+Sei nun $0\not=f\in R\left[X\right]$ primitiv. Schreibe
+\begin{align}
+f & =\prod_{i=1}^{n}f_{i}\stackrel{\ref{}3.7,i)}{=}a\cdot\prod_{i=1}^{n}\tilde{f}_{i}\qquad\text{mit }a\in Q^{*}\text{ und }\tilde{f}_{i}\in R\left[X\right]\text{ primitiv und prim in }Q\left[X\right]
+\end{align}
+
+
+in $Q\left[X\right]$ mit $f_{i}\in Q\left[X\right]$ prim. ($Q\left[X\right]$
+ist Hauptidealring, also faktoriell)
+
+$\Rightarrow\fall_{p\in\mathcal{P}}:v_{p}\left(a\right)\stackrel{(*,1.1?),3.3iii)}{=}\underbrace{v_{p}\left(f\right)}_{=0}-\sum_{i=1}^{n}\underbrace{v_{p}\left(\tilde{f}_{i}\right)}_{=0}=0\stackrel{\ref{}3.1}{\Rightarrow}a\in R^{*}=Q^{*}$
+und 
+\begin{align*}
+f & =\underbrace{\left(a\tilde{f}_{1}\right)}_{\text{primitiv, da }a\in R^{*}}\cdot\prod_{i=2}^{n}\tilde{f}_{i}
+\end{align*}
+
+
+Damit ist $f$ Produkt von primitiven Faktoren, die in $Q\left[X\right]$
+prim sind.
+
+\qqed
+
+
+\subsubsection*{Beispiel und Definition}
+
+Sei $k$ ein Körper. Dann heißt $k\left(X\right):=\text{Quot}\left(k\left[X\right]\right)=\left\{ \frac{f}{g}\bigg|f,g\in k\left[X\right],g\not=0\right\} $
+\emph{der Körper der rationalen Funktionen (in einer Variablen $X$
+über $k$).} Die $k$-Algebra $k\left[X,Y\right]:=\left(k\left[X\right]\right)\left[Y\right]$
+heißt \emph{der Polynomring in den Variablen $X,Y$ (über $k$).}
+
+Wegen $\ref{}3.8$ ist $k\left[X,Y\right]$ faktoriell.
+
+
+\subsubsection*{Behauptung}
+
+$f:=X^{3}+Y^{2}\in k\left[X,Y\right]$ ist irreduzibel.
+
+
+\subsubsection*{Beweis}
+
+Wegen $\ref{}3.8$ \quotedblbase{}prim $\Leftrightarrow$ irreduzibel\textquotedblleft{};
+setze $R:=k\left[X\right]$, dann ist $f\in R\left[Y\right]$ normiert
+vom Grad 2 ($f=Y^{2}+X^{3}\cdot Y^{0}$), also primitiv. Nach $\ref{}3.8$
+ist $f\in R\left[X,Y\right]$ Primelement $\Leftrightarrow$ $f\in\text{Quot}\left(R\right)\left[Y\right]=k\left(X\right)\left[Y\right]$
+irreduzibel ist. Wegen $\text{deg}\left(f\right)=2$ ist dies äquivalent
+dazu, dass $f$ keine Nullstelle in $k\left(X\right)$ hat, angenommen
+doch:
+\begin{align*}
+\exs_{\alpha\in k\left(X\right)}: & 0=f\left(\alpha\right)=\alpha^{2}+X^{3}\qquad\text{in }k\left(X\right)
+\end{align*}
+Aus $\ref{}3.5$ mit $h:=f,R:=k\left(X\right)$ folgt $\alpha\in k\left[X\right]$
+$\Rightarrow$ $-\alpha^{2}=X^{3}$ in $k\left(X\right)$ $\Rightarrow$
+$2\cdot\text{deg}\left(\alpha\right)=\deg\left(X^{3}\right)=3$ in
+$\mathbb{Z}$ $\lightning$$(\ref{}3.10)$set
+
+\newpage{}
+
+
+\section{Irreduzibilitätskriterien\label{sec:Irreduzibilit=0000E4tskriterien}}
+
+
+\subsubsection*{Fixiere in Abschnitt \ref{sec:Irreduzibilit=0000E4tskriterien} (\nameref{sec:Irreduzibilit=0000E4tskriterien})}
+
+Es sei $R$ ein faktorieller Ring und $Q:=\text{Quot}\left(R\right)$
+sein Quotientenkörper.
+
+
+\subsection{Proposition (Äquivalenz von prim in $R$ und $Q$)\label{sub:Prop-primRQ}}
+
+Sei $0\not=f\in Q\left[X\right]$. Dann sind äquivalent:
+
+\begin{iiilist}
+
+\iii Es gibt ein $\alpha\in Q^{*}$, sodass $\tilde{f}:=\alpha f\in R\left[X\right]$
+primitiv ist.
+
+\iii Folgende Aussagen sind äquivalent:
+
+\begin{abclist}
+
+\abc $\tilde{f}\in R\left[X\right]$ ist ein Primelement.
+
+\abc $f\in Q\left[X\right]$ ist ein Primelement.
+
+\end{abclist}
+
+\end{iiilist}
+
+
+\subsection{Bemerkung}
+
+Proposition \ref{sub:Prop-primRQ} führt die Untersuchung von Irreduzibilität
+von $Q\left[X\right]$ auf $R\left[X\right]$ zurück.
+
+
+\subsubsection*{Beweis von \ref{sub:Prop-primRQ}}
+
+TODO:
+
+\begin{iiilist}
+
+\iii $\ref{}$ ii)
+
+\iii b) $\stackrel{\alpha\in\left(Q\left[X\right]\right)^{*}}{\Leftrightarrow}$
+$\tilde{f}\in Q\left[X\right]$ prim $\stackrel{\ref{}3.8,a)\Leftrightarrow b)}{\Leftrightarrow}a)$
+
+\end{iiilist}
+
+\qqed
+
+
+\subsection{Satz\textmd{ (Reduktionskriterium)\label{sub:Satz-RedKrit}}}
+
+Seien $f=\sum_{i=0}^{d}a_{i}X^{i}\in R\left[X\right]$ und $p\in R$
+ein Primelement. Es gelte: $p\not|\, a_{d}$ und $d>0$.
+
+Sei $\pi:R\left[X\right]\rightarrow\left(\modulo{R}{\left(p\right)}\right)\left[X\right]$
+wie in $\ref{}3.2$.
+
+Ist dann $\pi\left(f\right)\in\left(\modulo{R}{\left(p\right)}\right)\left[X\right]$
+irreduzibel, so auch $f\in Q\left[X\right]$.
+
+Ist $f$ zusätzlich primitiv, so ist $f\in R\left[X\right]$ irreduzibel.
+
+(\quotedblbase{}keine Reduktionshomomorphismen auf $Q\left[X\right]$\textquotedblleft{}!)
+
+
+\subsection{Beispiel}
+
+Wähle in \ref{sub:Satz-RedKrit} zum Beispiel:
+
+\begin{iiilist}
+
+\iii $R=\mathbb{Z},p=3,f=2X\in R\left[X\right]$
+
+Dann ist $\pi\left(f\right)=-X\in\mathbb{F}_{3}\left[X\right]$ irreduzibel,
+also ist $2X\in\text{Quot}\left(R\right)\left[X\right]=\mathbb{Q}\left[X\right]$
+irreduzibel, aber $2X\in\mathbb{Z}\left[X\right]$ ist nicht irreduzibel,
+vgl. $\ref{}3.9$. (Hier ist $f$ nicht primitiv.)
+
+\iii 
+
+TODO: Rest einfügen
+
+\iii 
+
+\iii $f\left(X\right)=X^{4}+3X^{3}+X^{2}-2X+1\in\mathbb{Q}\left[X\right]$
+ist irreduzibel.
+
+\end{iiilist}
+
+
+\subsubsection*{Beweis}
+
+$f\in\mathbb{Z}\left[X\right]$ ist normiert. Wegen $\ref{}3.5$ und
+$f\left(\pm1\right)=4,2\not=0$ folgt:
+
+(1) $f$ besitzt keinen Linearfaktor in $\mathbb{Q}\left[X\right]$.
+
+Reduktion modulo $2$ liefert $\overline{f}:=\pi\left(f\right)=X^{4}+X^{3}+X^{2}+1\in\mathbb{F}_{2}\left[X\right]$.
+Offenbar gilt $\overline{f}\left(1\right)=0$, und Division liefert:
+\begin{align}
+\overline{f}=\left(X+1\right)\left(X^{3}+X+1\right) & \text{in }\mathbb{F}_{2}\left[X\right]\qquad(*)
+\end{align}
+
+
+Beide Faktoren sind irreduzibel, da sie keine Nullstellen und Grad
+$\le3$ haben. Also ist $(*)$ die Primfaktorzerledung von $\overline{f}\in\mathbb{F}_{2}\left[X\right]$.
+
+Wäre nun $f\in\mathbb{Q}\left[X\right]$ reduzibel, so wegen $\ref{}3.8$
+auch $f\in\mathbb{Z}\left[X\right]$, und wegen (1) müsste gelten
+$f=gh$ in $\mathbb{Z}\left[X\right]$ mit $\text{deg}\left(g\right)=\text{deg}\left(h\right)=2$
+$\Rightarrow$ $\overline{f}=\overline{g}\cdot\overline{h}$ in $\mathbb{F}_{2}\left[X\right]$
+mit $\text{deg}\left(\overline{g}\right),\text{deg}\left(\overline{h}\right)\le2$;
+wegen $\text{deg}\left(\overline{f}\right)=4$, also $\text{deg}\left(\overline{g}\right)=\text{deg}\left(\overline{h}\right)=2$.
+Wegen ({*}) besitzt aber $\overline{f}\in\mathbb{F}_{2}\left[X\right]$
+bis auf Assoziiertheit genau die Teiler $\left\{ 1,X+1,X^{3}+X+1,\overline{f}\right\} $,
+und keines dieser Polynome besitzt Grad 2. $\lightning$ zu Reduzibilitätsannahme.
+
+\qqed
+
+vii) Seien $p$ eine Primzahl und $F_{p}\left(X\right):=\left(X^{p}-1\right)/\left(X-1\right)=X^{p}+\ldots+1\in\mathbb{Z}\left[X\right]$
+wie in iii).
+
+Für $r\ge1$ setze $n:=p^{r}$ und $\zeta_{p^{r}}:=\text{exp}\left(\frac{2\pi\ii}{n}\right)$.
+Ferner:
+\begin{align*}
+F_{p^{r}}\left(X\right) & :=F_{p}\left(X^{p^{r-1}}\right)\in\mathbb{Z}\left[X\right]\qquad(*)
+\end{align*}
+
+
+(es folgt $\text{deg}\left(F_{p^{r}}\right)=\left(p-1\right)p^{r-1}=\varphi\left(p^{r}\right)$)
+
+Dann gilt: $F_{p^{r}}\left(X\right)=\text{Mipo}_{\mathbb{Q}}\left(\zeta_{p^{r}}\right)$
+
+
+\subsubsection*{Beweis}
+
+Wegen $X^{p}-1=\left(X-1\right)F_{p}\left(X\right)$ folgt durch Ersetzten
+von $X$ durch $X^{p^{r-1}}:X^{p^{r}}-1=\left(X^{p^{r-1}}-1\right)F_{p^{r}}\left(X\right)$
+
+Wegen $\zeta_{p^{r}}^{p^{r}}=1$ aber $\zeta_{p^{r}}^{p^{r-1}}\not=1$
+folgt $F_{p^{r}}\left(\zeta_{p^{r}}\right)=0$. Offenbar ist $F_{p^{r}}$
+normiert. Zeige nach analog zu iii), dass $f\left(X\right):=F_{p^{r}}\left(X+1\right)\in\mathbb{Z}\left[X\right]$
+Eisenstein bezüglich $p$ ist.
+
+Mit $F_{p^{r}}\left(X\right)$ ist auch $f\left(X\right)$ normiert,
+und für den konstanten Term gilt: $f\left(0\right)=F_{p^{r}}\left(1\right)\stackrel{\left(*\right)}{=}F_{p}\left(1\right)\stackrel{\text{iii)}}{=}p$
+
+Zeige noch, dass alle weiteren Koeffizienten von $f$ durch $p$ teilbar
+sind; durch Rechnen in $\modulo{\mathbb{Z}\left[X\right]}{\left(p\right)}\stackrel{\sim}{=}\mathbb{F}_{p}\left[X\right]$:
+\begin{align*}
+f\left(X\right) & \stackrel{\text{Def.}}{=}F_{p^{r}}\left(X+1\right)\stackrel{\left(*\right)}{=}F_{p}\left(\left(X+1\right)^{p^{r-1}}\right)\stackrel{!}{\equiv}F_{p}\left(X^{p^{r-1}}+1\right)\stackrel{F_{p}\left(X+1\right)\equiv X^{p-1}(\text{iii)})}{\equiv}X^{\left(p^{r-1}\right)\left(p-1\right)}\left(p\right)
+\end{align*}
+
+
+\qqed
+
+
+\subsubsection*{Bemerkung}
+
+Für alle $n,m\ge1$ gilt:
+\begin{align*}
+\left(\text{exp}\left(\frac{2\pi\ii}{n}\right)\right)^{m} & =1\Leftrightarrow n|m
+\end{align*}
+Das heißt $\zeta_{n}:=\text{exp}\left(\frac{2\pi\ii}{n}\right)\in\mathbb{C}^{*}$
+hat Ordnung $n$.
+
+TODO: Abb 1
+
+
+\subsubsection*{Beweis}
+
+$\zeta_{n}^{m}=\text{exp}\left(\frac{2\pi\ii}{n}\cdot m\right)$.
+Nach Analysis erfüllt der surjektive Homomorphismus
+\begin{align*}
+\text{exp}:\mathbb{C} & \twoheadrightarrow\mathbb{C}^{*}\\
+z & \mapsto e^{z}
+\end{align*}
+
+
+Also $\zeta_{n}^{m}=1\Leftrightarrow\frac{m}{n}\in\mathbb{Z}\Leftrightarrow n|m$
+
+\qqed
+
+TODO: Rest einfügen
+
+
+\subsection{???\label{sub:45}}
+
+\newpage{}
+
+
+\section{(Algebraische) Körpererweiterungen}
+
+
+\subsection{Proposition und Definition}
+
+\begin{iiilist}
+
+\iii
+
+Sei $R$ ein Integritätsring, dann existiert genau ein $p\in\mathbb{N}_{\ge0}$
+mit $\text{ker}\left(\mathbb{Z}\stackrel{\varphi}{\rightarrow}R\right)=\left(p\right)$
+(hier $\varphi$ eindeutiger Ringhomomorphismus); es gilt $p=0$ oder
+$p>0$ ist eine Primzahl. In jedem Fall heißt $p$ \emph{die Charakteristik
+von $R$}, in Zeichen: $\text{char}\left(R\right):=p$.
+
+\iii Sei $k=R$ wie in i) ein Körper. Dann $\exsg$ kleinster Teilkörper
+$Q\subseteq k$, und es gilt:
+\begin{align*}
+Q & \stackrel{\sim}{=}\begin{cases}
+\mathbb{Q} & \text{falls }\text{char}\left(k\right)=0\\
+\mathbb{F}_{p} & \text{falls }\text{char}\left(k\right)>0
+\end{cases}
+\end{align*}
+$Q\subseteq k$ heißt der \emph{Primkörper von $k$.}
+
+\end{iiilist}
+
+
+\paragraph*{Beweis}
+
+\begin{iiilist}
+
+\iii $\modulo{\mathbb{Z}}{\left(p\right)}\hookrightarrow R$ Unterring
+$\Rightarrow\modulo{\mathbb{Z}}{\left(p\right)}$ Integritätsring
+$\stackrel{\text{LA II}}{\Rightarrow}$ $p=0$ oder $p>0$ Primzahl.
+
+\iii Ist in i) $R=k$ ein Körper, so erhalte Ringhomomorphismus: 
+
+TODO: Abb 2
+
+Es ist klar, dass $Q\subseteq k$ der kleinste Teilkörper ist, und
+man erhält für 
+\begin{align*}
+p=0: & \,\, Q\stackrel{\sim}{=}\text{Quot}\bigg(\underbrace{\modulo{\mathbb{Z}}{\left(p\right)}}_{\stackrel{\sim}{=}\mathbb{Z}}\bigg)\stackrel{\sim}{=}\mathbb{Q}\\
+p>0: & \,\, Q\stackrel{\sim}{=}\text{Quot}\bigg(\underbrace{\modulo{\mathbb{Z}}{\left(p\right)}}_{\stackrel{\sim}{=}\mathbb{F}_{p}}\bigg)\stackrel{\sim}{=}\mathbb{F}_{p}
+\end{align*}
+
+
+\end{iiilist}
+
+
+\subsection{Definition und Beispiel}
+
+Eine \emph{Körpererweiterung} ist ein Ringhomomorphismus $k\hookrightarrow E$,
+bei dem $k$ und $E$ Körper sind. Es folgt $\text{char}\left(k\right)=\text{char}\left(E\right)$,
+denn $k\hookrightarrow E$ ist injektiv.
+
+TODO: Abb 3
+
+
+\paragraph*{Bemerkung }
+
+Für den Ringhomomorphismus von Integritätsringen $\mathbb{Z}\rightarrow\mathbb{F}_{p}$
+gilt $\text{char}\left(\mathbb{Z}\right)=0\not=p=\text{char}\left(\mathbb{F}_{p}\right)$.
+
+
+\subsection{Proposition und Definition}
+
+Sei $k$ ein Körper mit $\text{char}\left(k\right)=p>0$.
+
+\begin{iiilist}
+
+\iii ${\displaystyle \fall_{x,y\in k},n\ge1:\left(x+y\right)^{p^{n}}=x^{p^{n}}+y^{p^{n}}}$
+in $k$.
+
+\iii Die Abbildung $\text{Frob}_{k}:k\hookrightarrow k,\text{Frob}_{k}\left(x\right):=x^{p}$
+ist ein injektiver Ringhomomorphismus, \emph{der Frobenius von $k$.}
+
+\iii $k$ endlich $\Rightarrow$ $\text{Frob}_{k}:k\stackrel{\sim}{\rightarrow}k$
+Isomorphismus
+
+\iii $\text{Frob}_{k}=\text{id}_{k}\Leftrightarrow k=\mathbb{F}_{p}$
+
+\end{iiilist}
+
+
+\paragraph*{Beweis}
+
+\begin{iiilist}
+
+\iii bekannt
+
+\iii klar sind $\text{Frob}_{k}\left(0\right)=0,\text{Frob}_{k}\left(1\right)=1,\text{Frob}_{k}\left(x\cdot y\right)=\text{Frob}_{k}\left(x\right)\cdot\text{Frob}_{k}\left(y\right)$
+und $\text{Frob}_{k}\left(x+y\right)=\text{Frob}_{k}\left(x\right)+\text{Frob}_{k}\left(y\right)$
+folgt aus i) für $n=1$. Damit ist $\text{Frob}_{k}:k\rightarrow k$
+ein Ringhomomorphismus, und $\text{Frob}_{k}\left(x\right)=x^{p}=0$
+$\stackrel{k\text{ Körper}}{\Leftrightarrow}$$x=0$ $\Rightarrow$
+$\text{Frob}_{k}$ injektiv.
+
+\iii Jede injektive Selbstabbildung, wie zum Beispiel $\text{Frob}_{k}$,
+einer endlichen Menge, wie zum Beispiel $k$, ist surjektiv.
+
+\iii \quotedblbase{}$\Leftarrow$\textquotedblleft{}: $\fall_{x\in\mathbb{F}_{p}}:\text{Frob}_{\mathbb{F}_{p}}\left(x\right)-x=x^{p}-x=x\left(x^{p-1}-1\right)=0$
+(klar für $x=0$ und für $x\in\mathbb{F}_{p}^{*}$ gilt $x^{p-1}=1$
+nach $\ref{}1.26,ii)$)
+
+\quotedblbase{}$\Rightarrow$\textquotedblleft{}: Dann ist nach Voraussetzung
+$\text{char}\left(k\right)=p\stackrel{\ref{}5.1}{\Rightarrow}\mathbb{F}_{p}\subseteq k$
+Primkörper. Für alle $x\in k$ folgt: $0=\text{Frob}_{k}\left(x\right)-x=X^{p}-x$
+und das Polynom $T^{p}-T\in\mathbb{F}_{p}\left[T\right]$ hat höchstens
+$p$ Nullstellen in $k$; jedes $x\in\mathbb{F}_{p}\subseteq k$ ist
+aber eine Nullstelle nach Beweis von \quotedblbase{}$\Leftarrow$\textquotedblleft{},
+also gilt $k\subseteq\mathbb{F}_{p}$.
+
+\end{iiilist}
+
+\qqed
+
+
+\paragraph*{Proposition und Definition}
+
+Sei $k\subseteq E$ eine Körpererweiterung. Dann ist $E$ insbesondere
+eine $k$-Algebra und insbesondere ein $k$-Vektorraum.
+
+Ein $\alpha\in E$ heißt \emph{algebraisch über $k$} :$\Leftrightarrow$
+$\exs0\not=f\in k\left[X\right]:f\left(\alpha\right)=0$ in $E$.
+(sonst heißt $\alpha$ \emph{transzendent über $k$}) Falls $\alpha$
+algebraisch ist, ist $\text{Mipo}_{k}\left(\alpha\right)\in k\left[X\right]$
+und ist das eindeutige normierte, irreduzible Polynom in $k\left[X\right]$,
+das $\alpha$ annulliert. Ein Körper $K$ mit $k\subseteq K\subseteq E$
+heißt \emph{Zwischenkörper} (der Körpererweiterung $k\subseteq E$)
+
+
+\subsection{Definition}
+
+Sei $k\subseteq E$ eine Körpererweiterung. Dann heißt $\left[E:k\right]:=\text{dim}_{k}\left(E\right)\in\left(\mathbb{N}\setminus\left\{ 0\right\} \right)\cup\left\{ \infty\right\} $
+\emph{der Grad von $E$ über $k$} (schreibe $\modulo{E}{k}$ für
+\quotedblbase{}$E$ über $k$\textquotedblleft{})
+
+
+\subsection{(Grad-)Satz}
+
+$k\subseteq K\subseteq E$ eine Körpererweiterung $\left[E:k\right]=\left[E:K\right]\cdot\left[K:k\right]$
+
+TOOD Rest
+
+\begin{comment}
+22.11.2011
+\end{comment}
+
+
+
+\subsection{Beispiel}
+
+Es sind $\mathbb{Q}\subseteq\overline{\mathbb{Q}}^{\mathbb{C}}:=\left\{ \alpha\in\mathbb{C}|\alpha\text{ ist algebraisch über }\mathbb{Q}\right\} \subseteq\mathbb{C}$
+Körpererweiterung.
+
+Wegen $\ref{}5.14$,d)$\Rightarrow$c) ist $\modulo{\overline{\mathbb{Q}}^{\mathbb{C}}}{\mathbb{Q}}$
+algebraisch. Nach dem Beweis von $\ref{}5.7,iv)$ gilt $\left[\overline{\mathbb{Q}}^{\mathbb{C}}:\mathbb{Q}\right]=\infty$
+(N.B.: $\mathbb{Q}\left[2^{\frac{1}{n}}\right]\subseteq\overline{\mathbb{Q}}^{\mathbb{C}}$)
+
+Also ist wegen $\left(\ref{}5.14,b)\Rightarrow a)\right)$ $\modulo{\overline{\mathbb{Q}}^{\mathbb{C}}}{\mathbb{Q}}$
+nicht endlich erzeugt.
+
+\newpage{}
+
+
+\section{Der algebraische Abschluss eines Körpers}
+
+
+\subsection{Proposition und Definition}
+
+Für einen Körper $k$ sind folgende Aussagen äquivalent:
+
+\begin{iiilist}
+
+\iii Jedes $f\in k\left[X\right]$ mit $\text{deg}\left(f\right)\ge1$
+besitzt eine Nullstelle in $k$.
+
+\iii Jedes irreduzible $f\in k\left[X\right]$ ist linear.
+
+\iii Jedes $f\in k\left[X\right]$ mit $\text{deg}\left(f\right)\ge1$
+ist ein Produkt linearer Polynome.
+
+\iii Für alle algebraischen Körpererweiterungen $\modulo{E}{k}$
+gilt $E=k$.
+
+\end{iiilist}
+
+Gelten i) bis iv), so heißt $k$ \emph{algebraisch abgeschlossen}.
+
+
+\paragraph*{Beweis}
+
+i)$\Rightarrow$ii)$\Rightarrow$iii) sind klar, iii)$\Rightarrow$iv):
+Seien $\alpha\in E$ und $f:=\text{Mipo}_{k}\left(\alpha\right)$.
+Wegen $f$ irreduzibel folgt aus iii) $\text{deg}\left(f\right)=1$,
+also $\alpha\in k$.
+
+iv)$\Rightarrow$i): Sei $f\in k\left[X\right]$ mit $\text{deg}\left(f\right)\ge1$.
+Es existiert ein $g\in k\left[X\right]$ irreduzibel:
+\begin{align}
+g|f & \qquad(*)
+\end{align}
+
+
+Nach $\ref{}5.7$ ist $k\subseteq E:=\modulo{k\left[X\right]}{\left(g\right)}$
+eine endliche (und damit algebraische) Körpererweiterung, und offenbar
+ist $\alpha:=\left(X+\left(g\right)\right)\in E$ eine Nullstelle
+von $g$. Nach iv) gilt $k=E$, also besitzt $g$, wegen $\ref{}(*)$
+also auch $f$, eine Nullstelle in $k$.
+
+\qqed
+
+
+\subsection{Proposition und Definition}
+
+Seien $\mathfrak{X}$ eine Menge und für jede endliche Teilmenge $\mathfrak{X}\supseteq\mathfrak{X}'=\left\{ X_{1},\ldots,X_{n}\right\} $
+sei $k\left[\mathfrak{X}'\right]:=k\left[X_{1},\ldots,X_{n}\right]$.
+Dann heißt
+\begin{align}
+k\left[\mathfrak{X}\right]:=\bigcup_{\mathfrak{X}'\subseteq\mathfrak{X}\text{ endlich}}k\left[\mathfrak{X}'\right] & \qquad(+)
+\end{align}
+
+
+\emph{der Polynomring in den Variablen $\mathfrak{X}$ über $k$}.
+
+Er besitzt folgende universelle Eigenschaft: Für jede kommutative
+$k$-Algebra $A$ ist die Abbildung von Mengen
+\begin{align*}
+\text{Hom}_{k\text{-Alg.}}\left(k\left[\mathfrak{X}\right],A\right) & \stackrel{\sim}{\to}A^{\mathfrak{X}},\varphi\mapsto\left(\mathfrak{X}\ni x\mapsto\varphi\left(x\right)\right)
+\end{align*}
+bijektiv.
+
+
+\paragraph*{Beweis}
+
+Wegen $\left(\ref{}+\right)$ ist die Abbildung
+\begin{align*}
+\text{Hom}_{k\text{-Alg.}}\left(k\left[\mathfrak{X}\right],A\right) & \stackrel{\sim}{\to}\left\{ \left(\varphi_{\mathfrak{X}'}\right)_{\mathfrak{X}'\subseteq\mathfrak{X}\text{ endl.}}\bigg|\fall_{\mathfrak{X}'\subseteq\mathfrak{X}''\subseteq\mathfrak{X}\text{ endl.}}\varphi_{\mathfrak{X}''}\big|_{k\left[\mathfrak{X}'\right]}=\varphi_{\mathfrak{X}'}\right\} 
+\end{align*}
+bijektiv, wobei $\varphi_{\mathfrak{X}'}\in\text{Hom}_{k\text{-Alg.}}\left(k\left[\mathfrak{X}\right],A\right)$.
+
+Wegen $\ref{}5.11$ ist folgende Abbildung bijektiv:
+\begin{align*}
+\text{Hom}_{k\text{-Alg.}}\left(k\left[\mathfrak{X}\right],A\right) & \stackrel{\sim}{\to}\left\{ \left(f_{\mathfrak{X}'}\right)_{\mathfrak{X}'\subseteq\mathfrak{X}\text{ endl.}}\bigg|f_{\mathfrak{X}'}:\mathfrak{X}'\to A;\fall_{\mathfrak{X}'\subseteq\mathfrak{X}''\subseteq\mathfrak{X}\text{ endl.}}f_{\mathfrak{X}''}\big|_{\mathfrak{X}'}=f_{\mathfrak{X}'}\right\} =:\Sigma
+\end{align*}
+
+
+Es ist klar, dass die Abbildung
+\begin{align*}
+\text{Abb}\left(\mathfrak{X},A\right) & \stackrel{\sim}{\to}\Sigma,f\mapsto\left(f_{\mathfrak{X}'}:=f\big|_{\mathfrak{X}'}\right)_{\mathfrak{X}'\subseteq\mathfrak{X}\text{ endl.}}
+\end{align*}
+bijektiv ist, und man prüft dass die resultierende Bijektion $\text{Hom}_{k\text{-Alg.}}\left(\mathfrak{X},A\right)\stackrel{\sim}{\to}\text{Abb}\left(\mathfrak{X},A\right)$
+wie angegeben ist.
+
+\qqed
+
+
+\subsection{Das Lemma von Zorn}
+
+
+\subsubsection{Definition}
+
+Eine \emph{teilweise geordnete Menge} ist ein Tupel $\left(M,\le\right)$
+wobei $M$ eine Menge und $\le$ eine Relation auf $M$ sind, so dass
+gelten: $\fall_{x,y,z\in M}$
+
+\begin{iiilist}
+
+\iii $x\le x$
+
+\iii $\left(x\le y\wedge y\le z\right)\Rightarrow\left(x\le z\right)$
+
+\iii $\left(x\le y\wedge y\le x\right)\Rightarrow\left(x=y\right)$
+
+\end{iiilist}
+
+$\left(M,\le\right)$ heißt \emph{total geordnet} genau dann, wenn
+${\displaystyle \fall_{x,y\in M}x\le y\vee y\le x}$ gilt.
+
+$x\in M$ heißt \emph{maximales Element} genau dann, wenn ${\displaystyle \fall_{y\in M}:x\le y\Rightarrow x=y}$.
+
+Für eine Teilmenge $N\subseteq M$ heißt $x\in M$ \emph{obere Schranke
+für $N$} genau dann, wenn ${\displaystyle \fall_{y\in N}y\le x}$.
+
+
+\subsubsection{Beispiel}
+
+Seien $R$ ein kommutativer Ring, $M:=\left\{ I|I\subsetneq R\text{ Ideal}\right\} $
+und $I\le J:\Leftrightarrow I\subseteq J$. Dann ist $\left(M,\le\right)$
+teilweise geordnet, aber im Allgemeinen nicht total geordnet, zum
+Beispiel für $R=\mathbb{Z},\left(2\right),\left(3\right)\in M$, und
+weder $\left(2\right)\le\left(3\right)$ noch $\left(3\right)\le\left(2\right)$.
+
+
+\subsubsection{Satz\textmd{ (Lemma von Zorn)}}
+
+Sei $\left(M,\le\right)$ eine teilweise geordnete Menge, $M\not=\emptyset$
+und jede total geordnete Teilfolge $N\subseteq M$ besitze eine obere
+Schranke. Dann besitzt $M$ ein maximales Element.
+
+
+\paragraph*{(ohne Beweis)}
+
+äquivalent zum Auswahlaxiom
+\begin{align*}
+\emptyset\not=I\text{ Menge}, & \fall_{i\in I}:\emptyset\not=X_{i}\Rightarrow\prod_{i\in I}X_{i}\not=\emptyset
+\end{align*}
+
+
+
+\subsubsection{Beispiel}
+
+Sei $\left(M,\le\right)$ wie in $\ref{}6.3.2$ für $R\not=\left\{ 0\right\} $.
+Dann ist $\left\{ 0\right\} \in M$, also $M\not=\emptyset$.
+
+Sei $N\subseteq M$ total geordnet.
+
+
+\paragraph*{Behauptung}
+
+${\displaystyle J:=\bigcup_{I\in N}I\subsetneq R}$ ist ein Ideal
+($\Rightarrow J\in M$ ist eine obere Schranke für $N$)
+
+
+\paragraph*{Beweis}
+\begin{enumerate}
+\item $x\in J$ und $a\in R$ $\Rightarrow$ ${\displaystyle \exs_{I\in N}}:x\in I$
+$\Rightarrow$ ${\displaystyle \exs_{I\subseteq J}}$
+\item $x,y\in J\Rightarrow\exs_{I_{1},I_{2}\in N}:x\in I_{1},y\in I_{2}$\\
+Weil $N$ total geordnet ist, gilt $I_{1}\subseteq I_{2}$ oder $I_{2}\subseteq I_{1}$.
+Durch eventuelles Vertauschen von $x$ und $y$ sei ohne Einschränkung
+$I_{1}\subseteq I_{2}$ $\Rightarrow$ $x,y\in I_{2}\Rightarrow x+y\in I_{2}\subseteq J$.
+Also ist $J\subseteq R$ ein Ideal.
+\end{enumerate}
+Wäre $J=R$, so folgt ${\displaystyle 1\in J=\bigcup_{I\in N}I}\Rightarrow\exs_{I\in N}1\in I\Rightarrow I=R\lightning$
+zu $I\in M$, das heißt $I\subsetneq R$.
+
+Damit erfüllt $\left(M,\le\right)$ alle Voraussetzungen von $\ref{}6.3.3$
+und es folgt:
+
+
+\subsubsection{6.3.4 Satz}
+
+$R\not=\left\{ 0\right\} $ kommutativer Ring $\Rightarrow\exs_{\mathfrak{m}\subseteq R\text{ max. Ideal}}$
+
+
+\subsection{Satz und Definition \textmd{(algebraischer Abschluss)}}
+
+Sei $k$ ein Körper. Dann existieren eine algebraische Körpererweiterung
+$k\subseteq\overline{k}$ mit $\overline{k}$ algebraisch abgeschlossen.
+Jedes solches $\overline{k}$ heißt \emph{ein abgebraischer Abschluss
+von $k$.}
+
+
+\paragraph*{Bemerkung}
+
+Die Notation $\overline{k}$ wird später durch $\ref{}6.7$ gerechtfertigt.
+
+
+\paragraph*{Beweis von $\ref{}6.4$\textmd{ (E. Artin)}}
+
+Setze $I:=\left\{ f\in k\left[X\right]|\text{deg}\left(f\right)\ge1\right\} ,\,\,\mathfrak{X}:=\left\{ X_{f}|f\in I\right\} $,
+und betrachte das Ideal
+\begin{align*}
+k\left[\mathfrak{X}\right]\supseteq I & :=\left(f\left(X_{f}\right)|f\in I\right)
+\end{align*}
+
+
+
+\paragraph*{Behauptung}
+
+$I\not=k\left[\mathfrak{X}\right]$
+
+
+\paragraph*{Beweis}
+
+Sonst gilt $1\in I\Rightarrow$ 
+
+\begin{align}
+1= & {\displaystyle \sum_{i=1}^{n}g_{i}\cdot f_{i}\left(X_{fi}\right)}\qquad(1)
+\end{align}
+mit $n\ge1$, $g_{i}\in k\left[\mathfrak{X}\right]$ und $f_{i}\in I$
+geeignet. Aus $\ref{}5.7,i)$ induktiv angewand auf alle irreduziblen
+Teiler von $f_{1},\ldots,f_{n}$ folgt ${\displaystyle \exs_{k\subseteq K\text{ endl. KE}}\exs_{\alpha_{1},\ldots,\alpha_{n}\in K}}$:
+\begin{align}
+f_{i}\left(\alpha_{i}\right)=0 & \fall_{1\le i\le n}\qquad\left(2\right)
+\end{align}
+
+
+Wegen $\ref{}6.2$ existiert ein $k$-Algebra-Homomorphismus $\phi:k\left[X\right]\to k$
+mit $\left(\ref{}3\right)$ ${\displaystyle \fall_{1\le i\le n}}\phi\left(X_{f_{I}}\right)=\alpha_{i}$,
+und es folgt in $K$:
+\begin{align*}
+1 & =\phi\left(1\right)\stackrel{\left(\ref{}1\right)}{=}\sum_{i=1}^{n}\phi\left(g_{i}\right)\cdot\underbrace{\phi\left(f_{i}\left(X_{f_{i}}\right)\right)}_{=f_{i}\left(\underbrace{\phi\left(X_{f_{i}}\right)}_{=\alpha_{i}}\right)}\stackrel{\left(\ref{}2\right)}{=}0\lightning
+\end{align*}
+\qqed
+
+Wegen Behauptung ist $\modulo{k\left[\mathfrak{X}\right]}{I}\not=\left\{ 0\right\} \stackrel{\ref{}6.3.4}{\Rightarrow}$
+es existiert ein maximales Ideal $\mathfrak{m}\subseteq\modulo{k\left[\mathfrak{X}\right]}{I}$.
+Erhalte eine Körpererweiterung $\overline{k}\supseteq k$ als Komposition
+$k\hookrightarrow k\left[\mathfrak{X}\right]\twoheadrightarrow\modulo{k\left[\mathfrak{X}\right]}{I}\twoheadrightarrow\underbrace{\modulo{\modulo{k\left[\mathfrak{X}\right]}{I}}{\mathfrak{m}}}_{=:\overline{k}}$.
+
+
+\subparagraph*{Zeige noch:}
+
+\begin{iiilist}
+
+\iii $\modulo{\overline{k}}{k}$ ist algebraisch.
+
+\iii $\overline{k}$ ist algebraisch abgeschlossen.
+
+\end{iiilist}
+
+
+\paragraph*{Beweis}
+
+Die $k$-Algebra $\overline{k}$ wird durch die Bilder $\alpha_{f}\in\overline{k}$
+der $X_{f}\left(f\in I\right)$ erzeugt. Für jedes $f\in I$ gitl
+wegen $f\left(X_{f}\right)\in I$:
+
+$f\left(\alpha_{f}\right)=0$ in $\overline{k}$, das heißt nach Definition
+von $I$: Jedes $f\in k\left[X\right]$ mit $\text{deg}\left(f\right)\ge1$
+besitzt Nullstelle in $k$.
+
+Damit folgt ii) aus $\ref{}6.1,i)$. (Nicht ganz!!!TODO:später mehr)
+
+Teil i) folgt aus $\ref{}5.14,d)\Rightarrow e)$.
+
+
+\subsection{Notation und Bemerkung}
+
+Sei $z:K\to L$ ein Körperhomomorphismus. Schreibe für alle $f=\sum a_{i}X^{i}\in k\left[X\right]:f^{\sigma}:=\sum\sigma\left(a_{i}\right)X^{i}\in L\left[X\right]$.
+
+Dann gilt $\fall_{\alpha\in k}\sigma\left(f\left(\alpha\right)\right)=\sigma\left(\sum a_{i}\alpha^{i}\right)=\sum\sigma\left(a_{i}\right)\cdot\sigma\left(\alpha\right)^{i}=f^{\sigma}\left(\sigma\left(\alpha\right)\right)$
+. Insbesondere:
+
+\begin{align*}
+\fall_{\alpha\in k} & f\left(\alpha\right)=0\Rightarrow f^{\sigma}\left(\sigma\left(\alpha\right)\right)=0
+\end{align*}
+
+
+TODO: Rest
+
+
+\subsection{Lemma\label{sub:Lem-homkalg}}
+
+\newpage{}
+
+
+\section{Zerfällungskörper}
+
+
+\subsection*{Definition \textmd{($k$-Homomorphismus)}}
+
+$k$\emph{-Homomorphismus} ($=:$ \quotedblbase{}$k$-Homomorphismus\textquotedblleft{})
+$:\Leftrightarrow$ $k$-Algebra-Homomorphismus ($\not=$ $k$-lineare
+Abbildung)
+
+Fixiere: $k$ Körper, $\emptyset\not=\mathcal{F}\subseteq\left\{ f\in k\left[X\right]|\text{deg}\left(f\right)\ge1\right\} $
+
+
+\subsection{Definition \textmd{(Zerfällungskörper)\label{sub:Def-ZK}}}
+
+Ein \emph{Zerfällungskörper von $\mathcal{F}$} ist eine Körpererweiterung
+$E\supseteq k$:
+
+\begin{iiilist}
+
+\iii ${\displaystyle \fall_{f\in\mathcal{F}}}$ gilt in ${\displaystyle E\left[X\right]:f=\alpha\cdot\prod_{i=1}^{n}\left(X-\alpha_{i}\right)}$
+mit $n\ge1$, $\alpha,\alpha_{i}\in E$ geeignet, das heißt: $f$
+zerfällt über $E$ in Linearfaktoren.
+
+\iii ${\displaystyle E=k\left(\alpha|\alpha\in E\wedge\exs_{f\in\mathcal{F}}f\left(\alpha\right)=0\right)}$,
+das heißt $\modulo{E}{k}$ wird von den Nullstellen der $f\in\mathcal{F}$
+erzeugt.
+
+\end{iiilist}
+
+
+\subsection{Beispiel\label{sub:Bsp-ZK}}
+
+Wähle $k=\mathbb{Q}$, $\mathcal{F}=\left\{ f\right\} $ mit $f:=X^{3}-2\in\mathbb{Q}\left[X\right]$
+und $k=\mathbb{Q}\subseteq E:=\mathbb{Q}\left(\alpha\right)$ mit
+$\alpha^{3}=2$ (vergleiche $\ref{}5.7,i)$).
+
+Dann hat $f$ eine Nullstelle in $E$ (nämlich $\alpha$), und in
+$E\left[X\right]$ gilt:
+\begin{align}
+f & =\left(X-\alpha\right)\cdot\left(X^{2}+\alpha X+\alpha^{2}\right)\qquad(*)\label{eq:strn}
+\end{align}
+
+
+Hätte $f$ eine weitere Nullstelle $\beta\not=\alpha$ in $E$, so
+folgte ${\displaystyle \left(\frac{\beta}{\alpha}\right)^{3}=\frac{2}{2}=1}$,
+also ${\displaystyle 1\not=\zeta:=\frac{\beta}{\alpha}\in E:\zeta^{3}=1}$.
+
+$\stackrel{\ref{}4.5,iii)}{\Rightarrow}$
+\begin{align*}
+\text{Mipo}_{\mathbb{Q}}\left(\zeta\right) & =X^{2}+X+1\\
+\Rightarrow\quad\left[\mathbb{Q}\left(\zeta\right):\mathbb{Q}\right] & =2
+\end{align*}
+Wegen $\zeta\in E$ erhalte Körperturm erhalte Körperturm $\mathbb{Q}\subseteq\mathbb{Q}\left(\zeta\right)\subseteq E$
+und es folgt der Widerspruch:
+\begin{align*}
+\underbrace{\left[E:\mathbb{Q}\right]}_{=3} & =\underbrace{\left[E:\mathbb{Q}\left(\zeta\right)\right]}_{\in\mathbb{Z}}\cdot\underbrace{\left[\mathbb{Q}\left(\zeta\right):\mathbb{Q}\right]}_{=2}
+\end{align*}
+
+
+Also ist \eqref{eq:strn} die Primfaktorzerlegung von $f$ in $E\left[X\right]$,
+denn:
+
+$g\in E\left[X\right]$ ist irreduzibel, sonst gäbe es ein $\beta\in E$
+mit $g\left(\beta\right)=0$, woraus $\beta=\alpha=0$ und der Widerspruch
+\begin{align*}
+0 & =g\left(\alpha\right)=3\alpha^{2}\left(=f'\left(\alpha\right)\right)\not=0
+\end{align*}
+folgt (siehe oben).
+
+Insbesondere zerfällt $f$ über $E$ nicht in Linearfaktoren, das
+heißt $E$ ist kein Zerfällungskörper von 
+
+TODO: Rest einfügen
+
+
+\subsection{Satz \textmd{(Existenz und Eindeutigkeit von Zerfällungskörpern)\label{sub:Satz-eeZK}}}
+
+\begin{iiilist}
+
+\iii Es existiert ein Zerfällungskörper $E\supseteq k$ von $\mathcal{F}$.
+
+\iii Seien $E_{1}\supseteq k$, $E_{2}\supseteq k$ Zerfällungskörper
+von $\mathcal{F}$ und $\overline{\sigma}:E_{1}\hookrightarrow\overline{E}_{2}$
+ein $k$-Homomorphismus. Dann gilt $\overline{\sigma}\left(E_{1}\right)=E_{2}$,
+also $\overline{\sigma}:\left(E_{1}\stackrel{\sim}{\rightarrow}E_{2}\hookrightarrow\right)$.
+
+\iii $E_{i}\supseteq k$ ist ein Zerfällungskörper von $\mathcal{F}$
+($i=1,2$) $\Rightarrow$ ${\displaystyle \exs_{k\text{-Iso.}}\phi:E_{1}\stackrel{\sim}{\to}E_{2}}$.
+
+\end{iiilist}
+
+
+\paragraph*{Beweis}
+
+\begin{iiilist}
+
+\iii Wähle einen algebraischen Abschluss $\overline{k}\supseteq k$
+($\ref{}$?6.4) und setze ${\displaystyle E:=k\left(\alpha|\alpha\in\overline{k}\wedge\exs_{f\in\mathcal{F}}f\left(\alpha\right)=0\right)}$.\\
+Wegen \ref{asdf}6.1 ii) ist dann $\modulo{E_{i}}{k}$ ein Zerfällungskörper
+von $\mathcal{F}$.
+
+\qqed[i)]
+
+\iii Weil $\modulo{E_{i}}{k}$ ein Zerfällungskörper von $\mathcal{F}$
+ist, gilt mit ${\displaystyle \mathcal{N}_{i}:=\left\{ \alpha\in E_{i}\left|\exs_{f\in\mathcal{F}}f\left(\alpha\right)=0\right.\right\} }$
+für $i\in\left\{ 1,2\right\} $:
+\begin{align}
+E_{i} & =k\left(\mathcal{N}_{i}\right)\label{eq:z1}
+\end{align}
+Damit folgt:
+
+\begin{align}
+\overline{\sigma}\left(E_{1}\right) & =k\left(\overline{\sigma}\left(\mathcal{N}_{1}\right)\right)\label{eq:z2}
+\end{align}
+
+\begin{description}
+\item [{Behauptung:}] \hspace*{1mm}
+\begin{align}
+\overline{\sigma}\left(\mathcal{N}_{1}\right) & \subseteq\mathcal{N}_{2}\label{eq:z3}
+\end{align}
+
+\item [{Beweis:}] Weil $\alpha\in\mathcal{N}_{1}$ ist, gibt es ein $f\in\mathcal{F}$
+mit $f\left(\alpha\right)=0$, womit folgt: 
+\begin{align*}
+0 & =\overline{\sigma}\left(0\right)=\overline{\sigma}\left(f\left(\alpha\right)\right)=\underbrace{f^{\overline{\sigma}}}_{=f}\left(\overline{\sigma}\left(\alpha\right)\right)
+\end{align*}
+Daher ist $\overline{\sigma}\left(\alpha\right)\in\mathcal{N}_{2}$.\\
+\qqed[Behauptung]
+\end{description}
+Dabei ist $f^{\overline{\sigma}}=f$ ,da $f\in k\left[X\right]$ und
+$\overline{\sigma}|_{k}=\text{id}_{k}$.
+
+Es folgt:
+\begin{align*}
+k & \subseteq\overline{\sigma}\left(E_{1}\right)\stackrel{\ref{eq:z2}}{=}k\left(\overline{\sigma}\left(\mathcal{N}_{1}\right)\right)\stackrel{\ref{eq:z3}}{\subseteq}k\left(\mathcal{N}_{2}\right)\stackrel{\ref{eq:z1}}{=}E_{2}
+\end{align*}
+Und da sowohl $\modulo{\overline{\sigma}\left(E_{1}\right)}{k}$,
+als auch $\modulo{E_{2}}{k}$ Zerfällungskörper von $\mathcal{F}$
+sind, gilt sogar $\overline{\sigma}\left(E_{1}\right)=E_{2}$.
+
+\qqed[ii)]
+
+\iii Nach $\ref{}6.7$ mit $k':=E_{1}$ und $L:=\overline{E}_{2}$
+existiert $\overline{\sigma}$ $\left(=\sigma\text{ in }\ref{}6.7\right)$
+wie in ii). (N.B.: $\modulo{E}{k}$ Zerfällungskörper $\Rightarrow$
+$\modulo{E}{k}$ algebraisch)
+
+\end{iiilist}
+
+
+\subsection{Satz und Definition \textmd{(normale Körpererweiterung)\label{sub:SuD-normKE}}}
+
+Für eine algebraische Körpererweiterung $E\supseteq k$ ist äquivalent:
+
+\begin{iiilist}
+
+\iii Jeder $k$-Homomorphismus $\overline{\sigma}:E\to\overline{E}$
+erfüllt $\overline{\sigma}\left(\overline{E}\right)=E$.
+
+\iii Es existiert eine nicht-leere Teilmenge $F\subseteq\left\{ f\in k\left[X\right]|\text{deg}\left(f\right)\ge1\right\} $
+so, dass $\modulo{E}{k}$ ein Zerfällungskörper von $F$ ist.
+
+\iii Für alle irreduziblen Polynome $f\in k\left[X\right]$ gilt:
+\begin{align*}
+\left(\exs_{\alpha\in E}f\left(\alpha\right)=0\right) & \Rightarrow\left(f\text{ zerfällt über }E\text{ in Linearfaktoren}\right)
+\end{align*}
+In diesem Fall heißt $\modulo{E}{k}$ \emph{normal}.
+
+\end{iiilist}
+
+
+\paragraph*{Beweis von \ref{sub:SuD-normKE}}
+\begin{itemize}
+\item i) $\Rightarrow$ iii): Da $f$ über $\overline{E}$ in Linearfaktoren
+zerfällt, zeige nur: $\beta\in\overline{E},f\left(\beta\right)=0\Rightarrow\beta\in E$.
+Wegen $f$ irreduzibel und ohne Einschränkung normiert ist $f=\text{Mipo}_{k}\left(\alpha\right)=\text{Mipo}_{k}\left(\beta\right)$
+$\stackrel{\ref{}5.7\text{ i)}}{\Rightarrow}$ $\exs_{k\text{-Iso}}\varphi:k\left(\alpha\right)\stackrel{\sim}{\to}k\left(\beta\right),\varphi\left(\alpha\right)=\beta$.\\
+Betrachte $k\left(\alpha\right)\stackrel{\sim}{\to}k\left(\beta\right)\subseteq E$
+TODO: Abb1\\
+Es folgt $\beta=\varphi\left(\alpha\right)\stackrel{\left(*\right)}{=}\sigma\left(\alpha\right)\in\sigma\left(E\right)\stackrel{\text{i)}}{=}E$.\\
+\qqed
+\item iii) $\Rightarrow$ ii): Setze $\mathcal{F}:=\left\{ f\in k\left[X\right]|f\text{ irreduzibel und }\exs_{\alpha\in E}f\left(\alpha\right)=0\right\} $.\\
+Zeige: $\modulo{E}{k}$ ist ein Zerfällungskörper von $\mathcal{F}$,
+das heißt es gelten \ref{sub:Def-ZK} i) und ii):
+
+\begin{enumerate}
+\item $f\in\mathcal{F}\stackrel{\text{Def.}}{\Rightarrow}\exs_{\alpha\in E}f\left(\alpha\right)=0$
+$\stackrel{\text{iii)}}{\Rightarrow}f$ zerfällt in Linearfaktoren
+über $E$.
+\item Wegen $\modulo{E}{k}$ algebraisch gilt: $\fall_{\alpha\in E}$ ist
+$f:=\text{Mipo}_{k}\left(\alpha\right)\in\mathcal{F}$ und $f\left(\alpha\right)=0$.
+Also wird $\modulo{E}{k}$ von allen Nullstellen aller $f\in\mathcal{F}$
+erzeugt.
+\end{enumerate}
+\item ii) $\Rightarrow$ i): Es sind $E\subseteq\overline{E}$ und $\overline{\sigma}\left(E\right)\subseteq\overline{E}$
+Zerfällungskörper von $\mathcal{F}$, also $E=\overline{\sigma}\left(E\right)$.
+(vergleiche Beweis von \ref{sub:Satz-eeZK} ii))
+\end{itemize}
+\qqed
+
+
+\subsection{Beispiel}
+
+Wegen \ref{sub:Bsp-ZK} und \ref{sub:SuD-normKE} iii) ist die algebraische
+Körpererweiterung $E:=\modulo{\mathbb{Q}\left(2^{\frac{1}{3}}\right)}{k:=\mathbb{Q}}$
+nicht normal, denn das irreduzible Polynom $X^{3}-2\in k\left[X\right]$
+besitzt in $E$ eine Nullstelle, zerfällt aber nicht über $E$ in
+Linearfaktoren.
+
+
+\subsection{Proposition \textmd{(algebraischer Abschluss ist normal)\label{sub:Prop-algAnorm}}}
+
+Sei $k\subseteq E=\overline{E}$ eine algebraische Körpererweiterung
+mit $E$ algebraisch abgeschlossen(, das heißt $E$ ist ein algebraischer
+Abschluss von $k$). Dann ist $\modulo{E}{k}$ normal.
+
+
+\paragraph*{Beweis}
+
+Folgt aus \ref{sub:SuD-normKE} iii) und $\ref{}6.1,\text{iii)}$.
+
+\qqed
+
+
+\subsection{Beispiel}
+
+\begin{iiilist}
+
+\iii Sei $E\supseteq k$ eine Körpererweiterung mit $\left[E:k\right]=2$.
+Dann ist $\modulo{E}{k}$ normal.
+
+\iii Seien $E\supseteq K\supseteq k$ algebraische Körpererweiterungen
+mit $\modulo{E}{k}$ normal. Dann ist $\modulo{E}{K}$ normal (aber
+im Allgemeinen nicht $\modulo{E}{K}$). ($k\subseteq E\subseteq\overline{k}$!)
+
+\end{iiilist}
+
+
+\paragraph*{Beweis}
+
+\begin{iiilist}
+
+\iii Prüfe \ref{sub:SuD-normKE} iii): Sei $f\in k\left[X\right]$
+irreduzibel mit $\exs_{\alpha\in E}:f\left(\alpha\right)=0$.
+
+$\stackrel{\left[E:k\right]=2}{\Rightarrow}\deg\left(f\right)=\left[k\left(\alpha\right):k\right]\stackrel{k\subseteq k\left(\alpha\right)\subseteq E}{\in}\left\{ 1,2\right\} $.
+Der Fall $\deg\left(f\right)=1$ ist trivial. Sei $\deg\left(f\right)=2$
+und ohne Einschränkung $f$ normiert:
+\begin{align*}
+f\left(X\right) & =X^{2}+aX+b;\quad a,b\in k
+\end{align*}
+$\Rightarrow$ in $E\left[X\right]:f\left(X\right)=\left(X-\alpha\right)\left(X-\underbrace{\left(-\alpha+a\right)}_{\in E}\right)$
+
+\qqed[i)]
+
+\iii Klar nach \ref{sub:SuD-normKE} ii).
+
+\qqed[ii)]
+
+\end{iiilist}
+
+
+\subsection{Beispiel \textmd{(\quotedblbase{}normal ist nicht-transitiv\textquotedblleft{})}}
+
+In dem Körperturm $k:=\mathbb{Q}\stackrel{2}{\subseteq}K:=\mathbb{Q}\left[\sqrt{2}\right]\stackrel{2}{\subseteq}E:=\mathbb{Q}\left(\sqrt{[4]2}\right)$.
+($K\subseteq E$, da $(\left(\sqrt{\left[4\right]}2\right)^{2})^{2}=2$,
+also $\left(\sqrt{\left[4\right]}2\right)^{2}=\sqrt{2}$) sind beide
+Erweiterungen vom Grad 2( $=:$ \emph{quadratisch}), insbesondere
+normal, aber $\modulo{E}{k}$ ist nicht normal. (vergleiche mit $\ref{}5.15$)
+
+
+\paragraph*{Beweis}
+
+$X^{2}-2,X^{4}-2\in\mathbb{Q}\left[X\right]$ sind irreduzibel, da
+Eisenstein bezüglich 2, und aus der Gradformel folgt die erste Aussage.
+
+Nun existieren $\alpha\in\mathbb{R}$ und $\beta\in\mathbb{C}\setminus\mathbb{R}$
+mit $\alpha^{4}=\beta^{4}=2$. Erhalte $\mathbb{Q}$-Homomorphismen
+von $i:\mathbb{Q}\left[\sqrt{[4]2}\right]\hookrightarrow\mathbb{R},\sqrt{[4]2}\to\alpha$
+und $j:\mathbb{Q}\left[\sqrt{[4]2}\right]\hookrightarrow\mathbb{C},\sqrt{[4]2}\to\beta$.
+Wegen ($\beta\not\in\mathbb{R}$ und $i\left(E\right)\subseteq\mathbb{R}$
+(also $i\left(E\right)\not=j\left(E\right)$) kann $\modulo{E}{k}$
+nach $\ref{}7.4,\text{ i)}$ (oder auch $\ref{}7.4,\text{ iii)}$)
+nicht normal sein.
+
+\qqed
+
+
+\subsection{Definition \textmd{(normale Hülle)}}
+
+Sei $E\supseteq k$ eine algebraische Körpererweiterung. Eine \emph{normale
+Hülle von $E$ über $k$} ist eine (algebraische) Körpererweiterung
+$E\subseteq E'$ mit:
+
+\begin{iiilist}
+
+\iii $\modulo{E'}{k}$ ist normal.
+
+\iii Ist $E\subseteq K\subseteq E'$ ein Zerfällungskörper mit $\modulo{K}{k}$
+normal, so folgt $K=E'$. 
+
+\end{iiilist}
+
+
+\subsection{Satz und Definition \textmd{(Konjugierte)\label{sub:SuD-Konj}}}
+
+Sei $E\supseteq k$ eine algebraische Körpererweiterung.
+
+\begin{iiilist}
+
+\iii Es existiert eine normale Hülle $\modulo{E'}{k}$ von $\modulo{E}{k}$,
+eindeutig bis auf Isomorphie.
+
+\iii $\left[E:k\right]<\infty\,\Rightarrow\,\left[E':k\right]<\infty$.
+
+\iii Ist $k\subseteq E\subseteq L$ ein Körperturm mit $\modulo{L}{k}$
+normal (zum Beispiel $L=\overline{k}$,\ref{sub:Prop-algAnorm}),
+so ist $E'=k\left(\sigma\left(E\right)|\sigma:E\to L\text{ ist }k\text{-Homomorphismus}\right)$
+eine normale Hülle von $\modulo{E}{k}$, die \emph{normale Hülle von
+$E$ in }$\modulo{L}{k}$. Die Zerfällungskörper von $k\subseteq\sigma\left(E\right)\subseteq L$
+heißen die \emph{Konjugierten von $E$ in $L$.}
+
+\end{iiilist}
+
+
+\paragraph*{Beweis}
+
+\begin{iiilist}
+
+\iii Ein Zerfällungskörper $E'$ von $\mathcal{F}:=\left\{ f\in k\left[X\right]|\deg\left(f\right)\ge1\text{ und }\exs_{\alpha\in E}f\left(\alpha\right)=0\right\} $
+über $k$ leistet das Gewünschte. (vergleiche \ref{sub:Satz-eeZK}) 
+
+\iii Dann kann in i) $\left|\mathcal{F}\right|<\infty$ gewählt werden
+und aus $\ref{}5.14\text{, i) b)\ensuremath{\Rightarrow}a)}$ folgt
+$\left[E':k\right]<\infty$.
+
+\iii Übung (mit \ref{sub:Lem-homkalg}).
+
+\end{iiilist}
+
+\qqed
+
+
+\subsection{Beispiel}
+
+Wähle $k:=\mathbb{Q}\subseteq E:=\mathbb{Q}\left(\sqrt{[3]2}\right)\subseteq L:=\mathbb{C}$
+in \ref{sub:SuD-Konj} iii). Dann ist
+\begin{align*}
+\text{Hom}_{\mathbb{Q}\text{-Alg.}}\left(E,L\right) & \stackrel{\sim}{\to}\left\{ \alpha\in\mathbb{C}|\alpha^{3}=2\right\} ;\varphi\mapsto\varphi\left(\sqrt{[3]2}\right)
+\end{align*}
+Es existiert genau ein $\alpha\in\mathbb{R}$ mit $\alpha^{3}=2$
+(Analysis) und setzte:
+\begin{align*}
+\zeta & :=\zeta_{3}=\text{exp}\left(\frac{2\pi\ii}{3}\right)
+\end{align*}
+Dann gilt $\mathcal{N}=\left\{ \alpha,\alpha\zeta,\alpha\zeta^{2}\right\} $,
+denn:
+\begin{align*}
+\left(\alpha\zeta^{i}\right)^{3} & =\alpha^{3}\cdot\left(\zeta^{3}\right)^{i}=2\cdot1=2\quad\fall_{i\in\mathbb{Z}}
+\end{align*}
+Und weil $\text{ord}\left(\zeta\in\mathbb{C}^{*}\right)=3$ (Bemerkung
+zu $\ref{}4.5$) sind $\alpha,\alpha\zeta,\alpha\zeta^{2}\in\mathbb{C}$
+paarweise verschieden, also \emph{alle} Nullstellen von $X^{3}-2$
+in $\mathbb{C}$.
+
+TODO: Abb 2
+
+Für die normale Hülle $E'$ von $E$ in $\mathbb{C}$ folgt mit \ref{sub:SuD-Konj}
+iii): $E'=\mathbb{Q}\left(\alpha,\alpha\zeta,\alpha\zeta^{2}\right)=\mathbb{Q}\left(\alpha,\zeta\right)$,
+denn: \quotedblbase{}$\subseteq$\textquotedblleft{} ist klar, \quotedblbase{}$\supseteq$\textquotedblleft{}
+$\zeta=\frac{\alpha\zeta}{\alpha}$.
+
+Es gilt $\left[E':\mathbb{Q}\right]=6$:
+
+TODO: Abb3
+
+\newpage{}
+
+
+\section{Separabilität}
+
+Sei $k$ ein Körper.
+
+
+\subsection{Definition \textmd{((formale) Ableitung)}}
+
+Die Abbildung $k\left[X\right]\to k\left[X\right],f=\sum_{i=0}a_{i}X^{i}\mapsto f':=\sum_{i=1}i\cdot a_{i}X^{i-1}$
+heißt \emph{(formale) Ableitung}.
+
+Für $f,g\in k\left[X\right],a\in k$ gelten:
+
+\begin{iiilist}
+
+\iii $\left(af\right)'=a\cdot f'$
+
+\iii $\left(f+g\right)'=f'+g'$
+
+\iii $\left(fg\right)'=f'g+fg'$
+
+\end{iiilist}
+
+
+\paragraph*{Beweis}
+
+i) und ii) sind klar.
+
+iii): direktes Nachrechnen (Wegen i),ii) kann $f=X^{m},g=X^{n}$ ($n,m\ge0$)
+angenommen werden).
+
+\qqed
+
+
+\subsection{Beispiel\label{sub:Bsp-abl}}
+
+$\left\{ f\in k\left[X\right]|f'=0\right\} =\begin{cases}
+k, & \text{falls }\text{char}\left(k\right)=0\\
+\left\{ g\left(X^{p}\right)|g\in k\left[X\right]\right\} , & \text{falls }\text{char}\left(k\right)=p>0
+\end{cases}$
+
+
+\paragraph*{Beweis}
+
+Übung
+
+\qqed
+
+
+\subsection{Satz und Definition \textmd{(mehrfache Nullstelle)\label{sub:SuD-mNst}}}
+
+Seien $f\in k\left[X\right]\setminus\left\{ 0\right\} $ und $\alpha\in k$
+eine Nullstelle von $f$. Dann ist $\alpha$ genau dann eine mehrfache
+Nullstelle von $f$, wenn $f'\left(\alpha\right)=0$ gilt.
+
+
+\paragraph*{Beweis}
+
+In dem Polynomring $k\left[X\right]$ gilt:
+\begin{align}
+f\left(X\right)=\left(X-\alpha\right)^{r}\cdot g\left(X\right) & \qquad(1)
+\end{align}
+mit $g\left(\alpha\right)\not=0$ und $r\ge1$(, da $f\left(\alpha\right)=0$).
+Hierbei heißt $r$ die \emph{Vielfachheit der Nullstelle $\alpha$}
+und $\alpha$ heißt \emph{mehrfache Nullstelle} genau dann, wenn $r\ge2$
+(sonst \emph{einfache Nullstelle}).
+
+Zeige also: $r\ge2\Leftrightarrow f'\left(\alpha\right)=0$: Rechne
+$f'\left(X\right)\stackrel{\ref{}8.1}{=}r\left(X-\alpha\right)^{r-1}\cdot g\left(X\right)+\left(X-\alpha\right)^{r}\cdot g'\left(X\right)$.
+Wegen $r\ge1$ folgt:
+\begin{align*}
+f'\left(\alpha\right) & =r\cdot\left(\alpha-\alpha\right)\cdot g\left(\alpha\right)=0\stackrel{g\left(\alpha\right)\not=0,r\not=0}{\Leftrightarrow}r-1\ge1
+\end{align*}
+\qqed
+
+%DATE: Fr 2.12.2011
+
+
+\subsection{Lemma\label{sub:Lem-mNst}}
+
+Sei $f\in k\left[X\right]$ nicht konstant.
+
+\begin{iiilist}
+
+\iii Für $\alpha\in\overline{k}$ sind äquivalent:
+
+\begin{abclist}
+
+\abc $\alpha$ ist mehrfache Nullstelle von $f$.
+
+\abc $f\left(\alpha\right)=f'\left(\alpha\right)=0$
+
+\abc $\left(\text{ggT}\left(f,f'\right)\right)\left(\alpha\right)=0$
+
+\end{abclist}
+
+\iii Ist $f$ irreduzibel, so sind äquivalent:
+
+\begin{abclist}
+
+\abc In $\overline{k}$ existiert eine mehrfache Nullstelle von $f$.
+
+\abc $f'=0$ in $k\left[X\right]$
+
+\end{abclist}
+
+\end{iiilist}
+
+
+\subsubsection*{Beweis}
+
+\begin{iiilist}
+
+\iii Wegen $0\not=f\in k\left[X\right]\subseteq\overline{k}\left[X\right]$
+folgt a) $\Leftrightarrow$ b). aus \ref{sub:SuD-mNst}.
+
+Dann gilt:
+
+b) $\Leftrightarrow$ $\left(X-\alpha\right)|f,f'$ in $\overline{k}\left[X\right]$
+$\Leftrightarrow$ $\left(X-\alpha\right)|\text{ggT}\left(f,f'\right)$
+in $\overline{k}\left[X\right]$ $\Leftrightarrow$ $\text{ggT}\left(f,f'\right)\left(\alpha\right)=0$
+$\Leftrightarrow$ c)
+
+\iii a) $\Rightarrow$ b):
+
+Sei $\alpha\in\overline{k}$ eine mehrfache Nullstelle von $f$. Weil
+$f$ irreduzibel und ohne Einschränkung normiert (denn $\left(af\right)'=a\cdot f'$)
+ist, gilt:
+\begin{align}
+f & =\text{Mipo}_{k}\left(\alpha\right)\label{eq:fmipoka}
+\end{align}
+Nach i), a) $\Rightarrow$ b) gilt $f'\left(\alpha\right)=0$. Wegen
+$\text{deg}\left(f'\right)<\text{deg}\left(f\right)$ folgt aus \eqref{eq:fmipoka}
+schon $f'\left(\alpha\right)=0$.
+
+b) $\Rightarrow$ a):
+
+Weil $\overline{k}$ algebraisch abgeschlossen und $f$ nicht konstant
+ist, existiert ein $\alpha\in\overline{k}$ mit $f\left(\alpha\right)=0$.
+
+Wegen $f'\left(\alpha\right)=0\left(\alpha\right)=0$ und i) b) $\Rightarrow$
+a) ist $\alpha$ eine mehrfache Nullstelle von $f$.
+
+\end{iiilist}
+
+\qqed
+
+
+\subsection{Definition\textmd{ (separables Polynom)}}
+
+$f\in k\left[X\right]\setminus k$ heißt \emph{separabel}, wenn alle
+Nullstellen von $f$ in $\overline{k}$ einfache Nullstellen sind.
+
+
+\subsection{Proposition\label{sub:Prop-ch0sep}}
+
+Ist $\text{char}\left(k\right)=0$ und $f\in k\left[X\right]$ irreduzibel,
+so ist $f$ separabel.
+
+
+\subsubsection*{Beweis}
+
+Wegen $\text{char}\left(k\right)=0$ und \ref{sub:Bsp-abl} ist $f'\not=0$.
+Aus \ref{sub:Lem-mNst} ii) folgt die Behauptung.
+
+\qqed
+
+
+\subsection{Beispiel\label{sub:Bsp-sep}}
+
+Sei $k:=\mathbb{F}_{p}\left(t\right)$ und $f\left(X\right)=X^{p}-t\in k\left[X\right]$.
+
+Dann ist $f$ irreduzibel nach \ref{sub:45} iii).
+
+In $k\left[X\right]$ gilt:
+\begin{align*}
+f'\left(X\right) & =pX^{p-1}=0\in k\left[X\right]
+\end{align*}
+Also ist $f$ nach \ref{sub:Lem-mNst} ii) nicht separabel, genauer
+gilt:
+
+Setze $k\subseteq E:=k\left(\alpha\right)$ mit $0=f\left(\alpha\right)=\alpha^{p}-t$.
+
+Dann gilt in $E\left[X\right]$:
+\begin{align*}
+f\left(X\right) & =X^{p}-t=X^{p}-\alpha^{p}=\left(X-\alpha\right)^{p}
+\end{align*}
+Damit ist $\modulo{E}{k}$ ein Zerfällungskörper von $f$ und es folgt:
+\begin{align*}
+\text{Hom}_{k\text{-Alg.}}\left(E,\overline{k}\right) & \sr{=}{\sim}{\ref{sub:Lem-homkalg}}\left\{ \beta\in\overline{k}|\beta^{p}=t\right\} \stackrel{\ref{asdf}5.3}{=}\left\{ \alpha\right\} 
+\end{align*}
+Denn aus $\beta\in\overline{k}$ und $\beta^{p}=t$ folgt mit \ref{sub:Lem-homkalg}
+schon $\beta^{p}=t=\alpha^{p}$ und damit
+\begin{align*}
+0 & =\alpha^{p}-\beta^{p}=\left(\alpha-\beta\right)^{p}
+\end{align*}
+in $\overline{k}$, das heißt $\alpha=\beta$.
+
+Insbesondere folgt:
+\begin{align*}
+1 & =\left|\text{Hom}_{k\text{-Alg.}}\left(E,\overline{k}\right)\right|<\left[k\left(\alpha\right)=E:k\right]=p
+\end{align*}
+(vergleiche \quotedblbase{}$\le$\textquotedblleft{} in \ref{sub:Lem-homkalg})
+
+
+\subsection{Definition\textmd{ (separable(s) Element/Körpererweiterung)}}
+
+Sei $k\subseteq E$ eine algebraische Körpererweiterung.
+
+\begin{iiilist}
+
+\iii $\alpha\in E$ heißt \emph{separabel über $k$}, wenn $\text{Mipo}_{k}\left(\alpha\right)$
+in $k\left[X\right]$ separabel ist.
+
+\iii $\modulo{E}{k}$ heißt \emph{separabel über $k$}, wenn $\text{Mipo}_{k}\left(\alpha\right)$
+in $k\left[X\right]$ separabel ist.
+
+\end{iiilist}
+
+
+\subsection{Definition \textmd{(vollkommener Körper)}}
+
+$k$ heißt \emph{vollkommen}, wenn jede algebraische Körpererweiterung
+von $k$ separabel ist.
+
+
+\subsection{Beispiel}
+
+\begin{iiilist}
+
+\iii Jeder Körper der Charakteristik 0 ist vollkommen. (folgt aus
+\ref{sub:Prop-ch0sep})
+
+\iii $\mathbb{F}_{p}\left(t\right)$ ist nicht vollkommen, denn nach
+\ref{sub:Bsp-sep} ist $\alpha\in\overline{\mathbb{F}}_{p}\left(t\right)$
+mit $\alpha^{p}=t$ nicht separabel über $\mathbb{F}_{p}\left(t\right)$.
+
+\iii Jeder endliche Körper ist vollkommen.
+
+\end{iiilist}
+
+
+\subsection{Definition \textmd{(Stabilitätsgrad)\label{sub:Def-sgrad}}}
+
+Sei $E\supseteq k$ eine algebraische Körpererweiterung, so heißt
+\begin{align*}
+\left[E:h\right]_{S} & :=\left|\text{Hom}_{k\text{-Alg.}}\left(E,\overline{k}\right)\right|\in\mathbb{N}\cup\left\{ \infty\right\} 
+\end{align*}
+\emph{der Stabilitätsgrad von $\modulo{E}{k}$}. 
+
+
+\subsection{Satz}
+
+\begin{iiilist}
+
+\iii Im Fall $\text{char}\left(k\right)=p>0$ gilt:
+\begin{align*}
+h\text{ vollkommen} & \Leftrightarrow\text{Frob}_{k}:k\stackrel{\sim}{\longrightarrow}k\text{ ist ein Isomorphismus}
+\end{align*}
+
+
+\iii Jeder endliche Körper ist vollkommen.
+
+\end{iiilist}
+
+
+\subsubsection*{Beweis}
+
+\begin{iiilist}
+
+\iii \quotedblbase{}$\Rightarrow$\textquotedblleft{}: Zeige $\text{Frob}_{k}:k\twoheadrightarrow k$
+ist surjektiv.
+
+Sei $\alpha\in k$ und $\modulo{E}{k}$ der Zerfällungskörper von
+$f\left(X\right)=X^{p}-\alpha\in k\left[X\right]$.
+
+In $E\left[X\right]$ gilt $f\left(X\right)=\left(X-\beta\right)^{p}$
+für ein geeignetes $\beta\in E$.
+
+Vergleiche: \ref{asdf}8.7 für $g=\text{Mipo}_{k}\left(\beta\right)$:
+$g|f$
+
+Weil nun $h$ vollkommen ist, ist $g$ separabel, womit folgt $g=X-\beta\in h\left[X\right]$,
+also $\beta\in k$ und $\alpha=\beta^{p}=\text{Frob}_{k}\left(\beta\right)$.
+
+\quotedblbase{}$\Leftarrow$\textquotedblleft{}: Sonst existiert ein
+$f\in k\left[X\right]$ irreduzibel und nicht separabel, woraus mit
+\ref{sub:Lem-mNst} ii) schon $f'=0$ in $k\left[X\right]$ folgt
+und sich aus \ref{sub:Bsp-abl} schon $f\left(X\right)=g\left(X^{p}\right)$
+mit einem geeigneten $g=\sum a_{i}X^{i}\in k\left[X\right]$ ergibt.
+
+Weil $\text{Frob}_{k}$ surjektiv ist, folgt $a_{i}=b_{i}^{p}$ für
+geeignete $b_{i}\in k$. Es folgt in $k\left[X\right]$:
+\begin{align*}
+f\left(X\right) & =g\left(X^{p}\right)=\sum a_{i}\left(X^{p}\right)^{i}=\sum b_{i}^{p}\left(X^{p}\right)^{i}=\sum\left(b_{i}X^{i}\right)^{p}=\left(\sum b_{i}X^{i}\right)^{p}
+\end{align*}
+
+
+Dies ist wegen $p\ge2$ ein Widerspruch dazu, dass $f$ irreduzibel
+ist.
+
+\iii Dies folgt aus i) und \ref{asdf}5.3 iii).
+
+\end{iiilist}
+
+\qqed
+
+
+\subsection{Lemma\label{sub:Lem-sepNst}}
+
+Sei $k\subseteq E=k\left(\alpha\right)$ eine einfache algebraische
+Körpererweiterung.
+
+\begin{iiilist}
+
+\iii $\left[k\left(\alpha\right):k\right]_{S}=\left|\left\{ \beta\in\overline{k}|\text{Mipo}_{k}\left(\alpha\right)\left(\beta\right)=0\right\} \right|$
+(Anzahl der Nullstellen des Minimalpolynoms)
+
+\iii $\alpha$ ist genau dann separabel über $k$, wenn $\left[k\left(\alpha\right):k\right]=\left[k\left(\alpha\right):k\right]_{S}$.
+
+\end{iiilist}
+
+
+\subsubsection*{Beweis}
+
+\begin{iiilist}
+
+\iii $\left[k\left(\alpha\right):k\right]_{S}\stackrel{\ref{sub:Def-sgrad}}{=}\left|\text{Hom}_{k\text{-Alg.}}\left(k\left(\alpha\right),k\right)\right|\stackrel{\ref{sub:Lem-homkalg}}{=}\left|\left\{ \beta\in\overline{k}|\text{Mipo}_{k}\left(\alpha\right)\left(\beta\right)=0\right\} \right|$
+
+\iii $f:=\text{Mipo}_{k}\left(\alpha\right)\in k\left[X\right]$
+zerfällt über $k$ in Linearfaktoren, also gilt:
+\begin{align*}
+\left[k\left(\alpha\right):k\right] & =\text{deg}\left(f\right)\ge\left|\left\{ \beta\in\overline{k}|f\left(\beta\right)=0\right\} \right|=\left[k\left(\alpha\right):k\right]_{S}
+\end{align*}
+Zudem gilt Gleichheit genau dann, wenn alle Nullstellen in $\overline{k}$
+einfach sind, das heißt $f$ separabel ist.
+
+\end{iiilist}
+
+\qqed
+
+
+\subsection{Satz\label{sub:Satz-sgrad}}
+
+Seien $E\supseteq K\supseteq k$ algebraische Körpererweiterungen,
+dann gilt:
+\begin{align*}
+\left[E:k\right]_{S} & =\left[E:K\right]_{S}\cdot\left[K:k\right]_{S}
+\end{align*}
+
+
+
+\subsubsection*{Beweis}
+
+Sei $\overline{k}\supseteq E$ ein algebraischer Abschluss.
+
+Weil $\modulo{E}{K}$ und $\modulo{K}{k}$ algebraisch sind, sind
+auch $\modulo{\overline{k}}{K}$ und $\modulo{\overline{k}}{k}$ algebraische
+Abschlüsse und nach Definition gilt:
+\begin{align*}
+\left[E:k\right]_{S} & =\left|\text{Hom}_{k\text{-Alg.}}\left(E,\overline{k}\right)\right|\\
+\left[E:K\right]_{S} & =\left|\text{Hom}_{K\text{-Alg.}}\left(E,\overline{k}\right)\right|\\
+\left[K:k\right]_{S} & =\left|\text{Hom}_{k\text{-Alg.}}\left(K,\overline{k}\right)\right|
+\end{align*}
+Für jedes $\sigma\in\text{Hom}_{k\text{-Alg.}}\left(K,\overline{k}\right)$
+existiert nach \ref{asdf}6.7 ein $k$-Isomorphismus $\overline{\sigma}:\overline{k}\to\overline{k}$
+mit:
+\begin{align}
+\overline{\sigma}|_{K} & =\sigma\label{eq:abssigksig}
+\end{align}
+Es ist nun klar, dass \ref{sub:Satz-sgrad} aus folgender Behauptung
+folgt:
+\begin{description}
+\item [{Behauptung:}] Die Abbildung
+\begin{align*}
+\text{Hom}_{K\text{-Alg.}}\left(E,\overline{k}\right)\times\text{Hom}_{k\text{-Alg.}}\left(K,\overline{k}\right) & \to\text{Hom}_{k\text{-Alg.}}\left(E,\overline{k}\right),\left(\tau,\sigma\right)\mapsto\overline{\sigma}\circ\tau
+\end{align*}
+ist wohldefiniert und bijektiv.
+\item [{Beweis:}] Die Abbildung ist wohldefiniert, da $\tau$ ein $k$-Homomorphismus
+ist.\\
+Injektivität: Gelte:
+\begin{align}
+\overline{\sigma}_{1}\circ\tau_{1} & =\overline{\sigma}_{2}\circ\tau_{2}\label{eq:plus}
+\end{align}
+Dabei ist $\sigma_{i}\in\text{Hom}_{k\text{-Alg.}}\left(k,\overline{k}\right)$,
+$\tau_{i}\in\text{Hom}_{k\text{-Alg.}}\left(E,\overline{k}\right)$
+und $i\in\left\{ 1,2\right\} $.\\
+Damit folgt:
+\begin{align*}
+\left(\overline{\sigma}_{1}\circ\tau_{1}\right)|_{k} & =\left(\overline{\sigma}_{2}\circ\tau_{2}\right)|_{k}\\
+\stackrel{\rotatebox{90}{\ensuremath{=}}}{\overline{\sigma}_{1}|_{k}} & \phantom{=}\stackrel{\rotatebox{90}{\ensuremath{=}}}{\overline{\sigma}_{2}|_{k}}\\
+\stackrel{\rotatebox{90}{\ensuremath{=}}}{\sigma_{1}} & =\stackrel{\rotatebox{90}{\ensuremath{=}}}{\sigma_{2}}
+\end{align*}
+Damit folgt $\sigma_{1}=\sigma_{2}$, also $\overline{\sigma}_{1}=\overline{\sigma}_{2}$
+und mit \eqref{eq:plus} ergibt sich $\tau_{1}=\tau_{2}$.\\
+\qqed[injektiv]\hspace*{1mm}\\
+Surjektivität: Sei $\alpha\in\text{Hom}_{k\text{-Alg.}}\left(E,\overline{k}\right):\sigma:=\alpha|_{K}\in\text{Hom}_{k\text{-Alg.}}\left(K,\overline{k}\right)$
+und $\left(\overline{\sigma}^{-1}\circ\alpha\right)|_{K}=\text{id}$.\\
+Also gilt $\tau=\overline{\sigma}^{-1}\circ\alpha\in\text{Hom}_{k\text{-Alg.}}\left(E,\overline{k}\right)$.
+Es folgt:
+\begin{align*}
+\overline{\sigma}\circ\tau & =\overline{\sigma}\circ\left(\overline{\sigma}^{-1}\circ\alpha\right)=\alpha
+\end{align*}
+
+\end{description}
+\qqed
+
+
+\subsection{Satz}
+
+Für eine endliche Körpererweiterung $E\supseteq k$ sind äquivalent:
+
+\begin{iiilist}
+
+\iii $\modulo{E}{k}$ ist separabel.
+
+\iii Es gibt $\alpha_{1},\ldots,\alpha_{n}\in E$, die separabel
+über $k$ sind mit:
+\begin{align*}
+E & =k\left(\alpha_{1},\ldots,\alpha_{n}\right)
+\end{align*}
+
+
+\iii $\left[E:k\right]_{S}=\left[E:k\right]$
+
+\end{iiilist}
+
+
+\subsubsection*{Beweis}
+
+i) $\Rightarrow$ ii) ist trivial.
+
+ii) $\Rightarrow$ iii): Wegen \ref{sub:Satz-sgrad} und \ref{asdf}5.5
+(Gradsätze) kann man durch Induktion $n=1$ annehmen und dann folgt
+die Behauptung aus \ref{sub:Lem-sepNst} ii) \quotedblbase{}$\Rightarrow$\textquotedblleft{}.
+
+iii) $\Rightarrow$ i): Sei $\alpha\in E$ beliebig, dann gilt:
+\begin{align*}
+\left[E:k\right] & \stackrel{k\subseteq k\left(\alpha\right)\subseteq E}{=}\left[E:k\left(\alpha\right)\right]\\
+\stackrel{\rotatebox{90}{\ensuremath{=}}}{\left[E:k\right]_{S}} & \stackrel{\phantom{k\subseteq k\left(\alpha\right)\subseteq E}}{=}\stackrel{\rotatebox{90}{\ensuremath{\le}}}{\left[E:k\left(\alpha\right)\right]_{S}}
+\end{align*}
+\begin{align*}
+\left[k\left(\alpha\right):k\right] & \ge\left[k\left(\alpha\right):k\right]_{S}
+\end{align*}
+Dabei folgen die Ungleichungen aus dem Beweis von \ref{sub:Lem-sepNst}
+ii).
+
+Es folgt $\left[k\left(\alpha\right):k\right]_{S}=\left[k\left(\alpha\right):k\right]$,
+also ist $\alpha$ separabel über $k$ (nach \ref{sub:Lem-sepNst}
+iii) \quotedblbase{}$\Leftarrow$\textquotedblleft{}).
+
+\qqed
+
+%DATE: 6.12.2011
+
+
+\subsection{Korollar}
+
+Für eine algebraische Körpererweiterung $k\subseteq K\subseteq E$
+sind äquivalent:
+
+\begin{iiilist}
+
+\iii $\modulo{E}{k}$ ist separabel.
+
+\iii $\modulo{E}{K}$ und $\modulo{K}{k}$ sind separabel.
+
+\end{iiilist}
+
+
+\subsubsection*{Beweis}
+
+i) $\Rightarrow$ ii): $\modulo{K}{k}$ separabel ist trivial.\\
+Sei $\alpha\in E$, dann folgt $\text{Mipo}_{K}\left(\alpha\right)|\text{Mipo}_{k}\left(\alpha\right)$,
+also ist mit $\text{Mipo}_{k}\left(\alpha\right)$ auch $\text{Mipo}_{K}\left(\alpha\right)$
+separabel, das heißt $\alpha$ ist separabel über $K$.
+
+ii) $\Rightarrow$ i): Sei $\alpha\in E$, $f:=\text{Mipo}_{K}\left(\alpha\right)=\sum a_{i}X^{i}\in K\left[X\right]$
+und $K':=k\left(a_{i}\right)\subseteq K$.\\
+Dann folgt:
+\begin{enumerate}
+\item $\modulo{K'}{k}$ ist endlich und separabel (\ref{asdf}8.15, ii)
+$\Rightarrow$ i)).
+\item $f\in K'\left[X\right]$ ist separabel $\left(\text{da \modulo{E}{k} separabel ist}\right)$.
+\end{enumerate}
+Es folgt:
+\begin{align*}
+\infty & \stackrel{\text{1.}}{>}\left[K'\left(\alpha\right):k\right]\stackrel{\eqref{asd}5.5}{=}\left[K'\left(\alpha\right):K'\right]\cdot\left[K':k\right]\sr{=}{\text{1., 2.}}{\ref{}8.15\text{, i) \ensuremath{\Leftrightarrow}\ ii)}}\left[K'\left(\alpha\right):K'\right]_{S}\cdot\left[K':k\right]_{S}=\\
+ & \stackrel{\left(\ref{}8.14\right)}{=}\left[K'\left(\alpha\right):k\right]_{S}
+\end{align*}
+Daher ist $\modulo{K'\left(\alpha\right)}{k}$ separabel, also $\alpha$
+separabel über $k$.
+
+
+\subsection{Satz \textmd{(vom primitiven Element)} und Definition\label{sub:SuD-primitel}}
+
+Sei $k\subseteq E=k\left(\alpha_{1},\ldots,\alpha_{n}\right)$ eine
+endliche Körpererweiterung und seien $\alpha_{2},\ldots,\alpha_{n}$
+separabel über $k$.\\
+Dann existiert ein $\alpha\in E$ mit $E=k\left(\alpha\right)$.\\
+Jedes solche $\alpha$ heißt \emph{primitives Element von $\modulo{E}{k}$.}
+
+
+\subsubsection*{Bemerkung}
+
+Sei $p$ eine Primzahl, $E:=\mathbb{F}_{p}\left(X,Y\right)$ und $k:=\text{Frob}_{E}\left(E\right)\subseteq\Rightarrow\left[E:k\right]=p^{2}$
+und $\modulo{E}{k}$ ist nicht einfach (ohne Beweis).
+
+
+\subsubsection*{Beweis von \ref{sub:SuD-primitel}}
+\begin{enumerate}
+\item Fall: $k$ ist endlich, also ist $E$ endlich und nach \eqref{asdf}1.30,
+i) existiert ein $\alpha\in E^{*}$ mit $E^{*}=\left\langle \alpha\right\rangle $,
+womit sich sofort $E=k\left(\alpha\right)$ ergibt.
+\item Fall: $k$ ist unendlich. Induktiv kann man $n=2$ annehmen.\\
+Schreibe $\text{Hom}_{k\text{-Alg.}}\left(E,\overline{k}\right)=\left\{ \sigma_{1},\ldots,\sigma_{n}\right\} $,
+das heißt $n:=\left[E:k\right]_{S}$.\\
+Setze $P\left(X\right):=\sr{\prod_{1\le i,j\le n}}{}{i\not=j}\left(\left(\sigma_{i}\left(\alpha_{1}\right)-\sigma_{j}\left(\alpha_{1}\right)\right)+X\left(\sigma_{i}\left(\alpha_{2}\right)-\sigma_{j}\left(\alpha_{2}\right)\right)\right)\in\overline{k}\left[X\right]$\end{enumerate}
+\begin{description}
+\item [{Behauptung:}] \emph{$P\left(X\right)\not=0$} in $\overline{k}\left[X\right]$
+\item [{Beweis:}] Sonst existieren $1\le i,j\le n$, $i\not=j$ mit $\sigma_{i}\left(\alpha_{k}\right)=\sigma_{j}\left(\alpha_{k}\right)$,
+$k\in\left\{ 1,2\right\} $. Damit folgt $\sigma_{i}=\sigma_{j}$
+im Widerspruch zu $i\not=j$.\qqed[Behauptung]
+\end{description}
+Wegen $P\left(X\right)\not=0$ und $k$ unendlich gibt es ein $\beta\in k$
+mit $P\left(\beta\right)\not=0$.\\
+Darum folgt, dass für $\alpha:=\alpha_{1}+\beta\alpha_{2}\in E$ die
+Elemente $\sigma\left(\alpha_{1}\right),\ldots,\sigma\left(\alpha_{1}\right)\in\overline{k}$
+parrweise verschieden sind, denn:
+\begin{align*}
+0\not= & P\left(\beta\right)=\sr{\prod_{1\le i,j\le n}}{}{i\not=j}\Bigg(\underbrace{\left(\sigma_{i}\left(\alpha_{1}\right)-\sigma_{j}\left(\alpha_{1}\right)\right)+\beta\cdot\left(\sigma_{i}\left(\alpha_{2}\right)-\sigma_{j}\left(\alpha_{2}\right)\right)}_{\stackrel{\beta\in k}{=}\left(\sigma_{i}\left(\alpha\right)-\sigma_{j}\left(\alpha\right)\right)}\Bigg)
+\end{align*}
+Für $k\subseteq E':=k\left(\alpha\right)\subseteq E$ folgt:
+\begin{align*}
+\left[E':k\right]_{S} & \ge n=\left[E:k\right]_{S}
+\end{align*}
+Da die $\sigma_{i}|_{E'}\in\text{Hom}_{k\text{-Alg.}}\left(E',\overline{k}\right)$
+paarweise verschieden sind.
+
+Wegen $E'\subseteq E$ folgt:
+\begin{align}
+\left[E:k\right]_{S} & =\left[E':k\right]_{S}\label{eq:1}
+\end{align}
+
+\begin{description}
+\item [{Behauptung:}] $E=E'\left(=k\left(\alpha\right)\text{, also folgt die Behauptung von \eqref{asdf}8.17}\right)$
+\item [{Beweis:}] Aus $\alpha_{2}$ separabel über $k$ folgt mit \eqref{df}8.15:
+\begin{align}
+\alpha_{2} & \text{ ist separaber über }E'\label{eq:2}
+\end{align}
+Und damit folgt:
+\begin{align*}
+\left[E'\left(\alpha_{2}\right):E'\right]_{S} & =\left[E'\left(\alpha_{2}\right):E'\right]
+\end{align*}
+Ferner gilt:
+\begin{align*}
+\left[E:k\right]_{S} & \stackrel{\left(\eqref{asdf}8.14\right)}{\ge}\left[E'\left(\alpha_{2}\right):E'\right]_{S}\cdot\left[E':k\right]_{S}\stackrel{\text{\eqref{eq:1}, \eqref{eq:2}}}{=}\left[E'\left(\alpha_{2}\right):E'\right]\cdot\left[E:k\right]_{S}
+\end{align*}
+Daraus folgt $\left[E'\left(\alpha_{2}\right):E'\right]=1$, also
+$\alpha_{2}\in E'$. Wegen $\alpha_{1}=\alpha-\beta\alpha_{2}$ damit
+auch $\alpha_{1}\in E'$ und gesamt:
+\begin{align*}
+E'\supseteq & k\left(\alpha_{1},\alpha_{2}\right)=E
+\end{align*}
+Also ist $E=E'$.
+\end{description}
+\qqed
+
+\newpage{}
+
+
+\section{Endliche Körper}
+
+
+\subsection{Lemma\label{sub:Lem-91}}
+
+Sei $k$ ein endlicher Körper. Dann gelten:
+
+\begin{iiilist}
+
+\iii $p:=\text{char}\left(k\right)>0$ und $\mathbb{F}_{p}\subseteq k$
+ist der Primkörper.
+
+\iii $n:=\text{dim}_{\mathbb{F}_{p}}\left(k\right)<\infty$ und $\left|k\right|=p^{n}$.
+
+\iii $k$ ist der Zerfällungskörper von
+\begin{align*}
+X^{\left(p^{n}\right)}-X & \in\mathbb{F}_{p}\left[X\right]
+\end{align*}
+über $\mathbb{F}_{p}$.
+
+\end{iiilist}
+
+
+\subsubsection*{Beweis}
+
+\begin{iiilist}
+
+\iii Sonst müssten $\text{char}\left(k\right)=0$ gelten, also $\mathbb{Q}\subseteq k$
+im Widerspruch zu $\left|k\right|<\infty$. (vergleiche \ref{asdf}5.1)
+
+\iii $\left|k\right|<\infty$, also folgt $n<\infty$ und aus $k\stackrel{\sim}{=}\mathbb{F}_{p}^{n}$
+als $\mathbb{F}_{p}$-Vektorraum folgt $\left|k\right|=p^{n}$. 
+
+\iii 
+\begin{description}
+\item [{Behauptung:}] \hspace*{1cm}
+\begin{align}
+X^{\left(p^{n}\right)}-X & =\prod_{\alpha\in k}\left(X-\alpha\right)\label{eq:str}
+\end{align}
+in $k\left[X\right]$, woraus iii) nach Definition \ref{asdf}7.1
+folgt.
+\item [{Beweis:}] Beide Seiten von \eqref{eq:str} sind nach iii) normierte
+Polynome vom Grad $p^{n}$ und es genügt zu zeigen:
+\begin{align*}
+\fall_{\alpha\in k} & \alpha^{p^{n}}=\alpha
+\end{align*}
+Das ist klar für $\alpha=0$ und für $0\not=\alpha\in k^{*}$ folgt
+aus \eqref{asdf}1.25 (für $G=k^{*}$):
+\begin{align*}
+\alpha^{p^{n}-1} & =1 & \Rightarrow\quad\alpha^{p^{n}} & =\alpha
+\end{align*}
+
+\end{description}
+\end{iiilist}
+
+\qqed
+
+
+\subsection{Satz und Definition \textmd{($\mathbb{F}_{p^{n}}$)\label{sub:SuD-ZkXpn}}}
+
+Seien $p$ eine Primzahl und $n\ge1$.
+
+Dann ist der Zerfällungskörper von $X^{p^{n}}-X\in\mathbb{F}_{p}\left[X\right]$
+der bis auf Isomorphie eindeutige Körper mit $p^{n}$ Elementen, geschrieben
+$\mathbb{F}_{p^{n}}$.
+
+
+\subsubsection*{Bemerkung}
+
+Für alle Primzahlen $p$ gilt:
+\begin{align*}
+\modlo{Z}{p} & \stackrel{\sim}{=}\mathbb{F}_{p^{n}}\Leftrightarrow n=1
+\end{align*}
+
+
+
+\subsubsection*{Beweis von \ref{sub:SuD-ZkXpn}}
+
+Eindeutigkeit folgt aus \ref{sub:Lem-91} iii) und \eqref{asdf}7.3.
+
+Sei $\mathbb{F}_{p}\subseteq\overline{\mathbb{F}_{p}}$ ein algebraischer
+Abschluss.
+\begin{description}
+\item [{Behauptung:}] $\tilde{\mathbb{F}}_{p^{n}}:=\left\{ \alpha\in\overline{\mathbb{F}_{p}}\left|\alpha^{p^{n}}=\alpha\right.\right\} \subseteq\overline{\mathbb{F}}_{p}$
+ist ein Teilkörper.
+\item [{Beweis:}] ${\displaystyle \text{Frob}_{\overline{\mathbb{F}}_{p}}^{n}=\underbrace{\text{Frob}_{\overline{\mathbb{F}}_{p}}\circ\ldots\circ\text{Frob}_{\overline{\mathbb{F}}_{p}}}_{n\text{-mal}}:\overline{\mathbb{F}}_{p}\to\overline{\mathbb{F}}_{p}}$
+ist ein Körperisomorphismus mit:
+\begin{align*}
+\tilde{\mathbb{F}}_{p^{n}} & =\left\{ \alpha\in\overline{\mathbb{F}}_{p}\left|\text{Frob}_{\overline{\mathbb{F}}_{p}}^{n}\left(\alpha\right)=\alpha\right.\right\} 
+\end{align*}
+Daraus folgt die Behauptung.\\
+\qqed[Behauptung]
+\end{description}
+Es ist klar, dass $\tilde{\mathbb{F}}_{p^{n}}$ ein Zerfällungskörper
+von $X^{p^{n}}-X\in\mathbb{F}_{p}\left[X\right]$ ist.
+
+Wegen $\left(X^{p^{n}}-X\right)^{1}=-1$ und \eqref{NICHT VORHANDEN: Querverweis: asdf}8.3
+ist $X^{p^{n}}-X\in\mathbb{F}_{p}\left[X\right]$ separabel, und es
+folgt $\left|\tilde{\mathbb{F}}_{p^{n}}\right|=p^{n}$.
+
+\qqed
+
+
+\subsection{Bemerkung}
+
+Da $\modulo{\mathbb{F}_{p^{n}}}{\mathbb{F}_{p}}$ normal ist, gilt
+für jeden $\mathbb{F}_{p}$-Homomorphismus $i:\mathbb{F}_{p^{n}}\hookrightarrow\overline{\mathbb{F}}_{p}:i\left(\mathbb{F}_{p^{n}}\right)=\tilde{\mathbb{F}}_{p^{n}}$.\\
+Schreibe daher auch $\mathbb{F}_{p^{n}}=\tilde{\mathbb{F}}_{p^{n}}$
+und fasse im Folgenden alle $\mathbb{F}_{p^{n}}$ als Teilkörper eines
+festen algebraischen Abschlusses $\overline{\mathbb{F}}_{p}$ auf:
+\begin{align*}
+\mathbb{F}_{p} & \subseteq\mathbb{F}_{p^{n}}\subseteq\overline{\mathbb{F}}_{p^{n}}
+\end{align*}
+
+
+
+\subsection{Korollar}
+
+Für alle $n,m\ge1$ gilt: $\mathbb{F}_{p^{n}}\subseteq\mathbb{F}_{p^{m}}\Leftrightarrow n|m$.
+
+
+\subsubsection*{Beweis}
+
+\quotedblbase{}$\Rightarrow$\textquotedblleft{}: Schreibe $m=xn$,
+$x\in\mathbb{N}$ geeignet und sei $\alpha\in\mathbb{F}_{p^{n}}$,
+dann folgt:
+\begin{align*}
+\alpha^{p^{n}}= & \text{Frob}_{\overline{F}_{p}}^{nx}\left(\alpha\right)=\underbrace{\text{Frob}_{\overline{F}_{p}}^{n}\left(\alpha\right)\circ\ldots\circ\text{Frob}_{\overline{F}_{p}}^{n}\left(\alpha\right)}_{x\text{-mal}}\stackrel{\alpha^{p^{n}}=\alpha}{=}a
+\end{align*}
+Also ist $\alpha\in\mathbb{F}_{p^{m}}$.
+
+\quotedblbase{}$\Leftarrow$\textquotedblleft{}: Aus $m=\left[\mathbb{F}_{p^{m}}:\mathbb{F}_{p}\right]\stackrel{\mathbb{F}_{p^{n}}\subseteq\mathbb{F}_{p^{m}}}{=}\underbrace{\left[\overline{\mathbb{F}}_{p^{m}}:\mathbb{F}_{p^{n}}\right]}_{\in\mathbb{N}}\cdot\underbrace{\left[\mathbb{F}_{p^{n}}:\mathbb{F}_{p}\right]}_{=n}$
+folgt $n|m$.
+
+\qqed
+
+
+\subsection{Satz und Definition}
+
+Seien $p$ eine Primzahl und $1\le n|m$, $q:=p^{n}$, $q':=p^{m}$,
+also $\mathbb{F}_{p}\subseteq\mathbb{F}_{q}\subseteq\mathbb{F}_{q'}\subseteq\overline{\mathbb{F}}_{p}$.
+
+\begin{iiilist}
+
+\iii $F_{q}:=\text{Frob}_{\overline{\mathbb{F}}_{p}}^{n}\in\text{Aut}_{\mathbb{F}_{q}}\left(\overline{\mathbb{F}}_{p},\overline{\mathbb{F}}_{p}\right)$
+heißt \emph{der relative Frobenius über $F_{q}$}.
+
+\iii Die Gruppe $\text{Aut}_{\mathbb{F}_{q}\text{-Alg.}}\left(\mathbb{F}_{q'},\mathbb{F}_{q'}\right)$
+ist zyklisch von Ordnung $\frac{m}{n}=\left[\mathbb{F}_{q'}:\mathbb{F}_{q}\right]$
+und $\sigma:=\left(F_{q}\right)|_{\mathbb{F}_{q'}}$ ist ein Erzeuger.
+
+\end{iiilist}
+
+
+\subsubsection*{Beweis}
+
+i) Zeige $F_{q}|_{\mathbb{F}_{q}}=\text{id}$.
+
+Ist $\alpha\in\mathbb{F}_{q}$ so folgt $F_{q}\left(\alpha\right)=\alpha^{q}\stackrel{\left(\ref{}9.2\right)}{=}\alpha$
+
+\qqed[i)]
+
+ii) Es gilt:
+\begin{align*}
+\left|\text{Aut}_{\mathbb{F}_{q}\text{-Alg.}}\left(\mathbb{F}_{q'},\mathbb{F}_{q'}\right)\right| & \stackrel{\text{(Übung)}}{=}\left|\text{Hom}_{\mathbb{F}_{q}\text{-Alg.}}\left(\mathbb{F}_{q'},\mathbb{F}_{q'}\right)\right|\stackrel{\modulo{\mathbb{F}_{q'}}{\mathbb{F}_{q}}\text{ normal}}{=}\left|\text{Hom}_{\mathbb{F}_{q}\text{-Alg.}}\left(\mathbb{F}_{q'},\overline{\mathbb{F}}_{p}\right)\right|=\\
+ & \stackrel{\text{Def.}}{=}\left[\mathbb{F}_{q'}:\mathbb{F}_{q}\right]_{S}\stackrel{\ref{}8.12\text{, ii)}}{=}\left[\mathbb{F}_{q'};\mathbb{F}_{q}\right]=\frac{m}{n}=:k
+\end{align*}
+Weil $\modulo{\mathbb{F}_{q'}}{\mathbb{F}_{q}}$ normal ist, folgt
+$\sigma\left(\mathbb{F}_{q'}\right)=\mathbb{F}_{q}'\subseteq\overline{\mathbb{F}}_{p}$,
+also $\sigma\in\text{Aut}_{\mathbb{F}_{q}\text{-Alg.}}\left(\mathbb{F}_{q'},\mathbb{F}_{q'}\right)$.
+
+Zeige noch: $\text{ord}\left(\sigma\right)=k$.
+
+Zunächst ist $\sigma^{k}=F_{q}^{k}=F_{q'}=\text{id}_{\mathbb{F}_{q'}}$
+klar.
+
+Wäre nun $a:=\text{ord}\left(\sigma\right)<k$, so wäre $\sigma^{a}=F_{q}^{a}=\text{id}_{F_{q}'}$,
+dass heißt:
+\begin{align*}
+\fall_{\alpha\in\mathbb{F}_{q'}} & \alpha=\sigma^{a}\left(\alpha\right)=\alpha^{q^{a}}=\alpha p^{n\cdot a}
+\end{align*}
+Es gilt aber:
+\begin{align*}
+\left|\left\{ \alpha\in\overline{\mathbb{F}}_{p}|\alpha=\alpha p^{n\cdot a}\right\} \right| & \le p^{na}\stackrel{a<k}{<}p^{nk}=p^{m}=\left(q'\right)^{q'}
+\end{align*}
+Dies wird zu $\left|\mathbb{F}_{q'}\right|=q'$.
+
+\qqed
+
+TODO: Rest
+
+\newpage{}
+
+
+\section{Galoistheorie}
+
+
+\subsection{Definition}
+
+
+\subsection{Beispiel und Definition}
+
+
+\subsection{Proposition}
+
+
+\subsection{Proposition}
+
+
+\subsection{Satz und Definition}
+
+
+\subsection{Beispiel}
+
+
+\subsection{Korollar}
+
+
+\subsection{Bemerkung und Beispiel}
+
+
+\subsection{Satz \textmd{(Hauptsatz der Galoistheorie)}}
+
+Seien $E\supseteq k$ eine endliche galoissche Körpererweiterung und
+$G:=\text{Gal}\left(\modulo{E}{k}\right)$. Dann gelten:
+
+\begin{iiilist}
+
+\iii Die Abbildung
+\begin{align*}
+\phi:\left\{ H|H\subseteq G\text{ Untergruppe}\right\}  & \rightleftarrows\left\{ K|k\subseteq K\subseteq E\text{ Zwischenkörper}\right\} :\psi
+\end{align*}
+\begin{align*}
+\phi\left(H\right) & :=E^{H} & \psi\left(K\right) & :=\text{Gal}\left(\modulo{E}{k}\right)\subseteq G
+\end{align*}
+sind wohldefiniert und zueinander invers.
+
+\iii Für eine Untergruppe $H\subseteq G$ sind äquivalent:
+
+\begin{abclist}
+
+\abc $H\unlhd G$ ist ein Normalteiler.
+
+\abc $\modulo{E^{H}}{k}$ ist galoissch.
+
+\end{abclist}
+
+In diesem Fall ist die Abbildung
+\begin{align*}
+\text{Gal}\left(\modulo{E}{k}\right)=G & \twoheadrightarrow\text{Gal}\left(\modulo{E^{H}}{k}\right)\\
+\sigma & \mapsto\sigma|_{E^{H}}
+\end{align*}
+ein surjektiver Gruppenhomomorphismus, der einen Isomorphismus
+\begin{align*}
+\modulo{\text{Gal}\left(\modulo{E}{k}\right)}{\text{Gal}\left(\modulo{E}{E^{H}}\right)} & \stackrel{\sim}{\to}\text{Gal}\left(\modulo{E^{H}}{k}\right)
+\end{align*}
+induziert.
+
+\end{iiilist}
+
+
+\subsubsection*{Beweis}
+
+\begin{iiilist}
+
+\iii Die Wohldefiniertheit von $\phi$ ist klar und die von $\psi$
+folgt aus \ref{asdf}10.3 i).
+\begin{itemize}
+\item $\phi\circ\psi=\text{id}$\\
+Zeige: $k\subseteq K\subseteq E$ Zwischenkörper $\Rightarrow$ $K=\phi\left(\psi\left(K\right)\right)=E^{\text{Gal}\left(\modulo{E}{K}\right)}$.\\
+Dies folgt aus \ref{asdf}10.7 ii) für die Körpererweiterung $E\subseteq K$.
+\item $\psi\circ\phi=\text{id}$\\
+Zeige: $H\subseteq G$ Untergruppe $\Rightarrow$ $\text{Gal}\left(\modulo{E}{E^{H}}\right)=H$
+in $G$.\\
+Dies gilt nach \ref{asdf}10.5 ii)
+\end{itemize}
+\qqed[i)]
+
+\iii b) $\Rightarrow$ a) und zweite Aussage: \ref{asdf}10.3 ii)\\
+a) $\Rightarrow$ b): Wegen \ref{asdf}8.16 i) $\Rightarrow$ ii)
+ist mit $\modulo{E}{k}$ auch $\modulo{E^{H}}{k}$ separabel.
+
+Zeige also noch, dass $\modulo{E^{H}}{k}$ normal ist.
+
+Dazu nach \ref{asdf}7.4 i):
+
+Für jeden $k$-Homomorphismus $\sigma:E^{H}\hookrightarrow\overline{E}$
+gilt $\sigma\left(E^{H}\right)\subseteq E^{H}$.
+
+
+\subsubsection*{Beweis}
+
+Für eine Fortsetzung $\overline{\sigma}:E\hookrightarrow\overline{E}$
+von $\sigma$ gilt, weil $\modulo{E}{k}$ normal ist, $\overline{\sigma}\left(E\right)=E$,
+also $\overline{\sigma}\in\text{Aut}_{k}\left(E\right)=G$.
+
+Seien nun $\alpha\in E^{H}$ und $\omega\in H$ beliebig, dann folgt:
+\begin{align*}
+\omega\left(\sigma\left(\alpha\right)\right) & =\left(\omega\circ\overline{\sigma}\right)\left(\alpha\right)
+\end{align*}
+Rechne:
+\begin{align*}
+\omega\circ\overline{\sigma} & =\overline{\sigma}\circ\underbrace{\overline{\sigma}^{-1}\circ\omega\circ\overline{\sigma}}_{=:\omega'\in H\text{, da }H\unlhd G}
+\end{align*}
+Also ist:
+\begin{align*}
+\omega\left(\sigma\left(\alpha\right)\right) & =\overline{\sigma}(\underbrace{\omega'\left(\alpha\right)}_{=\alpha\text{, da }\omega'\in H,\alpha\in E^{H}})=\overline{\sigma}\left(\alpha\right)=\sigma\left(\alpha\right)
+\end{align*}
+Weil $\alpha,\omega$ beliebig sind, folgt $\sigma\left(E^{H}\right)\subseteq E^{H}$.
+
+\end{iiilist}
+
+\qqed
+
+
+\subsection{Korollar}
+
+Ist $\modulo{E}{k}$ eine endliche separable Körpererweiterung, so
+besitzt $\modulo{E}{k}$ nur endlich viele Zwischenkörper.
+
+
+\subsubsection*{1. Beweis}
+
+Die normale Hülle $\modulo{E'}{k}$ ist endlich (nach \ref{asdf}7.10
+ii)), normal und separabel, also galoissch mit
+\begin{align*}
+G & :=\text{Gal}\left(\modulo{E'}{k}\right)
+\end{align*}
+endlich, genauer $\left|G\right|=\left[E':k\right]<\infty$.
+
+$G$ besitzt nur endlich viele Untergruppen, also besitzt nach \ref{asdf}10.9
+i) $\modulo{E'}{k}$ nur endlich viele Zwischenkörper.
+
+Jeder Zwischenkörper von $\modulo{E}{k}$ ist aber insbesondere einer
+von $\modulo{E'}{k}$.
+
+\qqed[1. Beweis]
+
+
+\subsubsection*{2. Beweis}
+
+Nach \ref{asdf}8.17 existiert ein $\alpha\in E$ mit $E=k\left(\alpha\right)$.
+
+Dann folgt die Aussage aus Blatt 6, Aufgabe 4.
+
+\qqed
+
+
+\subsection{Definition und Bemerkung}
+
+Seien $E\supseteq k$ eine Körpererweiterung und $k\subseteq K_{1},K_{2}\subseteq E$
+Zwischenkörper.
+
+Dann ist $K_{1}\cdot K_{2}:=K_{1}\left(K_{2}\right)=K_{2}\left(K_{1}\right)\subseteq E$
+der kleinste Zwischenkörper von $\modulo{E}{k}$, der $K_{1}$ und
+$K_{2}$ enthält und heißt \emph{das Kompositum von $K_{1}$ und $K_{2}$
+(in $E$)}.
+
+
+\subsection{Satz}
+
+Seien $E\supseteq k$ eine endliche Galoiserweiterung (das ist definiert
+als endliche Körpererweiterung, die galoissch ist), $k\subseteq K_{1},K_{2}\subseteq E$
+Zwischenkörper und
+\begin{align*}
+H_{i} & :=\text{Gal}\left(\modulo{E}{K_{i}}\right)\subseteq G:=\text{Gal}\left(\modulo{E}{k}\right)
+\end{align*}
+die zugehörigen Untergruppen.
+
+Dann gelten:
+
+\begin{iiilist}
+
+\iii $K_{1}\subseteq K_{2}\Leftrightarrow H_{2}\subseteq H_{1}\quad(!)$
+
+\iii $K_{1}\cdot K_{2}=E^{H_{1}\cap H_{2}}$
+
+\iii $K_{1}\cap K_{2}=E^{\left\langle H_{1},H_{2}\right\rangle }$,
+wobei $\left\langle H_{1},H_{2}\right\rangle \subseteq G$ die von
+$H_{1}$ und $H_{2}$ erzeugte Untergruppe ist.
+
+\end{iiilist}
+
+
+\subsubsection*{Bildchen}
+
+TODO: Abb1
+
+
+\subsubsection*{Bemerkung}
+
+Ist $\modulo{E}{k}$ endlich separabel und $\modulo{E'}{k}$ normale
+Hülle von $\modulo{E}{k}$, dann ist $\modulo{E'}{k}$ endlich separabel
+(und normal).
+
+
+\subsubsection*{Beweis}
+
+Aus \ref{asdf}8.17 ergibt sich:
+\begin{align*}
+\exs_{\alpha\in E} & E=k\left(\alpha\right)
+\end{align*}
+Wähle $E\hookrightarrow\overline{E}=\overline{k}$.
+
+Nach \ref{asdf}7.10 folgt:
+\begin{align*}
+E' & =k\left(\sigma\left(\alpha\right)|\sigma\in\text{Hom}_{k\text{-Alg.}}\left(E,\overline{E}\right)\right)
+\end{align*}
+Aus
+\begin{align*}
+\left|\text{Hom}_{k\text{-Alg.}}\left(E,\overline{E}\right)\right| & =\left[E:k\right]_{S}=\left[E:k\right]<\infty
+\end{align*}
+folgt:
+\begin{align*}
+\left[E':k'\right] & <\infty\ref{asdf}??
+\end{align*}
+Für alle $\sigma$ gilt $\text{Mipo}_{k}\left(\sigma\left(\alpha\right)\right)\stackrel{\left(!\right)}{=}\text{Mipo}_{k}\left(\alpha\right)\in k\left[X\right]$
+ist separabel, also ist $\modulo{E'}{k}$ separabel. (nach \ref{asdf}??)
+
+
+\subsubsection*{Beweis von \ref{asdf}10.12}
+
+\begin{iiilist}
+
+\iii \quotedblbase{}$\Rightarrow$\textquotedblleft{}: $H_{2}=\text{Aut}_{K_{2}}\left(E\right)\stackrel{K_{1}\subseteq K_{2}}{\subseteq}\text{Aut}_{K_{1}}\left(E\right)=H_{1}$
+
+\quotedblbase{}$\Leftarrow$\textquotedblleft{}: $K_{1}\stackrel{\ref{asdf}10.9\, i)}{=}E^{H_{1}}\stackrel{H_{2}\subseteq H_{1}}{\subseteq}E^{H_{2}}\stackrel{\ref{asdf}10.9\, i)}{=}K_{2}$
+
+\qqed[i)]
+
+\iii $K_{1}\cdot K_{2}=E^{H_{1}}\cdot E^{H_{2}}\stackrel{\text{i)}}{\subseteq}\left(E^{H_{1}\cap H_{2}}\right)\cdot\left(E^{H_{1}\cap H_{2}}\right)=E^{H_{1}\cap H_{2}}$
+
+Ferner gilt:
+\begin{align*}
+\text{Gal}\left(\modulo{E}{K_{1}\cdot K_{2}}\right) & \stackrel{K_{i}\subseteq K_{1}\cdot K_{2}}{\subseteq}\text{Aut}_{K_{1}}\left(E\right)\cap\text{Aut}_{K_{2}}\left(E\right)=H_{1}\cap H_{2}
+\end{align*}
+Damit folgt mit i):
+\begin{align*}
+E^{H_{1}\cap H_{2}} & \subseteq K_{1}\cdot K_{2}
+\end{align*}
+
+
+\qqed[ii)]
+
+\iii $E^{\left\langle H_{1},H_{2}\right\rangle }=E^{H_{1}}\cap E^{H_{2}}=K_{1}\cap K_{2}$
+
+(Da jedes Element von $\left\langle H_{1},H_{2}\right\rangle $ ein
+Produkt von Elementen aus $H_{1}$ oder $H_{2}$ ist.)
+
+\end{iiilist}
+
+
+\subsection{Beispiel und Definition \textmd{(Untergruppen-Diagramm)}}
+
+Nach Blatt 7, Aufgabe 2 ist die Galoisgruppe von $f:=X^{3}-2\in\mathbb{Q}\left[X\right]$
+isomorph zu $S_{3}$.
+
+Genauer: $\alpha\in\mathbb{C}:\alpha^{3}=2$ und $\zeta:=\exp\left(\frac{2\pi\ii}{3}\right)\in\mathbb{C}$
+
+Dann ist $\modulo{E:=\mathbb{Q}\left(\alpha,\zeta\right)}{\mathbb{Q}}$
+ist ein Zerfällungskörper von $f$ und die Abbildung
+\begin{align*}
+\text{Gal}\left(\modulo{E}{\mathbb{Q}}\right) & \stackrel{\sim}{\to}\sum\underbrace{\left\{ \alpha,\alpha\zeta,\alpha\zeta^{2}\right\} }_{=:\mathcal{N}}\\
+\sigma & \mapsto\sigma|_{\mathcal{N}}
+\end{align*}
+ist wohldefiniert und ein Gruppehnisomorphismus.
+
+Aus der linearen Algebra I ist folgendes \emph{Untergruppen-Diagramm}
+der $S_{3}$ bekannt:
+
+TODO: abb2
+
+$A_{3}\unlhd S_{3}$ ist der einzige nicht-triviale Normalteiler und
+es gilt:
+\begin{align*}
+\modulo{S_{3}}{A_{3}} & \stackrel{\sim}{=}\modlo{Z}{2}
+\end{align*}
+Die $H_{i}$ sind alle von Ordnung 2 und nicht normal. (vergleiche
+Übungsaufgabe ?)
+
+Außerdem können der Durchschnitt und die Erzeugerrelation abgelesen
+werden, zum Beispiel $\left\langle A_{3},H_{i}\right\rangle =S_{3}$
+und $H_{i}\cap A_{3}=\left\{ e\right\} $ für alle $0\le i\le2$.
+\begin{align*}
+E & =E^{\left\{ e\right\} }=\mathbb{Q}\left(\alpha,\zeta\right)
+\end{align*}
+
+
+Aus \ref{asdf}10.9 und \ref{asdf}10.12 folgt daraus folgendes Diagramm
+von Zwischenkörpern.
+
+TODO: Abb 4
+
+\begin{align*}
+(\mathbb{Q}\left(\zeta\right) & =E^{A_{3}})
+\end{align*}
+Weil $H_{i}\subseteq S_{3}$ nicht normal ist, ist $\modulo{\mathbb{Q}\left(\alpha\zeta^{i}\right)}{\mathbb{Q}}$
+nicht normal (vergleiche \ref{asdf}7.2).
+
+Weil $A_{3}\unlhd S_{3}$ ist $\modulo{\mathbb{Q}\left(3\right)}{\mathbb{Q}}$
+galoissch mit:
+\begin{align*}
+\text{Gal}\left(\modulo{\mathbb{Q}\left(3\right)}{\mathbb{Q}}\right) & \stackrel{\sim}{=}\modulo{S_{3}}{A_{3}}\stackrel{\sim}{=}\modlo{Z}{2}
+\end{align*}
+Zur Bestimmung der Fixkörper:
+\begin{enumerate}
+\item $\sigma:=\left(\begin{array}{ccc}
+\alpha & \alpha\zeta & \alpha\zeta^{2}\end{array}\right)\in A_{3}$ ist ein Erzeuger und es gilt:
+\begin{align*}
+\sigma\left(\zeta\right) & =\sigma\left(\frac{\alpha\zeta}{\alpha}\right)=\frac{\alpha\zeta^{2}}{\alpha\zeta}=\zeta
+\end{align*}
+Daher ist $\zeta\in E^{A_{3}}$.\\
+Wegen $\left[E^{A_{3}}:\mathbb{Q}\right]=2$ und $\left[\mathbb{Q}\left(\zeta\right):\mathbb{Q}\right]=2$,
+da das $\text{Mipo}_{\mathbb{Q}}\left(\zeta\right)=X^{2}+X+1$ ist,
+also folgt $E^{A_{3}}=\mathbb{Q}\left(\zeta\right)$. %DATE: Fr 16.12.2011
+\item Für $\text{id}\not=\tau_{i}\in H_{i}$ ($0\le i\le2$) gilt $\tau_{i}\left(\alpha\zeta^{i}\right)=\alpha\zeta^{i}$,
+also $\alpha\zeta^{i}\in E^{H_{i}}$.\\
+Wegen $\left[\alpha\zeta^{i}:\mathbb{Q}\right]=3$, da $\text{Mipo}_{\mathbb{Q}}\left(\alpha\zeta^{i}\right)=X^{3}-2$,
+und $\left[E^{H_{i}}:\mathbb{Q}\right]=\left[E^{H_{i}}:E^{S_{3}}\right]=\left[S_{3}:H_{i}\right]=3$
+folgt $E^{H_{i}}=\mathbb{Q}\left(\alpha\zeta^{i}\right)$ ($0\le i\le2$).
+\end{enumerate}
+
+\subsubsection*{Bemerkung}
+
+Seien $E\supseteq k$ endlich und galoissch, $G:=\text{Gal}\left(\modulo{E}{k}\right)$,
+$H\subseteq G$ eine Untergruppe und $K:=E^{H}$.
+
+Dann gilt:
+
+\begin{abclist}
+
+\abc $\left[E:E^{H}\right]=\left[G:H\right]$
+
+\abc $\left[E^{H}:k\right]=\left[G:H\right]$
+
+\end{abclist}
+
+
+\subsubsection*{Beweis}
+
+$\text{Gal}\left(\modulo{E}{k}\right)=H$
+
+Aus \ref{asdf}10.3.1 folgt damit a).
+
+Dann gilt:
+\begin{align*}
+\left[E:k\right] & =\left[G:H\right]\cdot\left|H\right|\stackrel{\text{a)}}{=}\left[G:H\right]\cdot\left[E:E^{H}\right]
+\end{align*}
+Und damit folgt:
+\begin{align*}
+\left[E^{H}:k\right] & =\left[G:H\right]
+\end{align*}
+
+
+\qqed[Bemerkung]
+
+
+\subsection{Definition \textmd{(abelsche und zyklische Galoiserweiterung)}}
+
+Eine Galoiserweiterung $\modulo{E}{k}$ heißt genau dann \emph{abelsch}
+(beziehungsweise \emph{zyklisch}), wenn $\text{Gal}\left(\modulo{E}{k}\right)$
+abelsch (beziehungsweise zyklisch) ist.
+
+
+\subsection{Korollar}
+
+Seien $\modulo{E}{k}$ eine endliche, abelsche (beziehungsweise zyklische)
+Körpererweiterung und $k\subseteq K\subseteq E$ ein Zwischenkörper.
+
+Dann ist $\modulo{K}{k}$ abelsch (beziehungsweise zyklisch).
+
+
+\subsubsection*{Beweis}
+
+$G:=\text{Gal}\left(\modulo{E}{k}\right)$ ist abelsch und damit folgt,
+dass $H:=\text{Gal}\left(\modulo{E}{K}\right)\unlhd G$ gilt.
+
+Aus \ref{asdf}10.9 ii) folgt damit, dass $\modulo{K}{k}$ galoissch
+ist und $\text{Gal}\left(\modulo{K}{k}\right)\stackrel{\sim}{=}\modulo{G}{H}$
+endlich zyklisch (beziehungsweise zyklisch nach \ref{asdf}1.22 ii))
+ist.
+
+\qqed
+
+
+\subsection{Satz}
+
+Seien $E\supseteq k$ eine Körpererweiterung und $k\subseteq K_{1},K_{2}\subseteq E$
+Zwischenkörper mit $\modulo{K_{i}}{k}$ endlich galoissch ($i=1,2$).
+
+Dann gilt:
+
+\begin{iiilist}
+
+\iii Das Kompositum $K_{1}\cdot K_{2}$ ist endlich galoissch und
+die Abbildung
+\begin{align*}
+\varphi:\text{Gal}\left(\modulo{K_{1}\cdot K_{2}}{K_{1}}\right) & \stackrel{\sim}{\to}\text{Gal}\left(\modulo{K_{1}\cap K_{2}}{k}\right)\\
+\sigma & \mapsto\sigma|_{K_{2}}
+\end{align*}
+ist wohldefiniert und ein Gruppenisomorphismus.
+
+\iii Die Abbildung 
+\begin{align*}
+\psi:\text{Gal}\left(\modulo{K_{1}\cdot K_{2}}{k}\right) & \hookrightarrow\text{Gal}\left(\modulo{K_{1}}{k}\right)\times\text{Gal}\left(\modulo{K_{2}}{k}\right)\\
+\sigma & \mapsto\left(\sigma|_{K_{1}},\sigma|_{K_{2}}\right)
+\end{align*}
+ist wohldefiniert und ein injektiver Gruppenhomomorphismus.
+
+Im Fall $K_{1}\cap K_{2}=k$ ist $\psi$ ein Isomorphismus.
+
+\end{iiilist}
+
+
+\subsubsection*{Beweis}
+
+\begin{iiilist}
+
+\iii Es existiert separable $f_{i}\in k\left[X\right]$ so, dass
+$\modulo{K_{i}}{k}$ der Zerfällungskörper von $f_{i}$ ist ($i=1,2$),
+siehe \ref{asdf}10.2 a) $\Rightarrow$ b).
+
+Dann ist $\modulo{K_{1}\cdot K_{2}}{k}$ der Zerfällungskörper des
+separablen Polynoms $f_{1}f_{2}$, also endlich und galoissch.
+
+$\varphi$ ist wohldefiniert, da $\left(\sigma|_{K_{1}}=\text{id}\Rightarrow\left(\sigma|_{K_{2}}\right)\big|_{K_{1}\cap K_{2}}=\text{id}\right)$
+gilt, und offenbar ein Gruppenhomomorphismus.
+
+Für $\sigma\in\text{ker}\left(\varphi\right)$ gilt:
+\begin{align*}
+\text{id} & =\sigma|_{K_{2}}=\sigma|_{K_{1}}\\
+\Rightarrow\quad\sigma|_{K_{1}\cdot K_{2}} & =\sigma=\text{id}
+\end{align*}
+Also ist $\varphi$ injektiv.
+
+Ferner gilt:
+\begin{align*}
+K_{2}^{\text{im}\left(\varphi\right)} & \stackrel{\text{Def. von }\varphi}{=}\left(K_{1}\cdot K_{2}\right)^{\text{Gal}\left(\modulo{K_{1}\cdot K_{2}}{K_{1}}\right)}\cap K_{2}\stackrel{\ref{asdf}10.9i)}{=}K_{1}\cap K_{2}=K_{2}^{\text{Gal}\left(\modulo{K_{2}}{K_{1}\cap K_{2}}\right)}
+\end{align*}
+Mit \ref{asdf}10.9 i) folgt:
+\begin{align*}
+\text{im}\left(\varphi\right) & =\text{Gal}\left(\modulo{K_{2}}{K_{1}\cap K_{2}}\right)
+\end{align*}
+Also ist $\varphi$ surjektiv.
+
+\iii Wohldefiniertheit und Gruppenhomomorphismus sind klar.
+
+Aus $\sigma\in\text{ker}\left(\psi\right)$ folgt $\sigma|_{K_{i}}=\text{id}$
+($i=1,2$) und damit folgt $\sigma=\sigma|_{K_{1}\cdot K_{2}}=\text{id}$,
+weswegen $\psi$ injektiv ist.
+
+Gelte nun $K_{1}\cap K_{2}=k$ und sei $\left(\sigma,\sigma'\right)\in\text{Gal}\left(\modulo{K_{1}}{k}\right)\times\text{Gal}\left(\modulo{K_{2}}{k}\right)$
+beliebig.
+
+Aus i) folgt damit, dass es ein $\tilde{\sigma}\in\text{Gal}\left(\modulo{K_{1}\cdot K_{2}}{K_{2}}\right)$
+mit $\tilde{\sigma}|_{K_{1}}=\sigma$ gibt, und ebenso ein $\tilde{\sigma}'\in\text{Gal}\left(\modulo{K_{1}\cdot K_{2}}{K_{1}}\right)$
+mit $\tilde{\sigma}'|_{K_{2}}=\text{id}$.
+
+Dann gilt:
+\begin{align*}
+\psi\left(\tilde{\sigma}'\cdot\tilde{\sigma}\right) & =\left(\tilde{\sigma}'\cdot\tilde{\sigma}|_{K_{1}},\tilde{\sigma}'\cdot\tilde{\sigma}|_{K_{2}}\right)=\left(\text{id}\cdot\sigma,\sigma'\cdot\text{id}\right)=\left(\sigma,\sigma'\right)
+\end{align*}
+
+
+Daher ist $\psi$ surjekiv.
+
+\end{iiilist}
+
+\qqed
+
+
+\subsubsection*{Beweis}
+
+Nach \ref{asdf}8.17 gibt es ein $\alpha_{i}\in K_{i}$ mit $K_{i}=k\left(\alpha_{i}\right)$
+($i=1,2$).
+
+Es gilt $\text{Mipo}_{K_{1}}\left(\alpha_{2}\right)|\text{Mipo}_{k}\left(\alpha_{2}\right)$,
+da $\text{Mipo}_{k}\left(\alpha_{2}\right)\in K_{1}\left[X\right]$
+schon $\alpha_{2}$ annuliert.
+
+Mit $\text{Mipo}_{k}\left(\alpha_{2}\right)$ ist damit auch $\text{Mipo}_{K_{1}}\left(\alpha_{2}\right)$
+separabel.
+
+Also gilt:
+\begin{align*}
+k & \stackrel{\text{endlich separabel}}{\subseteq}K_{1}\stackrel{\text{endlich separabel}}{\subseteq}K_{1}\left(\alpha_{2}\right)=K_{1}\left(k\left(\alpha_{2}\right)\right)=K_{1}\left(K_{2}\right)=K_{1}\cdot K_{2}
+\end{align*}
+
+
+Nach der Gradformel und Transitivität der Separabilität (vergleiche
+\ref{asdf}6???).
+
+
+\subsubsection*{Bemerkung}
+\begin{enumerate}
+\item $f_{1},f_{2}\in k\left[X\right]$ separable $\not\Rightarrow$ $f_{1}\cdot f_{2}\in k\left[X\right]$
+separabel, zum Beispiel $f_{1}=f_{2}=X$.
+\item $k\subseteq K_{1},K_{2}\subseteq E$ Zwischenkörper mit $\modulo{K_{i}}{k}$
+endlich und separabel. Damit folgt $\modulo{K_{1}\cdot K_{2}}{k}$
+endlich und separabel.
+\end{enumerate}
+
+\subsection{Proposition}
+
+Seien $k$ ein Körper, $f\in k\left[X\right]$ separabel, $\modulo{E}{k}$
+ein Zerfällungskörper von $f$, $G:=\text{Gal}\left(\modulo{E}{k}\right)$
+(vergleiche \ref{asdf}10.2 ii)) und $\mathcal{N}:=\left\{ \beta\in E|f\left(\beta\right)=0\right\} $.
+
+Beachte: $\left|\mathcal{N}\right|=\text{deg}\left(f\right)$
+
+Dann gilt für alle $\sigma\in G$ schon $\sigma\left(\mathcal{N}\right)\subseteq\mathcal{N}$
+und es sind äquivalent:
+
+\begin{iiilist}
+
+\iii $f\in k\left[X\right]$ ist irreduzibel.
+
+\iii Für alle $\alpha,\beta\in\mathcal{N}$ gibt es ein $\sigma\in G$
+mit $\sigma\left(\alpha\right)=\beta$.
+
+\end{iiilist}
+
+
+\subsubsection*{Beweis}
+
+Aus $\alpha\in\mathcal{N}$ und $\sigma\in G$ folgt:
+\begin{align*}
+0 & =\sigma(\underbrace{f\left(\alpha\right)}_{=0})=f^{\sigma}\left(\sigma\left(t\alpha\right)\right)\stackrel{f=f^{\sigma},\text{ da }f\in k\left[X\right]}{=}f\left(\sigma\left(\alpha\right)\right)
+\end{align*}
+Damit folgt $\sigma\left(\alpha\right)\in\mathcal{N}$, das heißt
+für alle $\sigma\in G$ ist $\sigma\left(\mathcal{N}\right)\subseteq\mathcal{N}$.
+
+i) $\Rightarrow$ ii):
+
+Ist $\overline{k}\supseteq E$ ein algebraischer Abschluss, so existiert
+$\tilde{\sigma}:\overline{k}\to\overline{k}$ mit $\tilde{\sigma}\left(\alpha\right)=\beta$.
+(Blatt 8, A3,d) $\Rightarrow$ a))
+
+Weil $\modulo{E}{k}$ normal ist, ist $\sigma:=\tilde{\sigma}|_{E}\in G$
+und es gilt $\sigma\left(\alpha\right)=\tilde{\sigma}\left(\alpha\right)=\beta$.
+
+ii) $\Rightarrow$ i):
+
+Für $g:=\text{Mipo}_{k}\left(\alpha\right)$ gelten $g|f$ in $k\left[X\right]$
+und ($\fall_{\beta\in\mathcal{N}}\exs_{\sigma\in G}:\sigma\left(\alpha\right)=\beta\Rightarrow0=\sigma(\underbrace{g\left(\alpha\right)}_{=0})=g^{\sigma}\left(\sigma\left(\alpha\right)\right)=g\left(\beta\right)$),
+also:
+\begin{align}
+g|_{\mathcal{N}} & =0\label{eq:gN0}
+\end{align}
+Weil $f$ separabel ist, gilt:
+\begin{align*}
+\left|\mathcal{N}\right| & =\text{deg}\left(f\right)
+\end{align*}
+Aus \eqref{eq:gN0} folgt:
+\begin{align*}
+\text{deg}\left(g\right) & \ge\text{deg}\left(f\right)
+\end{align*}
+Wegen $g|f$ sind damit $f$ und $g$ in $k\left[X\right]$ assoziiert,
+also ist mit $g$ auch $f$ irreduzibel.
+
+\qqed
+
+
+\subsection{Beispiel \textmd{(biquadratische Erweiterung)}}
+
+Seien $\alpha,\beta\in\overline{\mathbb{Q}}$ mit $\alpha_{1}^{2}=2$
+und $\alpha_{2}^{2}=3$ und $E:=\mathbb{Q}\left(\alpha_{1},\alpha_{2}\right)$.
+
+Dann gelten:
+\begin{align*}
+\text{Gal}\left(\modulo{E}{\mathbb{Q}}\right) & \stackrel{\sim}{=}\modlo{Z}{2}\times\modlo{Z}{2}
+\end{align*}
+\begin{align*}
+\beta & :=\alpha_{1}+\alpha_{2}\\
+E & =\mathbb{Q}\left(\beta\right)\\
+\text{Mipo}_{\mathbb{Q}}\left(\beta\right) & =X^{4}-10X^{2}+1\in\mathbb{Q}\left[X\right]
+\end{align*}
+
+
+
+\subsubsection*{Beweis}
+
+Mit $k:=\mathbb{Q}\subseteq K_{1}:=\mathbb{Q}\left(\alpha_{1}\right),K_{2}:=\mathbb{Q}\left(\alpha_{2}\right)\subseteq E=K_{1}\cdot K_{2}$
+ist klar, dass $\modulo{K_{i}}{k}$ galoissch vom Grad 2 ist, also
+folgt:
+\begin{align*}
+\text{Gal}\left(\modulo{K_{i}}{k}\right) & \stackrel{\sim}{=}\modlo{Z}{2}
+\end{align*}
+Man kann zeigen, dass $K_{1}\cap K_{2}=k$ gilt (Übung), und nach
+\eqref{asdf}10.16 ii) ist
+\begin{align*}
+\varphi:\text{Gal}\left(\modulo{E}{k}\right) & \stackrel{\sim}{\to}\text{Gal}\left(\modulo{K_{1}}{k}\right)\times\text{Gal}\left(\modulo{K_{2}}{k}\right)\stackrel{\sim}{=}\modlo{Z}{2}\times\modlo{Z}{2}\\
+\varphi\left(\sigma\right) & :=\left(\sigma|_{K_{1}},\sigma|_{K_{2}}\right)
+\end{align*}
+ein Isomorphismus.
+
+Für $i=1,2$ gilt $\text{Gal}\left(\modulo{K_{i}}{k}\right)=\left\{ 1,\tau_{i}\right\} $,
+wobei $\tau_{i}:K_{i}\stackrel{\sim}{\to}K_{i}$ durch $\tau_{i}\left(\alpha_{i}\right)=-\alpha_{i}$
+eindeutig bestimmt ist.
+
+Nach Definition von $\varphi$ folgt:
+\begin{align*}
+\text{Gal}\left(\modulo{E}{k}\right) & =\left\{ 1,\sigma_{1},\sigma_{2},\sigma_{1}\sigma_{2}\right\} 
+\end{align*}
+Dabei sind diese Elemente eindeutig bestimmt durch folgende Tabelle:
+
+\noindent \begin{center}
+\begin{tabular}{|c|c|c|}
+\hline 
+$x\in G$ & $x\left(\alpha_{1}\right)$ & $x\left(\alpha_{2}\right)$\tabularnewline
+\hline 
+\hline 
+$1$ & $\alpha_{1}$ & $\alpha_{2}$\tabularnewline
+\hline 
+$\sigma_{1}$ & $-\alpha_{1}$ & $\alpha_{2}$\tabularnewline
+\hline 
+$\sigma_{2}$ & $\alpha_{1}$ & $-\alpha_{2}$\tabularnewline
+\hline 
+$\sigma_{1}\sigma_{2}$ & $-\alpha_{1}$ & $-\alpha_{2}$\tabularnewline
+\hline 
+\end{tabular}
+\par\end{center}
+
+Rechne nun für $\beta:=\alpha_{1}+\alpha_{2}\in E$ nach:
+\begin{align*}
+f\left(X\right) & :=\prod_{\sigma\in\text{Gal}\left(\modulo{E}{k}\right)}\left(X-\sigma\left(\beta\right)\right)=\\
+ & \stackrel{\text{Tabelle}}{=}\left(X-\left(\alpha_{1}+\alpha_{2}\right)\right)\left(X+\left(\alpha_{1}+\alpha_{2}\right)\right)\left(X-\left(\alpha_{1}-\alpha_{2}\right)\right)\left(X+\left(\alpha_{1}-\alpha_{2}\right)\right)=\\
+ & =\left(X^{2}-\left(\alpha_{1}+\alpha_{2}\right)^{2}\right)\left(X^{2}-\left(\alpha_{1}-\alpha_{2}\right)^{2}\right)=\left(X^{2}-\left(5+2\alpha_{1}\alpha_{2}\right)\right)\left(X^{2}-\left(5-2\alpha_{1}\alpha_{2}\right)\right)=\\
+ & =X^{4}-10X^{2}+\left(5+2\alpha_{1}\alpha_{2}\right)\left(5-2\alpha_{1}\alpha_{2}\right)=X^{4}-10X^{2}+25-24=\\
+ & =X^{4}-10X^{2}+1\in\mathbb{Q}\left[X\right]
+\end{align*}
+Offenbar sind die Nullstellen von $f$ genau $\left\{ \beta,\sigma_{1}\left(\beta\right),\sigma_{2}\left(\beta\right),\sigma_{1}\sigma_{2}\left(\beta\right)\right\} $,
+woraus folgt, dass $\modulo{E}{k}$ ein Zerfällungskörper von $f$
+ist.
+
+Aus \ref{asdf}10.17 i) $\Rightarrow$ ii) folgt nun, dass $f\in k\left[X\right]$
+irreduzibel ist, und weil $f$ normiert ist, gilt $f=\text{Mipo}_{k}\left(\beta\right)$.
+
+\qqed
+
+%DATE Di 20.12.2011
+
+
+\section{Bestimmung einiger Galoisgruppen}
+
+
+\subsubsection*{Fixiere}
+
+Sei $k$ ein Körper.
+
+
+\subsection{Satz und Definition \textmd{(Die Permutationsdarstellung)}}
+
+Seien $f\in k\left[X\right]$ separabel, $n:=\deg\left(f\right)>0$,
+$E\supseteq k$ ein Zerfällungskörper von $f$ und $\mathcal{N}:=\left\{ \alpha\in E|f\left(\alpha\right)=0\right\} $
+(mit $\left|\mathcal{N}\right|=n$).
+
+Dann ist die Abbildung
+\begin{align*}
+p & :\text{Gal}\left(\modulo{E}{k}\right)\hookrightarrow\sum\left(\mathcal{N}\right)\left(\stackrel{\sim}{=}\text{ nach Wahl einer Nummerierung }\mathcal{N}=\left\{ \alpha_{1},\ldots,\alpha_{n}\right\} \right)
+\end{align*}
+mit
+\begin{align*}
+p\left(\sigma\right)\left(\alpha\right) & =\sigma\left(\alpha\right)
+\end{align*}
+für alle $\alpha\in\mathcal{N}$ und $\sigma\in\text{Gal}\left(\modulo{E}{k}\right)$
+wohldefiniert und ein injektiver Gruppenhomomorphismus.
+
+$p$ heißt \emph{die Permutationsdarstellung von $\text{Gal}\left(\modulo{E}{k}\right)$}.
+
+Es gelten:
+\begin{align*}
+f\in k\left[X\right]\text{ irreduzibel} & \stackrel{\text{a)}}{\Leftrightarrow}\left(\fall_{\alpha,\beta\in\mathcal{N}}\exs_{\sigma\in\text{Gal}\left(\moduloScript{E}{k}\right)}:p\left(\sigma\right)\left(\alpha\right)=\beta\right)\stackrel{\text{b)}}{\Leftarrow}p\text{ ist ein Isomorphismus}
+\end{align*}
+
+
+
+\subsubsection*{Beweis}
+
+$\modulo{E}{k}$ ist endlich galoissch nach \ref{asdf}10.2 b) $\Rightarrow$
+a).
+
+Die Aussagen über $p$ folgen wie in Aufgabe 2, ii) auf Blatt 7.
+
+a) ist \ref{asdf}10.17 i) $\Leftrightarrow$ ii).
+
+b) ist klar.
+
+\qqed
+
+
+\subsection{Quadratische Gleichungen}
+
+$f=X^{2}+aX+b\in k\left[X\right]$ besitze keine Nullstelle in $k$.
+
+Dann ist $E:=\modulo{k\left(\alpha\right)}{k}$ für $f\left(\alpha\right)=0$
+ein Zerfällungskörper von $f$, und in $E\left[X\right]$ gilt nach
+\ref{asdf}7.1 i):
+\begin{align*}
+f\left(X\right) & =\left(X-\alpha\right)\cdot\left(X-\left(-\alpha-a\right)\right)
+\end{align*}
+Weiter gilt: $f\in k\left[X\right]$ ist nicht separabel $\stackrel{f\text{ irreduzibel}}{\Leftrightarrow}$
+in $k\left[X\right]$ gilt: $0=f\left(X\right)=2X+a$ $\Leftrightarrow$
+($\text{char}\left(k\right)=2$ und $a=0$)
+
+Gelte nun ($\text{char}\left(k\right)\not=2$ oder $a\not=0$).
+
+Dann ist $\modulo{E}{k}$ galoissch mit $\text{Gal}\left(\modulo{E}{k}\right)\stackrel{\sim}{=}\modlo{Z}{2}$
+und das eindeutige $1\not=\sigma\in\text{Gal}\left(\modulo{E}{k}\right)$
+ist durch $\sigma\left(\alpha\right)=-\alpha-a$ eindeutig bestimmt.
+
+
+\subsection{Kubische Gleichungen}
+
+Es gelte $\text{char}\left(k\right)\not=2,3$ und $F\left(X\right)=X^{3}+AX^{2}+BX+C\in k\left[X\right]$
+besitze keine Nullstellen in $k$.
+
+Dann ist $F\in k\left[X\right]$ irreduzibel.
+
+Betrachte (ähnlich wie quadratische Ergänzung): (TODO: restliche Terme)
+\begin{align*}
+f\left(X\right) & :=F\left(X-\frac{A}{3}\right)=X^{3}+X^{2}\left(-3\cdot\frac{A}{3}+\alpha\right)+\ldots(TODO)=\\
+ & =X^{3}+aX+b
+\end{align*}
+(Hier geht $\text{char}\left(k\right)\not=3$ ein.)
+
+Da ${\displaystyle k\left[X\right]\stackrel{\sim}{\to}k\left[X\right],X\mapsto X-\frac{A}{3}}$
+ein Isomorphismus ist, betrachte im Folgenden $f\left(X\right)$.
+
+Es gilt $f'\left(X\right)=3X^{2}+a\not=0$, da $3\not=0$ wegen $\text{char}\left(k\right)\not=3$,
+also ist $f\in k\left[X\right]$ separabel nach \ref{asdf} 8.4 ii),
+und der Zerfällungskörper $\modulo{E}{k}$ von $f$ ist galoissch.
+
+Nummeriere $\mathcal{N}:=\left\{ \alpha\in E|f\left(\alpha\right)=0\right\} =\left\{ \alpha_{1},\alpha_{2},\alpha_{2}\right\} \stackrel{\ref{asdf}11.1}{\Rightarrow}$
+Es existiert genau ein Gruppenhomomorphismus $\varrho:\text{Gal}\left(\modulo{E}{k}\right)\hookrightarrow S_{3}$
+mit:
+\begin{align}
+\fall_{\sigma\in\text{Gal}\left(\moduloScript{E}{k}\right),1\le i\le3} & :\sigma\left(\alpha_{i}\right)=\alpha_{\varrho\left(\sigma\right)\left(i\right)}\label{eq:sigalphai}
+\end{align}
+Weil $f$ irreduzibel ist, folgt $\left[E:k\right]\ge3$ und aus der
+bekannten Untergruppenstruktur von $S_{3}$ (vergleiche \ref{asdf}10.13)
+folgt:
+\begin{align*}
+\text{Gal}\left(\modulo{E}{k}\right) & \stackrel{\sim}{=}\text{im}\left(\varrho\right)=\begin{cases}
+A_{3}\\
+S_{3}
+\end{cases}
+\end{align*}
+Betrachte:
+\begin{align*}
+\delta:=\left(\alpha_{1}-\alpha_{2}\right)\left(\alpha_{1}-\alpha_{3}\right)\left(\alpha_{2}-\alpha_{3}\right) & \in E^{*}
+\end{align*}
+(Dies gilt, da $f$ separabel ist.)
+
+
+\subsubsection*{Behauptung}
+
+Für alle $\sigma\in\text{Gal}\left(\modulo{E}{k}\right)$ gilt in
+$E^{*}$:
+\begin{align*}
+\sigma\left(\delta\right) & =\text{sgn}\left(\varrho\left(\sigma\right)\right)\cdot\delta
+\end{align*}
+
+
+
+\subsubsection*{Beweis}
+
+Klar wegen \eqref{eq:sigalphai}, Definition von $\sigma$ und $\delta$
+und Definition von $\text{sgn}\left(\varrho\left(\sigma\right)\right)$
+als Anzahl der Fehlstände.
+
+\qqed[Behauptung]
+
+Es folgt in $\mathbb{Z}$: $\text{im}\left(\varrho\right)=A_{3}\stackrel{\text{Definition von }A_{3}}{\Leftrightarrow}\fall_{\sigma\in\text{Gal}\left(\moduloScript{E}{k}\right)}:\text{sgn}\left(\varrho\left(\sigma\right)\right)=1$
+$\sr{\text{Behauptung}}{\Leftrightarrow}{\text{char}\left(k\right)\not=2}$
+$\fall_{\sigma\in\text{Gal}\left(\moduloScript{E}{k}\right)}:\sigma\left(\delta\right)=\delta$.
+
+Dies ist äquivalent zu $\delta\in E^{\text{Gal}\left(\moduloScript{E}{k}\right)}=k$.
+
+Ferner gilt mit $\Delta:=\delta^{2}:\fall_{\sigma\in\text{Gal}\left(\moduloScript{E}{k}\right)}:\sigma\left(\Delta\right)=\left(\pm\delta\right)^{2}=\Delta$
+und damit folgt $\Delta\in k$.
+
+Später wird noch gezeigt: $\Delta=-4a^{3}-27b^{2}$.
+
+Damit gilt für die Galoisgruppe der irreduziblen Gleichung $X^{3}+aX+b$:
+\begin{align*}
+\text{Gal}\left(\modulo{E}{k}\right) & \stackrel{\sim}{=}\begin{cases}
+A_{3} & \Delta=-3a^{3}-27b^{2}\in\left(k^{*}\right)^{2}\\
+S_{3} & \text{sonst}
+\end{cases}
+\end{align*}
+
+
+
+\subsubsection{Beispiel}
+
+Seien $k=\mathbb{Q}$ und $f\left(X\right):=X^{3}-X+1\in\mathbb{Q}\left[X\right]$.
+
+Wegen $f\left(\pm1\right)\not=0$ besitzt $f$ keine Nullstelle in
+$\mathbb{Q}$ (benutzt, dass \quotedblbase{}ein ganzzahliges Polynom
+ohne Nullstellen in $\mathbb{Z}$ hat keine Nullstellen in $\mathbb{Q}$\textquotedblleft{}
+und \quotedblbase{}eine ganzzahlige Nullstelle eines normierten Polynoms
+teilt den letzten Koeffizienten\textquotedblleft{}).
+
+Außerdem gilt hier: $\Delta=-4\cdot\left(-1\right)^{3}-27\cdot1^{2}=-23\not\in\left(\mathbb{Q}^{*}\right)^{2}$,
+also hat die Gleichung $X^{3}-X+1=0$ über $\mathbb{Q}$ die Galoisgruppe
+$S_{3}$.
+
+Ferner gilt mit dem Zerfällungskörper $E$ von $f$ für den eindeutigen
+Zwischenkörper $\mathbb{Q}\subseteq K\subseteq E$ mit $\left[K:\mathbb{Q}\right]=2$
+(vergleiche \eqref{asdf} 10.13):
+\begin{align*}
+K & =\mathbb{Q}\left(\delta\right)=\mathbb{Q}\left(\sqrt{-23}\right)
+\end{align*}
+
+
+
+\subsection{Die allgemeine Gleichung}
+
+Sei $n\ge1$ fixiert, $E:=k\left(t_{1},\ldots,t_{n}\right)$.
+
+Dann existiert genau eine Abbildung
+\begin{align*}
+\varrho:S_{n} & \to\text{Aut}\left(E\right)
+\end{align*}
+mit:
+\begin{align*}
+\fall_{\sigma\in S_{n},1\le i\le n}:\varrho\left(\sigma\right)\left(t_{i}\right) & =t_{\sigma\left(i\right)}
+\end{align*}
+(benutze zum Beweis die universelle Eigenschaft des Polynomrings und
+des Quotientenkörpers)
+
+und $\varrho$ ist ein injektiver Gruppenhomomorphismus, vermöge dessen
+wir $S_{n}\subseteq\text{Aut}\left(E\right)$ als Untergruppe auffassen.
+
+
+\subsubsection{Proposition und Definition \textmd{(symmetrische rationale Funktionen)}}
+
+Die Körpererweiterung $K:=E^{S_{n}}\subseteq E$ ist galoissch mit
+$\text{Gal}\left(\modulo{E}{K}\right)=S_{n}$.
+
+$K$ heißt \emph{der Körper der symmetrischen rationalen Funktionen
+(in den Variablen $t_{1},\ldots,t_{n}$ über $k$)}.
+
+
+\subsubsection*{Beweis}
+
+\eqref{asdf}10.7 i)
+
+\qqed
+
+
+\subsubsection{Beispiel}
+
+$n=2\Rightarrow S_{2}=\left\{ 1,\left(\begin{array}{cc}
+1 & 2\end{array}\right)=:\sigma\right\} $, also $t_{1}+t_{2}\in k\left(t_{1},t_{2}\right)^{S_{2}}$, da $\sigma\left(t_{1}+t_{2}\right)=t_{2}+t_{1}=t_{1}+t_{2}$,
+aber, falls $\text{char}\left(k\right)\not=2$, $t_{1}-t_{2}\not\in k\left(t_{1},t_{2}\right)^{S_{2}}$,
+da $\sigma\left(t_{1}-t_{2}\right)=t_{2}-t_{1}=-\left(t_{1}-t_{2}\right)\not=t_{1}-t_{2}$,
+da $1\not=-1$.
+
+
+\subsubsection{Definition}
+
+Die in der Entwicklung
+\begin{align*}
+k\left[t_{1},\ldots,t_{n}\right]\left[X\right]\ni f\left(X\right) & :=\prod_{i=1}^{n}\left(X-t_{i}\right)=:\sum_{j=0}^{n}\left(-1\right)^{j}\cdot s_{j}\left(t_{1},\ldots,t_{n}\right)\cdot X^{n-j}
+\end{align*}
+auftretenden $s_{j}\in k\left[t_{1},\ldots,t_{n}\right]$ $\left(0\le j\le n\right)$
+heißen \emph{die $j$-ten elementarsymmetrischen Polynome (in $t_{1},\ldots,t_{n}$
+über $k$)}.
+
+Es gilt für alle $0\le k\le n$:
+\begin{align*}
+s_{k}\left(t_{1},\ldots,t_{n}\right) & =\sum_{1\le j_{1}<\ldots<j_{k}\le n}\left(t_{j_{1}}\cdot t_{j_{2}}\cdot\ldots\cdot t_{j_{k}}\right)
+\end{align*}
+Zum Beispiel: $s_{0}=1,\: s_{1}=t_{1}+\ldots+t_{n},\: s_{n}=t_{1}\cdot\ldots\cdot t_{n}$.
+
+
+\subsubsection{Definition \textmd{(algebraische Unabhängigkeit)}}
+
+Seien $A$ eine $k$-Algebra, $I$ eine Menge und für alle $i\in I$
+sei $a_{i}\in A$.
+
+Dann heißt $\left(a_{i}\right)_{i\in I}$ genau dann \emph{algebraisch
+unabhängig über $k$}, wenn der eindeutige $k$-Algebrenhomomorphismus
+$k\left[I\right]\to A$ mit $\varphi\left(i\right)=a_{i}$ für alle
+$i\in I$ ist injektiv.
+
+
+\subsubsection{Beispiel}
+
+\begin{iiilist}
+
+\iii Für $I=\left\{ 1\right\} $ ist $a_{1}\in A$ genau dann algebraisch
+unabhängig über $k$, wenn $a_{1}$ transzendent über $k$ ist.
+
+\iii Die Elemente $a_{1}:=X^{2},a_{s}:=X^{3}\in A:=k\left[X\right]$
+sind transzendent über $k$ (vergleiche Blatt 6 Aufgabe 1 iii)), aber
+$\left(a_{1},a_{2}\right)$ ist nicht algebraisch unabhängig über
+$k$, da für $0\not=f\left(X,Y\right):=X^{3}-Y^{2}\in k\left[X,Y\right]$
+gilt $f\left(a_{1},a_{2}\right)=0$.
+
+(Beachte: $\left(a_{1},a_{2}\right)$ sind in $A$ aber $k$-linear
+unabhängig.)
+
+\end{iiilist}
+
+
+\subsubsection{Satz}
+
+Es gelten:
+
+\begin{iiilist}
+
+\iii $K=E^{S_{n}}\subseteq E$ ist ein Zerfällungskörper von ${\displaystyle f\left(X\right)=\prod_{i=1}^{n}\left(X-t_{i}\right)\in K\left[X\right]}$.
+
+\iii Hauptsatz über symmetrische Funktionen:
+\begin{align*}
+K & =k\left(s_{1},\ldots,s_{n}\right)
+\end{align*}
+
+
+\iii $\left(s_{1},\ldots,s_{n}\right)\subseteq K$ ist algebraisch
+unabhängig über $k$ (und damit ist $K=E^{S_{n}}$ ein rationaler
+Funktionenkörper über $k$ in den Variablen $s_{1},\ldots,s_{n}$).
+
+Insbesondere gilt für alle $f,g\in k\left(T_{1},\ldots,T_{n}\right)$:
+\begin{align*}
+f\left(s_{1},\ldots,s_{n}\right) & =g\left(s_{1},\ldots,s_{n}\right)\Rightarrow f=g
+\end{align*}
+
+
+\end{iiilist}
+
+
+\part*{Anhang}
+
+\addcontentsline{toc}{part}{Anhang}
+
+\fancyhead[R]{}
+\fancyhead[C]{Anhang}
+
+
+\section*{GNU Free Documentation License}
+
+\addcontentsline{toc}{section}{GNU Free Documentation License}
+
+\fancyhead[R]{GNU Free Documentation License}
+
+Version 1.3, 3 November 2008
+
+Copyright © 2000, 2001, 2002, 2007, 2008 Free Software Foundation,
+Inc. <http://fsf.org/>
+
+Everyone is permitted to copy and distribute verbatim copies of this
+license document, but changing it is not allowed.
+
+
+\subsection*{0. PREAMBLE}
+
+The purpose of this License is to make a manual, textbook, or other
+functional and useful document \textquotedbl{}free\textquotedbl{}
+in the sense of freedom: to assure everyone the effective freedom
+to copy and redistribute it, with or without modifying it, either
+commercially or noncommercially. Secondarily, this License preserves
+for the author and publisher a way to get credit for their work, while
+not being considered responsible for modifications made by others.
+
+This License is a kind of \textquotedbl{}copyleft\textquotedbl{},
+which means that derivative works of the document must themselves
+be free in the same sense. It complements the GNU General Public License,
+which is a copyleft license designed for free software.
+
+We have designed this License in order to use it for manuals for free
+software, because free software needs free documentation: a free program
+should come with manuals providing the same freedoms that the software
+does. But this License is not limited to software manuals; it can
+be used for any textual work, regardless of subject matter or whether
+it is published as a printed book. We recommend this License principally
+for works whose purpose is instruction or reference.
+
+
+\subsection*{1. APPLICABILITY AND DEFINITIONS}
+
+This License applies to any manual or other work, in any medium, that
+contains a notice placed by the copyright holder saying it can be
+distributed under the terms of this License. Such a notice grants
+a world-wide, royalty-free license, unlimited in duration, to use
+that work under the conditions stated herein. The \textquotedbl{}Document\textquotedbl{},
+below, refers to any such manual or work. Any member of the public
+is a licensee, and is addressed as \textquotedbl{}you\textquotedbl{}.
+You accept the license if you copy, modify or distribute the work
+in a way requiring permission under copyright law.
+
+A \textquotedbl{}Modified Version\textquotedbl{} of the Document means
+any work containing the Document or a portion of it, either copied
+verbatim, or with modifications and/or translated into another language.
+
+A \textquotedbl{}Secondary Section\textquotedbl{} is a named appendix
+or a front-matter section of the Document that deals exclusively with
+the relationship of the publishers or authors of the Document to the
+Document's overall subject (or to related matters) and contains nothing
+that could fall directly within that overall subject. (Thus, if the
+Document is in part a textbook of mathematics, a Secondary Section
+may not explain any mathematics.) The relationship could be a matter
+of historical connection with the subject or with related matters,
+or of legal, commercial, philosophical, ethical or political position
+regarding them.
+
+The \textquotedbl{}Invariant Sections\textquotedbl{} are certain Secondary
+Sections whose titles are designated, as being those of Invariant
+Sections, in the notice that says that the Document is released under
+this License. If a section does not fit the above definition of Secondary
+then it is not allowed to be designated as Invariant. The Document
+may contain zero Invariant Sections. If the Document does not identify
+any Invariant Sections then there are none.
+
+The \textquotedbl{}Cover Texts\textquotedbl{} are certain short passages
+of text that are listed, as Front-Cover Texts or Back-Cover Texts,
+in the notice that says that the Document is released under this License.
+A Front-Cover Text may be at most 5 words, and a Back-Cover Text may
+be at most 25 words.
+
+A \textquotedbl{}Transparent\textquotedbl{} copy of the Document means
+a machine-readable copy, represented in a format whose specification
+is available to the general public, that is suitable for revising
+the document straightforwardly with generic text editors or (for images
+composed of pixels) generic paint programs or (for drawings) some
+widely available drawing editor, and that is suitable for input to
+text formatters or for automatic translation to a variety of formats
+suitable for input to text formatters. A copy made in an otherwise
+Transparent file format whose markup, or absence of markup, has been
+arranged to thwart or discourage subsequent modification by readers
+is not Transparent. An image format is not Transparent if used for
+any substantial amount of text. A copy that is not \textquotedbl{}Transparent\textquotedbl{}
+is called \textquotedbl{}Opaque\textquotedbl{}.
+
+Examples of suitable formats for Transparent copies include plain
+ASCII without markup, Texinfo input format, \LaTeX{} input format,
+SGML or XML using a publicly available DTD, and standard-conforming
+simple HTML, PostScript or PDF designed for human modification. Examples
+of transparent image formats include PNG, XCF and JPG. Opaque formats
+include proprietary formats that can be read and edited only by proprietary
+word processors, SGML or XML for which the DTD and/or processing tools
+are not generally available, and the machine-generated HTML, PostScript
+or PDF produced by some word processors for output purposes only.
+
+The \textquotedbl{}Title Page\textquotedbl{} means, for a printed
+book, the title page itself, plus such following pages as are needed
+to hold, legibly, the material this License requires to appear in
+the title page. For works in formats which do not have any title page
+as such, \textquotedbl{}Title Page\textquotedbl{} means the text near
+the most prominent appearance of the work's title, preceding the beginning
+of the body of the text.
+
+The \textquotedbl{}publisher\textquotedbl{} means any person or entity
+that distributes copies of the Document to the public.
+
+A section \textquotedbl{}Entitled XYZ\textquotedbl{} means a named
+subunit of the Document whose title either is precisely XYZ or contains
+XYZ in parentheses following text that translates XYZ in another language.
+(Here XYZ stands for a specific section name mentioned below, such
+as \textquotedbl{}Acknowledgements\textquotedbl{}, \textquotedbl{}Dedications\textquotedbl{},
+\textquotedbl{}Endorsements\textquotedbl{}, or \textquotedbl{}History\textquotedbl{}.)
+To \textquotedbl{}Preserve the Title\textquotedbl{} of such a section
+when you modify the Document means that it remains a section \textquotedbl{}Entitled
+XYZ\textquotedbl{} according to this definition.
+
+The Document may include Warranty Disclaimers next to the notice which
+states that this License applies to the Document. These Warranty Disclaimers
+are considered to be included by reference in this License, but only
+as regards disclaiming warranties: any other implication that these
+Warranty Disclaimers may have is void and has no effect on the meaning
+of this License.
+
+
+\subsection*{2. VERBATIM COPYING}
+
+You may copy and distribute the Document in any medium, either commercially
+or noncommercially, provided that this License, the copyright notices,
+and the license notice saying this License applies to the Document
+are reproduced in all copies, and that you add no other conditions
+whatsoever to those of this License. You may not use technical measures
+to obstruct or control the reading or further copying of the copies
+you make or distribute. However, you may accept compensation in exchange
+for copies. If you distribute a large enough number of copies you
+must also follow the conditions in section 3.
+
+You may also lend copies, under the same conditions stated above,
+and you may publicly display copies.
+
+
+\subsection*{3. COPYING IN QUANTITY}
+
+If you publish printed copies (or copies in media that commonly have
+printed covers) of the Document, numbering more than 100, and the
+Document's license notice requires Cover Texts, you must enclose the
+copies in covers that carry, clearly and legibly, all these Cover
+Texts: Front-Cover Texts on the front cover, and Back-Cover Texts
+on the back cover. Both covers must also clearly and legibly identify
+you as the publisher of these copies. The front cover must present
+the full title with all words of the title equally prominent and visible.
+You may add other material on the covers in addition. Copying with
+changes limited to the covers, as long as they preserve the title
+of the Document and satisfy these conditions, can be treated as verbatim
+copying in other respects.
+
+If the required texts for either cover are too voluminous to fit legibly,
+you should put the first ones listed (as many as fit reasonably) on
+the actual cover, and continue the rest onto adjacent pages.
+
+If you publish or distribute Opaque copies of the Document numbering
+more than 100, you must either include a machine-readable Transparent
+copy along with each Opaque copy, or state in or with each Opaque
+copy a computer-network location from which the general network-using
+public has access to download using public-standard network protocols
+a complete Transparent copy of the Document, free of added material.
+If you use the latter option, you must take reasonably prudent steps,
+when you begin distribution of Opaque copies in quantity, to ensure
+that this Transparent copy will remain thus accessible at the stated
+location until at least one year after the last time you distribute
+an Opaque copy (directly or through your agents or retailers) of that
+edition to the public.
+
+It is requested, but not required, that you contact the authors of
+the Document well before redistributing any large number of copies,
+to give them a chance to provide you with an updated version of the
+Document.
+
+
+\subsection*{4. MODIFICATIONS}
+
+You may copy and distribute a Modified Version of the Document under
+the conditions of sections 2 and 3 above, provided that you release
+the Modified Version under precisely this License, with the Modified
+Version filling the role of the Document, thus licensing distribution
+and modification of the Modified Version to whoever possesses a copy
+of it. In addition, you must do these things in the Modified Version:
+\begin{itemize}
+\item A. Use in the Title Page (and on the covers, if any) a title distinct
+from that of the Document, and from those of previous versions (which
+should, if there were any, be listed in the History section of the
+Document). You may use the same title as a previous version if the
+original publisher of that version gives permission.
+\item B. List on the Title Page, as authors, one or more persons or entities
+responsible for authorship of the modifications in the Modified Version,
+together with at least five of the principal authors of the Document
+(all of its principal authors, if it has fewer than five), unless
+they release you from this requirement.
+\item C. State on the Title page the name of the publisher of the Modified
+Version, as the publisher.
+\item D. Preserve all the copyright notices of the Document.
+\item E. Add an appropriate copyright notice for your modifications adjacent
+to the other copyright notices.
+\item F. Include, immediately after the copyright notices, a license notice
+giving the public permission to use the Modified Version under the
+terms of this License, in the form shown in the Addendum below.
+\item G. Preserve in that license notice the full lists of Invariant Sections
+and required Cover Texts given in the Document's license notice.
+\item H. Include an unaltered copy of this License.
+\item I. Preserve the section Entitled \textquotedbl{}History\textquotedbl{},
+Preserve its Title, and add to it an item stating at least the title,
+year, new authors, and publisher of the Modified Version as given
+on the Title Page. If there is no section Entitled \textquotedbl{}History\textquotedbl{}
+in the Document, create one stating the title, year, authors, and
+publisher of the Document as given on its Title Page, then add an
+item describing the Modified Version as stated in the previous sentence.
+\item J. Preserve the network location, if any, given in the Document for
+public access to a Transparent copy of the Document, and likewise
+the network locations given in the Document for previous versions
+it was based on. These may be placed in the \textquotedbl{}History\textquotedbl{}
+section. You may omit a network location for a work that was published
+at least four years before the Document itself, or if the original
+publisher of the version it refers to gives permission.
+\item K. For any section Entitled \textquotedbl{}Acknowledgements\textquotedbl{}
+or \textquotedbl{}Dedications\textquotedbl{}, Preserve the Title of
+the section, and preserve in the section all the substance and tone
+of each of the contributor acknowledgements and/or dedications given
+therein.
+\item L. Preserve all the Invariant Sections of the Document, unaltered
+in their text and in their titles. Section numbers or the equivalent
+are not considered part of the section titles.
+\item M. Delete any section Entitled \textquotedbl{}Endorsements\textquotedbl{}.
+Such a section may not be included in the Modified Version.
+\item N. Do not retitle any existing section to be Entitled \textquotedbl{}Endorsements\textquotedbl{}
+or to conflict in title with any Invariant Section.
+\item O. Preserve any Warranty Disclaimers. If the Modified Version includes
+new front-matter sections or appendices that qualify as Secondary
+Sections and contain no material copied from the Document, you may
+at your option designate some or all of these sections as invariant.
+To do this, add their titles to the list of Invariant Sections in
+the Modified Version's license notice. These titles must be distinct
+from any other section titles.
+\end{itemize}
+You may add a section Entitled \textquotedbl{}Endorsements\textquotedbl{},
+provided it contains nothing but endorsements of your Modified Version
+by various parties\textemdash{}for example, statements of peer review
+or that the text has been approved by an organization as the authoritative
+definition of a standard.
+
+You may add a passage of up to five words as a Front-Cover Text, and
+a passage of up to 25 words as a Back-Cover Text, to the end of the
+list of Cover Texts in the Modified Version. Only one passage of Front-Cover
+Text and one of Back-Cover Text may be added by (or through arrangements
+made by) any one entity. If the Document already includes a cover
+text for the same cover, previously added by you or by arrangement
+made by the same entity you are acting on behalf of, you may not add
+another; but you may replace the old one, on explicit permission from
+the previous publisher that added the old one.
+
+The author(s) and publisher(s) of the Document do not by this License
+give permission to use their names for publicity for or to assert
+or imply endorsement of any Modified Version.
+
+
+\subsection*{5. COMBINING DOCUMENTS}
+
+You may combine the Document with other documents released under this
+License, under the terms defined in section 4 above for modified versions,
+provided that you include in the combination all of the Invariant
+Sections of all of the original documents, unmodified, and list them
+all as Invariant Sections of your combined work in its license notice,
+and that you preserve all their Warranty Disclaimers.
+
+The combined work need only contain one copy of this License, and
+multiple identical Invariant Sections may be replaced with a single
+copy. If there are multiple Invariant Sections with the same name
+but different contents, make the title of each such section unique
+by adding at the end of it, in parentheses, the name of the original
+author or publisher of that section if known, or else a unique number.
+Make the same adjustment to the section titles in the list of Invariant
+Sections in the license notice of the combined work.
+
+In the combination, you must combine any sections Entitled \textquotedbl{}History\textquotedbl{}
+in the various original documents, forming one section Entitled \textquotedbl{}History\textquotedbl{};
+likewise combine any sections Entitled \textquotedbl{}Acknowledgements\textquotedbl{},
+and any sections Entitled \textquotedbl{}Dedications\textquotedbl{}.
+You must delete all sections Entitled \textquotedbl{}Endorsements\textquotedbl{}.
+
+
+\subsection*{6. COLLECTIONS OF DOCUMENTS}
+
+You may make a collection consisting of the Document and other documents
+released under this License, and replace the individual copies of
+this License in the various documents with a single copy that is included
+in the collection, provided that you follow the rules of this License
+for verbatim copying of each of the documents in all other respects.
+
+You may extract a single document from such a collection, and distribute
+it individually under this License, provided you insert a copy of
+this License into the extracted document, and follow this License
+in all other respects regarding verbatim copying of that document.
+
+
+\subsection*{7. AGGREGATION WITH INDEPENDENT WORKS}
+
+A compilation of the Document or its derivatives with other separate
+and independent documents or works, in or on a volume of a storage
+or distribution medium, is called an \textquotedbl{}aggregate\textquotedbl{}
+if the copyright resulting from the compilation is not used to limit
+the legal rights of the compilation's users beyond what the individual
+works permit. When the Document is included in an aggregate, this
+License does not apply to the other works in the aggregate which are
+not themselves derivative works of the Document.
+
+If the Cover Text requirement of section 3 is applicable to these
+copies of the Document, then if the Document is less than one half
+of the entire aggregate, the Document's Cover Texts may be placed
+on covers that bracket the Document within the aggregate, or the electronic
+equivalent of covers if the Document is in electronic form. Otherwise
+they must appear on printed covers that bracket the whole aggregate.
+
+
+\subsection*{8. TRANSLATION}
+
+Translation is considered a kind of modification, so you may distribute
+translations of the Document under the terms of section 4. Replacing
+Invariant Sections with translations requires special permission from
+their copyright holders, but you may include translations of some
+or all Invariant Sections in addition to the original versions of
+these Invariant Sections. You may include a translation of this License,
+and all the license notices in the Document, and any Warranty Disclaimers,
+provided that you also include the original English version of this
+License and the original versions of those notices and disclaimers.
+In case of a disagreement between the translation and the original
+version of this License or a notice or disclaimer, the original version
+will prevail.
+
+If a section in the Document is Entitled \textquotedbl{}Acknowledgements\textquotedbl{},
+\textquotedbl{}Dedications\textquotedbl{}, or \textquotedbl{}History\textquotedbl{},
+the requirement (section 4) to Preserve its Title (section 1) will
+typically require changing the actual title.
+
+
+\subsection*{9. TERMINATION}
+
+You may not copy, modify, sublicense, or distribute the Document except
+as expressly provided under this License. Any attempt otherwise to
+copy, modify, sublicense, or distribute it is void, and will automatically
+terminate your rights under this License.
+
+However, if you cease all violation of this License, then your license
+from a particular copyright holder is reinstated (a) provisionally,
+unless and until the copyright holder explicitly and finally terminates
+your license, and (b) permanently, if the copyright holder fails to
+notify you of the violation by some reasonable means prior to 60 days
+after the cessation.
+
+Moreover, your license from a particular copyright holder is reinstated
+permanently if the copyright holder notifies you of the violation
+by some reasonable means, this is the first time you have received
+notice of violation of this License (for any work) from that copyright
+holder, and you cure the violation prior to 30 days after your receipt
+of the notice.
+
+Termination of your rights under this section does not terminate the
+licenses of parties who have received copies or rights from you under
+this License. If your rights have been terminated and not permanently
+reinstated, receipt of a copy of some or all of the same material
+does not give you any rights to use it.
+
+
+\subsection*{10. FUTURE REVISIONS OF THIS LICENSE}
+
+The Free Software Foundation may publish new, revised versions of
+the GNU Free Documentation License from time to time. Such new versions
+will be similar in spirit to the present version, but may differ in
+detail to address new problems or concerns. See http://www.gnu.org/copyleft/.
+
+Each version of the License is given a distinguishing version number.
+If the Document specifies that a particular numbered version of this
+License \textquotedbl{}or any later version\textquotedbl{} applies
+to it, you have the option of following the terms and conditions either
+of that specified version or of any later version that has been published
+(not as a draft) by the Free Software Foundation. If the Document
+does not specify a version number of this License, you may choose
+any version ever published (not as a draft) by the Free Software Foundation.
+If the Document specifies that a proxy can decide which future versions
+of this License can be used, that proxy's public statement of acceptance
+of a version permanently authorizes you to choose that version for
+the Document.
+
+
+\subsection*{11. RELICENSING}
+
+\textquotedbl{}Massive Multiauthor Collaboration Site\textquotedbl{}
+(or \textquotedbl{}MMC Site\textquotedbl{}) means any World Wide Web
+server that publishes copyrightable works and also provides prominent
+facilities for anybody to edit those works. A public wiki that anybody
+can edit is an example of such a server. A \textquotedbl{}Massive
+Multiauthor Collaboration\textquotedbl{} (or \textquotedbl{}MMC\textquotedbl{})
+contained in the site means any set of copyrightable works thus published
+on the MMC site.
+
+\textquotedbl{}CC-BY-SA\textquotedbl{} means the Creative Commons
+Attribution-Share Alike 3.0 license published by Creative Commons
+Corporation, a not-for-profit corporation with a principal place of
+business in San Francisco, California, as well as future copyleft
+versions of that license published by that same organization.
+
+\textquotedbl{}Incorporate\textquotedbl{} means to publish or republish
+a Document, in whole or in part, as part of another Document.
+
+An MMC is \textquotedbl{}eligible for relicensing\textquotedbl{} if
+it is licensed under this License, and if all works that were first
+published under this License somewhere other than this MMC, and subsequently
+incorporated in whole or in part into the MMC, (1) had no cover texts
+or invariant sections, and (2) were thus incorporated prior to November
+1, 2008.
+
+The operator of an MMC Site may republish an MMC contained in the
+site under CC-BY-SA on the same site at any time before August 1,
+2009, provided the MMC is eligible for relicensing.
+
+
+\subsection*{ADDENDUM: How to use this License for your documents}
+
+To use this License in a document you have written, include a copy
+of the License in the document and put the following copyright and
+license notices just after the title page:
+\begin{quote}
+Copyright (C) YEAR YOUR NAME.\\
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.3
+or any later version published by the Free Software Foundation;
+
+with no Invariant Sections, no Front-Cover Texts, and no Back-Cover
+Texts.
+
+A copy of the license is included in the section entitled \textquotedbl{}GNU
+Free Documentation License\textquotedbl{}.
+\end{quote}
+If you have Invariant Sections, Front-Cover Texts and Back-Cover Texts,
+replace the \textquotedbl{}with \ldots{} Texts.\textquotedbl{} line
+with this:
+\begin{quote}
+with the Invariant Sections being LIST THEIR TITLES, with the Front-Cover
+Texts being LIST, and with the Back-Cover Texts being LIST.
+\end{quote}
+If you have Invariant Sections without Cover Texts, or some other
+combination of the three, merge those two alternatives to suit the
+situation.
+
+If your document contains nontrivial examples of program code, we
+recommend releasing these examples in parallel under your choice of
+free software license, such as the GNU General Public License, to
+permit their use in free software.
+
+\label{END}
+\end{document}
