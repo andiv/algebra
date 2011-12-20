@@ -271,7 +271,7 @@ status open
 
 \begin_layout Plain Layout
 
-%Lizenz
+%Copyright Notice
 \end_layout
 
 \begin_layout Plain Layout
@@ -299,14 +299,85 @@ on License".
 
 \begin_layout Plain Layout
 
-%Der Volltext der Lizenz kann auch auf der Seite https://www.gnu.org/licenses/fdl-
-1.3.de.html nachgelesen werden.
 \end_layout
 
 \begin_layout Plain Layout
 
-%Eine transparente Kopie dieses Dokuments kann von https://github.com/andiv/algeb
-ra heruntergeladen werden.
+%Disclaimer of Warranty
+\end_layout
+
+\begin_layout Plain Layout
+
+%Unless otherwise mutually agreed to by the parties in writing, Licensor
+ offers the work as-is and makes no representations or warranties of any
+ kind concerning the work, express, implied, statutory or otherwise, including,
+ without limitation, warranties of title, merchantibility, fitness for a
+ particular purpose, noninfringement, or the absence of latent or other
+ defects, accuracy, or the presence of absence of errors, whether or not
+ discoverable.
+\end_layout
+
+\begin_layout Plain Layout
+
+%Some Jurisdictions do not allow the exclusion of implied warranties, so
+ such exclusion may not apply to you.
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+%Limitation on Liability
+\end_layout
+
+\begin_layout Plain Layout
+
+%Exept to the extent required by applicable law, in no event will Licensor
+ be liable to you on any legal theory for any special, incidental, consequential
+, punitive, exemplary or other damages arising out of this license or the
+ use of the work, even if Licensor has been advised of the possibility of
+ such damages.
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+%Links
+\end_layout
+
+\begin_layout Plain Layout
+
+%Der Text der "GNU Free Documentation License" kann auch auf der Seite
+\end_layout
+
+\begin_layout Plain Layout
+
+%	https://www.gnu.org/licenses/fdl-1.3.de.html
+\end_layout
+
+\begin_layout Plain Layout
+
+%nachgelesen werden.
+\end_layout
+
+\begin_layout Plain Layout
+
+%Eine transparente Kopie dieses Dokuments kann von
+\end_layout
+
+\begin_layout Plain Layout
+
+%	https://github.com/andiv/algebra
+\end_layout
+
+\begin_layout Plain Layout
+
+%heruntergeladen werden.
 \end_layout
 
 \end_inset
@@ -528,7 +599,7 @@ im Wintersemester 2011/12
 \begin_inset Newline newline
 \end_inset
 
-mitgeschrieben von
+mitgeschrieben und überarbeitet von
 \begin_inset Newline newline
 \end_inset
 
@@ -612,7 +683,7 @@ status open
 
 
 \backslash
-fancyhead[R]{Literatur}
+fancyhead[R]{Lizenz}
 \end_layout
 
 \end_inset
@@ -638,6 +709,128 @@ Es wird daher
 dringend
 \emph default
  empfohlen, die Vorlesung zu besuchen.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Copyright Notice
+\end_layout
+
+\begin_layout Standard
+Copyright © 2011 
+\noun on
+Andreas Völklein
+\noun default
+.
+\end_layout
+
+\begin_layout Standard
+Permission is granted to copy, distribute and/or modify this document under
+ the terms of the GNU Free Documentation License, Version 1.3 or any later
+ version published by the Free Software Foundation;
+\end_layout
+
+\begin_layout Standard
+with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.
+\end_layout
+
+\begin_layout Standard
+A copy of the license is included in the section entitled „GNU Free Documentatio
+n License“.
+\end_layout
+
+\begin_layout Subsubsection*
+Disclaimer of Warranty
+\end_layout
+
+\begin_layout Standard
+
+\noun on
+Unless otherwise mutually agreed to by the parties in writing, Licensor
+ offers the work as-is and makes no representations or warranties of any
+ kind concerning the work, express, implied, statutory or otherwise, including,
+ without limitation, warranties of title, merchantibility, fitness for a
+ particular purpose, noninfringement, or the absence of latent or other
+ defects, accuracy, or the presence of absence of errors, whether or not
+ discoverable.
+\end_layout
+
+\begin_layout Standard
+
+\noun on
+Some Jurisdictions do not allow the exclusion of implied warranties, so
+ such exclusion may not apply to you.
+\end_layout
+
+\begin_layout Subsubsection*
+Limitation on Liability
+\end_layout
+
+\begin_layout Standard
+
+\noun on
+Exept to the extent required by applicable law, in no event will Licensor
+ be liable to you on any legal theory for any special, incidental, consequential
+, punitive, exemplary or other damages arising out of this license or the
+ use of the work, even if Licensor has been advised of the possibility of
+ such damages.
+\end_layout
+
+\begin_layout Subsubsection*
+Links
+\end_layout
+
+\begin_layout Standard
+Der Text der „GNU Free Documentation License“ kann auch auf der Seite
+\end_layout
+
+\begin_layout Quote
+https://www.gnu.org/licenses/fdl-1.3.de.html
+\end_layout
+
+\begin_layout Standard
+nachgelesen werden.
+\end_layout
+
+\begin_layout Standard
+Eine transparente Kopie dieses Dokuments kann von
+\end_layout
+
+\begin_layout Quote
+https://github.com/andiv/algebra
+\end_layout
+
+\begin_layout Standard
+heruntergeladen werden.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+fancyhead[R]{Literatur}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection*
@@ -745,50 +938,6 @@ Introduction to commutative algebra
 \end_inset
 
 ISBN 0-201-40751-5, Lokalisierungen: Seite 36-39
-\end_layout
-
-\begin_layout Standard
-\begin_inset VSpace vfill
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsubsection*
-Lizenz
-\end_layout
-
-\begin_layout Standard
-Copyright (C) 2011 
-\noun on
-Andreas Völklein
-\noun default
-.
-\end_layout
-
-\begin_layout Standard
-Permission is granted to copy, distribute and/or modify this document under
- the terms of the GNU Free Documentation License, Version 1.3 or any later
- version published by the Free Software Foundation;
-\end_layout
-
-\begin_layout Standard
-with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.
-\end_layout
-
-\begin_layout Standard
-A copy of the license is included in the section entitled "GNU Free Documentatio
-n License".
-\end_layout
-
-\begin_layout Standard
-Der Volltext der Lizenz kann auch auf der Seite https://www.gnu.org/licenses/fdl-1.
-3.de.html nachgelesen werden.
-\end_layout
-
-\begin_layout Standard
-Eine transparente Kopie dieses Dokuments kann von https://github.com/andiv/algebr
-a heruntergeladen werden.
 \end_layout
 
 \begin_layout Standard
@@ -18041,32 +18190,1116 @@ TODO: Rest
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+%DATE: 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Galoistheorie
 \end_layout
 
 \begin_layout Subsection
-Definition
+Definition 
+\series medium
+(galoissche Körpererweiterung, Galoisgruppe)
+\end_layout
+
+\begin_layout Standard
+Eine algebraische Körpererweiterung 
+\begin_inset Formula $E\supseteq k$
+\end_inset
+
+ heißt genau dann 
+\emph on
+galoissch
+\emph default
+, wenn 
+\begin_inset Formula $\modulo{E}{k}$
+\end_inset
+
+ normal und separabel ist.
+ (siehe 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "asdf"
+
+\end_inset
+
+7.4 und 8.8 ii))
+\end_layout
+
+\begin_layout Standard
+In diesem Fall heißt
+\begin_inset Formula 
+\begin{align*}
+\text{Gal}\left(\modulo{E}{k}\right) & :=\text{Aut}_{k\text{-Alg.}}\left(E\right)\stackrel{\text{Blatt 8 Aufgabe 2}}{=}\text{Hom}_{k\text{-Alg.}}\left(E,E\right)
+\end{align*}
+
+\end_inset
+
+
+\emph on
+die Galoisgruppe von 
+\emph default
+
+\begin_inset Formula $\modulo{E}{k}$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Subsection
 Beispiel und Definition
 \end_layout
 
-\begin_layout Subsection
-Proposition
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Für eine endliche Körpererweiterung 
+\begin_inset Formula $E\supseteq k$
+\end_inset
+
+ sind äquivalent:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{abclist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abc
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $\modulo{E}{k}$
+\end_inset
+
+ ist galoissch.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abc
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $\modulo{E}{k}$
+\end_inset
+
+ ist ein Zerfällungskörper eines separablen Polynoms 
+\begin_inset Formula $f\in k\left[X\right]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{abclist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In diesem Fall kan 
+\begin_inset Formula $f$
+\end_inset
+
+ in b) irreduzibel gewählt werden und 
+\begin_inset Formula $\text{Gal}\left(\modulo{E}{k}\right)=:\text{Gal}\left(f\right)$
+\end_inset
+
+ heißt 
+\emph on
+die Galoisgruppe von 
+\begin_inset Formula $f$
+\end_inset
+
+
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Jede Erweiterung 
+\begin_inset Formula $E\supseteq k$
+\end_inset
+
+ endlicher Körper ist galoissch und mit 
+\begin_inset Formula $q:=\left|k\right|$
+\end_inset
+
+, das heißt 
+\begin_inset Formula $k=\mathbb{F}_{q}$
+\end_inset
+
+ gilt:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\text{Gal}\left(\modulo{E}{k}\right)$
+\end_inset
+
+ ist zyklisch mit Ordnung 
+\begin_inset Formula $\left[E:k\right]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+[TODO: Was bedeutet folgende Zeile?]
+\end_layout
+
+\begin_layout Standard
+erzeugt von 
+\begin_inset Formula $\left(\mathbb{F}_{q}\right)\bigg|_{E}=\text{Gal}\left(\modulo{E}{k}\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Beweis
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ a) 
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+ b): 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "asdf"
+
+\end_inset
+
+8.17 impliziert:
+\begin_inset Formula 
+\begin{align*}
+\exs_{\alpha\in E} & :E=k\left(\alpha\right)
+\end{align*}
+
+\end_inset
+
+Weil 
+\begin_inset Formula $\modulo{E}{k}$
+\end_inset
+
+ normal ist, folgt aus 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "asdf"
+
+\end_inset
+
+7.4 iii), dass 
+\begin_inset Formula $\modulo{E}{k}$
+\end_inset
+
+ ein Zerfällungskörper von
+\begin_inset Formula 
+\begin{align*}
+f & :=\text{Mipo}\left(\alpha\right)\in k\left[X\right]
+\end{align*}
+
+\end_inset
+
+und 
+\begin_inset Formula $f$
+\end_inset
+
+ separabel und irreduzibel ist.
+\end_layout
+
+\begin_layout Standard
+b) 
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+ a): 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "asdf"
+
+\end_inset
+
+7.4 ii) impliziert, dass 
+\begin_inset Formula $\modulo{E}{k}$
+\end_inset
+
+ normal ist.
+\end_layout
+
+\begin_layout Standard
+Weil 
+\begin_inset Formula $f\in k\left[X\right]$
+\end_inset
+
+ separabel ist, folgt mit 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "asdf"
+
+\end_inset
+
+7.10 iii) und 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "asdf"
+
+\end_inset
+
+8.15 i) 
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+ ii), dass 
+\begin_inset Formula $\modulo{E}{k}$
+\end_inset
+
+ separabel ist.
+\end_layout
+
+\begin_layout Standard
+Zusammen bedeutet das, dass 
+\begin_inset Formula $\modulo{E}{k}$
+\end_inset
+
+ galoissch ist.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed[i)]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Folgt aus 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "asdf"
+
+\end_inset
+
+9.1 iii), 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "asdf"
+
+\end_inset
+
+8.12 ii) und 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "asdf"
+
+\end_inset
+
+9.5 ii).
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed[ii)]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{iiilist}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
 Proposition
 \end_layout
 
+\begin_layout Standard
+Seien 
+\begin_inset Formula $E\supseteq K\supseteq k$
+\end_inset
+
+ Körpererweiterungen und 
+\begin_inset Formula $\modulo{E}{k}$
+\end_inset
+
+ galoissch.
+\end_layout
+
+\begin_layout Standard
+Dann gelten:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $\modulo{E}{K}$
+\end_inset
+
+ ist galoissch und 
+\begin_inset Formula 
+\begin{align*}
+\text{Gal}\left(\modulo{E}{K}\right) & =\left\{ \delta\in\text{Gal}\left(\modulo{E}{k}\right)\big|\delta|_{K}=\text{id}_{K}\right\} \subseteq\text{Gal}\left(\modulo{E}{k}\right)
+\end{align*}
+
+\end_inset
+
+ist eine Untergruppe.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Ist zusätzlich 
+\begin_inset Formula $\modulo{K}{k}$
+\end_inset
+
+ galoissch, dann ist die Abbildung
+\begin_inset Formula 
+\begin{align*}
+\pi:\text{Gal}\left(\modulo{E}{k}\right) & \twoheadrightarrow\text{Gal}\left(\modulo{K}{k}\right)\\
+\sigma & \mapsto\sigma|_{K}
+\end{align*}
+
+\end_inset
+
+wohldefiniert und ein surjektiver Gruppenhomomorphismus mit:
+\begin_inset Formula 
+\begin{align*}
+\text{ker}\left(\pi\right) & =\text{Gal}\left(\modulo{E}{K}\right)\unlhd\text{Gal}\left(\modulo{E}{k}\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Beweis
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Wegen 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "asdf"
+
+\end_inset
+
+7.7 ii) und 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "asdf"
+
+\end_inset
+
+8.16 i) 
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+ ii) ist 
+\begin_inset Formula $\modulo{E}{K}$
+\end_inset
+
+ galoissch.
+\end_layout
+
+\begin_layout Standard
+Der Rest ist klar.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed[i)]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $\pi$
+\end_inset
+
+ ist, weil 
+\begin_inset Formula $\modulo{K}{k}$
+\end_inset
+
+ normal ist, und wegen 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "asdf"
+
+\end_inset
+
+7.4 i) wohldefiniert, das heißt
+\begin_inset Formula 
+\begin{align*}
+\fall_{\sigma\in\text{Gal}\left(\moduloScript{E}{k}\right)} & :\sigma\left(K\right)\subseteq K
+\end{align*}
+
+\end_inset
+
+und daher 
+\begin_inset Formula $\sigma|_{K}\in\text{Gal}\left(\modulo{K}{k}\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Dass 
+\begin_inset Formula $\pi$
+\end_inset
+
+ ein Gruppenhomomorphismus ist, ist klar.
+\end_layout
+
+\begin_layout Standard
+Weil 
+\begin_inset Formula $\modulo{E}{k}$
+\end_inset
+
+ normal ist und wegen 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "asdf"
+
+\end_inset
+
+6.7 ist 
+\begin_inset Formula $\pi$
+\end_inset
+
+ surjektiv.
+\end_layout
+
+\begin_layout Standard
+Die Aussage über den Kern von 
+\begin_inset Formula $\pi$
+\end_inset
+
+ folgt aus i).
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed[ii)]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
-Satz und Definition
+Proposition
+\end_layout
+
+\begin_layout Standard
+Sei 
+\begin_inset Formula $E\supseteq k$
+\end_inset
+
+ eine endliche normale Körpererweiterung.
+\end_layout
+
+\begin_layout Standard
+Dann gelten:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $\left|\text{Aut}\left(E\right)\right|=\left[E:k\right]_{s}\le\left[E:k\right]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $\left(\left|\text{Aut}_{k}\left(E\right)\right|=\left[E:k\right]\right)\Leftrightarrow\modulo{E}{k}$
+\end_inset
+
+ ist galoissch.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Beweis
+\end_layout
+
+\begin_layout Standard
+Folgt aus 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "asdf"
+
+\end_inset
+
+8.11 und 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "asdf"
+
+\end_inset
+
+8.15 iii) 
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+ i).
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Satz und Definition 
+\series medium
+(Fixkörper)
+\end_layout
+
+\begin_layout Standard
+Seien 
+\begin_inset Formula $E$
+\end_inset
+
+ ein Körper und
+\begin_inset Formula 
+\begin{align*}
+G\subseteq\text{Aut}\left(E\right) & :=\left\{ \varphi:E\stackrel{\sim}{\to}E|\varphi\text{ist ein Körperisomorphismus}\right\} 
+\end{align*}
+
+\end_inset
+
+eine Untergruppe.
+ Dann gelten:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $k:=E^{G}:=\left\{ \alpha\in E|\fall_{B\in G}:\sigma\left(\alpha\right)=\alpha\right\} $
+\end_inset
+
+ ist ein TK(TODO???) und heißt 
+\emph on
+der Fixkörper von 
+\begin_inset Formula $E$
+\end_inset
+
+ unter 
+\begin_inset Formula $G$
+\end_inset
+
+
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Aus 
+\begin_inset Formula $\left|G\right|<\infty$
+\end_inset
+
+ folgt, dass 
+\begin_inset Formula $\modulo{E}{k}$
+\end_inset
+
+ galoissch ist und dass gelten: (TODO: Gleichung überprüfen)
+\end_layout
+
+\begin_layout Itemize
+Mit 
+\begin_inset Formula $\text{Aut}_{k}\left(E\right)$
+\end_inset
+
+ definiert als die Gruppe der Automorphismen von 
+\begin_inset Formula $E$
+\end_inset
+
+, die auf 
+\begin_inset Formula $k$
+\end_inset
+
+ die Identiät sind, gilt:
+\begin_inset Formula 
+\begin{align*}
+\text{Aut}_{k}\left(E\right)=\text{Gal}\left(\modulo{E}{k}\right) & =G\subseteq\text{Aut}\left(E\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\left[E:k\right]=\left|G\right|$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Ist 
+\begin_inset Formula $\modulo{E}{k}$
+\end_inset
+
+ algebraisch (aber nicht notwendigerweise 
+\begin_inset Formula $\left|G\right|<\infty$
+\end_inset
+
+, beziehungsweise endlich), so ist 
+\begin_inset Formula $\modulo{E}{k}$
+\end_inset
+
+ galoissch und 
+\begin_inset Formula $G\subseteq\text{Gal}\left(\modulo{E}{k}\right)$
+\end_inset
+
+ ist eine Untergruppe.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{iiilist}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
 Beispiel
+\end_layout
+
+\begin_layout Standard
+TODO: Disclaimer
 \end_layout
 
 \begin_layout Subsection
@@ -18075,6 +19308,20 @@ Korollar
 
 \begin_layout Subsection
 Bemerkung und Beispiel
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+%DATE: 
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -22670,7 +23917,10 @@ N.
 \begin_layout Itemize
 O.
  Preserve any Warranty Disclaimers.
- If the Modified Version includes new front-matter sections or appendices
+\end_layout
+
+\begin_layout Standard
+If the Modified Version includes new front-matter sections or appendices
  that qualify as Secondary Sections and contain no material copied from
  the Document, you may at your option designate some or all of these sections
  as invariant.

@@ -227,13 +227,26 @@
 \makeatother
 
 \begin{document}
-%Lizenz
+%Copyright Notice
 %Copyright (C) 2011 Andreas Völklein.
 %Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.3 or any later version published by the Free Software Foundation;
 %with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.
 %A copy of the license is included in the section entitled "GNU Free Documentation License".
-%Der Volltext der Lizenz kann auch auf der Seite https://www.gnu.org/licenses/fdl-1.3.de.html nachgelesen werden.
-%Eine transparente Kopie dieses Dokuments kann von https://github.com/andiv/algebra heruntergeladen werden.
+
+%Disclaimer of Warranty
+%Unless otherwise mutually agreed to by the parties in writing, Licensor offers the work as-is and makes no representations or warranties of any kind concerning the work, express, implied, statutory or otherwise, including, without limitation, warranties of title, merchantibility, fitness for a particular purpose, noninfringement, or the absence of latent or other defects, accuracy, or the presence of absence of errors, whether or not discoverable.
+%Some Jurisdictions do not allow the exclusion of implied warranties, so such exclusion may not apply to you.
+
+%Limitation on Liability
+%Exept to the extent required by applicable law, in no event will Licensor be liable to you on any legal theory for any special, incidental, consequential, punitive, exemplary or other damages arising out of this license or the use of the work, even if Licensor has been advised of the possibility of such damages.
+
+%Links
+%Der Text der "GNU Free Documentation License" kann auch auf der Seite
+%	https://www.gnu.org/licenses/fdl-1.3.de.html
+%nachgelesen werden.
+%Eine transparente Kopie dieses Dokuments kann von
+%	https://github.com/andiv/algebra
+%heruntergeladen werden.
 
 
 
@@ -248,7 +261,7 @@
 \author{\textit{\small gelesen von}\\
 \textit{\noun{\small Prof. Dr. Niko Naumann}}\textit{\small }\\
 \textit{\small im Wintersemester 2011/12}\\
-\textit{\small mitgeschrieben von}\\
+\textit{\small mitgeschrieben und überarbeitet von}\\
 \textit{\noun{\small Andreas Völklein}}}
 
 \maketitle
@@ -267,7 +280,7 @@ Stand: \today
 
 {\small \newpage{}}{\small \par}
 
-\fancyhead[R]{Literatur}
+\fancyhead[R]{Lizenz}
 
 
 \subsubsection*{ACHTUNG}
@@ -275,6 +288,67 @@ Stand: \today
 Diese Mitschrift ersetzt \emph{nicht} die Vorlesung.
 
 Es wird daher \emph{dringend} empfohlen, die Vorlesung zu besuchen.
+
+\vfill{}
+
+
+
+\subsubsection*{Copyright Notice}
+
+Copyright © 2011 \noun{Andreas Völklein}.
+
+Permission is granted to copy, distribute and/or modify this document
+under the terms of the GNU Free Documentation License, Version 1.3
+or any later version published by the Free Software Foundation;
+
+with no Invariant Sections, no Front-Cover Texts, and no Back-Cover
+Texts.
+
+A copy of the license is included in the section entitled \quotedblbase{}GNU
+Free Documentation License\textquotedblleft{}.
+
+
+\subsubsection*{Disclaimer of Warranty}
+
+\noun{Unless otherwise mutually agreed to by the parties in writing,
+Licensor offers the work as-is and makes no representations or warranties
+of any kind concerning the work, express, implied, statutory or otherwise,
+including, without limitation, warranties of title, merchantibility,
+fitness for a particular purpose, noninfringement, or the absence
+of latent or other defects, accuracy, or the presence of absence of
+errors, whether or not discoverable.}
+
+\noun{Some Jurisdictions do not allow the exclusion of implied warranties,
+so such exclusion may not apply to you.}
+
+
+\subsubsection*{Limitation on Liability}
+
+\noun{Exept to the extent required by applicable law, in no event
+will Licensor be liable to you on any legal theory for any special,
+incidental, consequential, punitive, exemplary or other damages arising
+out of this license or the use of the work, even if Licensor has been
+advised of the possibility of such damages.}
+
+
+\subsubsection*{Links}
+
+Der Text der \quotedblbase{}GNU Free Documentation License\textquotedblleft{}
+kann auch auf der Seite
+\begin{quote}
+https://www.gnu.org/licenses/fdl-1.3.de.html
+\end{quote}
+nachgelesen werden.
+
+Eine transparente Kopie dieses Dokuments kann von
+\begin{quote}
+https://github.com/andiv/algebra
+\end{quote}
+heruntergeladen werden.
+
+\newpage{}
+
+\fancyhead[R]{Literatur}
 
 
 \subsubsection*{Literatur}
@@ -296,30 +370,6 @@ ISBN 0-387-95385-X
 algebra}, Westview Press, 1994\\
 ISBN 0-201-40751-5, Lokalisierungen: Seite 36-39
 \end{itemize}
-\vfill{}
-
-
-
-\subsubsection*{Lizenz}
-
-Copyright (C) 2011 \noun{Andreas Völklein}.
-
-Permission is granted to copy, distribute and/or modify this document
-under the terms of the GNU Free Documentation License, Version 1.3
-or any later version published by the Free Software Foundation;
-
-with no Invariant Sections, no Front-Cover Texts, and no Back-Cover
-Texts.
-
-A copy of the license is included in the section entitled \textquotedbl{}GNU
-Free Documentation License\textquotedbl{}.
-
-Der Volltext der Lizenz kann auch auf der Seite https://www.gnu.org/licenses/fdl-1.3.de.html
-nachgelesen werden.
-
-Eine transparente Kopie dieses Dokuments kann von https://github.com/andiv/algebra
-heruntergeladen werden.
-
 {\small \newpage{}}\fancyhead[R]{Inhaltsverzeichnis}
 \fancyhead[C]{}
 
@@ -3717,32 +3767,215 @@ TODO: Rest
 
 \newpage{}
 
+%DATE: 
+
 
 \section{Galoistheorie}
 
 
-\subsection{Definition}
+\subsection{Definition \textmd{(galoissche Körpererweiterung, Galoisgruppe)}}
+
+Eine algebraische Körpererweiterung $E\supseteq k$ heißt genau dann
+\emph{galoissch}, wenn $\modulo{E}{k}$ normal und separabel ist.
+(siehe \ref{asdf}7.4 und 8.8 ii))
+
+In diesem Fall heißt
+\begin{align*}
+\text{Gal}\left(\modulo{E}{k}\right) & :=\text{Aut}_{k\text{-Alg.}}\left(E\right)\stackrel{\text{Blatt 8 Aufgabe 2}}{=}\text{Hom}_{k\text{-Alg.}}\left(E,E\right)
+\end{align*}
+\emph{die Galoisgruppe von }$\modulo{E}{k}$.
 
 
 \subsection{Beispiel und Definition}
 
+\begin{iiilist}
+
+\iii Für eine endliche Körpererweiterung $E\supseteq k$ sind äquivalent:
+
+\begin{abclist}
+
+\abc $\modulo{E}{k}$ ist galoissch.
+
+\abc $\modulo{E}{k}$ ist ein Zerfällungskörper eines separablen
+Polynoms $f\in k\left[X\right]$.
+
+\end{abclist}
+
+In diesem Fall kan $f$ in b) irreduzibel gewählt werden und $\text{Gal}\left(\modulo{E}{k}\right)=:\text{Gal}\left(f\right)$
+heißt \emph{die Galoisgruppe von $f$}.
+
+\iii Jede Erweiterung $E\supseteq k$ endlicher Körper ist galoissch
+und mit $q:=\left|k\right|$, das heißt $k=\mathbb{F}_{q}$ gilt:
+
+$\text{Gal}\left(\modulo{E}{k}\right)$ ist zyklisch mit Ordnung $\left[E:k\right]$
+
+{[}TODO: Was bedeutet folgende Zeile?{]}
+
+erzeugt von $\left(\mathbb{F}_{q}\right)\bigg|_{E}=\text{Gal}\left(\modulo{E}{k}\right)$.
+
+\end{iiilist}
+
+
+\subsubsection*{Beweis}
+
+\begin{iiilist}
+
+\iii a) $\Rightarrow$ b): \ref{asdf}8.17 impliziert:
+\begin{align*}
+\exs_{\alpha\in E} & :E=k\left(\alpha\right)
+\end{align*}
+Weil $\modulo{E}{k}$ normal ist, folgt aus \ref{asdf}7.4 iii), dass
+$\modulo{E}{k}$ ein Zerfällungskörper von
+\begin{align*}
+f & :=\text{Mipo}\left(\alpha\right)\in k\left[X\right]
+\end{align*}
+und $f$ separabel und irreduzibel ist.
+
+b) $\Rightarrow$ a): \ref{asdf}7.4 ii) impliziert, dass $\modulo{E}{k}$
+normal ist.
+
+Weil $f\in k\left[X\right]$ separabel ist, folgt mit \ref{asdf}7.10
+iii) und \ref{asdf}8.15 i) $\Rightarrow$ ii), dass $\modulo{E}{k}$
+separabel ist.
+
+Zusammen bedeutet das, dass $\modulo{E}{k}$ galoissch ist.
+
+\qqed[i)]
+
+\iii Folgt aus \ref{asdf}9.1 iii), \ref{asdf}8.12 ii) und \ref{asdf}9.5
+ii).
+
+\qqed[ii)]
+
+\end{iiilist}
+
 
 \subsection{Proposition}
 
+Seien $E\supseteq K\supseteq k$ Körpererweiterungen und $\modulo{E}{k}$
+galoissch.
+
+Dann gelten:
+
+\begin{iiilist}
+
+\iii $\modulo{E}{K}$ ist galoissch und 
+\begin{align*}
+\text{Gal}\left(\modulo{E}{K}\right) & =\left\{ \delta\in\text{Gal}\left(\modulo{E}{k}\right)\big|\delta|_{K}=\text{id}_{K}\right\} \subseteq\text{Gal}\left(\modulo{E}{k}\right)
+\end{align*}
+ist eine Untergruppe.
+
+\iii Ist zusätzlich $\modulo{K}{k}$ galoissch, dann ist die Abbildung
+\begin{align*}
+\pi:\text{Gal}\left(\modulo{E}{k}\right) & \twoheadrightarrow\text{Gal}\left(\modulo{K}{k}\right)\\
+\sigma & \mapsto\sigma|_{K}
+\end{align*}
+wohldefiniert und ein surjektiver Gruppenhomomorphismus mit:
+\begin{align*}
+\text{ker}\left(\pi\right) & =\text{Gal}\left(\modulo{E}{K}\right)\unlhd\text{Gal}\left(\modulo{E}{k}\right)
+\end{align*}
+
+
+\end{iiilist}
+
+
+\subsubsection*{Beweis}
+
+\begin{iiilist}
+
+\iii Wegen \ref{asdf}7.7 ii) und \ref{asdf}8.16 i) $\Rightarrow$
+ii) ist $\modulo{E}{K}$ galoissch.
+
+Der Rest ist klar.
+
+\qqed[i)]
+
+\iii $\pi$ ist, weil $\modulo{K}{k}$ normal ist, und wegen \ref{asdf}7.4
+i) wohldefiniert, das heißt
+\begin{align*}
+\fall_{\sigma\in\text{Gal}\left(\moduloScript{E}{k}\right)} & :\sigma\left(K\right)\subseteq K
+\end{align*}
+und daher $\sigma|_{K}\in\text{Gal}\left(\modulo{K}{k}\right)$.
+
+Dass $\pi$ ein Gruppenhomomorphismus ist, ist klar.
+
+Weil $\modulo{E}{k}$ normal ist und wegen \ref{asdf}6.7 ist $\pi$
+surjektiv.
+
+Die Aussage über den Kern von $\pi$ folgt aus i).
+
+\qqed[ii)]
+
+\end{iiilist}
+
 
 \subsection{Proposition}
 
+Sei $E\supseteq k$ eine endliche normale Körpererweiterung.
 
-\subsection{Satz und Definition}
+Dann gelten:
+
+\begin{iiilist}
+
+\iii $\left|\text{Aut}\left(E\right)\right|=\left[E:k\right]_{s}\le\left[E:k\right]$
+
+\iii $\left(\left|\text{Aut}_{k}\left(E\right)\right|=\left[E:k\right]\right)\Leftrightarrow\modulo{E}{k}$
+ist galoissch.
+
+\end{iiilist}
+
+
+\subsubsection*{Beweis}
+
+Folgt aus \ref{asdf}8.11 und \ref{asdf}8.15 iii) $\Rightarrow$
+i).
+
+\qqed
+
+
+\subsection{Satz und Definition \textmd{(Fixkörper)}}
+
+Seien $E$ ein Körper und
+\begin{align*}
+G\subseteq\text{Aut}\left(E\right) & :=\left\{ \varphi:E\stackrel{\sim}{\to}E|\varphi\text{ist ein Körperisomorphismus}\right\} 
+\end{align*}
+eine Untergruppe. Dann gelten:
+
+\begin{iiilist}
+
+\iii $k:=E^{G}:=\left\{ \alpha\in E|\fall_{B\in G}:\sigma\left(\alpha\right)=\alpha\right\} $
+ist ein TK(TODO???) und heißt \emph{der Fixkörper von $E$ unter $G$}.
+
+\iii Aus $\left|G\right|<\infty$ folgt, dass $\modulo{E}{k}$ galoissch
+ist und dass gelten: (TODO: Gleichung überprüfen)
+\begin{itemize}
+\item Mit $\text{Aut}_{k}\left(E\right)$ definiert als die Gruppe der Automorphismen
+von $E$, die auf $k$ die Identiät sind, gilt:
+\begin{align*}
+\text{Aut}_{k}\left(E\right)=\text{Gal}\left(\modulo{E}{k}\right) & =G\subseteq\text{Aut}\left(E\right)
+\end{align*}
+
+\item $\left[E:k\right]=\left|G\right|$
+\end{itemize}
+\iii Ist $\modulo{E}{k}$ algebraisch (aber nicht notwendigerweise
+$\left|G\right|<\infty$, beziehungsweise endlich), so ist $\modulo{E}{k}$
+galoissch und $G\subseteq\text{Gal}\left(\modulo{E}{k}\right)$ ist
+eine Untergruppe.
+
+\end{iiilist}
 
 
 \subsection{Beispiel}
+
+TODO: Disclaimer
 
 
 \subsection{Korollar}
 
 
 \subsection{Bemerkung und Beispiel}
+
+%DATE: 
 
 
 \subsection{Satz \textmd{(Hauptsatz der Galoistheorie)}}
@@ -4910,14 +5143,15 @@ are not considered part of the section titles.
 Such a section may not be included in the Modified Version.
 \item N. Do not retitle any existing section to be Entitled \textquotedbl{}Endorsements\textquotedbl{}
 or to conflict in title with any Invariant Section.
-\item O. Preserve any Warranty Disclaimers. If the Modified Version includes
-new front-matter sections or appendices that qualify as Secondary
-Sections and contain no material copied from the Document, you may
-at your option designate some or all of these sections as invariant.
-To do this, add their titles to the list of Invariant Sections in
-the Modified Version's license notice. These titles must be distinct
-from any other section titles.
+\item O. Preserve any Warranty Disclaimers.
 \end{itemize}
+If the Modified Version includes new front-matter sections or appendices
+that qualify as Secondary Sections and contain no material copied
+from the Document, you may at your option designate some or all of
+these sections as invariant. To do this, add their titles to the list
+of Invariant Sections in the Modified Version's license notice. These
+titles must be distinct from any other section titles.
+
 You may add a section Entitled \textquotedbl{}Endorsements\textquotedbl{},
 provided it contains nothing but endorsements of your Modified Version
 by various parties\textemdash{}for example, statements of peer review
