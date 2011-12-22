@@ -1,6 +1,6 @@
 %% LyX 2.0.2 created this file.  For more info, see http://www.lyx.org/.
 %% Do not edit unless you really know what you are doing.
-\documentclass[11pt,ngerman]{article}
+\documentclass[11pt,english,ngerman]{article}
 \usepackage[T1]{fontenc}
 \usepackage[latin9]{inputenc}
 \usepackage[a4paper]{geometry}
@@ -12,6 +12,7 @@
 \usepackage{babel}
 \usepackage{verbatim}
 \usepackage{textcomp}
+\usepackage{url}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{wasysym}
@@ -55,36 +56,25 @@
 \renewcommand{\cftsubsubsecnumwidth}{3.2 em}
 
 
-%stackrel mit optionalem Argument (für Lyx)
+%Kommandos mit optionalem Argument (für Lyx)
 \newcommand{\sr}[3]{\stackrel[#3]{#2}{#1}}
 \newcommand{\sqrl}[2]{\sqrt[#1]{#2}}
 
+%Mathe-Operatoren
 \DeclareMathOperator*{\exs}{\exists}
 \DeclareMathOperator*{\exsg}{\exists!}
 \DeclareMathOperator*{\fall}{\forall}
-%\DeclareMathOperator*{\dsum}{\bigoplus}
-\DeclareMathOperator*{\mx}{\text{max}}
-\DeclareMathOperator*{\mn}{\text{min}}
-%\DeclareMathOperator*{\dotcup}{\ensuremath{\mathaccent\cdot\cup}}
 \DeclareMathOperator*{\bcupd}{\dot{\bigcup}}
 \DeclareMathOperator*{\bcapd}{\dot{\bigcap}}
 
 %Eigene Abkürzungen
-\newcommand{\id}{\textnormal{id}}
-\newcommand{\tr}{\textnormal{tr}}
 \newcommand{\dd}{\textnormal{d}}
-\newcommand{\ord}{\textnormal{ord}}
-\newcommand{\kgV}{\textnormal{kgV}}
-\newcommand{\modu}{\textnormal{ mod }}
-\newcommand{\sgn}{\textnormal{sgn}}
 \newcommand{\im}{\textnormal{im}}
-\newcommand{\ddiv}{\textnormal{div}}
-\newcommand{\rot}{\textnormal{rot}}
-\newcommand{\Aut}{\textnormal{Aut}}
-
+\newcommand{\id}{\textnormal{id}}
 \newcommand{\ii}{\textbf{i}}
 
 \newcommand{\qqed}[1][\arabic{section}.\arabic{subsection}]{\begin{flushright}\qed\ensuremath{_{\text{#1}}}\end{flushright}}
+
 \newcommand{\ent}{\mathrel{\widehat{=}}}
 \newcommand{\iso}{\stackrel{\sim}{\to}}
   
@@ -93,7 +83,6 @@
 \newcommand{\mf}[1]{\ensuremath{\mathfrak{#1}}}
 
 \newcommand{\nok}[2]{\genfrac(){0pt}{}{#1}{#2}}
-\newcommand{\out}[1]{\hspace*{2.8pt}\check{\hspace*{-2.8pt}#1}}
 
 %Definitons-Zeichen
 \newcommand{\dfn}{\mathrel{\mathop:}=}
@@ -123,7 +112,7 @@
 }%
 }
 
-\newcommand{\modloSmall}[2]{%
+\newcommand{\modloScript}[2]{%
 \mbox{\raisebox{0.4ex}{\scriptsize\ensuremath{\displaystyle \mathbb{#1}}}%
 {\footnotesize /}%
 \raisebox{-0.4ex}{\scriptsize\ensuremath{\displaystyle #2\mathbb{#1}}}%
@@ -137,18 +126,15 @@
   {\box0\lower0.4pt\box2}}
 
 
-\newcounter{rz}
-\newcommand{\rz}[1]{\setcounter{rz}{#1}\text{\Roman{rz}}}
-  
  %alphabetische Aufz\"ahlung
 \newcounter{ale}
-\newcommand{\abc}{\item[\alph{ale})]\stepcounter{ale}}
-\newenvironment{abclist}{\begin{itemize} \setcounter{ale}{1}}{\end{itemize}}
+\newcommand{\abc}{\stepcounter{ale}\item[\alph{ale})]}
+\newenvironment{abclist}{\begin{itemize} \setcounter{ale}{0}}{\end{itemize}}
 
 %klein-r\"omische Aufz\"ahlung
 \newcounter{ale2}
-\newcommand{\iii}{\item[\textnormal{\roman{ale2})}]\stepcounter{ale2}}
-\newenvironment{iiilist}{\begin{itemize} \setcounter{ale2}{1}}{\end{itemize}}
+\newcommand{\iii}{\stepcounter{ale2}\item[\textnormal{\roman{ale2})}]}
+\newenvironment{iiilist}{\begin{itemize} \setcounter{ale2}{0}}{\end{itemize}}
 
 % Copy from book.cls 2004/02/16 v1.4f
 
@@ -228,27 +214,25 @@
 
 \begin{document}
 %Copyright Notice
-%Copyright (C) 2011 Andreas Völklein.
+%Copyright (C) 2011 Andreas Völklein
 %Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.3 or any later version published by the Free Software Foundation;
 %with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.
 %A copy of the license is included in the section entitled "GNU Free Documentation License".
 
 %Disclaimer of Warranty
-%Unless otherwise mutually agreed to by the parties in writing, Licensor offers the work as-is and makes no representations or warranties of any kind concerning the work, express, implied, statutory or otherwise, including, without limitation, warranties of title, merchantibility, fitness for a particular purpose, noninfringement, or the absence of latent or other defects, accuracy, or the presence of absence of errors, whether or not discoverable.
-%Some Jurisdictions do not allow the exclusion of implied warranties, so such exclusion may not apply to you.
+%Unless otherwise mutually agreed to by the parties in writing and to the extent not prohibited by applicable law, Licensor offers the work "as is" without warranties of any kind, expressed, implied, statutory or otherwise, including, but not limited to, the implied warranties of merchantability, fitness for a particular purpose, non-infringement, the absence of latent or other defects, accuracy, or the absence of errors, whether or not discoverable, except to the extent that these disclaimers are held to be legally invalid.
 
-%Limitation on Liability
-%Exept to the extent required by applicable law, in no event will Licensor be liable to you on any legal theory for any special, incidental, consequential, punitive, exemplary or other damages arising out of this license or the use of the work, even if Licensor has been advised of the possibility of such damages.
+%Limitation of Liability
+%To the extent not prohibited by applicable law, in no event will Licensor be liable to you for any loss of revenue, profit or anything else, or for special, incidental, consequential, punitive, exemplary or other damages, however caused, regardless of the theory of liability, arising out of or related to this license or the use of or inability to use the work, even if Licensor has been advised of the possibility of such damages.
+%In no event will Licensor's liability to you, whether in contract, tort (including negligence), or otherwise, exceed the amount paid by you for the work under this Agreement.
 
 %Links
 %Der Text der "GNU Free Documentation License" kann auch auf der Seite
 %	https://www.gnu.org/licenses/fdl-1.3.de.html
 %nachgelesen werden.
-%Eine transparente Kopie dieses Dokuments kann von
+%Eine transparente Kopie der aktuellen Version dieses Dokuments kann von
 %	https://github.com/andiv/algebra
 %heruntergeladen werden.
-
-
 
 
 
@@ -292,10 +276,11 @@ Es wird daher \emph{dringend} empfohlen, die Vorlesung zu besuchen.
 \vfill{}
 
 
+\selectlanguage{english}%
 
 \subsubsection*{Copyright Notice}
 
-Copyright © 2011 \noun{Andreas Völklein}.
+Copyright © 2011 \noun{Andreas Völklein}
 
 Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.3
@@ -304,45 +289,52 @@ or any later version published by the Free Software Foundation;
 with no Invariant Sections, no Front-Cover Texts, and no Back-Cover
 Texts.
 
-A copy of the license is included in the section entitled \quotedblbase{}GNU
-Free Documentation License\textquotedblleft{}.
+A copy of the license is included in the section entitled \textquotedbl{}GNU
+Free Documentation License\textquotedbl{}.
 
 
 \subsubsection*{Disclaimer of Warranty}
 
-\noun{Unless otherwise mutually agreed to by the parties in writing,
-Licensor offers the work as-is and makes no representations or warranties
-of any kind concerning the work, express, implied, statutory or otherwise,
-including, without limitation, warranties of title, merchantibility,
-fitness for a particular purpose, noninfringement, or the absence
-of latent or other defects, accuracy, or the presence of absence of
-errors, whether or not discoverable.}
+\noun{Unless otherwise mutually agreed to by the parties in writing
+and to the extent not prohibited by applicable law, Licensor offers
+the work }\textquotedbl{}\noun{as is}\textquotedbl{}\noun{ without
+warranties of any kind, expressed, implied, statutory or otherwise,
+including, but not limited to, the implied warranties of merchantability,
+fitness for a particular purpose, non-infringement, the absence of
+latent or other defects, accuracy, or the absence of errors, whether
+or not discoverable, except to the extent that these disclaimers are
+held to be legally invalid.}
 
-\noun{Some Jurisdictions do not allow the exclusion of implied warranties,
-so such exclusion may not apply to you.}
 
+\subsubsection*{Limitation of Liability}
 
-\subsubsection*{Limitation on Liability}
-
-\noun{Exept to the extent required by applicable law, in no event
-will Licensor be liable to you on any legal theory for any special,
-incidental, consequential, punitive, exemplary or other damages arising
-out of this license or the use of the work, even if Licensor has been
+\noun{To the extent not prohibited by applicable law, in no event
+will Licensor be liable to you for any loss of revenue, profit or
+anything else, or for special, incidental, consequential, punitive,
+exemplary or other damages, however caused, regardless of the theory
+of liability,} \noun{arising out of or related to this license or
+the use of or inability to use the work, even if Licensor has been
 advised of the possibility of such damages.}
 
+\noun{In no event will Licensor's liability to you, whether in contract,
+tort (including negligence), or otherwise, exceed the amount paid
+by you for the work under this Agreement.}
+
+\selectlanguage{ngerman}%
 
 \subsubsection*{Links}
 
-Der Text der \quotedblbase{}GNU Free Documentation License\textquotedblleft{}
-kann auch auf der Seite
+Der Text der \quotedblbase{}\foreignlanguage{english}{GNU Free Documentation
+License}\textquotedblleft{} kann auch auf der Seite
 \begin{quote}
-https://www.gnu.org/licenses/fdl-1.3.de.html
+\url{https://www.gnu.org/licenses/fdl-1.3.de.html}
 \end{quote}
 nachgelesen werden.
 
-Eine transparente Kopie dieses Dokuments kann von
+Eine transparente Kopie der aktuellen Version dieses Dokuments kann
+von
 \begin{quote}
-https://github.com/andiv/algebra
+\url{https://github.com/andiv/algebra}
 \end{quote}
 heruntergeladen werden.
 
@@ -3967,8 +3959,6 @@ eine Untergruppe.
 
 \subsection{Beispiel}
 
-TODO: Disclaimer
-
 
 \subsection{Korollar}
 
@@ -4899,6 +4889,7 @@ f\left(s_{1},\ldots,s_{n}\right) & =g\left(s_{1},\ldots,s_{n}\right)\Rightarrow 
 \fancyhead[R]{}
 \fancyhead[C]{Anhang}
 
+\selectlanguage{english}%
 
 \section*{GNU Free Documentation License}
 
@@ -4909,7 +4900,7 @@ f\left(s_{1},\ldots,s_{n}\right) & =g\left(s_{1},\ldots,s_{n}\right)\Rightarrow 
 Version 1.3, 3 November 2008
 
 Copyright © 2000, 2001, 2002, 2007, 2008 Free Software Foundation,
-Inc. <http://fsf.org/>
+Inc. \url{https://fsf.org/}
 
 Everyone is permitted to copy and distribute verbatim copies of this
 license document, but changing it is not allowed.
@@ -5285,7 +5276,7 @@ does not give you any rights to use it.
 The Free Software Foundation may publish new, revised versions of
 the GNU Free Documentation License from time to time. Such new versions
 will be similar in spirit to the present version, but may differ in
-detail to address new problems or concerns. See http://www.gnu.org/copyleft/.
+detail to address new problems or concerns. See \url{https://www.gnu.org/copyleft/}.
 
 Each version of the License is given a distinguishing version number.
 If the Document specifies that a particular numbered version of this
@@ -5351,7 +5342,7 @@ A copy of the license is included in the section entitled \textquotedbl{}GNU
 Free Documentation License\textquotedbl{}.
 \end{quote}
 If you have Invariant Sections, Front-Cover Texts and Back-Cover Texts,
-replace the \textquotedbl{}with \ldots{} Texts.\textquotedbl{} line
+replace the \textquotedbl{}with $\ldots$ Texts.\textquotedbl{} line
 with this:
 \begin{quote}
 with the Invariant Sections being LIST THEIR TITLES, with the Front-Cover
@@ -5366,5 +5357,6 @@ recommend releasing these examples in parallel under your choice of
 free software license, such as the GNU General Public License, to
 permit their use in free software.
 
+\selectlanguage{ngerman}%
 \label{END}
 \end{document}
