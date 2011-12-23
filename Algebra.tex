@@ -224,7 +224,7 @@
 
 %Limitation of Liability
 %To the extent not prohibited by applicable law, in no event will Licensor be liable to you for any loss of revenue, profit or anything else, or for special, incidental, consequential, punitive, exemplary or other damages, however caused, regardless of the theory of liability, arising out of or related to this license or the use of or inability to use the work, even if Licensor has been advised of the possibility of such damages.
-%In no event will Licensor's liability to you, whether in contract, tort (including negligence), or otherwise, exceed the amount paid by you for the work under this Agreement.
+%In no event will Licensor's liability to you, whether in contract, tort (including negligence), or otherwise, exceed the amount you paid Licensor for the work under this Agreement.
 
 %Links
 %Der Text der "GNU Free Documentation License" kann auch auf der Seite
@@ -317,8 +317,8 @@ the use of or inability to use the work, even if Licensor has been
 advised of the possibility of such damages.}
 
 \noun{In no event will Licensor's liability to you, whether in contract,
-tort (including negligence), or otherwise, exceed the amount paid
-by you for the work under this Agreement.}
+tort (including negligence), or otherwise, exceed the amount you paid
+Licensor for the work under this Agreement.}
 
 \selectlanguage{ngerman}%
 
@@ -953,7 +953,7 @@ G & \stackrel{\sim}{=}\begin{cases}
 \qqed
 
 
-\subsection{Satz \textmd{(Untergruppe, Kern und Bild zyklischer Gruppen)}}
+\subsection{Satz \textmd{(Untergruppe, Kern und Bild zyklischer Gruppen)\label{sub:Satz-UG-kerImZyklG}}}
 
 Sei $G$ eine zyklische Gruppe. Dann gilt:
 
@@ -1392,6 +1392,8 @@ Es gibt genau einen Ringhomomorphismus $\psi:\mathbb{Z}\to\mathbb{C}$
 und es gilt $\psi\left(\mathbb{Z}\setminus\left\{ 0\right\} \right)\subseteq\mathbb{C}^{*}$.\\
 TODO: Abb Homomorphiesatz $\psi$
 
+%DATE: Fr 28.10.11
+
 
 \subsubsection*{Beweis von \ref{sub:Prop-UnivEigSinvA}}
 
@@ -1508,7 +1510,7 @@ Das bedeutet $s=0\in S$.
 \end{iiilist}
 
 
-\subsection{Beispiel}
+\subsection{Beispiel \textmd{(Lokalisierung)}}
 
 Seien $A$ ein Integritätsring und $\mathfrak{p}\subseteq A$ ein
 Primideal.
@@ -1522,8 +1524,8 @@ heißt \emph{Lokalisierung von $A$ bei $\mathfrak{p}$.}
 
 Es gilt $A\subseteq A_{\mathfrak{p}}\subseteq A_{\left(0\right)}=\text{Quot}\left(A\right)$.
 
-Für $A=\mathbb{Z}$ und $\mathfrak{p}=\left(p\right)$ (für $p\in\mathbb{Z}$
-prim) gilt zum Beispiel:
+Für $A=\mathbb{Z}$ und $\mathfrak{p}=\left(p\right)$ (für eine Primzahl
+$p\in\mathbb{Z}$) gilt zum Beispiel:
 \begin{align*}
 A & =\mathbb{Z}\subseteq A_{\mathfrak{p}}=\mathbb{Z}_{\left(p\right)}=\left\{ \frac{a}{b}\bigg|a,b\in\mathbb{Z},p\not|\, b\right\} \subseteq A_{\left(0\right)}=\mathbb{Q}
 \end{align*}
@@ -1792,22 +1794,68 @@ Primzahlen)
 \item $R=\mathbb{Z}\left[\ii\right]$, $\mathcal{P}=?$
 \end{itemize}
 
-\subsection{Erinnerung}
+\subsection{Erinnerung \textmd{(Primfaktorzerlegung)}}
+
+TODO: ??? Überprüfen
 
 Für alle $p\in\mathcal{P}$ ist
 \begin{align*}
 \nu_{p}:\mathbb{Q}^{*} & \to\mathbb{Z}\\
 \frac{a}{b} & \mapsto\nu_{p}\left(a\right)-\nu_{p}\left(b\right)
 \end{align*}
- ($a\not=0$) ist die \emph{$p$-adische Bewertung von ${\displaystyle \frac{a}{b}}$}
-und für alle $a\in R\setminus\left\{ 0\right\} $ ist
+ ($a\not=0$) die \emph{$p$-adische Bewertung von ${\displaystyle \frac{a}{b}}$}
+und für alle $a\in R\setminus\left\{ 0\right\} $ ist die \emph{Primfaktorzerlegung}
 \begin{align*}
 a & =\varepsilon\prod_{p\in\mathcal{P}}p^{\nu_{p}\left(a\right)}
 \end{align*}
-($\varepsilon\in R^{*}$ geeignet) die \emph{Primfaktorzerlegung}
-ein Homomorphismus.
+($\varepsilon\in R^{*}$ geeignet) ein Homomorphismus.
 
-Die Abbildung 
+TODO: ? obige Aussage überprüfen! Homomorphismus?
+
+Die Abbildung
+\begin{align*}
+R^{*}\oplus\left(\bigoplus_{p\in\mathcal{P}}\mathbb{Z}\right) & \stackrel{\sim}{\to}\mathbb{Q}^{*}\\
+\left(\varepsilon,\left(\nu_{p}\right)\right) & \mapsto\varepsilon\cdot\prod_{p\in\mathcal{P}}p^{\nu_{p}}
+\end{align*}
+ist ein Isomorphismus von Gruppen mit der inversen Abbildung:
+\begin{align*}
+q & \mapsto\left(\frac{q}{\prod_{p\in\mathcal{P}}p^{\nu_{p}}},\left(\nu_{p}\left(q\right)\right)_{p\in\mathcal{P}}\right)
+\end{align*}
+Für alle $q\in\mathbb{Q}^{*}$ gilt:
+\begin{align}
+q\in R & \Leftrightarrow\fall_{p\in\mathcal{P}}:\nu_{p}\left(q\right)\ge0\label{eq:qinR}
+\end{align}
+Setze $\nu_{p}\left(0\right):=\infty$ für alle $p\in\mathcal{P}$.
+
+
+\subsection{Bemerkung}
+
+Für jeden Ringhomomorphismus $\varphi:R\to R'$ existiert genau ein
+Ringhomomorphismus
+\begin{align*}
+\varphi\left[X\right]:R\left[X\right] & \to R'\left[X\right]
+\end{align*}
+mit ${\displaystyle \varphi\left[X\right]\left(\sum_{i}a_{i}X^{i}\right)=\sum_{i}\varphi\left(a_{i}\right)X^{i}}$.
+
+Es gilt:
+\begin{align*}
+\text{ker}\left(\varphi\left[X\right]\right) & =\left\{ \sum_{i}a_{i}X^{i}\bigg|a_{i}\in\text{ker}\left(\varphi\right)\subseteq R\right\} 
+\end{align*}
+
+
+Ist zum Beispiel $p\in R$, so ist
+\begin{align*}
+\pi:R\left[X\right] & \to\left(\modulo{R}{\left(p\right)}\right)\left[X\right]\\
+\sum_{i}a_{i}X^{i} & \mapsto\sum_{i}\left(a_{i}\left(\text{mod}\right)p\right)X^{i}
+\end{align*}
+ein surjektiver Ringhomomorphismus mit:
+\begin{align}
+\text{ker}\left(\pi\right) & =\left\{ \sum_{i}a_{i}X^{i}\bigg|\fall_{i}:p|a_{i}\right\} 
+\end{align}
+(Wähle $\varphi:R\to R'$ als den kanonischen Homomorphismus $R\to\modulo{R}{\left(p\right)}$.)
+
+
+\subsubsection*{Beweis}
 
 TODO: Rest einfügen
 
@@ -3765,7 +3813,7 @@ TODO: Rest
 \section{Galoistheorie}
 
 
-\subsection{Definition \textmd{(galoissche Körpererweiterung, Galoisgruppe)}}
+\subsection{Definition \textmd{(galoissche Körpererweiterung, Galoisgruppe)\label{sub:Def-Galoisgruppe}}}
 
 Eine algebraische Körpererweiterung $E\supseteq k$ heißt genau dann
 \emph{galoissch}, wenn $\modulo{E}{k}$ normal und separabel ist.
@@ -3778,7 +3826,7 @@ In diesem Fall heißt
 \emph{die Galoisgruppe von }$\modulo{E}{k}$.
 
 
-\subsection{Beispiel und Definition}
+\subsection{Beispiel und Definition\label{sub:BuD-Galoisgruppe}}
 
 \begin{iiilist}
 
@@ -3842,7 +3890,7 @@ ii).
 \end{iiilist}
 
 
-\subsection{Proposition}
+\subsection{Proposition\label{sub:Prop-EKkgaloissch}}
 
 Seien $E\supseteq K\supseteq k$ Körpererweiterungen und $\modulo{E}{k}$
 galoissch.
@@ -3925,7 +3973,7 @@ i).
 \qqed
 
 
-\subsection{Satz und Definition \textmd{(Fixkörper)}}
+\subsection{Satz und Definition \textmd{(Fixkörper)\label{sub:SuD-Fixk=0000F6rper}}}
 
 Seien $E$ ein Körper und
 \begin{align*}
@@ -3968,7 +4016,7 @@ eine Untergruppe.
 %DATE: 
 
 
-\subsection{Satz \textmd{(Hauptsatz der Galoistheorie)}}
+\subsection{Satz \textmd{(Hauptsatz der Galoistheorie)\label{sub:Satz-HSGaloistheorie}}}
 
 Seien $E\supseteq k$ eine endliche galoissche Körpererweiterung und
 $G:=\text{Gal}\left(\modulo{E}{k}\right)$. Dann gelten:
@@ -4013,7 +4061,7 @@ induziert.
 \begin{iiilist}
 
 \iii Die Wohldefiniertheit von $\phi$ ist klar und die von $\psi$
-folgt aus \ref{asdf}10.3 i).
+folgt aus \ref{sub:Prop-EKkgaloissch} i).
 \begin{itemize}
 \item $\phi\circ\psi=\text{id}$\\
 Zeige: $k\subseteq K\subseteq E$ Zwischenkörper $\Rightarrow$ $K=\phi\left(\psi\left(K\right)\right)=E^{\text{Gal}\left(\modulo{E}{K}\right)}$.\\
@@ -4021,11 +4069,12 @@ Dies folgt aus \ref{asdf}10.7 ii) für die Körpererweiterung $E\subseteq K$.
 \item $\psi\circ\phi=\text{id}$\\
 Zeige: $H\subseteq G$ Untergruppe $\Rightarrow$ $\text{Gal}\left(\modulo{E}{E^{H}}\right)=H$
 in $G$.\\
-Dies gilt nach \ref{asdf}10.5 ii)
+Dies gilt nach \ref{sub:SuD-Fixk=0000F6rper} ii).
 \end{itemize}
 \qqed[i)]
 
-\iii b) $\Rightarrow$ a) und zweite Aussage: \ref{asdf}10.3 ii)\\
+\iii b) $\Rightarrow$ a) und zweite Aussage: \ref{sub:Prop-EKkgaloissch}
+ii)\\
 a) $\Rightarrow$ b): Wegen \ref{asdf}8.16 i) $\Rightarrow$ ii)
 ist mit $\modulo{E}{k}$ auch $\modulo{E^{H}}{k}$ separabel.
 
@@ -4077,7 +4126,7 @@ G & :=\text{Gal}\left(\modulo{E'}{k}\right)
 \end{align*}
 endlich, genauer $\left|G\right|=\left[E':k\right]<\infty$.
 
-$G$ besitzt nur endlich viele Untergruppen, also besitzt nach \ref{asdf}10.9
+$G$ besitzt nur endlich viele Untergruppen, also besitzt nach \ref{sub:Satz-HSGaloistheorie}
 i) $\modulo{E'}{k}$ nur endlich viele Zwischenkörper.
 
 Jeder Zwischenkörper von $\modulo{E}{k}$ ist aber insbesondere einer
@@ -4106,7 +4155,7 @@ $K_{2}$ enthält und heißt \emph{das Kompositum von $K_{1}$ und $K_{2}$
 (in $E$)}.
 
 
-\subsection{Satz}
+\subsection{Satz\label{sub:Satz-UG-KE-Entsprechung}}
 
 Seien $E\supseteq k$ eine endliche Galoiserweiterung (das ist definiert
 als endliche Körpererweiterung, die galoissch ist), $k\subseteq K_{1},K_{2}\subseteq E$
@@ -4167,7 +4216,7 @@ Für alle $\sigma$ gilt $\text{Mipo}_{k}\left(\sigma\left(\alpha\right)\right)\st
 ist separabel, also ist $\modulo{E'}{k}$ separabel. (nach \ref{asdf}??)
 
 
-\subsubsection*{Beweis von \ref{asdf}10.12}
+\subsubsection*{Beweis von \ref{sub:Satz-UG-KE-Entsprechung}}
 
 \begin{iiilist}
 
@@ -4235,8 +4284,8 @@ E & =E^{\left\{ e\right\} }=\mathbb{Q}\left(\alpha,\zeta\right)
 \end{align*}
 
 
-Aus \ref{asdf}10.9 und \ref{asdf}10.12 folgt daraus folgendes Diagramm
-von Zwischenkörpern.
+Aus \ref{sub:Satz-HSGaloistheorie} und \ref{sub:Satz-UG-KE-Entsprechung}
+folgt daraus folgendes Diagramm von Zwischenkörpern.
 
 TODO: Abb 4
 
@@ -4289,7 +4338,7 @@ Dann gilt:
 
 $\text{Gal}\left(\modulo{E}{k}\right)=H$
 
-Aus \ref{asdf}10.3.1 folgt damit a).
+Aus \ref{sub:Prop-EKkgaloissch} folgt damit a).
 
 Dann gilt:
 \begin{align*}
@@ -4324,15 +4373,15 @@ Dann ist $\modulo{K}{k}$ abelsch (beziehungsweise zyklisch).
 $G:=\text{Gal}\left(\modulo{E}{k}\right)$ ist abelsch und damit folgt,
 dass $H:=\text{Gal}\left(\modulo{E}{K}\right)\unlhd G$ gilt.
 
-Aus \ref{asdf}10.9 ii) folgt damit, dass $\modulo{K}{k}$ galoissch
-ist und $\text{Gal}\left(\modulo{K}{k}\right)\stackrel{\sim}{=}\modulo{G}{H}$
-endlich zyklisch (beziehungsweise zyklisch nach \ref{asdf}1.22 ii))
-ist.
+Aus \ref{sub:Satz-HSGaloistheorie} ii) folgt damit, dass $\modulo{K}{k}$
+galoissch ist und $\text{Gal}\left(\modulo{K}{k}\right)\stackrel{\sim}{=}\modulo{G}{H}$
+endlich zyklisch (beziehungsweise zyklisch nach \ref{sub:Satz-UG-kerImZyklG}
+ii)) ist.
 
 \qqed
 
 
-\subsection{Satz}
+\subsection{Satz\label{sub:Satz-Kompositum}}
 
 Seien $E\supseteq k$ eine Körpererweiterung und $k\subseteq K_{1},K_{2}\subseteq E$
 Zwischenkörper mit $\modulo{K_{i}}{k}$ endlich galoissch ($i=1,2$).
@@ -4367,7 +4416,7 @@ Im Fall $K_{1}\cap K_{2}=k$ ist $\psi$ ein Isomorphismus.
 
 \iii Es existiert separable $f_{i}\in k\left[X\right]$ so, dass
 $\modulo{K_{i}}{k}$ der Zerfällungskörper von $f_{i}$ ist ($i=1,2$),
-siehe \ref{asdf}10.2 a) $\Rightarrow$ b).
+siehe \ref{sub:BuD-Galoisgruppe} a) $\Rightarrow$ b).
 
 Dann ist $\modulo{K_{1}\cdot K_{2}}{k}$ der Zerfällungskörper des
 separablen Polynoms $f_{1}f_{2}$, also endlich und galoissch.
@@ -4386,7 +4435,7 @@ Ferner gilt:
 \begin{align*}
 K_{2}^{\text{im}\left(\varphi\right)} & \stackrel{\text{Def. von }\varphi}{=}\left(K_{1}\cdot K_{2}\right)^{\text{Gal}\left(\modulo{K_{1}\cdot K_{2}}{K_{1}}\right)}\cap K_{2}\stackrel{\ref{asdf}10.9i)}{=}K_{1}\cap K_{2}=K_{2}^{\text{Gal}\left(\modulo{K_{2}}{K_{1}\cap K_{2}}\right)}
 \end{align*}
-Mit \ref{asdf}10.9 i) folgt:
+Mit \ref{sub:Satz-HSGaloistheorie} i) folgt:
 \begin{align*}
 \text{im}\left(\varphi\right) & =\text{Gal}\left(\modulo{K_{2}}{K_{1}\cap K_{2}}\right)
 \end{align*}
@@ -4449,11 +4498,11 @@ endlich und separabel. Damit folgt $\modulo{K_{1}\cdot K_{2}}{k}$
 endlich und separabel.
 \end{enumerate}
 
-\subsection{Proposition}
+\subsection{Proposition\label{sub:Prop-sigmaInGalKommutiertNSt}}
 
 Seien $k$ ein Körper, $f\in k\left[X\right]$ separabel, $\modulo{E}{k}$
 ein Zerfällungskörper von $f$, $G:=\text{Gal}\left(\modulo{E}{k}\right)$
-(vergleiche \ref{asdf}10.2 ii)) und $\mathcal{N}:=\left\{ \beta\in E|f\left(\beta\right)=0\right\} $.
+(vergleiche \ref{sub:BuD-Galoisgruppe} ii)) und $\mathcal{N}:=\left\{ \beta\in E|f\left(\beta\right)=0\right\} $.
 
 Beachte: $\left|\mathcal{N}\right|=\text{deg}\left(f\right)$
 
@@ -4491,8 +4540,11 @@ und es gilt $\sigma\left(\alpha\right)=\tilde{\sigma}\left(\alpha\right)=\beta$.
 ii) $\Rightarrow$ i):
 
 Für $g:=\text{Mipo}_{k}\left(\alpha\right)$ gelten $g|f$ in $k\left[X\right]$
-und ($\fall_{\beta\in\mathcal{N}}\exs_{\sigma\in G}:\sigma\left(\alpha\right)=\beta\Rightarrow0=\sigma(\underbrace{g\left(\alpha\right)}_{=0})=g^{\sigma}\left(\sigma\left(\alpha\right)\right)=g\left(\beta\right)$),
-also:
+und:
+\begin{align*}
+\fall_{\beta\in\mathcal{N}}\exs_{\sigma\in G}:\sigma\left(\alpha\right)=\beta & \Rightarrow0=\sigma(\underbrace{g\left(\alpha\right)}_{=0})=g^{\sigma}\left(\sigma\left(\alpha\right)\right)=g\left(\beta\right)
+\end{align*}
+Also:
 \begin{align}
 g|_{\mathcal{N}} & =0\label{eq:gN0}
 \end{align}
@@ -4536,7 +4588,7 @@ folgt:
 \text{Gal}\left(\modulo{K_{i}}{k}\right) & \stackrel{\sim}{=}\modlo{Z}{2}
 \end{align*}
 Man kann zeigen, dass $K_{1}\cap K_{2}=k$ gilt (Übung), und nach
-\eqref{asdf}10.16 ii) ist
+\ref{sub:Satz-Kompositum} ii) ist
 \begin{align*}
 \varphi:\text{Gal}\left(\modulo{E}{k}\right) & \stackrel{\sim}{\to}\text{Gal}\left(\modulo{K_{1}}{k}\right)\times\text{Gal}\left(\modulo{K_{2}}{k}\right)\stackrel{\sim}{=}\modlo{Z}{2}\times\modlo{Z}{2}\\
 \varphi\left(\sigma\right) & :=\left(\sigma|_{K_{1}},\sigma|_{K_{2}}\right)
@@ -4582,8 +4634,9 @@ Offenbar sind die Nullstellen von $f$ genau $\left\{ \beta,\sigma_{1}\left(\beta
 woraus folgt, dass $\modulo{E}{k}$ ein Zerfällungskörper von $f$
 ist.
 
-Aus \ref{asdf}10.17 i) $\Rightarrow$ ii) folgt nun, dass $f\in k\left[X\right]$
-irreduzibel ist, und weil $f$ normiert ist, gilt $f=\text{Mipo}_{k}\left(\beta\right)$.
+Aus \ref{sub:Prop-sigmaInGalKommutiertNSt} i) $\Rightarrow$ ii)
+folgt nun, dass $f\in k\left[X\right]$ irreduzibel ist, und weil
+$f$ normiert ist, gilt $f=\text{Mipo}_{k}\left(\beta\right)$.
 
 \qqed
 
@@ -4783,7 +4836,7 @@ und $\varrho$ ist ein injektiver Gruppenhomomorphismus, vermöge dessen
 wir $S_{n}\subseteq\text{Aut}\left(E\right)$ als Untergruppe auffassen.
 
 
-\subsubsection{Proposition und Definition \textmd{(symmetrische rationale Funktionen)}}
+\subsubsection{Proposition und Definition \textmd{(symmetrische rationale Funktionen)\label{sub:PuD-symRatFkt}}}
 
 Die Körpererweiterung $K:=E^{S_{n}}\subseteq E$ ist galoissch mit
 $\text{Gal}\left(\modulo{E}{K}\right)=S_{n}$.
@@ -4808,7 +4861,7 @@ da $\sigma\left(t_{1}-t_{2}\right)=t_{2}-t_{1}=-\left(t_{1}-t_{2}\right)\not=t_{
 da $1\not=-1$.
 
 
-\subsubsection{Definition}
+\subsubsection{Definition\label{sub:Def-elemSymFkt}}
 
 Die in der Entwicklung
 \begin{align*}
@@ -4855,7 +4908,7 @@ unabhängig.)
 \end{iiilist}
 
 
-\subsubsection{Satz}
+\subsubsection{Satz\label{sub:Satz-HS-symFkt}}
 
 Es gelten:
 
@@ -4880,6 +4933,280 @@ f\left(s_{1},\ldots,s_{n}\right) & =g\left(s_{1},\ldots,s_{n}\right)\Rightarrow 
 
 
 \end{iiilist}
+
+%DATE: Fr 23.12.2011
+
+
+\subsubsection{Bemerkung}
+
+\begin{iiilist}
+
+\iii Sei $\text{char}\left(k\right)\not=2$. Es ist $E^{A_{n}}\supseteq K=E^{S_{n}}$
+galoissch vom Grad 2 und für
+\begin{align*}
+\delta & :=\prod_{1\le i<j\le n}\left(t_{i}-t_{j}\right)
+\end{align*}
+gilt $E^{A_{n}}=K\left(\delta\right)\stackrel{\ref{asdf}11.4.6\text{ii)}}{=}k\left(s_{1},\ldots,s_{n},\delta\right)$.
+
+Es ist ein offenes Problem, ob $f_{1},\ldots,f_{n}\in E^{A_{n}}$
+existieren, die $E^{A_{n}}=k\left(f_{1},\ldots,f_{n}\right)$ erfüllen.
+
+\iii \textbf{Vermutung:}
+
+Für jede endliche Gruppe $G$ existiert eine Galoiserweiterung $\modulo{E}{\mathbb{Q}}$
+mit $\text{Gal}\left(\modulo{E}{\mathbb{Q}}\right)\stackrel{\sim}{=}G$.
+
+\end{iiilist}
+
+
+\subsubsection*{Beweis von \ref{sub:Satz-HS-symFkt}}
+
+\begin{iiilist}
+
+\iii Zunächst gilt für alle $\sigma\in S_{n}$:
+\begin{align*}
+f^{\sigma}\left(X\right) & =\prod_{i=1}^{n}\left(X-t_{\sigma\left(i\right)}\right)=f\left(X\right)
+\end{align*}
+Also ist $f\in k\left[X\right]$.
+
+Wegen $E=k\left(t_{1},\ldots,t_{n}\right)=K\left(t_{1},\ldots,t_{n}\right)$
+ist klar, dass $\modulo{E}{k}$ ein Zerfällungskörper von $f$ ist.\\
+\qqed[\roman{ale2})]
+
+\iii Wir haben $k\left(s_{1},\ldots,s_{n}\right)\stackrel{\text{i)}}{\subseteq}K=E^{S_{n}}\subseteq E$
+und nach \ref{sub:Def-elemSymFkt} gilt sogar $f\left(X\right)\in k\left(s_{1},\ldots,s_{n}\right)\left[X\right]$,
+und damit folgt wegen $\deg\left(f\right)=n$ und i):
+\begin{align*}
+\left[E:k\left(s_{1},\ldots,s_{n}\right)\right] & \le n!
+\end{align*}
+Aus $\left[E:E^{S_{n}}\right]=\left|S_{n}\right|=n!$ (siehe \ref{sub:PuD-symRatFkt})
+folgt $K=k\left(s_{1},\ldots,s_{n}\right)$.\\
+\qqed[\roman{ale2})]
+
+\iii Seien $k\left(S_{1},\ldots,S_{n}\right)\subseteq\tilde{L}$
+ein Zerfällungskörper von
+\begin{align*}
+\tilde{f}\left(X\right) & :=\sum_{i=0}^{n}\left(-1\right)^{i}\cdot\mathcal{S}_{i}\cdot X^{n-i}\in k\left(\mathcal{S}_{1},\ldots,\mathcal{S}_{n}\right)\left[X\right]
+\end{align*}
+mit $\mathcal{S}_{0}:=1$ und seien $T_{1},\ldots T_{n}\in\tilde{L}$
+die Nullstellen von $\tilde{f}$ in $\tilde{L}$ (gelistet mit Vielfachheit).
+
+Dann gilt:
+\begin{align*}
+\tilde{L} & =k\left(\mathcal{S}_{1},\ldots,\mathcal{S}_{n}\right)\left(T_{1},\ldots,T_{n}\right)\stackrel{\eqref{eq:Sisi}}{=}k\left(T_{1},\ldots,T_{n}\right)
+\end{align*}
+Denn es gilt für alle $i$:
+\begin{align}
+\mathcal{S}_{i} & =s_{i}\left(T_{1},\ldots,T_{n}\right)\in k\left(T_{1},\ldots,T_{n}\right)\label{eq:Sisi}
+\end{align}
+Für den eindeutigen $k$-Algebrenhomomorphismus $\varphi:k\left[t_{1},\ldots,t_{n}\right]\to k\left[T_{1},\ldots,T_{n}\right]$
+mit $\varphi\left(t_{i}\right)=T_{i}$ für alle $1\le i\le n$ gilt
+für alle $1\le i\le n$:
+\begin{align*}
+\varphi\left(s_{i}\right) & \stackrel{\eqref{eq:Sisi}}{=}\mathcal{S}_{i}
+\end{align*}
+Da $\left\{ \mathcal{S}_{1},\ldots,\mathcal{S}_{n}\right\} \subseteq k\left[\mathcal{S}_{1},\ldots,\mathcal{S}_{n}\right]$
+algebraisch unabhängig über $k$ ist, ist $\left\{ s_{1},\ldots,s_{n}\right\} \subseteq k\left[s_{1},\ldots,s_{n}\right]$
+algebraisch unabhängig über $k$.\\
+\qqed[\roman{ale2})]
+
+\end{iiilist}
+
+
+\subsubsection{Definition}
+
+\begin{align*}
+p\left(X\right) & :=X^{n}+\mathcal{S}_{i}X^{n-1}+\ldots+\mathcal{S}_{n}=X^{n}+\sum_{i=1}^{n}\mathcal{S}_{i}\cdot X^{n-i}\in k\left(\mathcal{S}_{1},\ldots,\mathcal{S}_{n}\right)\left[X\right]
+\end{align*}
+heißt das \emph{allgemeine Polynom $n$-ten Grades über $k$.}
+
+
+\subsubsection{Bemerkung}
+
+Seien $k\subseteq F$ eine Körpererweiterung und $f\in F\left[X\right]$
+ein normiertes Polynom vom Grad $n$.
+
+Dann existiert genau ein $k$-Algebrenhomomorphismus
+\begin{align*}
+\varphi:k\left(\mathcal{S}_{1},\ldots,\mathcal{S}_{n}\right) & \to F
+\end{align*}
+mit
+\begin{align*}
+\varphi\left[X\right]\left(p\left(X\right)\right) & =f
+\end{align*}
+(nämlich $\varphi\left(\mathcal{S}_{i}\right)=\left(n-i\right)$-ter
+Koeffizient von $f$).
+
+
+\subsubsection{Satz}
+
+$p\left(X\right)\subseteq k\left(\mathcal{S}_{1},\ldots,\mathcal{S}_{n}\right)\left[X\right]$
+ist irreduzibel, separabel und es gilt:
+\begin{align*}
+\text{Gal}\left(p\left(X\right)\right) & \stackrel{\sim}{=}S_{n}
+\end{align*}
+(vergleiche \ref{asdf}10.2 i))
+
+
+\subsubsection*{Beweis}
+
+Wegen \ref{sub:Satz-HS-symFkt} ii) existiert ein $k$-Isomorphismus
+$\varphi:k\left(\mathcal{S}_{1},\ldots,\mathcal{S}_{n}\right)\stackrel{\sim}{\to}k\left(s_{1},\ldots,s_{n}\right)$
+mit $\varphi\left(\mathcal{S}_{i}\right)=\left(-1\right)^{i}\cdot s_{i}$
+und für diesen gilt $\varphi\left[X\right]\left(p\left(X\right)\right)=f\left(X\right)$
+wie in \ref{sub:Def-elemSymFkt}.
+
+Die Aussagen folgen nun aus den analogen Aussagen für $f$, nämlich
+in \ref{sub:Satz-HS-symFkt} i) und \ref{sub:PuD-symRatFkt}.
+
+\qqed
+
+
+\subsubsection{Satz \textmd{(Hilbertscher Irreduzibilitätssatz)}}
+
+Für $n\ge1$ existieren unendlich viele Tupel $\left(q_{1},\ldots,q_{n}\right)\in\mathbb{Q}^{n}$
+so, dass für
+\begin{align*}
+f\left(X\right) & =X^{n}+\sum_{i=1}^{n}q_{i}X^{n-i}\in\mathbb{Q}\left[X\right]
+\end{align*}
+ist $f\left(X\right)\in\mathbb{Q}\left[X\right]$ irreduzibel, separabel
+und es gilt:
+\begin{align*}
+\text{Gal}\left(f\right) & =S_{n}
+\end{align*}
+
+
+
+\subsubsection*{(ohne Beweis)}
+
+
+\subsubsection*{Beispiel}
+
+$q_{i}=0$, dann ist $f\left(X\right)=X^{n}$ mit der trivialen Galoisgruppe
+und nicht $S_{n}$.
+
+
+\section{Kreisteilungskörper \textmd{(die Galoistheorie von $X^{n}-1=0$)}}
+
+
+\subsubsection*{Fixiere}
+
+Sei $k$ ein Körper und $n,m\ge1$ mit $\text{char}\left(k\right)\not|\, n,m$
+(im Fall $\text{char}\left(k\right)=0$ seien $n,m\ge1$ beliebig).
+
+
+\subsection{Proposition und Definition\label{sub:PuD-Einheitswurzel}}
+
+Die Teilmenge $U_{n}:=U_{n}\left(k\right):=\left\{ \zeta\in\overline{k}\,^{*}\big|\zeta^{n}=1\right\} \subseteq\overline{k}\,^{*}$
+ist eine zyklische Untergruppe der Ordnung $n$, \emph{die Gruppe
+der $n$-ten Einheitswurzeln} (Abkürzung: EW) (in $k$).
+
+
+\subsubsection*{Beweis}
+
+Es ist klar, dass $U_{n}\subseteq\overline{k}\,^{*}$ eine Untergruppe
+ist.
+
+Für $\zeta\in U_{n}$ gelten $\left(X^{n}-1\right)\left(\zeta\right)=0$
+und $\left(X^{n}-1\right)'\left(\zeta\right)=n\zeta^{n-1}\not=0$,
+da $\zeta\not=0$ und $n\not=0$, da $\text{char}\left(k\right)\not|\: n$.
+
+Damit ist $X^{n}-1\in k\left[X\right]$ separabel und es folgt:
+\begin{align*}
+\left|U_{n}\right| & =\deg\left(X^{n}-1\right)=n
+\end{align*}
+Insbesondere ist $U_{n}\subseteq\overline{k}\,^{*}$ endlich, also
+zyklisch nach \ref{sub:Kor-endlUGzykl}.
+
+\qqed
+
+
+\subsubsection*{Bemerkung}
+
+Sei $p$ eine Primzahl und $n\ge1$, dann folgt:
+\begin{align*}
+\left\{ \zeta\in\overline{\mathbb{F}_{p}}\big|\zeta^{p^{n}}=1\right\}  & =\left\{ 1\right\} 
+\end{align*}
+
+
+
+\subsection{Definition}
+
+Eine $n$-te Einheitswurzel $\zeta\in U_{n}$ heißt genau dann \emph{primitiv},
+wenn $\left\langle \zeta\right\rangle =U_{n}$.
+
+
+\subsection{Beispiel}
+
+$k=\mathbb{C}$, ${\displaystyle U_{6}=\left\langle \zeta_{6}:=\text{exp}\left(\frac{2\pi\ii}{6}\right)\right\rangle \subseteq\mathbb{C}^{*}}$
+und genau $\zeta_{6},\zeta_{6}^{5}=\zeta_{6}^{-1}\in U_{6}$ sind
+primitiv:
+
+TODO: Abb1
+
+Es gilt:
+\begin{align*}
+\text{ord}\left(\zeta_{6}^{2}\right)=\text{ord}\left(\zeta_{6}^{4}\right) & =3\\
+\text{ord}\left(\zeta_{6}^{3}\right) & =2\\
+\text{ord}\left(\zeta_{6}^{0}\right) & =1
+\end{align*}
+
+
+
+\subsection{Proposition}
+
+Für $n,m\ge1$ sind $\left(n,m\right)=1$ (und $\text{char}\left(k\right)\not|\, n,m$)
+ist die Abbildung $f:U_{n}\times U_{m}\to U_{nm}$ ist wohldefiniert
+und ein Gruppenisomorphismus.
+
+Sind $\zeta\in U_{n}$ und $\psi\in U_{m}$ primitiv, so auch $\zeta\cdot\psi\in U_{n\cdot m}$.
+
+
+\subsubsection*{Beweis}
+
+Dass $f$ wohldefiniert und ein Gruppenhomomorphismus ist, ist klar.
+
+Wegen \ref{sub:PuD-Einheitswurzel} gilt:
+\begin{align}
+\left|U_{n}\times U_{m}\right| & =\left|U_{nm}\right|=nm\label{eq:Unm}
+\end{align}
+Gelte:
+\begin{align}
+f\left(\zeta\cdot\xi\right) & =\zeta\cdot\xi=1\label{eq:zx}
+\end{align}
+Da $n,m$ teilerfremd sind, existieren $a,b\in\mathbb{Z}$ mit $1=an+bm$.
+Dann folgt:
+\begin{align*}
+\zeta & =\zeta^{1}=\bigg(\underbrace{\zeta^{n}}_{=1}\bigg)^{a}\cdot\bigg(\zeta^{m}\bigg)^{b}\stackrel{\eqref{eq:zx}}{=}\bigg(\underbrace{\zeta^{m}}_{=1}\bigg)^{b}=1
+\end{align*}
+Daher ist $\xi=1$, also ist $\text{ker}\left(f\right)=\left\{ \left(1,1\right)\right\} $.
+
+Damit ist $f$ injektiv und wegen \eqref{eq:Unm} also ein Isomorphismus.
+
+Man sieht leicht, dass für $\left(\zeta,\xi\right)\in U_{n}\times U_{m}$
+gilt:
+\begin{align*}
+\text{ord}\left(\left(\zeta,\xi\right)\right) & =\text{kgV}\left(\text{ord}\left(\zeta\right),\text{ord}\left(\xi\right)\right)
+\end{align*}
+Sind nun $\zeta\in U_{n}$ und $\xi\in U_{m}$ primitiv, dann gilt:
+\begin{align*}
+\text{ord}\left(\left(\zeta,\xi\right)\right) & =\text{kgV}\left(n,m\right)\stackrel{\text{ggT}\left(n,m\right)=1}{=}n\cdot m
+\end{align*}
+Da $f$ ein Isomorphismus ist, folgt:
+\begin{align*}
+\text{ord}\left(f\left(\left(\zeta,\xi\right)\right)=\zeta\xi\right) & =nm
+\end{align*}
+Also ist $\zeta\xi\in U_{nm}$ primitiv.\\
+\qqed
+
+
+\subsubsection*{Bemerkung}
+
+$\left(n,m\right)=1$ wird gebraucht:
+
+$\zeta:=\ii\in U_{4}\left(\mathbb{C}\right),\xi:=\ii\in U_{4}\left(\mathbb{C}\right)$
+sind primitiv, aber $\zeta\cdot\xi=-1\in U_{16}\left(\mathbb{C}\right)$
+hat Ordnung $2\not=16$, ist also nicht primitiv.
 
 
 \part*{Anhang}

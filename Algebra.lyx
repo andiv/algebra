@@ -324,8 +324,8 @@ le, except to the extent that these disclaimers are held to be legally invalid.
 \begin_layout Plain Layout
 
 %In no event will Licensor's liability to you, whether in contract, tort
- (including negligence), or otherwise, exceed the amount paid by you for
- the work under this Agreement.
+ (including negligence), or otherwise, exceed the amount you paid Licensor
+ for the work under this Agreement.
 \end_layout
 
 \begin_layout Plain Layout
@@ -547,6 +547,10 @@ status open
 
 \begin_layout Plain Layout
 TODO: Beweise überarbeiten („klar“ erklären...)
+\end_layout
+
+\begin_layout Plain Layout
+TODO: DATEs einfügen
 \end_layout
 
 \end_inset
@@ -790,8 +794,8 @@ arising out of or related to this license or the use of or inability to
 \noun on
 \lang english
 In no event will Licensor's liability to you, whether in contract, tort
- (including negligence), or otherwise, exceed the amount paid by you for
- the work under this Agreement.
+ (including negligence), or otherwise, exceed the amount you paid Licensor
+ for the work under this Agreement.
 \end_layout
 
 \begin_layout Subsubsection*
@@ -3633,6 +3637,13 @@ qqed
 Satz 
 \series medium
 (Untergruppe, Kern und Bild zyklischer Gruppen)
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Satz-UG-kerImZyklG"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -6060,6 +6071,20 @@ TODO: Abb Homomorphiesatz
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+%DATE: Fr 28.10.11
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsubsection*
 Beweis von 
 \begin_inset CommandInset ref
@@ -6595,7 +6620,9 @@ end{iiilist}
 \end_layout
 
 \begin_layout Subsection
-Beispiel
+Beispiel 
+\series medium
+(Lokalisierung)
 \end_layout
 
 \begin_layout Standard
@@ -6653,11 +6680,11 @@ Für
 \begin_inset Formula $\mathfrak{p}=\left(p\right)$
 \end_inset
 
- (für 
+ (für eine Primzahl 
 \begin_inset Formula $p\in\mathbb{Z}$
 \end_inset
 
- prim) gilt zum Beispiel:
+) gilt zum Beispiel:
 \begin_inset Formula 
 \begin{align*}
 A & =\mathbb{Z}\subseteq A_{\mathfrak{p}}=\mathbb{Z}_{\left(p\right)}=\left\{ \frac{a}{b}\bigg|a,b\in\mathbb{Z},p\not|\, b\right\} \subseteq A_{\left(0\right)}=\mathbb{Q}
@@ -7742,7 +7769,13 @@ Beispiel
 \end_layout
 
 \begin_layout Subsection
-Erinnerung
+Erinnerung 
+\series medium
+(Primfaktorzerlegung)
+\end_layout
+
+\begin_layout Standard
+TODO: ??? Überprüfen
 \end_layout
 
 \begin_layout Standard
@@ -7763,7 +7796,7 @@ Für alle
 \begin_inset Formula $a\not=0$
 \end_inset
 
-) ist die 
+) die 
 \emph on
 
 \begin_inset Formula $p$
@@ -7779,7 +7812,11 @@ Für alle
 \begin_inset Formula $a\in R\setminus\left\{ 0\right\} $
 \end_inset
 
- ist
+ ist die 
+\emph on
+Primfaktorzerlegung
+\emph default
+ 
 \begin_inset Formula 
 \begin{align*}
 a & =\varepsilon\prod_{p\in\mathcal{P}}p^{\nu_{p}\left(a\right)}
@@ -7791,15 +7828,125 @@ a & =\varepsilon\prod_{p\in\mathcal{P}}p^{\nu_{p}\left(a\right)}
 \begin_inset Formula $\varepsilon\in R^{*}$
 \end_inset
 
- geeignet) die 
-\emph on
-Primfaktorzerlegung
-\emph default
- ein Homomorphismus.
+ geeignet) ein Homomorphismus.
 \end_layout
 
 \begin_layout Standard
-Die Abbildung 
+TODO: ? obige Aussage überprüfen! Homomorphismus?
+\end_layout
+
+\begin_layout Standard
+Die Abbildung
+\begin_inset Formula 
+\begin{align*}
+R^{*}\oplus\left(\bigoplus_{p\in\mathcal{P}}\mathbb{Z}\right) & \stackrel{\sim}{\to}\mathbb{Q}^{*}\\
+\left(\varepsilon,\left(\nu_{p}\right)\right) & \mapsto\varepsilon\cdot\prod_{p\in\mathcal{P}}p^{\nu_{p}}
+\end{align*}
+
+\end_inset
+
+ist ein Isomorphismus von Gruppen mit der inversen Abbildung:
+\begin_inset Formula 
+\begin{align*}
+q & \mapsto\left(\frac{q}{\prod_{p\in\mathcal{P}}p^{\nu_{p}}},\left(\nu_{p}\left(q\right)\right)_{p\in\mathcal{P}}\right)
+\end{align*}
+
+\end_inset
+
+Für alle 
+\begin_inset Formula $q\in\mathbb{Q}^{*}$
+\end_inset
+
+ gilt:
+\begin_inset Formula 
+\begin{align}
+q\in R & \Leftrightarrow\fall_{p\in\mathcal{P}}:\nu_{p}\left(q\right)\ge0\label{eq:qinR}
+\end{align}
+
+\end_inset
+
+Setze 
+\begin_inset Formula $\nu_{p}\left(0\right):=\infty$
+\end_inset
+
+ für alle 
+\begin_inset Formula $p\in\mathcal{P}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Bemerkung
+\end_layout
+
+\begin_layout Standard
+Für jeden Ringhomomorphismus 
+\begin_inset Formula $\varphi:R\to R'$
+\end_inset
+
+ existiert genau ein Ringhomomorphismus
+\begin_inset Formula 
+\begin{align*}
+\varphi\left[X\right]:R\left[X\right] & \to R'\left[X\right]
+\end{align*}
+
+\end_inset
+
+mit 
+\begin_inset Formula ${\displaystyle \varphi\left[X\right]\left(\sum_{i}a_{i}X^{i}\right)=\sum_{i}\varphi\left(a_{i}\right)X^{i}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Es gilt:
+\begin_inset Formula 
+\begin{align*}
+\text{ker}\left(\varphi\left[X\right]\right) & =\left\{ \sum_{i}a_{i}X^{i}\bigg|a_{i}\in\text{ker}\left(\varphi\right)\subseteq R\right\} 
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ist zum Beispiel 
+\begin_inset Formula $p\in R$
+\end_inset
+
+, so ist
+\begin_inset Formula 
+\begin{align*}
+\pi:R\left[X\right] & \to\left(\modulo{R}{\left(p\right)}\right)\left[X\right]\\
+\sum_{i}a_{i}X^{i} & \mapsto\sum_{i}\left(a_{i}\left(\text{mod}\right)p\right)X^{i}
+\end{align*}
+
+\end_inset
+
+ein surjektiver Ringhomomorphismus mit:
+\begin_inset Formula 
+\begin{align}
+\text{ker}\left(\pi\right) & =\left\{ \sum_{i}a_{i}X^{i}\bigg|\fall_{i}:p|a_{i}\right\} 
+\end{align}
+
+\end_inset
+
+(Wähle 
+\begin_inset Formula $\varphi:R\to R'$
+\end_inset
+
+ als den kanonischen Homomorphismus 
+\begin_inset Formula $R\to\modulo{R}{\left(p\right)}$
+\end_inset
+
+.)
+\end_layout
+
+\begin_layout Subsubsection*
+Beweis
 \end_layout
 
 \begin_layout Standard
@@ -18248,6 +18395,13 @@ Galoistheorie
 Definition 
 \series medium
 (galoissche Körpererweiterung, Galoisgruppe)
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Def-Galoisgruppe"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -18296,6 +18450,13 @@ die Galoisgruppe von
 
 \begin_layout Subsection
 Beispiel und Definition
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:BuD-Galoisgruppe"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -18723,6 +18884,13 @@ end{iiilist}
 
 \begin_layout Subsection
 Proposition
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Prop-EKkgaloissch"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -19160,6 +19328,13 @@ qqed
 Satz und Definition 
 \series medium
 (Fixkörper)
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:SuD-Fixkörper"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -19360,6 +19535,13 @@ status open
 Satz 
 \series medium
 (Hauptsatz der Galoistheorie)
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Satz-HSGaloistheorie"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -19596,11 +19778,11 @@ iii
  folgt aus 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "asdf"
+reference "sub:Prop-EKkgaloissch"
 
 \end_inset
 
-10.3 i).
+ i).
 \end_layout
 
 \begin_layout Itemize
@@ -19672,11 +19854,11 @@ Zeige:
 Dies gilt nach 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "asdf"
+reference "sub:SuD-Fixkörper"
 
 \end_inset
 
-10.5 ii)
+ ii).
 \end_layout
 
 \begin_layout Standard
@@ -19715,11 +19897,11 @@ iii
  a) und zweite Aussage: 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "asdf"
+reference "sub:Prop-EKkgaloissch"
 
 \end_inset
 
-10.3 ii)
+ ii)
 \begin_inset Newline newline
 \end_inset
 
@@ -19943,11 +20125,11 @@ endlich, genauer
  besitzt nur endlich viele Untergruppen, also besitzt nach 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "asdf"
+reference "sub:Satz-HSGaloistheorie"
 
 \end_inset
 
-10.9 i) 
+ i) 
 \begin_inset Formula $\modulo{E'}{k}$
 \end_inset
 
@@ -20081,6 +20263,13 @@ das Kompositum von
 
 \begin_layout Subsection
 Satz
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Satz-UG-KE-Entsprechung"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -20330,11 +20519,11 @@ reference "asdf"
 Beweis von 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "asdf"
+reference "sub:Satz-UG-KE-Entsprechung"
 
 \end_inset
 
-10.12
+
 \end_layout
 
 \begin_layout Standard
@@ -20629,18 +20818,18 @@ E & =E^{\left\{ e\right\} }=\mathbb{Q}\left(\alpha,\zeta\right)
 Aus 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "asdf"
+reference "sub:Satz-HSGaloistheorie"
 
 \end_inset
 
-10.9 und 
+ und 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "asdf"
+reference "sub:Satz-UG-KE-Entsprechung"
 
 \end_inset
 
-10.12 folgt daraus folgendes Diagramm von Zwischenkörpern.
+ folgt daraus folgendes Diagramm von Zwischenkörpern.
 \end_layout
 
 \begin_layout Standard
@@ -20904,11 +21093,11 @@ Beweis
 Aus 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "asdf"
+reference "sub:Prop-EKkgaloissch"
 
 \end_inset
 
-10.3.1 folgt damit a).
+ folgt damit a).
 \end_layout
 
 \begin_layout Standard
@@ -21017,11 +21206,11 @@ Beweis
 Aus 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "asdf"
+reference "sub:Satz-HSGaloistheorie"
 
 \end_inset
 
-10.9 ii) folgt damit, dass 
+ ii) folgt damit, dass 
 \begin_inset Formula $\modulo{K}{k}$
 \end_inset
 
@@ -21032,11 +21221,11 @@ reference "asdf"
  endlich zyklisch (beziehungsweise zyklisch nach 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "asdf"
+reference "sub:Satz-UG-kerImZyklG"
 
 \end_inset
 
-1.22 ii)) ist.
+ ii)) ist.
 \end_layout
 
 \begin_layout Standard
@@ -21057,6 +21246,13 @@ qqed
 
 \begin_layout Subsection
 Satz
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Satz-Kompositum"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -21233,11 +21429,11 @@ iii
 ), siehe 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "asdf"
+reference "sub:BuD-Galoisgruppe"
 
 \end_inset
 
-10.2 a) 
+ a) 
 \begin_inset Formula $\Rightarrow$
 \end_inset
 
@@ -21300,11 +21496,11 @@ K_{2}^{\text{im}\left(\varphi\right)} & \stackrel{\text{Def. von }\varphi}{=}\le
 Mit 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "asdf"
+reference "sub:Satz-HSGaloistheorie"
 
 \end_inset
 
-10.9 i) folgt:
+ i) folgt:
 \begin_inset Formula 
 \begin{align*}
 \text{im}\left(\varphi\right) & =\text{Gal}\left(\modulo{K_{2}}{K_{1}\cap K_{2}}\right)
@@ -21562,6 +21758,13 @@ Bemerkung
 
 \begin_layout Subsection
 Proposition
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Prop-sigmaInGalKommutiertNSt"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -21588,11 +21791,11 @@ Seien
  (vergleiche 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "asdf"
+reference "sub:BuD-Galoisgruppe"
 
 \end_inset
 
-10.2 ii)) und 
+ ii)) und 
 \begin_inset Formula $\mathcal{N}:=\left\{ \beta\in E|f\left(\beta\right)=0\right\} $
 \end_inset
 
@@ -21801,11 +22004,15 @@ Für
 \begin_inset Formula $k\left[X\right]$
 \end_inset
 
- und (
-\begin_inset Formula $\fall_{\beta\in\mathcal{N}}\exs_{\sigma\in G}:\sigma\left(\alpha\right)=\beta\Rightarrow0=\sigma(\underbrace{g\left(\alpha\right)}_{=0})=g^{\sigma}\left(\sigma\left(\alpha\right)\right)=g\left(\beta\right)$
+ und:
+\begin_inset Formula 
+\begin{align*}
+\fall_{\beta\in\mathcal{N}}\exs_{\sigma\in G}:\sigma\left(\alpha\right)=\beta & \Rightarrow0=\sigma(\underbrace{g\left(\alpha\right)}_{=0})=g^{\sigma}\left(\sigma\left(\alpha\right)\right)=g\left(\beta\right)
+\end{align*}
+
 \end_inset
 
-), also:
+Also:
 \begin_inset Formula 
 \begin{align}
 g|_{\mathcal{N}} & =0\label{eq:gN0}
@@ -21958,12 +22165,12 @@ Man kann zeigen, dass
 
  gilt (Übung), und nach 
 \begin_inset CommandInset ref
-LatexCommand eqref
-reference "asdf"
+LatexCommand ref
+reference "sub:Satz-Kompositum"
 
 \end_inset
 
-10.16 ii) ist
+ ii) ist
 \begin_inset Formula 
 \begin{align*}
 \varphi:\text{Gal}\left(\modulo{E}{k}\right) & \stackrel{\sim}{\to}\text{Gal}\left(\modulo{K_{1}}{k}\right)\times\text{Gal}\left(\modulo{K_{2}}{k}\right)\stackrel{\sim}{=}\modlo{Z}{2}\times\modlo{Z}{2}\\
@@ -22257,11 +22464,11 @@ Offenbar sind die Nullstellen von
 Aus 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "asdf"
+reference "sub:Prop-sigmaInGalKommutiertNSt"
 
 \end_inset
 
-10.17 i) 
+ i) 
 \begin_inset Formula $\Rightarrow$
 \end_inset
 
@@ -23027,6 +23234,13 @@ und
 Proposition und Definition 
 \series medium
 (symmetrische rationale Funktionen)
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:PuD-symRatFkt"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -23128,6 +23342,13 @@ Beispiel
 
 \begin_layout Subsubsection
 Definition
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Def-elemSymFkt"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -23378,6 +23599,13 @@ end{iiilist}
 
 \begin_layout Subsubsection
 Satz
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Satz-HS-symFkt"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -23514,6 +23742,1152 @@ end{iiilist}
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+%DATE: Fr 23.12.2011
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Bemerkung
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Sei 
+\begin_inset Formula $\text{char}\left(k\right)\not=2$
+\end_inset
+
+.
+ Es ist 
+\begin_inset Formula $E^{A_{n}}\supseteq K=E^{S_{n}}$
+\end_inset
+
+ galoissch vom Grad 2 und für
+\begin_inset Formula 
+\begin{align*}
+\delta & :=\prod_{1\le i<j\le n}\left(t_{i}-t_{j}\right)
+\end{align*}
+
+\end_inset
+
+gilt 
+\begin_inset Formula $E^{A_{n}}=K\left(\delta\right)\stackrel{\ref{asdf}11.4.6\text{ii)}}{=}k\left(s_{1},\ldots,s_{n},\delta\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Es ist ein offenes Problem, ob 
+\begin_inset Formula $f_{1},\ldots,f_{n}\in E^{A_{n}}$
+\end_inset
+
+ existieren, die 
+\begin_inset Formula $E^{A_{n}}=k\left(f_{1},\ldots,f_{n}\right)$
+\end_inset
+
+ erfüllen.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ 
+\series bold
+Vermutung:
+\end_layout
+
+\begin_layout Standard
+Für jede endliche Gruppe 
+\begin_inset Formula $G$
+\end_inset
+
+ existiert eine Galoiserweiterung 
+\begin_inset Formula $\modulo{E}{\mathbb{Q}}$
+\end_inset
+
+ mit 
+\begin_inset Formula $\text{Gal}\left(\modulo{E}{\mathbb{Q}}\right)\stackrel{\sim}{=}G$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Beweis von 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Satz-HS-symFkt"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Zunächst gilt für alle 
+\begin_inset Formula $\sigma\in S_{n}$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+f^{\sigma}\left(X\right) & =\prod_{i=1}^{n}\left(X-t_{\sigma\left(i\right)}\right)=f\left(X\right)
+\end{align*}
+
+\end_inset
+
+Also ist 
+\begin_inset Formula $f\in k\left[X\right]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Wegen 
+\begin_inset Formula $E=k\left(t_{1},\ldots,t_{n}\right)=K\left(t_{1},\ldots,t_{n}\right)$
+\end_inset
+
+ ist klar, dass 
+\begin_inset Formula $\modulo{E}{k}$
+\end_inset
+
+ ein Zerfällungskörper von 
+\begin_inset Formula $f$
+\end_inset
+
+ ist.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed[
+\backslash
+roman{ale2})]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Wir haben 
+\begin_inset Formula $k\left(s_{1},\ldots,s_{n}\right)\stackrel{\text{i)}}{\subseteq}K=E^{S_{n}}\subseteq E$
+\end_inset
+
+ und nach 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Def-elemSymFkt"
+
+\end_inset
+
+ gilt sogar 
+\begin_inset Formula $f\left(X\right)\in k\left(s_{1},\ldots,s_{n}\right)\left[X\right]$
+\end_inset
+
+, und damit folgt wegen 
+\begin_inset Formula $\deg\left(f\right)=n$
+\end_inset
+
+ und i):
+\begin_inset Formula 
+\begin{align*}
+\left[E:k\left(s_{1},\ldots,s_{n}\right)\right] & \le n!
+\end{align*}
+
+\end_inset
+
+Aus 
+\begin_inset Formula $\left[E:E^{S_{n}}\right]=\left|S_{n}\right|=n!$
+\end_inset
+
+ (siehe 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:PuD-symRatFkt"
+
+\end_inset
+
+) folgt 
+\begin_inset Formula $K=k\left(s_{1},\ldots,s_{n}\right)$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed[
+\backslash
+roman{ale2})]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Seien 
+\begin_inset Formula $k\left(S_{1},\ldots,S_{n}\right)\subseteq\tilde{L}$
+\end_inset
+
+ ein Zerfällungskörper von
+\begin_inset Formula 
+\begin{align*}
+\tilde{f}\left(X\right) & :=\sum_{i=0}^{n}\left(-1\right)^{i}\cdot\mathcal{S}_{i}\cdot X^{n-i}\in k\left(\mathcal{S}_{1},\ldots,\mathcal{S}_{n}\right)\left[X\right]
+\end{align*}
+
+\end_inset
+
+mit 
+\begin_inset Formula $\mathcal{S}_{0}:=1$
+\end_inset
+
+ und seien 
+\begin_inset Formula $T_{1},\ldots T_{n}\in\tilde{L}$
+\end_inset
+
+ die Nullstellen von 
+\begin_inset Formula $\tilde{f}$
+\end_inset
+
+ in 
+\begin_inset Formula $\tilde{L}$
+\end_inset
+
+ (gelistet mit Vielfachheit).
+\end_layout
+
+\begin_layout Standard
+Dann gilt:
+\begin_inset Formula 
+\begin{align*}
+\tilde{L} & =k\left(\mathcal{S}_{1},\ldots,\mathcal{S}_{n}\right)\left(T_{1},\ldots,T_{n}\right)\stackrel{\eqref{eq:Sisi}}{=}k\left(T_{1},\ldots,T_{n}\right)
+\end{align*}
+
+\end_inset
+
+Denn es gilt für alle 
+\begin_inset Formula $i$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align}
+\mathcal{S}_{i} & =s_{i}\left(T_{1},\ldots,T_{n}\right)\in k\left(T_{1},\ldots,T_{n}\right)\label{eq:Sisi}
+\end{align}
+
+\end_inset
+
+Für den eindeutigen 
+\begin_inset Formula $k$
+\end_inset
+
+-Algebrenhomomorphismus 
+\begin_inset Formula $\varphi:k\left[t_{1},\ldots,t_{n}\right]\to k\left[T_{1},\ldots,T_{n}\right]$
+\end_inset
+
+ mit 
+\begin_inset Formula $\varphi\left(t_{i}\right)=T_{i}$
+\end_inset
+
+ für alle 
+\begin_inset Formula $1\le i\le n$
+\end_inset
+
+ gilt für alle 
+\begin_inset Formula $1\le i\le n$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+\varphi\left(s_{i}\right) & \stackrel{\eqref{eq:Sisi}}{=}\mathcal{S}_{i}
+\end{align*}
+
+\end_inset
+
+Da 
+\begin_inset Formula $\left\{ \mathcal{S}_{1},\ldots,\mathcal{S}_{n}\right\} \subseteq k\left[\mathcal{S}_{1},\ldots,\mathcal{S}_{n}\right]$
+\end_inset
+
+ algebraisch unabhängig über 
+\begin_inset Formula $k$
+\end_inset
+
+ ist, ist 
+\begin_inset Formula $\left\{ s_{1},\ldots,s_{n}\right\} \subseteq k\left[s_{1},\ldots,s_{n}\right]$
+\end_inset
+
+ algebraisch unabhängig über 
+\begin_inset Formula $k$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed[
+\backslash
+roman{ale2})]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Definition
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+p\left(X\right) & :=X^{n}+\mathcal{S}_{i}X^{n-1}+\ldots+\mathcal{S}_{n}=X^{n}+\sum_{i=1}^{n}\mathcal{S}_{i}\cdot X^{n-i}\in k\left(\mathcal{S}_{1},\ldots,\mathcal{S}_{n}\right)\left[X\right]
+\end{align*}
+
+\end_inset
+
+heißt das 
+\emph on
+allgemeine Polynom 
+\begin_inset Formula $n$
+\end_inset
+
+-ten Grades über 
+\begin_inset Formula $k$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+Bemerkung
+\end_layout
+
+\begin_layout Standard
+Seien 
+\begin_inset Formula $k\subseteq F$
+\end_inset
+
+ eine Körpererweiterung und 
+\begin_inset Formula $f\in F\left[X\right]$
+\end_inset
+
+ ein normiertes Polynom vom Grad 
+\begin_inset Formula $n$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Dann existiert genau ein 
+\begin_inset Formula $k$
+\end_inset
+
+-Algebrenhomomorphismus
+\begin_inset Formula 
+\begin{align*}
+\varphi:k\left(\mathcal{S}_{1},\ldots,\mathcal{S}_{n}\right) & \to F
+\end{align*}
+
+\end_inset
+
+mit
+\begin_inset Formula 
+\begin{align*}
+\varphi\left[X\right]\left(p\left(X\right)\right) & =f
+\end{align*}
+
+\end_inset
+
+(nämlich 
+\begin_inset Formula $\varphi\left(\mathcal{S}_{i}\right)=\left(n-i\right)$
+\end_inset
+
+-ter Koeffizient von 
+\begin_inset Formula $f$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Subsubsection
+Satz
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $p\left(X\right)\subseteq k\left(\mathcal{S}_{1},\ldots,\mathcal{S}_{n}\right)\left[X\right]$
+\end_inset
+
+ ist irreduzibel, separabel und es gilt:
+\begin_inset Formula 
+\begin{align*}
+\text{Gal}\left(p\left(X\right)\right) & \stackrel{\sim}{=}S_{n}
+\end{align*}
+
+\end_inset
+
+(vergleiche 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "asdf"
+
+\end_inset
+
+10.2 i))
+\end_layout
+
+\begin_layout Subsubsection*
+Beweis
+\end_layout
+
+\begin_layout Standard
+Wegen 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Satz-HS-symFkt"
+
+\end_inset
+
+ ii) existiert ein 
+\begin_inset Formula $k$
+\end_inset
+
+-Isomorphismus 
+\begin_inset Formula $\varphi:k\left(\mathcal{S}_{1},\ldots,\mathcal{S}_{n}\right)\stackrel{\sim}{\to}k\left(s_{1},\ldots,s_{n}\right)$
+\end_inset
+
+ mit 
+\begin_inset Formula $\varphi\left(\mathcal{S}_{i}\right)=\left(-1\right)^{i}\cdot s_{i}$
+\end_inset
+
+ und für diesen gilt 
+\begin_inset Formula $\varphi\left[X\right]\left(p\left(X\right)\right)=f\left(X\right)$
+\end_inset
+
+ wie in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Def-elemSymFkt"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Die Aussagen folgen nun aus den analogen Aussagen für 
+\begin_inset Formula $f$
+\end_inset
+
+, nämlich in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Satz-HS-symFkt"
+
+\end_inset
+
+ i) und 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:PuD-symRatFkt"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Satz 
+\series medium
+(Hilbertscher Irreduzibilitätssatz)
+\end_layout
+
+\begin_layout Standard
+Für 
+\begin_inset Formula $n\ge1$
+\end_inset
+
+ existieren unendlich viele Tupel 
+\begin_inset Formula $\left(q_{1},\ldots,q_{n}\right)\in\mathbb{Q}^{n}$
+\end_inset
+
+ so, dass für
+\begin_inset Formula 
+\begin{align*}
+f\left(X\right) & =X^{n}+\sum_{i=1}^{n}q_{i}X^{n-i}\in\mathbb{Q}\left[X\right]
+\end{align*}
+
+\end_inset
+
+ist 
+\begin_inset Formula $f\left(X\right)\in\mathbb{Q}\left[X\right]$
+\end_inset
+
+ irreduzibel, separabel und es gilt:
+\begin_inset Formula 
+\begin{align*}
+\text{Gal}\left(f\right) & =S_{n}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+(ohne Beweis)
+\end_layout
+
+\begin_layout Subsubsection*
+Beispiel
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $q_{i}=0$
+\end_inset
+
+, dann ist 
+\begin_inset Formula $f\left(X\right)=X^{n}$
+\end_inset
+
+ mit der trivialen Galoisgruppe und nicht 
+\begin_inset Formula $S_{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Kreisteilungskörper 
+\series medium
+(die Galoistheorie von 
+\begin_inset Formula $X^{n}-1=0$
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Subsubsection*
+Fixiere
+\end_layout
+
+\begin_layout Standard
+Sei 
+\begin_inset Formula $k$
+\end_inset
+
+ ein Körper und 
+\begin_inset Formula $n,m\ge1$
+\end_inset
+
+ mit 
+\begin_inset Formula $\text{char}\left(k\right)\not|\, n,m$
+\end_inset
+
+ (im Fall 
+\begin_inset Formula $\text{char}\left(k\right)=0$
+\end_inset
+
+ seien 
+\begin_inset Formula $n,m\ge1$
+\end_inset
+
+ beliebig).
+\end_layout
+
+\begin_layout Subsection
+Proposition und Definition
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:PuD-Einheitswurzel"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Die Teilmenge 
+\begin_inset Formula $U_{n}:=U_{n}\left(k\right):=\left\{ \zeta\in\overline{k}\,^{*}\big|\zeta^{n}=1\right\} \subseteq\overline{k}\,^{*}$
+\end_inset
+
+ ist eine zyklische Untergruppe der Ordnung 
+\begin_inset Formula $n$
+\end_inset
+
+, 
+\emph on
+die Gruppe der 
+\begin_inset Formula $n$
+\end_inset
+
+-ten Einheitswurzeln
+\emph default
+ (Abkürzung: EW) (in 
+\begin_inset Formula $k$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Subsubsection*
+Beweis
+\end_layout
+
+\begin_layout Standard
+Es ist klar, dass 
+\begin_inset Formula $U_{n}\subseteq\overline{k}\,^{*}$
+\end_inset
+
+ eine Untergruppe ist.
+\end_layout
+
+\begin_layout Standard
+Für 
+\begin_inset Formula $\zeta\in U_{n}$
+\end_inset
+
+ gelten 
+\begin_inset Formula $\left(X^{n}-1\right)\left(\zeta\right)=0$
+\end_inset
+
+ und 
+\begin_inset Formula $\left(X^{n}-1\right)'\left(\zeta\right)=n\zeta^{n-1}\not=0$
+\end_inset
+
+, da 
+\begin_inset Formula $\zeta\not=0$
+\end_inset
+
+ und 
+\begin_inset Formula $n\not=0$
+\end_inset
+
+, da 
+\begin_inset Formula $\text{char}\left(k\right)\not|\: n$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Damit ist 
+\begin_inset Formula $X^{n}-1\in k\left[X\right]$
+\end_inset
+
+ separabel und es folgt:
+\begin_inset Formula 
+\begin{align*}
+\left|U_{n}\right| & =\deg\left(X^{n}-1\right)=n
+\end{align*}
+
+\end_inset
+
+Insbesondere ist 
+\begin_inset Formula $U_{n}\subseteq\overline{k}\,^{*}$
+\end_inset
+
+ endlich, also zyklisch nach 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Kor-endlUGzykl"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Bemerkung
+\end_layout
+
+\begin_layout Standard
+Sei 
+\begin_inset Formula $p$
+\end_inset
+
+ eine Primzahl und 
+\begin_inset Formula $n\ge1$
+\end_inset
+
+, dann folgt:
+\begin_inset Formula 
+\begin{align*}
+\left\{ \zeta\in\overline{\mathbb{F}_{p}}\big|\zeta^{p^{n}}=1\right\}  & =\left\{ 1\right\} 
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Definition
+\end_layout
+
+\begin_layout Standard
+Eine 
+\begin_inset Formula $n$
+\end_inset
+
+-te Einheitswurzel 
+\begin_inset Formula $\zeta\in U_{n}$
+\end_inset
+
+ heißt genau dann 
+\emph on
+primitiv
+\emph default
+, wenn 
+\begin_inset Formula $\left\langle \zeta\right\rangle =U_{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Beispiel
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $k=\mathbb{C}$
+\end_inset
+
+, 
+\begin_inset Formula ${\displaystyle U_{6}=\left\langle \zeta_{6}:=\text{exp}\left(\frac{2\pi\ii}{6}\right)\right\rangle \subseteq\mathbb{C}^{*}}$
+\end_inset
+
+ und genau 
+\begin_inset Formula $\zeta_{6},\zeta_{6}^{5}=\zeta_{6}^{-1}\in U_{6}$
+\end_inset
+
+ sind primitiv:
+\end_layout
+
+\begin_layout Standard
+TODO: Abb1
+\end_layout
+
+\begin_layout Standard
+Es gilt:
+\begin_inset Formula 
+\begin{align*}
+\text{ord}\left(\zeta_{6}^{2}\right)=\text{ord}\left(\zeta_{6}^{4}\right) & =3\\
+\text{ord}\left(\zeta_{6}^{3}\right) & =2\\
+\text{ord}\left(\zeta_{6}^{0}\right) & =1
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Proposition
+\end_layout
+
+\begin_layout Standard
+Für 
+\begin_inset Formula $n,m\ge1$
+\end_inset
+
+ sind 
+\begin_inset Formula $\left(n,m\right)=1$
+\end_inset
+
+ (und 
+\begin_inset Formula $\text{char}\left(k\right)\not|\, n,m$
+\end_inset
+
+) ist die Abbildung 
+\begin_inset Formula $f:U_{n}\times U_{m}\to U_{nm}$
+\end_inset
+
+ ist wohldefiniert und ein Gruppenisomorphismus.
+\end_layout
+
+\begin_layout Standard
+Sind 
+\begin_inset Formula $\zeta\in U_{n}$
+\end_inset
+
+ und 
+\begin_inset Formula $\psi\in U_{m}$
+\end_inset
+
+ primitiv, so auch 
+\begin_inset Formula $\zeta\cdot\psi\in U_{n\cdot m}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection*
+Beweis
+\end_layout
+
+\begin_layout Standard
+Dass 
+\begin_inset Formula $f$
+\end_inset
+
+ wohldefiniert und ein Gruppenhomomorphismus ist, ist klar.
+\end_layout
+
+\begin_layout Standard
+Wegen 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:PuD-Einheitswurzel"
+
+\end_inset
+
+ gilt:
+\begin_inset Formula 
+\begin{align}
+\left|U_{n}\times U_{m}\right| & =\left|U_{nm}\right|=nm\label{eq:Unm}
+\end{align}
+
+\end_inset
+
+Gelte:
+\begin_inset Formula 
+\begin{align}
+f\left(\zeta\cdot\xi\right) & =\zeta\cdot\xi=1\label{eq:zx}
+\end{align}
+
+\end_inset
+
+Da 
+\begin_inset Formula $n,m$
+\end_inset
+
+ teilerfremd sind, existieren 
+\begin_inset Formula $a,b\in\mathbb{Z}$
+\end_inset
+
+ mit 
+\begin_inset Formula $1=an+bm$
+\end_inset
+
+.
+ Dann folgt:
+\begin_inset Formula 
+\begin{align*}
+\zeta & =\zeta^{1}=\bigg(\underbrace{\zeta^{n}}_{=1}\bigg)^{a}\cdot\bigg(\zeta^{m}\bigg)^{b}\stackrel{\eqref{eq:zx}}{=}\bigg(\underbrace{\zeta^{m}}_{=1}\bigg)^{b}=1
+\end{align*}
+
+\end_inset
+
+Daher ist 
+\begin_inset Formula $\xi=1$
+\end_inset
+
+, also ist 
+\begin_inset Formula $\text{ker}\left(f\right)=\left\{ \left(1,1\right)\right\} $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Damit ist 
+\begin_inset Formula $f$
+\end_inset
+
+ injektiv und wegen 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Unm"
+
+\end_inset
+
+ also ein Isomorphismus.
+\end_layout
+
+\begin_layout Standard
+Man sieht leicht, dass für 
+\begin_inset Formula $\left(\zeta,\xi\right)\in U_{n}\times U_{m}$
+\end_inset
+
+ gilt:
+\begin_inset Formula 
+\begin{align*}
+\text{ord}\left(\left(\zeta,\xi\right)\right) & =\text{kgV}\left(\text{ord}\left(\zeta\right),\text{ord}\left(\xi\right)\right)
+\end{align*}
+
+\end_inset
+
+Sind nun 
+\begin_inset Formula $\zeta\in U_{n}$
+\end_inset
+
+ und 
+\begin_inset Formula $\xi\in U_{m}$
+\end_inset
+
+ primitiv, dann gilt:
+\begin_inset Formula 
+\begin{align*}
+\text{ord}\left(\left(\zeta,\xi\right)\right) & =\text{kgV}\left(n,m\right)\stackrel{\text{ggT}\left(n,m\right)=1}{=}n\cdot m
+\end{align*}
+
+\end_inset
+
+Da 
+\begin_inset Formula $f$
+\end_inset
+
+ ein Isomorphismus ist, folgt:
+\begin_inset Formula 
+\begin{align*}
+\text{ord}\left(f\left(\left(\zeta,\xi\right)\right)=\zeta\xi\right) & =nm
+\end{align*}
+
+\end_inset
+
+Also ist 
+\begin_inset Formula $\zeta\xi\in U_{nm}$
+\end_inset
+
+ primitiv.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Bemerkung
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\left(n,m\right)=1$
+\end_inset
+
+ wird gebraucht:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\zeta:=\ii\in U_{4}\left(\mathbb{C}\right),\xi:=\ii\in U_{4}\left(\mathbb{C}\right)$
+\end_inset
+
+ sind primitiv, aber 
+\begin_inset Formula $\zeta\cdot\xi=-1\in U_{16}\left(\mathbb{C}\right)$
+\end_inset
+
+ hat Ordnung 
+\begin_inset Formula $2\not=16$
+\end_inset
+
+, ist also nicht primitiv.
 \end_layout
 
 \begin_layout Part*
