@@ -752,7 +752,8 @@ Disclaimer of Warranty
 \noun on
 \lang english
 Unless otherwise mutually agreed to by the parties in writing and to the
- extent not prohibited by applicable law, Licensor offers the work 
+ extent not prohibited by applicable law, the copyright holder  provides
+ the document 
 \noun default
 "
 \noun on
@@ -764,7 +765,7 @@ as is
  including, but not limited to, the implied warranties of merchantability,
  fitness for a particular purpose, non-infringement, the absence of latent
  or other defects, accuracy, or the absence of errors, whether or not discoverab
-le, except to the extent that these disclaimers are held to be legally invalid.
+le.
 \end_layout
 
 \begin_layout Subsubsection*
@@ -777,25 +778,22 @@ Limitation of Liability
 
 \noun on
 \lang english
-To the extent not prohibited by applicable law, in no event will Licensor
- be liable to you for any loss of revenue, profit or anything else, or for
- special, incidental, consequential, punitive, exemplary or other damages,
- however caused, regardless of the theory of liability,
-\noun default
- 
-\noun on
-arising out of or related to this license or the use of or inability to
- use the work, even if Licensor has been advised of the possibility of such
- damages.
+In no event unless required by applicable law or agreed to in writing will
+ the copyright holder be liable to you for any loss of revenue, profit or
+ anything else, or for any damages, including, but not limited to, any general,
+ special, incidental, consequential, punitive or exemplary damages, however
+ caused, regardless of the theory of liability, arising out of or related
+ to this license or the use of or inability to use the document, even if
+ the copyright holder has been advised of the possibility of such damages.
 \end_layout
 
 \begin_layout Standard
 
 \noun on
 \lang english
-In no event will Licensor's liability to you, whether in contract, tort
- (including negligence), or otherwise, exceed the amount you paid Licensor
- for the work under this Agreement.
+In no event will the copyright holder's liability to you, whether in contract,
+ tort (including negligence), or otherwise, exceed the amount you paid the
+ copyright holder for the document under this agreement.
 \end_layout
 
 \begin_layout Subsubsection*
@@ -5553,7 +5551,7 @@ reference "sec:Lokalisierungen"
 \end_layout
 
 \begin_layout Standard
-Es sei 
+Seien 
 \begin_inset Formula $A$
 \end_inset
 
@@ -6849,7 +6847,11 @@ qqed
 \end_layout
 
 \begin_layout Subsection
-Konstruktion
+Konstruktion 
+\series medium
+(Lokalisierung)
+\series default
+
 \begin_inset CommandInset label
 LatexCommand label
 name "sub:Konstr-SinvM"
@@ -7701,22 +7703,39 @@ qqed[???TODO???]
 
 \begin_layout Section
 Der Satz von Gauß
-\end_layout
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Der-Satz-von-Gauß"
 
-\begin_layout Standard
-TODO: Überschrift überprüfen
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection*
-Fixiere
+Fixiere in Abschnitt 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Der-Satz-von-Gauß"
+
+\end_inset
+
+ (
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sec:Der-Satz-von-Gauß"
+
+\end_inset
+
+)
 \end_layout
 
 \begin_layout Standard
+Seien 
 \begin_inset Formula $R$
 \end_inset
 
- ist ein faktorieller Ring.
- 
+ ein faktorieller Ring, 
 \begin_inset Formula $Q:=\text{Quot}\left(R\right)=\left(R\setminus\left\{ 0\right\} \right)^{-1}R$
 \end_inset
 
@@ -7772,6 +7791,13 @@ Beispiel
 Erinnerung 
 \series medium
 (Primfaktorzerlegung)
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Erin-PFZ"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -7947,6 +7973,310 @@ ein surjektiver Ringhomomorphismus mit:
 
 \begin_layout Subsubsection*
 Beweis
+\end_layout
+
+\begin_layout Standard
+Betrachte:
+\end_layout
+
+\begin_layout Standard
+TODO: Abb Homsatz
+\end_layout
+
+\begin_layout Standard
+Es existiert genau ein 
+\begin_inset Formula $R$
+\end_inset
+
+-Algebrenhomomorphismus 
+\begin_inset Formula $\varphi\left[X\right]$
+\end_inset
+
+ mit 
+\begin_inset Formula $\varphi\left[X\right]\left(X\right)=X$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Daher gilt:
+\begin_inset Formula 
+\begin{align*}
+\varphi\left[X\right]\bigg(\sum_{i}\underbrace{a_{i}}_{\in\mathbb{Q}}X^{i}\bigg) & =\sum_{i}\underbrace{\varphi\left[X\right]\left(a_{i}\right)}_{=\varphi\left(a_{i}\right)}\cdot\underbrace{\varphi\left[X\right]\left(X\right)^{i}}_{=X^{i}}=\sum_{i}\varphi\left(a_{i}\right)\cdot X^{i}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Proposition und Definition 
+\series medium
+(Lemma von Gauß)
+\end_layout
+
+\begin_layout Standard
+Sei 
+\begin_inset Formula $p\in\mathcal{P}$
+\end_inset
+
+.
+ Für 
+\begin_inset Formula $f=\sum_{i}a_{i}X^{i}\in Q\left[X\right]$
+\end_inset
+
+ heißt 
+\begin_inset Formula $\nu_{p}\left(f\right)=\min_{i}\left\{ \nu_{p}\left(a_{i}\right)\right\} \in\mathbb{Z}\cup\left\{ \infty\right\} $
+\end_inset
+
+ 
+\emph on
+die 
+\begin_inset Formula $p$
+\end_inset
+
+-adische Bewertung von 
+\begin_inset Formula $f$
+\end_inset
+
+
+\emph default
+.
+ Dabei ist 
+\begin_inset Formula $Q\subseteq\mathbb{Q}^{*}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Zum Beispiel ist:
+\begin_inset Formula 
+\begin{align*}
+\nu_{3}\left(7X^{2}+\frac{1}{8}X+27\right) & =\min\left\{ \nu_{3}\left(7\right)=0,\nu_{3}\left(\frac{1}{8}\right)=0,\nu_{3}\left(27\right)=3\right\} =0
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Es gelten:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $f=0\Leftrightarrow\fall_{p\in\mathcal{P}}:\nu_{p}\left(f\right)=\infty$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $f\in R\left[X\right]\Leftrightarrow\fall_{p\in\mathcal{P}}:\nu_{p}\left(f\right)\ge0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Lemma von Gauß: 
+\begin_inset Formula $ $
+\end_inset
+
+
+\begin_inset Formula $\fall_{f,g\in\mathbb{Q}\left[X\right]}:\nu_{p}\left(fg\right)=\nu_{p}\left(f\right)+\nu_{p}\left(g\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Beweis
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $\fall_{p}:\nu_{p}\left(f\right)=\infty\Leftrightarrow\fall_{p,i}:\nu_{p}\left(a_{i}\right)=\infty\stackrel{\ref{sub:Erin-PFZ}}{\Leftrightarrow}\fall_{i}:a_{i}=0\Leftrightarrow f=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $f\in R\left[X\right]\Leftrightarrow\fall_{i}:a_{i}\in R\stackrel{\ref{sub:Erin-PFZ}}{\Leftrightarrow}\fall_{p\in\mathcal{P},i}:\nu_{p}\left(a_{i}\right)\ge0\Leftrightarrow\fall_{p\in\mathcal{P}}\nu_{p}\left(f\right)\ge0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Lemma von Gauß: 
+\begin_inset Formula $ $
+\end_inset
+
+
+\begin_inset Formula $\fall_{f,g\in\mathbb{Q}\left[X\right]}:\nu_{p}\left(fg\right)=\nu_{p}\left(f\right)+\nu_{p}\left(g\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{iiilist}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -24949,7 +25279,9 @@ status open
 
 
 \backslash
-addcontentsline{toc}{section}{GNU Free Documentation License}
+addcontentsline{toc}{section}{
+\backslash
+hspace*{1.9em}GNU Free Documentation License}
 \end_layout
 
 \end_inset

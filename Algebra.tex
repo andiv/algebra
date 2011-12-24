@@ -1,4 +1,4 @@
-%% LyX 2.0.2 created this file.  For more info, see http://www.lyx.org/.
+%% LyX 2.0.1 created this file.  For more info, see http://www.lyx.org/.
 %% Do not edit unless you really know what you are doing.
 \documentclass[11pt,english,ngerman]{article}
 \usepackage[T1]{fontenc}
@@ -296,29 +296,29 @@ Free Documentation License\textquotedbl{}.
 \subsubsection*{Disclaimer of Warranty}
 
 \noun{Unless otherwise mutually agreed to by the parties in writing
-and to the extent not prohibited by applicable law, Licensor offers
-the work }\textquotedbl{}\noun{as is}\textquotedbl{}\noun{ without
-warranties of any kind, expressed, implied, statutory or otherwise,
+and to the extent not prohibited by applicable law, the copyright
+holder  provides the document }\textquotedbl{}\noun{as is}\textquotedbl{}\noun{
+without warranties of any kind, expressed, implied, statutory or otherwise,
 including, but not limited to, the implied warranties of merchantability,
 fitness for a particular purpose, non-infringement, the absence of
 latent or other defects, accuracy, or the absence of errors, whether
-or not discoverable, except to the extent that these disclaimers are
-held to be legally invalid.}
+or not discoverable.}
 
 
 \subsubsection*{Limitation of Liability}
 
-\noun{To the extent not prohibited by applicable law, in no event
-will Licensor be liable to you for any loss of revenue, profit or
-anything else, or for special, incidental, consequential, punitive,
-exemplary or other damages, however caused, regardless of the theory
-of liability,} \noun{arising out of or related to this license or
-the use of or inability to use the work, even if Licensor has been
-advised of the possibility of such damages.}
+\noun{In no event unless required by applicable law or agreed to in
+writing will the copyright holder be liable to you for any loss of
+revenue, profit or anything else, or for any damages, including, but
+not limited to, any general, special, incidental, consequential, punitive
+or exemplary damages, however caused, regardless of the theory of
+liability, arising out of or related to this license or the use of
+or inability to use the document, even if the copyright holder has
+been advised of the possibility of such damages.}
 
-\noun{In no event will Licensor's liability to you, whether in contract,
-tort (including negligence), or otherwise, exceed the amount you paid
-Licensor for the work under this Agreement.}
+\noun{In no event will the copyright holder's liability to you, whether
+in contract, tort (including negligence), or otherwise, exceed the
+amount you paid the copyright holder for the document under this agreement.}
 
 \selectlanguage{ngerman}%
 
@@ -1277,7 +1277,7 @@ $\Rightarrow$ $st\in S$
 
 \subsubsection*{Fixiere in Abschnitt \ref{sec:Lokalisierungen} (\nameref{sec:Lokalisierungen})}
 
-Es sei $A$ ein kommutativer Ring und $S\subseteq A$ multiplikativ
+Seien $A$ ein kommutativer Ring und $S\subseteq A$ multiplikativ
 abgeschlossen.
 
 
@@ -1562,7 +1562,7 @@ Dies ist ein Widerspruch zu $s,t\in A\setminus\mathfrak{p}$.
 \qqed
 
 
-\subsection{Konstruktion\label{sub:Konstr-SinvM}}
+\subsection{Konstruktion \textmd{(Lokalisierung)}\label{sub:Konstr-SinvM}}
 
 Seien $M$ und $N$ zwei $A$-Moduln und $S\subseteq A$ multiplikativ
 abgeschlossen.
@@ -1774,14 +1774,12 @@ Es folgt die Exaktheit der ersten Zeile.
 \newpage{}
 
 
-\section{Der Satz von Gauß}
-
-TODO: Überschrift überprüfen
+\section{Der Satz von Gauß\label{sec:Der-Satz-von-Gau=0000DF}}
 
 
-\subsubsection*{Fixiere}
+\subsubsection*{Fixiere in Abschnitt \ref{sec:Der-Satz-von-Gau=0000DF} (\nameref{sec:Der-Satz-von-Gau=0000DF})}
 
-$R$ ist ein faktorieller Ring. $Q:=\text{Quot}\left(R\right)=\left(R\setminus\left\{ 0\right\} \right)^{-1}R$
+Seien $R$ ein faktorieller Ring, $Q:=\text{Quot}\left(R\right)=\left(R\setminus\left\{ 0\right\} \right)^{-1}R$
 und $\mathcal{P}\subseteq R$ ein Vertretersystem der Primelemente
 bis auf Assoziiertheit.
 
@@ -1794,7 +1792,7 @@ Primzahlen)
 \item $R=\mathbb{Z}\left[\ii\right]$, $\mathcal{P}=?$
 \end{itemize}
 
-\subsection{Erinnerung \textmd{(Primfaktorzerlegung)}}
+\subsection{Erinnerung \textmd{(Primfaktorzerlegung)\label{sub:Erin-PFZ}}}
 
 TODO: ??? Überprüfen
 
@@ -1856,6 +1854,59 @@ ein surjektiver Ringhomomorphismus mit:
 
 
 \subsubsection*{Beweis}
+
+Betrachte:
+
+TODO: Abb Homsatz
+
+Es existiert genau ein $R$-Algebrenhomomorphismus $\varphi\left[X\right]$
+mit $\varphi\left[X\right]\left(X\right)=X$.
+
+Daher gilt:
+\begin{align*}
+\varphi\left[X\right]\bigg(\sum_{i}\underbrace{a_{i}}_{\in\mathbb{Q}}X^{i}\bigg) & =\sum_{i}\underbrace{\varphi\left[X\right]\left(a_{i}\right)}_{=\varphi\left(a_{i}\right)}\cdot\underbrace{\varphi\left[X\right]\left(X\right)^{i}}_{=X^{i}}=\sum_{i}\varphi\left(a_{i}\right)\cdot X^{i}
+\end{align*}
+
+
+\qqed
+
+
+\subsection{Proposition und Definition \textmd{(Lemma von Gauß)}}
+
+Sei $p\in\mathcal{P}$. Für $f=\sum_{i}a_{i}X^{i}\in Q\left[X\right]$
+heißt $\nu_{p}\left(f\right)=\min_{i}\left\{ \nu_{p}\left(a_{i}\right)\right\} \in\mathbb{Z}\cup\left\{ \infty\right\} $
+\emph{die $p$-adische Bewertung von $f$}. Dabei ist $Q\subseteq\mathbb{Q}^{*}$.
+
+Zum Beispiel ist:
+\begin{align*}
+\nu_{3}\left(7X^{2}+\frac{1}{8}X+27\right) & =\min\left\{ \nu_{3}\left(7\right)=0,\nu_{3}\left(\frac{1}{8}\right)=0,\nu_{3}\left(27\right)=3\right\} =0
+\end{align*}
+
+
+Es gelten:
+
+\begin{iiilist}
+
+\iii $f=0\Leftrightarrow\fall_{p\in\mathcal{P}}:\nu_{p}\left(f\right)=\infty$
+
+\iii $f\in R\left[X\right]\Leftrightarrow\fall_{p\in\mathcal{P}}:\nu_{p}\left(f\right)\ge0$
+
+\iii Lemma von Gauß: $ $$\fall_{f,g\in\mathbb{Q}\left[X\right]}:\nu_{p}\left(fg\right)=\nu_{p}\left(f\right)+\nu_{p}\left(g\right)$
+
+\end{iiilist}
+
+
+\subsubsection*{Beweis}
+
+\begin{iiilist}
+
+\iii $\fall_{p}:\nu_{p}\left(f\right)=\infty\Leftrightarrow\fall_{p,i}:\nu_{p}\left(a_{i}\right)=\infty\stackrel{\ref{sub:Erin-PFZ}}{\Leftrightarrow}\fall_{i}:a_{i}=0\Leftrightarrow f=0$
+
+\iii $f\in R\left[X\right]\Leftrightarrow\fall_{i}:a_{i}\in R\stackrel{\ref{sub:Erin-PFZ}}{\Leftrightarrow}\fall_{p\in\mathcal{P},i}:\nu_{p}\left(a_{i}\right)\ge0\Leftrightarrow\fall_{p\in\mathcal{P}}\nu_{p}\left(f\right)\ge0$
+
+\iii Lemma von Gauß: $ $$\fall_{f,g\in\mathbb{Q}\left[X\right]}:\nu_{p}\left(fg\right)=\nu_{p}\left(f\right)+\nu_{p}\left(g\right)$
+
+\end{iiilist}
 
 TODO: Rest einfügen
 
@@ -5220,7 +5271,7 @@ hat Ordnung $2\not=16$, ist also nicht primitiv.
 
 \section*{GNU Free Documentation License}
 
-\addcontentsline{toc}{section}{GNU Free Documentation License}
+\addcontentsline{toc}{section}{\hspace*{1.9em}GNU Free Documentation License}
 
 \fancyhead[R]{GNU Free Documentation License}
 
