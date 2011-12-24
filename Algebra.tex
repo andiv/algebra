@@ -9,6 +9,7 @@
 \pagestyle{fancy}
 \setlength{\parskip}{\smallskipamount}
 \setlength{\parindent}{0pt}
+\usepackage{color}
 \usepackage{babel}
 \usepackage{verbatim}
 \usepackage{textcomp}
@@ -58,7 +59,6 @@
 
 %Kommandos mit optionalem Argument (für Lyx)
 \newcommand{\sr}[3]{\stackrel[#3]{#2}{#1}}
-\newcommand{\sqrl}[2]{\sqrt[#1]{#2}}
 
 %Mathe-Operatoren
 \DeclareMathOperator*{\exs}{\exists}
@@ -213,26 +213,7 @@
 \makeatother
 
 \begin{document}
-%Copyright Notice
-%Copyright (C) 2011 Andreas Völklein
-%Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.3 or any later version published by the Free Software Foundation;
-%with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.
-%A copy of the license is included in the section entitled "GNU Free Documentation License".
 
-%Disclaimer of Warranty
-%Unless otherwise mutually agreed to by the parties in writing and to the extent not prohibited by applicable law, Licensor offers the work "as is" without warranties of any kind, expressed, implied, statutory or otherwise, including, but not limited to, the implied warranties of merchantability, fitness for a particular purpose, non-infringement, the absence of latent or other defects, accuracy, or the absence of errors, whether or not discoverable, except to the extent that these disclaimers are held to be legally invalid.
-
-%Limitation of Liability
-%To the extent not prohibited by applicable law, in no event will Licensor be liable to you for any loss of revenue, profit or anything else, or for special, incidental, consequential, punitive, exemplary or other damages, however caused, regardless of the theory of liability, arising out of or related to this license or the use of or inability to use the work, even if Licensor has been advised of the possibility of such damages.
-%In no event will Licensor's liability to you, whether in contract, tort (including negligence), or otherwise, exceed the amount you paid Licensor for the work under this Agreement.
-
-%Links
-%Der Text der "GNU Free Documentation License" kann auch auf der Seite
-%	https://www.gnu.org/licenses/fdl-1.3.de.html
-%nachgelesen werden.
-%Eine transparente Kopie der aktuellen Version dieses Dokuments kann von
-%	https://github.com/andiv/algebra
-%heruntergeladen werden.
 
 
 
@@ -358,8 +339,8 @@ die Algebra}, Spektrum, 2007/8\\
 ISBN 978-3-8274-1609-4/978-0-387-72487-4
 \item \noun{Serge Lang}: \emph{Algebra}, Springer, 2005\\
 ISBN 0-387-95385-X
-\item \noun{Michael F. Atiya, Ian G. MacDonald}: \emph{Introduction to commutative
-algebra}, Westview Press, 1994\\
+\item \noun{Michael F. Atiya, Ian G. MacDonald}: \foreignlanguage{english}{\emph{Introduction
+to commutative algebra}}, Westview Press, 1994\\
 ISBN 0-201-40751-5, Lokalisierungen: Seite 36-39
 \end{itemize}
 {\small \newpage{}}\fancyhead[R]{Inhaltsverzeichnis}
@@ -429,8 +410,6 @@ i)\vspace*{-0.5cm}
 \varphi\left(a\right)\cdot\varphi\left(a\right)^{-1} & =e'\stackrel{\text{ii)}}{=}\varphi\left(e\right)=\varphi\left(a\cdot a^{-1}\right)=\varphi\left(a\right)\cdot\varphi\left(a^{-1}\right)\quad/\varphi\left(a\right)^{-1}\cdot\\
 \stackrel{\text{Kürzen}}{\Rightarrow}\quad\varphi\left(a\right)^{-1} & =\varphi\left(a^{-1}\right)
 \end{align*}
-
-
 \qqed
 
 
@@ -454,8 +433,7 @@ ist eine Untergruppe, der \emph{Kern von $\varphi$}, und es gilt:
 
 \subsubsection*{Beweis}
 
-Übung
-
+Übung\\
 \qqed
 
 
@@ -472,8 +450,7 @@ bijektiv.
 
 \subsubsection*{Beweis}
 
-Lineare Algebra I
-
+Lineare Algebra I\\
 \qqed
 
 
@@ -508,10 +485,9 @@ Also ist $\phi\left(g\right)\in\text{Aut}\left(G\right)$.
 \begin{align*}
 \left(\phi\left(g\right)\circ\phi\left(g'\right)\right)\left(h\right) & =\phi\left(g\right)\left(g'hg'^{-1}\right)=gg'hg'^{-1}g^{-1}=\left(gg'\right)h\left(gg'\right)^{-1}=\phi\left(gg'\right)\left(h\right)
 \end{align*}
-Also ist $\phi$ ein Gruppenhomomorphismus.
-\end{itemize}
+Also ist $\phi$ ein Gruppenhomomorphismus.\\
 \qqed
-
+\end{itemize}
 
 \subsubsection*{Beispiel}
 
@@ -552,7 +528,7 @@ Für $\left|H\right|<\infty$ ist $\left|gH\right|=\left|g'H\right|$.
 
 \iii ${\displaystyle G=\bcupd_{gH\in\moduloScript{G}{H}}\left(gH\right)}\qquad\qquad\text{(disjunkte Vereinigung)}$
 
-TODO: Grafik einfügen: disjunkte Vereinigung
+\textcolor{green}{TODO: Grafik einfügen: disjunkte Vereinigung}
 
 \end{iiilist}
 
@@ -570,8 +546,7 @@ Also ist $\sim$ eine Äquivalenzrelation.
 
 Daraus folgen direkt i) und iii).
 
-ii) ist klar.
-
+ii) ist klar.\\
 \qqed
 
 
@@ -591,8 +566,6 @@ von $\left|G\right|$.
 \begin{align*}
 \left|G\right| & \stackrel{\text{\ref{sub:Nebenklasse}\,\text{iii)}}}{=}\left|\bcupd_{gH\in\moduloScript{G}{H}}\left(gH\right)\right|=\sum_{gH\in\moduloScript{G}{H}}\left|gH\right|=\left|\modulo{G}{H}\right|\cdot\left|H\right|\stackrel{\text{Def.}}{=}\left(G:H\right)\cdot\left|H\right|
 \end{align*}
-
-
 \qqed
 
 
@@ -664,8 +637,6 @@ eine Untergruppe. Prüfe nun die Definition \ref{sub:Def-normalteiler}:
 \begin{align*}
 g\in G,h\in\ker\left(\varphi\right) & \Rightarrow\varphi\left(ghg^{-1}\right)=\varphi\left(g\right)\underbrace{\varphi\left(h\right)}_{=e'}\varphi\left(g\right)^{-1}=\varphi\left(g\right)\varphi\left(g\right)^{-1}=e'\Rightarrow ghg^{-1}\in\ker\left(\varphi\right)
 \end{align*}
-
-
 \qqed
 
 {\small %DATE: Fr 21.10.2011}{\small \par}
@@ -690,8 +661,7 @@ Für die Abbildung $\phi:G\rightarrow\text{Aut}\left(G\right)$ aus
 \ref{sub:BuD-AutGrup} sieht man leicht, dass $\ker\left(\phi\right)=Z\left(G\right)$
 ist.
 
-Also folgt die Behauptung aus \ref{sub:Prop-kerNormalTeiler}.
-
+Also folgt die Behauptung aus \ref{sub:Prop-kerNormalTeiler}.\\
 \qqed
 
 
@@ -733,10 +703,8 @@ Ferner gilt:
 \begin{align*}
 \text{ker}\left(\pi\right) & =\left\{ g\in G|gN=\pi\left(g\right)=e'=eN=N\in\modulo{G}{N}\right\} \stackrel{\ref{sub:Nebenklasse}\,\text{i)}}{=}N
 \end{align*}
-
-\end{itemize}
 \qqed
-
+\end{itemize}
 
 \subsection{Beispiel \textmd{($H$ ist kein Normalteiler)}}
 
@@ -781,15 +749,14 @@ Dann sind äquivalent:
 
 \subsubsection*{Bildchen}
 
-TODO: Abb
+\textcolor{green}{TODO: Abb}
 
 \end{iiilist}
 
 
 \subsubsection*{Beweis}
 
-Übung
-
+Übung\\
 \qqed
 
 
@@ -802,7 +769,7 @@ wohldefiniert und ein Isomorphismus.
 \subsubsection*{Beweis}
 
 Nach \ref{sub:Satz-univEigProj} ist $\overline{\varphi}$ wohldefiniert
-und ein Gruppenhomorphismus.
+und ein Gruppenhomomorphismus.
 
 (Wähle in \ref{sub:Satz-univEigProj} $N=\text{ker}\left(\varphi\right)$)
 
@@ -814,8 +781,7 @@ Aus
 \text{ker}\left(\overline{\varphi}\right)= & \modulo{\text{ker}\left(\varphi\right)}{N}=\modulo{\text{ker}\left(\varphi\right)}{\text{ker}\left(\varphi\right)}=\left\{ e\right\} 
 \end{align*}
 und \ref{sub:PuD-ker} folgt, dass $\overline{\varphi}$ injektiv,
-also ein Isomorphismus ist.
-
+also ein Isomorphismus ist.\\
 \qqed
 
 
@@ -864,8 +830,7 @@ Damit ist $\text{ker}\left(\varphi\right)\subseteq\mathbb{Z}$ eine
 Untergruppe vom Index $\left|G\right|=p$.
 
 Nach der Vorlesung lineare Algebra I folgt $\text{ker}\left(\varphi\right)=p\mathbb{Z}$,
-also $G\stackrel{\sim}{=}\modlo{Z}{p}$.
-
+also $G\stackrel{\sim}{=}\modlo{Z}{p}$.\\
 \qqed[\ref{sub:Satz-ZpZ}]
 
 
@@ -891,8 +856,7 @@ eine Untergruppe und es gilt:
 x & =\varphi\left(1\right)\in\text{im}\left(\varphi\right)=\left\langle x\right\rangle 
 \end{align*}
 Ist $H\subseteq G$ eine Untergruppe mit $x\in H$, so folgt $x^{n}\in H$
-für alle $n\in\mathbb{Z}$, das heißt $\left\langle x\right\rangle \subseteq H$.
-
+für alle $n\in\mathbb{Z}$, das heißt $\left\langle x\right\rangle \subseteq H$.\\
 \qqed
 
 
@@ -916,8 +880,7 @@ $\left\langle x\right\rangle =G$ heißt \emph{Erzeuger von $G$}.
 
 i) $\Rightarrow$ ii): Wähle $\varphi:\mathbb{Z}\to G$ mit $\varphi\left(1\right)=x$.
 
-ii) $\Rightarrow$ i): Wähle $x:=\varphi\left(1\right)$.
-
+ii) $\Rightarrow$ i): Wähle $x:=\varphi\left(1\right)$.\\
 \qqed
 
 
@@ -977,7 +940,7 @@ Epimorphismus $\varphi:\mathbb{Z}\to G$.
 Dann ist auch $\psi:=\varphi|_{\varphi^{-1}\left(H\right)}:\varphi^{-1}\left(H\right)\to H$
 ein Epimorphismus.
 
-TODO: Abb einfügen
+\textcolor{green}{TODO: Abb einfügen}
 
 Wegen $H\not=\left\{ e\right\} $ ist $\left\{ 0\right\} \not=\varphi^{-1}\left(H\right)\subseteq\mathbb{Z}$
 eine nicht triviale Untergruppe.
@@ -989,8 +952,7 @@ also:
 x & \mapsto mx
 \end{align*}
 Also ist $\psi:\mathbb{Z}\to H$ ein Epimorphismus, das heißt $H$
-ist zyklisch.
-
+ist zyklisch.\\
 \qqed[i)]
 
 \iii Ist $\psi:\mathbb{Z}\to G$ ein Epimorphismus, so auch die Komposition:
@@ -1000,8 +962,7 @@ ist zyklisch.
 Daher ist $\text{im}\left(\varphi\right)$ zyklisch.
 
 Weil $\text{ker}\left(\varphi\right)\subseteq G$ eine Untergruppe
-ist, ist $\text{ker}\left(\varphi\right)$ zyklisch nach i).
-
+ist, ist $\text{ker}\left(\varphi\right)$ zyklisch nach i).\\
 \qqed[ii)]
 
 \end{iiilist}
@@ -1066,8 +1027,6 @@ Klar ist $x^{\text{ord}\left(x\right)}=e$, womit folgt:
 \begin{align*}
 x^{\left|G\right|} & \stackrel{\ref{sub:Kor-Lagrange}}{=}x^{\text{ord}\left(x\right)\cdot\left(G:\left\langle x\right\rangle \right)}=e^{\left(G:x\right)}=e
 \end{align*}
-
-
 \qqed
 
 
@@ -1162,8 +1121,7 @@ insbesondere für $d=n$ folgt wegen $1\in\left(\modlo{Z}{n}\right)^{*}$:
 \psi\left(n\right) & =\varphi\left(n\right)=\left|\left(\modlo{Z}{n}\right)^{*}\right|\not=0
 \end{align*}
 Das heißt es gibt ein $x\in G$ mit $\text{ord}\left(x\right)=n$,
-also ist $G=\left\langle x\right\rangle $ und $G$ ist zyklisch.
-
+also ist $G=\left\langle x\right\rangle $ und $G$ ist zyklisch.\\
 \qqed
 
 
@@ -1189,8 +1147,7 @@ gilt:
 
 
 Das ist klar, denn das Polynom $T^{d}-1\in k\left[T\right]$ hat höchstens
-$d$ Nullstellen in $k$ nach linearer Algebra II.
-
+$d$ Nullstellen in $k$ nach linearer Algebra II.\\
 \qqed
 
 
@@ -1352,8 +1309,7 @@ Damit folgt in $A$:
 Wegen $tvw\in S$ folgt aus \eqref{eq:bruchrel} schon $\left(a,s\right)\sim\left(c,u\right)$.\\
 \qqed[$\sim$ Äquivrel.]
 
-Der Rest bleibt als Übung.
-
+Der Rest bleibt als Übung.\\
 \qqed[\ref{sub:KuD-QuotRing}]
 
 
@@ -1381,7 +1337,7 @@ mit $\psi=f\circ\varphi$.
 
 \end{iiilist}
 
-TODO: Abbildung Homomorphiesatz
+\textcolor{green}{TODO: Abbildung Homomorphiesatz}
 
 
 \subsubsection*{Beispiel}
@@ -1390,7 +1346,7 @@ Es gibt genau einen Ringhomomorphismus $\mathbb{Q}\to\mathbb{C}$,
 denn:\\
 Es gibt genau einen Ringhomomorphismus $\psi:\mathbb{Z}\to\mathbb{C}$
 und es gilt $\psi\left(\mathbb{Z}\setminus\left\{ 0\right\} \right)\subseteq\mathbb{C}^{*}$.\\
-TODO: Abb Homomorphiesatz $\psi$
+\textcolor{green}{TODO: Abb Homomorphiesatz $\psi$}
 
 %DATE: Fr 28.10.11
 
@@ -1407,7 +1363,8 @@ nach:
 \begin{align*}
 \varphi\left(a\right)+\varphi\left(b\right) & =\frac{a}{1}+\frac{b}{1}\stackrel{\ref{sub:KuD-QuotRing}}{=}\frac{a\cdot1+b\cdot1}{1\cdot1}=\frac{a+b}{1}=\varphi\left(a+b\right)
 \end{align*}
-Der Rest geht analog.
+Der Rest geht analog.\\
+\qqed[\roman{ale2})]
 
 \iii b) $\Rightarrow$ a): Es gilt $\varphi\left(S\right)\subseteq\left(S^{-1}A\right)^{*}$,
 denn für alle $s\in S$ folgt in $S^{-1}A$:
@@ -1459,7 +1416,7 @@ Weil $\psi$ eindeutig ist, folgt in $B$:
 \psi\left(a\right)\underbrace{\psi\left(t\right)}_{\in B^{*}} & =\psi\left(b\right)\underbrace{\psi\left(s\right)}_{\in B^{*}}\\
 \psi\left(a\right)\psi\left(s\right)^{-1} & =\psi\left(b\right)\psi\left(t\right)^{-1}
 \end{align*}
-\qqed
+\qqed[\roman{ale2})]
 \end{description}
 \end{itemize}
 \end{iiilist}
@@ -1503,8 +1460,7 @@ mit:
 \begin{align*}
 0 & =s\underbrace{\left(1\cdot1-0\cdot1\right)}_{=1}=s
 \end{align*}
-Das bedeutet $s=0\in S$.
-
+Das bedeutet $s=0\in S$.\\
 \qqed[ii)]
 
 \end{iiilist}
@@ -1593,8 +1549,7 @@ $S^{-1}A$-linear.
 
 \subsubsection*{Beweis}
 
-Analog zu \ref{sub:KuD-QuotRing}.
-
+Analog zu \ref{sub:KuD-QuotRing}.\\
 \qqed
 
 
@@ -1693,7 +1648,7 @@ Zunächst ist $x$ eine endliche Summe
 x & =\sum_{i}\underbrace{\frac{a_{i}}{s_{i}}\otimes m_{i}}_{\text{\quotedblbase elementarer Tensor\textquotedblleft}}\label{eq:elemTensor}
 \end{align}
 mit geeigneten $a_{i}\in A,s_{i}\in S$ und $m_{i}\in M$.\\
-Definiere: (TODO: Formel überprüfen)
+Definiere:\textcolor{green}{{} (TODO: Formel überprüfen)}
 \begin{align}
 t & :=\prod_{i}s_{i} & t_{i} & :=\prod_{j=1}^{i}s_{j}\in S\label{eq:tti}
 \end{align}
@@ -1726,8 +1681,7 @@ Damit ergibt sich:
 \begin{align*}
 x & \stackrel{\eqref{eq:xtm}}{=}\frac{1}{t}\otimes m=\frac{1}{t^{2}s}\otimes\underbrace{\left(stm\right)}_{=0}=0
 \end{align*}
-Es folgt $\text{ker}\left(f\right)=0$, also ist $f$ injektiv.
-
+Es folgt $\text{ker}\left(f\right)=0$, also ist $f$ injektiv.\\
 \qqed
 
 
@@ -1746,8 +1700,7 @@ exakt.
 
 \subsubsection*{Beweis}
 
-Folgt aus \ref{sub:Prop-exaktAModuln} und \ref{sub:Prop-AModulnIso}.
-
+Folgt aus \ref{sub:Prop-exaktAModuln} und \ref{sub:Prop-AModulnIso}.\\
 \qqed
 
 
@@ -1755,7 +1708,7 @@ Folgt aus \ref{sub:Prop-exaktAModuln} und \ref{sub:Prop-AModulnIso}.
 
 Betrachte das Diagramm:
 
-TODO: Diagramm einfügen
+\textcolor{green}{TODO: Diagramm einfügen}
 
 Nach \ref{sub:Prop-exaktAModuln} mit $A=\mathbb{Z}$, $S=\mathbb{Z}\setminus\left\{ 0\right\} $
 ist die zweite Zeile exakt.
@@ -1767,17 +1720,16 @@ Man prüft, dass das Diagramm kommutiert(, das heißt prüfen, dass eines
 der Quadrate kommutiert.) (vergleiche Übungsaufgaben aus linearer
 Algebra II)
 
-Es folgt die Exaktheit der ersten Zeile.
-
-\qqed[???TODO???]
+Es folgt die Exaktheit der ersten Zeile.\\
+\qqed[\textcolor{green}{???TODO???}]
 
 \newpage{}
 
 
-\section{Der Satz von Gauß\label{sec:Der-Satz-von-Gau=0000DF}}
+\section{Der Satz von Gauß\label{sec:Der-Satz-von-Gauss}}
 
 
-\subsubsection*{Fixiere in Abschnitt \ref{sec:Der-Satz-von-Gau=0000DF} (\nameref{sec:Der-Satz-von-Gau=0000DF})}
+\subsubsection*{Fixiere in Abschnitt \ref{sec:Der-Satz-von-Gauss} (\nameref{sec:Der-Satz-von-Gauss})}
 
 Seien $R$ ein faktorieller Ring, $Q:=\text{Quot}\left(R\right)=\left(R\setminus\left\{ 0\right\} \right)^{-1}R$
 und $\mathcal{P}\subseteq R$ ein Vertretersystem der Primelemente
@@ -1794,7 +1746,7 @@ Primzahlen)
 
 \subsection{Erinnerung \textmd{(Primfaktorzerlegung)\label{sub:Erin-PFZ}}}
 
-TODO: ??? Überprüfen
+\textcolor{green}{TODO: ??? Überprüfen}
 
 Für alle $p\in\mathcal{P}$ ist
 \begin{align*}
@@ -1808,7 +1760,7 @@ a & =\varepsilon\prod_{p\in\mathcal{P}}p^{\nu_{p}\left(a\right)}
 \end{align*}
 ($\varepsilon\in R^{*}$ geeignet) ein Homomorphismus.
 
-TODO: ? obige Aussage überprüfen! Homomorphismus?
+\textcolor{green}{TODO: ? obige Aussage überprüfen! Homomorphismus?}
 
 Die Abbildung
 \begin{align*}
@@ -1826,7 +1778,7 @@ q\in R & \Leftrightarrow\fall_{p\in\mathcal{P}}:\nu_{p}\left(q\right)\ge0\label{
 Setze $\nu_{p}\left(0\right):=\infty$ für alle $p\in\mathcal{P}$.
 
 
-\subsection{Bemerkung}
+\subsection{Bemerkung\label{sub:Bem-phiX}}
 
 Für jeden Ringhomomorphismus $\varphi:R\to R'$ existiert genau ein
 Ringhomomorphismus
@@ -1857,7 +1809,7 @@ ein surjektiver Ringhomomorphismus mit:
 
 Betrachte:
 
-TODO: Abb Homsatz
+\textcolor{green}{TODO: Abb Homomorphiesatz}
 
 Es existiert genau ein $R$-Algebrenhomomorphismus $\varphi\left[X\right]$
 mit $\varphi\left[X\right]\left(X\right)=X$.
@@ -1866,16 +1818,15 @@ Daher gilt:
 \begin{align*}
 \varphi\left[X\right]\bigg(\sum_{i}\underbrace{a_{i}}_{\in\mathbb{Q}}X^{i}\bigg) & =\sum_{i}\underbrace{\varphi\left[X\right]\left(a_{i}\right)}_{=\varphi\left(a_{i}\right)}\cdot\underbrace{\varphi\left[X\right]\left(X\right)^{i}}_{=X^{i}}=\sum_{i}\varphi\left(a_{i}\right)\cdot X^{i}
 \end{align*}
-
-
 \qqed
 
 
-\subsection{Proposition und Definition \textmd{(Lemma von Gauß)}}
+\subsection{Proposition und Definition \textmd{(Lemma von Gauß)\label{sub:PuD-LemmaGauss}}}
 
 Sei $p\in\mathcal{P}$. Für $f=\sum_{i}a_{i}X^{i}\in Q\left[X\right]$
 heißt $\nu_{p}\left(f\right)=\min_{i}\left\{ \nu_{p}\left(a_{i}\right)\right\} \in\mathbb{Z}\cup\left\{ \infty\right\} $
-\emph{die $p$-adische Bewertung von $f$}. Dabei ist $Q\subseteq\mathbb{Q}^{*}$.
+\emph{die $p$-adische Bewertung von $f$}. ($Q\subseteq Q^{*}$;\textcolor{green}{TODO:
+???}).
 
 Zum Beispiel ist:
 \begin{align*}
@@ -1904,39 +1855,210 @@ Es gelten:
 
 \iii $f\in R\left[X\right]\Leftrightarrow\fall_{i}:a_{i}\in R\stackrel{\ref{sub:Erin-PFZ}}{\Leftrightarrow}\fall_{p\in\mathcal{P},i}:\nu_{p}\left(a_{i}\right)\ge0\Leftrightarrow\fall_{p\in\mathcal{P}}\nu_{p}\left(f\right)\ge0$
 
-\iii Lemma von Gauß: $ $$\fall_{f,g\in\mathbb{Q}\left[X\right]}:\nu_{p}\left(fg\right)=\nu_{p}\left(f\right)+\nu_{p}\left(g\right)$
+\iii 1. Fall: $f\in Q\subseteq Q\left[X\right]$ und $g\in Q\left[X\right]$
+beliebig.
+
+Schreibe $g=\sum_{i}b_{i}X^{i}$. Dann folgt:
+\begin{align*}
+\nu_{p}\left(f\cdot g\right) & =\nu_{p}\left(\sum_{i}\left(fb_{i}\right)X^{i}\right)\stackrel{\text{Def.}}{=}\min\left\{ \nu_{p}\left(fb_{i}\right)\right\} \stackrel{\ref{sub:Erin-PFZ},\text{ da }f\in Q}{=}\min\left\{ \nu_{p}\left(f\right)+\nu_{p}\left(b_{i}\right)\right\} =\\
+ & =\nu_{p}\left(f\right)+\min\left\{ \nu_{p}\left(b_{i}\right)\right\} =\nu_{p}\left(f\right)+\nu_{p}\left(g\right)
+\end{align*}
+
+
+2. (allgemeiner) Fall: Seien ohne Einschränkung $f,g\not=0$, sonst
+ist nur $\infty=\infty$ zu zeigen.
+
+Wegen dem 1. Fall dürfen $f$ und $g$ durch $\alpha f$ und $\beta g$
+mit beliebigen $\alpha,\beta\in Q^{*}$ ersetzt werden.
+
+Für geeignete $\alpha,\beta\in Q^{*}$ gilt:
+\begin{align*}
+\tilde{f} & :=\alpha f,\tilde{g}:=\beta g\in R\left[X\right]
+\end{align*}
+\begin{align*}
+\nu_{p}\left(\tilde{f}\right) & =0 & \nu_{p}\left(\tilde{g}\right) & =0
+\end{align*}
+Dann ist $\nu_{p}\left(\tilde{f}\tilde{g}\right)=0$ zu zeigen:
+
+Sei $\pi:R\left[X\right]\to\left(\modulo{R}{\left(p\right)}\right)\left[X\right]$
+wie in \ref{sub:Bem-phiX}. Für $\tilde{f}=\sum_{i}a_{i}X^{i}$ gilt:
+\begin{align*}
+0 & =\nu_{p}\left(\tilde{f}\right)=\min_{i}\{\underbrace{\nu_{p}\left(a_{i}\right)}_{\ge0\left(\text{da }\tilde{f}\in R\left[X\right]\right)}\}
+\end{align*}
+Also gibt es ein $i$ mit $\nu_{p}\left(a_{i}\right)=0$, das heißt
+$p\not|\, a_{i}$. Nach \ref{sub:Bem-phiX} folgt damit $\pi\left(\tilde{f}\right)\not=0$.
+
+Analog gilt: $\pi\left(\tilde{g}\right)\not=0$ und es folgt in $\left(\modulo{R}{\left(p\right)}\right)\left[X\right]$,
+weil dies ein Integritätsring ist:
+\begin{align*}
+0 & \not=\underbrace{\pi\left(\tilde{f}\right)}_{\not=0}\cdot\underbrace{\pi\left(\tilde{g}\right)}_{\not=0}=\pi\left(\tilde{f}\tilde{g}\right)
+\end{align*}
+
+
+Wie oben folgt $\nu_{p}\left(\tilde{f}\tilde{g}\right)=0$.
 
 \end{iiilist}
-
-TODO: Rest einfügen
-
-Beweis von 3.7 ii)
-
-Wegen $f\not=0$ gilt nach \ref{3.3 i)}: $\fall_{p\in\mathcal{P}}:v_{p}\left(f\right)\not=\infty$.
-Es ist klar, dass für fast alle $p\in\mathcal{P}$ gilt:
-\begin{align*}
-v_{p}\left(f\right) & =0
-\end{align*}
-$\left(\text{nämlich für alle }p\in\mathcal{P}\text{, die weder Zähler noch Nenner eines Koeffiziente von \ensuremath{f}teilen}\right)$
-
-Deswegen ist $\alpha:=\prod_{p\in\mathcal{P}}p^{v_{p}\left(f\right)}\in Q^{*}$
-wohldefiniert und für $\tilde{f}:=\alpha^{-1}f$ gilt $\fall_{p\in\mathcal{P}}$:
-\begin{align*}
-v_{p}\left(f\right) & =v_{p}\left(\alpha^{-1}f\right)\stackrel{\eqref{3.3iii)}}{=}-v_{p}\left(\alpha\right)+v_{p}\left(f\right)=0
-\end{align*}
-Also ist $\tilde{f}\in R\left[X\right]$ und nach Teil i) primitiv.
 
 \qqed
 
 
+\subsection{Korollar\label{sub:Kor-hfgNormiert}}
+
+Sei $h\in R\left[X\right]$ normiert und es gelte in $Q\left[X\right]$
+mit normierten $f,g\in Q\left[X\right]$:
+\begin{align}
+h & =f\cdot g\label{eq:hfg}
+\end{align}
+
+
+Dann gilt $f,g\in R\left[X\right]$.
+
+
+\subsubsection*{Beweis}
+
+Für alle $p\in\mathcal{P}$ gelten $\nu_{p}\left(h\right)=0$, da
+$h$ in $R\left[X\right]$ normiert ist und $\nu_{p}\left(1\right)=0$,
+sowie $\nu_{p}\left(f\right),\nu_{p}\left(g\right)\le0$, da $f,g$
+in $Q\left[X\right]$ normiert sind.
+
+Weil für alle $p\in\mathcal{P}$
+\begin{align*}
+0 & =\nu_{p}\left(h\right)\sr{=}{\eqref{eq:hfg}}{\ref{sub:PuD-LemmaGau=00003D0000DF}\text{ iii)}}\underbrace{\nu_{p}\left(f\right)}_{\le0}+\underbrace{\nu_{p}\left(g\right)}_{\le0}
+\end{align*}
+gilt, folgt:
+\begin{align*}
+\nu_{p}\left(f\right) & =\nu_{p}\left(g\right)=0
+\end{align*}
+Daher sind $f,g\in R\left[X\right]$.\\
+\qqed
+
+
+\subsection{Beispiel\label{sub:Bsp-Vieta}}
+
+Seien ${\displaystyle h=\sum_{i}a_{i}X^{i}}\in R\left[X\right]$ normiert
+und $\alpha\in Q$ mit $h\left(\alpha\right)=0$.
+
+Dann folgt $\alpha\in R$ und $\alpha|a_{o}$ in $R$.
+
+
+\subsubsection*{Beweis}
+
+Aus $h\left(\alpha\right)=0$ folgt $h=\left(X-\alpha\right)\cdot g$
+in $Q\left[X\right]$ für ein geeignetes $g\in Q\left[X\right]$.
+
+Weil $h$ und $\left(X-\alpha\right)$ normiert sind, ist auch $g$
+normiert.
+
+Aus \ref{sub:Kor-hfgNormiert} folgt $\left(X-\alpha\right),g\in R\left[X\right]$,
+also insbesondere $\alpha\in R$.
+
+Ferner gilt in $R$:
+\begin{align*}
+0 & =h\left(\alpha\right)=\sum_{i\ge0}a_{i}\alpha^{i}=\alpha\left(\sum_{i\ge1}a_{i}\alpha^{i-1}\right)+a_{0}\\
+a_{0} & =\alpha\cdot\underbrace{\left(-\sum_{i\ge1}a_{i}\alpha^{i-1}\right)}_{\in R,\text{ da }a_{i},\alpha\in R}
+\end{align*}
+Also gilt $\alpha|a_{0}$ in $R$.\\
+\qqed
+
+
+\subsection{Beispiel}
+
+Es existiert keine rationale Zahl $q\in\mathbb{Q}$ mit $q^{3}+2q+1=0$,
+obwohl diese Gleichung, wie jede Gleichung dritten Grades, eine Lösung
+in $\mathbb{R}$ hat.
+
+
+\subsubsection*{Beweis}
+
+$h:=X^{3}+2X+1\in\mathbb{Z}\left[X\right]$ ist normiert und $R:=\mathbb{Z}$
+ist ein Hauptidealring, also insbesondere faktoriell.
+
+Gäbe es ein $q\in\mathbb{Q}=\text{Quot}\left(R\right)$ mit $h\left(\alpha\right)=0$,
+so folgte aus \ref{sub:Bsp-Vieta} schon $q\in\mathbb{Z}$ und $q|a_{0}=1$,
+das heißt $q\in\left\{ \pm1\right\} $, aber es gilt:
+\begin{align*}
+h\left(\pm1\right) & =1\pm3\not=0
+\end{align*}
+\qqed
+
+
+\subsection{Proposition und Definition \textmd{(primitiv)}\label{sub:PuD-primitiv}}
+
+\textcolor{green}{TODO: $\left(1\right)$ ??? oder doch $1$?}
+
+Für ${\displaystyle f=\sum_{i}a_{i}X^{i}}\in R\left[X\right]$ gilt:
+
+\begin{iiilist}
+
+\iii ${\displaystyle \fall_{p\in\mathcal{P}}:\nu_{p}\left(f\right)=0\Leftrightarrow\text{ggT}\left(a_{0},a_{1},\ldots\right)=1}$;
+In diesem Fall heißt $f$ \emph{primitiv}.
+
+Also ist jedes normierte Polynom primitiv, aber auch $3X+2\in\mathbb{Z}\left[X\right]$.
+
+\iii Für alle $f\in Q\left[X\right]\setminus\left\{ 0\right\} $
+existieren ein $\alpha\in Q^{*}$ und ein primitives $\tilde{f}\in R\left[X\right]$
+mit $f=\alpha\cdot\tilde{f}$.
+
+\end{iiilist}
+
+
+\subsubsection*{Beweis}
+
+\begin{iiilist}
+
+\iii Für alle $p\in\mathcal{P}$ gilt:
+\begin{align*}
+\nu_{p}\left(\text{ggT}\left(a_{0},a_{1},\ldots\right)\right) & =\min\left\{ \nu_{p}\left(a_{i}\right)\right\} =\nu_{p}\left(f\right)
+\end{align*}
+Wendet man
+\begin{align*}
+\fall_{q\in Q^{*}}: & \left(\fall_{p\in\mathcal{P}}:\nu_{p}\left(q\right)=0\stackrel{\ref{sub:Erin-PFZ}}{\Leftrightarrow}q\in R^{*}\right)
+\end{align*}
+auf $q=\text{ggT}\left(a_{i}\right)$, so folgt:
+\begin{align*}
+\left(\fall_{p\in\mathcal{P}}:\nu_{p}\left(f\right)=0\right) & \Leftrightarrow\text{ggT}\left(a_{i}\right)\in Q^{*}\Leftrightarrow\text{ggT}\left(a_{i}\right)=1
+\end{align*}
+\qqed[\roman{ale2})]
+
+%DATE: ???
+
+\iii Wegen $f\not=0$ gilt nach \ref{sub:PuD-LemmaGauss} i) für
+alle $p\in\mathcal{P}$ schon $\nu_{p}\left(f\right)\not=\infty$.
+
+Es ist klar, dass für fast alle $p\in\mathcal{P}$ schon $\nu_{p}\left(f\right)=0$
+gilt, nämlich für alle Primzahlen $p\in\mathcal{P}$, die weder Zähler
+noch Nenner eines Koeffizienten von $f$ teilen.
+
+Deswegen ist ${\displaystyle \alpha:=\prod_{p\in\mathcal{P}}p^{\nu_{p}\left(f\right)}\in Q^{*}}$
+wohldefiniert und für $\tilde{f}:=\alpha^{-1}f$ gilt für alle $p\in\mathcal{P}$:
+\begin{align*}
+\nu_{p}\left(\tilde{f}\right) & =\nu_{p}\left(\alpha^{-1}f\right)\stackrel{\ref{sub:PuD-LemmaGauss}\text{ iii)}}{=}-\underbrace{\nu_{p}\left(\alpha\right)}_{=\nu_{p}\left(f\right)}+\nu_{p}\left(f\right)=0
+\end{align*}
+Also ist $\tilde{f}\in R\left[X\right]$ nach Teil i) primitiv.\\
+\qqed[\roman{ale2})]
+
+\end{iiilist}
+
+
 \subsubsection*{Beispiel}
 
-$f:=\frac{2}{3}x\text{\texttwosuperior}+\frac{1}{6}\in\mathbb{Q}\left[X\right]\setminus\left\{ 0\right\} \Rightarrow18\cdot f=12x\text{\texttwosuperior}+3\in\mathbb{Z}\left[X\right]$
-ist nicht primitiv; $6\cdot f=4x\text{\texttwosuperior}+1\in\mathbb{Z}\left[X\right]$
+\begin{align*}
+f & :=\frac{2}{3}x\text{\texttwosuperior}+\frac{1}{6}\in\mathbb{Q}\left[X\right]\setminus\left\{ 0\right\} 
+\end{align*}
+Dann gilt:
+\begin{align*}
+18\cdot f & =12x\text{\texttwosuperior}+3\in\mathbb{Z}\left[X\right]
+\end{align*}
+
+
+ist nicht primitiv, aber
+\begin{align*}
+6\cdot f & =4x\text{\texttwosuperior}+1\in\mathbb{Z}\left[X\right]
+\end{align*}
 ist primitiv.
 
 
-\subsection{Satz\textmd{ (von Gauß)}}
+\subsection{Satz\textmd{ (von Gauß)\label{sub:Satz-Gauss}}}
 
 Der Ring $R\left[X\right]$ ist faktoriell.
 
@@ -1944,11 +2066,19 @@ Für alle $q\in R\left[X\right]$ sind äquivalent:
 
 \begin{iiilist}
 
-\iii $q\in R\left[X\right]$ ist ein Primelement.
+\iii $q\in R\left[X\right]$ ist ein Primelement (Abkürzung: PE).
 
-\iii ($q\in R\subseteq R\left[X\right]$ und $q$ ist ein Primelement.)
-oder ($q\in R\left[X\right]$ ist primitiv und $q\in Q\left[X\right]$
-ist ein Primelement)
+\iii Es gilt
+\begin{align*}
+q & \in R\subseteq R\left[X\right]
+\end{align*}
+und $q$ ist ein Primelement in $R$ oder
+\begin{align*}
+q & \in R\left[X\right]
+\end{align*}
+
+
+ist primitiv und $q\in Q\left[X\right]$ ist ein Primelement.
 
 \end{iiilist}
 
@@ -1966,83 +2096,115 @@ Insbesondere sind für ein primitives Polynom $f\in R\left[X\right]$
 
 \subsection{Beispiel}
 
-$\mathbb{Z}\left[X\right]$ ist faktoriell (aber kein Hauptidealring,
-z. B. ist $\left(2,X\right)\subseteq\mathbb{Z}\left[X\right]$ kein
-Hauptideal).
+$\mathbb{Z}\left[X\right]$ ist faktoriell, aber kein Hauptidealring,
+denn zum Beispiel ist $\left(2,X\right)\subseteq\mathbb{Z}\left[X\right]$
+kein Hauptideal.
 
-Das Polynom $2X\in\mathbb{Z\left[X\right]}$ ist nicht primitiv, $2X\in\mathbb{Q\left[X\right]}$
-ist ein Primelement(, da $2\in\left(\mathbb{Q}\left[X\right]\right)^{*}=\mathbb{Q}^{*}$,
-$X\in\mathbb{Q\left[X\right]}$ ist ein Primelement), aber $2X\in\mathbb{Z\left[X\right]}$
-hat Primfaktorzerlegung $2X=2\cdot X$ in $\mathbb{Z}\left[X\right]$
-($2,X$ sind nicht assoziierte Primelemente in $\mathbb{Z}\left[X\right]$$\modulo{\mathbb{Z}\left[X\right]}{\left(2\right)}\stackrel{\sim}{=}\mathbb{F}_{2}\left[X\right]$;
-$\mathbb{Z}\left[X\right]^{*}=\mathbb{Z}^{*}=\left\{ \pm1\right\} $).
+Das Polynom $2X\in\mathbb{Z}\left[X\right]$ ist nicht primitiv, $2X\in\mathbb{Q}\left[X\right]$
+ist ein Primelement, da $2\in\left(\mathbb{Q}\left[X\right]\right)^{*}=\mathbb{Q}^{*}$
+und $X\in\mathbb{Q}\left[X\right]$ ein Primelement ist, aber $2X\in\mathbb{Z}\left[X\right]$
+hat die Primfaktorzerlegung $2X=2\cdot X$ in $\mathbb{Z}\left[X\right]$
+und $2$ und $X$ sind nicht assoziierte Primelemente in $\mathbb{Z}\left[X\right]$.
+\begin{align*}
+\modulo{\mathbb{Z}\left[X\right]}{\left(2\right)} & \stackrel{\sim}{=}\mathbb{F}_{2}\left[X\right]\\
+\mathbb{Z}\left[X\right]^{*} & =\mathbb{Z}^{*}=\left\{ \pm1\right\} 
+\end{align*}
 
 
-\subsubsection*{Beweis von 3.8}
+
+\subsubsection*{Beweis von \ref{sub:Satz-Gauss}}
 
 ii) $\Rightarrow$ i):
 \begin{itemize}
-\item 1. Fall: Es ist $q\in R$ Primelement $\Rightarrow$ $\pi:R\left[X\right]\rightarrow TODO:$zweiter
-Pfeil)$\left(\modulo{R}{\left(q\right)}\right)\left[X\right]$ wie
-in \ref{3.2} ist surjektiv mit $\text{ker}\left(\pi\right)=\left(q\right)\subseteq R\left[X\right]$
-$\Rightarrow\left(*\right)\left(\modulo{R}{\left(q\right)}\right)\left[X\right]\stackrel{\sim}{=}\modulo{R\left[X\right]}{\left(q\right)}$.
-Wegen $q\in R$ Primelement ist die linke Seite von $(*)$ ein Integritätsring,
-also ist auch $\modulo{R\left[X\right]}{\left(q\right)}$ ein Integritätsring
-$\Leftrightarrow$ $q\in R\left[X\right]$ ist ein Primelement.
+\item 1. Fall: Es ist $q\in R$ ein Primelement, also ist $\pi:R\left[X\right]\twoheadrightarrow\left(\modulo{R}{\left(q\right)}\right)\left[X\right]$
+wie in \ref{sub:Bem-phiX} surjektiv mit:
+\begin{align*}
+\text{ker}\left(\pi\right) & =\left(q\right)\subseteq R\left[X\right]
+\end{align*}
+Also folgt aus dem Isomorphiesatz:
+\begin{align}
+\left(\modulo{R}{\left(q\right)}\right)\left[X\right] & \stackrel{\sim}{=}\modulo{R\left[X\right]}{\left(q\right)}\label{eq:rqXrXq}
+\end{align}
+Weil $q\in R$ ein Primelement ist, ist die linke Seite von \eqref{eq:rqXrXq}
+ein Integritätsring, also ist auch $\modulo{R\left[X\right]}{\left(q\right)}$
+ein Integritätsring, was äquivalent dazu ist, dass $q\in R\left[X\right]$
+ist ein Primelement ist.
 \item 2. Fall: $q\in R\left[X\right]$ ist primitiv und $q\in Q\left[X\right]$
-ist ein Primelement. Zeige nach Definition, dass $q\in R\left[X\right]$
-ein Primelement ist.\\
- Seien $f,g\in R\left[X\right]$ ist $q|fg$ in $R\left[X\right]$
-gegeben $\Rightarrow$ $q|fg$ in $Q\left[X\right]$ o. E.$\stackrel{q\in Q\left[X\right]}{\Rightarrow}$$q|f$
+ist ein Primelement.\\
+Zeige nach Definition, dass $q\in R\left[X\right]$ ein Primelement
+ist:\\
+Seien $f,g\in R\left[X\right]$ mit $q|fg$ in $R\left[X\right]$
+gegeben, dann folgt $q|fg$ in $Q\left[X\right]$ und ohne Einschränkung
+folgt, weil $q\in Q\left[X\right]$ ein Primelement ist, schon $q|f$
 in $Q\left[X\right]$.\\
-$\Rightarrow\left(*\right)f=qh$ in $Q\left[X\right]$, $h$ geeignet
-$\Rightarrow$ $\fall_{p\in\mathcal{P}}:0\stackrel{\left(q\text{ prim.}\right);\eqref{3.7i)}}{=}v_{p}\left(q\right)\stackrel{\left(*\right),\ref{}{3.3,iii)}}{=}-v_{p}\left(h\right)+\underbrace{v_{p}\left(f\right)}_{\ge0\left(\text{da }f\in R\left[X\right]\right)}$\\
-$\Rightarrow\fall_{p\in\mathcal{P}}:v_{p}\left(h\right)\ge0\stackrel{\ref{}3.3ii)}{\Rightarrow}h\in R\left[X\right]\Rightarrow f=qh$
-\underline{in $R\left[X\right]$} $\Rightarrow$ $q|f$ in $R\left[X\right]$.
+Damit ergibt sich in $Q\left[X\right]$ mit einem geeigneten $h\in Q\left[X\right]$:
+\begin{align}
+f & =qh\label{eq:fqh}
+\end{align}
+Es folgt für alle $p\in\mathcal{P}$:
+\begin{align*}
+0 & \sr{=}{\ref{sub:PuD-primitiv}\text{i)}}{q\text{ prim}}v_{p}\left(q\right)\sr{=}{\eqref{eq:fqh}}{\ref{sub:PuD-LemmaGauss}\text{iii)}}-v_{p}\left(h\right)+\underbrace{v_{p}\left(f\right)}_{\ge0\left(\text{da }f\in R\left[X\right]\right)}
+\end{align*}
+Daher ist $\nu_{p}\left(h\right)\ge0$ und aus \ref{sub:PuD-LemmaGauss}
+ii) folgt dann $h\in R\left[X\right]$, also gilt $f=qh$ auch in
+$R\left[X\right]$ und daher $q|f$ in $R\left[X\right]$.\\
+Also ist $q\in R\left[X\right]$ ein Primelement.
 \end{itemize}
-\qqed $(q\in R\left[X\right]\text{ Primelement, iii)}\Rightarrow\text{ii)})$
+\qqed[ii) \ensuremath{\Rightarrow} i)]
 
 Zeige noch:
 
-Jedes $0\not=f\in R\left[X\right]\setminus R\left[X\right]^{*}$ (N.B.:
-$R\left[X\right]^{*}=R^{*}$) ist ein Produkt von Primelementen obiger
-Gestalt. (Dann folgt sowohl, dass $R\left[X\right]$ faktoriell ist,
-al auch die Implikation i)$\Rightarrow$ii)) Schreibe $f=a\cdot\tilde{f}$
-mit $a\in R,\tilde{f}\in R\left[X\right]$ primitiv (vgl. $\ref{}3.7,ii)$).
-Wegen $R$ faktoriell ist $a$ ein Produkt von Primelementen obeiger
-Gestalt, also sei ohne Einschränkung $f=\tilde{f}\in R\left[X\right]$
-primitiv.
+Jedes
+\begin{align*}
+0 & \not=f\in R\left[X\right]\setminus R\left[X\right]^{*}
+\end{align*}
+(Nebenbemerkung: $R\left[X\right]^{*}=R^{*}$) ist ein Produkt von
+Primelementen obiger Gestalt.
 
-Sei nun $0\not=f\in R\left[X\right]$ primitiv. Schreibe
+Dann folgt sowohl, dass $R\left[X\right]$ faktoriell ist, als auch
+die Implikation i)$\Rightarrow$ii).
+
+Schreibe $f=a\cdot\tilde{f}$ mit $a\in R,\tilde{f}\in R\left[X\right]$
+primitiv (vgl. $\ref{sub:PuD-primitiv}$ ii)). Weil $R$ faktoriell
+ist, ist $a$ ein Produkt von Primelementen obiger Gestalt, also sei
+ohne Einschränkung $f=\tilde{f}\in R\left[X\right]$ primitiv.
+
+Schreibe in $Q\left[X\right]$ mit Primelementen $f_{i}\in Q\left[X\right]$
+($Q\left[X\right]$ ist ein Hauptidealring, also faktoriell.)
 \begin{align}
-f & =\prod_{i=1}^{n}f_{i}\stackrel{\ref{}3.7,i)}{=}a\cdot\prod_{i=1}^{n}\tilde{f}_{i}\qquad\text{mit }a\in Q^{*}\text{ und }\tilde{f}_{i}\in R\left[X\right]\text{ primitiv und prim in }Q\left[X\right]
+f & =\prod_{i=1}^{n}f_{i}\stackrel{\ref{sub:PuD-primitiv}\text{,i)}}{=}a\cdot\prod_{i=1}^{n}\tilde{f}_{i}
 \end{align}
+mit $a\in Q^{*}$ und primitiven Primelementen $\tilde{f}_{i}\in R\left[X\right]$
+in $Q\left[X\right]$.
 
-
-in $Q\left[X\right]$ mit $f_{i}\in Q\left[X\right]$ prim. ($Q\left[X\right]$
-ist Hauptidealring, also faktoriell)
-
-$\Rightarrow\fall_{p\in\mathcal{P}}:v_{p}\left(a\right)\stackrel{(*,1.1?),3.3iii)}{=}\underbrace{v_{p}\left(f\right)}_{=0}-\sum_{i=1}^{n}\underbrace{v_{p}\left(\tilde{f}_{i}\right)}_{=0}=0\stackrel{\ref{}3.1}{\Rightarrow}a\in R^{*}=Q^{*}$
-und 
+Dann folgt für alle $p\in\mathcal{P}$:
+\begin{align*}
+v_{p}\left(a\right) & \stackrel{\ref{sub:PuD-LemmaGauss}\text{iii)}}{=}\underbrace{v_{p}\left(f\right)}_{=0}-\sum_{i=1}^{n}\underbrace{v_{p}\left(\tilde{f}_{i}\right)}_{=0}=0
+\end{align*}
+Daraus folgt mit \ref{sub:Erin-PFZ} schon $a\in R^{*}=Q^{*}$ und:
 \begin{align*}
 f & =\underbrace{\left(a\tilde{f}_{1}\right)}_{\text{primitiv, da }a\in R^{*}}\cdot\prod_{i=2}^{n}\tilde{f}_{i}
 \end{align*}
 
 
-Damit ist $f$ Produkt von primitiven Faktoren, die in $Q\left[X\right]$
-prim sind.
+Damit ist $f$ ein Produkt von primitiven Faktoren, die Primelemente
+in $Q\left[X\right]$ sind.\\
+\qqed[\ref{sub:Satz-Gauss}]
 
-\qqed
 
+\subsection{Beispiel und Definition \textmd{(rationale Funktionen)}}
 
-\subsubsection*{Beispiel und Definition}
-
-Sei $k$ ein Körper. Dann heißt $k\left(X\right):=\text{Quot}\left(k\left[X\right]\right)=\left\{ \frac{f}{g}\bigg|f,g\in k\left[X\right],g\not=0\right\} $
+Sei $k$ ein Körper. Dann heißt
+\begin{align*}
+k\left(X\right) & :=\text{Quot}\left(k\left[X\right]\right)=\left\{ \frac{f}{g}\bigg|f,g\in k\left[X\right],g\not=0\right\} 
+\end{align*}
 \emph{der Körper der rationalen Funktionen (in einer Variablen $X$
-über $k$).} Die $k$-Algebra $k\left[X,Y\right]:=\left(k\left[X\right]\right)\left[Y\right]$
+über $k$).}
+
+Die $k$-Algebra $k\left[X,Y\right]:=\left(k\left[X\right]\right)\left[Y\right]$
 heißt \emph{der Polynomring in den Variablen $X,Y$ (über $k$).}
 
-Wegen $\ref{}3.8$ ist $k\left[X,Y\right]$ faktoriell.
+Wegen \ref{sub:Satz-Gauss} ist $k\left[X,Y\right]$ faktoriell.
 
 
 \subsubsection*{Behauptung}
@@ -2052,20 +2214,26 @@ $f:=X^{3}+Y^{2}\in k\left[X,Y\right]$ ist irreduzibel.
 
 \subsubsection*{Beweis}
 
-Wegen $\ref{}3.8$ \quotedblbase{}prim $\Leftrightarrow$ irreduzibel\textquotedblleft{};
-setze $R:=k\left[X\right]$, dann ist $f\in R\left[Y\right]$ normiert
-vom Grad 2 ($f=Y^{2}+X^{3}\cdot Y^{0}$), also primitiv. Nach $\ref{}3.8$
-ist $f\in R\left[X,Y\right]$ Primelement $\Leftrightarrow$ $f\in\text{Quot}\left(R\right)\left[Y\right]=k\left(X\right)\left[Y\right]$
+\textcolor{green}{TODO: Überprüfen???}
+
+Wegen \ref{sub:Satz-Gauss} \quotedblbase{}Primelement $\Leftrightarrow$
+irreduzibel\textquotedblleft{} folgt mit $R:=k\left[X\right]$ und
+weil $f\in R\left[Y\right]$ normiert vom Grad 2 ($f=Y^{2}+X^{3}\cdot Y^{0}$),
+also primitiv ist, dass $f\in R\left[X,Y\right]$ ein Primelement
+ist.
+
+Dies ist äquivalent dazu, dass $f\in\text{Quot}\left(R\right)\left[Y\right]=k\left(X\right)\left[Y\right]$
 irreduzibel ist. Wegen $\text{deg}\left(f\right)=2$ ist dies äquivalent
-dazu, dass $f$ keine Nullstelle in $k\left(X\right)$ hat, angenommen
-doch:
+dazu, dass $f$ keine Nullstelle in $k\left(X\right)$ hat, denn angenommen
+$f$ hat doch eine Nullstelle, so würde in $k\left(X\right)$ folgen:
 \begin{align*}
-\exs_{\alpha\in k\left(X\right)}: & 0=f\left(\alpha\right)=\alpha^{2}+X^{3}\qquad\text{in }k\left(X\right)
+\exs_{\alpha\in k\left(X\right)} & 0=f\left(\alpha\right)=\alpha^{2}+X^{3}
 \end{align*}
-Aus $\ref{}3.5$ mit $h:=f,R:=k\left(X\right)$ folgt $\alpha\in k\left[X\right]$
-$\Rightarrow$ $-\alpha^{2}=X^{3}$ in $k\left(X\right)$ $\Rightarrow$
-$2\cdot\text{deg}\left(\alpha\right)=\deg\left(X^{3}\right)=3$ in
-$\mathbb{Z}$ $\lightning$$(\ref{}3.10)$set
+Aus \ref{sub:Bsp-Vieta} mit $h:=f$ und $R:=k\left(X\right)$ folgt
+$\alpha\in k\left[X\right]$, also $-\alpha^{2}=X^{3}$ in $k\left(X\right)$
+und damit $2\cdot\text{deg}\left(\alpha\right)=\deg\left(X^{3}\right)=3$
+in $\mathbb{Z}$, was ein Widerspruch ist.\\
+\qqed
 
 \newpage{}
 

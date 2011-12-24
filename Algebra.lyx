@@ -26,7 +26,6 @@
 
 %Kommandos mit optionalem Argument (für Lyx)
 \newcommand{\sr}[3]{\stackrel[#3]{#2}{#1}}
-\newcommand{\sqrl}[2]{\sqrt[#1]{#2}}
 
 %Mathe-Operatoren
 \DeclareMathOperator*{\exs}{\exists}
@@ -251,127 +250,8 @@ tabs-within-sections
 \begin_body
 
 \begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-%Copyright Notice
-\end_layout
-
-\begin_layout Plain Layout
-
-%Copyright (C) 2011 Andreas Völklein
-\end_layout
-
-\begin_layout Plain Layout
-
-%Permission is granted to copy, distribute and/or modify this document under
- the terms of the GNU Free Documentation License, Version 1.3 or any later
- version published by the Free Software Foundation;
-\end_layout
-
-\begin_layout Plain Layout
-
-%with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.
-\end_layout
-
-\begin_layout Plain Layout
-
-%A copy of the license is included in the section entitled "GNU Free Documentati
-on License".
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-%Disclaimer of Warranty
-\end_layout
-
-\begin_layout Plain Layout
-
-%Unless otherwise mutually agreed to by the parties in writing and to the
- extent not prohibited by applicable law, Licensor offers the work "as is"
- without warranties of any kind, expressed, implied, statutory or otherwise,
- including, but not limited to, the implied warranties of merchantability,
- fitness for a particular purpose, non-infringement, the absence of latent
- or other defects, accuracy, or the absence of errors, whether or not discoverab
-le, except to the extent that these disclaimers are held to be legally invalid.
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-%Limitation of Liability
-\end_layout
-
-\begin_layout Plain Layout
-
-%To the extent not prohibited by applicable law, in no event will Licensor
- be liable to you for any loss of revenue, profit or anything else, or for
- special, incidental, consequential, punitive, exemplary or other damages,
- however caused, regardless of the theory of liability, arising out of or
- related to this license or the use of or inability to use the work, even
- if Licensor has been advised of the possibility of such damages.
-\end_layout
-
-\begin_layout Plain Layout
-
-%In no event will Licensor's liability to you, whether in contract, tort
- (including negligence), or otherwise, exceed the amount you paid Licensor
- for the work under this Agreement.
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-%Links
-\end_layout
-
-\begin_layout Plain Layout
-
-%Der Text der "GNU Free Documentation License" kann auch auf der Seite
-\end_layout
-
-\begin_layout Plain Layout
-
-%	https://www.gnu.org/licenses/fdl-1.3.de.html
-\end_layout
-
-\begin_layout Plain Layout
-
-%nachgelesen werden.
-\end_layout
-
-\begin_layout Plain Layout
-
-%Eine transparente Kopie der aktuellen Version dieses Dokuments kann von
-\end_layout
-
-\begin_layout Plain Layout
-
-%	https://github.com/andiv/algebra
-\end_layout
-
-\begin_layout Plain Layout
-
-%heruntergeladen werden.
-\end_layout
-
-\end_inset
-
-
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Plain Layout
 häufige Symbole: $
@@ -519,6 +399,26 @@ end{blockarray}
 
 \begin_layout Plain Layout
 $
+\end_layout
+
+\begin_layout Plain Layout
+Lyx: $
+\backslash
+root{3}{2}$ entspricht $
+\backslash
+sqrt[3]{2}$
+\end_layout
+
+\begin_layout Plain Layout
+$
+\backslash
+unittwo{864}{
+\backslash
+frac{km}{h}}$ entspricht $
+\backslash
+unit[864]{
+\backslash
+frac{km}{h}}$
 \end_layout
 
 \end_inset
@@ -969,8 +869,10 @@ Michael F.
 \noun default
 : 
 \emph on
+\lang english
 Introduction to commutative algebra
 \emph default
+\lang ngerman
 , Westview Press, 1994
 \begin_inset Newline newline
 \end_inset
@@ -1298,9 +1200,6 @@ vspace*{-0.5cm}
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -1433,9 +1332,10 @@ Beweis
 
 \begin_layout Standard
 Übung
-\end_layout
+\begin_inset Newline newline
+\end_inset
 
-\begin_layout Standard
+
 \begin_inset ERT
 status open
 
@@ -1489,9 +1389,10 @@ Beweis
 
 \begin_layout Standard
 Lineare Algebra I
-\end_layout
+\begin_inset Newline newline
+\end_inset
 
-\begin_layout Standard
+
 \begin_inset ERT
 status open
 
@@ -1651,9 +1552,10 @@ Also ist
 \end_inset
 
  ein Gruppenhomomorphismus.
-\end_layout
+\begin_inset Newline newline
+\end_inset
 
-\begin_layout Standard
+
 \begin_inset ERT
 status open
 
@@ -1894,6 +1796,8 @@ iii
 \end_layout
 
 \begin_layout Standard
+
+\color green
 TODO: Grafik einfügen: disjunkte Vereinigung
 \end_layout
 
@@ -1996,9 +1900,10 @@ Daraus folgen direkt i) und iii).
 
 \begin_layout Standard
 ii) ist klar.
-\end_layout
+\begin_inset Newline newline
+\end_inset
 
-\begin_layout Standard
+
 \begin_inset ERT
 status open
 
@@ -2069,9 +1974,6 @@ Beweis
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -2315,9 +2217,6 @@ g\in G,h\in\ker\left(\varphi\right) & \Rightarrow\varphi\left(ghg^{-1}\right)=\v
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -2454,9 +2353,10 @@ reference "sub:Prop-kerNormalTeiler"
 \end_inset
 
 .
-\end_layout
+\begin_inset Newline newline
+\end_inset
 
-\begin_layout Standard
+
 \begin_inset ERT
 status open
 
@@ -2598,9 +2498,6 @@ Ferner gilt:
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -2819,6 +2716,8 @@ Bildchen
 \end_layout
 
 \begin_layout Standard
+
+\color green
 TODO: Abb
 \end_layout
 
@@ -2844,9 +2743,10 @@ Beweis
 
 \begin_layout Standard
 Übung
-\end_layout
+\begin_inset Newline newline
+\end_inset
 
-\begin_layout Standard
+
 \begin_inset ERT
 status open
 
@@ -2905,7 +2805,7 @@ reference "sub:Satz-univEigProj"
 \begin_inset Formula $\overline{\varphi}$
 \end_inset
 
- wohldefiniert und ein Gruppenhomorphismus.
+ wohldefiniert und ein Gruppenhomomorphismus.
 \end_layout
 
 \begin_layout Standard
@@ -2956,9 +2856,10 @@ reference "sub:PuD-ker"
 \end_inset
 
  injektiv, also ein Isomorphismus ist.
-\end_layout
+\begin_inset Newline newline
+\end_inset
 
-\begin_layout Standard
+
 \begin_inset ERT
 status open
 
@@ -3208,9 +3109,10 @@ Nach der Vorlesung lineare Algebra I folgt
 \end_inset
 
 .
-\end_layout
+\begin_inset Newline newline
+\end_inset
 
-\begin_layout Standard
+
 \begin_inset ERT
 status open
 
@@ -3333,9 +3235,10 @@ Ist
 \end_inset
 
 .
-\end_layout
+\begin_inset Newline newline
+\end_inset
 
-\begin_layout Standard
+
 \begin_inset ERT
 status open
 
@@ -3504,9 +3407,10 @@ ii)
 \end_inset
 
 .
-\end_layout
+\begin_inset Newline newline
+\end_inset
 
-\begin_layout Standard
+
 \begin_inset ERT
 status open
 
@@ -3787,6 +3691,8 @@ Dann ist auch
 \end_layout
 
 \begin_layout Standard
+
+\color green
 TODO: Abb einfügen
 \end_layout
 
@@ -3829,9 +3735,10 @@ Also ist
 \end_inset
 
  ist zyklisch.
-\end_layout
+\begin_inset Newline newline
+\end_inset
 
-\begin_layout Standard
+
 \begin_inset ERT
 status open
 
@@ -3889,9 +3796,10 @@ Weil
 \end_inset
 
  zyklisch nach i).
-\end_layout
+\begin_inset Newline newline
+\end_inset
 
-\begin_layout Standard
+
 \begin_inset ERT
 status open
 
@@ -4439,9 +4347,6 @@ x^{\left|G\right|} & \stackrel{\ref{sub:Kor-Lagrange}}{=}x^{\text{ord}\left(x\ri
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -4920,9 +4825,10 @@ Das heißt es gibt ein
 \end_inset
 
  ist zyklisch.
-\end_layout
+\begin_inset Newline newline
+\end_inset
 
-\begin_layout Standard
+
 \begin_inset ERT
 status open
 
@@ -5029,9 +4935,10 @@ Das ist klar, denn das Polynom
 \end_inset
 
  nach linearer Algebra II.
-\end_layout
+\begin_inset Newline newline
+\end_inset
 
-\begin_layout Standard
+
 \begin_inset ERT
 status open
 
@@ -5840,9 +5747,10 @@ sim$ Äquivrel.]
 
 \begin_layout Standard
 Der Rest bleibt als Übung.
-\end_layout
+\begin_inset Newline newline
+\end_inset
 
-\begin_layout Standard
+
 \begin_inset ERT
 status open
 
@@ -6034,6 +5942,8 @@ end{iiilist}
 \end_layout
 
 \begin_layout Standard
+
+\color green
 TODO: Abbildung Homomorphiesatz
 \end_layout
 
@@ -6062,6 +5972,8 @@ Es gibt genau einen Ringhomomorphismus
 \begin_inset Newline newline
 \end_inset
 
+
+\color green
 TODO: Abb Homomorphiesatz 
 \begin_inset Formula $\psi$
 \end_inset
@@ -6144,6 +6056,25 @@ Rechne zum Beispiel
 \end_inset
 
 Der Rest geht analog.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed[
+\backslash
+roman{ale2})]
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -6349,7 +6280,9 @@ status open
 
 
 \backslash
-qqed
+qqed[
+\backslash
+roman{ale2})]
 \end_layout
 
 \end_inset
@@ -6583,9 +6516,10 @@ Das bedeutet
 \end_inset
 
 .
-\end_layout
+\begin_inset Newline newline
+\end_inset
 
-\begin_layout Standard
+
 \begin_inset ERT
 status open
 
@@ -6988,9 +6922,10 @@ reference "sub:KuD-QuotRing"
 \end_inset
 
 .
-\end_layout
+\begin_inset Newline newline
+\end_inset
 
-\begin_layout Standard
+
 \begin_inset ERT
 status open
 
@@ -7392,7 +7327,11 @@ mit geeigneten
 \begin_inset Newline newline
 \end_inset
 
-Definiere: (TODO: Formel überprüfen)
+Definiere:
+\color green
+ (TODO: Formel überprüfen)
+\color inherit
+
 \begin_inset Formula 
 \begin{align}
 t & :=\prod_{i}s_{i} & t_{i} & :=\prod_{j=1}^{i}s_{j}\in S\label{eq:tti}
@@ -7513,9 +7452,10 @@ Es folgt
 \end_inset
 
  injektiv.
-\end_layout
+\begin_inset Newline newline
+\end_inset
 
-\begin_layout Standard
+
 \begin_inset ERT
 status open
 
@@ -7598,9 +7538,10 @@ reference "sub:Prop-AModulnIso"
 \end_inset
 
 .
-\end_layout
+\begin_inset Newline newline
+\end_inset
 
-\begin_layout Standard
+
 \begin_inset ERT
 status open
 
@@ -7632,6 +7573,8 @@ Betrachte das Diagramm:
 \end_layout
 
 \begin_layout Standard
+
+\color green
 TODO: Diagramm einfügen
 \end_layout
 
@@ -7676,9 +7619,10 @@ Man prüft, dass das Diagramm kommutiert(, das heißt prüfen, dass eines der
 
 \begin_layout Standard
 Es folgt die Exaktheit der ersten Zeile.
-\end_layout
+\begin_inset Newline newline
+\end_inset
 
-\begin_layout Standard
+
 \begin_inset ERT
 status open
 
@@ -7686,7 +7630,9 @@ status open
 
 
 \backslash
-qqed[???TODO???]
+qqed[
+\backslash
+textcolor{green}{???TODO???}]
 \end_layout
 
 \end_inset
@@ -7705,7 +7651,7 @@ qqed[???TODO???]
 Der Satz von Gauß
 \begin_inset CommandInset label
 LatexCommand label
-name "sec:Der-Satz-von-Gauß"
+name "sec:Der-Satz-von-Gauss"
 
 \end_inset
 
@@ -7716,14 +7662,14 @@ name "sec:Der-Satz-von-Gauß"
 Fixiere in Abschnitt 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sec:Der-Satz-von-Gauß"
+reference "sec:Der-Satz-von-Gauss"
 
 \end_inset
 
  (
 \begin_inset CommandInset ref
 LatexCommand nameref
-reference "sec:Der-Satz-von-Gauß"
+reference "sec:Der-Satz-von-Gauss"
 
 \end_inset
 
@@ -7801,6 +7747,8 @@ name "sub:Erin-PFZ"
 \end_layout
 
 \begin_layout Standard
+
+\color green
 TODO: ??? Überprüfen
 \end_layout
 
@@ -7858,6 +7806,8 @@ a & =\varepsilon\prod_{p\in\mathcal{P}}p^{\nu_{p}\left(a\right)}
 \end_layout
 
 \begin_layout Standard
+
+\color green
 TODO: ? obige Aussage überprüfen! Homomorphismus?
 \end_layout
 
@@ -7904,6 +7854,13 @@ Setze
 
 \begin_layout Subsection
 Bemerkung
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Bem-phiX"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -7980,7 +7937,9 @@ Betrachte:
 \end_layout
 
 \begin_layout Standard
-TODO: Abb Homsatz
+
+\color green
+TODO: Abb Homomorphiesatz
 \end_layout
 
 \begin_layout Standard
@@ -8009,9 +7968,6 @@ Daher gilt:
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -8031,6 +7987,13 @@ qqed
 Proposition und Definition 
 \series medium
 (Lemma von Gauß)
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:PuD-LemmaGauss"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -8060,11 +8023,15 @@ die
 
 \emph default
 .
- Dabei ist 
-\begin_inset Formula $Q\subseteq\mathbb{Q}^{*}$
+ (
+\begin_inset Formula $Q\subseteq Q^{*}$
 \end_inset
 
-.
+;
+\color green
+TODO: ???
+\color inherit
+).
 \end_layout
 
 \begin_layout Standard
@@ -8252,12 +8219,905 @@ iii
 
 \end_inset
 
- Lemma von Gauß: 
-\begin_inset Formula $ $
+ 1.
+ Fall: 
+\begin_inset Formula $f\in Q\subseteq Q\left[X\right]$
+\end_inset
+
+ und 
+\begin_inset Formula $g\in Q\left[X\right]$
+\end_inset
+
+ beliebig.
+\end_layout
+
+\begin_layout Standard
+Schreibe 
+\begin_inset Formula $g=\sum_{i}b_{i}X^{i}$
+\end_inset
+
+.
+ Dann folgt:
+\begin_inset Formula 
+\begin{align*}
+\nu_{p}\left(f\cdot g\right) & =\nu_{p}\left(\sum_{i}\left(fb_{i}\right)X^{i}\right)\stackrel{\text{Def.}}{=}\min\left\{ \nu_{p}\left(fb_{i}\right)\right\} \stackrel{\ref{sub:Erin-PFZ},\text{ da }f\in Q}{=}\min\left\{ \nu_{p}\left(f\right)+\nu_{p}\left(b_{i}\right)\right\} =\\
+ & =\nu_{p}\left(f\right)+\min\left\{ \nu_{p}\left(b_{i}\right)\right\} =\nu_{p}\left(f\right)+\nu_{p}\left(g\right)
+\end{align*}
+
 \end_inset
 
 
-\begin_inset Formula $\fall_{f,g\in\mathbb{Q}\left[X\right]}:\nu_{p}\left(fg\right)=\nu_{p}\left(f\right)+\nu_{p}\left(g\right)$
+\end_layout
+
+\begin_layout Standard
+2.
+ (allgemeiner) Fall: Seien ohne Einschränkung 
+\begin_inset Formula $f,g\not=0$
+\end_inset
+
+, sonst ist nur 
+\begin_inset Formula $\infty=\infty$
+\end_inset
+
+ zu zeigen.
+\end_layout
+
+\begin_layout Standard
+Wegen dem 1.
+ Fall dürfen 
+\begin_inset Formula $f$
+\end_inset
+
+ und 
+\begin_inset Formula $g$
+\end_inset
+
+ durch 
+\begin_inset Formula $\alpha f$
+\end_inset
+
+ und 
+\begin_inset Formula $\beta g$
+\end_inset
+
+ mit beliebigen 
+\begin_inset Formula $\alpha,\beta\in Q^{*}$
+\end_inset
+
+ ersetzt werden.
+\end_layout
+
+\begin_layout Standard
+Für geeignete 
+\begin_inset Formula $\alpha,\beta\in Q^{*}$
+\end_inset
+
+ gilt:
+\begin_inset Formula 
+\begin{align*}
+\tilde{f} & :=\alpha f,\tilde{g}:=\beta g\in R\left[X\right]
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+\nu_{p}\left(\tilde{f}\right) & =0 & \nu_{p}\left(\tilde{g}\right) & =0
+\end{align*}
+
+\end_inset
+
+Dann ist 
+\begin_inset Formula $\nu_{p}\left(\tilde{f}\tilde{g}\right)=0$
+\end_inset
+
+ zu zeigen:
+\end_layout
+
+\begin_layout Standard
+Sei 
+\begin_inset Formula $\pi:R\left[X\right]\to\left(\modulo{R}{\left(p\right)}\right)\left[X\right]$
+\end_inset
+
+ wie in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Bem-phiX"
+
+\end_inset
+
+.
+ Für 
+\begin_inset Formula $\tilde{f}=\sum_{i}a_{i}X^{i}$
+\end_inset
+
+ gilt:
+\begin_inset Formula 
+\begin{align*}
+0 & =\nu_{p}\left(\tilde{f}\right)=\min_{i}\{\underbrace{\nu_{p}\left(a_{i}\right)}_{\ge0\left(\text{da }\tilde{f}\in R\left[X\right]\right)}\}
+\end{align*}
+
+\end_inset
+
+Also gibt es ein 
+\begin_inset Formula $i$
+\end_inset
+
+ mit 
+\begin_inset Formula $\nu_{p}\left(a_{i}\right)=0$
+\end_inset
+
+, das heißt 
+\begin_inset Formula $p\not|\, a_{i}$
+\end_inset
+
+.
+ Nach 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Bem-phiX"
+
+\end_inset
+
+ folgt damit 
+\begin_inset Formula $\pi\left(\tilde{f}\right)\not=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Analog gilt: 
+\begin_inset Formula $\pi\left(\tilde{g}\right)\not=0$
+\end_inset
+
+ und es folgt in 
+\begin_inset Formula $\left(\modulo{R}{\left(p\right)}\right)\left[X\right]$
+\end_inset
+
+, weil dies ein Integritätsring ist:
+\begin_inset Formula 
+\begin{align*}
+0 & \not=\underbrace{\pi\left(\tilde{f}\right)}_{\not=0}\cdot\underbrace{\pi\left(\tilde{g}\right)}_{\not=0}=\pi\left(\tilde{f}\tilde{g}\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Wie oben folgt 
+\begin_inset Formula $\nu_{p}\left(\tilde{f}\tilde{g}\right)=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Korollar
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Kor-hfgNormiert"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Sei 
+\begin_inset Formula $h\in R\left[X\right]$
+\end_inset
+
+ normiert und es gelte in 
+\begin_inset Formula $Q\left[X\right]$
+\end_inset
+
+ mit normierten 
+\begin_inset Formula $f,g\in Q\left[X\right]$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align}
+h & =f\cdot g\label{eq:hfg}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Dann gilt 
+\begin_inset Formula $f,g\in R\left[X\right]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection*
+Beweis
+\end_layout
+
+\begin_layout Standard
+Für alle 
+\begin_inset Formula $p\in\mathcal{P}$
+\end_inset
+
+ gelten 
+\begin_inset Formula $\nu_{p}\left(h\right)=0$
+\end_inset
+
+, da 
+\begin_inset Formula $h$
+\end_inset
+
+ in 
+\begin_inset Formula $R\left[X\right]$
+\end_inset
+
+ normiert ist und 
+\begin_inset Formula $\nu_{p}\left(1\right)=0$
+\end_inset
+
+, sowie 
+\begin_inset Formula $\nu_{p}\left(f\right),\nu_{p}\left(g\right)\le0$
+\end_inset
+
+, da 
+\begin_inset Formula $f,g$
+\end_inset
+
+ in 
+\begin_inset Formula $Q\left[X\right]$
+\end_inset
+
+ normiert sind.
+\end_layout
+
+\begin_layout Standard
+Weil für alle 
+\begin_inset Formula $p\in\mathcal{P}$
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+0 & =\nu_{p}\left(h\right)\sr{=}{\eqref{eq:hfg}}{\ref{sub:PuD-LemmaGau=00003D0000DF}\text{ iii)}}\underbrace{\nu_{p}\left(f\right)}_{\le0}+\underbrace{\nu_{p}\left(g\right)}_{\le0}
+\end{align*}
+
+\end_inset
+
+gilt, folgt:
+\begin_inset Formula 
+\begin{align*}
+\nu_{p}\left(f\right) & =\nu_{p}\left(g\right)=0
+\end{align*}
+
+\end_inset
+
+Daher sind 
+\begin_inset Formula $f,g\in R\left[X\right]$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Beispiel
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Bsp-Vieta"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Seien 
+\begin_inset Formula ${\displaystyle h=\sum_{i}a_{i}X^{i}}\in R\left[X\right]$
+\end_inset
+
+ normiert und 
+\begin_inset Formula $\alpha\in Q$
+\end_inset
+
+ mit 
+\begin_inset Formula $h\left(\alpha\right)=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Dann folgt 
+\begin_inset Formula $\alpha\in R$
+\end_inset
+
+ und 
+\begin_inset Formula $\alpha|a_{o}$
+\end_inset
+
+ in 
+\begin_inset Formula $R$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection*
+Beweis
+\end_layout
+
+\begin_layout Standard
+Aus 
+\begin_inset Formula $h\left(\alpha\right)=0$
+\end_inset
+
+ folgt 
+\begin_inset Formula $h=\left(X-\alpha\right)\cdot g$
+\end_inset
+
+ in 
+\begin_inset Formula $Q\left[X\right]$
+\end_inset
+
+ für ein geeignetes 
+\begin_inset Formula $g\in Q\left[X\right]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Weil 
+\begin_inset Formula $h$
+\end_inset
+
+ und 
+\begin_inset Formula $\left(X-\alpha\right)$
+\end_inset
+
+ normiert sind, ist auch 
+\begin_inset Formula $g$
+\end_inset
+
+ normiert.
+\end_layout
+
+\begin_layout Standard
+Aus 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Kor-hfgNormiert"
+
+\end_inset
+
+ folgt 
+\begin_inset Formula $\left(X-\alpha\right),g\in R\left[X\right]$
+\end_inset
+
+, also insbesondere 
+\begin_inset Formula $\alpha\in R$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Ferner gilt in 
+\begin_inset Formula $R$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+0 & =h\left(\alpha\right)=\sum_{i\ge0}a_{i}\alpha^{i}=\alpha\left(\sum_{i\ge1}a_{i}\alpha^{i-1}\right)+a_{0}\\
+a_{0} & =\alpha\cdot\underbrace{\left(-\sum_{i\ge1}a_{i}\alpha^{i-1}\right)}_{\in R,\text{ da }a_{i},\alpha\in R}
+\end{align*}
+
+\end_inset
+
+Also gilt 
+\begin_inset Formula $\alpha|a_{0}$
+\end_inset
+
+ in 
+\begin_inset Formula $R$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Beispiel
+\end_layout
+
+\begin_layout Standard
+Es existiert keine rationale Zahl 
+\begin_inset Formula $q\in\mathbb{Q}$
+\end_inset
+
+ mit 
+\begin_inset Formula $q^{3}+2q+1=0$
+\end_inset
+
+, obwohl diese Gleichung, wie jede Gleichung dritten Grades, eine Lösung
+ in 
+\begin_inset Formula $\mathbb{R}$
+\end_inset
+
+ hat.
+\end_layout
+
+\begin_layout Subsubsection*
+Beweis
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $h:=X^{3}+2X+1\in\mathbb{Z}\left[X\right]$
+\end_inset
+
+ ist normiert und 
+\begin_inset Formula $R:=\mathbb{Z}$
+\end_inset
+
+ ist ein Hauptidealring, also insbesondere faktoriell.
+\end_layout
+
+\begin_layout Standard
+Gäbe es ein 
+\begin_inset Formula $q\in\mathbb{Q}=\text{Quot}\left(R\right)$
+\end_inset
+
+ mit 
+\begin_inset Formula $h\left(\alpha\right)=0$
+\end_inset
+
+, so folgte aus 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Bsp-Vieta"
+
+\end_inset
+
+ schon 
+\begin_inset Formula $q\in\mathbb{Z}$
+\end_inset
+
+ und 
+\begin_inset Formula $q|a_{0}=1$
+\end_inset
+
+, das heißt 
+\begin_inset Formula $q\in\left\{ \pm1\right\} $
+\end_inset
+
+, aber es gilt:
+\begin_inset Formula 
+\begin{align*}
+h\left(\pm1\right) & =1\pm3\not=0
+\end{align*}
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Proposition und Definition 
+\series medium
+(primitiv)
+\series default
+
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:PuD-primitiv"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\color green
+TODO: 
+\begin_inset Formula $\left(1\right)$
+\end_inset
+
+ ??? oder doch 
+\begin_inset Formula $1$
+\end_inset
+
+?
+\end_layout
+
+\begin_layout Standard
+Für 
+\begin_inset Formula ${\displaystyle f=\sum_{i}a_{i}X^{i}}\in R\left[X\right]$
+\end_inset
+
+ gilt:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula ${\displaystyle \fall_{p\in\mathcal{P}}:\nu_{p}\left(f\right)=0\Leftrightarrow\text{ggT}\left(a_{0},a_{1},\ldots\right)=1}$
+\end_inset
+
+; In diesem Fall heißt 
+\begin_inset Formula $f$
+\end_inset
+
+ 
+\emph on
+primitiv
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+Also ist jedes normierte Polynom primitiv, aber auch 
+\begin_inset Formula $3X+2\in\mathbb{Z}\left[X\right]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Für alle 
+\begin_inset Formula $f\in Q\left[X\right]\setminus\left\{ 0\right\} $
+\end_inset
+
+ existieren ein 
+\begin_inset Formula $\alpha\in Q^{*}$
+\end_inset
+
+ und ein primitives 
+\begin_inset Formula $\tilde{f}\in R\left[X\right]$
+\end_inset
+
+ mit 
+\begin_inset Formula $f=\alpha\cdot\tilde{f}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Beweis
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Für alle 
+\begin_inset Formula $p\in\mathcal{P}$
+\end_inset
+
+ gilt:
+\begin_inset Formula 
+\begin{align*}
+\nu_{p}\left(\text{ggT}\left(a_{0},a_{1},\ldots\right)\right) & =\min\left\{ \nu_{p}\left(a_{i}\right)\right\} =\nu_{p}\left(f\right)
+\end{align*}
+
+\end_inset
+
+Wendet man
+\begin_inset Formula 
+\begin{align*}
+\fall_{q\in Q^{*}}: & \left(\fall_{p\in\mathcal{P}}:\nu_{p}\left(q\right)=0\stackrel{\ref{sub:Erin-PFZ}}{\Leftrightarrow}q\in R^{*}\right)
+\end{align*}
+
+\end_inset
+
+auf 
+\begin_inset Formula $q=\text{ggT}\left(a_{i}\right)$
+\end_inset
+
+, so folgt:
+\begin_inset Formula 
+\begin{align*}
+\left(\fall_{p\in\mathcal{P}}:\nu_{p}\left(f\right)=0\right) & \Leftrightarrow\text{ggT}\left(a_{i}\right)\in Q^{*}\Leftrightarrow\text{ggT}\left(a_{i}\right)=1
+\end{align*}
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed[
+\backslash
+roman{ale2})]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+%DATE: ???
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Wegen 
+\begin_inset Formula $f\not=0$
+\end_inset
+
+ gilt nach 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:PuD-LemmaGauss"
+
+\end_inset
+
+ i) für alle 
+\begin_inset Formula $p\in\mathcal{P}$
+\end_inset
+
+ schon 
+\begin_inset Formula $\nu_{p}\left(f\right)\not=\infty$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Es ist klar, dass für fast alle 
+\begin_inset Formula $p\in\mathcal{P}$
+\end_inset
+
+ schon 
+\begin_inset Formula $\nu_{p}\left(f\right)=0$
+\end_inset
+
+ gilt, nämlich für alle Primzahlen 
+\begin_inset Formula $p\in\mathcal{P}$
+\end_inset
+
+, die weder Zähler noch Nenner eines Koeffizienten von 
+\begin_inset Formula $f$
+\end_inset
+
+ teilen.
+\end_layout
+
+\begin_layout Standard
+Deswegen ist 
+\begin_inset Formula ${\displaystyle \alpha:=\prod_{p\in\mathcal{P}}p^{\nu_{p}\left(f\right)}\in Q^{*}}$
+\end_inset
+
+ wohldefiniert und für 
+\begin_inset Formula $\tilde{f}:=\alpha^{-1}f$
+\end_inset
+
+ gilt für alle 
+\begin_inset Formula $p\in\mathcal{P}$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+\nu_{p}\left(\tilde{f}\right) & =\nu_{p}\left(\alpha^{-1}f\right)\stackrel{\ref{sub:PuD-LemmaGauss}\text{ iii)}}{=}-\underbrace{\nu_{p}\left(\alpha\right)}_{=\nu_{p}\left(f\right)}+\nu_{p}\left(f\right)=0
+\end{align*}
+
+\end_inset
+
+Also ist 
+\begin_inset Formula $\tilde{f}\in R\left[X\right]$
+\end_inset
+
+ nach Teil i) primitiv.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed[
+\backslash
+roman{ale2})]
+\end_layout
+
 \end_inset
 
 
@@ -8279,119 +9139,52 @@ end{iiilist}
 
 \end_layout
 
-\begin_layout Standard
-TODO: Rest einfügen
-\end_layout
-
-\begin_layout Standard
-Beweis von 3.7 ii)
-\end_layout
-
-\begin_layout Standard
-Wegen 
-\begin_inset Formula $f\not=0$
-\end_inset
-
- gilt nach 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ref{3.3 i)}
-\end_layout
-
-\end_inset
-
-: 
-\begin_inset Formula $\fall_{p\in\mathcal{P}}:v_{p}\left(f\right)\not=\infty$
-\end_inset
-
-.
- Es ist klar, dass für fast alle 
-\begin_inset Formula $p\in\mathcal{P}$
-\end_inset
-
- gilt:
-\begin_inset Formula 
-\begin{align*}
-v_{p}\left(f\right) & =0
-\end{align*}
-
-\end_inset
-
-
-\begin_inset Formula $\left(\text{nämlich für alle }p\in\mathcal{P}\text{, die weder Zähler noch Nenner eines Koeffiziente von \ensuremath{f}teilen}\right)$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Deswegen ist 
-\begin_inset Formula $\alpha:=\prod_{p\in\mathcal{P}}p^{v_{p}\left(f\right)}\in Q^{*}$
-\end_inset
-
- wohldefiniert und für 
-\begin_inset Formula $\tilde{f}:=\alpha^{-1}f$
-\end_inset
-
- gilt 
-\begin_inset Formula $\fall_{p\in\mathcal{P}}$
-\end_inset
-
-:
-\begin_inset Formula 
-\begin{align*}
-v_{p}\left(f\right) & =v_{p}\left(\alpha^{-1}f\right)\stackrel{\eqref{3.3iii)}}{=}-v_{p}\left(\alpha\right)+v_{p}\left(f\right)=0
-\end{align*}
-
-\end_inset
-
-Also ist 
-\begin_inset Formula $\tilde{f}\in R\left[X\right]$
-\end_inset
-
- und nach Teil i) primitiv.
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-qqed
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Subsubsection*
 Beispiel
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $f:=\frac{2}{3}x\text{²}+\frac{1}{6}\in\mathbb{Q}\left[X\right]\setminus\left\{ 0\right\} \Rightarrow18\cdot f=12x\text{²}+3\in\mathbb{Z}\left[X\right]$
+\begin_inset Formula 
+\begin{align*}
+f & :=\frac{2}{3}x\text{²}+\frac{1}{6}\in\mathbb{Q}\left[X\right]\setminus\left\{ 0\right\} 
+\end{align*}
+
 \end_inset
 
- ist nicht primitiv; 
-\begin_inset Formula $6\cdot f=4x\text{²}+1\in\mathbb{Z}\left[X\right]$
+Dann gilt:
+\begin_inset Formula 
+\begin{align*}
+18\cdot f & =12x\text{²}+3\in\mathbb{Z}\left[X\right]
+\end{align*}
+
 \end_inset
 
- ist primitiv.
+
+\end_layout
+
+\begin_layout Standard
+ist nicht primitiv, aber
+\begin_inset Formula 
+\begin{align*}
+6\cdot f & =4x\text{²}+1\in\mathbb{Z}\left[X\right]
+\end{align*}
+
+\end_inset
+
+ist primitiv.
 \end_layout
 
 \begin_layout Subsection
 Satz
 \series medium
  (von Gauß)
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Satz-Gauss"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -8443,7 +9236,7 @@ iii
 \begin_inset Formula $q\in R\left[X\right]$
 \end_inset
 
- ist ein Primelement.
+ ist ein Primelement (Abkürzung: PE).
 \end_layout
 
 \begin_layout Standard
@@ -8459,23 +9252,39 @@ iii
 
 \end_inset
 
- (
-\begin_inset Formula $q\in R\subseteq R\left[X\right]$
+ Es gilt
+\begin_inset Formula 
+\begin{align*}
+q & \in R\subseteq R\left[X\right]
+\end{align*}
+
 \end_inset
 
- und 
+und 
 \begin_inset Formula $q$
 \end_inset
 
- ist ein Primelement.) oder (
-\begin_inset Formula $q\in R\left[X\right]$
+ ist ein Primelement in 
+\begin_inset Formula $R$
 \end_inset
 
- ist primitiv und 
+ oder
+\begin_inset Formula 
+\begin{align*}
+q & \in R\left[X\right]
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+ist primitiv und 
 \begin_inset Formula $q\in Q\left[X\right]$
 \end_inset
 
- ist ein Primelement)
+ ist ein Primelement.
 \end_layout
 
 \begin_layout Standard
@@ -8582,37 +9391,35 @@ Beispiel
 \begin_inset Formula $\mathbb{Z}\left[X\right]$
 \end_inset
 
- ist faktoriell (aber kein Hauptidealring, z.
- B.
- ist 
+ ist faktoriell, aber kein Hauptidealring, denn zum Beispiel ist 
 \begin_inset Formula $\left(2,X\right)\subseteq\mathbb{Z}\left[X\right]$
 \end_inset
 
- kein Hauptideal).
+ kein Hauptideal.
 \end_layout
 
 \begin_layout Standard
 Das Polynom 
-\begin_inset Formula $2X\in\mathbb{Z\left[X\right]}$
+\begin_inset Formula $2X\in\mathbb{Z}\left[X\right]$
 \end_inset
 
  ist nicht primitiv, 
-\begin_inset Formula $2X\in\mathbb{Q\left[X\right]}$
+\begin_inset Formula $2X\in\mathbb{Q}\left[X\right]$
 \end_inset
 
- ist ein Primelement(, da 
+ ist ein Primelement, da 
 \begin_inset Formula $2\in\left(\mathbb{Q}\left[X\right]\right)^{*}=\mathbb{Q}^{*}$
 \end_inset
 
-, 
-\begin_inset Formula $X\in\mathbb{Q\left[X\right]}$
+ und 
+\begin_inset Formula $X\in\mathbb{Q}\left[X\right]$
 \end_inset
 
- ist ein Primelement), aber 
-\begin_inset Formula $2X\in\mathbb{Z\left[X\right]}$
+ ein Primelement ist, aber 
+\begin_inset Formula $2X\in\mathbb{Z}\left[X\right]$
 \end_inset
 
- hat Primfaktorzerlegung 
+ hat die Primfaktorzerlegung 
 \begin_inset Formula $2X=2\cdot X$
 \end_inset
 
@@ -8620,27 +9427,39 @@ Das Polynom
 \begin_inset Formula $\mathbb{Z}\left[X\right]$
 \end_inset
 
- (
-\begin_inset Formula $2,X$
+ und 
+\begin_inset Formula $2$
+\end_inset
+
+ und 
+\begin_inset Formula $X$
 \end_inset
 
  sind nicht assoziierte Primelemente in 
 \begin_inset Formula $\mathbb{Z}\left[X\right]$
 \end_inset
 
+.
+\begin_inset Formula 
+\begin{align*}
+\modulo{\mathbb{Z}\left[X\right]}{\left(2\right)} & \stackrel{\sim}{=}\mathbb{F}_{2}\left[X\right]\\
+\mathbb{Z}\left[X\right]^{*} & =\mathbb{Z}^{*}=\left\{ \pm1\right\} 
+\end{align*}
 
-\begin_inset Formula $\modulo{\mathbb{Z}\left[X\right]}{\left(2\right)}\stackrel{\sim}{=}\mathbb{F}_{2}\left[X\right]$
 \end_inset
 
-; 
-\begin_inset Formula $\mathbb{Z}\left[X\right]^{*}=\mathbb{Z}^{*}=\left\{ \pm1\right\} $
-\end_inset
 
-).
 \end_layout
 
 \begin_layout Subsubsection*
-Beweis von 3.8
+Beweis von 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Satz-Gauss"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -8657,61 +9476,53 @@ ii)
 \begin_inset Formula $q\in R$
 \end_inset
 
- Primelement 
-\begin_inset Formula $\Rightarrow$
-\end_inset
-
- 
-\begin_inset Formula $\pi:R\left[X\right]\rightarrow TODO:$
-\end_inset
-
-zweiter Pfeil)
-\begin_inset Formula $\left(\modulo{R}{\left(q\right)}\right)\left[X\right]$
+ ein Primelement, also ist 
+\begin_inset Formula $\pi:R\left[X\right]\twoheadrightarrow\left(\modulo{R}{\left(q\right)}\right)\left[X\right]$
 \end_inset
 
  wie in 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ref{3.2}
-\end_layout
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Bem-phiX"
 
 \end_inset
 
- ist surjektiv mit 
-\begin_inset Formula $\text{ker}\left(\pi\right)=\left(q\right)\subseteq R\left[X\right]$
+ surjektiv mit:
+\begin_inset Formula 
+\begin{align*}
+\text{ker}\left(\pi\right) & =\left(q\right)\subseteq R\left[X\right]
+\end{align*}
+
 \end_inset
 
- 
-\begin_inset Formula $\Rightarrow\left(*\right)\left(\modulo{R}{\left(q\right)}\right)\left[X\right]\stackrel{\sim}{=}\modulo{R\left[X\right]}{\left(q\right)}$
+Also folgt aus dem Isomorphiesatz:
+\begin_inset Formula 
+\begin{align}
+\left(\modulo{R}{\left(q\right)}\right)\left[X\right] & \stackrel{\sim}{=}\modulo{R\left[X\right]}{\left(q\right)}\label{eq:rqXrXq}
+\end{align}
+
 \end_inset
 
-.
- Wegen 
+Weil 
 \begin_inset Formula $q\in R$
 \end_inset
 
- Primelement ist die linke Seite von 
-\begin_inset Formula $(*)$
+ ein Primelement ist, ist die linke Seite von 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:rqXrXq"
+
 \end_inset
 
  ein Integritätsring, also ist auch 
 \begin_inset Formula $\modulo{R\left[X\right]}{\left(q\right)}$
 \end_inset
 
- ein Integritätsring 
-\begin_inset Formula $\Leftrightarrow$
-\end_inset
-
- 
+ ein Integritätsring, was äquivalent dazu ist, dass 
 \begin_inset Formula $q\in R\left[X\right]$
 \end_inset
 
- ist ein Primelement.
+ ist ein Primelement ist.
 \end_layout
 
 \begin_layout Itemize
@@ -8725,19 +9536,22 @@ ref{3.2}
 \end_inset
 
  ist ein Primelement.
- Zeige nach Definition, dass 
+\begin_inset Newline newline
+\end_inset
+
+Zeige nach Definition, dass 
 \begin_inset Formula $q\in R\left[X\right]$
 \end_inset
 
- ein Primelement ist.
+ ein Primelement ist:
 \begin_inset Newline newline
 \end_inset
 
- Seien 
+Seien 
 \begin_inset Formula $f,g\in R\left[X\right]$
 \end_inset
 
- ist 
+ mit 
 \begin_inset Formula $q|fg$
 \end_inset
 
@@ -8745,11 +9559,7 @@ ref{3.2}
 \begin_inset Formula $R\left[X\right]$
 \end_inset
 
- gegeben 
-\begin_inset Formula $\Rightarrow$
-\end_inset
-
- 
+ gegeben, dann folgt 
 \begin_inset Formula $q|fg$
 \end_inset
 
@@ -8757,12 +9567,11 @@ ref{3.2}
 \begin_inset Formula $Q\left[X\right]$
 \end_inset
 
- o.
- E.
-\begin_inset Formula $\stackrel{q\in Q\left[X\right]}{\Rightarrow}$
+ und ohne Einschränkung folgt, weil 
+\begin_inset Formula $q\in Q\left[X\right]$
 \end_inset
 
-
+ ein Primelement ist, schon 
 \begin_inset Formula $q|f$
 \end_inset
 
@@ -8774,67 +9583,58 @@ ref{3.2}
 \begin_inset Newline newline
 \end_inset
 
-
-\begin_inset Formula $\Rightarrow\left(*\right)f=qh$
-\end_inset
-
- in 
+Damit ergibt sich in 
 \begin_inset Formula $Q\left[X\right]$
 \end_inset
 
-, 
-\begin_inset Formula $h$
+ mit einem geeigneten 
+\begin_inset Formula $h\in Q\left[X\right]$
 \end_inset
 
- geeignet 
-\begin_inset Formula $\Rightarrow$
-\end_inset
-
- 
-\begin_inset Formula $\fall_{p\in\mathcal{P}}:0\stackrel{\left(q\text{ prim.}\right);\eqref{3.7i)}}{=}v_{p}\left(q\right)\stackrel{\left(*\right),\ref{}{3.3,iii)}}{=}-v_{p}\left(h\right)+\underbrace{v_{p}\left(f\right)}_{\ge0\left(\text{da }f\in R\left[X\right]\right)}$
-\end_inset
-
-
-\begin_inset Newline newline
-\end_inset
-
-
-\begin_inset Formula $\Rightarrow\fall_{p\in\mathcal{P}}:v_{p}\left(h\right)\ge0\stackrel{\ref{}3.3ii)}{\Rightarrow}h\in R\left[X\right]\Rightarrow f=qh$
-\end_inset
-
- 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-underline{
-\end_layout
+:
+\begin_inset Formula 
+\begin{align}
+f & =qh\label{eq:fqh}
+\end{align}
 
 \end_inset
 
-in 
+Es folgt für alle 
+\begin_inset Formula $p\in\mathcal{P}$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+0 & \sr{=}{\ref{sub:PuD-primitiv}\text{i)}}{q\text{ prim}}v_{p}\left(q\right)\sr{=}{\eqref{eq:fqh}}{\ref{sub:PuD-LemmaGauss}\text{iii)}}-v_{p}\left(h\right)+\underbrace{v_{p}\left(f\right)}_{\ge0\left(\text{da }f\in R\left[X\right]\right)}
+\end{align*}
+
+\end_inset
+
+Daher ist 
+\begin_inset Formula $\nu_{p}\left(h\right)\ge0$
+\end_inset
+
+ und aus 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:PuD-LemmaGauss"
+
+\end_inset
+
+ ii) folgt dann 
+\begin_inset Formula $h\in R\left[X\right]$
+\end_inset
+
+, also gilt 
+\begin_inset Formula $f=qh$
+\end_inset
+
+ auch in 
 \begin_inset Formula $R\left[X\right]$
 \end_inset
 
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-}
-\end_layout
-
-\end_inset
-
- 
-\begin_inset Formula $\Rightarrow$
-\end_inset
-
- 
+ und daher 
 \begin_inset Formula $q|f$
 \end_inset
 
@@ -8843,6 +9643,14 @@ status open
 \end_inset
 
 .
+\begin_inset Newline newline
+\end_inset
+
+Also ist 
+\begin_inset Formula $q\in R\left[X\right]$
+\end_inset
+
+ ein Primelement.
 \end_layout
 
 \begin_layout Standard
@@ -8853,13 +9661,13 @@ status open
 
 
 \backslash
-qqed
+qqed[ii) 
+\backslash
+ensuremath{
+\backslash
+Rightarrow} i)]
 \end_layout
 
-\end_inset
-
- 
-\begin_inset Formula $(q\in R\left[X\right]\text{ Primelement, iii)}\Rightarrow\text{ii)})$
 \end_inset
 
 
@@ -8870,24 +9678,35 @@ Zeige noch:
 \end_layout
 
 \begin_layout Standard
-Jedes 
-\begin_inset Formula $0\not=f\in R\left[X\right]\setminus R\left[X\right]^{*}$
+Jedes
+\begin_inset Formula 
+\begin{align*}
+0 & \not=f\in R\left[X\right]\setminus R\left[X\right]^{*}
+\end{align*}
+
 \end_inset
 
- (N.B.: 
+(Nebenbemerkung: 
 \begin_inset Formula $R\left[X\right]^{*}=R^{*}$
 \end_inset
 
 ) ist ein Produkt von Primelementen obiger Gestalt.
- (Dann folgt sowohl, dass 
+\end_layout
+
+\begin_layout Standard
+Dann folgt sowohl, dass 
 \begin_inset Formula $R\left[X\right]$
 \end_inset
 
- faktoriell ist, al auch die Implikation i)
+ faktoriell ist, als auch die Implikation i)
 \begin_inset Formula $\Rightarrow$
 \end_inset
 
-ii)) Schreibe 
+ii).
+\end_layout
+
+\begin_layout Standard
+Schreibe 
 \begin_inset Formula $f=a\cdot\tilde{f}$
 \end_inset
 
@@ -8897,19 +9716,19 @@ ii)) Schreibe
 
  primitiv (vgl.
  
-\begin_inset Formula $\ref{}3.7,ii)$
+\begin_inset Formula $\ref{sub:PuD-primitiv}$
 \end_inset
 
-).
- Wegen 
+ ii)).
+ Weil 
 \begin_inset Formula $R$
 \end_inset
 
- faktoriell ist 
+ faktoriell ist, ist 
 \begin_inset Formula $a$
 \end_inset
 
- ein Produkt von Primelementen obeiger Gestalt, also sei ohne Einschränkung
+ ein Produkt von Primelementen obiger Gestalt, also sei ohne Einschränkung
  
 \begin_inset Formula $f=\tilde{f}\in R\left[X\right]$
 \end_inset
@@ -8918,44 +9737,66 @@ ii)) Schreibe
 \end_layout
 
 \begin_layout Standard
-Sei nun 
-\begin_inset Formula $0\not=f\in R\left[X\right]$
-\end_inset
-
- primitiv.
- Schreibe
-\begin_inset Formula 
-\begin{align}
-f & =\prod_{i=1}^{n}f_{i}\stackrel{\ref{}3.7,i)}{=}a\cdot\prod_{i=1}^{n}\tilde{f}_{i}\qquad\text{mit }a\in Q^{*}\text{ und }\tilde{f}_{i}\in R\left[X\right]\text{ primitiv und prim in }Q\left[X\right]
-\end{align}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-in 
+Schreibe in 
 \begin_inset Formula $Q\left[X\right]$
 \end_inset
 
- mit 
+ mit Primelementen 
 \begin_inset Formula $f_{i}\in Q\left[X\right]$
 \end_inset
 
- prim.
  (
 \begin_inset Formula $Q\left[X\right]$
 \end_inset
 
- ist Hauptidealring, also faktoriell)
+ ist ein Hauptidealring, also faktoriell.)
+\begin_inset Formula 
+\begin{align}
+f & =\prod_{i=1}^{n}f_{i}\stackrel{\ref{sub:PuD-primitiv}\text{,i)}}{=}a\cdot\prod_{i=1}^{n}\tilde{f}_{i}
+\end{align}
+
+\end_inset
+
+mit 
+\begin_inset Formula $a\in Q^{*}$
+\end_inset
+
+ und primitiven Primelementen 
+\begin_inset Formula $\tilde{f}_{i}\in R\left[X\right]$
+\end_inset
+
+ in 
+\begin_inset Formula $Q\left[X\right]$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $\Rightarrow\fall_{p\in\mathcal{P}}:v_{p}\left(a\right)\stackrel{(*,1.1?),3.3iii)}{=}\underbrace{v_{p}\left(f\right)}_{=0}-\sum_{i=1}^{n}\underbrace{v_{p}\left(\tilde{f}_{i}\right)}_{=0}=0\stackrel{\ref{}3.1}{\Rightarrow}a\in R^{*}=Q^{*}$
+Dann folgt für alle 
+\begin_inset Formula $p\in\mathcal{P}$
 \end_inset
 
- und 
+:
+\begin_inset Formula 
+\begin{align*}
+v_{p}\left(a\right) & \stackrel{\ref{sub:PuD-LemmaGauss}\text{iii)}}{=}\underbrace{v_{p}\left(f\right)}_{=0}-\sum_{i=1}^{n}\underbrace{v_{p}\left(\tilde{f}_{i}\right)}_{=0}=0
+\end{align*}
+
+\end_inset
+
+Daraus folgt mit 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Erin-PFZ"
+
+\end_inset
+
+ schon 
+\begin_inset Formula $a\in R^{*}=Q^{*}$
+\end_inset
+
+ und: 
 \begin_inset Formula 
 \begin{align*}
 f & =\underbrace{\left(a\tilde{f}_{1}\right)}_{\text{primitiv, da }a\in R^{*}}\cdot\prod_{i=2}^{n}\tilde{f}_{i}
@@ -8971,14 +9812,15 @@ Damit ist
 \begin_inset Formula $f$
 \end_inset
 
- Produkt von primitiven Faktoren, die in 
+ ein Produkt von primitiven Faktoren, die Primelemente in 
 \begin_inset Formula $Q\left[X\right]$
 \end_inset
 
- prim sind.
-\end_layout
+ sind.
+\begin_inset Newline newline
+\end_inset
 
-\begin_layout Standard
+
 \begin_inset ERT
 status open
 
@@ -8986,7 +9828,9 @@ status open
 
 
 \backslash
-qqed
+qqed[
+\backslash
+ref{sub:Satz-Gauss}]
 \end_layout
 
 \end_inset
@@ -8994,8 +9838,10 @@ qqed
 
 \end_layout
 
-\begin_layout Subsubsection*
-Beispiel und Definition
+\begin_layout Subsection
+Beispiel und Definition 
+\series medium
+(rationale Funktionen)
 \end_layout
 
 \begin_layout Standard
@@ -9004,11 +9850,15 @@ Sei
 \end_inset
 
  ein Körper.
- Dann heißt 
-\begin_inset Formula $k\left(X\right):=\text{Quot}\left(k\left[X\right]\right)=\left\{ \frac{f}{g}\bigg|f,g\in k\left[X\right],g\not=0\right\} $
+ Dann heißt
+\begin_inset Formula 
+\begin{align*}
+k\left(X\right) & :=\text{Quot}\left(k\left[X\right]\right)=\left\{ \frac{f}{g}\bigg|f,g\in k\left[X\right],g\not=0\right\} 
+\end{align*}
+
 \end_inset
 
- 
+
 \emph on
 der Körper der rationalen Funktionen (in einer Variablen 
 \begin_inset Formula $X$
@@ -9019,9 +9869,10 @@ der Körper der rationalen Funktionen (in einer Variablen
 \end_inset
 
 ).
+\end_layout
 
-\emph default
- Die 
+\begin_layout Standard
+Die 
 \begin_inset Formula $k$
 \end_inset
 
@@ -9044,7 +9895,10 @@ der Polynomring in den Variablen
 
 \begin_layout Standard
 Wegen 
-\begin_inset Formula $\ref{}3.8$
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Satz-Gauss"
+
 \end_inset
 
  ist 
@@ -9070,19 +9924,28 @@ Beweis
 \end_layout
 
 \begin_layout Standard
+
+\color green
+TODO: Überprüfen???
+\end_layout
+
+\begin_layout Standard
 Wegen 
-\begin_inset Formula $\ref{}3.8$
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Satz-Gauss"
+
 \end_inset
 
- „prim 
+ „Primelement 
 \begin_inset Formula $\Leftrightarrow$
 \end_inset
 
- irreduzibel“; setze 
+ irreduzibel“ folgt mit 
 \begin_inset Formula $R:=k\left[X\right]$
 \end_inset
 
-, dann ist 
+ und weil 
 \begin_inset Formula $f\in R\left[Y\right]$
 \end_inset
 
@@ -9090,20 +9953,15 @@ Wegen
 \begin_inset Formula $f=Y^{2}+X^{3}\cdot Y^{0}$
 \end_inset
 
-), also primitiv.
- Nach 
-\begin_inset Formula $\ref{}3.8$
-\end_inset
-
- ist 
+), also primitiv ist, dass 
 \begin_inset Formula $f\in R\left[X,Y\right]$
 \end_inset
 
- Primelement 
-\begin_inset Formula $\Leftrightarrow$
-\end_inset
+ ein Primelement ist.
+\end_layout
 
- 
+\begin_layout Standard
+Dies ist äquivalent dazu, dass 
 \begin_inset Formula $f\in\text{Quot}\left(R\right)\left[Y\right]=k\left(X\right)\left[Y\right]$
 \end_inset
 
@@ -9120,31 +9978,42 @@ Wegen
 \begin_inset Formula $k\left(X\right)$
 \end_inset
 
- hat, angenommen doch:
+ hat, denn angenommen 
+\begin_inset Formula $f$
+\end_inset
+
+ hat doch eine Nullstelle, so würde in 
+\begin_inset Formula $k\left(X\right)$
+\end_inset
+
+ folgen:
 \begin_inset Formula 
 \begin{align*}
-\exs_{\alpha\in k\left(X\right)}: & 0=f\left(\alpha\right)=\alpha^{2}+X^{3}\qquad\text{in }k\left(X\right)
+\exs_{\alpha\in k\left(X\right)} & 0=f\left(\alpha\right)=\alpha^{2}+X^{3}
 \end{align*}
 
 \end_inset
 
 Aus 
-\begin_inset Formula $\ref{}3.5$
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Bsp-Vieta"
+
 \end_inset
 
  mit 
-\begin_inset Formula $h:=f,R:=k\left(X\right)$
+\begin_inset Formula $h:=f$
+\end_inset
+
+ und 
+\begin_inset Formula $R:=k\left(X\right)$
 \end_inset
 
  folgt 
 \begin_inset Formula $\alpha\in k\left[X\right]$
 \end_inset
 
- 
-\begin_inset Formula $\Rightarrow$
-\end_inset
-
- 
+, also 
 \begin_inset Formula $-\alpha^{2}=X^{3}$
 \end_inset
 
@@ -9152,11 +10021,7 @@ Aus
 \begin_inset Formula $k\left(X\right)$
 \end_inset
 
- 
-\begin_inset Formula $\Rightarrow$
-\end_inset
-
- 
+ und damit 
 \begin_inset Formula $2\cdot\text{deg}\left(\alpha\right)=\deg\left(X^{3}\right)=3$
 \end_inset
 
@@ -9164,15 +10029,24 @@ Aus
 \begin_inset Formula $\mathbb{Z}$
 \end_inset
 
- 
-\begin_inset Formula $\lightning$
+, was ein Widerspruch ist.
+\begin_inset Newline newline
 \end_inset
 
 
-\begin_inset Formula $(\ref{}3.10)$
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed
+\end_layout
+
 \end_inset
 
-set
+
 \end_layout
 
 \begin_layout Standard
