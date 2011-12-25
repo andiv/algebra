@@ -10,7 +10,6 @@
 \setlength{\parskip}{\smallskipamount}
 \setlength{\parindent}{0pt}
 \usepackage{color}
-\usepackage{babel}
 \usepackage{verbatim}
 \usepackage{textcomp}
 \usepackage{url}
@@ -18,11 +17,7 @@
 \usepackage{amssymb}
 \usepackage{wasysym}
 \usepackage{graphicx}
-\usepackage[unicode=true,
- bookmarks=false,
- breaklinks=false,pdfborder={0 0 0},backref=page,colorlinks=false]
- {hyperref}
-\usepackage{breakurl}
+\usepackage{nameref}
 
 \makeatletter
 
@@ -40,21 +35,20 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
 \usepackage{tikz}
 \usepackage{latexsym,stmaryrd,stackrel,array,tabularx,multirow}
-\usepackage{polynom,amsthm}
-\usepackage{makeidx}
+%\usepackage{polynom} % momentan nicht benötigt
 
 %Inhaltsverzeichnis
 \usepackage{tocloft}
 
 \tocloftpagestyle{fancy}
 
-\renewcommand{\cftsecindent}{0 em}
-\renewcommand{\cftsecnumwidth}{1.9 em}
+\renewcommand{\cftsecindent}{1 em}
+\renewcommand{\cftsecnumwidth}{1.7 em}
 
-\renewcommand{\cftsubsecindent}{1.9 em}
+\renewcommand{\cftsubsecindent}{2.7 em}
 \renewcommand{\cftsubsecnumwidth}{2.8 em}
 
-\renewcommand{\cftsubsubsecindent}{4.7 em}
+\renewcommand{\cftsubsubsecindent}{5.5 em}
 \renewcommand{\cftsubsubsecnumwidth}{3.2 em}
 
 
@@ -74,16 +68,9 @@
 \newcommand{\id}{\textnormal{id}}
 \newcommand{\ii}{\textbf{i}}
 
+%QED-Zeichen (Box)
+\newcommand{\qed}{\ensuremath{\Box}}
 \newcommand{\qqed}[1][\arabic{section}.\arabic{subsection}]{\begin{flushright}\qed\ensuremath{_{\text{#1}}}\end{flushright}}
-
-\newcommand{\ent}{\mathrel{\widehat{=}}}
-\newcommand{\iso}{\stackrel{\sim}{\to}}
-  
-\newcommand{\mb}[1]{\ensuremath{\mathbb{#1}}} %Mengenzeichen von #1
-\newcommand{\mc}[1]{\ensuremath{\mathcal{#1}}}
-\newcommand{\mf}[1]{\ensuremath{\mathfrak{#1}}}
-
-\newcommand{\nok}[2]{\genfrac(){0pt}{}{#1}{#2}}
 
 %Definitons-Zeichen
 \newcommand{\dfn}{\mathrel{\mathop:}=}
@@ -92,6 +79,7 @@
 %Abbildung:
 \newcommand{\abb}[5]{#1:#2\to #3:#4\mapsto #5}
 
+% Mengen Modulo
 \newcommand{\modulo}[2]{%
 \mbox{\raisebox{0.6ex}{\ensuremath{\displaystyle #1}}%
 {\Large /}%
@@ -99,6 +87,7 @@
 }%
 }
 
+% Für Z/2Z, um nicht soviel schreiben zu müssen
 \newcommand{\modlo}[2]{%
 \mbox{\raisebox{0.6ex}{\ensuremath{\displaystyle \mathbb{#1}}}%
 {\Large /}%
@@ -106,6 +95,7 @@
 }%
 }
 
+%Die Modulo-Kommandos in klein, für die Darstellungen unter Quantoren.
 \newcommand{\moduloScript}[2]{%
 \mbox{\raisebox{0.4ex}{\scriptsize\ensuremath{\displaystyle #1}}%
 {\footnotesize /}%
@@ -120,83 +110,111 @@
 }%
 }
 
-
+%Wurzel mit Häkchen
 \newcommand{\hsqrt}[2][{}]{\setbox0=\hbox{$\sqrt[#1]{\phantom{|}\!\! #2\hspace*{1pt}}$}\dimen0=\ht0
   \advance\dimen0-0.2\ht0
   \setbox2=\hbox{\vrule height\ht0 depth -\dimen0}
   {\box0\lower0.4pt\box2}}
 
-
- %alphabetische Aufz\"ahlung
+%alphabetische Aufzählung
 \newcounter{ale}
 \newcommand{\abc}{\stepcounter{ale}\item[\alph{ale})]}
 \newenvironment{abclist}{\begin{itemize} \setcounter{ale}{0}}{\end{itemize}}
 
-%klein-r\"omische Aufz\"ahlung
+%klein-römische Aufzählung
 \newcounter{ale2}
 \newcommand{\iii}{\stepcounter{ale2}\item[\textnormal{\roman{ale2})}]}
 \newenvironment{iiilist}{\begin{itemize} \setcounter{ale2}{0}}{\end{itemize}}
 
-% Copy from book.cls 2004/02/16 v1.4f
-
+% Untergliederung in Teile
+%% Copy from book.cls 2007/10/19 v1.4h
+%% Site: http://www.tex.ac.uk/ctan/macros/latex/unpacked/book.cls
+%%% BEGIN CHANGE
+%\newcommand\part{%
 \renewcommand\part{%
-  \clearpage
+%  \if@openright
+%    \cleardoublepage
+%  \else
+%%% END CHANGE
+    \clearpage
+%%% BEGIN CHANGE
+%  \fi
+%  \thispagestyle{plain}%
   \thispagestyle{empty}
+%%% END CHANGE
+  \if@twocolumn
+    \onecolumn
+    \@tempswatrue
+  \else
+    \@tempswafalse
+  \fi
   \null\vfil
   \secdef\@part\@spart}
 
+\def\@part[#1]#2{%
+    \ifnum \c@secnumdepth >-2\relax
+      \refstepcounter{part}%
+      \addcontentsline{toc}{part}{\thepart\hspace{1em}#1}%
+    \else
+      \addcontentsline{toc}{part}{#1}%
+    \fi
+%%% BEGIN CHANGE
+%    \markboth{}{}%
+    \partmark{\thepart\hspace{1em}#1}%
+%%% END CHANGE
+    {\centering
+     \interlinepenalty \@M
+     \normalfont
+     \ifnum \c@secnumdepth >-2\relax
+       \huge\bfseries \partname\nobreakspace\thepart
+       \par
+       \vskip 20\p@
+     \fi
+     \Huge \bfseries #2\par}%
+    \@endpart}
 \def\@spart#1{%
     {\centering
      \interlinepenalty \@M
      \normalfont
      \Huge \bfseries #1\par}%
     \@endpart}
-\def\@endpart{
-\vfil
-\newpage
-}
+\def\@endpart{\vfil\newpage
+              \if@twoside
+%%% BEGIN CHANGE
+%               \if@openright
+%%% END CHANGE
+                \null
+                \thispagestyle{empty}%
+                \newpage
+               \fi
+%%% BEGIN CHANGE
+%              \fi
+%%% END CHANGE
+              \if@tempswa
+                \twocolumn
+              \fi}
+%% End of copy
 
-% Copy from book.cls 2004/02/16 v1.4f
-\def\@part[#1]#2{%
-  \ifnum \c@secnumdepth >-2\relax
-    \refstepcounter{part}%
-    \addcontentsline{toc}{part}{\thepart\hspace{1em}#1}%
-  \else
-    \addcontentsline{toc}{part}{#1}%
-  \fi
-%%%%% CHANGE BEGIN
-%\markboth{}{}%
-  \partmark{\thepart\hspace{1em}#1}%
-%%%%% CHANGE END
-  { \centering
-    \thispagestyle{empty}
-    \interlinepenalty \@M
-    \normalfont
-    \ifnum \c@secnumdepth >-2\relax
-      \huge\bfseries \partname\nobreakspace\thepart
-      \par
-      \vskip 20\p@
-    \fi
-    \Huge \bfseries #2\par}%
-\@endpart
-}
-% End of copy
+% Hyperref am Ende, damit es die Befehle aus book.cls überschreiben kann!
+\usepackage[unicode=true,
+ bookmarks=false,
+ breaklinks=false,pdfborder={0 0 0},backref=page,colorlinks=false]
+ {hyperref}
+\usepackage{breakurl}
 
 % Default definition for new command \partmark
 % to get the same behaviour as the standard book class.
 \newcommand\partmark[1]{\markboth{}{}}
 
-%
 % Now redefine the \<sectioning>mark hooks
 % to save the title of \part and \chapter
 % instead of \chapter and \section.
-%
 
 \renewcommand\partmark[1]{\markboth{#1}{}}
 \renewcommand\sectionmark[1]{\markboth{\leftmark}{\arabic{section} #1}}
 \renewcommand\subsectionmark[1]{}
 
-%Teil \alph{\part}
+% Kopf- und Fußzeile
 \fancyhf{} %alle Kopf- und Fußzeilenfelder bereinigen
 \fancyhead[L]{\textbf{Algebra}} %Kopfzeile links
 %\fancyhead[C]{\leftmark} %zentrierte Kopfzeile
@@ -204,8 +222,8 @@
 %\renewcommand{\headrulewidth}{0.4pt} %obere Trennlinie
 \fancyfoot[C]{\thepage\quad\!\!\!\slash\quad\!\!\!\pageref{END}} %Seitennummer
 
+% Datum
 %\date{Stand: \today}
-%\date{}
 
 \AtBeginDocument{
   \def\labelitemiii{\(\succ\)}
@@ -213,6 +231,7 @@
 
 \makeatother
 
+\usepackage{babel}
 \begin{document}
 
 
@@ -271,21 +290,20 @@ or any later version published by the Free Software Foundation;
 with no Invariant Sections, no Front-Cover Texts, and no Back-Cover
 Texts.
 
-A copy of the license is included in the section entitled \textquotedbl{}GNU
-Free Documentation License\textquotedbl{}.
+A copy of the license is included in the section entitled \textquotedblleft{}GNU
+Free Documentation License\textquotedblright{}.
 
 
 \subsubsection*{Disclaimer of Warranty}
 
 \noun{Unless otherwise mutually agreed to by the parties in writing
 and to the extent not prohibited by applicable law, }\textbf{\noun{the
-copyright holder  provides the document }}\textbf{\textquotedbl{}}\textbf{\noun{as
-is}}\textbf{\textquotedbl{}}\textbf{\noun{ without warranties of any
-kind}}\noun{, expressed, implied, statutory or otherwise, including,
-but not limited to, the implied warranties of merchantability, fitness
-for a particular purpose, non-infringement, the absence of latent
-or other defects, accuracy, or the absence of errors, whether or not
-discoverable.}
+copyright holder  provides the document \textquotedblleft{}as is}}\textbf{\textquotedblright{}}\textbf{\noun{
+without warranties of any kind}}\noun{, expressed, implied, statutory
+or otherwise, including, but not limited to, the implied warranties
+of merchantability, fitness for a particular purpose, non-infringement,
+the absence of latent or other defects, accuracy, or the absence of
+errors, whether or not discoverable.}
 
 
 \subsubsection*{Limitation of Liability}
@@ -445,7 +463,7 @@ ist eine Untergruppe, der \emph{Kern von $\varphi$}, und es gilt:
 
 Sei $G$ eine Gruppe. Dann ist die Abbildung 
 \begin{align}
-\{\varphi|\varphi:\mathbb{Z}\rightarrow G\text{ Gruppenhomomorphismus}\} & \iso G,\varphi\mapsto\varphi\left(1\right)
+\{\varphi|\varphi:\mathbb{Z}\rightarrow G\text{ Gruppenhomomorphismus}\} & \stackrel{\sim}{\to}G,\varphi\mapsto\varphi\left(1\right)
 \end{align}
 
 
@@ -526,7 +544,7 @@ heißt der \emph{Index von $H$ in $G$}. Es gelten:
 
 \iii ${\displaystyle \fall_{g,g'\in G}:gH=g'H\Leftrightarrow gH\cap g'H\not=\emptyset\Leftrightarrow g\in g'H\Leftrightarrow g^{-1}g'\in H}$
 
-\iii Für alle $g,g'\in G$ ist die Abbildung $gH\iso g'H,gh\mapsto g'h$
+\iii Für alle $g,g'\in G$ ist die Abbildung $gH\stackrel{\sim}{\to}g'H,gh\mapsto g'h$
 bijektiv.\\
 Für $\left|H\right|<\infty$ ist $\left|gH\right|=\left|g'H\right|$.
 
@@ -537,7 +555,7 @@ Für $\left|H\right|<\infty$ ist $\left|gH\right|=\left|g'H\right|$.
 \end{iiilist}
 
 
-\subsubsection*{Beweis}
+\subsubsection*{Beweisq}
 
 Zeige zunächst, dass $\sim$ eine Äquivalenzrelation ist:
 \begin{itemize}
@@ -1927,7 +1945,7 @@ in $Q\left[X\right]$ normiert sind.
 
 Weil für alle $p\in\mathcal{P}$
 \begin{align*}
-0 & =\nu_{p}\left(h\right)\sr{=}{\eqref{eq:hfg}}{\ref{sub:PuD-LemmaGau=00003D00003D0000DF}\text{ iii)}}\underbrace{\nu_{p}\left(f\right)}_{\le0}+\underbrace{\nu_{p}\left(g\right)}_{\le0}
+0 & =\nu_{p}\left(h\right)\sr{=}{\eqref{eq:hfg}}{\ref{sub:PuD-LemmaGau=00003D00003D00003D00003D0000DF}\text{ iii)}}\underbrace{\nu_{p}\left(f\right)}_{\le0}+\underbrace{\nu_{p}\left(g\right)}_{\le0}
 \end{align*}
 gilt, folgt:
 \begin{align*}
@@ -2292,7 +2310,7 @@ $\tilde{f}\in Q\left[X\right]$ prim $\stackrel{\ref{}3.8,a)\Leftrightarrow b)}{\
 
 \end{iiilist}
 
-\qqed
+\qqed[\ref{sub:Prop-primRQ}]
 
 
 \subsection{Satz\textmd{ (Reduktionskriterium)\label{sub:Satz-RedKrit}}}
@@ -5464,7 +5482,7 @@ but changing it is not allowed.
 \par\end{center}
 
 
-\subsection*{0. PREAMBLE}
+\subsection*{\noun{0. Preamble}}
 
 \noindent The purpose of this License is to make a manual, textbook,
 or other functional and useful document \textquotedblleft{}free\textquotedblright{}
@@ -5489,7 +5507,7 @@ this License principally for works whose purpose is instruction or
 reference.
 
 
-\subsection*{1. APPLICABILITY AND DEFINITIONS}
+\subsection*{\noun{1. Applicability and definitions}}
 
 This License applies to any manual or other work, in any medium, that
 contains a notice placed by the copyright holder saying it can be
@@ -5586,7 +5604,7 @@ Warranty Disclaimers may have is void and has no effect on the meaning
 of this License.
 
 
-\subsection*{2. VERBATIM COPYING}
+\subsection*{\noun{2. Verbatim copying}}
 
 You may copy and distribute the Document in any medium, either commercially
 or noncommercially, provided that this License, the copyright notices,
@@ -5602,7 +5620,7 @@ You may also lend copies, under the same conditions stated above,
 and you may publicly display copies.
 
 
-\subsection*{3. COPYING IN QUANTITY}
+\subsection*{\noun{3. Copying in quantity}}
 
 If you publish printed copies (or copies in media that commonly have
 printed covers) of the Document, numbering more than 100, and the
@@ -5640,7 +5658,7 @@ to give them a chance to provide you with an updated version of the
 Document.
 
 
-\subsection*{4. MODIFICATIONS}
+\subsection*{\noun{4. Modifications}}
 
 You may copy and distribute a Modified Version of the Document under
 the conditions of sections 2 and 3 above, provided that you release
@@ -5727,7 +5745,7 @@ give permission to use their names for publicity for or to assert
 or imply endorsement of any Modified Version.
 
 
-\subsection*{5. COMBINING DOCUMENTS}
+\subsection*{\noun{5. Combining documents}}
 
 You may combine the Document with other documents released under this
 License, under the terms defined in section 4 above for modified versions,
@@ -5752,7 +5770,7 @@ and any sections Entitled \textquotedblleft{}Dedications\textquotedblright{}.
 You must delete all sections Entitled \textquotedblleft{}Endorsements\textquotedblright{}.
 
 
-\subsection*{6. COLLECTIONS OF DOCUMENTS}
+\subsection*{\noun{6. Collections of documents}}
 
 You may make a collection consisting of the Document and other documents
 released under this License, and replace the individual copies of
@@ -5766,7 +5784,7 @@ this License into the extracted document, and follow this License
 in all other respects regarding verbatim copying of that document.
 
 
-\subsection*{7. AGGREGATION WITH INDEPENDENT WORKS}
+\subsection*{\noun{7. Aggregation with independent works}}
 
 A compilation of the Document or its derivatives with other separate
 and independent documents or works, in or on a volume of a storage
@@ -5785,7 +5803,7 @@ equivalent of covers if the Document is in electronic form. Otherwise
 they must appear on printed covers that bracket the whole aggregate.
 
 
-\subsection*{8. TRANSLATION}
+\subsection*{\noun{8. Translation}}
 
 Translation is considered a kind of modification, so you may distribute
 translations of the Document under the terms of section 4. Replacing
@@ -5806,7 +5824,7 @@ the requirement (section 4) to Preserve its Title (section 1) will
 typically require changing the actual title.
 
 
-\subsection*{9. TERMINATION}
+\subsection*{\noun{9. Termination}}
 
 You may not copy, modify, sublicense, or distribute the Document except
 as expressly provided under this License. Any attempt otherwise to
@@ -5834,7 +5852,7 @@ reinstated, receipt of a copy of some or all of the same material
 does not give you any rights to use it.
 
 
-\subsection*{10. FUTURE REVISIONS OF THIS LICENSE}
+\subsection*{\noun{10. Future revisions of this license}}
 
 The Free Software Foundation may publish new, revised versions of
 the GNU Free Documentation License from time to time. Such new versions
@@ -5855,7 +5873,7 @@ of a version permanently authorizes you to choose that version for
 the Document.
 
 
-\subsection*{11. RELICENSING}
+\subsection*{\noun{11. Relicensing}}
 
 \textquotedblleft{}Massive Multiauthor Collaboration Site\textquotedblright{}
 (or \textquotedblleft{}MMC Site\textquotedblright{}) means any World
@@ -5887,7 +5905,7 @@ site under CC-BY-SA on the same site at any time before August 1,
 2009, provided the MMC is eligible for relicensing.
 
 
-\subsection*{ADDENDUM: How to use this License for your documents}
+\subsection*{\noun{Addendum}: How to use this License for your documents}
 
 To use this License in a document you have written, include a copy
 of the License in the document and put the following copyright and

@@ -6,21 +6,20 @@
 \begin_preamble
 \usepackage{tikz}
 \usepackage{latexsym,stmaryrd,stackrel,array,tabularx,multirow}
-\usepackage{polynom,amsthm}
-\usepackage{makeidx}
+%\usepackage{polynom} % momentan nicht benötigt
 
 %Inhaltsverzeichnis
 \usepackage{tocloft}
 
 \tocloftpagestyle{fancy}
 
-\renewcommand{\cftsecindent}{0 em}
-\renewcommand{\cftsecnumwidth}{1.9 em}
+\renewcommand{\cftsecindent}{1 em}
+\renewcommand{\cftsecnumwidth}{1.7 em}
 
-\renewcommand{\cftsubsecindent}{1.9 em}
+\renewcommand{\cftsubsecindent}{2.7 em}
 \renewcommand{\cftsubsecnumwidth}{2.8 em}
 
-\renewcommand{\cftsubsubsecindent}{4.7 em}
+\renewcommand{\cftsubsubsecindent}{5.5 em}
 \renewcommand{\cftsubsubsecnumwidth}{3.2 em}
 
 
@@ -40,16 +39,9 @@
 \newcommand{\id}{\textnormal{id}}
 \newcommand{\ii}{\textbf{i}}
 
+%QED-Zeichen (Box)
+\newcommand{\qed}{\ensuremath{\Box}}
 \newcommand{\qqed}[1][\arabic{section}.\arabic{subsection}]{\begin{flushright}\qed\ensuremath{_{\text{#1}}}\end{flushright}}
-
-\newcommand{\ent}{\mathrel{\widehat{=}}}
-\newcommand{\iso}{\stackrel{\sim}{\to}}
-  
-\newcommand{\mb}[1]{\ensuremath{\mathbb{#1}}} %Mengenzeichen von #1
-\newcommand{\mc}[1]{\ensuremath{\mathcal{#1}}}
-\newcommand{\mf}[1]{\ensuremath{\mathfrak{#1}}}
-
-\newcommand{\nok}[2]{\genfrac(){0pt}{}{#1}{#2}}
 
 %Definitons-Zeichen
 \newcommand{\dfn}{\mathrel{\mathop:}=}
@@ -58,6 +50,7 @@
 %Abbildung:
 \newcommand{\abb}[5]{#1:#2\to #3:#4\mapsto #5}
 
+% Mengen Modulo
 \newcommand{\modulo}[2]{%
 \mbox{\raisebox{0.6ex}{\ensuremath{\displaystyle #1}}%
 {\Large /}%
@@ -65,6 +58,7 @@
 }%
 }
 
+% Für Z/2Z, um nicht soviel schreiben zu müssen
 \newcommand{\modlo}[2]{%
 \mbox{\raisebox{0.6ex}{\ensuremath{\displaystyle \mathbb{#1}}}%
 {\Large /}%
@@ -72,6 +66,7 @@
 }%
 }
 
+%Die Modulo-Kommandos in klein, für die Darstellungen unter Quantoren.
 \newcommand{\moduloScript}[2]{%
 \mbox{\raisebox{0.4ex}{\scriptsize\ensuremath{\displaystyle #1}}%
 {\footnotesize /}%
@@ -86,83 +81,111 @@
 }%
 }
 
-
+%Wurzel mit Häkchen
 \newcommand{\hsqrt}[2][{}]{\setbox0=\hbox{$\sqrt[#1]{\phantom{|}\!\! #2\hspace*{1pt}}$}\dimen0=\ht0
   \advance\dimen0-0.2\ht0
   \setbox2=\hbox{\vrule height\ht0 depth -\dimen0}
   {\box0\lower0.4pt\box2}}
 
-
- %alphabetische Aufz\"ahlung
+%alphabetische Aufzählung
 \newcounter{ale}
 \newcommand{\abc}{\stepcounter{ale}\item[\alph{ale})]}
 \newenvironment{abclist}{\begin{itemize} \setcounter{ale}{0}}{\end{itemize}}
 
-%klein-r\"omische Aufz\"ahlung
+%klein-römische Aufzählung
 \newcounter{ale2}
 \newcommand{\iii}{\stepcounter{ale2}\item[\textnormal{\roman{ale2})}]}
 \newenvironment{iiilist}{\begin{itemize} \setcounter{ale2}{0}}{\end{itemize}}
 
-% Copy from book.cls 2004/02/16 v1.4f
-
+% Untergliederung in Teile
+%% Copy from book.cls 2007/10/19 v1.4h
+%% Site: http://www.tex.ac.uk/ctan/macros/latex/unpacked/book.cls
+%%% BEGIN CHANGE
+%\newcommand\part{%
 \renewcommand\part{%
-  \clearpage
+%  \if@openright
+%    \cleardoublepage
+%  \else
+%%% END CHANGE
+    \clearpage
+%%% BEGIN CHANGE
+%  \fi
+%  \thispagestyle{plain}%
   \thispagestyle{empty}
+%%% END CHANGE
+  \if@twocolumn
+    \onecolumn
+    \@tempswatrue
+  \else
+    \@tempswafalse
+  \fi
   \null\vfil
   \secdef\@part\@spart}
 
+\def\@part[#1]#2{%
+    \ifnum \c@secnumdepth >-2\relax
+      \refstepcounter{part}%
+      \addcontentsline{toc}{part}{\thepart\hspace{1em}#1}%
+    \else
+      \addcontentsline{toc}{part}{#1}%
+    \fi
+%%% BEGIN CHANGE
+%    \markboth{}{}%
+    \partmark{\thepart\hspace{1em}#1}%
+%%% END CHANGE
+    {\centering
+     \interlinepenalty \@M
+     \normalfont
+     \ifnum \c@secnumdepth >-2\relax
+       \huge\bfseries \partname\nobreakspace\thepart
+       \par
+       \vskip 20\p@
+     \fi
+     \Huge \bfseries #2\par}%
+    \@endpart}
 \def\@spart#1{%
     {\centering
      \interlinepenalty \@M
      \normalfont
      \Huge \bfseries #1\par}%
     \@endpart}
-\def\@endpart{
-\vfil
-\newpage
-}
+\def\@endpart{\vfil\newpage
+              \if@twoside
+%%% BEGIN CHANGE
+%               \if@openright
+%%% END CHANGE
+                \null
+                \thispagestyle{empty}%
+                \newpage
+               \fi
+%%% BEGIN CHANGE
+%              \fi
+%%% END CHANGE
+              \if@tempswa
+                \twocolumn
+              \fi}
+%% End of copy
 
-% Copy from book.cls 2004/02/16 v1.4f
-\def\@part[#1]#2{%
-  \ifnum \c@secnumdepth >-2\relax
-    \refstepcounter{part}%
-    \addcontentsline{toc}{part}{\thepart\hspace{1em}#1}%
-  \else
-    \addcontentsline{toc}{part}{#1}%
-  \fi
-%%%%% CHANGE BEGIN
-%\markboth{}{}%
-  \partmark{\thepart\hspace{1em}#1}%
-%%%%% CHANGE END
-  { \centering
-    \thispagestyle{empty}
-    \interlinepenalty \@M
-    \normalfont
-    \ifnum \c@secnumdepth >-2\relax
-      \huge\bfseries \partname\nobreakspace\thepart
-      \par
-      \vskip 20\p@
-    \fi
-    \Huge \bfseries #2\par}%
-\@endpart
-}
-% End of copy
+% Hyperref am Ende, damit es die Befehle aus book.cls überschreiben kann!
+\usepackage[unicode=true,
+ bookmarks=false,
+ breaklinks=false,pdfborder={0 0 0},backref=page,colorlinks=false]
+ {hyperref}
+\usepackage{breakurl}
 
 % Default definition for new command \partmark
 % to get the same behaviour as the standard book class.
 \newcommand\partmark[1]{\markboth{}{}}
 
-%
 % Now redefine the \<sectioning>mark hooks
 % to save the title of \part and \chapter
 % instead of \chapter and \section.
-%
 
 \renewcommand\partmark[1]{\markboth{#1}{}}
 \renewcommand\sectionmark[1]{\markboth{\leftmark}{\arabic{section} #1}}
 \renewcommand\subsectionmark[1]{}
 
-%Teil \alph{\part}
+% Kopf- und Fußzeile
 \fancyhf{} %alle Kopf- und Fußzeilenfelder bereinigen
 \fancyhead[L]{\textbf{Algebra}} %Kopfzeile links
 %\fancyhead[C]{\leftmark} %zentrierte Kopfzeile
@@ -170,8 +193,8 @@
 %\renewcommand{\headrulewidth}{0.4pt} %obere Trennlinie
 \fancyfoot[C]{\thepage\quad\!\!\!\slash\quad\!\!\!\pageref{END}} %Seitennummer
 
+% Datum
 %\date{Stand: \today}
-%\date{}
 \end_preamble
 \use_default_options false
 \begin_modules
@@ -201,7 +224,7 @@ tabs-within-sections
 \index_command default
 \paperfontsize 11
 \spacing single
-\use_hyperref true
+\use_hyperref false
 \pdf_bookmarks false
 \pdf_bookmarksnumbered false
 \pdf_bookmarksopen false
@@ -637,8 +660,8 @@ with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.
 \begin_layout Standard
 
 \lang english
-A copy of the license is included in the section entitled "GNU Free Documentatio
-n License".
+A copy of the license is included in the section entitled “GNU Free Documentatio
+n License”.
 \end_layout
 
 \begin_layout Subsubsection*
@@ -654,13 +677,9 @@ Disclaimer of Warranty
 Unless otherwise mutually agreed to by the parties in writing and to the
  extent not prohibited by applicable law, 
 \series bold
-the copyright holder  provides the document 
+the copyright holder  provides the document “as is
 \noun default
-"
-\noun on
-as is
-\noun default
-"
+”
 \noun on
  without warranties of any kind
 \series default
@@ -1387,7 +1406,7 @@ Sei
  Dann ist die Abbildung 
 \begin_inset Formula 
 \begin{align}
-\{\varphi|\varphi:\mathbb{Z}\rightarrow G\text{ Gruppenhomomorphismus}\} & \iso G,\varphi\mapsto\varphi\left(1\right)
+\{\varphi|\varphi:\mathbb{Z}\rightarrow G\text{ Gruppenhomomorphismus}\} & \stackrel{\sim}{\to}G,\varphi\mapsto\varphi\left(1\right)
 \end{align}
 
 \end_inset
@@ -1773,7 +1792,7 @@ iii
 \end_inset
 
  ist die Abbildung 
-\begin_inset Formula $gH\iso g'H,gh\mapsto g'h$
+\begin_inset Formula $gH\stackrel{\sim}{\to}g'H,gh\mapsto g'h$
 \end_inset
 
  bijektiv.
@@ -1834,7 +1853,7 @@ end{iiilist}
 \end_layout
 
 \begin_layout Subsubsection*
-Beweis
+Beweisq
 \end_layout
 
 \begin_layout Standard
@@ -8534,7 +8553,7 @@ Weil für alle
 
 \begin_inset Formula 
 \begin{align*}
-0 & =\nu_{p}\left(h\right)\sr{=}{\eqref{eq:hfg}}{\ref{sub:PuD-LemmaGau=00003D00003D0000DF}\text{ iii)}}\underbrace{\nu_{p}\left(f\right)}_{\le0}+\underbrace{\nu_{p}\left(g\right)}_{\le0}
+0 & =\nu_{p}\left(h\right)\sr{=}{\eqref{eq:hfg}}{\ref{sub:PuD-LemmaGau=00003D00003D00003D00003D0000DF}\text{ iii)}}\underbrace{\nu_{p}\left(f\right)}_{\le0}+\underbrace{\nu_{p}\left(g\right)}_{\le0}
 \end{align*}
 
 \end_inset
@@ -10411,7 +10430,9 @@ status open
 
 
 \backslash
-qqed
+qqed[
+\backslash
+ref{sub:Prop-primRQ}]
 \end_layout
 
 \end_inset
@@ -26249,9 +26270,10 @@ but changing it is not allowed.
 
 \begin_layout Subsection*
 
+\noun on
 \lang english
 0.
- PREAMBLE
+ Preamble
 \end_layout
 
 \begin_layout Standard
@@ -26293,9 +26315,10 @@ We have designed this License in order to use it for manuals for free software,
 
 \begin_layout Subsection*
 
+\noun on
 \lang english
 1.
- APPLICABILITY AND DEFINITIONS
+ Applicability and definitions
 \end_layout
 
 \begin_layout Standard
@@ -26495,9 +26518,10 @@ The Document may include Warranty Disclaimers next to the notice which states
 
 \begin_layout Subsection*
 
+\noun on
 \lang english
 2.
- VERBATIM COPYING
+ Verbatim copying
 \end_layout
 
 \begin_layout Standard
@@ -26524,9 +26548,10 @@ You may also lend copies, under the same conditions stated above, and you
 
 \begin_layout Subsection*
 
+\noun on
 \lang english
 3.
- COPYING IN QUANTITY
+ Copying in quantity
 \end_layout
 
 \begin_layout Standard
@@ -26581,9 +26606,10 @@ It is requested, but not required, that you contact the authors of the Document
 
 \begin_layout Subsection*
 
+\noun on
 \lang english
 4.
- MODIFICATIONS
+ Modifications
 \end_layout
 
 \begin_layout Standard
@@ -26780,9 +26806,10 @@ nt of any Modified Version.
 
 \begin_layout Subsection*
 
+\noun on
 \lang english
 5.
- COMBINING DOCUMENTS
+ Combining documents
 \end_layout
 
 \begin_layout Standard
@@ -26821,9 +26848,10 @@ In the combination, you must combine any sections Entitled “History” in
 
 \begin_layout Subsection*
 
+\noun on
 \lang english
 6.
- COLLECTIONS OF DOCUMENTS
+ Collections of documents
 \end_layout
 
 \begin_layout Standard
@@ -26847,9 +26875,10 @@ You may extract a single document from such a collection, and distribute
 
 \begin_layout Subsection*
 
+\noun on
 \lang english
 7.
- AGGREGATION WITH INDEPENDENT WORKS
+ Aggregation with independent works
 \end_layout
 
 \begin_layout Standard
@@ -26878,9 +26907,10 @@ If the Cover Text requirement of section 3 is applicable to these copies
 
 \begin_layout Subsection*
 
+\noun on
 \lang english
 8.
- TRANSLATION
+ Translation
 \end_layout
 
 \begin_layout Standard
@@ -26910,9 +26940,10 @@ If a section in the Document is Entitled “Acknowledgements”, “Dedications�
 
 \begin_layout Subsection*
 
+\noun on
 \lang english
 9.
- TERMINATION
+ Termination
 \end_layout
 
 \begin_layout Standard
@@ -26956,9 +26987,10 @@ Termination of your rights under this section does not terminate the licenses
 
 \begin_layout Subsection*
 
+\noun on
 \lang english
 10.
- FUTURE REVISIONS OF THIS LICENSE
+ Future revisions of this license
 \end_layout
 
 \begin_layout Standard
@@ -27002,9 +27034,10 @@ n.
 
 \begin_layout Subsection*
 
+\noun on
 \lang english
 11.
- RELICENSING
+ Relicensing
 \end_layout
 
 \begin_layout Standard
@@ -27054,8 +27087,11 @@ The operator of an MMC Site may republish an MMC contained in the site under
 
 \begin_layout Subsection*
 
+\noun on
 \lang english
-ADDENDUM: How to use this License for your documents
+Addendum
+\noun default
+: How to use this License for your documents
 \end_layout
 
 \begin_layout Standard
