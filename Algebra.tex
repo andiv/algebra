@@ -22,6 +22,7 @@
 \makeatletter
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+\providecommand{\LyX}{L\kern-.1667em\lower.25em\hbox{Y}\kern-.125emX\@}
 \newcommand{\noun}[1]{\textsc{#1}}
 %% Because html converters don't know tabularnewline
 \providecommand{\tabularnewline}{\\}
@@ -243,10 +244,10 @@
 \title{\textbf{\huge Algebra}}
 
 
-\author{\textit{\small gelesen von}\\
+\author{\textit{\small Vorlesung von}\\
 \textit{\noun{\small Prof. Dr. Niko Naumann}}\textit{\small }\\
-\textit{\small im Wintersemester 2011/12}\\
-\textit{\small mitgeschrieben und überarbeitet von}\\
+\textit{\small im Wintersemester 2011/2012}\\
+\textit{\small Textsatz in \LyX{} und Überarbeitung von}\\
 \textit{\noun{\small Andreas Völklein}}}
 
 \maketitle
@@ -1945,7 +1946,7 @@ in $Q\left[X\right]$ normiert sind.
 
 Weil für alle $p\in\mathcal{P}$
 \begin{align*}
-0 & =\nu_{p}\left(h\right)\sr{=}{\eqref{eq:hfg}}{\ref{sub:PuD-LemmaGau=00003D00003D00003D00003D0000DF}\text{ iii)}}\underbrace{\nu_{p}\left(f\right)}_{\le0}+\underbrace{\nu_{p}\left(g\right)}_{\le0}
+0 & =\nu_{p}\left(h\right)\sr{=}{\eqref{eq:hfg}}{\ref{sub:PuD-LemmaGau=00003D00003D00003D00003D00003D00003D00003D00003D00003D00003D00003D0000DF}\text{ iii)}}\underbrace{\nu_{p}\left(f\right)}_{\le0}+\underbrace{\nu_{p}\left(g\right)}_{\le0}
 \end{align*}
 gilt, folgt:
 \begin{align*}
@@ -2116,7 +2117,7 @@ Insbesondere sind für ein primitives Polynom $f\in R\left[X\right]$
 \end{abclist}
 
 
-\subsection{Beispiel}
+\subsection{Beispiel\label{sub:Bsp-Prim}}
 
 $\mathbb{Z}\left[X\right]$ ist faktoriell, aber kein Hauptidealring,
 denn zum Beispiel ist $\left(2,X\right)\subseteq\mathbb{Z}\left[X\right]$
@@ -2269,9 +2270,12 @@ Es sei $R$ ein faktorieller Ring und $Q:=\text{Quot}\left(R\right)$
 sein Quotientenkörper.
 
 
-\subsection{Proposition (Äquivalenz von prim in $R$ und $Q$)\label{sub:Prop-primRQ}}
+\subsection{Proposition\textmd{ (Äquivalenz von prim in $R$ und $Q$)}\label{sub:Prop-primRQ}}
 
-Sei $0\not=f\in Q\left[X\right]$. Dann sind äquivalent:
+Sei $0\not=f\in Q\left[X\right]$.
+
+\textcolor{green}{TODO: \quotedblbase{}Dann sind äquivalent:\textquotedblleft{}
+???}
 
 \begin{iiilist}
 
@@ -2299,14 +2303,13 @@ von $Q\left[X\right]$ auf $R\left[X\right]$ zurück.
 
 \subsubsection*{Beweis von \ref{sub:Prop-primRQ}}
 
-TODO:
-
 \begin{iiilist}
 
-\iii $\ref{}$ ii)
+\iii Die Aussage wurde bereits in \ref{sub:PuD-primitiv} ii) bewiesen.
 
 \iii b) $\stackrel{\alpha\in\left(Q\left[X\right]\right)^{*}}{\Leftrightarrow}$
-$\tilde{f}\in Q\left[X\right]$ prim $\stackrel{\ref{}3.8,a)\Leftrightarrow b)}{\Leftrightarrow}a)$
+$\tilde{f}\in Q\left[X\right]$ ist ein Primelement $\stackrel{\ref{sub:Satz-Gauss}\text{,a)}\Leftrightarrow\text{b)}}{\Leftrightarrow}$
+a)
 
 \end{iiilist}
 
@@ -2315,11 +2318,14 @@ $\tilde{f}\in Q\left[X\right]$ prim $\stackrel{\ref{}3.8,a)\Leftrightarrow b)}{\
 
 \subsection{Satz\textmd{ (Reduktionskriterium)\label{sub:Satz-RedKrit}}}
 
-Seien $f=\sum_{i=0}^{d}a_{i}X^{i}\in R\left[X\right]$ und $p\in R$
-ein Primelement. Es gelte: $p\not|\, a_{d}$ und $d>0$.
+Seien
+\begin{align*}
+f & =\sum_{i=0}^{d}a_{i}X^{i}\in R\left[X\right]
+\end{align*}
+und $p\in R$ ein Primelement. Es gelte: $p\not|\, a_{d}$ und $d>0$.
 
 Sei $\pi:R\left[X\right]\rightarrow\left(\modulo{R}{\left(p\right)}\right)\left[X\right]$
-wie in $\ref{}3.2$.
+wie in \ref{sub:Bem-phiX}.
 
 Ist dann $\pi\left(f\right)\in\left(\modulo{R}{\left(p\right)}\right)\left[X\right]$
 irreduzibel, so auch $f\in Q\left[X\right]$.
@@ -2335,23 +2341,285 @@ Wähle in \ref{sub:Satz-RedKrit} zum Beispiel:
 
 \begin{iiilist}
 
-\iii $R=\mathbb{Z},p=3,f=2X\in R\left[X\right]$
+\iii $R=\mathbb{Z},p=3,f=2X\in\mathbb{Z}\left[X\right]$
 
 Dann ist $\pi\left(f\right)=-X\in\mathbb{F}_{3}\left[X\right]$ irreduzibel,
 also ist $2X\in\text{Quot}\left(R\right)\left[X\right]=\mathbb{Q}\left[X\right]$
 irreduzibel, aber $2X\in\mathbb{Z}\left[X\right]$ ist nicht irreduzibel,
-vgl. $\ref{}3.9$. (Hier ist $f$ nicht primitiv.)
+vergleiche \ref{sub:Bsp-Prim}. (Hier ist $f$ nicht primitiv.)\\
+%DATE 11.11.2011
 
-\iii 
+\iii $R=\mathbb{Z},p=2,f=2X^{2}+X\in\mathbb{Z}\left[X\right]$
 
-TODO: Rest einfügen
+Dann ist $\pi\left(f\right)=X\in\mathbb{F}_{2}\left[X\right]$ irreduzibel,
+aber $f=X\left(2X+1\right)\in\mathbb{Z}\left[X\right]$ ist nicht
+irreduzibel. (Hier gilt $p|a_{d}$.)
 
-\iii 
+\iii $R=\mathbb{Z}\left[Y\right],p=Y,f=2\in R\left[X\right]$
+
+Dann ist $\pi\left(f\right)=2\in\left(\modulo{R}{\left(Y\right)}\right)\left[X\right]$
+irreduzibel, aber $f=2\in Q\left[X\right]=\text{Quot}\left(\mathbb{Z}\left[Y\right]\right)$
+ist eine Einheit, denn aus $\mathbb{Z}\subseteq\mathbb{Z}\left[Y\right]$
+folgt $\mathbb{Q}\subseteq\text{Quot}\left(\mathbb{Z}\left[Y\right]\right)$,
+also ist $f$ nicht irreduzibel. (Hier gilt $d=0$.)
+
+\end{iiilist}
+
+
+\subsubsection*{Beweis von \ref{sub:Satz-RedKrit}}
+\begin{enumerate}
+\item Fall: Sei $f$ primitiv und $\pi\left(f\right)$ irreduzibel.\\
+Angenommen $f$ wäre reduzibel, das heißt $f=gh$ in $R\left[X\right]$
+mit $g,h\in R\left[X\right]\setminus\left(R\left[X\right]\right)^{*}=R\left[X\right]\setminus R^{*}$.\\
+Weil $f$ primitiv ist, gilt:
+\begin{align*}
+\deg\left(g\right),\deg\left(h\right) & >0
+\end{align*}
+Wegen $p\not|\, a_{d}$ können die höchsten Koeffizienten von $g$
+und $h$ nicht durch $p$ teilbar sein, also gilt:
+\begin{align}
+\deg\left(\pi\left(g\right)\right) & =\deg\left(g\right)>0 & \deg\left(\pi\left(h\right)\right) & =\deg\left(h\right)>0\label{eq:degPigh}
+\end{align}
+Es folgt in $\left(\modulo{R}{\left(p\right)}\right)\left[X\right]$:
+\begin{align*}
+\pi\left(f\right) & =\pi\left(fg\right)=\pi\left(g\right)\cdot\pi\left(h\right)
+\end{align*}
+und wegen \eqref{eq:degPigh} gilt:
+\begin{align*}
+\pi\left(g\right) & |\pi\left(h\right)\not\in\left(\left(\modulo{R}{\left(p\right)}\right)\left[X\right]\right)^{*}
+\end{align*}
+Also ist $\pi\left(f\right)\in\left(\modulo{R}{\left(p\right)}\right)\left[X\right]$
+reduzibel, im Widerspruch zur Voraussetzung.\\
+\qqed[1. Fall]
+\item (allgemeiner) Fall: Sei nun $f\in R\left[X\right]$ mit $p\not|\, a_{d}$
+und $d>0$ beliebig.\\
+Dann gibt es ein $c\in R\setminus\left\{ 0\right\} $ und ein primitives
+Polynom $\tilde{f}\in R\left[X\right]$ mit:
+\begin{align*}
+f & =c\tilde{f}
+\end{align*}
+Wegen $p\not|\, a_{d}$ gilt $p\not|\, c$ in $R$ und $p\not|\,\tilde{a}_{d}$,
+wobei $\tilde{a}_{d}$ der höchste Koeffizient von $\tilde{f}$ ist.\\
+Dann gilt in $\left(\modulo{R}{\left(p\right)}\right)\left[X\right]$:
+\begin{align*}
+\pi\left(f\right) & =\pi\left(c\right)\cdot\pi\left(\tilde{f}\right)
+\end{align*}
+Weil $\pi\left(f\right)$ irreduzibel ist, muss auch $\pi\left(\tilde{f}\right)$
+irreduzibel sein.\\
+Nach dem 1. Fall ist dann $\tilde{f}\in R\left[X\right]$ irreduzibel
+und mit \ref{sub:Satz-Gauss} folgt, dass $\tilde{f}\in Q\left[X\right]$
+irreduzibel ist.\\
+Weil $c\in Q^{*}=\left(Q\left[X\right]\right)^{*}$ ist, ist $f=c\tilde{f}\in Q\left[X\right]$
+irreduzibel.
+\end{enumerate}
+\qqed[\ref{sub:Satz-RedKrit}]
+
+
+\subsection{Korollar \textmd{(Eisensteinkriterium)\label{sub:Kor-Eisenstein}}}
+
+Sei $p\in R$ ein Primelement und
+\begin{align*}
+f & =a_{d}X^{d}+a_{d-1}X^{d-1}+\ldots+a_{0}\in R\left[X\right]
+\end{align*}
+ein primitives Polynom mit:
+\begin{align*}
+p & \not|\, a_{d} & p & |a_{i} & p^{2} & \not|\, a_{0}
+\end{align*}
+($0\le i\le d-1$)\\
+Dann ist $f\in R\left[X\right]$ (und damit nach \ref{sub:Satz-Gauss}
+auch $f\in Q\left[X\right]$) irreduzibel.
+
+
+\subsubsection*{Beweis}
+
+Angenommen $f\in R\left[X\right]$ wäre reduzibel, dann folgt, weil
+$f$ primitiv ist, schon $f=gh$ in $R\left[X\right]$ mit:
+\begin{align*}
+g & =\alpha_{a}X^{a}+\ldots+\alpha_{0}\\
+h & =\beta_{b}X^{b}+\ldots+\beta_{0}
+\end{align*}
+\begin{align*}
+\deg\left(g\right) & >0 & \deg\left(h\right) & >0
+\end{align*}
+Also gilt in $\left(\modulo{R}{\left(p\right)}\right)\left[X\right]\subseteq\text{Quot}\left(\modulo{R}{\left(p\right)}\right)\left[X\right]=:\tilde{Q}\left[X\right]$:
+\begin{align}
+\pi\left(f\right) & =\pi\left(g\right)\pi\left(h\right)=\label{eq:pifgh}\\
+ & =\underbrace{\tilde{a}_{d}}_{\not\equiv0}X^{d}+\underbrace{\tilde{a}_{d-1}}_{\equiv0}X^{d-1}+\ldots+\underbrace{\tilde{a}_{0}}_{\equiv0}\equiv\tilde{a}_{d}X^{d}\nonumber 
+\end{align}
+Weil $\tilde{a}_{d}=\pi\left(a_{d}\right)\in\left(\modulo{Q}{\left(p\right)}\right)^{*}$
+und $X\in\tilde{Q}\left[X\right]$ Primelemente sind, folgt aus der
+Primfaktorzerlegung in $\tilde{Q}\left[X\right]$ und wegen \eqref{eq:pifgh}
+folgt mit $\alpha,\beta\in\tilde{Q}^{*}$, $a,b\ge0$ und $a+b=d$:\\
+\textcolor{green}{TODO: $\pi\left(a_{d}\right)\in Q^{*}$ ???}
+\begin{align*}
+\pi\left(g\right) & =\alpha X^{a} & \pi\left(h\right) & =\beta X^{b}
+\end{align*}
+Wegen $p\not|\, a_{d}$ sind die höchsten Koeffizienten von $g$ und
+$h$ nicht durch $p$ teilbar, also gilt:
+\begin{align*}
+a & =\deg\left(\pi\left(g\right)\right)>0 & b & =\deg\left(\pi\left(h\right)\right)>0
+\end{align*}
+Damit sind die konstanten Terme von $g$ und $h$ durch $p$ teilbar,
+da die konstanten Terme von $\pi\left(g\right)$ und $\pi\left(h\right)$
+schon Null sind.
+
+Es folgt in $R$:
+\begin{align*}
+p^{2} & |\alpha_{0}\cdot\beta_{0}=a_{0}
+\end{align*}
+Dies ist ein Widerspruch zur Voraussetzung $p^{2}\not|\, a_{0}$.\\
+\qqed
+
+
+\subsection{Beispiel}
+
+\begin{iiilist}
+
+\iii Für alle $n\in\mathbb{N}$ ist $\text{Mipo}_{\mathbb{Q}}\left(\alpha:=\sqrt[n]{2}\right)=X^{n}-2=:f\left(X\right)\in\mathbb{Q}\left[X\right]$
+
+
+\subsubsection*{Beweis}
+
+$f\left(\alpha\right)=0$ und $f$ ist normiert.
+
+Zeige noch: $f$ ist in $\mathbb{Q}\left[X\right]$ irreduzibel.
+
+Dies folgt sofort aus dem Eisensteinkriterium (Korollar \ref{sub:Kor-Eisenstein})
+bezüglich der Primzahl 2.
+
+\textcolor{green}{TODO: Rest einfügen/überprüfen}\\
+\qqed[\roman{ale2})]
+
+\iii Seien $k$ ein Körper und $n\in\mathbb{N}_{\ge1}$.
+
+Dann ist $f\left(X\right):=X^{n}-t\in k\left(t\right)\left[X\right]$
+irreduzibel.
+
+
+\subsubsection*{Beweis}
+
+$R:=k\left[t\right]$ ist faktoriell mit $\text{Quot}\left(R\right)=k\left(t\right)$
+und $p:=t\in R$ ist ein Primelement.
+
+Die Bedingungen in \ref{sub:Kor-Eisenstein} sind erfüllt und $f$
+ist primitiv, da es normiert ist.\\
+\qqed[\roman{ale2})]
+
+\iii Seien $p$ eine Primzahl und ${\displaystyle \zeta_{p}:=\exp\left(\frac{2\pi\ii}{p}\right)\in\mathbb{C}}$.
+
+Dann gilt${\displaystyle }$:
+\begin{align*}
+\text{Mipo}_{\mathbb{Q}}\left(\zeta_{p}\right) & =\frac{X^{p}-1}{X-1}=X^{p-1}+X^{p-2}+\ldots+X+1=:f_{p}\left(X\right)\in\mathbb{Q}\left[X\right]
+\end{align*}
+
+
+
+\subsubsection*{Beweis}
+
+$f_{p}$ ist normiert und erfüllt:
+\begin{align*}
+f_{p}\left(\zeta_{p}\right) & =\frac{\zeta_{p}^{p}-1}{\zeta_{p}-1}=\frac{\left(\exp\left(\frac{2\pi\ii}{p}\right)\right)^{p}-1}{\exp\left(\frac{2\pi\ii}{p}\right)-1}=\frac{\overbrace{\exp\left(\frac{p}{p}2\pi\ii\right)-1}^{\text{=0}}}{\underbrace{\exp\left(\frac{2\pi\ii}{p}\right)-1}_{\not=0}}=0
+\end{align*}
+Zeige noch, dass $f\in\mathbb{Q}\left[X\right]$ irreduzibel ist:
+
+Es existiert genau ein $\mathbb{Q}$-Algebrenhomomorphismus $\sigma:\mathbb{Q}\left[X\right]\to\mathbb{Q}\left[X\right]$
+mit $\sigma\left(X\right)=X+1$ (und $\sigma^{-1}\left(X\right)=X-1$)
+und $\sigma$ ist ein Automorphismus.
+
+Es genügt also zu zeigen, dass $g:=f\left(X+1\right)$ irreduzibel
+ist.
+
+Rechne nach:
+\begin{align*}
+g\left(X\right) & =f\left(X+1\right)=\frac{\left(X+1\right)^{p}-1}{\left(X+1\right)-1}=\frac{1}{X}\left(\left(X^{p}+pX^{p-1}+\ldots+pX+1\right)-1\right)=\\
+ & =X^{p-1}+\sum_{i=2}^{p-1}\left(\begin{array}{c}
+p\\
+i
+\end{array}\right)X^{i-1}+p\in\mathbb{Z}\left[X\right]
+\end{align*}
+$g$ ist daher normiert.
+
+Um zu sehen, dass $g$ Eisenstein bezüglich $p$ ist, ist noch zu
+zeigen:
+\begin{align*}
+\fall_{1\le i\le p-1} & p\bigg|\left(\begin{array}{c}
+p\\
+i
+\end{array}\right)
+\end{align*}
+Es gilt:
+\begin{align*}
+\left(\begin{array}{c}
+p\\
+i
+\end{array}\right) & =\frac{p\cdot\left(p-1\right)\cdot\ldots\cdot\left(p-i+1\right)}{1\cdot2\cdot\ldots\cdot i}
+\end{align*}
+Und wegen $p\not|\,\left(p-1\right),\left(p-2\right),\ldots,\left(p-i+1\right),1,2,\ldots,i$
+für $i<p$ folgt sogar:
+\begin{align*}
+\nu_{p}\left(\left(\begin{array}{c}
+p\\
+i
+\end{array}\right)\right) & =1
+\end{align*}
+Insbesondere ist $g$ also Eisenstein bezüglich $p$.\\
+\qqed[\roman{ale2})]
+
+\iii $f\left(X\right):=X^{3}+3X^{2}-4X-1\in\mathbb{Q}\left[X\right]$
+ist irreduzibel.
+
+
+\subsubsection*{Beweis}
+
+$f\in\mathbb{Z}\left[X\right]$ ist primitiv und modulo 3 gilt:
+\begin{align*}
+\pi\left(f\right) & =:\overline{f}\left(X\right)=X^{3}-X-1\in\mathbb{F}_{3}\left[X\right]
+\end{align*}
+Rechne:
+\begin{align*}
+f\left(-1,0,1\right) & =-1\not=0
+\end{align*}
+Wegen $\deg\left(\overline{f}\right)=3$ ist also $\overline{f}\in\mathbb{F}_{3}\left[X\right]$
+irreduzibel und aus \ref{sub:Satz-RedKrit} folgt die Behauptung.\\
+\qqed[\roman{ale2})]
+
+\iii $f\left(X,Y\right)=X^{2}Y+XY^{2}-X-Y+1\in\mathbb{Q}\left[X,Y\right]$
+ist irreduzibel.
+
+
+\subsubsection*{Beweis}
+
+Schreibe:
+\begin{align*}
+f & =\underbrace{Y}_{=a_{2}}X^{2}+\underbrace{\left(Y^{2}-1\right)}_{=a_{1}}X+\underbrace{\left(1-Y\right)}_{=a_{0}}\in\underbrace{\left(\mathbb{Q}\left[Y\right]\right)}_{:=R}\left[X\right]
+\end{align*}
+Dann ist $f$ primitiv, da bereits $a_{2}$ und $a_{0}$ in $R$ teilerfremd
+sind.
+
+$p:=Y-1\in R$ ist ein Primelement und es gelten:
+\begin{align*}
+Y-1=p & \not|\, a_{2}=Y^{2}\\
+Y-1=p & \:\,\,|\, a_{1}=Y^{2}-1=\left(Y-1\right)\left(Y+1\right)\\
+Y-1=p & \:\,\,|\, a_{0}=1-Y=-\left(Y-1\right)\\
+\left(Y-1\right)^{2}=p^{2} & \not|\, a_{0}=1-Y=-\left(Y-1\right)
+\end{align*}
+Die Behauptung folgt aus Korollar \ref{sub:Kor-Eisenstein}.\\
+\qqed[\roman{ale2})]
+
+\end{iiilist}
+
+\textcolor{green}{TODO: Rest einfügen}
+
+\begin{iiilist}
+
+\iii \textcolor{green}{TODO: Rest einfügen}
 
 \iii $f\left(X\right)=X^{4}+3X^{3}+X^{2}-2X+1\in\mathbb{Q}\left[X\right]$
 ist irreduzibel.
 
 \end{iiilist}
+
+\textcolor{green}{TODO: Weiter überprüfen}
 
 
 \subsubsection*{Beweis}
@@ -5667,55 +5935,59 @@ Version filling the role of the Document, thus licensing distribution
 and modification of the Modified Version to whoever possesses a copy
 of it. In addition, you must do these things in the Modified Version:
 \begin{description}
-\item [{A.}] Use in the Title Page (and on the covers, if any) a title
-distinct from that of the Document, and from those of previous versions
-(which should, if there were any, be listed in the History section
-of the Document). You may use the same title as a previous version
-if the original publisher of that version gives permission.
-\item [{B.}] List on the Title Page, as authors, one or more persons or
-entities responsible for authorship of the modifications in the Modified
-Version, together with at least five of the principal authors of the
-Document (all of its principal authors, if it has fewer than five),
-unless they release you from this requirement.
-\item [{C.}] State on the Title page the name of the publisher of the Modified
-Version, as the publisher.
-\item [{D.}] Preserve all the copyright notices of the Document.
-\item [{E.}] Add an appropriate copyright notice for your modifications
-adjacent to the other copyright notices.
-\item [{F.}] Include, immediately after the copyright notices, a license
-notice giving the public permission to use the Modified Version under
-the terms of this License, in the form shown in the Addendum below.
-\item [{G.}] Preserve in that license notice the full lists of Invariant
-Sections and required Cover Texts given in the Document's license
-notice.
-\item [{H.}] Include an unaltered copy of this License.
-\item [{I.}] Preserve the section Entitled \textquotedblleft{}History\textquotedblright{},
+\item [{A.\hspace*{3.2mm}}] Use in the Title Page (and on the covers,
+if any) a title distinct from that of the Document, and from those
+of previous versions (which should, if there were any, be listed in
+the History section of the Document). You may use the same title as
+a previous version if the original publisher of that version gives
+permission.
+\item [{B.\hspace*{3.4mm}}] List on the Title Page, as authors, one or
+more persons or entities responsible for authorship of the modifications
+in the Modified Version, together with at least five of the principal
+authors of the Document (all of its principal authors, if it has fewer
+than five), unless they release you from this requirement.
+\item [{C.\hspace*{3.4mm}}] State on the Title page the name of the publisher
+of the Modified Version, as the publisher.
+\item [{D.\hspace*{3.4mm}}] Preserve all the copyright notices of the
+Document.
+\item [{E.\hspace*{3.4mm}}] Add an appropriate copyright notice for your
+modifications adjacent to the other copyright notices.
+\item [{F.\hspace*{3.8mm}}] Include, immediately after the copyright notices,
+a license notice giving the public permission to use the Modified
+Version under the terms of this License, in the form shown in the
+Addendum below.
+\item [{G.\hspace*{3.1mm}}] Preserve in that license notice the full lists
+of Invariant Sections and required Cover Texts given in the Document's
+license notice.
+\item [{H.\hspace*{3.2mm}}] Include an unaltered copy of this License.
+\item [{I.\hspace*{5.0mm}}] Preserve the section Entitled \textquotedblleft{}History\textquotedblright{},
 Preserve its Title, and add to it an item stating at least the title,
 year, new authors, and publisher of the Modified Version as given
 on the Title Page. If there is no section Entitled \textquotedblleft{}History\textquotedblright{}
 in the Document, create one stating the title, year, authors, and
 publisher of the Document as given on its Title Page, then add an
 item describing the Modified Version as stated in the previous sentence.
-\item [{J.}] Preserve the network location, if any, given in the Document
-for public access to a Transparent copy of the Document, and likewise
-the network locations given in the Document for previous versions
-it was based on. These may be placed in the \textquotedblleft{}History\textquotedblright{}
+\item [{J.\hspace*{4.3mm}}] Preserve the network location, if any, given
+in the Document for public access to a Transparent copy of the Document,
+and likewise the network locations given in the Document for previous
+versions it was based on. These may be placed in the \textquotedblleft{}History\textquotedblright{}
 section. You may omit a network location for a work that was published
 at least four years before the Document itself, or if the original
 publisher of the version it refers to gives permission.
-\item [{K.}] For any section Entitled \textquotedblleft{}Acknowledgements\textquotedblright{}
+\item [{K.\hspace*{3.3mm}}] For any section Entitled \textquotedblleft{}Acknowledgements\textquotedblright{}
 or \textquotedblleft{}Dedications\textquotedblright{}, Preserve the
 Title of the section, and preserve in the section all the substance
 and tone of each of the contributor acknowledgements and/or dedications
 given therein.
-\item [{L.}] Preserve all the Invariant Sections of the Document, unaltered
-in their text and in their titles. Section numbers or the equivalent
-are not considered part of the section titles.
-\item [{M.}] Delete any section Entitled \textquotedblleft{}Endorsements\textquotedblright{}.
+\item [{L.\hspace*{4.1mm}}] Preserve all the Invariant Sections of the
+Document, unaltered in their text and in their titles. Section numbers
+or the equivalent are not considered part of the section titles.
+\item [{M.\hspace*{3mm}}] Delete any section Entitled \textquotedblleft{}Endorsements\textquotedblright{}.
 Such a section may not be included in the Modified Version.
-\item [{N.}] Do not retitle any existing section to be Entitled \textquotedblleft{}Endorsements\textquotedblright{}
-or to conflict in title with any Invariant Section.
-\item [{O.}] Preserve any Warranty Disclaimers.
+\item [{N.\hspace*{3.4mm}}] Do not retitle any existing section to be
+Entitled \textquotedblleft{}Endorsements\textquotedblright{} or to
+conflict in title with any Invariant Section.
+\item [{O.\hspace*{3.4mm}}] Preserve any Warranty Disclaimers.
 \end{description}
 If the Modified Version includes new front-matter sections or appendices
 that qualify as Secondary Sections and contain no material copied

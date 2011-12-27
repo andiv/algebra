@@ -492,7 +492,7 @@ Algebra
 
 \shape italic
 \size small
-gelesen von
+Vorlesung von
 \begin_inset Newline newline
 \end_inset
 
@@ -506,11 +506,11 @@ Prof.
 \begin_inset Newline newline
 \end_inset
 
-im Wintersemester 2011/12
+im Wintersemester 2011/2012
 \begin_inset Newline newline
 \end_inset
 
-mitgeschrieben und überarbeitet von
+Textsatz in LyX und Überarbeitung von
 \begin_inset Newline newline
 \end_inset
 
@@ -8553,7 +8553,7 @@ Weil für alle
 
 \begin_inset Formula 
 \begin{align*}
-0 & =\nu_{p}\left(h\right)\sr{=}{\eqref{eq:hfg}}{\ref{sub:PuD-LemmaGau=00003D00003D00003D00003D0000DF}\text{ iii)}}\underbrace{\nu_{p}\left(f\right)}_{\le0}+\underbrace{\nu_{p}\left(g\right)}_{\le0}
+0 & =\nu_{p}\left(h\right)\sr{=}{\eqref{eq:hfg}}{\ref{sub:PuD-LemmaGau=00003D00003D00003D00003D00003D00003D00003D00003D00003D00003D00003D0000DF}\text{ iii)}}\underbrace{\nu_{p}\left(f\right)}_{\le0}+\underbrace{\nu_{p}\left(g\right)}_{\le0}
 \end{align*}
 
 \end_inset
@@ -9420,6 +9420,13 @@ end{abclist}
 
 \begin_layout Subsection
 Beispiel
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Bsp-Prim"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -10133,7 +10140,9 @@ Es sei
 \end_layout
 
 \begin_layout Subsection
-Proposition (Äquivalenz von prim in 
+Proposition
+\series medium
+ (Äquivalenz von prim in 
 \begin_inset Formula $R$
 \end_inset
 
@@ -10142,6 +10151,8 @@ Proposition (Äquivalenz von prim in
 \end_inset
 
 )
+\series default
+
 \begin_inset CommandInset label
 LatexCommand label
 name "sub:Prop-primRQ"
@@ -10157,7 +10168,12 @@ Sei
 \end_inset
 
 .
- Dann sind äquivalent:
+\end_layout
+
+\begin_layout Standard
+
+\color green
+TODO: „Dann sind äquivalent:“ ???
 \end_layout
 
 \begin_layout Standard
@@ -10339,10 +10355,6 @@ reference "sub:Prop-primRQ"
 \end_layout
 
 \begin_layout Standard
-TODO:
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -10371,11 +10383,14 @@ iii
 
 \end_inset
 
- 
-\begin_inset Formula $\ref{}$
+ Die Aussage wurde bereits in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:PuD-primitiv"
+
 \end_inset
 
- ii)
+ ii) bewiesen.
 \end_layout
 
 \begin_layout Standard
@@ -10399,11 +10414,11 @@ iii
 \begin_inset Formula $\tilde{f}\in Q\left[X\right]$
 \end_inset
 
- prim 
-\begin_inset Formula $\stackrel{\ref{}3.8,a)\Leftrightarrow b)}{\Leftrightarrow}a)$
+ ist ein Primelement 
+\begin_inset Formula $\stackrel{\ref{sub:Satz-Gauss}\text{,a)}\Leftrightarrow\text{b)}}{\Leftrightarrow}$
 \end_inset
 
-
+ a)
 \end_layout
 
 \begin_layout Standard
@@ -10454,11 +10469,15 @@ name "sub:Satz-RedKrit"
 \end_layout
 
 \begin_layout Standard
-Seien 
-\begin_inset Formula $f=\sum_{i=0}^{d}a_{i}X^{i}\in R\left[X\right]$
+Seien
+\begin_inset Formula 
+\begin{align*}
+f & =\sum_{i=0}^{d}a_{i}X^{i}\in R\left[X\right]
+\end{align*}
+
 \end_inset
 
- und 
+und 
 \begin_inset Formula $p\in R$
 \end_inset
 
@@ -10480,7 +10499,10 @@ Sei
 \end_inset
 
  wie in 
-\begin_inset Formula $\ref{}3.2$
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Bem-phiX"
+
 \end_inset
 
 .
@@ -10563,7 +10585,7 @@ iii
 \end_inset
 
  
-\begin_inset Formula $R=\mathbb{Z},p=3,f=2X\in R\left[X\right]$
+\begin_inset Formula $R=\mathbb{Z},p=3,f=2X\in\mathbb{Z}\left[X\right]$
 \end_inset
 
 
@@ -10582,9 +10604,11 @@ Dann ist
 \begin_inset Formula $2X\in\mathbb{Z}\left[X\right]$
 \end_inset
 
- ist nicht irreduzibel, vgl.
- 
-\begin_inset Formula $\ref{}3.9$
+ ist nicht irreduzibel, vergleiche 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Bsp-Prim"
+
 \end_inset
 
 .
@@ -10593,6 +10617,21 @@ Dann ist
 \end_inset
 
  nicht primitiv.)
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+%DATE 11.11.2011
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -10609,9 +10648,1191 @@ iii
 \end_inset
 
  
+\begin_inset Formula $R=\mathbb{Z},p=2,f=2X^{2}+X\in\mathbb{Z}\left[X\right]$
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
+Dann ist 
+\begin_inset Formula $\pi\left(f\right)=X\in\mathbb{F}_{2}\left[X\right]$
+\end_inset
+
+ irreduzibel, aber 
+\begin_inset Formula $f=X\left(2X+1\right)\in\mathbb{Z}\left[X\right]$
+\end_inset
+
+ ist nicht irreduzibel.
+ (Hier gilt 
+\begin_inset Formula $p|a_{d}$
+\end_inset
+
+.)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $R=\mathbb{Z}\left[Y\right],p=Y,f=2\in R\left[X\right]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Dann ist 
+\begin_inset Formula $\pi\left(f\right)=2\in\left(\modulo{R}{\left(Y\right)}\right)\left[X\right]$
+\end_inset
+
+ irreduzibel, aber 
+\begin_inset Formula $f=2\in Q\left[X\right]=\text{Quot}\left(\mathbb{Z}\left[Y\right]\right)$
+\end_inset
+
+ ist eine Einheit, denn aus 
+\begin_inset Formula $\mathbb{Z}\subseteq\mathbb{Z}\left[Y\right]$
+\end_inset
+
+ folgt 
+\begin_inset Formula $\mathbb{Q}\subseteq\text{Quot}\left(\mathbb{Z}\left[Y\right]\right)$
+\end_inset
+
+, also ist 
+\begin_inset Formula $f$
+\end_inset
+
+ nicht irreduzibel.
+ (Hier gilt 
+\begin_inset Formula $d=0$
+\end_inset
+
+.)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Beweis von 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Satz-RedKrit"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Fall: Sei 
+\begin_inset Formula $f$
+\end_inset
+
+ primitiv und 
+\begin_inset Formula $\pi\left(f\right)$
+\end_inset
+
+ irreduzibel.
+\begin_inset Newline newline
+\end_inset
+
+Angenommen 
+\begin_inset Formula $f$
+\end_inset
+
+ wäre reduzibel, das heißt 
+\begin_inset Formula $f=gh$
+\end_inset
+
+ in 
+\begin_inset Formula $R\left[X\right]$
+\end_inset
+
+ mit 
+\begin_inset Formula $g,h\in R\left[X\right]\setminus\left(R\left[X\right]\right)^{*}=R\left[X\right]\setminus R^{*}$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+Weil 
+\begin_inset Formula $f$
+\end_inset
+
+ primitiv ist, gilt:
+\begin_inset Formula 
+\begin{align*}
+\deg\left(g\right),\deg\left(h\right) & >0
+\end{align*}
+
+\end_inset
+
+Wegen 
+\begin_inset Formula $p\not|\, a_{d}$
+\end_inset
+
+ können die höchsten Koeffizienten von 
+\begin_inset Formula $g$
+\end_inset
+
+ und 
+\begin_inset Formula $h$
+\end_inset
+
+ nicht durch 
+\begin_inset Formula $p$
+\end_inset
+
+ teilbar sein, also gilt:
+\begin_inset Formula 
+\begin{align}
+\deg\left(\pi\left(g\right)\right) & =\deg\left(g\right)>0 & \deg\left(\pi\left(h\right)\right) & =\deg\left(h\right)>0\label{eq:degPigh}
+\end{align}
+
+\end_inset
+
+Es folgt in 
+\begin_inset Formula $\left(\modulo{R}{\left(p\right)}\right)\left[X\right]$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+\pi\left(f\right) & =\pi\left(fg\right)=\pi\left(g\right)\cdot\pi\left(h\right)
+\end{align*}
+
+\end_inset
+
+und wegen 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:degPigh"
+
+\end_inset
+
+ gilt:
+\begin_inset Formula 
+\begin{align*}
+\pi\left(g\right) & |\pi\left(h\right)\not\in\left(\left(\modulo{R}{\left(p\right)}\right)\left[X\right]\right)^{*}
+\end{align*}
+
+\end_inset
+
+Also ist 
+\begin_inset Formula $\pi\left(f\right)\in\left(\modulo{R}{\left(p\right)}\right)\left[X\right]$
+\end_inset
+
+ reduzibel, im Widerspruch zur Voraussetzung.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed[1.
+ Fall]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+(allgemeiner) Fall: Sei nun 
+\begin_inset Formula $f\in R\left[X\right]$
+\end_inset
+
+ mit 
+\begin_inset Formula $p\not|\, a_{d}$
+\end_inset
+
+ und 
+\begin_inset Formula $d>0$
+\end_inset
+
+ beliebig.
+\begin_inset Newline newline
+\end_inset
+
+Dann gibt es ein 
+\begin_inset Formula $c\in R\setminus\left\{ 0\right\} $
+\end_inset
+
+ und ein primitives Polynom 
+\begin_inset Formula $\tilde{f}\in R\left[X\right]$
+\end_inset
+
+ mit:
+\begin_inset Formula 
+\begin{align*}
+f & =c\tilde{f}
+\end{align*}
+
+\end_inset
+
+Wegen 
+\begin_inset Formula $p\not|\, a_{d}$
+\end_inset
+
+ gilt 
+\begin_inset Formula $p\not|\, c$
+\end_inset
+
+ in 
+\begin_inset Formula $R$
+\end_inset
+
+ und 
+\begin_inset Formula $p\not|\,\tilde{a}_{d}$
+\end_inset
+
+, wobei 
+\begin_inset Formula $\tilde{a}_{d}$
+\end_inset
+
+ der höchste Koeffizient von 
+\begin_inset Formula $\tilde{f}$
+\end_inset
+
+ ist.
+\begin_inset Newline newline
+\end_inset
+
+Dann gilt in 
+\begin_inset Formula $\left(\modulo{R}{\left(p\right)}\right)\left[X\right]$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+\pi\left(f\right) & =\pi\left(c\right)\cdot\pi\left(\tilde{f}\right)
+\end{align*}
+
+\end_inset
+
+Weil 
+\begin_inset Formula $\pi\left(f\right)$
+\end_inset
+
+ irreduzibel ist, muss auch 
+\begin_inset Formula $\pi\left(\tilde{f}\right)$
+\end_inset
+
+ irreduzibel sein.
+\begin_inset Newline newline
+\end_inset
+
+Nach dem 1.
+ Fall ist dann 
+\begin_inset Formula $\tilde{f}\in R\left[X\right]$
+\end_inset
+
+ irreduzibel und mit 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Satz-Gauss"
+
+\end_inset
+
+ folgt, dass 
+\begin_inset Formula $\tilde{f}\in Q\left[X\right]$
+\end_inset
+
+ irreduzibel ist.
+\begin_inset Newline newline
+\end_inset
+
+Weil 
+\begin_inset Formula $c\in Q^{*}=\left(Q\left[X\right]\right)^{*}$
+\end_inset
+
+ ist, ist 
+\begin_inset Formula $f=c\tilde{f}\in Q\left[X\right]$
+\end_inset
+
+ irreduzibel.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed[
+\backslash
+ref{sub:Satz-RedKrit}]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Korollar 
+\series medium
+(Eisensteinkriterium)
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Kor-Eisenstein"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Sei 
+\begin_inset Formula $p\in R$
+\end_inset
+
+ ein Primelement und
+\begin_inset Formula 
+\begin{align*}
+f & =a_{d}X^{d}+a_{d-1}X^{d-1}+\ldots+a_{0}\in R\left[X\right]
+\end{align*}
+
+\end_inset
+
+ein primitives Polynom mit:
+\begin_inset Formula 
+\begin{align*}
+p & \not|\, a_{d} & p & |a_{i} & p^{2} & \not|\, a_{0}
+\end{align*}
+
+\end_inset
+
+(
+\begin_inset Formula $0\le i\le d-1$
+\end_inset
+
+)
+\begin_inset Newline newline
+\end_inset
+
+Dann ist 
+\begin_inset Formula $f\in R\left[X\right]$
+\end_inset
+
+ (und damit nach 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Satz-Gauss"
+
+\end_inset
+
+ auch 
+\begin_inset Formula $f\in Q\left[X\right]$
+\end_inset
+
+) irreduzibel.
+\end_layout
+
+\begin_layout Subsubsection*
+Beweis
+\end_layout
+
+\begin_layout Standard
+Angenommen 
+\begin_inset Formula $f\in R\left[X\right]$
+\end_inset
+
+ wäre reduzibel, dann folgt, weil 
+\begin_inset Formula $f$
+\end_inset
+
+ primitiv ist, schon 
+\begin_inset Formula $f=gh$
+\end_inset
+
+ in 
+\begin_inset Formula $R\left[X\right]$
+\end_inset
+
+ mit:
+\begin_inset Formula 
+\begin{align*}
+g & =\alpha_{a}X^{a}+\ldots+\alpha_{0}\\
+h & =\beta_{b}X^{b}+\ldots+\beta_{0}
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+\deg\left(g\right) & >0 & \deg\left(h\right) & >0
+\end{align*}
+
+\end_inset
+
+Also gilt in 
+\begin_inset Formula $\left(\modulo{R}{\left(p\right)}\right)\left[X\right]\subseteq\text{Quot}\left(\modulo{R}{\left(p\right)}\right)\left[X\right]=:\tilde{Q}\left[X\right]$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align}
+\pi\left(f\right) & =\pi\left(g\right)\pi\left(h\right)=\label{eq:pifgh}\\
+ & =\underbrace{\tilde{a}_{d}}_{\not\equiv0}X^{d}+\underbrace{\tilde{a}_{d-1}}_{\equiv0}X^{d-1}+\ldots+\underbrace{\tilde{a}_{0}}_{\equiv0}\equiv\tilde{a}_{d}X^{d}\nonumber 
+\end{align}
+
+\end_inset
+
+Weil 
+\begin_inset Formula $\tilde{a}_{d}=\pi\left(a_{d}\right)\in\left(\modulo{Q}{\left(p\right)}\right)^{*}$
+\end_inset
+
+ und 
+\begin_inset Formula $X\in\tilde{Q}\left[X\right]$
+\end_inset
+
+ Primelemente sind, folgt aus der Primfaktorzerlegung in 
+\begin_inset Formula $\tilde{Q}\left[X\right]$
+\end_inset
+
+ und wegen 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:pifgh"
+
+\end_inset
+
+ folgt mit 
+\begin_inset Formula $\alpha,\beta\in\tilde{Q}^{*}$
+\end_inset
+
+, 
+\begin_inset Formula $a,b\ge0$
+\end_inset
+
+ und 
+\begin_inset Formula $a+b=d$
+\end_inset
+
+:
+\begin_inset Newline newline
+\end_inset
+
+
+\color green
+TODO: 
+\begin_inset Formula $\pi\left(a_{d}\right)\in Q^{*}$
+\end_inset
+
+ ???
+\color inherit
+
+\begin_inset Formula 
+\begin{align*}
+\pi\left(g\right) & =\alpha X^{a} & \pi\left(h\right) & =\beta X^{b}
+\end{align*}
+
+\end_inset
+
+Wegen 
+\begin_inset Formula $p\not|\, a_{d}$
+\end_inset
+
+ sind die höchsten Koeffizienten von 
+\begin_inset Formula $g$
+\end_inset
+
+ und 
+\begin_inset Formula $h$
+\end_inset
+
+ nicht durch 
+\begin_inset Formula $p$
+\end_inset
+
+ teilbar, also gilt:
+\begin_inset Formula 
+\begin{align*}
+a & =\deg\left(\pi\left(g\right)\right)>0 & b & =\deg\left(\pi\left(h\right)\right)>0
+\end{align*}
+
+\end_inset
+
+Damit sind die konstanten Terme von 
+\begin_inset Formula $g$
+\end_inset
+
+ und 
+\begin_inset Formula $h$
+\end_inset
+
+ durch 
+\begin_inset Formula $p$
+\end_inset
+
+ teilbar, da die konstanten Terme von 
+\begin_inset Formula $\pi\left(g\right)$
+\end_inset
+
+ und 
+\begin_inset Formula $\pi\left(h\right)$
+\end_inset
+
+ schon Null sind.
+\end_layout
+
+\begin_layout Standard
+Es folgt in 
+\begin_inset Formula $R$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+p^{2} & |\alpha_{0}\cdot\beta_{0}=a_{0}
+\end{align*}
+
+\end_inset
+
+Dies ist ein Widerspruch zur Voraussetzung 
+\begin_inset Formula $p^{2}\not|\, a_{0}$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Beispiel
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Für alle 
+\begin_inset Formula $n\in\mathbb{N}$
+\end_inset
+
+ ist 
+\begin_inset Formula $\text{Mipo}_{\mathbb{Q}}\left(\alpha:=\sqrt[n]{2}\right)=X^{n}-2=:f\left(X\right)\in\mathbb{Q}\left[X\right]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Beweis
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $f\left(\alpha\right)=0$
+\end_inset
+
+ und 
+\begin_inset Formula $f$
+\end_inset
+
+ ist normiert.
+\end_layout
+
+\begin_layout Standard
+Zeige noch: 
+\begin_inset Formula $f$
+\end_inset
+
+ ist in 
+\begin_inset Formula $\mathbb{Q}\left[X\right]$
+\end_inset
+
+ irreduzibel.
+\end_layout
+
+\begin_layout Standard
+Dies folgt sofort aus dem Eisensteinkriterium (Korollar 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Kor-Eisenstein"
+
+\end_inset
+
+) bezüglich der Primzahl 2.
+\end_layout
+
+\begin_layout Standard
+
+\color green
+TODO: Rest einfügen/überprüfen
+\color inherit
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed[
+\backslash
+roman{ale2})]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Seien 
+\begin_inset Formula $k$
+\end_inset
+
+ ein Körper und 
+\begin_inset Formula $n\in\mathbb{N}_{\ge1}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Dann ist 
+\begin_inset Formula $f\left(X\right):=X^{n}-t\in k\left(t\right)\left[X\right]$
+\end_inset
+
+ irreduzibel.
+\end_layout
+
+\begin_layout Subsubsection*
+Beweis
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $R:=k\left[t\right]$
+\end_inset
+
+ ist faktoriell mit 
+\begin_inset Formula $\text{Quot}\left(R\right)=k\left(t\right)$
+\end_inset
+
+ und 
+\begin_inset Formula $p:=t\in R$
+\end_inset
+
+ ist ein Primelement.
+\end_layout
+
+\begin_layout Standard
+Die Bedingungen in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Kor-Eisenstein"
+
+\end_inset
+
+ sind erfüllt und 
+\begin_inset Formula $f$
+\end_inset
+
+ ist primitiv, da es normiert ist.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed[
+\backslash
+roman{ale2})]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Seien 
+\begin_inset Formula $p$
+\end_inset
+
+ eine Primzahl und 
+\begin_inset Formula ${\displaystyle \zeta_{p}:=\exp\left(\frac{2\pi\ii}{p}\right)\in\mathbb{C}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Dann gilt
+\begin_inset Formula ${\displaystyle }$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+\text{Mipo}_{\mathbb{Q}}\left(\zeta_{p}\right) & =\frac{X^{p}-1}{X-1}=X^{p-1}+X^{p-2}+\ldots+X+1=:f_{p}\left(X\right)\in\mathbb{Q}\left[X\right]
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Beweis
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $f_{p}$
+\end_inset
+
+ ist normiert und erfüllt:
+\begin_inset Formula 
+\begin{align*}
+f_{p}\left(\zeta_{p}\right) & =\frac{\zeta_{p}^{p}-1}{\zeta_{p}-1}=\frac{\left(\exp\left(\frac{2\pi\ii}{p}\right)\right)^{p}-1}{\exp\left(\frac{2\pi\ii}{p}\right)-1}=\frac{\overbrace{\exp\left(\frac{p}{p}2\pi\ii\right)-1}^{\text{=0}}}{\underbrace{\exp\left(\frac{2\pi\ii}{p}\right)-1}_{\not=0}}=0
+\end{align*}
+
+\end_inset
+
+Zeige noch, dass 
+\begin_inset Formula $f\in\mathbb{Q}\left[X\right]$
+\end_inset
+
+ irreduzibel ist:
+\end_layout
+
+\begin_layout Standard
+Es existiert genau ein 
+\begin_inset Formula $\mathbb{Q}$
+\end_inset
+
+-Algebrenhomomorphismus 
+\begin_inset Formula $\sigma:\mathbb{Q}\left[X\right]\to\mathbb{Q}\left[X\right]$
+\end_inset
+
+ mit 
+\begin_inset Formula $\sigma\left(X\right)=X+1$
+\end_inset
+
+ (und 
+\begin_inset Formula $\sigma^{-1}\left(X\right)=X-1$
+\end_inset
+
+) und 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ ist ein Automorphismus.
+\end_layout
+
+\begin_layout Standard
+Es genügt also zu zeigen, dass 
+\begin_inset Formula $g:=f\left(X+1\right)$
+\end_inset
+
+ irreduzibel ist.
+\end_layout
+
+\begin_layout Standard
+Rechne nach:
+\begin_inset Formula 
+\begin{align*}
+g\left(X\right) & =f\left(X+1\right)=\frac{\left(X+1\right)^{p}-1}{\left(X+1\right)-1}=\frac{1}{X}\left(\left(X^{p}+pX^{p-1}+\ldots+pX+1\right)-1\right)=\\
+ & =X^{p-1}+\sum_{i=2}^{p-1}\left(\begin{array}{c}
+p\\
+i
+\end{array}\right)X^{i-1}+p\in\mathbb{Z}\left[X\right]
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Formula $g$
+\end_inset
+
+ ist daher normiert.
+\end_layout
+
+\begin_layout Standard
+Um zu sehen, dass 
+\begin_inset Formula $g$
+\end_inset
+
+ Eisenstein bezüglich 
+\begin_inset Formula $p$
+\end_inset
+
+ ist, ist noch zu zeigen:
+\begin_inset Formula 
+\begin{align*}
+\fall_{1\le i\le p-1} & p\bigg|\left(\begin{array}{c}
+p\\
+i
+\end{array}\right)
+\end{align*}
+
+\end_inset
+
+Es gilt:
+\begin_inset Formula 
+\begin{align*}
+\left(\begin{array}{c}
+p\\
+i
+\end{array}\right) & =\frac{p\cdot\left(p-1\right)\cdot\ldots\cdot\left(p-i+1\right)}{1\cdot2\cdot\ldots\cdot i}
+\end{align*}
+
+\end_inset
+
+Und wegen 
+\begin_inset Formula $p\not|\,\left(p-1\right),\left(p-2\right),\ldots,\left(p-i+1\right),1,2,\ldots,i$
+\end_inset
+
+ für 
+\begin_inset Formula $i<p$
+\end_inset
+
+ folgt sogar:
+\begin_inset Formula 
+\begin{align*}
+\nu_{p}\left(\left(\begin{array}{c}
+p\\
+i
+\end{array}\right)\right) & =1
+\end{align*}
+
+\end_inset
+
+Insbesondere ist 
+\begin_inset Formula $g$
+\end_inset
+
+ also Eisenstein bezüglich 
+\begin_inset Formula $p$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed[
+\backslash
+roman{ale2})]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $f\left(X\right):=X^{3}+3X^{2}-4X-1\in\mathbb{Q}\left[X\right]$
+\end_inset
+
+ ist irreduzibel.
+\end_layout
+
+\begin_layout Subsubsection*
+Beweis
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $f\in\mathbb{Z}\left[X\right]$
+\end_inset
+
+ ist primitiv und modulo 3 gilt:
+\begin_inset Formula 
+\begin{align*}
+\pi\left(f\right) & =:\overline{f}\left(X\right)=X^{3}-X-1\in\mathbb{F}_{3}\left[X\right]
+\end{align*}
+
+\end_inset
+
+Rechne:
+\begin_inset Formula 
+\begin{align*}
+f\left(-1,0,1\right) & =-1\not=0
+\end{align*}
+
+\end_inset
+
+Wegen 
+\begin_inset Formula $\deg\left(\overline{f}\right)=3$
+\end_inset
+
+ ist also 
+\begin_inset Formula $\overline{f}\in\mathbb{F}_{3}\left[X\right]$
+\end_inset
+
+ irreduzibel und aus 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Satz-RedKrit"
+
+\end_inset
+
+ folgt die Behauptung.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed[
+\backslash
+roman{ale2})]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $f\left(X,Y\right)=X^{2}Y+XY^{2}-X-Y+1\in\mathbb{Q}\left[X,Y\right]$
+\end_inset
+
+ ist irreduzibel.
+\end_layout
+
+\begin_layout Subsubsection*
+Beweis
+\end_layout
+
+\begin_layout Standard
+Schreibe:
+\begin_inset Formula 
+\begin{align*}
+f & =\underbrace{Y}_{=a_{2}}X^{2}+\underbrace{\left(Y^{2}-1\right)}_{=a_{1}}X+\underbrace{\left(1-Y\right)}_{=a_{0}}\in\underbrace{\left(\mathbb{Q}\left[Y\right]\right)}_{:=R}\left[X\right]
+\end{align*}
+
+\end_inset
+
+Dann ist 
+\begin_inset Formula $f$
+\end_inset
+
+ primitiv, da bereits 
+\begin_inset Formula $a_{2}$
+\end_inset
+
+ und 
+\begin_inset Formula $a_{0}$
+\end_inset
+
+ in 
+\begin_inset Formula $R$
+\end_inset
+
+ teilerfremd sind.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $p:=Y-1\in R$
+\end_inset
+
+ ist ein Primelement und es gelten:
+\begin_inset Formula 
+\begin{align*}
+Y-1=p & \not|\, a_{2}=Y^{2}\\
+Y-1=p & \:\,\,|\, a_{1}=Y^{2}-1=\left(Y-1\right)\left(Y+1\right)\\
+Y-1=p & \:\,\,|\, a_{0}=1-Y=-\left(Y-1\right)\\
+\left(Y-1\right)^{2}=p^{2} & \not|\, a_{0}=1-Y=-\left(Y-1\right)
+\end{align*}
+
+\end_inset
+
+Die Behauptung folgt aus Korollar 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Kor-Eisenstein"
+
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed[
+\backslash
+roman{ale2})]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\color green
 TODO: Rest einfügen
 \end_layout
 
@@ -10623,12 +11844,30 @@ status open
 
 
 \backslash
+begin{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
 iii
 \end_layout
 
 \end_inset
 
  
+\color green
+TODO: Rest einfügen
 \end_layout
 
 \begin_layout Standard
@@ -10665,6 +11904,12 @@ end{iiilist}
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+
+\color green
+TODO: Weiter überprüfen
 \end_layout
 
 \begin_layout Subsubsection*
@@ -26627,6 +27872,18 @@ You may copy and distribute a Modified Version of the Document under the
 
 \lang english
 A.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hspace*{3.2mm}
+\end_layout
+
+\end_inset
+
  Use in the Title Page (and on the covers, if any) a title distinct from
  that of the Document, and from those of previous versions (which should,
  if there were any, be listed in the History section of the Document).
@@ -26638,6 +27895,18 @@ A.
 
 \lang english
 B.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hspace*{3.4mm}
+\end_layout
+
+\end_inset
+
  List on the Title Page, as authors, one or more persons or entities responsible
  for authorship of the modifications in the Modified Version, together with
  at least five of the principal authors of the Document (all of its principal
@@ -26649,6 +27918,18 @@ B.
 
 \lang english
 C.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hspace*{3.4mm}
+\end_layout
+
+\end_inset
+
  State on the Title page the name of the publisher of the Modified Version,
  as the publisher.
 \end_layout
@@ -26657,6 +27938,18 @@ C.
 
 \lang english
 D.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hspace*{3.4mm}
+\end_layout
+
+\end_inset
+
  Preserve all the copyright notices of the Document.
 \end_layout
 
@@ -26664,6 +27957,18 @@ D.
 
 \lang english
 E.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hspace*{3.4mm}
+\end_layout
+
+\end_inset
+
  Add an appropriate copyright notice for your modifications adjacent to
  the other copyright notices.
 \end_layout
@@ -26672,6 +27977,18 @@ E.
 
 \lang english
 F.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hspace*{3.8mm}
+\end_layout
+
+\end_inset
+
  Include, immediately after the copyright notices, a license notice giving
  the public permission to use the Modified Version under the terms of this
  License, in the form shown in the Addendum below.
@@ -26681,6 +27998,18 @@ F.
 
 \lang english
 G.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hspace*{3.1mm}
+\end_layout
+
+\end_inset
+
  Preserve in that license notice the full lists of Invariant Sections and
  required Cover Texts given in the Document's license notice.
 \end_layout
@@ -26689,6 +28018,18 @@ G.
 
 \lang english
 H.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hspace*{3.2mm}
+\end_layout
+
+\end_inset
+
  Include an unaltered copy of this License.
 \end_layout
 
@@ -26696,6 +28037,18 @@ H.
 
 \lang english
 I.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hspace*{5.0mm}
+\end_layout
+
+\end_inset
+
  Preserve the section Entitled “History”, Preserve its Title, and add to
  it an item stating at least the title, year, new authors, and publisher
  of the Modified Version as given on the Title Page.
@@ -26709,6 +28062,18 @@ I.
 
 \lang english
 J.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hspace*{4.3mm}
+\end_layout
+
+\end_inset
+
  Preserve the network location, if any, given in the Document for public
  access to a Transparent copy of the Document, and likewise the network
  locations given in the Document for previous versions it was based on.
@@ -26722,6 +28087,18 @@ J.
 
 \lang english
 K.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hspace*{3.3mm}
+\end_layout
+
+\end_inset
+
  For any section Entitled “Acknowledgements” or “Dedications”, Preserve
  the Title of the section, and preserve in the section all the substance
  and tone of each of the contributor acknowledgements and/or dedications
@@ -26732,6 +28109,18 @@ K.
 
 \lang english
 L.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hspace*{4.1mm}
+\end_layout
+
+\end_inset
+
  Preserve all the Invariant Sections of the Document, unaltered in their
  text and in their titles.
  Section numbers or the equivalent are not considered part of the section
@@ -26742,6 +28131,18 @@ L.
 
 \lang english
 M.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hspace*{3mm}
+\end_layout
+
+\end_inset
+
  Delete any section Entitled “Endorsements”.
  Such a section may not be included in the Modified Version.
 \end_layout
@@ -26750,6 +28151,18 @@ M.
 
 \lang english
 N.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hspace*{3.4mm}
+\end_layout
+
+\end_inset
+
  Do not retitle any existing section to be Entitled “Endorsements” or to
  conflict in title with any Invariant Section.
 \end_layout
@@ -26758,6 +28171,18 @@ N.
 
 \lang english
 O.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hspace*{3.4mm}
+\end_layout
+
+\end_inset
+
  Preserve any Warranty Disclaimers.
 \end_layout
 
