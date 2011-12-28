@@ -10,7 +10,6 @@
 \setlength{\parskip}{\smallskipamount}
 \setlength{\parindent}{0pt}
 \usepackage{color}
-\usepackage{verbatim}
 \usepackage{textcomp}
 \usepackage{url}
 \usepackage{amsmath}
@@ -216,6 +215,8 @@
 \renewcommand\subsectionmark[1]{}
 
 % Kopf- und Fußzeile
+% Höhe der Kopfzeile
+\setlength{\headheight}{14pt}
 \fancyhf{} %alle Kopf- und Fußzeilenfelder bereinigen
 \fancyhead[L]{\textbf{Algebra}} %Kopfzeile links
 %\fancyhead[C]{\leftmark} %zentrierte Kopfzeile
@@ -247,7 +248,7 @@
 \author{\textit{\small Vorlesung von}\\
 \textit{\noun{\small Prof. Dr. Niko Naumann}}\textit{\small }\\
 \textit{\small im Wintersemester 2011/2012}\\
-\textit{\small Textsatz in \LyX{} und Überarbeitung von}\\
+\textit{\small Überarbeitung und Textsatz in \LyX{} von}\\
 \textit{\noun{\small Andreas Völklein}}}
 
 \maketitle
@@ -456,7 +457,8 @@ ist eine Untergruppe, der \emph{Kern von $\varphi$}, und es gilt:
 
 \subsubsection*{Beweis}
 
-Übung\\
+Übung
+
 \qqed
 
 
@@ -473,7 +475,8 @@ bijektiv.
 
 \subsubsection*{Beweis}
 
-Lineare Algebra I\\
+Lineare Algebra I
+
 \qqed
 
 
@@ -508,9 +511,10 @@ Also ist $\phi\left(g\right)\in\text{Aut}\left(G\right)$.
 \begin{align*}
 \left(\phi\left(g\right)\circ\phi\left(g'\right)\right)\left(h\right) & =\phi\left(g\right)\left(g'hg'^{-1}\right)=gg'hg'^{-1}g^{-1}=\left(gg'\right)h\left(gg'\right)^{-1}=\phi\left(gg'\right)\left(h\right)
 \end{align*}
-Also ist $\phi$ ein Gruppenhomomorphismus.\\
-\qqed
+Also ist $\phi$ ein Gruppenhomomorphismus.
 \end{itemize}
+\qqed
+
 
 \subsubsection*{Beispiel}
 
@@ -556,12 +560,16 @@ Für $\left|H\right|<\infty$ ist $\left|gH\right|=\left|g'H\right|$.
 \end{iiilist}
 
 
-\subsubsection*{Beweisq}
+\subsubsection*{Beweis}
 
 Zeige zunächst, dass $\sim$ eine Äquivalenzrelation ist:
 \begin{itemize}
 \item $\sim$ ist \emph{reflexiv}: ${\displaystyle \fall_{g\in G}g\cdot g^{-1}\stackrel{H\text{ ist UG}}{=}e\in H\stackrel{\eqref{eq:rel}}{\Rightarrow}g\sim g}$
-\item $\sim$ ist \emph{symmetrisch}: ${\displaystyle \fall_{g,g'\in G}g\sim g'\stackrel{\eqref{eq:rel}}{\Rightarrow}g^{-1}\cdot g'\in H\stackrel{H\text{ ist UG}}{\Rightarrow}H\ni\left(g^{-1}\cdot g'\right)^{-1}=g'^{-1}\cdot g\stackrel{\eqref{eq:rel}}{\Rightarrow}g'\sim g}$
+\item $\sim$ ist \emph{symmetrisch}:
+\begin{align*}
+\fall_{g,g'\in G}g\sim g' & \stackrel{\eqref{eq:rel}}{\Rightarrow}g^{-1}\cdot g'\in H\stackrel{H\text{ ist UG}}{\Rightarrow}H\ni\left(g^{-1}\cdot g'\right)^{-1}=g'^{-1}\cdot g\stackrel{\eqref{eq:rel}}{\Rightarrow}g'\sim g
+\end{align*}
+
 \item $\sim$ ist \emph{transitiv}: Seien $g,g',g''\in G$: ${\displaystyle g\sim g'\wedge g'\sim g''\Rightarrow g^{-1}g',g'^{-1}\cdot g''\in H}$\\
 ${\displaystyle \stackrel{H\text{ ist UG}}{\Rightarrow}H\ni\left(g^{-1}g'\right)\left(g'^{-1}g''\right)=g^{-1}g''\stackrel{\eqref{eq:rel}}{\Rightarrow}g\sim g''}$
 \end{itemize}
@@ -569,7 +577,8 @@ Also ist $\sim$ eine Äquivalenzrelation.
 
 Daraus folgen direkt i) und iii).
 
-ii) ist klar.\\
+ii) ist klar.
+
 \qqed
 
 
@@ -587,7 +596,7 @@ von $\left|G\right|$.
 \subsubsection*{Beweis}
 
 \begin{align*}
-\left|G\right| & \stackrel{\text{\ref{sub:Nebenklasse}\,\text{iii)}}}{=}\left|\bcupd_{gH\in\moduloScript{G}{H}}\left(gH\right)\right|=\sum_{gH\in\moduloScript{G}{H}}\left|gH\right|=\left|\modulo{G}{H}\right|\cdot\left|H\right|\stackrel{\text{Def.}}{=}\left(G:H\right)\cdot\left|H\right|
+\left|G\right| & \stackrel{\text{\ref{sub:PuD-Nebenklasse}\,\text{iii)}}}{=}\left|\bcupd_{gH\in\moduloScript{G}{H}}\left(gH\right)\right|=\sum_{gH\in\moduloScript{G}{H}}\left|gH\right|=\left|\modulo{G}{H}\right|\cdot\left|H\right|\stackrel{\text{Def.}}{=}\left(G:H\right)\cdot\left|H\right|
 \end{align*}
 \qqed
 
@@ -684,7 +693,8 @@ Für die Abbildung $\phi:G\rightarrow\text{Aut}\left(G\right)$ aus
 \ref{sub:BuD-AutGrup} sieht man leicht, dass $\ker\left(\phi\right)=Z\left(G\right)$
 ist.
 
-Also folgt die Behauptung aus \ref{sub:Prop-kerNormalTeiler}.\\
+Also folgt die Behauptung aus \ref{sub:Prop-kerNormalTeiler}.
+
 \qqed
 
 
@@ -724,7 +734,7 @@ Wegen \eqref{eq:rel} in \ref{sub:PuD-Nebenklasse} betrachte:
 Also gilt $\left(gg'\right)N=\left(g_{1}g_{1}'\right)N$.\\
 Ferner gilt:
 \begin{align*}
-\text{ker}\left(\pi\right) & =\left\{ g\in G|gN=\pi\left(g\right)=e'=eN=N\in\modulo{G}{N}\right\} \stackrel{\ref{sub:Nebenklasse}\,\text{i)}}{=}N
+\text{ker}\left(\pi\right) & =\left\{ g\in G|gN=\pi\left(g\right)=e'=eN=N\in\modulo{G}{N}\right\} \stackrel{\ref{sub:PuD-Nebenklasse}\,\text{i)}}{=}N
 \end{align*}
 \qqed
 \end{itemize}
@@ -779,7 +789,8 @@ Dann sind äquivalent:
 
 \subsubsection*{Beweis}
 
-Übung\\
+Übung
+
 \qqed
 
 
@@ -804,7 +815,8 @@ Aus
 \text{ker}\left(\overline{\varphi}\right)= & \modulo{\text{ker}\left(\varphi\right)}{N}=\modulo{\text{ker}\left(\varphi\right)}{\text{ker}\left(\varphi\right)}=\left\{ e\right\} 
 \end{align*}
 und \ref{sub:PuD-ker} folgt, dass $\overline{\varphi}$ injektiv,
-also ein Isomorphismus ist.\\
+also ein Isomorphismus ist.
+
 \qqed
 
 
@@ -853,7 +865,8 @@ Damit ist $\text{ker}\left(\varphi\right)\subseteq\mathbb{Z}$ eine
 Untergruppe vom Index $\left|G\right|=p$.
 
 Nach der Vorlesung lineare Algebra I folgt $\text{ker}\left(\varphi\right)=p\mathbb{Z}$,
-also $G\stackrel{\sim}{=}\modlo{Z}{p}$.\\
+also $G\stackrel{\sim}{=}\modlo{Z}{p}$.
+
 \qqed[\ref{sub:Satz-ZpZ}]
 
 
@@ -879,7 +892,8 @@ eine Untergruppe und es gilt:
 x & =\varphi\left(1\right)\in\text{im}\left(\varphi\right)=\left\langle x\right\rangle 
 \end{align*}
 Ist $H\subseteq G$ eine Untergruppe mit $x\in H$, so folgt $x^{n}\in H$
-für alle $n\in\mathbb{Z}$, das heißt $\left\langle x\right\rangle \subseteq H$.\\
+für alle $n\in\mathbb{Z}$, das heißt $\left\langle x\right\rangle \subseteq H$.
+
 \qqed
 
 
@@ -903,7 +917,8 @@ $\left\langle x\right\rangle =G$ heißt \emph{Erzeuger von $G$}.
 
 i) $\Rightarrow$ ii): Wähle $\varphi:\mathbb{Z}\to G$ mit $\varphi\left(1\right)=x$.
 
-ii) $\Rightarrow$ i): Wähle $x:=\varphi\left(1\right)$.\\
+ii) $\Rightarrow$ i): Wähle $x:=\varphi\left(1\right)$.
+
 \qqed
 
 
@@ -975,7 +990,8 @@ also:
 x & \mapsto mx
 \end{align*}
 Also ist $\psi:\mathbb{Z}\to H$ ein Epimorphismus, das heißt $H$
-ist zyklisch.\\
+ist zyklisch.
+
 \qqed[i)]
 
 \iii Ist $\psi:\mathbb{Z}\to G$ ein Epimorphismus, so auch die Komposition:
@@ -985,7 +1001,8 @@ ist zyklisch.\\
 Daher ist $\text{im}\left(\varphi\right)$ zyklisch.
 
 Weil $\text{ker}\left(\varphi\right)\subseteq G$ eine Untergruppe
-ist, ist $\text{ker}\left(\varphi\right)$ zyklisch nach i).\\
+ist, ist $\text{ker}\left(\varphi\right)$ zyklisch nach i).
+
 \qqed[ii)]
 
 \end{iiilist}
@@ -1053,7 +1070,7 @@ x^{\left|G\right|} & \stackrel{\ref{sub:Kor-Lagrange}}{=}x^{\text{ord}\left(x\ri
 \qqed
 
 
-\subsection{Korollar}
+\subsection{Korollar\label{sub:Kor-aPhin1}}
 
 \begin{iiilist}
 
@@ -1144,7 +1161,8 @@ insbesondere für $d=n$ folgt wegen $1\in\left(\modlo{Z}{n}\right)^{*}$:
 \psi\left(n\right) & =\varphi\left(n\right)=\left|\left(\modlo{Z}{n}\right)^{*}\right|\not=0
 \end{align*}
 Das heißt es gibt ein $x\in G$ mit $\text{ord}\left(x\right)=n$,
-also ist $G=\left\langle x\right\rangle $ und $G$ ist zyklisch.\\
+also ist $G=\left\langle x\right\rangle $ und $G$ ist zyklisch.
+
 \qqed
 
 
@@ -1170,7 +1188,8 @@ gilt:
 
 
 Das ist klar, denn das Polynom $T^{d}-1\in k\left[T\right]$ hat höchstens
-$d$ Nullstellen in $k$ nach linearer Algebra II.\\
+$d$ Nullstellen in $k$ nach linearer Algebra II.
+
 \qqed
 
 
@@ -1329,10 +1348,12 @@ Damit folgt in $A$:
 \end{align*}
 
 
-Wegen $tvw\in S$ folgt aus \eqref{eq:bruchrel} schon $\left(a,s\right)\sim\left(c,u\right)$.\\
+Wegen $tvw\in S$ folgt aus \eqref{eq:bruchrel} schon $\left(a,s\right)\sim\left(c,u\right)$.
+
 \qqed[$\sim$ Äquivrel.]
 
-Der Rest bleibt als Übung.\\
+Der Rest bleibt als Übung.
+
 \qqed[\ref{sub:KuD-QuotRing}]
 
 
@@ -1386,7 +1407,8 @@ nach:
 \begin{align*}
 \varphi\left(a\right)+\varphi\left(b\right) & =\frac{a}{1}+\frac{b}{1}\stackrel{\ref{sub:KuD-QuotRing}}{=}\frac{a\cdot1+b\cdot1}{1\cdot1}=\frac{a+b}{1}=\varphi\left(a+b\right)
 \end{align*}
-Der Rest geht analog.\\
+Der Rest geht analog.
+
 \qqed[\roman{ale2})]
 
 \iii b) $\Rightarrow$ a): Es gilt $\varphi\left(S\right)\subseteq\left(S^{-1}A\right)^{*}$,
@@ -1483,7 +1505,8 @@ mit:
 \begin{align*}
 0 & =s\underbrace{\left(1\cdot1-0\cdot1\right)}_{=1}=s
 \end{align*}
-Das bedeutet $s=0\in S$.\\
+Das bedeutet $s=0\in S$.
+
 \qqed[ii)]
 
 \end{iiilist}
@@ -1572,7 +1595,8 @@ $S^{-1}A$-linear.
 
 \subsubsection*{Beweis}
 
-Analog zu \ref{sub:KuD-QuotRing}.\\
+Analog zu \ref{sub:KuD-QuotRing}.
+
 \qqed
 
 
@@ -1704,7 +1728,8 @@ Damit ergibt sich:
 \begin{align*}
 x & \stackrel{\eqref{eq:xtm}}{=}\frac{1}{t}\otimes m=\frac{1}{t^{2}s}\otimes\underbrace{\left(stm\right)}_{=0}=0
 \end{align*}
-Es folgt $\text{ker}\left(f\right)=0$, also ist $f$ injektiv.\\
+Es folgt $\text{ker}\left(f\right)=0$, also ist $f$ injektiv.
+
 \qqed
 
 
@@ -1723,7 +1748,8 @@ exakt.
 
 \subsubsection*{Beweis}
 
-Folgt aus \ref{sub:Prop-exaktAModuln} und \ref{sub:Prop-AModulnIso}.\\
+Folgt aus \ref{sub:Prop-exaktAModuln} und \ref{sub:Prop-AModulnIso}.
+
 \qqed
 
 
@@ -1743,7 +1769,8 @@ Man prüft, dass das Diagramm kommutiert(, das heißt prüfen, dass eines
 der Quadrate kommutiert.) (vergleiche Übungsaufgaben aus linearer
 Algebra II)
 
-Es folgt die Exaktheit der ersten Zeile.\\
+Es folgt die Exaktheit der ersten Zeile.
+
 \qqed[\textcolor{green}{???TODO???}]
 
 \newpage{}
@@ -1865,7 +1892,7 @@ Es gelten:
 
 \iii $f\in R\left[X\right]\Leftrightarrow\fall_{p\in\mathcal{P}}:\nu_{p}\left(f\right)\ge0$
 
-\iii Lemma von Gauß: $ $$\fall_{f,g\in\mathbb{Q}\left[X\right]}:\nu_{p}\left(fg\right)=\nu_{p}\left(f\right)+\nu_{p}\left(g\right)$
+\iii Lemma von Gauß: $\fall_{f,g\in\mathbb{Q}\left[X\right]}:\nu_{p}\left(fg\right)=\nu_{p}\left(f\right)+\nu_{p}\left(g\right)$
 
 \end{iiilist}
 
@@ -1946,13 +1973,14 @@ in $Q\left[X\right]$ normiert sind.
 
 Weil für alle $p\in\mathcal{P}$
 \begin{align*}
-0 & =\nu_{p}\left(h\right)\sr{=}{\eqref{eq:hfg}}{\ref{sub:PuD-LemmaGau=00003D00003D00003D00003D00003D00003D00003D00003D00003D00003D00003D0000DF}\text{ iii)}}\underbrace{\nu_{p}\left(f\right)}_{\le0}+\underbrace{\nu_{p}\left(g\right)}_{\le0}
+0 & =\nu_{p}\left(h\right)\sr{=}{\eqref{eq:hfg}}{\ref{sub:PuD-LemmaGauss}\text{ iii)}}\underbrace{\nu_{p}\left(f\right)}_{\le0}+\underbrace{\nu_{p}\left(g\right)}_{\le0}
 \end{align*}
 gilt, folgt:
 \begin{align*}
 \nu_{p}\left(f\right) & =\nu_{p}\left(g\right)=0
 \end{align*}
-Daher sind $f,g\in R\left[X\right]$.\\
+Daher sind $f,g\in R\left[X\right]$.
+
 \qqed
 
 
@@ -1980,7 +2008,8 @@ Ferner gilt in $R$:
 0 & =h\left(\alpha\right)=\sum_{i\ge0}a_{i}\alpha^{i}=\alpha\left(\sum_{i\ge1}a_{i}\alpha^{i-1}\right)+a_{0}\\
 a_{0} & =\alpha\cdot\underbrace{\left(-\sum_{i\ge1}a_{i}\alpha^{i-1}\right)}_{\in R,\text{ da }a_{i},\alpha\in R}
 \end{align*}
-Also gilt $\alpha|a_{0}$ in $R$.\\
+Also gilt $\alpha|a_{0}$ in $R$.
+
 \qqed
 
 
@@ -2057,7 +2086,8 @@ wohldefiniert und für $\tilde{f}:=\alpha^{-1}f$ gilt für alle $p\in\mathcal{P}$:
 \begin{align*}
 \nu_{p}\left(\tilde{f}\right) & =\nu_{p}\left(\alpha^{-1}f\right)\stackrel{\ref{sub:PuD-LemmaGauss}\text{ iii)}}{=}-\underbrace{\nu_{p}\left(\alpha\right)}_{=\nu_{p}\left(f\right)}+\nu_{p}\left(f\right)=0
 \end{align*}
-Also ist $\tilde{f}\in R\left[X\right]$ nach Teil i) primitiv.\\
+Also ist $\tilde{f}\in R\left[X\right]$ nach Teil i) primitiv.
+
 \qqed[\roman{ale2})]
 
 \end{iiilist}
@@ -2211,7 +2241,8 @@ f & =\underbrace{\left(a\tilde{f}_{1}\right)}_{\text{primitiv, da }a\in R^{*}}\c
 
 
 Damit ist $f$ ein Produkt von primitiven Faktoren, die Primelemente
-in $Q\left[X\right]$ sind.\\
+in $Q\left[X\right]$ sind.
+
 \qqed[\ref{sub:Satz-Gauss}]
 
 
@@ -2255,7 +2286,8 @@ $f$ hat doch eine Nullstelle, so würde in $k\left(X\right)$ folgen:
 Aus \ref{sub:Bsp-Vieta} mit $h:=f$ und $R:=k\left(X\right)$ folgt
 $\alpha\in k\left[X\right]$, also $-\alpha^{2}=X^{3}$ in $k\left(X\right)$
 und damit $2\cdot\text{deg}\left(\alpha\right)=\deg\left(X^{3}\right)=3$
-in $\mathbb{Z}$, was ein Widerspruch ist.\\
+in $\mathbb{Z}$, was ein Widerspruch ist.
+
 \qqed
 
 \newpage{}
@@ -2270,7 +2302,7 @@ Es sei $R$ ein faktorieller Ring und $Q:=\text{Quot}\left(R\right)$
 sein Quotientenkörper.
 
 
-\subsection{Proposition\textmd{ (Äquivalenz von prim in $R$ und $Q$)}\label{sub:Prop-primRQ}}
+\subsection{Proposition\textmd{ (Äquivalenz von Primelement in $R$ und $Q$)}\label{sub:Prop-primRQ}}
 
 Sei $0\not=f\in Q\left[X\right]$.
 
@@ -2341,12 +2373,12 @@ Wähle in \ref{sub:Satz-RedKrit} zum Beispiel:
 
 \begin{iiilist}
 
-\iii $R=\mathbb{Z},p=3,f=2X\in\mathbb{Z}\left[X\right]$
-
+\iii $R=\mathbb{Z},p=3,f=2X\in\mathbb{Z}\left[X\right]$\\
 Dann ist $\pi\left(f\right)=-X\in\mathbb{F}_{3}\left[X\right]$ irreduzibel,
 also ist $2X\in\text{Quot}\left(R\right)\left[X\right]=\mathbb{Q}\left[X\right]$
 irreduzibel, aber $2X\in\mathbb{Z}\left[X\right]$ ist nicht irreduzibel,
-vergleiche \ref{sub:Bsp-Prim}. (Hier ist $f$ nicht primitiv.)\\
+vergleiche \ref{sub:Bsp-Prim}. (Hier ist $f$ nicht primitiv.)
+
 %DATE 11.11.2011
 
 \iii $R=\mathbb{Z},p=2,f=2X^{2}+X\in\mathbb{Z}\left[X\right]$
@@ -2389,8 +2421,7 @@ und wegen \eqref{eq:degPigh} gilt:
 \pi\left(g\right) & |\pi\left(h\right)\not\in\left(\left(\modulo{R}{\left(p\right)}\right)\left[X\right]\right)^{*}
 \end{align*}
 Also ist $\pi\left(f\right)\in\left(\modulo{R}{\left(p\right)}\right)\left[X\right]$
-reduzibel, im Widerspruch zur Voraussetzung.\\
-\qqed[1. Fall]
+reduzibel, im Widerspruch zur Voraussetzung.\qqed[1. Fall]
 \item (allgemeiner) Fall: Sei nun $f\in R\left[X\right]$ mit $p\not|\, a_{d}$
 und $d>0$ beliebig.\\
 Dann gibt es ein $c\in R\setminus\left\{ 0\right\} $ und ein primitives
@@ -2467,7 +2498,8 @@ Es folgt in $R$:
 \begin{align*}
 p^{2} & |\alpha_{0}\cdot\beta_{0}=a_{0}
 \end{align*}
-Dies ist ein Widerspruch zur Voraussetzung $p^{2}\not|\, a_{0}$.\\
+Dies ist ein Widerspruch zur Voraussetzung $p^{2}\not|\, a_{0}$.
+
 \qqed
 
 
@@ -2475,7 +2507,7 @@ Dies ist ein Widerspruch zur Voraussetzung $p^{2}\not|\, a_{0}$.\\
 
 \begin{iiilist}
 
-\iii Für alle $n\in\mathbb{N}$ ist $\text{Mipo}_{\mathbb{Q}}\left(\alpha:=\sqrt[n]{2}\right)=X^{n}-2=:f\left(X\right)\in\mathbb{Q}\left[X\right]$
+\iii Für alle $n\in\mathbb{N}_{\ge1}$ ist $\text{Mipo}_{\mathbb{Q}}\left(\alpha:=\sqrt[n]{2}\right)=X^{n}-2=:f\left(X\right)\in\mathbb{Q}\left[X\right]$
 
 
 \subsubsection*{Beweis}
@@ -2485,9 +2517,10 @@ $f\left(\alpha\right)=0$ und $f$ ist normiert.
 Zeige noch: $f$ ist in $\mathbb{Q}\left[X\right]$ irreduzibel.
 
 Dies folgt sofort aus dem Eisensteinkriterium (Korollar \ref{sub:Kor-Eisenstein})
-bezüglich der Primzahl 2.
+mit $R=\mathbb{Z}$ und $p=2$.
 
-\textcolor{green}{TODO: Rest einfügen/überprüfen}\\
+Man sagt: \quotedblbase{}$f$ ist Eisenstein bezüglich 2.\textquotedblleft{}
+
 \qqed[\roman{ale2})]
 
 \iii Seien $k$ ein Körper und $n\in\mathbb{N}_{\ge1}$.
@@ -2502,7 +2535,8 @@ $R:=k\left[t\right]$ ist faktoriell mit $\text{Quot}\left(R\right)=k\left(t\righ
 und $p:=t\in R$ ist ein Primelement.
 
 Die Bedingungen in \ref{sub:Kor-Eisenstein} sind erfüllt und $f$
-ist primitiv, da es normiert ist.\\
+ist primitiv, da es normiert ist.
+
 \qqed[\roman{ale2})]
 
 \iii Seien $p$ eine Primzahl und ${\displaystyle \zeta_{p}:=\exp\left(\frac{2\pi\ii}{p}\right)\in\mathbb{C}}$.
@@ -2522,27 +2556,30 @@ f_{p}\left(\zeta_{p}\right) & =\frac{\zeta_{p}^{p}-1}{\zeta_{p}-1}=\frac{\left(\
 \end{align*}
 Zeige noch, dass $f\in\mathbb{Q}\left[X\right]$ irreduzibel ist:
 
-Es existiert genau ein $\mathbb{Q}$-Algebrenhomomorphismus $\sigma:\mathbb{Q}\left[X\right]\to\mathbb{Q}\left[X\right]$
+Es existiert genau ein $\mathbb{Q}$-Algebrenhomomorphismus $\sigma:\mathbb{Q}\left[X\right]\stackrel{\sim}{\to}\mathbb{Q}\left[X\right]$
 mit $\sigma\left(X\right)=X+1$ (und $\sigma^{-1}\left(X\right)=X-1$)
 und $\sigma$ ist ein Automorphismus.
 
-Es genügt also zu zeigen, dass $g:=f\left(X+1\right)$ irreduzibel
-ist.
-
-Rechne nach:
+Es genügt also zu zeigen, dass
 \begin{align*}
-g\left(X\right) & =f\left(X+1\right)=\frac{\left(X+1\right)^{p}-1}{\left(X+1\right)-1}=\frac{1}{X}\left(\left(X^{p}+pX^{p-1}+\ldots+pX+1\right)-1\right)=\\
+g_{p} & :=\sigma\left(f_{p}\right)\left(X\right)=f_{p}\left(\sigma\left(X\right)\right)=f_{p}\left(X+1\right)
+\end{align*}
+irreduzibel ist.
+
+Rechne:
+\begin{align*}
+g_{p}\left(X\right) & =f_{p}\left(X+1\right)=\frac{\left(X+1\right)^{p}-1}{\left(X+1\right)-1}=\frac{1}{X}\left(\left(X^{p}+pX^{p-1}+\ldots+pX+1\right)-1\right)=\\
  & =X^{p-1}+\sum_{i=2}^{p-1}\left(\begin{array}{c}
 p\\
 i
 \end{array}\right)X^{i-1}+p\in\mathbb{Z}\left[X\right]
 \end{align*}
-$g$ ist daher normiert.
+$g_{p}$ ist daher normiert.
 
-Um zu sehen, dass $g$ Eisenstein bezüglich $p$ ist, ist noch zu
-zeigen:
+Um zu sehen, dass $g_{p}$ Eisenstein bezüglich $p$ ist, ist noch
+zu zeigen:
 \begin{align*}
-\fall_{1\le i\le p-1} & p\bigg|\left(\begin{array}{c}
+\fall_{1\le i\le p-1}\quad & p\bigg|\left(\begin{array}{c}
 p\\
 i
 \end{array}\right)
@@ -2562,7 +2599,8 @@ p\\
 i
 \end{array}\right)\right) & =1
 \end{align*}
-Insbesondere ist $g$ also Eisenstein bezüglich $p$.\\
+Insbesondere ist $g_{p}$ also Eisenstein bezüglich $p$.
+
 \qqed[\roman{ale2})]
 
 \iii $f\left(X\right):=X^{3}+3X^{2}-4X-1\in\mathbb{Q}\left[X\right]$
@@ -2580,7 +2618,8 @@ Rechne:
 f\left(-1,0,1\right) & =-1\not=0
 \end{align*}
 Wegen $\deg\left(\overline{f}\right)=3$ ist also $\overline{f}\in\mathbb{F}_{3}\left[X\right]$
-irreduzibel und aus \ref{sub:Satz-RedKrit} folgt die Behauptung.\\
+irreduzibel und aus \ref{sub:Satz-RedKrit} folgt die Behauptung.
+
 \qqed[\roman{ale2})]
 
 \iii $f\left(X,Y\right)=X^{2}Y+XY^{2}-X-Y+1\in\mathbb{Q}\left[X,Y\right]$
@@ -2603,65 +2642,66 @@ Y-1=p & \:\,\,|\, a_{1}=Y^{2}-1=\left(Y-1\right)\left(Y+1\right)\\
 Y-1=p & \:\,\,|\, a_{0}=1-Y=-\left(Y-1\right)\\
 \left(Y-1\right)^{2}=p^{2} & \not|\, a_{0}=1-Y=-\left(Y-1\right)
 \end{align*}
-Die Behauptung folgt aus Korollar \ref{sub:Kor-Eisenstein}.\\
+Die Behauptung folgt aus Korollar \ref{sub:Kor-Eisenstein}.
+
 \qqed[\roman{ale2})]
-
-\end{iiilist}
-
-\textcolor{green}{TODO: Rest einfügen}
-
-\begin{iiilist}
-
-\iii \textcolor{green}{TODO: Rest einfügen}
 
 \iii $f\left(X\right)=X^{4}+3X^{3}+X^{2}-2X+1\in\mathbb{Q}\left[X\right]$
 ist irreduzibel.
 
-\end{iiilist}
-
-\textcolor{green}{TODO: Weiter überprüfen}
-
 
 \subsubsection*{Beweis}
 
-$f\in\mathbb{Z}\left[X\right]$ ist normiert. Wegen $\ref{}3.5$ und
-$f\left(\pm1\right)=4,2\not=0$ folgt:
+$f\in\mathbb{Z}\left[X\right]$ ist normiert. Wegen \ref{sub:Bsp-Vieta}
+und $f\left(\pm1\right)=3\pm1\not=0$ folgt, dass $f$ keinen Linearfaktor
+in $\mathbb{Q}\left[X\right]$ besitzt.
 
-(1) $f$ besitzt keinen Linearfaktor in $\mathbb{Q}\left[X\right]$.
-
-Reduktion modulo $2$ liefert $\overline{f}:=\pi\left(f\right)=X^{4}+X^{3}+X^{2}+1\in\mathbb{F}_{2}\left[X\right]$.
+Reduktion modulo $2$ liefert:
+\begin{align*}
+\overline{f} & :=\pi\left(f\right)=X^{4}+X^{3}+X^{2}+1\in\mathbb{F}_{2}\left[X\right]
+\end{align*}
 Offenbar gilt $\overline{f}\left(1\right)=0$, und Division liefert:
 \begin{align}
-\overline{f}=\left(X+1\right)\left(X^{3}+X+1\right) & \text{in }\mathbb{F}_{2}\left[X\right]\qquad(*)
+\overline{f}=\left(X+1\right)\left(X^{3}+X+1\right) & \in\mathbb{F}_{2}\left[X\right]\label{eq:overf}
 \end{align}
 
 
 Beide Faktoren sind irreduzibel, da sie keine Nullstellen und Grad
-$\le3$ haben. Also ist $(*)$ die Primfaktorzerledung von $\overline{f}\in\mathbb{F}_{2}\left[X\right]$.
+$\le3$ haben.
 
-Wäre nun $f\in\mathbb{Q}\left[X\right]$ reduzibel, so wegen $\ref{}3.8$
-auch $f\in\mathbb{Z}\left[X\right]$, und wegen (1) müsste gelten
-$f=gh$ in $\mathbb{Z}\left[X\right]$ mit $\text{deg}\left(g\right)=\text{deg}\left(h\right)=2$
-$\Rightarrow$ $\overline{f}=\overline{g}\cdot\overline{h}$ in $\mathbb{F}_{2}\left[X\right]$
-mit $\text{deg}\left(\overline{g}\right),\text{deg}\left(\overline{h}\right)\le2$;
-wegen $\text{deg}\left(\overline{f}\right)=4$, also $\text{deg}\left(\overline{g}\right)=\text{deg}\left(\overline{h}\right)=2$.
-Wegen ({*}) besitzt aber $\overline{f}\in\mathbb{F}_{2}\left[X\right]$
+Also ist \eqref{eq:overf} die Primfaktorzerlegung von $\overline{f}\in\mathbb{F}_{2}\left[X\right]$.
+
+Wäre nun $f\in\mathbb{Q}\left[X\right]$ reduzibel, so wäre wegen
+\ref{sub:Satz-Gauss} auch $f\in\mathbb{Z}\left[X\right]$ reduzibel,
+also: 
+\begin{align*}
+f & =gh\in\mathbb{Z}\left[X\right]
+\end{align*}
+Da $f$ keinen Linearfaktor in $\mathbb{Q}\left[X\right]$ besitzt,
+müsste $\text{deg}\left(g\right)=\text{deg}\left(h\right)=2$ gelten.
+
+Dann würde $\overline{f}=\overline{g}\cdot\overline{h}$ in $\mathbb{F}_{2}\left[X\right]$
+mit $\text{deg}\left(\overline{g}\right),\text{deg}\left(\overline{h}\right)\le2$
+folgen und weil $\text{deg}\left(\overline{f}\right)=4$ ist, also
+schon $\text{deg}\left(\overline{g}\right)=\text{deg}\left(\overline{h}\right)=2$.
+
+Wegen \eqref{eq:overf} besitzt aber $\overline{f}\in\mathbb{F}_{2}\left[X\right]$
 bis auf Assoziiertheit genau die Teiler $\left\{ 1,X+1,X^{3}+X+1,\overline{f}\right\} $,
-und keines dieser Polynome besitzt Grad 2. $\lightning$ zu Reduzibilitätsannahme.
+und keines dieser Polynome besitzt Grad 2. Dies ist ein Widerspruch
+zu der angenommenen Reduzibilität.\inputencoding{latin1}{}\\
+\inputencoding{latin9}\qqed[\roman{ale2})]
 
-\qqed
-
-vii) Seien $p$ eine Primzahl und $F_{p}\left(X\right):=\left(X^{p}-1\right)/\left(X-1\right)=X^{p}+\ldots+1\in\mathbb{Z}\left[X\right]$
+\iii Seien $p$ eine Primzahl und ${\displaystyle F_{p}\left(X\right):=\frac{X^{p}-1}{X-1}=X^{p}+\ldots+1\in\mathbb{Z}\left[X\right]}$
 wie in iii).
 
-Für $r\ge1$ setze $n:=p^{r}$ und $\zeta_{p^{r}}:=\text{exp}\left(\frac{2\pi\ii}{n}\right)$.
-Ferner:
-\begin{align*}
-F_{p^{r}}\left(X\right) & :=F_{p}\left(X^{p^{r-1}}\right)\in\mathbb{Z}\left[X\right]\qquad(*)
-\end{align*}
+Für $r\ge1$ setze $n:=p^{r}$, ${\displaystyle \zeta_{p^{r}}:=\text{exp}\left(\frac{2\pi\ii}{n}\right)}$
+und ferner:
+\begin{align}
+F_{p^{r}}\left(X\right) & :=F_{p}\left(X^{p^{r-1}}\right)\in\mathbb{Z}\left[X\right]\label{eq:Fpr}
+\end{align}
 
 
-(es folgt $\text{deg}\left(F_{p^{r}}\right)=\left(p-1\right)p^{r-1}=\varphi\left(p^{r}\right)$)
+Es folgt $\text{deg}\left(F_{p^{r}}\right)=\left(p-1\right)p^{r-1}=\varphi\left(p^{r}\right)$.
 
 Dann gilt: $F_{p^{r}}\left(X\right)=\text{Mipo}_{\mathbb{Q}}\left(\zeta_{p^{r}}\right)$
 
@@ -2669,56 +2709,74 @@ Dann gilt: $F_{p^{r}}\left(X\right)=\text{Mipo}_{\mathbb{Q}}\left(\zeta_{p^{r}}\
 \subsubsection*{Beweis}
 
 Wegen $X^{p}-1=\left(X-1\right)F_{p}\left(X\right)$ folgt durch Ersetzten
-von $X$ durch $X^{p^{r-1}}:X^{p^{r}}-1=\left(X^{p^{r-1}}-1\right)F_{p^{r}}\left(X\right)$
-
-Wegen $\zeta_{p^{r}}^{p^{r}}=1$ aber $\zeta_{p^{r}}^{p^{r-1}}\not=1$
-folgt $F_{p^{r}}\left(\zeta_{p^{r}}\right)=0$. Offenbar ist $F_{p^{r}}$
-normiert. Zeige nach analog zu iii), dass $f\left(X\right):=F_{p^{r}}\left(X+1\right)\in\mathbb{Z}\left[X\right]$
-Eisenstein bezüglich $p$ ist.
-
-Mit $F_{p^{r}}\left(X\right)$ ist auch $f\left(X\right)$ normiert,
-und für den konstanten Term gilt: $f\left(0\right)=F_{p^{r}}\left(1\right)\stackrel{\left(*\right)}{=}F_{p}\left(1\right)\stackrel{\text{iii)}}{=}p$
-
-Zeige noch, dass alle weiteren Koeffizienten von $f$ durch $p$ teilbar
-sind; durch Rechnen in $\modulo{\mathbb{Z}\left[X\right]}{\left(p\right)}\stackrel{\sim}{=}\mathbb{F}_{p}\left[X\right]$:
+von $X$ durch $X^{p^{r-1}}$:
 \begin{align*}
-f\left(X\right) & \stackrel{\text{Def.}}{=}F_{p^{r}}\left(X+1\right)\stackrel{\left(*\right)}{=}F_{p}\left(\left(X+1\right)^{p^{r-1}}\right)\stackrel{!}{\equiv}F_{p}\left(X^{p^{r-1}}+1\right)\stackrel{F_{p}\left(X+1\right)\equiv X^{p-1}(\text{iii)})}{\equiv}X^{\left(p^{r-1}\right)\left(p-1\right)}\left(p\right)
+X^{p^{r}}-1 & =\left(X^{p^{r-1}}-1\right)F_{p^{r}}\left(X\right)
 \end{align*}
 
 
-\qqed
+Wegen $\zeta_{p^{r}}^{p^{r}}=1$ aber $\zeta_{p^{r}}^{p^{r-1}}\not=1$
+folgt $F_{p^{r}}\left(\zeta_{p^{r}}\right)=0$ und offenbar ist $F_{p^{r}}$
+normiert.
+
+Zeige noch analog zu iii), dass $G_{p^{r}}\left(X\right):=F_{p^{r}}\left(X+1\right)\in\mathbb{Z}\left[X\right]$
+Eisenstein bezüglich $p$ ist.
+
+Mit $F_{p^{r}}\left(X\right)$ ist auch $G_{p^{r}}\left(X\right)$
+normiert, und für den konstanten Term gilt:
+\begin{align*}
+G_{p^{r}}\left(0\right) & =F_{p^{r}}\left(1\right)\stackrel{\eqref{eq:Fpr}}{=}F_{p}\left(1\right)\stackrel{\text{iii)}}{=}p
+\end{align*}
 
 
-\subsubsection*{Bemerkung}
+Zeige noch durch Rechnen in $\modulo{\mathbb{Z}\left[X\right]}{\left(p\right)}\stackrel{\sim}{=}\mathbb{F}_{p}\left[X\right]$,
+dass alle weiteren Koeffizienten von $G_{p^{r}}$ durch $p$ teilbar
+sind:
+\begin{align*}
+G_{p^{r}}\left(X\right) & \stackrel{\text{Def.}}{=}F_{p^{r}}\left(X+1\right)\stackrel{\eqref{eq:Fpr}}{=}F_{p}\left(\left(X+1\right)^{p^{r-1}}\right)\stackrel{!}{\equiv}F_{p}\left(X^{p^{r-1}}+1\right)\stackrel{F_{p}\left(X+1\right)\equiv X^{p-1}(\text{iii)})}{\equiv}X^{\left(p^{r-1}\right)\left(p-1\right)}\mod p
+\end{align*}
 
-Für alle $n,m\ge1$ gilt:
+
+\qqed[\roman{ale2})]
+
+\end{iiilist}
+
+
+\subsection{Bemerkung}
+
+Für alle $n,m\in\mathbb{N}_{\ge1}$ gilt:
 \begin{align*}
 \left(\text{exp}\left(\frac{2\pi\ii}{n}\right)\right)^{m} & =1\Leftrightarrow n|m
 \end{align*}
-Das heißt $\zeta_{n}:=\text{exp}\left(\frac{2\pi\ii}{n}\right)\in\mathbb{C}^{*}$
-hat Ordnung $n$.
+Das heißt ${\displaystyle \zeta_{n}:=\text{exp}\left(\frac{2\pi\ii}{n}\right)\in\mathbb{C}^{*}}$
+hat die Ordnung $n$.
 
-TODO: Abb 1
+\textcolor{green}{TODO: Abb 1}
 
 
 \subsubsection*{Beweis}
 
-$\zeta_{n}^{m}=\text{exp}\left(\frac{2\pi\ii}{n}\cdot m\right)$.
-Nach Analysis erfüllt der surjektive Homomorphismus
+\begin{align*}
+\zeta_{n}^{m} & =\text{exp}\left(2\pi\ii\cdot\frac{m}{n}\right)
+\end{align*}
+Aus der Analysis folgt, dass der surjektive Homomorphismus
 \begin{align*}
 \text{exp}:\mathbb{C} & \twoheadrightarrow\mathbb{C}^{*}\\
 z & \mapsto e^{z}
 \end{align*}
+folgenden Kern hat:
+\begin{align*}
+\text{ker}\left(\exp\right) & =2\pi\ii\cdot\mathbb{Z}\subseteq\mathbb{C}
+\end{align*}
 
 
-Also $\zeta_{n}^{m}=1\Leftrightarrow\frac{m}{n}\in\mathbb{Z}\Leftrightarrow n|m$
+Also gilt:
+\begin{align*}
+\zeta_{n}^{m}=1 & \Leftrightarrow\frac{m}{n}\in\mathbb{Z}\Leftrightarrow n|m
+\end{align*}
+
 
 \qqed
-
-TODO: Rest einfügen
-
-
-\subsection{???\label{sub:45}}
 
 \newpage{}
 
@@ -2726,20 +2784,27 @@ TODO: Rest einfügen
 \section{(Algebraische) Körpererweiterungen}
 
 
-\subsection{Proposition und Definition}
+\subsection{Proposition und Definition \textmd{(Charakteristik, Primkörper)\label{sub:PuD-Charakteristik}}}
 
 \begin{iiilist}
 
 \iii
 
 Sei $R$ ein Integritätsring, dann existiert genau ein $p\in\mathbb{N}_{\ge0}$
-mit $\text{ker}\left(\mathbb{Z}\stackrel{\varphi}{\rightarrow}R\right)=\left(p\right)$
-(hier $\varphi$ eindeutiger Ringhomomorphismus); es gilt $p=0$ oder
-$p>0$ ist eine Primzahl. In jedem Fall heißt $p$ \emph{die Charakteristik
-von $R$}, in Zeichen: $\text{char}\left(R\right):=p$.
+und ein eindeutiger Ringhomomorphismus $\varphi:\mathbb{Z}\to R$
+mit:
+\begin{align*}
+\ker\left(\varphi\right) & =\left(p\right)
+\end{align*}
+Es gilt $p=0$ oder $p>0$ ist eine Primzahl. In jedem Fall heißt
+$p$ \emph{die Charakteristik von $R$}, in Zeichen:
+\begin{align*}
+\text{char}\left(R\right) & :=p
+\end{align*}
 
-\iii Sei $k=R$ wie in i) ein Körper. Dann $\exsg$ kleinster Teilkörper
-$Q\subseteq k$, und es gilt:
+
+\iii Sei $k=R$ wie in i) ein Körper. Dann existiert genau ein kleinster
+Teilkörper $Q\subseteq k$, und es gilt:
 \begin{align*}
 Q & \stackrel{\sim}{=}\begin{cases}
 \mathbb{Q} & \text{falls }\text{char}\left(k\right)=0\\
@@ -2755,13 +2820,14 @@ $Q\subseteq k$ heißt der \emph{Primkörper von $k$.}
 
 \begin{iiilist}
 
-\iii $\modulo{\mathbb{Z}}{\left(p\right)}\hookrightarrow R$ Unterring
-$\Rightarrow\modulo{\mathbb{Z}}{\left(p\right)}$ Integritätsring
-$\stackrel{\text{LA II}}{\Rightarrow}$ $p=0$ oder $p>0$ Primzahl.
+\iii $\modulo{\mathbb{Z}}{\left(p\right)}\hookrightarrow R$ ist
+ein Unterring, also ist $\modulo{\mathbb{Z}}{\left(p\right)}$ ein
+Integritätsring, womit aus der linearen Algebra II schon $p=0$ oder
+$p>0$ ist eine Primzahl folgt.
 
-\iii Ist in i) $R=k$ ein Körper, so erhalte Ringhomomorphismus: 
+\iii Ist in i) $R=k$ ein Körper, so erhalte den Ringhomomorphismus: 
 
-TODO: Abb 2
+\textcolor{green}{TODO: Abb 2}
 
 Es ist klar, dass $Q\subseteq k$ der kleinste Teilkörper ist, und
 man erhält für 
@@ -2774,35 +2840,42 @@ p>0: & \,\, Q\stackrel{\sim}{=}\text{Quot}\bigg(\underbrace{\modulo{\mathbb{Z}}{
 \end{iiilist}
 
 
-\subsection{Definition und Beispiel}
+\subsection{Definition und Beispiel \textmd{(Körpererweiterung)}}
 
-Eine \emph{Körpererweiterung} ist ein Ringhomomorphismus $k\hookrightarrow E$,
-bei dem $k$ und $E$ Körper sind. Es folgt $\text{char}\left(k\right)=\text{char}\left(E\right)$,
-denn $k\hookrightarrow E$ ist injektiv.
+Eine \emph{Körpererweiterung} ist ein injektiver Ringhomomorphismus
+$k\hookrightarrow E$, bei dem $k$ und $E$ Körper sind. Es folgt
+$\text{char}\left(k\right)=\text{char}\left(E\right)$, denn $k\hookrightarrow E$
+ist injektiv.
 
-TODO: Abb 3
+\textcolor{green}{TODO: Abb 3}
 
 
-\paragraph*{Bemerkung }
+\subsection{Bemerkung}
 
 Für den Ringhomomorphismus von Integritätsringen $\mathbb{Z}\rightarrow\mathbb{F}_{p}$
-gilt $\text{char}\left(\mathbb{Z}\right)=0\not=p=\text{char}\left(\mathbb{F}_{p}\right)$.
+gilt:
+\begin{align*}
+\text{char}\left(\mathbb{Z}\right)=0 & \not=p=\text{char}\left(\mathbb{F}_{p}\right)
+\end{align*}
 
 
-\subsection{Proposition und Definition}
+
+\subsection{Proposition und Definition \textmd{(Frobenius)}}
 
 Sei $k$ ein Körper mit $\text{char}\left(k\right)=p>0$.
 
 \begin{iiilist}
 
-\iii ${\displaystyle \fall_{x,y\in k},n\ge1:\left(x+y\right)^{p^{n}}=x^{p^{n}}+y^{p^{n}}}$
-in $k$.
+\iii ${\displaystyle \fall_{x,y\in k}\fall_{n\in\mathbb{N}_{\ge1}}:\left(x+y\right)^{p^{n}}=x^{p^{n}}+y^{p^{n}}\in k}$.
 
-\iii Die Abbildung $\text{Frob}_{k}:k\hookrightarrow k,\text{Frob}_{k}\left(x\right):=x^{p}$
+\iii Die Abbildung
+\begin{align*}
+\text{Frob}_{k}:k & \hookrightarrow k,x\mapsto x^{p}
+\end{align*}
 ist ein injektiver Ringhomomorphismus, \emph{der Frobenius von $k$.}
 
-\iii $k$ endlich $\Rightarrow$ $\text{Frob}_{k}:k\stackrel{\sim}{\rightarrow}k$
-Isomorphismus
+\iii Ist $k$ endlich, so ist $\text{Frob}_{k}:k\stackrel{\sim}{\rightarrow}k$
+ein Isomorphismus.
 
 \iii $\text{Frob}_{k}=\text{id}_{k}\Leftrightarrow k=\mathbb{F}_{p}$
 
@@ -2813,66 +2886,103 @@ Isomorphismus
 
 \begin{iiilist}
 
-\iii bekannt
+\iii Die Aussage ist bekannt.
 
-\iii klar sind $\text{Frob}_{k}\left(0\right)=0,\text{Frob}_{k}\left(1\right)=1,\text{Frob}_{k}\left(x\cdot y\right)=\text{Frob}_{k}\left(x\right)\cdot\text{Frob}_{k}\left(y\right)$
-und $\text{Frob}_{k}\left(x+y\right)=\text{Frob}_{k}\left(x\right)+\text{Frob}_{k}\left(y\right)$
-folgt aus i) für $n=1$. Damit ist $\text{Frob}_{k}:k\rightarrow k$
-ein Ringhomomorphismus, und $\text{Frob}_{k}\left(x\right)=x^{p}=0$
-$\stackrel{k\text{ Körper}}{\Leftrightarrow}$$x=0$ $\Rightarrow$
-$\text{Frob}_{k}$ injektiv.
+\textcolor{green}{TODO: Woher?}
+
+\iii Klar sind
+\begin{align*}
+\text{Frob}_{k}\left(0\right) & =0 & \text{Frob}_{k}\left(1\right) & =1 & \text{Frob}_{k}\left(x\cdot y\right) & =\text{Frob}_{k}\left(x\right)\cdot\text{Frob}_{k}\left(y\right)
+\end{align*}
+und
+\begin{align*}
+\text{Frob}_{k}\left(x+y\right) & =\text{Frob}_{k}\left(x\right)+\text{Frob}_{k}\left(y\right)
+\end{align*}
+folgt aus i) für $n=1$.
+
+Damit ist $\text{Frob}_{k}:k\rightarrow k$ ein Ringhomomorphismus,
+und $\text{Frob}_{k}\left(x\right)=x^{p}=0$ $\stackrel{k\text{ Körper}}{\Leftrightarrow}$$x=0$,
+also ist $\text{Frob}_{k}$ injektiv.
 
 \iii Jede injektive Selbstabbildung, wie zum Beispiel $\text{Frob}_{k}$,
 einer endlichen Menge, wie zum Beispiel $k$, ist surjektiv.
 
-\iii \quotedblbase{}$\Leftarrow$\textquotedblleft{}: $\fall_{x\in\mathbb{F}_{p}}:\text{Frob}_{\mathbb{F}_{p}}\left(x\right)-x=x^{p}-x=x\left(x^{p-1}-1\right)=0$
-(klar für $x=0$ und für $x\in\mathbb{F}_{p}^{*}$ gilt $x^{p-1}=1$
-nach $\ref{}1.26,ii)$)
+\iii \quotedblbase{}$\Leftarrow$\textquotedblleft{}: Für alle $x\in\mathbb{F}_{p}$
+gilt:
+\begin{align*}
+\text{Frob}_{\mathbb{F}_{p}}\left(x\right)-x & =x^{p}-x=x\left(x^{p-1}-1\right)=0
+\end{align*}
+ Dies ist klar für $x=0$ und für $x\in\mathbb{F}_{p}^{*}$ gilt $x^{p-1}=1$
+nach \ref{sub:Kor-aPhin1} ii).
 
-\quotedblbase{}$\Rightarrow$\textquotedblleft{}: Dann ist nach Voraussetzung
-$\text{char}\left(k\right)=p\stackrel{\ref{}5.1}{\Rightarrow}\mathbb{F}_{p}\subseteq k$
-Primkörper. Für alle $x\in k$ folgt: $0=\text{Frob}_{k}\left(x\right)-x=X^{p}-x$
-und das Polynom $T^{p}-T\in\mathbb{F}_{p}\left[T\right]$ hat höchstens
-$p$ Nullstellen in $k$; jedes $x\in\mathbb{F}_{p}\subseteq k$ ist
-aber eine Nullstelle nach Beweis von \quotedblbase{}$\Leftarrow$\textquotedblleft{},
-also gilt $k\subseteq\mathbb{F}_{p}$.
+\quotedblbase{}$\Rightarrow$\textquotedblleft{}: Nach Voraussetzung
+ist $\text{char}\left(k\right)=p$ und nach \ref{sub:PuD-Charakteristik}
+folgt, dass $\mathbb{F}_{p}\subseteq k$ der Primkörper ist.
+
+Für alle $x\in k$ folgt:
+\begin{align*}
+0 & =\text{Frob}_{k}\left(x\right)-x=x^{p}-x
+\end{align*}
+und das Polynom $T^{p}-T\in k\left[T\right]$ hat höchstens $p$ Nullstellen
+in $k$.
+
+Jedes $x\in\mathbb{F}_{p}\subseteq k$ ist aber eine Nullstelle nach
+Beweis von \quotedblbase{}$\Leftarrow$\textquotedblleft{}, also gilt
+$k=\mathbb{F}_{p}$.
 
 \end{iiilist}
 
 \qqed
 
 
-\paragraph*{Proposition und Definition}
+\subsection{Proposition und Definition \textmd{(algebraisch, transzendent, Zwischenkörper)}}
 
-Sei $k\subseteq E$ eine Körpererweiterung. Dann ist $E$ insbesondere
-eine $k$-Algebra und insbesondere ein $k$-Vektorraum.
+Sei $E\supseteq k$ eine Körpererweiterung.
 
-Ein $\alpha\in E$ heißt \emph{algebraisch über $k$} :$\Leftrightarrow$
-$\exs0\not=f\in k\left[X\right]:f\left(\alpha\right)=0$ in $E$.
-(sonst heißt $\alpha$ \emph{transzendent über $k$}) Falls $\alpha$
-algebraisch ist, ist $\text{Mipo}_{k}\left(\alpha\right)\in k\left[X\right]$
-und ist das eindeutige normierte, irreduzible Polynom in $k\left[X\right]$,
-das $\alpha$ annulliert. Ein Körper $K$ mit $k\subseteq K\subseteq E$
-heißt \emph{Zwischenkörper} (der Körpererweiterung $k\subseteq E$)
+Dann ist $E$ insbesondere eine $k$-Algebra und insbesondere ein
+$k$-Vektorraum.
+
+Ein $\alpha\in E$ heißt genau dann \emph{algebraisch über $k$},
+wenn ein $f\in k\left[X\right]\setminus\left\{ 0\right\} $ existiert
+mit $f\left(\alpha\right)=0$ in $E$, ansonsten heißt $\alpha$ \emph{transzendent
+über $k$}.
+
+Falls $\alpha$ algebraisch ist, ist $\text{Mipo}_{k}\left(\alpha\right)\in k\left[X\right]$
+das eindeutige, normierte, irreduzible Polynom in $k\left[X\right]$,
+das $\alpha$ annulliert.
+
+Ein Körper $K$ mit $k\subseteq K\subseteq E$ heißt \emph{Zwischenkörper
+(der Körpererweiterung $k\subseteq E$).}
+
+
+\subsubsection*{Beweis}
+
+\textcolor{green}{TODO: Wo?}
 
 
 \subsection{Definition}
 
-Sei $k\subseteq E$ eine Körpererweiterung. Dann heißt $\left[E:k\right]:=\text{dim}_{k}\left(E\right)\in\left(\mathbb{N}\setminus\left\{ 0\right\} \right)\cup\left\{ \infty\right\} $
+Sei $E\supseteq k$ eine Körpererweiterung.
+
+Dann heißt
+\begin{align*}
+\left[E:k\right] & :=\text{dim}_{k}\left(E\right)\in\left(\mathbb{N}\setminus\left\{ 0\right\} \right)\cup\left\{ \infty\right\} 
+\end{align*}
 \emph{der Grad von $E$ über $k$} (schreibe $\modulo{E}{k}$ für
-\quotedblbase{}$E$ über $k$\textquotedblleft{})
+\quotedblbase{}die Körpererweiterung $E$ über $k$\textquotedblleft{})
 
 
 \subsection{(Grad-)Satz}
 
-$k\subseteq K\subseteq E$ eine Körpererweiterung $\left[E:k\right]=\left[E:K\right]\cdot\left[K:k\right]$
+Seien $E\supseteq K\supseteq k$ eine Körpererweiterung, dann gilt:
+\begin{align*}
+\left[E:k\right] & =\left[E:K\right]\cdot\left[K:k\right]
+\end{align*}
 
-TOOD Rest
 
-\begin{comment}
-22.11.2011
-\end{comment}
+\textcolor{green}{TODO: Rest einfügen}
 
+%DATE: Di 22.11.2011
 
 
 \subsection{Beispiel}

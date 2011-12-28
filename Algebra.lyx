@@ -186,6 +186,8 @@
 \renewcommand\subsectionmark[1]{}
 
 % Kopf- und Fußzeile
+% Höhe der Kopfzeile
+\setlength{\headheight}{14pt}
 \fancyhf{} %alle Kopf- und Fußzeilenfelder bereinigen
 \fancyhead[L]{\textbf{Algebra}} %Kopfzeile links
 %\fancyhead[C]{\leftmark} %zentrierte Kopfzeile
@@ -510,7 +512,7 @@ im Wintersemester 2011/2012
 \begin_inset Newline newline
 \end_inset
 
-Textsatz in LyX und Überarbeitung von
+Überarbeitung und Textsatz in LyX von
 \begin_inset Newline newline
 \end_inset
 
@@ -1367,10 +1369,9 @@ Beweis
 
 \begin_layout Standard
 Übung
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
-
+\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -1424,10 +1425,9 @@ Beweis
 
 \begin_layout Standard
 Lineare Algebra I
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
-
+\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -1587,10 +1587,9 @@ Also ist
 \end_inset
 
  ein Gruppenhomomorphismus.
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
-
+\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -1853,7 +1852,7 @@ end{iiilist}
 \end_layout
 
 \begin_layout Subsubsection*
-Beweisq
+Beweis
 \end_layout
 
 \begin_layout Standard
@@ -1887,8 +1886,12 @@ reflexiv
 \emph on
 symmetrisch
 \emph default
-: 
-\begin_inset Formula ${\displaystyle \fall_{g,g'\in G}g\sim g'\stackrel{\eqref{eq:rel}}{\Rightarrow}g^{-1}\cdot g'\in H\stackrel{H\text{ ist UG}}{\Rightarrow}H\ni\left(g^{-1}\cdot g'\right)^{-1}=g'^{-1}\cdot g\stackrel{\eqref{eq:rel}}{\Rightarrow}g'\sim g}$
+:
+\begin_inset Formula 
+\begin{align*}
+\fall_{g,g'\in G}g\sim g' & \stackrel{\eqref{eq:rel}}{\Rightarrow}g^{-1}\cdot g'\in H\stackrel{H\text{ ist UG}}{\Rightarrow}H\ni\left(g^{-1}\cdot g'\right)^{-1}=g'^{-1}\cdot g\stackrel{\eqref{eq:rel}}{\Rightarrow}g'\sim g
+\end{align*}
+
 \end_inset
 
 
@@ -1935,10 +1938,9 @@ Daraus folgen direkt i) und iii).
 
 \begin_layout Standard
 ii) ist klar.
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
-
+\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -2003,7 +2005,7 @@ Beweis
 \begin_layout Standard
 \begin_inset Formula 
 \begin{align*}
-\left|G\right| & \stackrel{\text{\ref{sub:Nebenklasse}\,\text{iii)}}}{=}\left|\bcupd_{gH\in\moduloScript{G}{H}}\left(gH\right)\right|=\sum_{gH\in\moduloScript{G}{H}}\left|gH\right|=\left|\modulo{G}{H}\right|\cdot\left|H\right|\stackrel{\text{Def.}}{=}\left(G:H\right)\cdot\left|H\right|
+\left|G\right| & \stackrel{\text{\ref{sub:PuD-Nebenklasse}\,\text{iii)}}}{=}\left|\bcupd_{gH\in\moduloScript{G}{H}}\left(gH\right)\right|=\sum_{gH\in\moduloScript{G}{H}}\left|gH\right|=\left|\modulo{G}{H}\right|\cdot\left|H\right|\stackrel{\text{Def.}}{=}\left(G:H\right)\cdot\left|H\right|
 \end{align*}
 
 \end_inset
@@ -2388,10 +2390,9 @@ reference "sub:Prop-kerNormalTeiler"
 \end_inset
 
 .
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
-
+\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -2527,7 +2528,7 @@ Also gilt
 Ferner gilt:
 \begin_inset Formula 
 \begin{align*}
-\text{ker}\left(\pi\right) & =\left\{ g\in G|gN=\pi\left(g\right)=e'=eN=N\in\modulo{G}{N}\right\} \stackrel{\ref{sub:Nebenklasse}\,\text{i)}}{=}N
+\text{ker}\left(\pi\right) & =\left\{ g\in G|gN=\pi\left(g\right)=e'=eN=N\in\modulo{G}{N}\right\} \stackrel{\ref{sub:PuD-Nebenklasse}\,\text{i)}}{=}N
 \end{align*}
 
 \end_inset
@@ -2778,10 +2779,9 @@ Beweis
 
 \begin_layout Standard
 Übung
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
-
+\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -2891,10 +2891,9 @@ reference "sub:PuD-ker"
 \end_inset
 
  injektiv, also ein Isomorphismus ist.
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
-
+\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -3144,10 +3143,9 @@ Nach der Vorlesung lineare Algebra I folgt
 \end_inset
 
 .
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
-
+\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -3270,10 +3268,9 @@ Ist
 \end_inset
 
 .
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
-
+\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -3442,10 +3439,9 @@ ii)
 \end_inset
 
 .
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
-
+\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -3770,10 +3766,9 @@ Also ist
 \end_inset
 
  ist zyklisch.
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
-
+\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -3831,10 +3826,9 @@ Weil
 \end_inset
 
  zyklisch nach i).
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
-
+\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -4399,6 +4393,13 @@ qqed
 
 \begin_layout Subsection
 Korollar
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Kor-aPhin1"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -4860,10 +4861,9 @@ Das heißt es gibt ein
 \end_inset
 
  ist zyklisch.
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
-
+\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -4970,10 +4970,9 @@ Das ist klar, denn das Polynom
 \end_inset
 
  nach linearer Algebra II.
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
-
+\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -5759,10 +5758,9 @@ reference "eq:bruchrel"
 \end_inset
 
 .
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
-
+\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -5782,10 +5780,9 @@ sim$ Äquivrel.]
 
 \begin_layout Standard
 Der Rest bleibt als Übung.
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
-
+\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -6091,10 +6088,9 @@ Rechne zum Beispiel
 \end_inset
 
 Der Rest geht analog.
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
-
+\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -6551,10 +6547,9 @@ Das bedeutet
 \end_inset
 
 .
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
-
+\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -6957,10 +6952,9 @@ reference "sub:KuD-QuotRing"
 \end_inset
 
 .
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
-
+\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -7487,10 +7481,9 @@ Es folgt
 \end_inset
 
  injektiv.
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
-
+\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -7573,10 +7566,9 @@ reference "sub:Prop-AModulnIso"
 \end_inset
 
 .
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
-
+\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -7654,10 +7646,9 @@ Man prüft, dass das Diagramm kommutiert(, das heißt prüfen, dass eines der
 
 \begin_layout Standard
 Es folgt die Exaktheit der ersten Zeile.
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
-
+\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -8155,10 +8146,6 @@ iii
 \end_inset
 
  Lemma von Gauß: 
-\begin_inset Formula $ $
-\end_inset
-
-
 \begin_inset Formula $\fall_{f,g\in\mathbb{Q}\left[X\right]}:\nu_{p}\left(fg\right)=\nu_{p}\left(f\right)+\nu_{p}\left(g\right)$
 \end_inset
 
@@ -8553,7 +8540,7 @@ Weil für alle
 
 \begin_inset Formula 
 \begin{align*}
-0 & =\nu_{p}\left(h\right)\sr{=}{\eqref{eq:hfg}}{\ref{sub:PuD-LemmaGau=00003D00003D00003D00003D00003D00003D00003D00003D00003D00003D00003D0000DF}\text{ iii)}}\underbrace{\nu_{p}\left(f\right)}_{\le0}+\underbrace{\nu_{p}\left(g\right)}_{\le0}
+0 & =\nu_{p}\left(h\right)\sr{=}{\eqref{eq:hfg}}{\ref{sub:PuD-LemmaGauss}\text{ iii)}}\underbrace{\nu_{p}\left(f\right)}_{\le0}+\underbrace{\nu_{p}\left(g\right)}_{\le0}
 \end{align*}
 
 \end_inset
@@ -8571,10 +8558,9 @@ Daher sind
 \end_inset
 
 .
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
-
+\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -8715,10 +8701,9 @@ Also gilt
 \end_inset
 
 .
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
-
+\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -9137,10 +9122,9 @@ Also ist
 \end_inset
 
  nach Teil i) primitiv.
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
-
+\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -9859,10 +9843,9 @@ Damit ist
 \end_inset
 
  sind.
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
-
+\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -10072,10 +10055,9 @@ reference "sub:Bsp-Vieta"
 \end_inset
 
 , was ein Widerspruch ist.
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
-
+\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -10142,7 +10124,7 @@ Es sei
 \begin_layout Subsection
 Proposition
 \series medium
- (Äquivalenz von prim in 
+ (Äquivalenz von Primelement in 
 \begin_inset Formula $R$
 \end_inset
 
@@ -10589,9 +10571,9 @@ iii
 \end_inset
 
 
-\end_layout
+\begin_inset Newline newline
+\end_inset
 
-\begin_layout Standard
 Dann ist 
 \begin_inset Formula $\pi\left(f\right)=-X\in\mathbb{F}_{3}\left[X\right]$
 \end_inset
@@ -10617,10 +10599,9 @@ reference "sub:Bsp-Prim"
 \end_inset
 
  nicht primitiv.)
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
-
+\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -10848,10 +10829,6 @@ Also ist
 \end_inset
 
  reduzibel, im Widerspruch zur Voraussetzung.
-\begin_inset Newline newline
-\end_inset
-
-
 \begin_inset ERT
 status open
 
@@ -11229,10 +11206,9 @@ Dies ist ein Widerspruch zur Voraussetzung
 \end_inset
 
 .
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
-
+\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -11282,7 +11258,7 @@ iii
 \end_inset
 
  Für alle 
-\begin_inset Formula $n\in\mathbb{N}$
+\begin_inset Formula $n\in\mathbb{N}_{\ge1}$
 \end_inset
 
  ist 
@@ -11327,19 +11303,26 @@ reference "sub:Kor-Eisenstein"
 
 \end_inset
 
-) bezüglich der Primzahl 2.
+) mit 
+\begin_inset Formula $R=\mathbb{Z}$
+\end_inset
+
+ und 
+\begin_inset Formula $p=2$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
-
-\color green
-TODO: Rest einfügen/überprüfen
-\color inherit
-
-\begin_inset Newline newline
+Man sagt: „
+\begin_inset Formula $f$
 \end_inset
 
+ ist Eisenstein bezüglich 2.“
+\end_layout
 
+\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -11421,10 +11404,9 @@ reference "sub:Kor-Eisenstein"
 \end_inset
 
  ist primitiv, da es normiert ist.
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
-
+\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -11511,7 +11493,7 @@ Es existiert genau ein
 \end_inset
 
 -Algebrenhomomorphismus 
-\begin_inset Formula $\sigma:\mathbb{Q}\left[X\right]\to\mathbb{Q}\left[X\right]$
+\begin_inset Formula $\sigma:\mathbb{Q}\left[X\right]\stackrel{\sim}{\to}\mathbb{Q}\left[X\right]$
 \end_inset
 
  mit 
@@ -11530,18 +11512,22 @@ Es existiert genau ein
 \end_layout
 
 \begin_layout Standard
-Es genügt also zu zeigen, dass 
-\begin_inset Formula $g:=f\left(X+1\right)$
+Es genügt also zu zeigen, dass
+\begin_inset Formula 
+\begin{align*}
+g_{p} & :=\sigma\left(f_{p}\right)\left(X\right)=f_{p}\left(\sigma\left(X\right)\right)=f_{p}\left(X+1\right)
+\end{align*}
+
 \end_inset
 
- irreduzibel ist.
+irreduzibel ist.
 \end_layout
 
 \begin_layout Standard
-Rechne nach:
+Rechne:
 \begin_inset Formula 
 \begin{align*}
-g\left(X\right) & =f\left(X+1\right)=\frac{\left(X+1\right)^{p}-1}{\left(X+1\right)-1}=\frac{1}{X}\left(\left(X^{p}+pX^{p-1}+\ldots+pX+1\right)-1\right)=\\
+g_{p}\left(X\right) & =f_{p}\left(X+1\right)=\frac{\left(X+1\right)^{p}-1}{\left(X+1\right)-1}=\frac{1}{X}\left(\left(X^{p}+pX^{p-1}+\ldots+pX+1\right)-1\right)=\\
  & =X^{p-1}+\sum_{i=2}^{p-1}\left(\begin{array}{c}
 p\\
 i
@@ -11551,7 +11537,7 @@ i
 \end_inset
 
 
-\begin_inset Formula $g$
+\begin_inset Formula $g_{p}$
 \end_inset
 
  ist daher normiert.
@@ -11559,7 +11545,7 @@ i
 
 \begin_layout Standard
 Um zu sehen, dass 
-\begin_inset Formula $g$
+\begin_inset Formula $g_{p}$
 \end_inset
 
  Eisenstein bezüglich 
@@ -11569,7 +11555,7 @@ Um zu sehen, dass
  ist, ist noch zu zeigen:
 \begin_inset Formula 
 \begin{align*}
-\fall_{1\le i\le p-1} & p\bigg|\left(\begin{array}{c}
+\fall_{1\le i\le p-1}\quad & p\bigg|\left(\begin{array}{c}
 p\\
 i
 \end{array}\right)
@@ -11608,7 +11594,7 @@ i
 \end_inset
 
 Insbesondere ist 
-\begin_inset Formula $g$
+\begin_inset Formula $g_{p}$
 \end_inset
 
  also Eisenstein bezüglich 
@@ -11616,10 +11602,9 @@ Insbesondere ist
 \end_inset
 
 .
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
-
+\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -11697,10 +11682,9 @@ reference "sub:Satz-RedKrit"
 \end_inset
 
  folgt die Behauptung.
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
-
+\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -11793,10 +11777,402 @@ reference "sub:Kor-Eisenstein"
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed[
+\backslash
+roman{ale2})]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $f\left(X\right)=X^{4}+3X^{3}+X^{2}-2X+1\in\mathbb{Q}\left[X\right]$
+\end_inset
+
+ ist irreduzibel.
+\end_layout
+
+\begin_layout Subsubsection*
+Beweis
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $f\in\mathbb{Z}\left[X\right]$
+\end_inset
+
+ ist normiert.
+ Wegen 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Bsp-Vieta"
+
+\end_inset
+
+ und 
+\begin_inset Formula $f\left(\pm1\right)=3\pm1\not=0$
+\end_inset
+
+ folgt, dass 
+\begin_inset Formula $f$
+\end_inset
+
+ keinen Linearfaktor in 
+\begin_inset Formula $\mathbb{Q}\left[X\right]$
+\end_inset
+
+ besitzt.
+\end_layout
+
+\begin_layout Standard
+Reduktion modulo 
+\begin_inset Formula $2$
+\end_inset
+
+ liefert:
+\begin_inset Formula 
+\begin{align*}
+\overline{f} & :=\pi\left(f\right)=X^{4}+X^{3}+X^{2}+1\in\mathbb{F}_{2}\left[X\right]
+\end{align*}
+
+\end_inset
+
+Offenbar gilt 
+\begin_inset Formula $\overline{f}\left(1\right)=0$
+\end_inset
+
+, und Division liefert: 
+\begin_inset Formula 
+\begin{align}
+\overline{f}=\left(X+1\right)\left(X^{3}+X+1\right) & \in\mathbb{F}_{2}\left[X\right]\label{eq:overf}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Beide Faktoren sind irreduzibel, da sie keine Nullstellen und Grad 
+\begin_inset Formula $\le3$
+\end_inset
+
+ haben.
+\end_layout
+
+\begin_layout Standard
+Also ist 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:overf"
+
+\end_inset
+
+ die Primfaktorzerlegung von 
+\begin_inset Formula $\overline{f}\in\mathbb{F}_{2}\left[X\right]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Wäre nun 
+\begin_inset Formula $f\in\mathbb{Q}\left[X\right]$
+\end_inset
+
+ reduzibel, so wäre wegen 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Satz-Gauss"
+
+\end_inset
+
+ auch 
+\begin_inset Formula $f\in\mathbb{Z}\left[X\right]$
+\end_inset
+
+ reduzibel, also: 
+\begin_inset Formula 
+\begin{align*}
+f & =gh\in\mathbb{Z}\left[X\right]
+\end{align*}
+
+\end_inset
+
+Da 
+\begin_inset Formula $f$
+\end_inset
+
+ keinen Linearfaktor in 
+\begin_inset Formula $\mathbb{Q}\left[X\right]$
+\end_inset
+
+ besitzt, müsste 
+\begin_inset Formula $\text{deg}\left(g\right)=\text{deg}\left(h\right)=2$
+\end_inset
+
+ gelten.
+\end_layout
+
+\begin_layout Standard
+Dann würde 
+\begin_inset Formula $\overline{f}=\overline{g}\cdot\overline{h}$
+\end_inset
+
+ in 
+\begin_inset Formula $\mathbb{F}_{2}\left[X\right]$
+\end_inset
+
+ mit 
+\begin_inset Formula $\text{deg}\left(\overline{g}\right),\text{deg}\left(\overline{h}\right)\le2$
+\end_inset
+
+ folgen und weil 
+\begin_inset Formula $\text{deg}\left(\overline{f}\right)=4$
+\end_inset
+
+ ist, also schon 
+\begin_inset Formula $\text{deg}\left(\overline{g}\right)=\text{deg}\left(\overline{h}\right)=2$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Wegen 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:overf"
+
+\end_inset
+
+ besitzt aber 
+\begin_inset Formula $\overline{f}\in\mathbb{F}_{2}\left[X\right]$
+\end_inset
+
+ bis auf Assoziiertheit genau die Teiler 
+\begin_inset Formula $\left\{ 1,X+1,X^{3}+X+1,\overline{f}\right\} $
+\end_inset
+
+, und keines dieser Polynome besitzt Grad 2.
+ Dies ist ein Widerspruch zu der angenommenen Reduzibilität.
+
 \begin_inset Newline newline
 \end_inset
 
 
+\lang ngerman
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed[
+\backslash
+roman{ale2})]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Seien 
+\begin_inset Formula $p$
+\end_inset
+
+ eine Primzahl und 
+\begin_inset Formula ${\displaystyle F_{p}\left(X\right):=\frac{X^{p}-1}{X-1}=X^{p}+\ldots+1\in\mathbb{Z}\left[X\right]}$
+\end_inset
+
+ wie in iii).
+\end_layout
+
+\begin_layout Standard
+Für 
+\begin_inset Formula $r\ge1$
+\end_inset
+
+ setze 
+\begin_inset Formula $n:=p^{r}$
+\end_inset
+
+, 
+\begin_inset Formula ${\displaystyle \zeta_{p^{r}}:=\text{exp}\left(\frac{2\pi\ii}{n}\right)}$
+\end_inset
+
+ und ferner:
+\begin_inset Formula 
+\begin{align}
+F_{p^{r}}\left(X\right) & :=F_{p}\left(X^{p^{r-1}}\right)\in\mathbb{Z}\left[X\right]\label{eq:Fpr}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Es folgt 
+\begin_inset Formula $\text{deg}\left(F_{p^{r}}\right)=\left(p-1\right)p^{r-1}=\varphi\left(p^{r}\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Dann gilt: 
+\begin_inset Formula $F_{p^{r}}\left(X\right)=\text{Mipo}_{\mathbb{Q}}\left(\zeta_{p^{r}}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Beweis
+\end_layout
+
+\begin_layout Standard
+Wegen 
+\begin_inset Formula $X^{p}-1=\left(X-1\right)F_{p}\left(X\right)$
+\end_inset
+
+ folgt durch Ersetzten von 
+\begin_inset Formula $X$
+\end_inset
+
+ durch 
+\begin_inset Formula $X^{p^{r-1}}$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+X^{p^{r}}-1 & =\left(X^{p^{r-1}}-1\right)F_{p^{r}}\left(X\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Wegen 
+\begin_inset Formula $\zeta_{p^{r}}^{p^{r}}=1$
+\end_inset
+
+ aber 
+\begin_inset Formula $\zeta_{p^{r}}^{p^{r-1}}\not=1$
+\end_inset
+
+ folgt 
+\begin_inset Formula $F_{p^{r}}\left(\zeta_{p^{r}}\right)=0$
+\end_inset
+
+ und offenbar ist 
+\begin_inset Formula $F_{p^{r}}$
+\end_inset
+
+ normiert.
+\end_layout
+
+\begin_layout Standard
+Zeige noch analog zu iii), dass 
+\begin_inset Formula $G_{p^{r}}\left(X\right):=F_{p^{r}}\left(X+1\right)\in\mathbb{Z}\left[X\right]$
+\end_inset
+
+ Eisenstein bezüglich 
+\begin_inset Formula $p$
+\end_inset
+
+ ist.
+\end_layout
+
+\begin_layout Standard
+Mit 
+\begin_inset Formula $F_{p^{r}}\left(X\right)$
+\end_inset
+
+ ist auch 
+\begin_inset Formula $G_{p^{r}}\left(X\right)$
+\end_inset
+
+ normiert, und für den konstanten Term gilt:
+\begin_inset Formula 
+\begin{align*}
+G_{p^{r}}\left(0\right) & =F_{p^{r}}\left(1\right)\stackrel{\eqref{eq:Fpr}}{=}F_{p}\left(1\right)\stackrel{\text{iii)}}{=}p
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Zeige noch durch Rechnen in 
+\begin_inset Formula $\modulo{\mathbb{Z}\left[X\right]}{\left(p\right)}\stackrel{\sim}{=}\mathbb{F}_{p}\left[X\right]$
+\end_inset
+
+, dass alle weiteren Koeffizienten von 
+\begin_inset Formula $G_{p^{r}}$
+\end_inset
+
+ durch 
+\begin_inset Formula $p$
+\end_inset
+
+ teilbar sind:
+\begin_inset Formula 
+\begin{align*}
+G_{p^{r}}\left(X\right) & \stackrel{\text{Def.}}{=}F_{p^{r}}\left(X+1\right)\stackrel{\eqref{eq:Fpr}}{=}F_{p}\left(\left(X+1\right)^{p^{r-1}}\right)\stackrel{!}{\equiv}F_{p}\left(X^{p^{r-1}}+1\right)\stackrel{F_{p}\left(X+1\right)\equiv X^{p-1}(\text{iii)})}{\equiv}X^{\left(p^{r-1}\right)\left(p-1\right)}\mod p
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -11830,410 +12206,13 @@ end{iiilist}
 
 \end_layout
 
-\begin_layout Standard
-
-\color green
-TODO: Rest einfügen
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{iiilist}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-iii
-\end_layout
-
-\end_inset
-
- 
-\color green
-TODO: Rest einfügen
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-iii
-\end_layout
-
-\end_inset
-
- 
-\begin_inset Formula $f\left(X\right)=X^{4}+3X^{3}+X^{2}-2X+1\in\mathbb{Q}\left[X\right]$
-\end_inset
-
- ist irreduzibel.
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-end{iiilist}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-
-\color green
-TODO: Weiter überprüfen
-\end_layout
-
-\begin_layout Subsubsection*
-Beweis
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula $f\in\mathbb{Z}\left[X\right]$
-\end_inset
-
- ist normiert.
- Wegen 
-\begin_inset Formula $\ref{}3.5$
-\end_inset
-
- und 
-\begin_inset Formula $f\left(\pm1\right)=4,2\not=0$
-\end_inset
-
- folgt:
-\end_layout
-
-\begin_layout Standard
-(1) 
-\begin_inset Formula $f$
-\end_inset
-
- besitzt keinen Linearfaktor in 
-\begin_inset Formula $\mathbb{Q}\left[X\right]$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-Reduktion modulo 
-\begin_inset Formula $2$
-\end_inset
-
- liefert 
-\begin_inset Formula $\overline{f}:=\pi\left(f\right)=X^{4}+X^{3}+X^{2}+1\in\mathbb{F}_{2}\left[X\right]$
-\end_inset
-
-.
- Offenbar gilt 
-\begin_inset Formula $\overline{f}\left(1\right)=0$
-\end_inset
-
-, und Division liefert: 
-\begin_inset Formula 
-\begin{align}
-\overline{f}=\left(X+1\right)\left(X^{3}+X+1\right) & \text{in }\mathbb{F}_{2}\left[X\right]\qquad(*)
-\end{align}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Beide Faktoren sind irreduzibel, da sie keine Nullstellen und Grad 
-\begin_inset Formula $\le3$
-\end_inset
-
- haben.
- Also ist 
-\begin_inset Formula $(*)$
-\end_inset
-
- die Primfaktorzerledung von 
-\begin_inset Formula $\overline{f}\in\mathbb{F}_{2}\left[X\right]$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-Wäre nun 
-\begin_inset Formula $f\in\mathbb{Q}\left[X\right]$
-\end_inset
-
- reduzibel, so wegen 
-\begin_inset Formula $\ref{}3.8$
-\end_inset
-
- auch 
-\begin_inset Formula $f\in\mathbb{Z}\left[X\right]$
-\end_inset
-
-, und wegen (1) müsste gelten 
-\begin_inset Formula $f=gh$
-\end_inset
-
- in 
-\begin_inset Formula $\mathbb{Z}\left[X\right]$
-\end_inset
-
- mit 
-\begin_inset Formula $\text{deg}\left(g\right)=\text{deg}\left(h\right)=2$
-\end_inset
-
- 
-\begin_inset Formula $\Rightarrow$
-\end_inset
-
- 
-\begin_inset Formula $\overline{f}=\overline{g}\cdot\overline{h}$
-\end_inset
-
- in 
-\begin_inset Formula $\mathbb{F}_{2}\left[X\right]$
-\end_inset
-
- mit 
-\begin_inset Formula $\text{deg}\left(\overline{g}\right),\text{deg}\left(\overline{h}\right)\le2$
-\end_inset
-
-; wegen 
-\begin_inset Formula $\text{deg}\left(\overline{f}\right)=4$
-\end_inset
-
-, also 
-\begin_inset Formula $\text{deg}\left(\overline{g}\right)=\text{deg}\left(\overline{h}\right)=2$
-\end_inset
-
-.
- Wegen (*) besitzt aber 
-\begin_inset Formula $\overline{f}\in\mathbb{F}_{2}\left[X\right]$
-\end_inset
-
- bis auf Assoziiertheit genau die Teiler 
-\begin_inset Formula $\left\{ 1,X+1,X^{3}+X+1,\overline{f}\right\} $
-\end_inset
-
-, und keines dieser Polynome besitzt Grad 2.
- 
-\begin_inset Formula $\lightning$
-\end_inset
-
- zu Reduzibilitätsannahme.
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-qqed
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-vii) Seien 
-\begin_inset Formula $p$
-\end_inset
-
- eine Primzahl und 
-\begin_inset Formula $F_{p}\left(X\right):=\left(X^{p}-1\right)/\left(X-1\right)=X^{p}+\ldots+1\in\mathbb{Z}\left[X\right]$
-\end_inset
-
- wie in iii).
-\end_layout
-
-\begin_layout Standard
-Für 
-\begin_inset Formula $r\ge1$
-\end_inset
-
- setze 
-\begin_inset Formula $n:=p^{r}$
-\end_inset
-
- und 
-\begin_inset Formula $\zeta_{p^{r}}:=\text{exp}\left(\frac{2\pi\ii}{n}\right)$
-\end_inset
-
-.
- Ferner:
-\begin_inset Formula 
-\begin{align*}
-F_{p^{r}}\left(X\right) & :=F_{p}\left(X^{p^{r-1}}\right)\in\mathbb{Z}\left[X\right]\qquad(*)
-\end{align*}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-(es folgt 
-\begin_inset Formula $\text{deg}\left(F_{p^{r}}\right)=\left(p-1\right)p^{r-1}=\varphi\left(p^{r}\right)$
-\end_inset
-
-)
-\end_layout
-
-\begin_layout Standard
-Dann gilt: 
-\begin_inset Formula $F_{p^{r}}\left(X\right)=\text{Mipo}_{\mathbb{Q}}\left(\zeta_{p^{r}}\right)$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsubsection*
-Beweis
-\end_layout
-
-\begin_layout Standard
-Wegen 
-\begin_inset Formula $X^{p}-1=\left(X-1\right)F_{p}\left(X\right)$
-\end_inset
-
- folgt durch Ersetzten von 
-\begin_inset Formula $X$
-\end_inset
-
- durch 
-\begin_inset Formula $X^{p^{r-1}}:X^{p^{r}}-1=\left(X^{p^{r-1}}-1\right)F_{p^{r}}\left(X\right)$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Wegen 
-\begin_inset Formula $\zeta_{p^{r}}^{p^{r}}=1$
-\end_inset
-
- aber 
-\begin_inset Formula $\zeta_{p^{r}}^{p^{r-1}}\not=1$
-\end_inset
-
- folgt 
-\begin_inset Formula $F_{p^{r}}\left(\zeta_{p^{r}}\right)=0$
-\end_inset
-
-.
- Offenbar ist 
-\begin_inset Formula $F_{p^{r}}$
-\end_inset
-
- normiert.
- Zeige nach analog zu iii), dass 
-\begin_inset Formula $f\left(X\right):=F_{p^{r}}\left(X+1\right)\in\mathbb{Z}\left[X\right]$
-\end_inset
-
- Eisenstein bezüglich 
-\begin_inset Formula $p$
-\end_inset
-
- ist.
-\end_layout
-
-\begin_layout Standard
-Mit 
-\begin_inset Formula $F_{p^{r}}\left(X\right)$
-\end_inset
-
- ist auch 
-\begin_inset Formula $f\left(X\right)$
-\end_inset
-
- normiert, und für den konstanten Term gilt: 
-\begin_inset Formula $f\left(0\right)=F_{p^{r}}\left(1\right)\stackrel{\left(*\right)}{=}F_{p}\left(1\right)\stackrel{\text{iii)}}{=}p$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Zeige noch, dass alle weiteren Koeffizienten von 
-\begin_inset Formula $f$
-\end_inset
-
- durch 
-\begin_inset Formula $p$
-\end_inset
-
- teilbar sind; durch Rechnen in 
-\begin_inset Formula $\modulo{\mathbb{Z}\left[X\right]}{\left(p\right)}\stackrel{\sim}{=}\mathbb{F}_{p}\left[X\right]$
-\end_inset
-
-:
-\begin_inset Formula 
-\begin{align*}
-f\left(X\right) & \stackrel{\text{Def.}}{=}F_{p^{r}}\left(X+1\right)\stackrel{\left(*\right)}{=}F_{p}\left(\left(X+1\right)^{p^{r-1}}\right)\stackrel{!}{\equiv}F_{p}\left(X^{p^{r-1}}+1\right)\stackrel{F_{p}\left(X+1\right)\equiv X^{p-1}(\text{iii)})}{\equiv}X^{\left(p^{r-1}\right)\left(p-1\right)}\left(p\right)
-\end{align*}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-qqed
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsubsection*
+\begin_layout Subsection
 Bemerkung
 \end_layout
 
 \begin_layout Standard
 Für alle 
-\begin_inset Formula $n,m\ge1$
+\begin_inset Formula $n,m\in\mathbb{N}_{\ge1}$
 \end_inset
 
  gilt:
@@ -12245,10 +12224,10 @@ Für alle
 \end_inset
 
 Das heißt 
-\begin_inset Formula $\zeta_{n}:=\text{exp}\left(\frac{2\pi\ii}{n}\right)\in\mathbb{C}^{*}$
+\begin_inset Formula ${\displaystyle \zeta_{n}:=\text{exp}\left(\frac{2\pi\ii}{n}\right)\in\mathbb{C}^{*}}$
 \end_inset
 
- hat Ordnung 
+ hat die Ordnung 
 \begin_inset Formula $n$
 \end_inset
 
@@ -12256,6 +12235,8 @@ Das heißt
 \end_layout
 
 \begin_layout Standard
+
+\color green
 TODO: Abb 1
 \end_layout
 
@@ -12264,11 +12245,14 @@ Beweis
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $\zeta_{n}^{m}=\text{exp}\left(\frac{2\pi\ii}{n}\cdot m\right)$
+\begin_inset Formula 
+\begin{align*}
+\zeta_{n}^{m} & =\text{exp}\left(2\pi\ii\cdot\frac{m}{n}\right)
+\end{align*}
+
 \end_inset
 
-.
- Nach Analysis erfüllt der surjektive Homomorphismus
+Aus der Analysis folgt, dass der surjektive Homomorphismus
 \begin_inset Formula 
 \begin{align*}
 \text{exp}:\mathbb{C} & \twoheadrightarrow\mathbb{C}^{*}\\
@@ -12277,12 +12261,24 @@ z & \mapsto e^{z}
 
 \end_inset
 
+folgenden Kern hat:
+\begin_inset Formula 
+\begin{align*}
+\text{ker}\left(\exp\right) & =2\pi\ii\cdot\mathbb{Z}\subseteq\mathbb{C}
+\end{align*}
+
+\end_inset
+
 
 \end_layout
 
 \begin_layout Standard
-Also 
-\begin_inset Formula $\zeta_{n}^{m}=1\Leftrightarrow\frac{m}{n}\in\mathbb{Z}\Leftrightarrow n|m$
+Also gilt:
+\begin_inset Formula 
+\begin{align*}
+\zeta_{n}^{m}=1 & \Leftrightarrow\frac{m}{n}\in\mathbb{Z}\Leftrightarrow n|m
+\end{align*}
+
 \end_inset
 
 
@@ -12298,21 +12294,6 @@ status open
 \backslash
 qqed
 \end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-TODO: Rest einfügen
-\end_layout
-
-\begin_layout Subsection
-???
-\begin_inset CommandInset label
-LatexCommand label
-name "sub:45"
 
 \end_inset
 
@@ -12331,7 +12312,16 @@ name "sub:45"
 \end_layout
 
 \begin_layout Subsection
-Proposition und Definition
+Proposition und Definition 
+\series medium
+(Charakteristik, Primkörper)
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:PuD-Charakteristik"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -12375,15 +12365,19 @@ Sei
 \begin_inset Formula $p\in\mathbb{N}_{\ge0}$
 \end_inset
 
- mit 
-\begin_inset Formula $\text{ker}\left(\mathbb{Z}\stackrel{\varphi}{\rightarrow}R\right)=\left(p\right)$
+ und ein eindeutiger Ringhomomorphismus 
+\begin_inset Formula $\varphi:\mathbb{Z}\to R$
 \end_inset
 
- (hier 
-\begin_inset Formula $\varphi$
+ mit:
+\begin_inset Formula 
+\begin{align*}
+\ker\left(\varphi\right) & =\left(p\right)
+\end{align*}
+
 \end_inset
 
- eindeutiger Ringhomomorphismus); es gilt 
+Es gilt 
 \begin_inset Formula $p=0$
 \end_inset
 
@@ -12404,11 +12398,15 @@ die Charakteristik von
 
 
 \emph default
-, in Zeichen: 
-\begin_inset Formula $\text{char}\left(R\right):=p$
+, in Zeichen:
+\begin_inset Formula 
+\begin{align*}
+\text{char}\left(R\right) & :=p
+\end{align*}
+
 \end_inset
 
-.
+
 \end_layout
 
 \begin_layout Standard
@@ -12429,11 +12427,7 @@ iii
 \end_inset
 
  wie in i) ein Körper.
- Dann 
-\begin_inset Formula $\exsg$
-\end_inset
-
- kleinster Teilkörper 
+ Dann existiert genau ein kleinster Teilkörper 
 \begin_inset Formula $Q\subseteq k$
 \end_inset
 
@@ -12514,15 +12508,11 @@ iii
 \begin_inset Formula $\modulo{\mathbb{Z}}{\left(p\right)}\hookrightarrow R$
 \end_inset
 
- Unterring 
-\begin_inset Formula $\Rightarrow\modulo{\mathbb{Z}}{\left(p\right)}$
+ ist ein Unterring, also ist 
+\begin_inset Formula $\modulo{\mathbb{Z}}{\left(p\right)}$
 \end_inset
 
- Integritätsring 
-\begin_inset Formula $\stackrel{\text{LA II}}{\Rightarrow}$
-\end_inset
-
- 
+ ein Integritätsring, womit aus der linearen Algebra II schon 
 \begin_inset Formula $p=0$
 \end_inset
 
@@ -12530,7 +12520,7 @@ iii
 \begin_inset Formula $p>0$
 \end_inset
 
- Primzahl.
+ ist eine Primzahl folgt.
 \end_layout
 
 \begin_layout Standard
@@ -12550,10 +12540,12 @@ iii
 \begin_inset Formula $R=k$
 \end_inset
 
- ein Körper, so erhalte Ringhomomorphismus: 
+ ein Körper, so erhalte den Ringhomomorphismus: 
 \end_layout
 
 \begin_layout Standard
+
+\color green
 TODO: Abb 2
 \end_layout
 
@@ -12591,7 +12583,9 @@ end{iiilist}
 \end_layout
 
 \begin_layout Subsection
-Definition und Beispiel
+Definition und Beispiel 
+\series medium
+(Körpererweiterung)
 \end_layout
 
 \begin_layout Standard
@@ -12599,7 +12593,7 @@ Eine
 \emph on
 Körpererweiterung
 \emph default
- ist ein Ringhomomorphismus 
+ ist ein injektiver Ringhomomorphismus 
 \begin_inset Formula $k\hookrightarrow E$
 \end_inset
 
@@ -12624,11 +12618,13 @@ Körpererweiterung
 \end_layout
 
 \begin_layout Standard
+
+\color green
 TODO: Abb 3
 \end_layout
 
-\begin_layout Paragraph*
-Bemerkung 
+\begin_layout Subsection
+Bemerkung
 \end_layout
 
 \begin_layout Standard
@@ -12636,15 +12632,21 @@ Für den Ringhomomorphismus von Integritätsringen
 \begin_inset Formula $\mathbb{Z}\rightarrow\mathbb{F}_{p}$
 \end_inset
 
- gilt 
-\begin_inset Formula $\text{char}\left(\mathbb{Z}\right)=0\not=p=\text{char}\left(\mathbb{F}_{p}\right)$
+ gilt:
+\begin_inset Formula 
+\begin{align*}
+\text{char}\left(\mathbb{Z}\right)=0 & \not=p=\text{char}\left(\mathbb{F}_{p}\right)
+\end{align*}
+
 \end_inset
 
-.
+
 \end_layout
 
 \begin_layout Subsection
-Proposition und Definition
+Proposition und Definition 
+\series medium
+(Frobenius)
 \end_layout
 
 \begin_layout Standard
@@ -12689,11 +12691,7 @@ iii
 \end_inset
 
  
-\begin_inset Formula ${\displaystyle \fall_{x,y\in k},n\ge1:\left(x+y\right)^{p^{n}}=x^{p^{n}}+y^{p^{n}}}$
-\end_inset
-
- in 
-\begin_inset Formula $k$
+\begin_inset Formula ${\displaystyle \fall_{x,y\in k}\fall_{n\in\mathbb{N}_{\ge1}}:\left(x+y\right)^{p^{n}}=x^{p^{n}}+y^{p^{n}}\in k}$
 \end_inset
 
 .
@@ -12712,11 +12710,15 @@ iii
 
 \end_inset
 
- Die Abbildung 
-\begin_inset Formula $\text{Frob}_{k}:k\hookrightarrow k,\text{Frob}_{k}\left(x\right):=x^{p}$
+ Die Abbildung
+\begin_inset Formula 
+\begin{align*}
+\text{Frob}_{k}:k & \hookrightarrow k,x\mapsto x^{p}
+\end{align*}
+
 \end_inset
 
- ist ein injektiver Ringhomomorphismus, 
+ist ein injektiver Ringhomomorphismus, 
 \emph on
 der Frobenius von 
 \begin_inset Formula $k$
@@ -12738,19 +12740,15 @@ iii
 
 \end_inset
 
- 
+ Ist 
 \begin_inset Formula $k$
 \end_inset
 
- endlich 
-\begin_inset Formula $\Rightarrow$
-\end_inset
-
- 
+ endlich, so ist 
 \begin_inset Formula $\text{Frob}_{k}:k\stackrel{\sim}{\rightarrow}k$
 \end_inset
 
- Isomorphismus
+ ein Isomorphismus.
 \end_layout
 
 \begin_layout Standard
@@ -12822,7 +12820,13 @@ iii
 
 \end_inset
 
- bekannt
+ Die Aussage ist bekannt.
+\end_layout
+
+\begin_layout Standard
+
+\color green
+TODO: Woher?
 \end_layout
 
 \begin_layout Standard
@@ -12838,20 +12842,31 @@ iii
 
 \end_inset
 
- klar sind 
-\begin_inset Formula $\text{Frob}_{k}\left(0\right)=0,\text{Frob}_{k}\left(1\right)=1,\text{Frob}_{k}\left(x\cdot y\right)=\text{Frob}_{k}\left(x\right)\cdot\text{Frob}_{k}\left(y\right)$
+ Klar sind
+\begin_inset Formula 
+\begin{align*}
+\text{Frob}_{k}\left(0\right) & =0 & \text{Frob}_{k}\left(1\right) & =1 & \text{Frob}_{k}\left(x\cdot y\right) & =\text{Frob}_{k}\left(x\right)\cdot\text{Frob}_{k}\left(y\right)
+\end{align*}
+
 \end_inset
 
- und 
-\begin_inset Formula $\text{Frob}_{k}\left(x+y\right)=\text{Frob}_{k}\left(x\right)+\text{Frob}_{k}\left(y\right)$
+und
+\begin_inset Formula 
+\begin{align*}
+\text{Frob}_{k}\left(x+y\right) & =\text{Frob}_{k}\left(x\right)+\text{Frob}_{k}\left(y\right)
+\end{align*}
+
 \end_inset
 
- folgt aus i) für 
+folgt aus i) für 
 \begin_inset Formula $n=1$
 \end_inset
 
 .
- Damit ist 
+\end_layout
+
+\begin_layout Standard
+Damit ist 
 \begin_inset Formula $\text{Frob}_{k}:k\rightarrow k$
 \end_inset
 
@@ -12867,11 +12882,7 @@ iii
 \begin_inset Formula $x=0$
 \end_inset
 
- 
-\begin_inset Formula $\Rightarrow$
-\end_inset
-
- 
+, also ist 
 \begin_inset Formula $\text{Frob}_{k}$
 \end_inset
 
@@ -12919,11 +12930,19 @@ iii
 \begin_inset Formula $\Leftarrow$
 \end_inset
 
-“: 
-\begin_inset Formula $\fall_{x\in\mathbb{F}_{p}}:\text{Frob}_{\mathbb{F}_{p}}\left(x\right)-x=x^{p}-x=x\left(x^{p-1}-1\right)=0$
+“: Für alle 
+\begin_inset Formula $x\in\mathbb{F}_{p}$
 \end_inset
 
- (klar für 
+ gilt:
+\begin_inset Formula 
+\begin{align*}
+\text{Frob}_{\mathbb{F}_{p}}\left(x\right)-x & =x^{p}-x=x\left(x^{p-1}-1\right)=0
+\end{align*}
+
+\end_inset
+
+ Dies ist klar für 
 \begin_inset Formula $x=0$
 \end_inset
 
@@ -12936,10 +12955,13 @@ iii
 \end_inset
 
  nach 
-\begin_inset Formula $\ref{}1.26,ii)$
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Kor-aPhin1"
+
 \end_inset
 
-)
+ ii).
 \end_layout
 
 \begin_layout Standard
@@ -12947,21 +12969,39 @@ iii
 \begin_inset Formula $\Rightarrow$
 \end_inset
 
-“: Dann ist nach Voraussetzung 
-\begin_inset Formula $\text{char}\left(k\right)=p\stackrel{\ref{}5.1}{\Rightarrow}\mathbb{F}_{p}\subseteq k$
+“: Nach Voraussetzung ist 
+\begin_inset Formula $\text{char}\left(k\right)=p$
 \end_inset
 
- Primkörper.
- Für alle 
+ und nach 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:PuD-Charakteristik"
+
+\end_inset
+
+ folgt, dass 
+\begin_inset Formula $\mathbb{F}_{p}\subseteq k$
+\end_inset
+
+ der Primkörper ist.
+\end_layout
+
+\begin_layout Standard
+Für alle 
 \begin_inset Formula $x\in k$
 \end_inset
 
- folgt: 
-\begin_inset Formula $0=\text{Frob}_{k}\left(x\right)-x=X^{p}-x$
+ folgt:
+\begin_inset Formula 
+\begin{align*}
+0 & =\text{Frob}_{k}\left(x\right)-x=x^{p}-x
+\end{align*}
+
 \end_inset
 
- und das Polynom 
-\begin_inset Formula $T^{p}-T\in\mathbb{F}_{p}\left[T\right]$
+und das Polynom 
+\begin_inset Formula $T^{p}-T\in k\left[T\right]$
 \end_inset
 
  hat höchstens 
@@ -12972,7 +13012,11 @@ iii
 \begin_inset Formula $k$
 \end_inset
 
-; jedes 
+.
+\end_layout
+
+\begin_layout Standard
+Jedes 
 \begin_inset Formula $x\in\mathbb{F}_{p}\subseteq k$
 \end_inset
 
@@ -12981,7 +13025,7 @@ iii
 \end_inset
 
 “, also gilt 
-\begin_inset Formula $k\subseteq\mathbb{F}_{p}$
+\begin_inset Formula $k=\mathbb{F}_{p}$
 \end_inset
 
 .
@@ -13019,17 +13063,22 @@ qqed
 
 \end_layout
 
-\begin_layout Paragraph*
-Proposition und Definition
+\begin_layout Subsection
+Proposition und Definition 
+\series medium
+(algebraisch, transzendent, Zwischenkörper)
 \end_layout
 
 \begin_layout Standard
 Sei 
-\begin_inset Formula $k\subseteq E$
+\begin_inset Formula $E\supseteq k$
 \end_inset
 
  eine Körpererweiterung.
- Dann ist 
+\end_layout
+
+\begin_layout Standard
+Dann ist 
 \begin_inset Formula $E$
 \end_inset
 
@@ -13049,7 +13098,7 @@ Ein
 \begin_inset Formula $\alpha\in E$
 \end_inset
 
- heißt 
+ heißt genau dann 
 \emph on
 algebraisch über 
 \begin_inset Formula $k$
@@ -13057,20 +13106,19 @@ algebraisch über
 
 
 \emph default
- :
-\begin_inset Formula $\Leftrightarrow$
+, wenn ein 
+\begin_inset Formula $f\in k\left[X\right]\setminus\left\{ 0\right\} $
 \end_inset
 
- 
-\begin_inset Formula $\exs0\not=f\in k\left[X\right]:f\left(\alpha\right)=0$
+ existiert mit 
+\begin_inset Formula $f\left(\alpha\right)=0$
 \end_inset
 
  in 
 \begin_inset Formula $E$
 \end_inset
 
-.
- (sonst heißt 
+, ansonsten heißt 
 \begin_inset Formula $\alpha$
 \end_inset
 
@@ -13082,7 +13130,11 @@ transzendent über
 
 
 \emph default
-) Falls 
+.
+\end_layout
+
+\begin_layout Standard
+Falls 
 \begin_inset Formula $\alpha$
 \end_inset
 
@@ -13090,7 +13142,7 @@ transzendent über
 \begin_inset Formula $\text{Mipo}_{k}\left(\alpha\right)\in k\left[X\right]$
 \end_inset
 
- und ist das eindeutige normierte, irreduzible Polynom in 
+ das eindeutige, normierte, irreduzible Polynom in 
 \begin_inset Formula $k\left[X\right]$
 \end_inset
 
@@ -13099,7 +13151,10 @@ transzendent über
 \end_inset
 
  annulliert.
- Ein Körper 
+\end_layout
+
+\begin_layout Standard
+Ein Körper 
 \begin_inset Formula $K$
 \end_inset
 
@@ -13109,13 +13164,21 @@ transzendent über
 
  heißt 
 \emph on
-Zwischenkörper
-\emph default
- (der Körpererweiterung 
+Zwischenkörper (der Körpererweiterung 
 \begin_inset Formula $k\subseteq E$
 \end_inset
 
-)
+).
+\end_layout
+
+\begin_layout Subsubsection*
+Beweis
+\end_layout
+
+\begin_layout Standard
+
+\color green
+TODO: Wo?
 \end_layout
 
 \begin_layout Subsection
@@ -13124,15 +13187,22 @@ Definition
 
 \begin_layout Standard
 Sei 
-\begin_inset Formula $k\subseteq E$
+\begin_inset Formula $E\supseteq k$
 \end_inset
 
  eine Körpererweiterung.
- Dann heißt 
-\begin_inset Formula $\left[E:k\right]:=\text{dim}_{k}\left(E\right)\in\left(\mathbb{N}\setminus\left\{ 0\right\} \right)\cup\left\{ \infty\right\} $
+\end_layout
+
+\begin_layout Standard
+Dann heißt
+\begin_inset Formula 
+\begin{align*}
+\left[E:k\right] & :=\text{dim}_{k}\left(E\right)\in\left(\mathbb{N}\setminus\left\{ 0\right\} \right)\cup\left\{ \infty\right\} 
+\end{align*}
+
 \end_inset
 
- 
+
 \emph on
 der Grad von 
 \begin_inset Formula $E$
@@ -13148,7 +13218,7 @@ der Grad von
 \begin_inset Formula $\modulo{E}{k}$
 \end_inset
 
- für „
+ für „die Körpererweiterung 
 \begin_inset Formula $E$
 \end_inset
 
@@ -13164,26 +13234,34 @@ der Grad von
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $k\subseteq K\subseteq E$
+Seien 
+\begin_inset Formula $E\supseteq K\supseteq k$
 \end_inset
 
- eine Körpererweiterung 
-\begin_inset Formula $\left[E:k\right]=\left[E:K\right]\cdot\left[K:k\right]$
+ eine Körpererweiterung, dann gilt:
+\begin_inset Formula 
+\begin{align*}
+\left[E:k\right] & =\left[E:K\right]\cdot\left[K:k\right]
+\end{align*}
+
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-TOOD Rest
+
+\color green
+TODO: Rest einfügen
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Comment
+\begin_inset ERT
 status open
 
 \begin_layout Plain Layout
-22.11.2011
+
+%DATE: Di 22.11.2011
 \end_layout
 
 \end_inset
