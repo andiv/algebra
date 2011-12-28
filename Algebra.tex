@@ -1,55 +1,62 @@
 %% LyX 2.0.1 created this file.  For more info, see http://www.lyx.org/.
 %% Do not edit unless you really know what you are doing.
-\documentclass[11pt,english,ngerman]{article}
+\documentclass[11pt,english,ngerman]{report}
 \usepackage[T1]{fontenc}
 \usepackage[latin9]{inputenc}
 \usepackage[a4paper]{geometry}
 \geometry{verbose,tmargin=2.6cm,bmargin=3.5cm,lmargin=2.6cm,rmargin=2.6cm}
 \usepackage{fancyhdr}
 \pagestyle{fancy}
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
 \setlength{\parskip}{\smallskipamount}
 \setlength{\parindent}{0pt}
 \usepackage{color}
+\usepackage{babel}
 \usepackage{textcomp}
 \usepackage{url}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{wasysym}
 \usepackage{graphicx}
-\usepackage{nameref}
+\usepackage[unicode=true,
+ bookmarks=false,
+ breaklinks=false,pdfborder={0 0 0},backref=page,colorlinks=false]
+ {hyperref}
+\usepackage{breakurl}
 
 \makeatletter
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
-\providecommand{\LyX}{L\kern-.1667em\lower.25em\hbox{Y}\kern-.125emX\@}
+\providecommand{\LyX}{\texorpdfstring%
+  {L\kern-.1667em\lower.25em\hbox{Y}\kern-.125emX\@}
+  {LyX}}
 \newcommand{\noun}[1]{\textsc{#1}}
 %% Because html converters don't know tabularnewline
 \providecommand{\tabularnewline}{\\}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
-\numberwithin{equation}{section}
-\numberwithin{figure}{section}
-\numberwithin{table}{section}
 
 \@ifundefined{date}{}{\date{}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
 \usepackage{tikz}
 \usepackage{latexsym,stmaryrd,stackrel,array,tabularx,multirow}
+\usepackage[explicit]{titlesec}
 %\usepackage{polynom} % momentan nicht benötigt
 
 %Inhaltsverzeichnis
 \usepackage{tocloft}
-
 \tocloftpagestyle{fancy}
 
-\renewcommand{\cftsecindent}{1 em}
-\renewcommand{\cftsecnumwidth}{1.7 em}
+\renewcommand{\cftchapindent}{1 em}
+\renewcommand{\cftchapnumwidth}{1.5 em}
 
-\renewcommand{\cftsubsecindent}{2.7 em}
-\renewcommand{\cftsubsecnumwidth}{2.8 em}
+\renewcommand{\cftsecindent}{2.7 em}
+\renewcommand{\cftsecnumwidth}{2.5em}
 
-\renewcommand{\cftsubsubsecindent}{5.5 em}
-\renewcommand{\cftsubsubsecnumwidth}{3.2 em}
+\renewcommand{\cftsubsecindent}{5.2 em}
+\renewcommand{\cftsubsecnumwidth}{3.8 em}
+
+\renewcommand{\cftsubsubsecindent}{9 em}
+\renewcommand{\cftsubsubsecnumwidth}{4.5 em}
 
 
 %Kommandos mit optionalem Argument (für Lyx)
@@ -70,7 +77,7 @@
 
 %QED-Zeichen (Box)
 \newcommand{\qed}{\ensuremath{\Box}}
-\newcommand{\qqed}[1][\arabic{section}.\arabic{subsection}]{\begin{flushright}\qed\ensuremath{_{\text{#1}}}\end{flushright}}
+\newcommand{\qqed}[1][\arabic{chapter}.\arabic{section}]{\begin{flushright}\qed\ensuremath{_{\text{#1}}}\end{flushright}}
 
 %Definitons-Zeichen
 \newcommand{\dfn}{\mathrel{\mathop:}=}
@@ -126,92 +133,19 @@
 \newcommand{\iii}{\stepcounter{ale2}\item[\textnormal{\roman{ale2})}]}
 \newenvironment{iiilist}{\begin{itemize} \setcounter{ale2}{0}}{\end{itemize}}
 
-% Untergliederung in Teile
-%% Copy from book.cls 2007/10/19 v1.4h
-%% Site: http://www.tex.ac.uk/ctan/macros/latex/unpacked/book.cls
-%%% BEGIN CHANGE
-%\newcommand\part{%
-\renewcommand\part{%
-%  \if@openright
-%    \cleardoublepage
-%  \else
-%%% END CHANGE
-    \clearpage
-%%% BEGIN CHANGE
-%  \fi
-%  \thispagestyle{plain}%
-  \thispagestyle{empty}
-%%% END CHANGE
-  \if@twocolumn
-    \onecolumn
-    \@tempswatrue
-  \else
-    \@tempswafalse
-  \fi
-  \null\vfil
-  \secdef\@part\@spart}
 
-\def\@part[#1]#2{%
-    \ifnum \c@secnumdepth >-2\relax
-      \refstepcounter{part}%
-      \addcontentsline{toc}{part}{\thepart\hspace{1em}#1}%
-    \else
-      \addcontentsline{toc}{part}{#1}%
-    \fi
-%%% BEGIN CHANGE
-%    \markboth{}{}%
-    \partmark{\thepart\hspace{1em}#1}%
-%%% END CHANGE
-    {\centering
-     \interlinepenalty \@M
-     \normalfont
-     \ifnum \c@secnumdepth >-2\relax
-       \huge\bfseries \partname\nobreakspace\thepart
-       \par
-       \vskip 20\p@
-     \fi
-     \Huge \bfseries #2\par}%
-    \@endpart}
-\def\@spart#1{%
-    {\centering
-     \interlinepenalty \@M
-     \normalfont
-     \Huge \bfseries #1\par}%
-    \@endpart}
-\def\@endpart{\vfil\newpage
-              \if@twoside
-%%% BEGIN CHANGE
-%               \if@openright
-%%% END CHANGE
-                \null
-                \thispagestyle{empty}%
-                \newpage
-               \fi
-%%% BEGIN CHANGE
-%              \fi
-%%% END CHANGE
-              \if@tempswa
-                \twocolumn
-              \fi}
-%% End of copy
 
-% Hyperref am Ende, damit es die Befehle aus book.cls überschreiben kann!
-\usepackage[unicode=true,
- bookmarks=false,
- breaklinks=false,pdfborder={0 0 0},backref=page,colorlinks=false]
- {hyperref}
-\usepackage{breakurl}
+% Damit nicht immer "Kapitel 1" etc. über der Kapitelüberschrift steht
+\titleformat{\chapter}
+  {\normalfont\sffamily\Huge\bfseries}
+  {\gdef\chapterlabel{\thechapter\ }}{0pt}
+  {\textrm{\thechapter\ #1} \thispagestyle{fancy}
+  }
 
-% Default definition for new command \partmark
-% to get the same behaviour as the standard book class.
-\newcommand\partmark[1]{\markboth{}{}}
-
-% Now redefine the \<sectioning>mark hooks
-% to save the title of \part and \chapter
-% instead of \chapter and \section.
-
+% Neudefinition der Abschnittsmarker für die Kopfzeile
 \renewcommand\partmark[1]{\markboth{#1}{}}
-\renewcommand\sectionmark[1]{\markboth{\leftmark}{\arabic{section} #1}}
+\renewcommand\chaptermark[1]{\markboth{\leftmark}{\arabic{chapter} #1}}
+\renewcommand\sectionmark[1]{}
 \renewcommand\subsectionmark[1]{}
 
 % Kopf- und Fußzeile
@@ -233,7 +167,6 @@
 
 \makeatother
 
-\usepackage{babel}
 \begin{document}
 
 
@@ -242,31 +175,21 @@
 
 
 
-\title{\textbf{\huge Algebra}}
+\title{\textbf{\huge \vspace*{-30mm}}\\
+\textbf{\huge Algebra}}
 
 
 \author{\textit{\small Vorlesung von}\\
 \textit{\noun{\small Prof. Dr. Niko Naumann}}\textit{\small }\\
 \textit{\small im Wintersemester 2011/2012}\\
 \textit{\small Überarbeitung und Textsatz in \LyX{} von}\\
-\textit{\noun{\small Andreas Völklein}}}
+\textit{\noun{\small Andreas Völklein}}\\
+{\small \vspace*{10mm}}\textit{\noun{\small }}\\
+{\small \includegraphics[clip,width=15cm]{unir}}\textit{\noun{\small }}\\
+{\small \vspace*{5mm}}\\
+Stand: \today}
 
 \maketitle
-{\small \vfill{}
-}{\small \par}
-
-\thispagestyle{empty}
-
-\begin{center}
-{\small \includegraphics[clip,width=15cm]{unir}}
-\par\end{center}{\small \par}
-
-\noindent \begin{center}
-Stand: \today
-\par\end{center}
-
-{\small \newpage{}}{\small \par}
-
 \fancyhead[R]{Lizenz}
 
 
@@ -371,10 +294,10 @@ ISBN 0-201-40751-5, Lokalisierungen: Seite 36-39
 \fancyhead[C]{}
 
 \tableofcontents{}\newpage{}\fancyhead[R]{\rightmark}
-%\fancyhead[C]{\leftmark}%DATE: Di 18.10.2011
+%\fancyhead[C]{\leftmark}%DATE: Di 18.10.2011l
 
 
-\section{Gruppentheorie I}
+\chapter{Gruppentheorie I}
 
 Aus Linearer Algebra I wird vorausgesetzt:
 \begin{itemize}
@@ -384,7 +307,7 @@ und
 \item Untergruppen (Abkürzung: UG).
 \end{itemize}
 
-\subsection{Definition \textmd{(Gruppenhomomorphismus)}}
+\section{Definition \textmd{(Gruppenhomomorphismus)}}
 
 Seien $G,G'$ Gruppen.
 
@@ -406,7 +329,7 @@ Auto(morphismus) & \Leftrightarrow\varphi\text{ Isomorphismus von }G\text{ nach 
 
 
 
-\subsection{Beispiel}
+\section{Beispiel}
 
 Sei $\varphi:G\rightarrow G'$ ein Gruppenhomomorphismus. Dann gelten:
 
@@ -437,7 +360,7 @@ i)\vspace*{-0.5cm}
 \qqed
 
 
-\subsection{Proposition und Definition\textmd{ (Kern und Bild)}\label{sub:PuD-ker}}
+\section{Proposition und Definition\textmd{ (Kern und Bild)}\label{sec:PuD-ker}}
 
 Sei $\varphi:G\rightarrow G'$ ein Gruppenhomomorphismus.
 
@@ -462,7 +385,7 @@ ist eine Untergruppe, der \emph{Kern von $\varphi$}, und es gilt:
 \qqed
 
 
-\subsection{Proposition\label{sub:Prop-gruphomG}}
+\section{Proposition\label{sec:Prop-gruphomG}}
 
 Sei $G$ eine Gruppe. Dann ist die Abbildung 
 \begin{align}
@@ -480,7 +403,7 @@ Lineare Algebra I
 \qqed
 
 
-\subsection{Beispiel und Definition\textmd{ (Automorphismengruppe, Konjugation)\label{sub:BuD-AutGrup}}}
+\section{Beispiel und Definition\textmd{ (Automorphismengruppe, Konjugation)\label{sec:BuD-AutGrup}}}
 
 Sei $G$ eine Gruppe. Dann ist $\text{Aut}\left(G\right):=\{\varphi|\varphi:G\rightarrow G\text{ Automorphismus}\}$
 eine Gruppe bezüglich der Komposition $\circ$ mit dem neutralem Element
@@ -526,7 +449,7 @@ $\text{Aut}\left(G\right)\stackrel{\sim}{=}\left(\modlo{Z}{3}\right)^{*}=\left\{
 Insbesondere: $\left|\text{Aut}\left(G\right)\right|=2$, $\left|\Sigma\left(G\right)\right|=3!=6$
 
 
-\subsection{Proposition und Definition\textmd{ (Linksnebenklasse, Index)}\label{sub:PuD-Nebenklasse}}
+\section{Proposition und Definition\textmd{ (Linksnebenklasse, Index)}\label{sec:PuD-Nebenklasse}}
 
 Seien $G$ eine Gruppe und $H\subseteq G$ eine Untergruppe. Dann
 ist die Relation $\sim$ auf $G$ definiert durch
@@ -582,7 +505,7 @@ ii) ist klar.
 \qqed
 
 
-\subsection{Korollar \textmd{(Satz von Lagrange)\label{sub:Kor-Lagrange}}}
+\section{Korollar \textmd{(Satz von Lagrange)\label{sec:Kor-Lagrange}}}
 
 Seien $G$ eine endliche Gruppe und $H\subseteq G$ eine Untergruppe.
 Dann gilt
@@ -596,13 +519,13 @@ von $\left|G\right|$.
 \subsubsection*{Beweis}
 
 \begin{align*}
-\left|G\right| & \stackrel{\text{\ref{sub:PuD-Nebenklasse}\,\text{iii)}}}{=}\left|\bcupd_{gH\in\moduloScript{G}{H}}\left(gH\right)\right|=\sum_{gH\in\moduloScript{G}{H}}\left|gH\right|=\left|\modulo{G}{H}\right|\cdot\left|H\right|\stackrel{\text{Def.}}{=}\left(G:H\right)\cdot\left|H\right|
+\left|G\right| & \stackrel{\text{\ref{sec:PuD-Nebenklasse}\,\text{iii)}}}{=}\left|\bcupd_{gH\in\moduloScript{G}{H}}\left(gH\right)\right|=\sum_{gH\in\moduloScript{G}{H}}\left|gH\right|=\left|\modulo{G}{H}\right|\cdot\left|H\right|\stackrel{\text{Def.}}{=}\left(G:H\right)\cdot\left|H\right|
 \end{align*}
 \qqed
 
 
-\subsection{Beispiel\textmd{ (Symmetrische und alternierende Gruppe vom Grad
-3)\label{sub:Bsp-sym3}}}
+\section{Beispiel\textmd{ (Symmetrische und alternierende Gruppe vom Grad
+3)\label{sec:Bsp-sym3}}}
 
 Sei $S_{3}=\Sigma\left\{ 1,2,3\right\} $. Dann sind 
 \begin{align}
@@ -632,7 +555,7 @@ S_{3} & =A_{3}\,\dot{\cup}\,\tau A_{3}=H\,\dot{\cup}\,\omega H\,\dot{\cup}\,\ome
 
 
 
-\subsection{Definition\textmd{ (Normalteiler)}\label{sub:Def-normalteiler}}
+\section{Definition\textmd{ (Normalteiler)}\label{sec:Def-normalteiler}}
 
 Seien $G$ eine Gruppe und $H$ eine Untergruppe.
 
@@ -644,7 +567,7 @@ Abkürzung: NT), wenn gilt:
 Man sagt auch, $H$ ist \emph{stabil unter Konjugation}.
 
 
-\subsection{Beispiel}
+\section{Beispiel}
 \begin{itemize}
 \item In einer abelschen Gruppe ist jede Untergruppe ein Normalteiler, denn
 es gilt:
@@ -652,11 +575,11 @@ es gilt:
 ghg^{-1} & =h\underbrace{gg^{-1}}_{=e}=h\in H
 \end{align*}
 
-\item In \ref{sub:Bsp-sym3} gilt $A_{\text{3}}\unlhd S_{3}$, aber $H\subseteq S_{3}$
+\item In \ref{sec:Bsp-sym3} gilt $A_{\text{3}}\unlhd S_{3}$, aber $H\subseteq S_{3}$
 ist kein Normalteiler.
 \end{itemize}
 
-\subsection{Proposition\textmd{ (Kern ist Normalteiler)\label{sub:Prop-kerNormalTeiler}}}
+\section{Proposition\textmd{ (Kern ist Normalteiler)\label{sec:Prop-kerNormalTeiler}}}
 
 Ist $\varphi:G\rightarrow G'$ ein Gruppenhomomorphismus, so ist $\ker\left(\varphi\right)\unlhd G$
 ein Normalteiler.
@@ -664,8 +587,8 @@ ein Normalteiler.
 
 \subsubsection*{Beweis}
 
-Nach \ref{sub:PuD-ker}$\,$i) ist $\ker\left(\varphi\right)\subseteq G$
-eine Untergruppe. Prüfe nun die Definition \ref{sub:Def-normalteiler}:
+Nach \ref{sec:PuD-ker}$\,$i) ist $\ker\left(\varphi\right)\subseteq G$
+eine Untergruppe. Prüfe nun die Definition \ref{sec:Def-normalteiler}:
 \begin{align*}
 g\in G,h\in\ker\left(\varphi\right) & \Rightarrow\varphi\left(ghg^{-1}\right)=\varphi\left(g\right)\underbrace{\varphi\left(h\right)}_{=e'}\varphi\left(g\right)^{-1}=\varphi\left(g\right)\varphi\left(g\right)^{-1}=e'\Rightarrow ghg^{-1}\in\ker\left(\varphi\right)
 \end{align*}
@@ -674,7 +597,7 @@ g\in G,h\in\ker\left(\varphi\right) & \Rightarrow\varphi\left(ghg^{-1}\right)=\v
 {\small %DATE: Fr 21.10.2011}{\small \par}
 
 
-\subsection{Beispiel und Definition\textmd{ (Zentrum)}}
+\section{Beispiel und Definition\textmd{ (Zentrum)}}
 
 Ist $G$ eine Gruppe, so ist ${\displaystyle Z\left(G\right):=\left\{ g\in G\left|\fall_{h\in G}gh=hg\right.\right\} \unlhd G}$
 ein Normalteiler, das \emph{Zentrum von $G$}.
@@ -690,15 +613,15 @@ ein Normalteiler, das \emph{Zentrum von $G$}.
 \subsubsection*{Beweis zu \thesubsection}
 
 Für die Abbildung $\phi:G\rightarrow\text{Aut}\left(G\right)$ aus
-\ref{sub:BuD-AutGrup} sieht man leicht, dass $\ker\left(\phi\right)=Z\left(G\right)$
+\ref{sec:BuD-AutGrup} sieht man leicht, dass $\ker\left(\phi\right)=Z\left(G\right)$
 ist.
 
-Also folgt die Behauptung aus \ref{sub:Prop-kerNormalTeiler}.
+Also folgt die Behauptung aus \ref{sec:Prop-kerNormalTeiler}.
 
 \qqed
 
 
-\subsection{Proposition \textmd{(kanonische Projektionsabbildung)\label{sub:Prop-proj}}}
+\section{Proposition \textmd{(kanonische Projektionsabbildung)\label{sec:Prop-proj}}}
 
 Seien $G$ eine Gruppe, $N\unlhd G$ ein Normalteiler.
 
@@ -726,7 +649,7 @@ heißt:
 \fall_{g,g',g_{1},g_{1}'\in G}\,\, & \left(gN=g_{1}N\right)\wedge\left(g'N=g_{1}'N\right) & \Rightarrow\quad\left(gg'\right)N & =\left(g_{1}g_{1}'\right)N\label{eq:wohldef}
 \end{align}
 Dies ergibt sich aus folgender Überlegung:\\
-Wegen \eqref{eq:rel} in \ref{sub:PuD-Nebenklasse} betrachte:
+Wegen \eqref{eq:rel} in \ref{sec:PuD-Nebenklasse} betrachte:
 \begin{align*}
 \left(gg'\right)^{-1}\cdot\left(g_{1}g_{1}'\right) & =\left(g'\right)^{-1}\cdot g^{-1}\cdot g_{1}\cdot g_{1}'=\left(g'\right)^{-1}\cdot\underbrace{g_{1}'\cdot\left(g_{1}'\right)^{-1}}_{=e}\cdot\underbrace{g^{-1}\cdot g_{1}}_{=:n\in N,\text{ da }gN=g_{1}N}\cdot g_{1}'=\\
  & =\underbrace{\left(g'\right)^{-1}\cdot g_{1}'}_{\in N\text{, da }g'N=g_{1}'N}\underbrace{\left(g_{1}'\right)^{-1}\cdot n\cdot g_{1}'}_{\in N,\text{ da }N\unlhd G}\in N
@@ -734,15 +657,15 @@ Wegen \eqref{eq:rel} in \ref{sub:PuD-Nebenklasse} betrachte:
 Also gilt $\left(gg'\right)N=\left(g_{1}g_{1}'\right)N$.\\
 Ferner gilt:
 \begin{align*}
-\text{ker}\left(\pi\right) & =\left\{ g\in G|gN=\pi\left(g\right)=e'=eN=N\in\modulo{G}{N}\right\} \stackrel{\ref{sub:PuD-Nebenklasse}\,\text{i)}}{=}N
+\text{ker}\left(\pi\right) & =\left\{ g\in G|gN=\pi\left(g\right)=e'=eN=N\in\modulo{G}{N}\right\} \stackrel{\ref{sec:PuD-Nebenklasse}\,\text{i)}}{=}N
 \end{align*}
 \qqed
 \end{itemize}
 
-\subsection{Beispiel \textmd{($H$ ist kein Normalteiler)}}
+\section{Beispiel \textmd{($H$ ist kein Normalteiler)}}
 
 Sei $H=\left\{ 1,\left(12\right)\right\} \subseteq S_{3}$ wie in
-\ref{sub:Bsp-sym3}.
+\ref{sec:Bsp-sym3}.
 
 Die \quotedblbase{}Abbildung\textquotedblleft{} $\modulo{G}{H}\times\modulo{G}{H}\dashrightarrow\modulo{G}{H},\,\left(gH,g'H\right)\mapsto\left(gg'\right)H$
 ist nicht wohldefiniert, denn es gelten
@@ -761,12 +684,12 @@ denn:
 \left(e\left(123\right)\right)^{-1}\left(12\right)\left(123\right) & =\left(132\right)\left(23\right)=\left(13\right)\not\in H
 \end{align*}
 Dieses Beispiel zeigt, dass für \eqref{eq:wohldef} im Beweis von
-\ref{sub:Prop-proj} auf die Voraussetzung \quotedblbase{}Normalteiler\textquotedblleft{}
+\ref{sec:Prop-proj} auf die Voraussetzung \quotedblbase{}Normalteiler\textquotedblleft{}
 nicht verzichten kann, und dass $H\subseteq S_{3}$ kein Normalteiler
 ist.
 
 
-\subsection{Satz \textmd{(universelle Eigenschaft der Projektionsabbildung $\pi$)\label{sub:Satz-univEigProj}}}
+\section{Satz \textmd{(universelle Eigenschaft der Projektionsabbildung $\pi$)\label{sec:Satz-univEigProj}}}
 
 Seien $G$ eine Gruppe, $N\unlhd G$ ein Normalteiler und $\varphi:G\to G'$
 ein Gruppenhomomorphismus.
@@ -794,7 +717,7 @@ Dann sind äquivalent:
 \qqed
 
 
-\subsection{Korollar \textmd{(Isomorphiesatz)}\label{sub:Kor-HomSatzIso}}
+\section{Korollar \textmd{(Isomorphiesatz)}\label{sec:Kor-HomSatzIso}}
 
 Ist $\varphi:G\to G'$ ein Epimorphismus, so ist $\overline{\varphi}:\modulo{G}{\text{ker}\left(\varphi\right)}\to G'$
 wohldefiniert und ein Isomorphismus.
@@ -802,10 +725,10 @@ wohldefiniert und ein Isomorphismus.
 
 \subsubsection*{Beweis}
 
-Nach \ref{sub:Satz-univEigProj} ist $\overline{\varphi}$ wohldefiniert
+Nach \ref{sec:Satz-univEigProj} ist $\overline{\varphi}$ wohldefiniert
 und ein Gruppenhomomorphismus.
 
-(Wähle in \ref{sub:Satz-univEigProj} $N=\text{ker}\left(\varphi\right)$)
+(Wähle in \ref{sec:Satz-univEigProj} $N=\text{ker}\left(\varphi\right)$)
 
 Weil $\varphi$ ein Epimorphismus ist, ist auch $\overline{\varphi}$
 ein Epimorphismus.
@@ -814,13 +737,13 @@ Aus
 \begin{align*}
 \text{ker}\left(\overline{\varphi}\right)= & \modulo{\text{ker}\left(\varphi\right)}{N}=\modulo{\text{ker}\left(\varphi\right)}{\text{ker}\left(\varphi\right)}=\left\{ e\right\} 
 \end{align*}
-und \ref{sub:PuD-ker} folgt, dass $\overline{\varphi}$ injektiv,
+und \ref{sec:PuD-ker} folgt, dass $\overline{\varphi}$ injektiv,
 also ein Isomorphismus ist.
 
 \qqed
 
 
-\subsection{Satz \textmd{(Primzahlordnung)}\label{sub:Satz-ZpZ}}
+\section{Satz \textmd{(Primzahlordnung)}\label{sec:Satz-ZpZ}}
 
 Seien $G$ eine Gruppe und $p:=\left|G\right|$ eine Primzahl (Abkürzung:
 PZ). Dann gilt:
@@ -830,7 +753,7 @@ G & \stackrel{\sim}{=}\modlo{Z}{p}
 
 
 
-\subsection{Beispiel}
+\section{Beispiel}
 
 \begin{iiilist}
 
@@ -842,24 +765,24 @@ nicht abelsch).
 
 \end{iiilist}
 
-Beide Beispiele zeigen, dass man in \ref{sub:Satz-ZpZ} auf die Voraussetzung
+Beide Beispiele zeigen, dass man in \ref{sec:Satz-ZpZ} auf die Voraussetzung
 \quotedblbase{}Primzahl\textquotedblleft{} nicht verzichten kann.
 
 
-\subsubsection*{Beweis von \ref{sub:Satz-ZpZ}}
+\subsubsection*{Beweis von \ref{sec:Satz-ZpZ}}
 
 Wegen $1\not=p=\left|G\right|$ existiert ein $e\not=g\in G$.
 
-Nach \ref{sub:Prop-gruphomG} existiert genau ein Gruppenhomomorphismus
+Nach \ref{sec:Prop-gruphomG} existiert genau ein Gruppenhomomorphismus
 $\varphi:\mathbb{Z}\to G$ mit $\varphi\left(1\right)=g$. Es folgt
-nach \ref{sub:Kor-Lagrange}:
+nach \ref{sec:Kor-Lagrange}:
 \begin{align*}
 1 & \not=\left|\text{im}\left(\varphi\right)\right|\big|\left|G\right|=p
 \end{align*}
 Weil $p$ eine Primzahl ist, folgt $\left|\text{im}\left(\varphi\right)\right|=\left|G\right|$,
 das heißt $\varphi$ ist ein Epimorphismus.
 
-Nach \ref{sub:Kor-HomSatzIso} existiert ein Isomorphismus ${\displaystyle \modulo{\mathbb{Z}}{\text{ker}\left(\varphi\right)}}\stackrel{\sim}{\to}G$.
+Nach \ref{sec:Kor-HomSatzIso} existiert ein Isomorphismus ${\displaystyle \modulo{\mathbb{Z}}{\text{ker}\left(\varphi\right)}}\stackrel{\sim}{\to}G$.
 
 Damit ist $\text{ker}\left(\varphi\right)\subseteq\mathbb{Z}$ eine
 Untergruppe vom Index $\left|G\right|=p$.
@@ -867,10 +790,10 @@ Untergruppe vom Index $\left|G\right|=p$.
 Nach der Vorlesung lineare Algebra I folgt $\text{ker}\left(\varphi\right)=p\mathbb{Z}$,
 also $G\stackrel{\sim}{=}\modlo{Z}{p}$.
 
-\qqed[\ref{sub:Satz-ZpZ}]
+\qqed[\ref{sec:Satz-ZpZ}]
 
 
-\subsection{Proposition und Definition \textmd{(erzeugte Untergruppe)}}
+\section{Proposition und Definition \textmd{(erzeugte Untergruppe)}}
 
 Seien $G$ eine Gruppe, $x\in G$ und $\varphi:\mathbb{Z}\to G$ der
 eindeutige Gruppenhomomorphismus mit $\varphi\left(1\right)=g$.
@@ -886,7 +809,7 @@ Sie heißt \emph{die von $x$ (in $G$) erzeugte Untergruppe.}
 
 \subsubsection*{Beweis}
 
-Wegen \ref{sub:PuD-ker} ii) ist $\left\langle x\right\rangle \subseteq G$
+Wegen \ref{sec:PuD-ker} ii) ist $\left\langle x\right\rangle \subseteq G$
 eine Untergruppe und es gilt:
 \begin{align*}
 x & =\varphi\left(1\right)\in\text{im}\left(\varphi\right)=\left\langle x\right\rangle 
@@ -897,7 +820,7 @@ für alle $n\in\mathbb{Z}$, das heißt $\left\langle x\right\rangle \subseteq H$.
 \qqed
 
 
-\subsection{Proposition und Definition \textmd{(zyklische Gruppe, Erzeuger)}\label{sub:PuD-zyklGrp}}
+\section{Proposition und Definition \textmd{(zyklische Gruppe, Erzeuger)}\label{sec:PuD-zyklGrp}}
 
 Für eine Gruppe $G$ sind äquivalent:
 
@@ -922,7 +845,7 @@ ii) $\Rightarrow$ i): Wähle $x:=\varphi\left(1\right)$.
 \qqed
 
 
-\subsection{Satz \textmd{(Klassifizierung zyklischer Gruppen)}}
+\section{Satz \textmd{(Klassifizierung zyklischer Gruppen)}}
 
 Bis auf Isomorphie existieren genau die zyklischen Gruppen $\modlo{Z}{m}$
 für $m\in\mathbb{N}_{\ge1}$ und $\mathbb{Z}$ (erzeugt zum Beispiel
@@ -935,8 +858,8 @@ Es ist klar, dass die angegebenen Gruppen zyklisch und paarweise nicht
 isomorph sind.
 
 Sei nun $G$ eine beliebige zyklische Gruppe, dann existiert nach
-\ref{sub:PuD-zyklGrp} ii) ein Epimorphismus $\varphi:\mathbb{Z}\to G$,
-weswegen nach \ref{sub:Kor-HomSatzIso} ein Isomorphismus $\tilde{\varphi}:\modulo{\mathbb{Z}}{\text{ker}\left(\varphi\right)}\stackrel{\sim}{\to}G$.
+\ref{sec:PuD-zyklGrp} ii) ein Epimorphismus $\varphi:\mathbb{Z}\to G$,
+weswegen nach \ref{sec:Kor-HomSatzIso} ein Isomorphismus $\tilde{\varphi}:\modulo{\mathbb{Z}}{\text{ker}\left(\varphi\right)}\stackrel{\sim}{\to}G$.
 
 Nun ist $\text{ker}\left(\varphi\right)\subseteq\mathbb{Z}$ eine
 Untergruppe, womit aus der linearen Algebra für ein $m\ge0$ schon
@@ -954,7 +877,7 @@ G & \stackrel{\sim}{=}\begin{cases}
 \qqed
 
 
-\subsection{Satz \textmd{(Untergruppe, Kern und Bild zyklischer Gruppen)\label{sub:Satz-UG-kerImZyklG}}}
+\section{Satz \textmd{(Untergruppe, Kern und Bild zyklischer Gruppen)\label{sec:Satz-UG-kerImZyklG}}}
 
 Sei $G$ eine zyklische Gruppe. Dann gilt:
 
@@ -1008,7 +931,7 @@ ist, ist $\text{ker}\left(\varphi\right)$ zyklisch nach i).
 \end{iiilist}
 
 
-\subsection{Definition \textmd{(Gruppenordnung)}}
+\section{Definition \textmd{(Gruppenordnung)}}
 
 Seien $G$ eine Gruppe und $x\in G$, dann heißt
 \begin{align*}
@@ -1019,7 +942,7 @@ Seien $G$ eine Gruppe und $x\in G$, dann heißt
 %DATE: Di 25.10.11
 
 
-\subsection{Beispiel\label{sub:Bsp-F5*}}
+\section{Beispiel\label{sec:Bsp-F5*}}
 
 Betrachte $G:=\left(\modlo{Z}{5}\right)^{*}=\mathbb{F}_{5}^{*}$
 
@@ -1048,7 +971,7 @@ Man erkennt:
 Die Rechnung zeigt: $G=\mathbb{F}_{5}^{*}\stackrel{\sim}{=}\modlo{Z}{4}$.
 
 
-\subsection{\textmd{(kleiner Fermatscher)} Satz\label{sub:Satz-kleinFermat}}
+\section{\textmd{(kleiner Fermatscher)} Satz\label{sec:Satz-kleinFermat}}
 
 Seien $G$ eine endliche Gruppe und $x\in G$.
 
@@ -1061,16 +984,16 @@ in $G$.
 Nach Definition ist $\text{ord}\left(x\right)=\left|H\right|$ für
 die Untergruppe $H:=\left\langle x\right\rangle \subseteq G$.
 
-Nun folgt $\text{ord}\left(x\right)\big|\left|G\right|$ aus \ref{sub:Kor-Lagrange}.
+Nun folgt $\text{ord}\left(x\right)\big|\left|G\right|$ aus \ref{sec:Kor-Lagrange}.
 
 Klar ist $x^{\text{ord}\left(x\right)}=e$, womit folgt:
 \begin{align*}
-x^{\left|G\right|} & \stackrel{\ref{sub:Kor-Lagrange}}{=}x^{\text{ord}\left(x\right)\cdot\left(G:\left\langle x\right\rangle \right)}=e^{\left(G:x\right)}=e
+x^{\left|G\right|} & \stackrel{\ref{sec:Kor-Lagrange}}{=}x^{\text{ord}\left(x\right)\cdot\left(G:\left\langle x\right\rangle \right)}=e^{\left(G:x\right)}=e
 \end{align*}
 \qqed
 
 
-\subsection{Korollar\label{sub:Kor-aPhin1}}
+\section{Korollar\label{sec:Kor-aPhin1}}
 
 \begin{iiilist}
 
@@ -1084,7 +1007,7 @@ so gilt:
 \begin{align*}
 a^{p-1} & \equiv1\left(\text{mod}\right)p
 \end{align*}
-(vergleiche \ref{sub:Bsp-F5*})
+(vergleiche \ref{sec:Bsp-F5*})
 
 \end{iiilist}
 
@@ -1095,7 +1018,7 @@ a^{p-1} & \equiv1\left(\text{mod}\right)p
 
 \iii Wegen $\text{ggT}\left(a,n\right)=1$ ist $a\in\left(\modlo{Z}{n}\right)^{*}$
 und mit $\varphi\left(n\right):=\left|\left(\modlo{Z}{n}\right)^{*}\right|$
-folgt die Behauptung aus \ref{sub:Satz-kleinFermat}.
+folgt die Behauptung aus \ref{sec:Satz-kleinFermat}.
 
 \iii Falls $n=p$ eine Primzahl ist, gilt in i) nach linearer Algebra
 I:
@@ -1109,7 +1032,7 @@ I:
 \qqed
 
 
-\subsection{Proposition \textmd{(Kriterium für zyklische Gruppen)}\label{sub:Prop-GxdledGzykl}}
+\section{Proposition \textmd{(Kriterium für zyklische Gruppen)}\label{sec:Prop-GxdledGzykl}}
 
 Seien $G$ eine endliche Gruppe und für alle $d\big|\left|G\right|$
 gelte:
@@ -1125,14 +1048,14 @@ Dann ist $G$ zyklisch.
 
 Für $d\big|\left|G\right|=:n$ setze $\psi\left(d\right):=\left|\left\{ x\in G|\text{ord}\left(x\right)=d\right\} \right|$.
 
-Aus \ref{sub:Satz-kleinFermat} folgt dann:
+Aus \ref{sec:Satz-kleinFermat} folgt dann:
 \begin{align}
 \sum_{1\le d|n}\psi\left(d\right) & =\left|G\right|=n\label{eq:sumpsid}
 \end{align}
 Seien $d|n$ und es gelte $\psi\left(d\right)\not=0$, das heißt es
 gibt ein $z\in G$ mit $\text{ord}\left(z\right)=d$.
 
-Aus \ref{sub:Satz-kleinFermat} folgt für alle $g\in\left\langle z\right\rangle $
+Aus \ref{sec:Satz-kleinFermat} folgt für alle $g\in\left\langle z\right\rangle $
 schon $g^{d}=e$.
 
 Aus $\left|\left\langle z\right\rangle \right|=d$ und \eqref{eq:xdled}
@@ -1166,7 +1089,7 @@ also ist $G=\left\langle x\right\rangle $ und $G$ ist zyklisch.
 \qqed
 
 
-\subsection{Korollar\label{sub:Kor-endlUGzykl}}
+\section{Korollar\label{sec:Kor-endlUGzykl}}
 
 Seien $k$ ein Körper und $G\subseteq k^{*}$ eine endliche Untergruppe.
 
@@ -1178,9 +1101,9 @@ Dann ist $G$ zyklisch.
 Die Gruppe $\left(\modlo{Z}{8}\right)^{*}$ ist nicht zyklisch.
 
 
-\subsubsection*{Beweis von \ref{sub:Kor-endlUGzykl}}
+\subsubsection*{Beweis von \ref{sec:Kor-endlUGzykl}}
 
-Wegen \ref{sub:Prop-GxdledGzykl} zeige nur, dass für alle $d\ge1$
+Wegen \ref{sec:Prop-GxdledGzykl} zeige nur, dass für alle $d\ge1$
 gilt:
 \begin{align*}
 \left|\left\{ x\in k^{*}|x^{d}=1\right\} \right| & \le d
@@ -1193,20 +1116,20 @@ $d$ Nullstellen in $k$ nach linearer Algebra II.
 \qqed
 
 
-\subsection{Bemerkung}
+\section{Bemerkung}
 
-$\mathbb{Q}^{*}$ ist nicht zyklisch (!), also kann man in \ref{sub:Kor-endlUGzykl}
+$\mathbb{Q}^{*}$ ist nicht zyklisch (!), also kann man in \ref{sec:Kor-endlUGzykl}
 nicht auf \quotedblbase{}endlich\textquotedblleft{} verzichten.
 
 
-\subsection{Korollar}
+\section{Korollar}
 
 \begin{iiilist}
 
 \iii Ist $k$ ein endlicher Körper, so ist $k^{*}$ zyklisch.
 
 \iii Ist $p$ eine Primzahl, so ist $\mathbb{F}_{p}^{*}$ zyklisch.
-(vergleiche \ref{sub:Bsp-F5*})
+(vergleiche \ref{sec:Bsp-F5*})
 
 \end{iiilist}
 
@@ -1215,7 +1138,7 @@ nicht auf \quotedblbase{}endlich\textquotedblleft{} verzichten.
 
 \begin{iiilist}
 
-\iii \ref{sub:Kor-endlUGzykl} für $G:=k^{*}$.
+\iii \ref{sec:Kor-endlUGzykl} für $G:=k^{*}$.
 
 \iii Folgt aus i) für $k=\mathbb{F}_{p}$.
 
@@ -1226,7 +1149,7 @@ nicht auf \quotedblbase{}endlich\textquotedblleft{} verzichten.
 \newpage{}
 
 
-\section{Lokalisierungen\label{sec:Lokalisierungen}}
+\chapter{Lokalisierungen\label{chap:Lokalisierungen}}
 
 
 \subsubsection*{Stichworte}
@@ -1240,7 +1163,7 @@ IR), Modul, Tensorprodukt, Primideal, Einheiten, exakte Folge
 Siehe Literaturliste am Anfang.
 
 
-\subsection{Proposition und Definition \textmd{(multiplikativ abgeschlossen)\label{sub:PuD-multAbg}}}
+\section{Proposition und Definition \textmd{(multiplikativ abgeschlossen)\label{sec:PuD-multAbg}}}
 
 Seien $A,B$ kommutative Ringe, $\varphi:A\to B$ ein Ringhomomorphismus
 und $S:\varphi^{-1}\left(B^{*}\right)\subseteq A$.
@@ -1274,13 +1197,13 @@ $\Rightarrow$ $st\in S$
 \qqed
 
 
-\subsubsection*{Fixiere in Abschnitt \ref{sec:Lokalisierungen} (\nameref{sec:Lokalisierungen})}
+\subsubsection*{Fixiere in Kapitel \ref{chap:Lokalisierungen} (\nameref{chap:Lokalisierungen})}
 
 Seien $A$ ein kommutativer Ring und $S\subseteq A$ multiplikativ
 abgeschlossen.
 
 
-\subsection{Konstruktion und Definition \textmd{(Quotientenring)\label{sub:KuD-QuotRing}}}
+\section{Konstruktion und Definition \textmd{(Quotientenring)\label{sec:KuD-QuotRing}}}
 
 Die Relation auf der Menge $A\times S$ definiert durch
 \begin{align}
@@ -1313,9 +1236,9 @@ ist ein kommutativer Ring, der \emph{Quotientenring von $A$ bezüglich
 $S$}.
 
 
-\subsection{Beispiel \textmd{(Quotientenkörper)}}
+\section{Beispiel \textmd{(Quotientenkörper)}}
 
-Ist $A$ in \ref{sub:KuD-QuotRing} ein Integritätsring und gilt $0\not\in S$,
+Ist $A$ in \ref{sec:KuD-QuotRing} ein Integritätsring und gilt $0\not\in S$,
 so vereinfacht sich \eqref{eq:bruchrel} zu:
 \begin{align*}
 \frac{a}{s} & =\frac{b}{t}\in S^{-1}A\Leftrightarrow at=bs\in A
@@ -1330,7 +1253,7 @@ abgeschlossen und der Ring
 heißt \emph{der Quotientenkörper von $A$}, zum Beispiel $\text{Quot}\left(\mathbb{Z}\right)=\mathbb{Q}$.
 
 
-\subsubsection*{Beweis von \ref{sub:KuD-QuotRing}}
+\subsubsection*{Beweis von \ref{sec:KuD-QuotRing}}
 
 Die Reflexivität und Symmetrie von $\sim$ sind klar.
 
@@ -1354,10 +1277,10 @@ Wegen $tvw\in S$ folgt aus \eqref{eq:bruchrel} schon $\left(a,s\right)\sim\left(
 
 Der Rest bleibt als Übung.
 
-\qqed[\ref{sub:KuD-QuotRing}]
+\qqed[\ref{sec:KuD-QuotRing}]
 
 
-\subsection{Proposition \textmd{(Universelle Eigenschaft von $S^{-1}A$)\label{sub:Prop-UnivEigSinvA}}}
+\section{Proposition \textmd{(Universelle Eigenschaft von $S^{-1}A$)\label{sec:Prop-UnivEigSinvA}}}
 
 \begin{iiilist}
 
@@ -1395,7 +1318,7 @@ und es gilt $\psi\left(\mathbb{Z}\setminus\left\{ 0\right\} \right)\subseteq\mat
 %DATE: Fr 28.10.11
 
 
-\subsubsection*{Beweis von \ref{sub:Prop-UnivEigSinvA}}
+\subsubsection*{Beweis von \ref{sec:Prop-UnivEigSinvA}}
 
 \begin{iiilist}
 
@@ -1405,7 +1328,7 @@ ein Ringhomomorphismus.
 Rechne zum Beispiel $\varphi\left(a\right)+\varphi\left(b\right)=\varphi\left(a+b\right)$
 nach:
 \begin{align*}
-\varphi\left(a\right)+\varphi\left(b\right) & =\frac{a}{1}+\frac{b}{1}\stackrel{\ref{sub:KuD-QuotRing}}{=}\frac{a\cdot1+b\cdot1}{1\cdot1}=\frac{a+b}{1}=\varphi\left(a+b\right)
+\varphi\left(a\right)+\varphi\left(b\right) & =\frac{a}{1}+\frac{b}{1}\stackrel{\ref{sec:KuD-QuotRing}}{=}\frac{a\cdot1+b\cdot1}{1\cdot1}=\frac{a+b}{1}=\varphi\left(a+b\right)
 \end{align*}
 Der Rest geht analog.
 
@@ -1450,7 +1373,7 @@ in $S^{-1}A$ schon in $B$ gilt:
 
 \begin{description}
 \item [{Beweis}] \textbf{}\\
-Aus $\varphi\left(S\right)\subseteq\left(S^{-1}A\right)^{*}$ in \ref{sub:KuD-QuotRing}
+Aus $\varphi\left(S\right)\subseteq\left(S^{-1}A\right)^{*}$ in \ref{sec:KuD-QuotRing}
 folgt in $A$:
 \begin{align*}
 \exs_{u\in S}:u\left(at-bs\right) & =0
@@ -1467,7 +1390,7 @@ Weil $\psi$ eindeutig ist, folgt in $B$:
 \end{iiilist}
 
 
-\subsection{Korollar}
+\section{Korollar}
 
 \begin{iiilist}
 
@@ -1486,7 +1409,7 @@ Weil $\psi$ eindeutig ist, folgt in $B$:
 \begin{align*}
 \frac{0}{1} & =\varphi\left(a\right)=\frac{a}{1}
 \end{align*}
-Dies ist nach \ref{sub:KuD-QuotRing} äquivalent dazu, dass es ein
+Dies ist nach \ref{sec:KuD-QuotRing} äquivalent dazu, dass es ein
 $s\in S$ gibt, für dass in $A$ gilt:
 \begin{align*}
 0 & =s\cdot\left(a\cdot1-0\cdot1\right)=s\cdot a
@@ -1512,7 +1435,7 @@ Das bedeutet $s=0\in S$.
 \end{iiilist}
 
 
-\subsection{Beispiel \textmd{(Lokalisierung)}}
+\section{Beispiel \textmd{(Lokalisierung)}}
 
 Seien $A$ ein Integritätsring und $\mathfrak{p}\subseteq A$ ein
 Primideal.
@@ -1541,7 +1464,7 @@ Einheiten:
 \subsubsection*{Beweis}
 
 Zeige nur, dass $A\setminus\mathfrak{p}\subseteq A$ multiplikativ
-abgeschlossen ist, prüfe also die Definition \ref{sub:PuD-multAbg}
+abgeschlossen ist, prüfe also die Definition \ref{sec:PuD-multAbg}
 i) und ii) für $S=A\setminus\mathfrak{p}$:
 
 \begin{iiilist}
@@ -1564,7 +1487,7 @@ Dies ist ein Widerspruch zu $s,t\in A\setminus\mathfrak{p}$.
 \qqed
 
 
-\subsection{Konstruktion \textmd{(Lokalisierung)}\label{sub:Konstr-SinvM}}
+\section{Konstruktion \textmd{(Lokalisierung)}\label{sec:Konstr-SinvM}}
 
 Seien $M$ und $N$ zwei $A$-Moduln und $S\subseteq A$ multiplikativ
 abgeschlossen.
@@ -1595,12 +1518,12 @@ $S^{-1}A$-linear.
 
 \subsubsection*{Beweis}
 
-Analog zu \ref{sub:KuD-QuotRing}.
+Analog zu \ref{sec:KuD-QuotRing}.
 
 \qqed
 
 
-\subsection{Proposition\label{sub:Prop-exaktAModuln}}
+\section{Proposition\label{sec:Prop-exaktAModuln}}
 
 Sei
 \begin{align}
@@ -1629,9 +1552,9 @@ S^{-1}\psi\circ S^{-1}\varphi & \stackrel{\left(!\right)}{=}S^{-1}\left(\psi\cir
 dann gibt es ein $n\in N$ und ein $s\in S$ mit ${\displaystyle x=\frac{n}{s}}$,
 weswegen gilt in $S^{-1}P$:
 \begin{align*}
-0 & =\left(S^{-1}\psi\right)\left(x\right)=\left(S^{-1}\psi\right)\left(\frac{n}{s}\right)\stackrel{\ref{sub:Konstr-SinvM}}{=}\frac{\psi\left(n\right)}{s}
+0 & =\left(S^{-1}\psi\right)\left(x\right)=\left(S^{-1}\psi\right)\left(\frac{n}{s}\right)\stackrel{\ref{sec:Konstr-SinvM}}{=}\frac{\psi\left(n\right)}{s}
 \end{align*}
-Nach \ref{sub:Konstr-SinvM} gibt es ein $t\in S$, für das in $P$
+Nach \ref{sec:Konstr-SinvM} gibt es ein $t\in S$, für das in $P$
 gilt:
 \begin{align*}
 \psi\left(ts\cdot n\right)=ts\cdot\psi\left(n\right) & =0
@@ -1649,7 +1572,7 @@ Damit folgt:
 \qqed
 
 
-\subsection{Proposition\label{sub:Prop-AModulnIso}}
+\section{Proposition\label{sec:Prop-AModulnIso}}
 
 Sei $M$ ein $A$-Modul.
 
@@ -1679,7 +1602,7 @@ $f$ ist sogar $S^{-1}A$-linear, da gilt:
 \begin{align*}
 f\left(\frac{a}{s}\cdot\left(\frac{b}{t}\otimes m\right)\right) & =f\left(\frac{ab}{st}\otimes m\right)=\frac{abm}{st}=\frac{a}{s}\cdot f\left(\frac{b}{t}\otimes m\right)
 \end{align*}
-Nach \ref{sub:Konstr-SinvM} ist klar, dass $f$ surjektiv ist, denn
+Nach \ref{sec:Konstr-SinvM} ist klar, dass $f$ surjektiv ist, denn
 ${\displaystyle \frac{m}{s}=f\left(\frac{1}{s}\otimes m\right)}$.
 \begin{description}
 \item [{Behauptung}] \hspace*{1mm}\\
@@ -1733,7 +1656,7 @@ Es folgt $\text{ker}\left(f\right)=0$, also ist $f$ injektiv.
 \qqed
 
 
-\subsection{Beispiel\label{sub:Bsp-exaktFolge}}
+\section{Beispiel\label{sec:Bsp-exaktFolge}}
 
 Sei $M\stackrel{\varphi}{\to}N\stackrel{\psi}{\to}P$ eine exakte
 Folge abelscher Gruppen(, das heißt $\mathbb{Z}$-Moduln).
@@ -1748,21 +1671,21 @@ exakt.
 
 \subsubsection*{Beweis}
 
-Folgt aus \ref{sub:Prop-exaktAModuln} und \ref{sub:Prop-AModulnIso}.
+Folgt aus \ref{sec:Prop-exaktAModuln} und \ref{sec:Prop-AModulnIso}.
 
 \qqed
 
 
-\subsubsection*{Beweis von \ref{sub:Bsp-exaktFolge}}
+\subsubsection*{Beweis von \ref{sec:Bsp-exaktFolge}}
 
 Betrachte das Diagramm:
 
 \textcolor{green}{TODO: Diagramm einfügen}
 
-Nach \ref{sub:Prop-exaktAModuln} mit $A=\mathbb{Z}$, $S=\mathbb{Z}\setminus\left\{ 0\right\} $
+Nach \ref{sec:Prop-exaktAModuln} mit $A=\mathbb{Z}$, $S=\mathbb{Z}\setminus\left\{ 0\right\} $
 ist die zweite Zeile exakt.
 
-Die senkrechten Isomorphismen sind wie in \ref{sub:Prop-exaktAModuln},
+Die senkrechten Isomorphismen sind wie in \ref{sec:Prop-exaktAModuln},
 beachte $S^{-1}A\stackrel{\sim}{=}\mathbb{Q}$.
 
 Man prüft, dass das Diagramm kommutiert(, das heißt prüfen, dass eines
@@ -1776,10 +1699,10 @@ Es folgt die Exaktheit der ersten Zeile.
 \newpage{}
 
 
-\section{Der Satz von Gauß\label{sec:Der-Satz-von-Gauss}}
+\chapter{Der Satz von Gauß\label{chap:Der-Satz-von-Gauss}}
 
 
-\subsubsection*{Fixiere in Abschnitt \ref{sec:Der-Satz-von-Gauss} (\nameref{sec:Der-Satz-von-Gauss})}
+\subsubsection*{Fixiere in Kapitel \ref{chap:Der-Satz-von-Gauss} (\nameref{chap:Der-Satz-von-Gauss})}
 
 Seien $R$ ein faktorieller Ring, $Q:=\text{Quot}\left(R\right)=\left(R\setminus\left\{ 0\right\} \right)^{-1}R$
 und $\mathcal{P}\subseteq R$ ein Vertretersystem der Primelemente
@@ -1794,7 +1717,7 @@ Primzahlen)
 \item $R=\mathbb{Z}\left[\ii\right]$, $\mathcal{P}=?$
 \end{itemize}
 
-\subsection{Erinnerung \textmd{(Primfaktorzerlegung)\label{sub:Erin-PFZ}}}
+\section{Erinnerung \textmd{(Primfaktorzerlegung)\label{sec:Erin-PFZ}}}
 
 \textcolor{green}{TODO: ??? Überprüfen}
 
@@ -1828,7 +1751,7 @@ q\in R & \Leftrightarrow\fall_{p\in\mathcal{P}}:\nu_{p}\left(q\right)\ge0\label{
 Setze $\nu_{p}\left(0\right):=\infty$ für alle $p\in\mathcal{P}$.
 
 
-\subsection{Bemerkung\label{sub:Bem-phiX}}
+\section{Bemerkung\label{sec:Bem-phiX}}
 
 Für jeden Ringhomomorphismus $\varphi:R\to R'$ existiert genau ein
 Ringhomomorphismus
@@ -1871,7 +1794,7 @@ Daher gilt:
 \qqed
 
 
-\subsection{Proposition und Definition \textmd{(Lemma von Gauß)\label{sub:PuD-LemmaGauss}}}
+\section{Proposition und Definition \textmd{(Lemma von Gauß)\label{sec:PuD-LemmaGauss}}}
 
 Sei $p\in\mathcal{P}$. Für $f=\sum_{i}a_{i}X^{i}\in Q\left[X\right]$
 heißt $\nu_{p}\left(f\right)=\min_{i}\left\{ \nu_{p}\left(a_{i}\right)\right\} \in\mathbb{Z}\cup\left\{ \infty\right\} $
@@ -1901,16 +1824,16 @@ Es gelten:
 
 \begin{iiilist}
 
-\iii $\fall_{p}:\nu_{p}\left(f\right)=\infty\Leftrightarrow\fall_{p,i}:\nu_{p}\left(a_{i}\right)=\infty\stackrel{\ref{sub:Erin-PFZ}}{\Leftrightarrow}\fall_{i}:a_{i}=0\Leftrightarrow f=0$
+\iii $\fall_{p}:\nu_{p}\left(f\right)=\infty\Leftrightarrow\fall_{p,i}:\nu_{p}\left(a_{i}\right)=\infty\stackrel{\ref{sec:Erin-PFZ}}{\Leftrightarrow}\fall_{i}:a_{i}=0\Leftrightarrow f=0$
 
-\iii $f\in R\left[X\right]\Leftrightarrow\fall_{i}:a_{i}\in R\stackrel{\ref{sub:Erin-PFZ}}{\Leftrightarrow}\fall_{p\in\mathcal{P},i}:\nu_{p}\left(a_{i}\right)\ge0\Leftrightarrow\fall_{p\in\mathcal{P}}\nu_{p}\left(f\right)\ge0$
+\iii $f\in R\left[X\right]\Leftrightarrow\fall_{i}:a_{i}\in R\stackrel{\ref{sec:Erin-PFZ}}{\Leftrightarrow}\fall_{p\in\mathcal{P},i}:\nu_{p}\left(a_{i}\right)\ge0\Leftrightarrow\fall_{p\in\mathcal{P}}\nu_{p}\left(f\right)\ge0$
 
 \iii 1. Fall: $f\in Q\subseteq Q\left[X\right]$ und $g\in Q\left[X\right]$
 beliebig.
 
 Schreibe $g=\sum_{i}b_{i}X^{i}$. Dann folgt:
 \begin{align*}
-\nu_{p}\left(f\cdot g\right) & =\nu_{p}\left(\sum_{i}\left(fb_{i}\right)X^{i}\right)\stackrel{\text{Def.}}{=}\min\left\{ \nu_{p}\left(fb_{i}\right)\right\} \stackrel{\ref{sub:Erin-PFZ},\text{ da }f\in Q}{=}\min\left\{ \nu_{p}\left(f\right)+\nu_{p}\left(b_{i}\right)\right\} =\\
+\nu_{p}\left(f\cdot g\right) & =\nu_{p}\left(\sum_{i}\left(fb_{i}\right)X^{i}\right)\stackrel{\text{Def.}}{=}\min\left\{ \nu_{p}\left(fb_{i}\right)\right\} \stackrel{\ref{sec:Erin-PFZ},\text{ da }f\in Q}{=}\min\left\{ \nu_{p}\left(f\right)+\nu_{p}\left(b_{i}\right)\right\} =\\
  & =\nu_{p}\left(f\right)+\min\left\{ \nu_{p}\left(b_{i}\right)\right\} =\nu_{p}\left(f\right)+\nu_{p}\left(g\right)
 \end{align*}
 
@@ -1931,12 +1854,12 @@ Für geeignete $\alpha,\beta\in Q^{*}$ gilt:
 Dann ist $\nu_{p}\left(\tilde{f}\tilde{g}\right)=0$ zu zeigen:
 
 Sei $\pi:R\left[X\right]\to\left(\modulo{R}{\left(p\right)}\right)\left[X\right]$
-wie in \ref{sub:Bem-phiX}. Für $\tilde{f}=\sum_{i}a_{i}X^{i}$ gilt:
+wie in \ref{sec:Bem-phiX}. Für $\tilde{f}=\sum_{i}a_{i}X^{i}$ gilt:
 \begin{align*}
 0 & =\nu_{p}\left(\tilde{f}\right)=\min_{i}\{\underbrace{\nu_{p}\left(a_{i}\right)}_{\ge0\left(\text{da }\tilde{f}\in R\left[X\right]\right)}\}
 \end{align*}
 Also gibt es ein $i$ mit $\nu_{p}\left(a_{i}\right)=0$, das heißt
-$p\not|\, a_{i}$. Nach \ref{sub:Bem-phiX} folgt damit $\pi\left(\tilde{f}\right)\not=0$.
+$p\not|\, a_{i}$. Nach \ref{sec:Bem-phiX} folgt damit $\pi\left(\tilde{f}\right)\not=0$.
 
 Analog gilt: $\pi\left(\tilde{g}\right)\not=0$ und es folgt in $\left(\modulo{R}{\left(p\right)}\right)\left[X\right]$,
 weil dies ein Integritätsring ist:
@@ -1952,7 +1875,7 @@ Wie oben folgt $\nu_{p}\left(\tilde{f}\tilde{g}\right)=0$.
 \qqed
 
 
-\subsection{Korollar\label{sub:Kor-hfgNormiert}}
+\section{Korollar\label{sec:Kor-hfgNormiert}}
 
 Sei $h\in R\left[X\right]$ normiert und es gelte in $Q\left[X\right]$
 mit normierten $f,g\in Q\left[X\right]$:
@@ -1973,7 +1896,7 @@ in $Q\left[X\right]$ normiert sind.
 
 Weil für alle $p\in\mathcal{P}$
 \begin{align*}
-0 & =\nu_{p}\left(h\right)\sr{=}{\eqref{eq:hfg}}{\ref{sub:PuD-LemmaGauss}\text{ iii)}}\underbrace{\nu_{p}\left(f\right)}_{\le0}+\underbrace{\nu_{p}\left(g\right)}_{\le0}
+0 & =\nu_{p}\left(h\right)\sr{=}{\eqref{eq:hfg}}{\ref{sec:PuD-LemmaGauss}\text{ iii)}}\underbrace{\nu_{p}\left(f\right)}_{\le0}+\underbrace{\nu_{p}\left(g\right)}_{\le0}
 \end{align*}
 gilt, folgt:
 \begin{align*}
@@ -1984,7 +1907,7 @@ Daher sind $f,g\in R\left[X\right]$.
 \qqed
 
 
-\subsection{Beispiel\label{sub:Bsp-Vieta}}
+\section{Beispiel\label{sec:Bsp-Vieta}}
 
 Seien ${\displaystyle h=\sum_{i}a_{i}X^{i}}\in R\left[X\right]$ normiert
 und $\alpha\in Q$ mit $h\left(\alpha\right)=0$.
@@ -2000,7 +1923,7 @@ in $Q\left[X\right]$ für ein geeignetes $g\in Q\left[X\right]$.
 Weil $h$ und $\left(X-\alpha\right)$ normiert sind, ist auch $g$
 normiert.
 
-Aus \ref{sub:Kor-hfgNormiert} folgt $\left(X-\alpha\right),g\in R\left[X\right]$,
+Aus \ref{sec:Kor-hfgNormiert} folgt $\left(X-\alpha\right),g\in R\left[X\right]$,
 also insbesondere $\alpha\in R$.
 
 Ferner gilt in $R$:
@@ -2013,7 +1936,7 @@ Also gilt $\alpha|a_{0}$ in $R$.
 \qqed
 
 
-\subsection{Beispiel}
+\section{Beispiel}
 
 Es existiert keine rationale Zahl $q\in\mathbb{Q}$ mit $q^{3}+2q+1=0$,
 obwohl diese Gleichung, wie jede Gleichung dritten Grades, eine Lösung
@@ -2026,7 +1949,7 @@ $h:=X^{3}+2X+1\in\mathbb{Z}\left[X\right]$ ist normiert und $R:=\mathbb{Z}$
 ist ein Hauptidealring, also insbesondere faktoriell.
 
 Gäbe es ein $q\in\mathbb{Q}=\text{Quot}\left(R\right)$ mit $h\left(\alpha\right)=0$,
-so folgte aus \ref{sub:Bsp-Vieta} schon $q\in\mathbb{Z}$ und $q|a_{0}=1$,
+so folgte aus \ref{sec:Bsp-Vieta} schon $q\in\mathbb{Z}$ und $q|a_{0}=1$,
 das heißt $q\in\left\{ \pm1\right\} $, aber es gilt:
 \begin{align*}
 h\left(\pm1\right) & =1\pm3\not=0
@@ -2034,7 +1957,7 @@ h\left(\pm1\right) & =1\pm3\not=0
 \qqed
 
 
-\subsection{Proposition und Definition \textmd{(primitiv)}\label{sub:PuD-primitiv}}
+\section{Proposition und Definition \textmd{(primitiv)}\label{sec:PuD-primitiv}}
 
 \textcolor{green}{TODO: $\left(1\right)$ ??? oder doch $1$?}
 
@@ -2064,7 +1987,7 @@ mit $f=\alpha\cdot\tilde{f}$.
 \end{align*}
 Wendet man
 \begin{align*}
-\fall_{q\in Q^{*}}: & \left(\fall_{p\in\mathcal{P}}:\nu_{p}\left(q\right)=0\stackrel{\ref{sub:Erin-PFZ}}{\Leftrightarrow}q\in R^{*}\right)
+\fall_{q\in Q^{*}}: & \left(\fall_{p\in\mathcal{P}}:\nu_{p}\left(q\right)=0\stackrel{\ref{sec:Erin-PFZ}}{\Leftrightarrow}q\in R^{*}\right)
 \end{align*}
 auf $q=\text{ggT}\left(a_{i}\right)$, so folgt:
 \begin{align*}
@@ -2074,7 +1997,7 @@ auf $q=\text{ggT}\left(a_{i}\right)$, so folgt:
 
 %DATE: ???
 
-\iii Wegen $f\not=0$ gilt nach \ref{sub:PuD-LemmaGauss} i) für
+\iii Wegen $f\not=0$ gilt nach \ref{sec:PuD-LemmaGauss} i) für
 alle $p\in\mathcal{P}$ schon $\nu_{p}\left(f\right)\not=\infty$.
 
 Es ist klar, dass für fast alle $p\in\mathcal{P}$ schon $\nu_{p}\left(f\right)=0$
@@ -2084,7 +2007,7 @@ noch Nenner eines Koeffizienten von $f$ teilen.
 Deswegen ist ${\displaystyle \alpha:=\prod_{p\in\mathcal{P}}p^{\nu_{p}\left(f\right)}\in Q^{*}}$
 wohldefiniert und für $\tilde{f}:=\alpha^{-1}f$ gilt für alle $p\in\mathcal{P}$:
 \begin{align*}
-\nu_{p}\left(\tilde{f}\right) & =\nu_{p}\left(\alpha^{-1}f\right)\stackrel{\ref{sub:PuD-LemmaGauss}\text{ iii)}}{=}-\underbrace{\nu_{p}\left(\alpha\right)}_{=\nu_{p}\left(f\right)}+\nu_{p}\left(f\right)=0
+\nu_{p}\left(\tilde{f}\right) & =\nu_{p}\left(\alpha^{-1}f\right)\stackrel{\ref{sec:PuD-LemmaGauss}\text{ iii)}}{=}-\underbrace{\nu_{p}\left(\alpha\right)}_{=\nu_{p}\left(f\right)}+\nu_{p}\left(f\right)=0
 \end{align*}
 Also ist $\tilde{f}\in R\left[X\right]$ nach Teil i) primitiv.
 
@@ -2111,7 +2034,7 @@ ist nicht primitiv, aber
 ist primitiv.
 
 
-\subsection{Satz\textmd{ (von Gauß)\label{sub:Satz-Gauss}}}
+\section{Satz\textmd{ (von Gauß)\label{sec:Satz-Gauss}}}
 
 Der Ring $R\left[X\right]$ ist faktoriell.
 
@@ -2147,7 +2070,7 @@ Insbesondere sind für ein primitives Polynom $f\in R\left[X\right]$
 \end{abclist}
 
 
-\subsection{Beispiel\label{sub:Bsp-Prim}}
+\section{Beispiel\label{sec:Bsp-Prim}}
 
 $\mathbb{Z}\left[X\right]$ ist faktoriell, aber kein Hauptidealring,
 denn zum Beispiel ist $\left(2,X\right)\subseteq\mathbb{Z}\left[X\right]$
@@ -2165,12 +2088,12 @@ und $2$ und $X$ sind nicht assoziierte Primelemente in $\mathbb{Z}\left[X\right]
 
 
 
-\subsubsection*{Beweis von \ref{sub:Satz-Gauss}}
+\subsubsection*{Beweis von \ref{sec:Satz-Gauss}}
 
 ii) $\Rightarrow$ i):
 \begin{itemize}
 \item 1. Fall: Es ist $q\in R$ ein Primelement, also ist $\pi:R\left[X\right]\twoheadrightarrow\left(\modulo{R}{\left(q\right)}\right)\left[X\right]$
-wie in \ref{sub:Bem-phiX} surjektiv mit:
+wie in \ref{sec:Bem-phiX} surjektiv mit:
 \begin{align*}
 \text{ker}\left(\pi\right) & =\left(q\right)\subseteq R\left[X\right]
 \end{align*}
@@ -2196,9 +2119,9 @@ f & =qh\label{eq:fqh}
 \end{align}
 Es folgt für alle $p\in\mathcal{P}$:
 \begin{align*}
-0 & \sr{=}{\ref{sub:PuD-primitiv}\text{i)}}{q\text{ prim}}v_{p}\left(q\right)\sr{=}{\eqref{eq:fqh}}{\ref{sub:PuD-LemmaGauss}\text{iii)}}-v_{p}\left(h\right)+\underbrace{v_{p}\left(f\right)}_{\ge0\left(\text{da }f\in R\left[X\right]\right)}
+0 & \sr{=}{\ref{sec:PuD-primitiv}\text{i)}}{q\text{ prim}}v_{p}\left(q\right)\sr{=}{\eqref{eq:fqh}}{\ref{sec:PuD-LemmaGauss}\text{iii)}}-v_{p}\left(h\right)+\underbrace{v_{p}\left(f\right)}_{\ge0\left(\text{da }f\in R\left[X\right]\right)}
 \end{align*}
-Daher ist $\nu_{p}\left(h\right)\ge0$ und aus \ref{sub:PuD-LemmaGauss}
+Daher ist $\nu_{p}\left(h\right)\ge0$ und aus \ref{sec:PuD-LemmaGauss}
 ii) folgt dann $h\in R\left[X\right]$, also gilt $f=qh$ auch in
 $R\left[X\right]$ und daher $q|f$ in $R\left[X\right]$.\\
 Also ist $q\in R\left[X\right]$ ein Primelement.
@@ -2218,23 +2141,23 @@ Dann folgt sowohl, dass $R\left[X\right]$ faktoriell ist, als auch
 die Implikation i)$\Rightarrow$ii).
 
 Schreibe $f=a\cdot\tilde{f}$ mit $a\in R,\tilde{f}\in R\left[X\right]$
-primitiv (vgl. $\ref{sub:PuD-primitiv}$ ii)). Weil $R$ faktoriell
+primitiv (vergleiche \ref{sec:PuD-primitiv} ii)). Weil $R$ faktoriell
 ist, ist $a$ ein Produkt von Primelementen obiger Gestalt, also sei
 ohne Einschränkung $f=\tilde{f}\in R\left[X\right]$ primitiv.
 
 Schreibe in $Q\left[X\right]$ mit Primelementen $f_{i}\in Q\left[X\right]$
 ($Q\left[X\right]$ ist ein Hauptidealring, also faktoriell.)
 \begin{align}
-f & =\prod_{i=1}^{n}f_{i}\stackrel{\ref{sub:PuD-primitiv}\text{,i)}}{=}a\cdot\prod_{i=1}^{n}\tilde{f}_{i}
+f & =\prod_{i=1}^{n}f_{i}\stackrel{\ref{sec:PuD-primitiv}\text{,i)}}{=}a\cdot\prod_{i=1}^{n}\tilde{f}_{i}
 \end{align}
 mit $a\in Q^{*}$ und primitiven Primelementen $\tilde{f}_{i}\in R\left[X\right]$
 in $Q\left[X\right]$.
 
 Dann folgt für alle $p\in\mathcal{P}$:
 \begin{align*}
-v_{p}\left(a\right) & \stackrel{\ref{sub:PuD-LemmaGauss}\text{iii)}}{=}\underbrace{v_{p}\left(f\right)}_{=0}-\sum_{i=1}^{n}\underbrace{v_{p}\left(\tilde{f}_{i}\right)}_{=0}=0
+v_{p}\left(a\right) & \stackrel{\ref{sec:PuD-LemmaGauss}\text{iii)}}{=}\underbrace{v_{p}\left(f\right)}_{=0}-\sum_{i=1}^{n}\underbrace{v_{p}\left(\tilde{f}_{i}\right)}_{=0}=0
 \end{align*}
-Daraus folgt mit \ref{sub:Erin-PFZ} schon $a\in R^{*}=Q^{*}$ und:
+Daraus folgt mit \ref{sec:Erin-PFZ} schon $a\in R^{*}=Q^{*}$ und:
 \begin{align*}
 f & =\underbrace{\left(a\tilde{f}_{1}\right)}_{\text{primitiv, da }a\in R^{*}}\cdot\prod_{i=2}^{n}\tilde{f}_{i}
 \end{align*}
@@ -2243,10 +2166,10 @@ f & =\underbrace{\left(a\tilde{f}_{1}\right)}_{\text{primitiv, da }a\in R^{*}}\c
 Damit ist $f$ ein Produkt von primitiven Faktoren, die Primelemente
 in $Q\left[X\right]$ sind.
 
-\qqed[\ref{sub:Satz-Gauss}]
+\qqed[\ref{sec:Satz-Gauss}]
 
 
-\subsection{Beispiel und Definition \textmd{(rationale Funktionen)}}
+\section{Beispiel und Definition \textmd{(rationale Funktionen)}}
 
 Sei $k$ ein Körper. Dann heißt
 \begin{align*}
@@ -2258,7 +2181,7 @@ k\left(X\right) & :=\text{Quot}\left(k\left[X\right]\right)=\left\{ \frac{f}{g}\
 Die $k$-Algebra $k\left[X,Y\right]:=\left(k\left[X\right]\right)\left[Y\right]$
 heißt \emph{der Polynomring in den Variablen $X,Y$ (über $k$).}
 
-Wegen \ref{sub:Satz-Gauss} ist $k\left[X,Y\right]$ faktoriell.
+Wegen \ref{sec:Satz-Gauss} ist $k\left[X,Y\right]$ faktoriell.
 
 
 \subsubsection*{Behauptung}
@@ -2270,7 +2193,7 @@ $f:=X^{3}+Y^{2}\in k\left[X,Y\right]$ ist irreduzibel.
 
 \textcolor{green}{TODO: Überprüfen???}
 
-Wegen \ref{sub:Satz-Gauss} \quotedblbase{}Primelement $\Leftrightarrow$
+Wegen \ref{sec:Satz-Gauss} \quotedblbase{}Primelement $\Leftrightarrow$
 irreduzibel\textquotedblleft{} folgt mit $R:=k\left[X\right]$ und
 weil $f\in R\left[Y\right]$ normiert vom Grad 2 ($f=Y^{2}+X^{3}\cdot Y^{0}$),
 also primitiv ist, dass $f\in R\left[X,Y\right]$ ein Primelement
@@ -2283,7 +2206,7 @@ $f$ hat doch eine Nullstelle, so würde in $k\left(X\right)$ folgen:
 \begin{align*}
 \exs_{\alpha\in k\left(X\right)} & 0=f\left(\alpha\right)=\alpha^{2}+X^{3}
 \end{align*}
-Aus \ref{sub:Bsp-Vieta} mit $h:=f$ und $R:=k\left(X\right)$ folgt
+Aus \ref{sec:Bsp-Vieta} mit $h:=f$ und $R:=k\left(X\right)$ folgt
 $\alpha\in k\left[X\right]$, also $-\alpha^{2}=X^{3}$ in $k\left(X\right)$
 und damit $2\cdot\text{deg}\left(\alpha\right)=\deg\left(X^{3}\right)=3$
 in $\mathbb{Z}$, was ein Widerspruch ist.
@@ -2293,16 +2216,16 @@ in $\mathbb{Z}$, was ein Widerspruch ist.
 \newpage{}
 
 
-\section{Irreduzibilitätskriterien\label{sec:Irreduzibilit=0000E4tskriterien}}
+\chapter{Irreduzibilitätskriterien\label{chap:Irreduzibilit=0000E4tskriterien}}
 
 
-\subsubsection*{Fixiere in Abschnitt \ref{sec:Irreduzibilit=0000E4tskriterien} (\nameref{sec:Irreduzibilit=0000E4tskriterien})}
+\subsubsection*{Fixiere in Kapitel \ref{chap:Irreduzibilit=0000E4tskriterien} (\nameref{chap:Irreduzibilit=0000E4tskriterien})}
 
 Es sei $R$ ein faktorieller Ring und $Q:=\text{Quot}\left(R\right)$
 sein Quotientenkörper.
 
 
-\subsection{Proposition\textmd{ (Äquivalenz von Primelement in $R$ und $Q$)}\label{sub:Prop-primRQ}}
+\section{Proposition\textmd{ (Äquivalenz von Primelement in $R$ und $Q$)}\label{sec:Prop-primRQ}}
 
 Sei $0\not=f\in Q\left[X\right]$.
 
@@ -2327,28 +2250,28 @@ primitiv ist.
 \end{iiilist}
 
 
-\subsection{Bemerkung}
+\section{Bemerkung}
 
-Proposition \ref{sub:Prop-primRQ} führt die Untersuchung von Irreduzibilität
+Proposition \ref{sec:Prop-primRQ} führt die Untersuchung von Irreduzibilität
 von $Q\left[X\right]$ auf $R\left[X\right]$ zurück.
 
 
-\subsubsection*{Beweis von \ref{sub:Prop-primRQ}}
+\subsubsection*{Beweis von \ref{sec:Prop-primRQ}}
 
 \begin{iiilist}
 
-\iii Die Aussage wurde bereits in \ref{sub:PuD-primitiv} ii) bewiesen.
+\iii Die Aussage wurde bereits in \ref{sec:PuD-primitiv} ii) bewiesen.
 
 \iii b) $\stackrel{\alpha\in\left(Q\left[X\right]\right)^{*}}{\Leftrightarrow}$
-$\tilde{f}\in Q\left[X\right]$ ist ein Primelement $\stackrel{\ref{sub:Satz-Gauss}\text{,a)}\Leftrightarrow\text{b)}}{\Leftrightarrow}$
+$\tilde{f}\in Q\left[X\right]$ ist ein Primelement $\stackrel{\ref{sec:Satz-Gauss}\text{,a)}\Leftrightarrow\text{b)}}{\Leftrightarrow}$
 a)
 
 \end{iiilist}
 
-\qqed[\ref{sub:Prop-primRQ}]
+\qqed[\ref{sec:Prop-primRQ}]
 
 
-\subsection{Satz\textmd{ (Reduktionskriterium)\label{sub:Satz-RedKrit}}}
+\section{Satz\textmd{ (Reduktionskriterium)\label{sec:Satz-RedKrit}}}
 
 Seien
 \begin{align*}
@@ -2357,7 +2280,7 @@ f & =\sum_{i=0}^{d}a_{i}X^{i}\in R\left[X\right]
 und $p\in R$ ein Primelement. Es gelte: $p\not|\, a_{d}$ und $d>0$.
 
 Sei $\pi:R\left[X\right]\rightarrow\left(\modulo{R}{\left(p\right)}\right)\left[X\right]$
-wie in \ref{sub:Bem-phiX}.
+wie in \ref{sec:Bem-phiX}.
 
 Ist dann $\pi\left(f\right)\in\left(\modulo{R}{\left(p\right)}\right)\left[X\right]$
 irreduzibel, so auch $f\in Q\left[X\right]$.
@@ -2367,9 +2290,9 @@ Ist $f$ zusätzlich primitiv, so ist $f\in R\left[X\right]$ irreduzibel.
 (\quotedblbase{}keine Reduktionshomomorphismen auf $Q\left[X\right]$\textquotedblleft{}!)
 
 
-\subsection{Beispiel}
+\section{Beispiel}
 
-Wähle in \ref{sub:Satz-RedKrit} zum Beispiel:
+Wähle in \ref{sec:Satz-RedKrit} zum Beispiel:
 
 \begin{iiilist}
 
@@ -2377,7 +2300,7 @@ Wähle in \ref{sub:Satz-RedKrit} zum Beispiel:
 Dann ist $\pi\left(f\right)=-X\in\mathbb{F}_{3}\left[X\right]$ irreduzibel,
 also ist $2X\in\text{Quot}\left(R\right)\left[X\right]=\mathbb{Q}\left[X\right]$
 irreduzibel, aber $2X\in\mathbb{Z}\left[X\right]$ ist nicht irreduzibel,
-vergleiche \ref{sub:Bsp-Prim}. (Hier ist $f$ nicht primitiv.)
+vergleiche \ref{sec:Bsp-Prim}. (Hier ist $f$ nicht primitiv.)
 
 %DATE 11.11.2011
 
@@ -2398,7 +2321,7 @@ also ist $f$ nicht irreduzibel. (Hier gilt $d=0$.)
 \end{iiilist}
 
 
-\subsubsection*{Beweis von \ref{sub:Satz-RedKrit}}
+\subsubsection*{Beweis von \ref{sec:Satz-RedKrit}}
 \begin{enumerate}
 \item Fall: Sei $f$ primitiv und $\pi\left(f\right)$ irreduzibel.\\
 Angenommen $f$ wäre reduzibel, das heißt $f=gh$ in $R\left[X\right]$
@@ -2438,15 +2361,15 @@ Dann gilt in $\left(\modulo{R}{\left(p\right)}\right)\left[X\right]$:
 Weil $\pi\left(f\right)$ irreduzibel ist, muss auch $\pi\left(\tilde{f}\right)$
 irreduzibel sein.\\
 Nach dem 1. Fall ist dann $\tilde{f}\in R\left[X\right]$ irreduzibel
-und mit \ref{sub:Satz-Gauss} folgt, dass $\tilde{f}\in Q\left[X\right]$
+und mit \ref{sec:Satz-Gauss} folgt, dass $\tilde{f}\in Q\left[X\right]$
 irreduzibel ist.\\
 Weil $c\in Q^{*}=\left(Q\left[X\right]\right)^{*}$ ist, ist $f=c\tilde{f}\in Q\left[X\right]$
 irreduzibel.
 \end{enumerate}
-\qqed[\ref{sub:Satz-RedKrit}]
+\qqed[\ref{sec:Satz-RedKrit}]
 
 
-\subsection{Korollar \textmd{(Eisensteinkriterium)\label{sub:Kor-Eisenstein}}}
+\section{Korollar \textmd{(Eisensteinkriterium)\label{sec:Kor-Eisenstein}}}
 
 Sei $p\in R$ ein Primelement und
 \begin{align*}
@@ -2457,7 +2380,7 @@ ein primitives Polynom mit:
 p & \not|\, a_{d} & p & |a_{i} & p^{2} & \not|\, a_{0}
 \end{align*}
 ($0\le i\le d-1$)\\
-Dann ist $f\in R\left[X\right]$ (und damit nach \ref{sub:Satz-Gauss}
+Dann ist $f\in R\left[X\right]$ (und damit nach \ref{sec:Satz-Gauss}
 auch $f\in Q\left[X\right]$) irreduzibel.
 
 
@@ -2503,7 +2426,7 @@ Dies ist ein Widerspruch zur Voraussetzung $p^{2}\not|\, a_{0}$.
 \qqed
 
 
-\subsection{Beispiel}
+\section{Beispiel\label{sec:Bsp-IrreduzKrit}}
 
 \begin{iiilist}
 
@@ -2516,7 +2439,7 @@ $f\left(\alpha\right)=0$ und $f$ ist normiert.
 
 Zeige noch: $f$ ist in $\mathbb{Q}\left[X\right]$ irreduzibel.
 
-Dies folgt sofort aus dem Eisensteinkriterium (Korollar \ref{sub:Kor-Eisenstein})
+Dies folgt sofort aus dem Eisensteinkriterium (Korollar \ref{sec:Kor-Eisenstein})
 mit $R=\mathbb{Z}$ und $p=2$.
 
 Man sagt: \quotedblbase{}$f$ ist Eisenstein bezüglich 2.\textquotedblleft{}
@@ -2534,7 +2457,7 @@ irreduzibel.
 $R:=k\left[t\right]$ ist faktoriell mit $\text{Quot}\left(R\right)=k\left(t\right)$
 und $p:=t\in R$ ist ein Primelement.
 
-Die Bedingungen in \ref{sub:Kor-Eisenstein} sind erfüllt und $f$
+Die Bedingungen in \ref{sec:Kor-Eisenstein} sind erfüllt und $f$
 ist primitiv, da es normiert ist.
 
 \qqed[\roman{ale2})]
@@ -2618,7 +2541,7 @@ Rechne:
 f\left(-1,0,1\right) & =-1\not=0
 \end{align*}
 Wegen $\deg\left(\overline{f}\right)=3$ ist also $\overline{f}\in\mathbb{F}_{3}\left[X\right]$
-irreduzibel und aus \ref{sub:Satz-RedKrit} folgt die Behauptung.
+irreduzibel und aus \ref{sec:Satz-RedKrit} folgt die Behauptung.
 
 \qqed[\roman{ale2})]
 
@@ -2642,7 +2565,7 @@ Y-1=p & \:\,\,|\, a_{1}=Y^{2}-1=\left(Y-1\right)\left(Y+1\right)\\
 Y-1=p & \:\,\,|\, a_{0}=1-Y=-\left(Y-1\right)\\
 \left(Y-1\right)^{2}=p^{2} & \not|\, a_{0}=1-Y=-\left(Y-1\right)
 \end{align*}
-Die Behauptung folgt aus Korollar \ref{sub:Kor-Eisenstein}.
+Die Behauptung folgt aus Korollar \ref{sec:Kor-Eisenstein}.
 
 \qqed[\roman{ale2})]
 
@@ -2652,7 +2575,7 @@ ist irreduzibel.
 
 \subsubsection*{Beweis}
 
-$f\in\mathbb{Z}\left[X\right]$ ist normiert. Wegen \ref{sub:Bsp-Vieta}
+$f\in\mathbb{Z}\left[X\right]$ ist normiert. Wegen \ref{sec:Bsp-Vieta}
 und $f\left(\pm1\right)=3\pm1\not=0$ folgt, dass $f$ keinen Linearfaktor
 in $\mathbb{Q}\left[X\right]$ besitzt.
 
@@ -2672,7 +2595,7 @@ $\le3$ haben.
 Also ist \eqref{eq:overf} die Primfaktorzerlegung von $\overline{f}\in\mathbb{F}_{2}\left[X\right]$.
 
 Wäre nun $f\in\mathbb{Q}\left[X\right]$ reduzibel, so wäre wegen
-\ref{sub:Satz-Gauss} auch $f\in\mathbb{Z}\left[X\right]$ reduzibel,
+\ref{sec:Satz-Gauss} auch $f\in\mathbb{Z}\left[X\right]$ reduzibel,
 also: 
 \begin{align*}
 f & =gh\in\mathbb{Z}\left[X\right]
@@ -2688,8 +2611,8 @@ schon $\text{deg}\left(\overline{g}\right)=\text{deg}\left(\overline{h}\right)=2
 Wegen \eqref{eq:overf} besitzt aber $\overline{f}\in\mathbb{F}_{2}\left[X\right]$
 bis auf Assoziiertheit genau die Teiler $\left\{ 1,X+1,X^{3}+X+1,\overline{f}\right\} $,
 und keines dieser Polynome besitzt Grad 2. Dies ist ein Widerspruch
-zu der angenommenen Reduzibilität.\inputencoding{latin1}{}\\
-\inputencoding{latin9}\qqed[\roman{ale2})]
+zu der angenommenen Reduzibilität.\\
+\qqed[\roman{ale2})]
 
 \iii Seien $p$ eine Primzahl und ${\displaystyle F_{p}\left(X\right):=\frac{X^{p}-1}{X-1}=X^{p}+\ldots+1\in\mathbb{Z}\left[X\right]}$
 wie in iii).
@@ -2742,7 +2665,7 @@ G_{p^{r}}\left(X\right) & \stackrel{\text{Def.}}{=}F_{p^{r}}\left(X+1\right)\sta
 \end{iiilist}
 
 
-\subsection{Bemerkung}
+\section{Bemerkung}
 
 Für alle $n,m\in\mathbb{N}_{\ge1}$ gilt:
 \begin{align*}
@@ -2781,10 +2704,10 @@ Also gilt:
 \newpage{}
 
 
-\section{(Algebraische) Körpererweiterungen}
+\chapter{(Algebraische) Körpererweiterungen}
 
 
-\subsection{Proposition und Definition \textmd{(Charakteristik, Primkörper)\label{sub:PuD-Charakteristik}}}
+\section{Proposition und Definition \textmd{(Charakteristik, Primkörper)\label{sec:PuD-Charakteristik}}}
 
 \begin{iiilist}
 
@@ -2840,7 +2763,7 @@ p>0: & \,\, Q\stackrel{\sim}{=}\text{Quot}\bigg(\underbrace{\modulo{\mathbb{Z}}{
 \end{iiilist}
 
 
-\subsection{Definition und Beispiel \textmd{(Körpererweiterung)}}
+\section{Definition und Beispiel \textmd{(Körpererweiterung)}}
 
 Eine \emph{Körpererweiterung} ist ein injektiver Ringhomomorphismus
 $k\hookrightarrow E$, bei dem $k$ und $E$ Körper sind. Es folgt
@@ -2850,7 +2773,7 @@ ist injektiv.
 \textcolor{green}{TODO: Abb 3}
 
 
-\subsection{Bemerkung}
+\section{Bemerkung}
 
 Für den Ringhomomorphismus von Integritätsringen $\mathbb{Z}\rightarrow\mathbb{F}_{p}$
 gilt:
@@ -2860,7 +2783,7 @@ gilt:
 
 
 
-\subsection{Proposition und Definition \textmd{(Frobenius)}}
+\section{Proposition und Definition \textmd{(Frobenius)}}
 
 Sei $k$ ein Körper mit $\text{char}\left(k\right)=p>0$.
 
@@ -2901,8 +2824,8 @@ und
 folgt aus i) für $n=1$.
 
 Damit ist $\text{Frob}_{k}:k\rightarrow k$ ein Ringhomomorphismus,
-und $\text{Frob}_{k}\left(x\right)=x^{p}=0$ $\stackrel{k\text{ Körper}}{\Leftrightarrow}$$x=0$,
-also ist $\text{Frob}_{k}$ injektiv.
+und $\text{Frob}_{k}\left(x\right)=x^{p}=0$ $\stackrel{k\text{ Körper}}{\Leftrightarrow}$
+$x=0$, also ist $\text{Frob}_{k}$ injektiv.
 
 \iii Jede injektive Selbstabbildung, wie zum Beispiel $\text{Frob}_{k}$,
 einer endlichen Menge, wie zum Beispiel $k$, ist surjektiv.
@@ -2913,10 +2836,10 @@ gilt:
 \text{Frob}_{\mathbb{F}_{p}}\left(x\right)-x & =x^{p}-x=x\left(x^{p-1}-1\right)=0
 \end{align*}
  Dies ist klar für $x=0$ und für $x\in\mathbb{F}_{p}^{*}$ gilt $x^{p-1}=1$
-nach \ref{sub:Kor-aPhin1} ii).
+nach \ref{sec:Kor-aPhin1} ii).
 
 \quotedblbase{}$\Rightarrow$\textquotedblleft{}: Nach Voraussetzung
-ist $\text{char}\left(k\right)=p$ und nach \ref{sub:PuD-Charakteristik}
+ist $\text{char}\left(k\right)=p$ und nach \ref{sec:PuD-Charakteristik}
 folgt, dass $\mathbb{F}_{p}\subseteq k$ der Primkörper ist.
 
 Für alle $x\in k$ folgt:
@@ -2935,7 +2858,7 @@ $k=\mathbb{F}_{p}$.
 \qqed
 
 
-\subsection{Proposition und Definition \textmd{(algebraisch, transzendent, Zwischenkörper)}}
+\section{Proposition und Definition \textmd{(algebraisch, transzendent, Zwischenkörper)}}
 
 Sei $E\supseteq k$ eine Körpererweiterung.
 
@@ -2960,7 +2883,7 @@ Ein Körper $K$ mit $k\subseteq K\subseteq E$ heißt \emph{Zwischenkörper
 \textcolor{green}{TODO: Wo?}
 
 
-\subsection{Definition}
+\section{Definition}
 
 Sei $E\supseteq k$ eine Körpererweiterung.
 
@@ -2972,7 +2895,7 @@ Dann heißt
 \quotedblbase{}die Körpererweiterung $E$ über $k$\textquotedblleft{})
 
 
-\subsection{(Grad-)Satz}
+\section{(Grad-)Satz\label{sec:Satz-Grad}}
 
 Seien $E\supseteq K\supseteq k$ eine Körpererweiterung, dann gilt:
 \begin{align*}
@@ -2985,7 +2908,7 @@ Seien $E\supseteq K\supseteq k$ eine Körpererweiterung, dann gilt:
 %DATE: Di 22.11.2011
 
 
-\subsection{Beispiel}
+\section{Beispiel}
 
 Es sind $\mathbb{Q}\subseteq\overline{\mathbb{Q}}^{\mathbb{C}}:=\left\{ \alpha\in\mathbb{C}|\alpha\text{ ist algebraisch über }\mathbb{Q}\right\} \subseteq\mathbb{C}$
 Körpererweiterung.
@@ -3000,10 +2923,10 @@ nicht endlich erzeugt.
 \newpage{}
 
 
-\section{Der algebraische Abschluss eines Körpers}
+\chapter{Der algebraische Abschluss eines Körpers}
 
 
-\subsection{Proposition und Definition}
+\section{Proposition und Definition}
 
 Für einen Körper $k$ sind folgende Aussagen äquivalent:
 
@@ -3025,52 +2948,62 @@ gilt $E=k$.
 Gelten i) bis iv), so heißt $k$ \emph{algebraisch abgeschlossen}.
 
 
-\paragraph*{Beweis}
+\subsubsection*{Beweis}
 
 i)$\Rightarrow$ii)$\Rightarrow$iii) sind klar, iii)$\Rightarrow$iv):
 Seien $\alpha\in E$ und $f:=\text{Mipo}_{k}\left(\alpha\right)$.
-Wegen $f$ irreduzibel folgt aus iii) $\text{deg}\left(f\right)=1$,
+
+Weil $f$ irreduzibel ist, folgt aus iii) $\text{deg}\left(f\right)=1$,
 also $\alpha\in k$.
 
 iv)$\Rightarrow$i): Sei $f\in k\left[X\right]$ mit $\text{deg}\left(f\right)\ge1$.
-Es existiert ein $g\in k\left[X\right]$ irreduzibel:
+Es existiert ein irreduzibles $g\in k\left[X\right]$ mit:
 \begin{align}
-g|f & \qquad(*)
+g & |f\label{eq:gf}
 \end{align}
 
 
-Nach $\ref{}5.7$ ist $k\subseteq E:=\modulo{k\left[X\right]}{\left(g\right)}$
+Nach \ref{sec:Satz-Grad} ist $E:=\modulo{k\left[X\right]}{\left(g\right)}\supseteq k$
 eine endliche (und damit algebraische) Körpererweiterung, und offenbar
 ist $\alpha:=\left(X+\left(g\right)\right)\in E$ eine Nullstelle
-von $g$. Nach iv) gilt $k=E$, also besitzt $g$, wegen $\ref{}(*)$
-also auch $f$, eine Nullstelle in $k$.
+von $g$.
+
+\textcolor{green}{TODO: Wie kann $\alpha\in\modulo{k\left[X\right]}{\left(g\right)}$
+eine Nullstelle von $g\in k\left[X\right]$ sein?}
+
+Nach iv) gilt $k=E$, also besitzt $g$ und wegen \eqref{eq:gf} auch
+$f$, eine Nullstelle in $k$.
 
 \qqed
 
 
-\subsection{Proposition und Definition}
+\section{Proposition und Definition}
 
-Seien $\mathfrak{X}$ eine Menge und für jede endliche Teilmenge $\mathfrak{X}\supseteq\mathfrak{X}'=\left\{ X_{1},\ldots,X_{n}\right\} $
-sei $k\left[\mathfrak{X}'\right]:=k\left[X_{1},\ldots,X_{n}\right]$.
+Seien $\mathfrak{X}$ eine Menge und für jede endliche Teilmenge $\mathfrak{X}'=\left\{ X_{1},\ldots,X_{n}\right\} \subseteq\mathfrak{X}$
+sei definiert:
+\begin{align*}
+k\left[\mathfrak{X}'\right] & :=k\left[X_{1},\ldots,X_{n}\right]
+\end{align*}
 Dann heißt
 \begin{align}
-k\left[\mathfrak{X}\right]:=\bigcup_{\mathfrak{X}'\subseteq\mathfrak{X}\text{ endlich}}k\left[\mathfrak{X}'\right] & \qquad(+)
+k\left[\mathfrak{X}\right] & :=\bigcup_{\mathfrak{X}'\subseteq\mathfrak{X}\text{ endlich}}k\left[\mathfrak{X}'\right]\label{eq:kX}
 \end{align}
 
 
 \emph{der Polynomring in den Variablen $\mathfrak{X}$ über $k$}.
 
-Er besitzt folgende universelle Eigenschaft: Für jede kommutative
-$k$-Algebra $A$ ist die Abbildung von Mengen
+Er besitzt folgende universelle Eigenschaft:
+
+Für jede kommutative $k$-Algebra $A$ ist die Abbildung von Mengen
 \begin{align*}
 \text{Hom}_{k\text{-Alg.}}\left(k\left[\mathfrak{X}\right],A\right) & \stackrel{\sim}{\to}A^{\mathfrak{X}},\varphi\mapsto\left(\mathfrak{X}\ni x\mapsto\varphi\left(x\right)\right)
 \end{align*}
 bijektiv.
 
 
-\paragraph*{Beweis}
+\subsubsection*{Beweis}
 
-Wegen $\left(\ref{}+\right)$ ist die Abbildung
+Wegen \ref{eq:kX} ist die Abbildung
 \begin{align*}
 \text{Hom}_{k\text{-Alg.}}\left(k\left[\mathfrak{X}\right],A\right) & \stackrel{\sim}{\to}\left\{ \left(\varphi_{\mathfrak{X}'}\right)_{\mathfrak{X}'\subseteq\mathfrak{X}\text{ endl.}}\bigg|\fall_{\mathfrak{X}'\subseteq\mathfrak{X}''\subseteq\mathfrak{X}\text{ endl.}}\varphi_{\mathfrak{X}''}\big|_{k\left[\mathfrak{X}'\right]}=\varphi_{\mathfrak{X}'}\right\} 
 \end{align*}
@@ -3092,10 +3025,10 @@ wie angegeben ist.
 \qqed
 
 
-\subsection{Das Lemma von Zorn}
+\section{Das Lemma von Zorn}
 
 
-\subsubsection{Definition}
+\subsection{Definition}
 
 Eine \emph{teilweise geordnete Menge} ist ein Tupel $\left(M,\le\right)$
 wobei $M$ eine Menge und $\le$ eine Relation auf $M$ sind, so dass
@@ -3120,7 +3053,7 @@ Für eine Teilmenge $N\subseteq M$ heißt $x\in M$ \emph{obere Schranke
 für $N$} genau dann, wenn ${\displaystyle \fall_{y\in N}y\le x}$.
 
 
-\subsubsection{Beispiel}
+\subsection{Beispiel}
 
 Seien $R$ ein kommutativer Ring, $M:=\left\{ I|I\subsetneq R\text{ Ideal}\right\} $
 und $I\le J:\Leftrightarrow I\subseteq J$. Dann ist $\left(M,\le\right)$
@@ -3129,14 +3062,14 @@ Beispiel für $R=\mathbb{Z},\left(2\right),\left(3\right)\in M$, und
 weder $\left(2\right)\le\left(3\right)$ noch $\left(3\right)\le\left(2\right)$.
 
 
-\subsubsection{Satz\textmd{ (Lemma von Zorn)}}
+\subsection{Satz\textmd{ (Lemma von Zorn)}}
 
 Sei $\left(M,\le\right)$ eine teilweise geordnete Menge, $M\not=\emptyset$
 und jede total geordnete Teilfolge $N\subseteq M$ besitze eine obere
 Schranke. Dann besitzt $M$ ein maximales Element.
 
 
-\paragraph*{(ohne Beweis)}
+\subsubsection*{(ohne Beweis)}
 
 äquivalent zum Auswahlaxiom
 \begin{align*}
@@ -3145,7 +3078,7 @@ Schranke. Dann besitzt $M$ ein maximales Element.
 
 
 
-\subsubsection{Beispiel}
+\subsection{Beispiel}
 
 Sei $\left(M,\le\right)$ wie in $\ref{}6.3.2$ für $R\not=\left\{ 0\right\} $.
 Dann ist $\left\{ 0\right\} \in M$, also $M\not=\emptyset$.
@@ -3153,13 +3086,13 @@ Dann ist $\left\{ 0\right\} \in M$, also $M\not=\emptyset$.
 Sei $N\subseteq M$ total geordnet.
 
 
-\paragraph*{Behauptung}
+\subsubsection*{Behauptung}
 
 ${\displaystyle J:=\bigcup_{I\in N}I\subsetneq R}$ ist ein Ideal
 ($\Rightarrow J\in M$ ist eine obere Schranke für $N$)
 
 
-\paragraph*{Beweis}
+\subsubsection*{Beweis}
 \begin{enumerate}
 \item $x\in J$ und $a\in R$ $\Rightarrow$ ${\displaystyle \exs_{I\in N}}:x\in I$
 $\Rightarrow$ ${\displaystyle \exs_{I\subseteq J}}$
@@ -3176,12 +3109,12 @@ Damit erfüllt $\left(M,\le\right)$ alle Voraussetzungen von $\ref{}6.3.3$
 und es folgt:
 
 
-\subsubsection{6.3.4 Satz}
+\subsection{6.3.4 Satz}
 
 $R\not=\left\{ 0\right\} $ kommutativer Ring $\Rightarrow\exs_{\mathfrak{m}\subseteq R\text{ max. Ideal}}$
 
 
-\subsection{Satz und Definition \textmd{(algebraischer Abschluss)}}
+\section{Satz und Definition \textmd{(algebraischer Abschluss)}}
 
 Sei $k$ ein Körper. Dann existieren eine algebraische Körpererweiterung
 $k\subseteq\overline{k}$ mit $\overline{k}$ algebraisch abgeschlossen.
@@ -3189,12 +3122,12 @@ Jedes solches $\overline{k}$ heißt \emph{ein abgebraischer Abschluss
 von $k$.}
 
 
-\paragraph*{Bemerkung}
+\subsubsection*{Bemerkung}
 
 Die Notation $\overline{k}$ wird später durch $\ref{}6.7$ gerechtfertigt.
 
 
-\paragraph*{Beweis von $\ref{}6.4$\textmd{ (E. Artin)}}
+\subsubsection*{Beweis von $\ref{}6.4$\textmd{ (E. Artin)}}
 
 Setze $I:=\left\{ f\in k\left[X\right]|\text{deg}\left(f\right)\ge1\right\} ,\,\,\mathfrak{X}:=\left\{ X_{f}|f\in I\right\} $,
 und betrachte das Ideal
@@ -3204,12 +3137,12 @@ k\left[\mathfrak{X}\right]\supseteq I & :=\left(f\left(X_{f}\right)|f\in I\right
 
 
 
-\paragraph*{Behauptung}
+\subsubsection*{Behauptung}
 
 $I\not=k\left[\mathfrak{X}\right]$
 
 
-\paragraph*{Beweis}
+\subsubsection*{Beweis}
 
 Sonst gilt $1\in I\Rightarrow$ 
 
@@ -3238,7 +3171,7 @@ Erhalte eine Körpererweiterung $\overline{k}\supseteq k$ als Komposition
 $k\hookrightarrow k\left[\mathfrak{X}\right]\twoheadrightarrow\modulo{k\left[\mathfrak{X}\right]}{I}\twoheadrightarrow\underbrace{\modulo{\modulo{k\left[\mathfrak{X}\right]}{I}}{\mathfrak{m}}}_{=:\overline{k}}$.
 
 
-\subparagraph*{Zeige noch:}
+\subsubsection*{Zeige noch:}
 
 \begin{iiilist}
 
@@ -3249,7 +3182,7 @@ $k\hookrightarrow k\left[\mathfrak{X}\right]\twoheadrightarrow\modulo{k\left[\ma
 \end{iiilist}
 
 
-\paragraph*{Beweis}
+\subsubsection*{Beweis}
 
 Die $k$-Algebra $\overline{k}$ wird durch die Bilder $\alpha_{f}\in\overline{k}$
 der $X_{f}\left(f\in I\right)$ erzeugt. Für jedes $f\in I$ gitl
@@ -3264,7 +3197,7 @@ Damit folgt ii) aus $\ref{}6.1,i)$. (Nicht ganz!!!TODO:später mehr)
 Teil i) folgt aus $\ref{}5.14,d)\Rightarrow e)$.
 
 
-\subsection{Notation und Bemerkung}
+\section{Notation und Bemerkung}
 
 Sei $z:K\to L$ ein Körperhomomorphismus. Schreibe für alle $f=\sum a_{i}X^{i}\in k\left[X\right]:f^{\sigma}:=\sum\sigma\left(a_{i}\right)X^{i}\in L\left[X\right]$.
 
@@ -3279,12 +3212,12 @@ Dann gilt $\fall_{\alpha\in k}\sigma\left(f\left(\alpha\right)\right)=\sigma\lef
 TODO: Rest
 
 
-\subsection{Lemma\label{sub:Lem-homkalg}}
+\section{Lemma\label{sec:Lem-homkalg}}
 
 \newpage{}
 
 
-\section{Zerfällungskörper}
+\chapter{Zerfällungskörper}
 
 
 \subsection*{Definition \textmd{($k$-Homomorphismus)}}
@@ -3296,7 +3229,7 @@ Abbildung)
 Fixiere: $k$ Körper, $\emptyset\not=\mathcal{F}\subseteq\left\{ f\in k\left[X\right]|\text{deg}\left(f\right)\ge1\right\} $
 
 
-\subsection{Definition \textmd{(Zerfällungskörper)\label{sub:Def-ZK}}}
+\section{Definition \textmd{(Zerfällungskörper)\label{sec:Def-ZK}}}
 
 Ein \emph{Zerfällungskörper von $\mathcal{F}$} ist eine Körpererweiterung
 $E\supseteq k$:
@@ -3314,7 +3247,7 @@ erzeugt.
 \end{iiilist}
 
 
-\subsection{Beispiel\label{sub:Bsp-ZK}}
+\section{Beispiel\label{sec:Bsp-ZK}}
 
 Wähle $k=\mathbb{Q}$, $\mathcal{F}=\left\{ f\right\} $ mit $f:=X^{3}-2\in\mathbb{Q}\left[X\right]$
 und $k=\mathbb{Q}\subseteq E:=\mathbb{Q}\left(\alpha\right)$ mit
@@ -3359,7 +3292,7 @@ heißt $E$ ist kein Zerfällungskörper von
 TODO: Rest einfügen
 
 
-\subsection{Satz \textmd{(Existenz und Eindeutigkeit von Zerfällungskörpern)\label{sub:Satz-eeZK}}}
+\section{Satz \textmd{(Existenz und Eindeutigkeit von Zerfällungskörpern)\label{sec:Satz-eeZK}}}
 
 \begin{iiilist}
 
@@ -3434,7 +3367,7 @@ $\modulo{E}{k}$ algebraisch)
 \end{iiilist}
 
 
-\subsection{Satz und Definition \textmd{(normale Körpererweiterung)\label{sub:SuD-normKE}}}
+\section{Satz und Definition \textmd{(normale Körpererweiterung)\label{sec:SuD-normKE}}}
 
 Für eine algebraische Körpererweiterung $E\supseteq k$ ist äquivalent:
 
@@ -3455,7 +3388,7 @@ In diesem Fall heißt $\modulo{E}{k}$ \emph{normal}.
 \end{iiilist}
 
 
-\paragraph*{Beweis von \ref{sub:SuD-normKE}}
+\paragraph*{Beweis von \ref{sec:SuD-normKE}}
 \begin{itemize}
 \item i) $\Rightarrow$ iii): Da $f$ über $\overline{E}$ in Linearfaktoren
 zerfällt, zeige nur: $\beta\in\overline{E},f\left(\beta\right)=0\Rightarrow\beta\in E$.
@@ -3467,7 +3400,7 @@ Es folgt $\beta=\varphi\left(\alpha\right)\stackrel{\left(*\right)}{=}\sigma\lef
 \qqed
 \item iii) $\Rightarrow$ ii): Setze $\mathcal{F}:=\left\{ f\in k\left[X\right]|f\text{ irreduzibel und }\exs_{\alpha\in E}f\left(\alpha\right)=0\right\} $.\\
 Zeige: $\modulo{E}{k}$ ist ein Zerfällungskörper von $\mathcal{F}$,
-das heißt es gelten \ref{sub:Def-ZK} i) und ii):
+das heißt es gelten \ref{sec:Def-ZK} i) und ii):
 
 \begin{enumerate}
 \item $f\in\mathcal{F}\stackrel{\text{Def.}}{\Rightarrow}\exs_{\alpha\in E}f\left(\alpha\right)=0$
@@ -3480,21 +3413,21 @@ erzeugt.
 \end{enumerate}
 \item ii) $\Rightarrow$ i): Es sind $E\subseteq\overline{E}$ und $\overline{\sigma}\left(E\right)\subseteq\overline{E}$
 Zerfällungskörper von $\mathcal{F}$, also $E=\overline{\sigma}\left(E\right)$.
-(vergleiche Beweis von \ref{sub:Satz-eeZK} ii))
+(vergleiche Beweis von \ref{sec:Satz-eeZK} ii))
 \end{itemize}
 \qqed
 
 
-\subsection{Beispiel}
+\section{Beispiel}
 
-Wegen \ref{sub:Bsp-ZK} und \ref{sub:SuD-normKE} iii) ist die algebraische
+Wegen \ref{sec:Bsp-ZK} und \ref{sec:SuD-normKE} iii) ist die algebraische
 Körpererweiterung $E:=\modulo{\mathbb{Q}\left(2^{\frac{1}{3}}\right)}{k:=\mathbb{Q}}$
 nicht normal, denn das irreduzible Polynom $X^{3}-2\in k\left[X\right]$
 besitzt in $E$ eine Nullstelle, zerfällt aber nicht über $E$ in
 Linearfaktoren.
 
 
-\subsection{Proposition \textmd{(algebraischer Abschluss ist normal)\label{sub:Prop-algAnorm}}}
+\section{Proposition \textmd{(algebraischer Abschluss ist normal)\label{sec:Prop-algAnorm}}}
 
 Sei $k\subseteq E=\overline{E}$ eine algebraische Körpererweiterung
 mit $E$ algebraisch abgeschlossen(, das heißt $E$ ist ein algebraischer
@@ -3503,12 +3436,12 @@ Abschluss von $k$). Dann ist $\modulo{E}{k}$ normal.
 
 \paragraph*{Beweis}
 
-Folgt aus \ref{sub:SuD-normKE} iii) und $\ref{}6.1,\text{iii)}$.
+Folgt aus \ref{sec:SuD-normKE} iii) und $\ref{}6.1,\text{iii)}$.
 
 \qqed
 
 
-\subsection{Beispiel}
+\section{Beispiel}
 
 \begin{iiilist}
 
@@ -3526,7 +3459,7 @@ im Allgemeinen nicht $\modulo{E}{K}$). ($k\subseteq E\subseteq\overline{k}$!)
 
 \begin{iiilist}
 
-\iii Prüfe \ref{sub:SuD-normKE} iii): Sei $f\in k\left[X\right]$
+\iii Prüfe \ref{sec:SuD-normKE} iii): Sei $f\in k\left[X\right]$
 irreduzibel mit $\exs_{\alpha\in E}:f\left(\alpha\right)=0$.
 
 $\stackrel{\left[E:k\right]=2}{\Rightarrow}\deg\left(f\right)=\left[k\left(\alpha\right):k\right]\stackrel{k\subseteq k\left(\alpha\right)\subseteq E}{\in}\left\{ 1,2\right\} $.
@@ -3539,14 +3472,14 @@ $\Rightarrow$ in $E\left[X\right]:f\left(X\right)=\left(X-\alpha\right)\left(X-\
 
 \qqed[i)]
 
-\iii Klar nach \ref{sub:SuD-normKE} ii).
+\iii Klar nach \ref{sec:SuD-normKE} ii).
 
 \qqed[ii)]
 
 \end{iiilist}
 
 
-\subsection{Beispiel \textmd{(\quotedblbase{}normal ist nicht-transitiv\textquotedblleft{})}}
+\section{Beispiel \textmd{(\quotedblbase{}normal ist nicht-transitiv\textquotedblleft{})}}
 
 In dem Körperturm $k:=\mathbb{Q}\stackrel{2}{\subseteq}K:=\mathbb{Q}\left[\sqrt{2}\right]\stackrel{2}{\subseteq}E:=\mathbb{Q}\left(\sqrt{[4]2}\right)$.
 ($K\subseteq E$, da $(\left(\sqrt{\left[4\right]}2\right)^{2})^{2}=2$,
@@ -3572,7 +3505,7 @@ nicht normal sein.
 \qqed
 
 
-\subsection{Definition \textmd{(normale Hülle)}}
+\section{Definition \textmd{(normale Hülle)}}
 
 Sei $E\supseteq k$ eine algebraische Körpererweiterung. Eine \emph{normale
 Hülle von $E$ über $k$} ist eine (algebraische) Körpererweiterung
@@ -3588,7 +3521,7 @@ normal, so folgt $K=E'$.
 \end{iiilist}
 
 
-\subsection{Satz und Definition \textmd{(Konjugierte)\label{sub:SuD-Konj}}}
+\section{Satz und Definition \textmd{(Konjugierte)\label{sec:SuD-Konj}}}
 
 Sei $E\supseteq k$ eine algebraische Körpererweiterung.
 
@@ -3600,7 +3533,7 @@ eindeutig bis auf Isomorphie.
 \iii $\left[E:k\right]<\infty\,\Rightarrow\,\left[E':k\right]<\infty$.
 
 \iii Ist $k\subseteq E\subseteq L$ ein Körperturm mit $\modulo{L}{k}$
-normal (zum Beispiel $L=\overline{k}$,\ref{sub:Prop-algAnorm}),
+normal (zum Beispiel $L=\overline{k}$,\ref{sec:Prop-algAnorm}),
 so ist $E'=k\left(\sigma\left(E\right)|\sigma:E\to L\text{ ist }k\text{-Homomorphismus}\right)$
 eine normale Hülle von $\modulo{E}{k}$, die \emph{normale Hülle von
 $E$ in }$\modulo{L}{k}$. Die Zerfällungskörper von $k\subseteq\sigma\left(E\right)\subseteq L$
@@ -3614,23 +3547,23 @@ heißen die \emph{Konjugierten von $E$ in $L$.}
 \begin{iiilist}
 
 \iii Ein Zerfällungskörper $E'$ von $\mathcal{F}:=\left\{ f\in k\left[X\right]|\deg\left(f\right)\ge1\text{ und }\exs_{\alpha\in E}f\left(\alpha\right)=0\right\} $
-über $k$ leistet das Gewünschte. (vergleiche \ref{sub:Satz-eeZK}) 
+über $k$ leistet das Gewünschte. (vergleiche \ref{sec:Satz-eeZK}) 
 
 \iii Dann kann in i) $\left|\mathcal{F}\right|<\infty$ gewählt werden
 und aus $\ref{}5.14\text{, i) b)\ensuremath{\Rightarrow}a)}$ folgt
 $\left[E':k\right]<\infty$.
 
-\iii Übung (mit \ref{sub:Lem-homkalg}).
+\iii Übung (mit \ref{sec:Lem-homkalg}).
 
 \end{iiilist}
 
 \qqed
 
 
-\subsection{Beispiel}
+\section{Beispiel}
 
 Wähle $k:=\mathbb{Q}\subseteq E:=\mathbb{Q}\left(\sqrt{[3]2}\right)\subseteq L:=\mathbb{C}$
-in \ref{sub:SuD-Konj} iii). Dann ist
+in \ref{sec:SuD-Konj} iii). Dann ist
 \begin{align*}
 \text{Hom}_{\mathbb{Q}\text{-Alg.}}\left(E,L\right) & \stackrel{\sim}{\to}\left\{ \alpha\in\mathbb{C}|\alpha^{3}=2\right\} ;\varphi\mapsto\varphi\left(\sqrt{[3]2}\right)
 \end{align*}
@@ -3651,7 +3584,7 @@ in $\mathbb{C}$.
 
 TODO: Abb 2
 
-Für die normale Hülle $E'$ von $E$ in $\mathbb{C}$ folgt mit \ref{sub:SuD-Konj}
+Für die normale Hülle $E'$ von $E$ in $\mathbb{C}$ folgt mit \ref{sec:SuD-Konj}
 iii): $E'=\mathbb{Q}\left(\alpha,\alpha\zeta,\alpha\zeta^{2}\right)=\mathbb{Q}\left(\alpha,\zeta\right)$,
 denn: \quotedblbase{}$\subseteq$\textquotedblleft{} ist klar, \quotedblbase{}$\supseteq$\textquotedblleft{}
 $\zeta=\frac{\alpha\zeta}{\alpha}$.
@@ -3663,12 +3596,12 @@ TODO: Abb3
 \newpage{}
 
 
-\section{Separabilität}
+\chapter{Separabilität}
 
 Sei $k$ ein Körper.
 
 
-\subsection{Definition \textmd{((formale) Ableitung)}}
+\section{Definition \textmd{((formale) Ableitung)}}
 
 Die Abbildung $k\left[X\right]\to k\left[X\right],f=\sum_{i=0}a_{i}X^{i}\mapsto f':=\sum_{i=1}i\cdot a_{i}X^{i-1}$
 heißt \emph{(formale) Ableitung}.
@@ -3696,7 +3629,7 @@ angenommen werden).
 \qqed
 
 
-\subsection{Beispiel\label{sub:Bsp-abl}}
+\section{Beispiel\label{sec:Bsp-abl}}
 
 $\left\{ f\in k\left[X\right]|f'=0\right\} =\begin{cases}
 k, & \text{falls }\text{char}\left(k\right)=0\\
@@ -3711,7 +3644,7 @@ k, & \text{falls }\text{char}\left(k\right)=0\\
 \qqed
 
 
-\subsection{Satz und Definition \textmd{(mehrfache Nullstelle)\label{sub:SuD-mNst}}}
+\section{Satz und Definition \textmd{(mehrfache Nullstelle)\label{sec:SuD-mNst}}}
 
 Seien $f\in k\left[X\right]\setminus\left\{ 0\right\} $ und $\alpha\in k$
 eine Nullstelle von $f$. Dann ist $\alpha$ genau dann eine mehrfache
@@ -3740,7 +3673,7 @@ f'\left(\alpha\right) & =r\cdot\left(\alpha-\alpha\right)\cdot g\left(\alpha\rig
 %DATE: Fr 2.12.2011
 
 
-\subsection{Lemma\label{sub:Lem-mNst}}
+\section{Lemma\label{sec:Lem-mNst}}
 
 Sei $f\in k\left[X\right]$ nicht konstant.
 
@@ -3776,7 +3709,7 @@ Sei $f\in k\left[X\right]$ nicht konstant.
 \begin{iiilist}
 
 \iii Wegen $0\not=f\in k\left[X\right]\subseteq\overline{k}\left[X\right]$
-folgt a) $\Leftrightarrow$ b). aus \ref{sub:SuD-mNst}.
+folgt a) $\Leftrightarrow$ b). aus \ref{sec:SuD-mNst}.
 
 Dann gilt:
 
@@ -3810,13 +3743,13 @@ a) ist $\alpha$ eine mehrfache Nullstelle von $f$.
 \qqed
 
 
-\subsection{Definition\textmd{ (separables Polynom)}}
+\section{Definition\textmd{ (separables Polynom)}}
 
 $f\in k\left[X\right]\setminus k$ heißt \emph{separabel}, wenn alle
 Nullstellen von $f$ in $\overline{k}$ einfache Nullstellen sind.
 
 
-\subsection{Proposition\label{sub:Prop-ch0sep}}
+\section{Proposition\label{sec:Prop-ch0sep}}
 
 Ist $\text{char}\left(k\right)=0$ und $f\in k\left[X\right]$ irreduzibel,
 so ist $f$ separabel.
@@ -3824,23 +3757,23 @@ so ist $f$ separabel.
 
 \subsubsection*{Beweis}
 
-Wegen $\text{char}\left(k\right)=0$ und \ref{sub:Bsp-abl} ist $f'\not=0$.
-Aus \ref{sub:Lem-mNst} ii) folgt die Behauptung.
+Wegen $\text{char}\left(k\right)=0$ und \ref{sec:Bsp-abl} ist $f'\not=0$.
+Aus \ref{sec:Lem-mNst} ii) folgt die Behauptung.
 
 \qqed
 
 
-\subsection{Beispiel\label{sub:Bsp-sep}}
+\section{Beispiel\label{sec:Bsp-sep}}
 
 Sei $k:=\mathbb{F}_{p}\left(t\right)$ und $f\left(X\right)=X^{p}-t\in k\left[X\right]$.
 
-Dann ist $f$ irreduzibel nach \ref{sub:45} iii).
+Dann ist $f$ irreduzibel nach \ref{sec:Bsp-IrreduzKrit} iii).
 
 In $k\left[X\right]$ gilt:
 \begin{align*}
 f'\left(X\right) & =pX^{p-1}=0\in k\left[X\right]
 \end{align*}
-Also ist $f$ nach \ref{sub:Lem-mNst} ii) nicht separabel, genauer
+Also ist $f$ nach \ref{sec:Lem-mNst} ii) nicht separabel, genauer
 gilt:
 
 Setze $k\subseteq E:=k\left(\alpha\right)$ mit $0=f\left(\alpha\right)=\alpha^{p}-t$.
@@ -3851,9 +3784,9 @@ f\left(X\right) & =X^{p}-t=X^{p}-\alpha^{p}=\left(X-\alpha\right)^{p}
 \end{align*}
 Damit ist $\modulo{E}{k}$ ein Zerfällungskörper von $f$ und es folgt:
 \begin{align*}
-\text{Hom}_{k\text{-Alg.}}\left(E,\overline{k}\right) & \sr{=}{\sim}{\ref{sub:Lem-homkalg}}\left\{ \beta\in\overline{k}|\beta^{p}=t\right\} \stackrel{\ref{asdf}5.3}{=}\left\{ \alpha\right\} 
+\text{Hom}_{k\text{-Alg.}}\left(E,\overline{k}\right) & \sr{=}{\sim}{\ref{sec:Lem-homkalg}}\left\{ \beta\in\overline{k}|\beta^{p}=t\right\} \stackrel{\ref{asdf}5.3}{=}\left\{ \alpha\right\} 
 \end{align*}
-Denn aus $\beta\in\overline{k}$ und $\beta^{p}=t$ folgt mit \ref{sub:Lem-homkalg}
+Denn aus $\beta\in\overline{k}$ und $\beta^{p}=t$ folgt mit \ref{sec:Lem-homkalg}
 schon $\beta^{p}=t=\alpha^{p}$ und damit
 \begin{align*}
 0 & =\alpha^{p}-\beta^{p}=\left(\alpha-\beta\right)^{p}
@@ -3864,10 +3797,10 @@ Insbesondere folgt:
 \begin{align*}
 1 & =\left|\text{Hom}_{k\text{-Alg.}}\left(E,\overline{k}\right)\right|<\left[k\left(\alpha\right)=E:k\right]=p
 \end{align*}
-(vergleiche \quotedblbase{}$\le$\textquotedblleft{} in \ref{sub:Lem-homkalg})
+(vergleiche \quotedblbase{}$\le$\textquotedblleft{} in \ref{sec:Lem-homkalg})
 
 
-\subsection{Definition\textmd{ (separable(s) Element/Körpererweiterung)}}
+\section{Definition\textmd{ (separable(s) Element/Körpererweiterung)}}
 
 Sei $k\subseteq E$ eine algebraische Körpererweiterung.
 
@@ -3882,21 +3815,21 @@ in $k\left[X\right]$ separabel ist.
 \end{iiilist}
 
 
-\subsection{Definition \textmd{(vollkommener Körper)}}
+\section{Definition \textmd{(vollkommener Körper)}}
 
 $k$ heißt \emph{vollkommen}, wenn jede algebraische Körpererweiterung
 von $k$ separabel ist.
 
 
-\subsection{Beispiel}
+\section{Beispiel}
 
 \begin{iiilist}
 
 \iii Jeder Körper der Charakteristik 0 ist vollkommen. (folgt aus
-\ref{sub:Prop-ch0sep})
+\ref{sec:Prop-ch0sep})
 
 \iii $\mathbb{F}_{p}\left(t\right)$ ist nicht vollkommen, denn nach
-\ref{sub:Bsp-sep} ist $\alpha\in\overline{\mathbb{F}}_{p}\left(t\right)$
+\ref{sec:Bsp-sep} ist $\alpha\in\overline{\mathbb{F}}_{p}\left(t\right)$
 mit $\alpha^{p}=t$ nicht separabel über $\mathbb{F}_{p}\left(t\right)$.
 
 \iii Jeder endliche Körper ist vollkommen.
@@ -3904,7 +3837,7 @@ mit $\alpha^{p}=t$ nicht separabel über $\mathbb{F}_{p}\left(t\right)$.
 \end{iiilist}
 
 
-\subsection{Definition \textmd{(Stabilitätsgrad)\label{sub:Def-sgrad}}}
+\section{Definition \textmd{(Stabilitätsgrad)\label{sec:Def-sgrad}}}
 
 Sei $E\supseteq k$ eine algebraische Körpererweiterung, so heißt
 \begin{align*}
@@ -3913,7 +3846,7 @@ Sei $E\supseteq k$ eine algebraische Körpererweiterung, so heißt
 \emph{der Stabilitätsgrad von $\modulo{E}{k}$}. 
 
 
-\subsection{Satz}
+\section{Satz}
 
 \begin{iiilist}
 
@@ -3949,8 +3882,8 @@ also $\beta\in k$ und $\alpha=\beta^{p}=\text{Frob}_{k}\left(\beta\right)$.
 
 \quotedblbase{}$\Leftarrow$\textquotedblleft{}: Sonst existiert ein
 $f\in k\left[X\right]$ irreduzibel und nicht separabel, woraus mit
-\ref{sub:Lem-mNst} ii) schon $f'=0$ in $k\left[X\right]$ folgt
-und sich aus \ref{sub:Bsp-abl} schon $f\left(X\right)=g\left(X^{p}\right)$
+\ref{sec:Lem-mNst} ii) schon $f'=0$ in $k\left[X\right]$ folgt
+und sich aus \ref{sec:Bsp-abl} schon $f\left(X\right)=g\left(X^{p}\right)$
 mit einem geeigneten $g=\sum a_{i}X^{i}\in k\left[X\right]$ ergibt.
 
 Weil $\text{Frob}_{k}$ surjektiv ist, folgt $a_{i}=b_{i}^{p}$ für
@@ -3970,7 +3903,7 @@ ist.
 \qqed
 
 
-\subsection{Lemma\label{sub:Lem-sepNst}}
+\section{Lemma\label{sec:Lem-sepNst}}
 
 Sei $k\subseteq E=k\left(\alpha\right)$ eine einfache algebraische
 Körpererweiterung.
@@ -3989,7 +3922,7 @@ Körpererweiterung.
 
 \begin{iiilist}
 
-\iii $\left[k\left(\alpha\right):k\right]_{S}\stackrel{\ref{sub:Def-sgrad}}{=}\left|\text{Hom}_{k\text{-Alg.}}\left(k\left(\alpha\right),k\right)\right|\stackrel{\ref{sub:Lem-homkalg}}{=}\left|\left\{ \beta\in\overline{k}|\text{Mipo}_{k}\left(\alpha\right)\left(\beta\right)=0\right\} \right|$
+\iii $\left[k\left(\alpha\right):k\right]_{S}\stackrel{\ref{sec:Def-sgrad}}{=}\left|\text{Hom}_{k\text{-Alg.}}\left(k\left(\alpha\right),k\right)\right|\stackrel{\ref{sec:Lem-homkalg}}{=}\left|\left\{ \beta\in\overline{k}|\text{Mipo}_{k}\left(\alpha\right)\left(\beta\right)=0\right\} \right|$
 
 \iii $f:=\text{Mipo}_{k}\left(\alpha\right)\in k\left[X\right]$
 zerfällt über $k$ in Linearfaktoren, also gilt:
@@ -4004,7 +3937,7 @@ einfach sind, das heißt $f$ separabel ist.
 \qqed
 
 
-\subsection{Satz\label{sub:Satz-sgrad}}
+\section{Satz\label{sec:Satz-sgrad}}
 
 Seien $E\supseteq K\supseteq k$ algebraische Körpererweiterungen,
 dann gilt:
@@ -4032,7 +3965,7 @@ mit:
 \begin{align}
 \overline{\sigma}|_{K} & =\sigma\label{eq:abssigksig}
 \end{align}
-Es ist nun klar, dass \ref{sub:Satz-sgrad} aus folgender Behauptung
+Es ist nun klar, dass \ref{sec:Satz-sgrad} aus folgender Behauptung
 folgt:
 \begin{description}
 \item [{Behauptung:}] Die Abbildung
@@ -4070,7 +4003,7 @@ Es folgt:
 \qqed
 
 
-\subsection{Satz}
+\section{Satz}
 
 Für eine endliche Körpererweiterung $E\supseteq k$ sind äquivalent:
 
@@ -4094,9 +4027,9 @@ E & =k\left(\alpha_{1},\ldots,\alpha_{n}\right)
 
 i) $\Rightarrow$ ii) ist trivial.
 
-ii) $\Rightarrow$ iii): Wegen \ref{sub:Satz-sgrad} und \ref{asdf}5.5
+ii) $\Rightarrow$ iii): Wegen \ref{sec:Satz-sgrad} und \ref{asdf}5.5
 (Gradsätze) kann man durch Induktion $n=1$ annehmen und dann folgt
-die Behauptung aus \ref{sub:Lem-sepNst} ii) \quotedblbase{}$\Rightarrow$\textquotedblleft{}.
+die Behauptung aus \ref{sec:Lem-sepNst} ii) \quotedblbase{}$\Rightarrow$\textquotedblleft{}.
 
 iii) $\Rightarrow$ i): Sei $\alpha\in E$ beliebig, dann gilt:
 \begin{align*}
@@ -4106,11 +4039,11 @@ iii) $\Rightarrow$ i): Sei $\alpha\in E$ beliebig, dann gilt:
 \begin{align*}
 \left[k\left(\alpha\right):k\right] & \ge\left[k\left(\alpha\right):k\right]_{S}
 \end{align*}
-Dabei folgen die Ungleichungen aus dem Beweis von \ref{sub:Lem-sepNst}
+Dabei folgen die Ungleichungen aus dem Beweis von \ref{sec:Lem-sepNst}
 ii).
 
 Es folgt $\left[k\left(\alpha\right):k\right]_{S}=\left[k\left(\alpha\right):k\right]$,
-also ist $\alpha$ separabel über $k$ (nach \ref{sub:Lem-sepNst}
+also ist $\alpha$ separabel über $k$ (nach \ref{sec:Lem-sepNst}
 iii) \quotedblbase{}$\Leftarrow$\textquotedblleft{}).
 
 \qqed
@@ -4118,7 +4051,7 @@ iii) \quotedblbase{}$\Leftarrow$\textquotedblleft{}).
 %DATE: 6.12.2011
 
 
-\subsection{Korollar}
+\section{Korollar}
 
 Für eine algebraische Körpererweiterung $k\subseteq K\subseteq E$
 sind äquivalent:
@@ -4156,7 +4089,7 @@ Daher ist $\modulo{K'\left(\alpha\right)}{k}$ separabel, also $\alpha$
 separabel über $k$.
 
 
-\subsection{Satz \textmd{(vom primitiven Element)} und Definition\label{sub:SuD-primitel}}
+\section{Satz \textmd{(vom primitiven Element)} und Definition\label{sec:SuD-primitel}}
 
 Sei $k\subseteq E=k\left(\alpha_{1},\ldots,\alpha_{n}\right)$ eine
 endliche Körpererweiterung und seien $\alpha_{2},\ldots,\alpha_{n}$
@@ -4171,7 +4104,7 @@ Sei $p$ eine Primzahl, $E:=\mathbb{F}_{p}\left(X,Y\right)$ und $k:=\text{Frob}_{
 und $\modulo{E}{k}$ ist nicht einfach (ohne Beweis).
 
 
-\subsubsection*{Beweis von \ref{sub:SuD-primitel}}
+\subsubsection*{Beweis von \ref{sec:SuD-primitel}}
 \begin{enumerate}
 \item Fall: $k$ ist endlich, also ist $E$ endlich und nach \eqref{asdf}1.30,
 i) existiert ein $\alpha\in E^{*}$ mit $E^{*}=\left\langle \alpha\right\rangle $,
@@ -4233,10 +4166,10 @@ Also ist $E=E'$.
 \newpage{}
 
 
-\section{Endliche Körper}
+\chapter{Endliche Körper}
 
 
-\subsection{Lemma\label{sub:Lem-91}}
+\section{Lemma\label{sec:Lem-ZkXpn}}
 
 Sei $k$ ein endlicher Körper. Dann gelten:
 
@@ -4291,7 +4224,7 @@ aus \eqref{asdf}1.25 (für $G=k^{*}$):
 \qqed
 
 
-\subsection{Satz und Definition \textmd{($\mathbb{F}_{p^{n}}$)\label{sub:SuD-ZkXpn}}}
+\section{Satz und Definition \textmd{($\mathbb{F}_{p^{n}}$)\label{sec:SuD-ZkXpn}}}
 
 Seien $p$ eine Primzahl und $n\ge1$.
 
@@ -4309,9 +4242,9 @@ Für alle Primzahlen $p$ gilt:
 
 
 
-\subsubsection*{Beweis von \ref{sub:SuD-ZkXpn}}
+\subsubsection*{Beweis von \ref{sec:SuD-ZkXpn}}
 
-Eindeutigkeit folgt aus \ref{sub:Lem-91} iii) und \eqref{asdf}7.3.
+Eindeutigkeit folgt aus \ref{sec:Lem-ZkXpn} iii) und \eqref{asdf}7.3.
 
 Sei $\mathbb{F}_{p}\subseteq\overline{\mathbb{F}_{p}}$ ein algebraischer
 Abschluss.
@@ -4336,7 +4269,7 @@ folgt $\left|\tilde{\mathbb{F}}_{p^{n}}\right|=p^{n}$.
 \qqed
 
 
-\subsection{Bemerkung}
+\section{Bemerkung}
 
 Da $\modulo{\mathbb{F}_{p^{n}}}{\mathbb{F}_{p}}$ normal ist, gilt
 für jeden $\mathbb{F}_{p}$-Homomorphismus $i:\mathbb{F}_{p^{n}}\hookrightarrow\overline{\mathbb{F}}_{p}:i\left(\mathbb{F}_{p^{n}}\right)=\tilde{\mathbb{F}}_{p^{n}}$.\\
@@ -4349,7 +4282,7 @@ festen algebraischen Abschlusses $\overline{\mathbb{F}}_{p}$ auf:
 
 
 
-\subsection{Korollar}
+\section{Korollar}
 
 Für alle $n,m\ge1$ gilt: $\mathbb{F}_{p^{n}}\subseteq\mathbb{F}_{p^{m}}\Leftrightarrow n|m$.
 
@@ -4370,7 +4303,7 @@ folgt $n|m$.
 \qqed
 
 
-\subsection{Satz und Definition}
+\section{Satz und Definition}
 
 Seien $p$ eine Primzahl und $1\le n|m$, $q:=p^{n}$, $q':=p^{m}$,
 also $\mathbb{F}_{p}\subseteq\mathbb{F}_{q}\subseteq\mathbb{F}_{q'}\subseteq\overline{\mathbb{F}}_{p}$.
@@ -4429,10 +4362,10 @@ TODO: Rest
 %DATE: 
 
 
-\section{Galoistheorie}
+\chapter{Galoistheorie}
 
 
-\subsection{Definition \textmd{(galoissche Körpererweiterung, Galoisgruppe)\label{sub:Def-Galoisgruppe}}}
+\section{Definition \textmd{(galoissche Körpererweiterung, Galoisgruppe)\label{sec:Def-Galoisgruppe}}}
 
 Eine algebraische Körpererweiterung $E\supseteq k$ heißt genau dann
 \emph{galoissch}, wenn $\modulo{E}{k}$ normal und separabel ist.
@@ -4445,7 +4378,7 @@ In diesem Fall heißt
 \emph{die Galoisgruppe von }$\modulo{E}{k}$.
 
 
-\subsection{Beispiel und Definition\label{sub:BuD-Galoisgruppe}}
+\section{Beispiel und Definition\label{sec:BuD-Galoisgruppe}}
 
 \begin{iiilist}
 
@@ -4509,7 +4442,7 @@ ii).
 \end{iiilist}
 
 
-\subsection{Proposition\label{sub:Prop-EKkgaloissch}}
+\section{Proposition\label{sec:Prop-EKkgaloissch}}
 
 Seien $E\supseteq K\supseteq k$ Körpererweiterungen und $\modulo{E}{k}$
 galoissch.
@@ -4568,7 +4501,7 @@ Die Aussage über den Kern von $\pi$ folgt aus i).
 \end{iiilist}
 
 
-\subsection{Proposition}
+\section{Proposition}
 
 Sei $E\supseteq k$ eine endliche normale Körpererweiterung.
 
@@ -4592,7 +4525,7 @@ i).
 \qqed
 
 
-\subsection{Satz und Definition \textmd{(Fixkörper)\label{sub:SuD-Fixk=0000F6rper}}}
+\section{Satz und Definition \textmd{(Fixkörper)\label{sec:SuD-Fixk=0000F6rper}}}
 
 Seien $E$ ein Körper und
 \begin{align*}
@@ -4624,18 +4557,18 @@ eine Untergruppe.
 \end{iiilist}
 
 
-\subsection{Beispiel}
+\section{Beispiel}
 
 
-\subsection{Korollar}
+\section{Korollar}
 
 
-\subsection{Bemerkung und Beispiel}
+\section{Bemerkung und Beispiel}
 
 %DATE: 
 
 
-\subsection{Satz \textmd{(Hauptsatz der Galoistheorie)\label{sub:Satz-HSGaloistheorie}}}
+\section{Satz \textmd{(Hauptsatz der Galoistheorie)\label{sec:Satz-HSGaloistheorie}}}
 
 Seien $E\supseteq k$ eine endliche galoissche Körpererweiterung und
 $G:=\text{Gal}\left(\modulo{E}{k}\right)$. Dann gelten:
@@ -4680,7 +4613,7 @@ induziert.
 \begin{iiilist}
 
 \iii Die Wohldefiniertheit von $\phi$ ist klar und die von $\psi$
-folgt aus \ref{sub:Prop-EKkgaloissch} i).
+folgt aus \ref{sec:Prop-EKkgaloissch} i).
 \begin{itemize}
 \item $\phi\circ\psi=\text{id}$\\
 Zeige: $k\subseteq K\subseteq E$ Zwischenkörper $\Rightarrow$ $K=\phi\left(\psi\left(K\right)\right)=E^{\text{Gal}\left(\modulo{E}{K}\right)}$.\\
@@ -4688,11 +4621,11 @@ Dies folgt aus \ref{asdf}10.7 ii) für die Körpererweiterung $E\subseteq K$.
 \item $\psi\circ\phi=\text{id}$\\
 Zeige: $H\subseteq G$ Untergruppe $\Rightarrow$ $\text{Gal}\left(\modulo{E}{E^{H}}\right)=H$
 in $G$.\\
-Dies gilt nach \ref{sub:SuD-Fixk=0000F6rper} ii).
+Dies gilt nach \ref{sec:SuD-Fixk=0000F6rper} ii).
 \end{itemize}
 \qqed[i)]
 
-\iii b) $\Rightarrow$ a) und zweite Aussage: \ref{sub:Prop-EKkgaloissch}
+\iii b) $\Rightarrow$ a) und zweite Aussage: \ref{sec:Prop-EKkgaloissch}
 ii)\\
 a) $\Rightarrow$ b): Wegen \ref{asdf}8.16 i) $\Rightarrow$ ii)
 ist mit $\modulo{E}{k}$ auch $\modulo{E^{H}}{k}$ separabel.
@@ -4730,7 +4663,7 @@ Weil $\alpha,\omega$ beliebig sind, folgt $\sigma\left(E^{H}\right)\subseteq E^{
 \qqed
 
 
-\subsection{Korollar}
+\section{Korollar}
 
 Ist $\modulo{E}{k}$ eine endliche separable Körpererweiterung, so
 besitzt $\modulo{E}{k}$ nur endlich viele Zwischenkörper.
@@ -4745,7 +4678,7 @@ G & :=\text{Gal}\left(\modulo{E'}{k}\right)
 \end{align*}
 endlich, genauer $\left|G\right|=\left[E':k\right]<\infty$.
 
-$G$ besitzt nur endlich viele Untergruppen, also besitzt nach \ref{sub:Satz-HSGaloistheorie}
+$G$ besitzt nur endlich viele Untergruppen, also besitzt nach \ref{sec:Satz-HSGaloistheorie}
 i) $\modulo{E'}{k}$ nur endlich viele Zwischenkörper.
 
 Jeder Zwischenkörper von $\modulo{E}{k}$ ist aber insbesondere einer
@@ -4763,7 +4696,7 @@ Dann folgt die Aussage aus Blatt 6, Aufgabe 4.
 \qqed
 
 
-\subsection{Definition und Bemerkung}
+\section{Definition und Bemerkung}
 
 Seien $E\supseteq k$ eine Körpererweiterung und $k\subseteq K_{1},K_{2}\subseteq E$
 Zwischenkörper.
@@ -4774,7 +4707,7 @@ $K_{2}$ enthält und heißt \emph{das Kompositum von $K_{1}$ und $K_{2}$
 (in $E$)}.
 
 
-\subsection{Satz\label{sub:Satz-UG-KE-Entsprechung}}
+\section{Satz\label{sec:Satz-UG-KE-Entsprechung}}
 
 Seien $E\supseteq k$ eine endliche Galoiserweiterung (das ist definiert
 als endliche Körpererweiterung, die galoissch ist), $k\subseteq K_{1},K_{2}\subseteq E$
@@ -4835,7 +4768,7 @@ Für alle $\sigma$ gilt $\text{Mipo}_{k}\left(\sigma\left(\alpha\right)\right)\st
 ist separabel, also ist $\modulo{E'}{k}$ separabel. (nach \ref{asdf}??)
 
 
-\subsubsection*{Beweis von \ref{sub:Satz-UG-KE-Entsprechung}}
+\subsubsection*{Beweis von \ref{sec:Satz-UG-KE-Entsprechung}}
 
 \begin{iiilist}
 
@@ -4867,7 +4800,7 @@ Produkt von Elementen aus $H_{1}$ oder $H_{2}$ ist.)
 \end{iiilist}
 
 
-\subsection{Beispiel und Definition \textmd{(Untergruppen-Diagramm)}}
+\section{Beispiel und Definition \textmd{(Untergruppen-Diagramm)}}
 
 Nach Blatt 7, Aufgabe 2 ist die Galoisgruppe von $f:=X^{3}-2\in\mathbb{Q}\left[X\right]$
 isomorph zu $S_{3}$.
@@ -4903,7 +4836,7 @@ E & =E^{\left\{ e\right\} }=\mathbb{Q}\left(\alpha,\zeta\right)
 \end{align*}
 
 
-Aus \ref{sub:Satz-HSGaloistheorie} und \ref{sub:Satz-UG-KE-Entsprechung}
+Aus \ref{sec:Satz-HSGaloistheorie} und \ref{sec:Satz-UG-KE-Entsprechung}
 folgt daraus folgendes Diagramm von Zwischenkörpern.
 
 TODO: Abb 4
@@ -4957,7 +4890,7 @@ Dann gilt:
 
 $\text{Gal}\left(\modulo{E}{k}\right)=H$
 
-Aus \ref{sub:Prop-EKkgaloissch} folgt damit a).
+Aus \ref{sec:Prop-EKkgaloissch} folgt damit a).
 
 Dann gilt:
 \begin{align*}
@@ -4972,14 +4905,14 @@ Und damit folgt:
 \qqed[Bemerkung]
 
 
-\subsection{Definition \textmd{(abelsche und zyklische Galoiserweiterung)}}
+\section{Definition \textmd{(abelsche und zyklische Galoiserweiterung)}}
 
 Eine Galoiserweiterung $\modulo{E}{k}$ heißt genau dann \emph{abelsch}
 (beziehungsweise \emph{zyklisch}), wenn $\text{Gal}\left(\modulo{E}{k}\right)$
 abelsch (beziehungsweise zyklisch) ist.
 
 
-\subsection{Korollar}
+\section{Korollar}
 
 Seien $\modulo{E}{k}$ eine endliche, abelsche (beziehungsweise zyklische)
 Körpererweiterung und $k\subseteq K\subseteq E$ ein Zwischenkörper.
@@ -4992,15 +4925,15 @@ Dann ist $\modulo{K}{k}$ abelsch (beziehungsweise zyklisch).
 $G:=\text{Gal}\left(\modulo{E}{k}\right)$ ist abelsch und damit folgt,
 dass $H:=\text{Gal}\left(\modulo{E}{K}\right)\unlhd G$ gilt.
 
-Aus \ref{sub:Satz-HSGaloistheorie} ii) folgt damit, dass $\modulo{K}{k}$
+Aus \ref{sec:Satz-HSGaloistheorie} ii) folgt damit, dass $\modulo{K}{k}$
 galoissch ist und $\text{Gal}\left(\modulo{K}{k}\right)\stackrel{\sim}{=}\modulo{G}{H}$
-endlich zyklisch (beziehungsweise zyklisch nach \ref{sub:Satz-UG-kerImZyklG}
+endlich zyklisch (beziehungsweise zyklisch nach \ref{sec:Satz-UG-kerImZyklG}
 ii)) ist.
 
 \qqed
 
 
-\subsection{Satz\label{sub:Satz-Kompositum}}
+\section{Satz\label{sec:Satz-Kompositum}}
 
 Seien $E\supseteq k$ eine Körpererweiterung und $k\subseteq K_{1},K_{2}\subseteq E$
 Zwischenkörper mit $\modulo{K_{i}}{k}$ endlich galoissch ($i=1,2$).
@@ -5035,7 +4968,7 @@ Im Fall $K_{1}\cap K_{2}=k$ ist $\psi$ ein Isomorphismus.
 
 \iii Es existiert separable $f_{i}\in k\left[X\right]$ so, dass
 $\modulo{K_{i}}{k}$ der Zerfällungskörper von $f_{i}$ ist ($i=1,2$),
-siehe \ref{sub:BuD-Galoisgruppe} a) $\Rightarrow$ b).
+siehe \ref{sec:BuD-Galoisgruppe} a) $\Rightarrow$ b).
 
 Dann ist $\modulo{K_{1}\cdot K_{2}}{k}$ der Zerfällungskörper des
 separablen Polynoms $f_{1}f_{2}$, also endlich und galoissch.
@@ -5054,7 +4987,7 @@ Ferner gilt:
 \begin{align*}
 K_{2}^{\text{im}\left(\varphi\right)} & \stackrel{\text{Def. von }\varphi}{=}\left(K_{1}\cdot K_{2}\right)^{\text{Gal}\left(\modulo{K_{1}\cdot K_{2}}{K_{1}}\right)}\cap K_{2}\stackrel{\ref{asdf}10.9i)}{=}K_{1}\cap K_{2}=K_{2}^{\text{Gal}\left(\modulo{K_{2}}{K_{1}\cap K_{2}}\right)}
 \end{align*}
-Mit \ref{sub:Satz-HSGaloistheorie} i) folgt:
+Mit \ref{sec:Satz-HSGaloistheorie} i) folgt:
 \begin{align*}
 \text{im}\left(\varphi\right) & =\text{Gal}\left(\modulo{K_{2}}{K_{1}\cap K_{2}}\right)
 \end{align*}
@@ -5117,11 +5050,11 @@ endlich und separabel. Damit folgt $\modulo{K_{1}\cdot K_{2}}{k}$
 endlich und separabel.
 \end{enumerate}
 
-\subsection{Proposition\label{sub:Prop-sigmaInGalKommutiertNSt}}
+\section{Proposition\label{sec:Prop-sigmaInGalKommutiertNSt}}
 
 Seien $k$ ein Körper, $f\in k\left[X\right]$ separabel, $\modulo{E}{k}$
 ein Zerfällungskörper von $f$, $G:=\text{Gal}\left(\modulo{E}{k}\right)$
-(vergleiche \ref{sub:BuD-Galoisgruppe} ii)) und $\mathcal{N}:=\left\{ \beta\in E|f\left(\beta\right)=0\right\} $.
+(vergleiche \ref{sec:BuD-Galoisgruppe} ii)) und $\mathcal{N}:=\left\{ \beta\in E|f\left(\beta\right)=0\right\} $.
 
 Beachte: $\left|\mathcal{N}\right|=\text{deg}\left(f\right)$
 
@@ -5181,7 +5114,7 @@ also ist mit $g$ auch $f$ irreduzibel.
 \qqed
 
 
-\subsection{Beispiel \textmd{(biquadratische Erweiterung)}}
+\section{Beispiel \textmd{(biquadratische Erweiterung)}}
 
 Seien $\alpha,\beta\in\overline{\mathbb{Q}}$ mit $\alpha_{1}^{2}=2$
 und $\alpha_{2}^{2}=3$ und $E:=\mathbb{Q}\left(\alpha_{1},\alpha_{2}\right)$.
@@ -5207,7 +5140,7 @@ folgt:
 \text{Gal}\left(\modulo{K_{i}}{k}\right) & \stackrel{\sim}{=}\modlo{Z}{2}
 \end{align*}
 Man kann zeigen, dass $K_{1}\cap K_{2}=k$ gilt (Übung), und nach
-\ref{sub:Satz-Kompositum} ii) ist
+\ref{sec:Satz-Kompositum} ii) ist
 \begin{align*}
 \varphi:\text{Gal}\left(\modulo{E}{k}\right) & \stackrel{\sim}{\to}\text{Gal}\left(\modulo{K_{1}}{k}\right)\times\text{Gal}\left(\modulo{K_{2}}{k}\right)\stackrel{\sim}{=}\modlo{Z}{2}\times\modlo{Z}{2}\\
 \varphi\left(\sigma\right) & :=\left(\sigma|_{K_{1}},\sigma|_{K_{2}}\right)
@@ -5253,7 +5186,7 @@ Offenbar sind die Nullstellen von $f$ genau $\left\{ \beta,\sigma_{1}\left(\beta
 woraus folgt, dass $\modulo{E}{k}$ ein Zerfällungskörper von $f$
 ist.
 
-Aus \ref{sub:Prop-sigmaInGalKommutiertNSt} i) $\Rightarrow$ ii)
+Aus \ref{sec:Prop-sigmaInGalKommutiertNSt} i) $\Rightarrow$ ii)
 folgt nun, dass $f\in k\left[X\right]$ irreduzibel ist, und weil
 $f$ normiert ist, gilt $f=\text{Mipo}_{k}\left(\beta\right)$.
 
@@ -5262,7 +5195,7 @@ $f$ normiert ist, gilt $f=\text{Mipo}_{k}\left(\beta\right)$.
 %DATE Di 20.12.2011
 
 
-\section{Bestimmung einiger Galoisgruppen}
+\chapter{Bestimmung einiger Galoisgruppen}
 
 
 \subsubsection*{Fixiere}
@@ -5270,7 +5203,7 @@ $f$ normiert ist, gilt $f=\text{Mipo}_{k}\left(\beta\right)$.
 Sei $k$ ein Körper.
 
 
-\subsection{Satz und Definition \textmd{(Die Permutationsdarstellung)}}
+\section{Satz und Definition \textmd{(Die Permutationsdarstellung)}}
 
 Seien $f\in k\left[X\right]$ separabel, $n:=\deg\left(f\right)>0$,
 $E\supseteq k$ ein Zerfällungskörper von $f$ und $\mathcal{N}:=\left\{ \alpha\in E|f\left(\alpha\right)=0\right\} $
@@ -5310,7 +5243,7 @@ b) ist klar.
 \qqed
 
 
-\subsection{Quadratische Gleichungen}
+\section{Quadratische Gleichungen}
 
 $f=X^{2}+aX+b\in k\left[X\right]$ besitze keine Nullstelle in $k$.
 
@@ -5331,7 +5264,7 @@ und das eindeutige $1\not=\sigma\in\text{Gal}\left(\modulo{E}{k}\right)$
 ist durch $\sigma\left(\alpha\right)=-\alpha-a$ eindeutig bestimmt.
 
 
-\subsection{Kubische Gleichungen}
+\section{Kubische Gleichungen}
 
 Es gelte $\text{char}\left(k\right)\not=2,3$ und $F\left(X\right)=X^{3}+AX^{2}+BX+C\in k\left[X\right]$
 besitze keine Nullstellen in $k$.
@@ -5413,7 +5346,7 @@ S_{3} & \text{sonst}
 
 
 
-\subsubsection{Beispiel}
+\subsection{Beispiel}
 
 Seien $k=\mathbb{Q}$ und $f\left(X\right):=X^{3}-X+1\in\mathbb{Q}\left[X\right]$.
 
@@ -5436,7 +5369,7 @@ K & =\mathbb{Q}\left(\delta\right)=\mathbb{Q}\left(\sqrt{-23}\right)
 
 
 
-\subsection{Die allgemeine Gleichung}
+\section{Die allgemeine Gleichung}
 
 Sei $n\ge1$ fixiert, $E:=k\left(t_{1},\ldots,t_{n}\right)$.
 
@@ -5455,7 +5388,7 @@ und $\varrho$ ist ein injektiver Gruppenhomomorphismus, vermöge dessen
 wir $S_{n}\subseteq\text{Aut}\left(E\right)$ als Untergruppe auffassen.
 
 
-\subsubsection{Proposition und Definition \textmd{(symmetrische rationale Funktionen)\label{sub:PuD-symRatFkt}}}
+\subsection{Proposition und Definition \textmd{(symmetrische rationale Funktionen)\label{sec:PuD-symRatFkt}}}
 
 Die Körpererweiterung $K:=E^{S_{n}}\subseteq E$ ist galoissch mit
 $\text{Gal}\left(\modulo{E}{K}\right)=S_{n}$.
@@ -5471,7 +5404,7 @@ $K$ heißt \emph{der Körper der symmetrischen rationalen Funktionen
 \qqed
 
 
-\subsubsection{Beispiel}
+\subsection{Beispiel}
 
 $n=2\Rightarrow S_{2}=\left\{ 1,\left(\begin{array}{cc}
 1 & 2\end{array}\right)=:\sigma\right\} $, also $t_{1}+t_{2}\in k\left(t_{1},t_{2}\right)^{S_{2}}$, da $\sigma\left(t_{1}+t_{2}\right)=t_{2}+t_{1}=t_{1}+t_{2}$,
@@ -5480,7 +5413,7 @@ da $\sigma\left(t_{1}-t_{2}\right)=t_{2}-t_{1}=-\left(t_{1}-t_{2}\right)\not=t_{
 da $1\not=-1$.
 
 
-\subsubsection{Definition\label{sub:Def-elemSymFkt}}
+\subsection{Definition\label{sec:Def-elemSymFkt}}
 
 Die in der Entwicklung
 \begin{align*}
@@ -5497,7 +5430,7 @@ s_{k}\left(t_{1},\ldots,t_{n}\right) & =\sum_{1\le j_{1}<\ldots<j_{k}\le n}\left
 Zum Beispiel: $s_{0}=1,\: s_{1}=t_{1}+\ldots+t_{n},\: s_{n}=t_{1}\cdot\ldots\cdot t_{n}$.
 
 
-\subsubsection{Definition \textmd{(algebraische Unabhängigkeit)}}
+\subsection{Definition \textmd{(algebraische Unabhängigkeit)}}
 
 Seien $A$ eine $k$-Algebra, $I$ eine Menge und für alle $i\in I$
 sei $a_{i}\in A$.
@@ -5508,7 +5441,7 @@ $k\left[I\right]\to A$ mit $\varphi\left(i\right)=a_{i}$ für alle
 $i\in I$ ist injektiv.
 
 
-\subsubsection{Beispiel}
+\subsection{Beispiel}
 
 \begin{iiilist}
 
@@ -5527,7 +5460,7 @@ unabhängig.)
 \end{iiilist}
 
 
-\subsubsection{Satz\label{sub:Satz-HS-symFkt}}
+\subsection{Satz\label{sec:Satz-HS-symFkt}}
 
 Es gelten:
 
@@ -5556,7 +5489,7 @@ f\left(s_{1},\ldots,s_{n}\right) & =g\left(s_{1},\ldots,s_{n}\right)\Rightarrow 
 %DATE: Fr 23.12.2011
 
 
-\subsubsection{Bemerkung}
+\subsection{Bemerkung}
 
 \begin{iiilist}
 
@@ -5578,7 +5511,7 @@ mit $\text{Gal}\left(\modulo{E}{\mathbb{Q}}\right)\stackrel{\sim}{=}G$.
 \end{iiilist}
 
 
-\subsubsection*{Beweis von \ref{sub:Satz-HS-symFkt}}
+\subsubsection*{Beweis von \ref{sec:Satz-HS-symFkt}}
 
 \begin{iiilist}
 
@@ -5593,12 +5526,12 @@ ist klar, dass $\modulo{E}{k}$ ein Zerfällungskörper von $f$ ist.\\
 \qqed[\roman{ale2})]
 
 \iii Wir haben $k\left(s_{1},\ldots,s_{n}\right)\stackrel{\text{i)}}{\subseteq}K=E^{S_{n}}\subseteq E$
-und nach \ref{sub:Def-elemSymFkt} gilt sogar $f\left(X\right)\in k\left(s_{1},\ldots,s_{n}\right)\left[X\right]$,
+und nach \ref{sec:Def-elemSymFkt} gilt sogar $f\left(X\right)\in k\left(s_{1},\ldots,s_{n}\right)\left[X\right]$,
 und damit folgt wegen $\deg\left(f\right)=n$ und i):
 \begin{align*}
 \left[E:k\left(s_{1},\ldots,s_{n}\right)\right] & \le n!
 \end{align*}
-Aus $\left[E:E^{S_{n}}\right]=\left|S_{n}\right|=n!$ (siehe \ref{sub:PuD-symRatFkt})
+Aus $\left[E:E^{S_{n}}\right]=\left|S_{n}\right|=n!$ (siehe \ref{sec:PuD-symRatFkt})
 folgt $K=k\left(s_{1},\ldots,s_{n}\right)$.\\
 \qqed[\roman{ale2})]
 
@@ -5632,7 +5565,7 @@ algebraisch unabhängig über $k$.\\
 \end{iiilist}
 
 
-\subsubsection{Definition}
+\subsection{Definition}
 
 \begin{align*}
 p\left(X\right) & :=X^{n}+\mathcal{S}_{i}X^{n-1}+\ldots+\mathcal{S}_{n}=X^{n}+\sum_{i=1}^{n}\mathcal{S}_{i}\cdot X^{n-i}\in k\left(\mathcal{S}_{1},\ldots,\mathcal{S}_{n}\right)\left[X\right]
@@ -5640,7 +5573,7 @@ p\left(X\right) & :=X^{n}+\mathcal{S}_{i}X^{n-1}+\ldots+\mathcal{S}_{n}=X^{n}+\s
 heißt das \emph{allgemeine Polynom $n$-ten Grades über $k$.}
 
 
-\subsubsection{Bemerkung}
+\subsection{Bemerkung}
 
 Seien $k\subseteq F$ eine Körpererweiterung und $f\in F\left[X\right]$
 ein normiertes Polynom vom Grad $n$.
@@ -5657,7 +5590,7 @@ mit
 Koeffizient von $f$).
 
 
-\subsubsection{Satz}
+\subsection{Satz}
 
 $p\left(X\right)\subseteq k\left(\mathcal{S}_{1},\ldots,\mathcal{S}_{n}\right)\left[X\right]$
 ist irreduzibel, separabel und es gilt:
@@ -5669,19 +5602,19 @@ ist irreduzibel, separabel und es gilt:
 
 \subsubsection*{Beweis}
 
-Wegen \ref{sub:Satz-HS-symFkt} ii) existiert ein $k$-Isomorphismus
+Wegen \ref{sec:Satz-HS-symFkt} ii) existiert ein $k$-Isomorphismus
 $\varphi:k\left(\mathcal{S}_{1},\ldots,\mathcal{S}_{n}\right)\stackrel{\sim}{\to}k\left(s_{1},\ldots,s_{n}\right)$
 mit $\varphi\left(\mathcal{S}_{i}\right)=\left(-1\right)^{i}\cdot s_{i}$
 und für diesen gilt $\varphi\left[X\right]\left(p\left(X\right)\right)=f\left(X\right)$
-wie in \ref{sub:Def-elemSymFkt}.
+wie in \ref{sec:Def-elemSymFkt}.
 
 Die Aussagen folgen nun aus den analogen Aussagen für $f$, nämlich
-in \ref{sub:Satz-HS-symFkt} i) und \ref{sub:PuD-symRatFkt}.
+in \ref{sec:Satz-HS-symFkt} i) und \ref{sec:PuD-symRatFkt}.
 
 \qqed
 
 
-\subsubsection{Satz \textmd{(Hilbertscher Irreduzibilitätssatz)}}
+\subsection{Satz \textmd{(Hilbertscher Irreduzibilitätssatz)}}
 
 Für $n\ge1$ existieren unendlich viele Tupel $\left(q_{1},\ldots,q_{n}\right)\in\mathbb{Q}^{n}$
 so, dass für
@@ -5705,7 +5638,7 @@ $q_{i}=0$, dann ist $f\left(X\right)=X^{n}$ mit der trivialen Galoisgruppe
 und nicht $S_{n}$.
 
 
-\section{Kreisteilungskörper \textmd{(die Galoistheorie von $X^{n}-1=0$)}}
+\chapter{Kreisteilungskörper \textmd{(die Galoistheorie von $X^{n}-1=0$)}}
 
 
 \subsubsection*{Fixiere}
@@ -5714,7 +5647,7 @@ Sei $k$ ein Körper und $n,m\ge1$ mit $\text{char}\left(k\right)\not|\, n,m$
 (im Fall $\text{char}\left(k\right)=0$ seien $n,m\ge1$ beliebig).
 
 
-\subsection{Proposition und Definition\label{sub:PuD-Einheitswurzel}}
+\section{Proposition und Definition\label{sec:PuD-Einheitswurzel}}
 
 Die Teilmenge $U_{n}:=U_{n}\left(k\right):=\left\{ \zeta\in\overline{k}\,^{*}\big|\zeta^{n}=1\right\} \subseteq\overline{k}\,^{*}$
 ist eine zyklische Untergruppe der Ordnung $n$, \emph{die Gruppe
@@ -5735,7 +5668,7 @@ Damit ist $X^{n}-1\in k\left[X\right]$ separabel und es folgt:
 \left|U_{n}\right| & =\deg\left(X^{n}-1\right)=n
 \end{align*}
 Insbesondere ist $U_{n}\subseteq\overline{k}\,^{*}$ endlich, also
-zyklisch nach \ref{sub:Kor-endlUGzykl}.
+zyklisch nach \ref{sec:Kor-endlUGzykl}.
 
 \qqed
 
@@ -5749,13 +5682,13 @@ Sei $p$ eine Primzahl und $n\ge1$, dann folgt:
 
 
 
-\subsection{Definition}
+\section{Definition}
 
 Eine $n$-te Einheitswurzel $\zeta\in U_{n}$ heißt genau dann \emph{primitiv},
 wenn $\left\langle \zeta\right\rangle =U_{n}$.
 
 
-\subsection{Beispiel}
+\section{Beispiel}
 
 $k=\mathbb{C}$, ${\displaystyle U_{6}=\left\langle \zeta_{6}:=\text{exp}\left(\frac{2\pi\ii}{6}\right)\right\rangle \subseteq\mathbb{C}^{*}}$
 und genau $\zeta_{6},\zeta_{6}^{5}=\zeta_{6}^{-1}\in U_{6}$ sind
@@ -5772,7 +5705,7 @@ Es gilt:
 
 
 
-\subsection{Proposition}
+\section{Proposition}
 
 Für $n,m\ge1$ sind $\left(n,m\right)=1$ (und $\text{char}\left(k\right)\not|\, n,m$)
 ist die Abbildung $f:U_{n}\times U_{m}\to U_{nm}$ ist wohldefiniert
@@ -5785,7 +5718,7 @@ Sind $\zeta\in U_{n}$ und $\psi\in U_{m}$ primitiv, so auch $\zeta\cdot\psi\in U
 
 Dass $f$ wohldefiniert und ein Gruppenhomomorphismus ist, ist klar.
 
-Wegen \ref{sub:PuD-Einheitswurzel} gilt:
+Wegen \ref{sec:PuD-Einheitswurzel} gilt:
 \begin{align}
 \left|U_{n}\times U_{m}\right| & =\left|U_{nm}\right|=nm\label{eq:Unm}
 \end{align}

@@ -2,25 +2,28 @@
 \lyxformat 413
 \begin_document
 \begin_header
-\textclass article
+\textclass report
 \begin_preamble
 \usepackage{tikz}
 \usepackage{latexsym,stmaryrd,stackrel,array,tabularx,multirow}
+\usepackage[explicit]{titlesec}
 %\usepackage{polynom} % momentan nicht benötigt
 
 %Inhaltsverzeichnis
 \usepackage{tocloft}
-
 \tocloftpagestyle{fancy}
 
-\renewcommand{\cftsecindent}{1 em}
-\renewcommand{\cftsecnumwidth}{1.7 em}
+\renewcommand{\cftchapindent}{1 em}
+\renewcommand{\cftchapnumwidth}{1.5 em}
 
-\renewcommand{\cftsubsecindent}{2.7 em}
-\renewcommand{\cftsubsecnumwidth}{2.8 em}
+\renewcommand{\cftsecindent}{2.7 em}
+\renewcommand{\cftsecnumwidth}{2.5em}
 
-\renewcommand{\cftsubsubsecindent}{5.5 em}
-\renewcommand{\cftsubsubsecnumwidth}{3.2 em}
+\renewcommand{\cftsubsecindent}{5.2 em}
+\renewcommand{\cftsubsecnumwidth}{3.8 em}
+
+\renewcommand{\cftsubsubsecindent}{9 em}
+\renewcommand{\cftsubsubsecnumwidth}{4.5 em}
 
 
 %Kommandos mit optionalem Argument (für Lyx)
@@ -41,7 +44,7 @@
 
 %QED-Zeichen (Box)
 \newcommand{\qed}{\ensuremath{\Box}}
-\newcommand{\qqed}[1][\arabic{section}.\arabic{subsection}]{\begin{flushright}\qed\ensuremath{_{\text{#1}}}\end{flushright}}
+\newcommand{\qqed}[1][\arabic{chapter}.\arabic{section}]{\begin{flushright}\qed\ensuremath{_{\text{#1}}}\end{flushright}}
 
 %Definitons-Zeichen
 \newcommand{\dfn}{\mathrel{\mathop:}=}
@@ -97,92 +100,19 @@
 \newcommand{\iii}{\stepcounter{ale2}\item[\textnormal{\roman{ale2})}]}
 \newenvironment{iiilist}{\begin{itemize} \setcounter{ale2}{0}}{\end{itemize}}
 
-% Untergliederung in Teile
-%% Copy from book.cls 2007/10/19 v1.4h
-%% Site: http://www.tex.ac.uk/ctan/macros/latex/unpacked/book.cls
-%%% BEGIN CHANGE
-%\newcommand\part{%
-\renewcommand\part{%
-%  \if@openright
-%    \cleardoublepage
-%  \else
-%%% END CHANGE
-    \clearpage
-%%% BEGIN CHANGE
-%  \fi
-%  \thispagestyle{plain}%
-  \thispagestyle{empty}
-%%% END CHANGE
-  \if@twocolumn
-    \onecolumn
-    \@tempswatrue
-  \else
-    \@tempswafalse
-  \fi
-  \null\vfil
-  \secdef\@part\@spart}
 
-\def\@part[#1]#2{%
-    \ifnum \c@secnumdepth >-2\relax
-      \refstepcounter{part}%
-      \addcontentsline{toc}{part}{\thepart\hspace{1em}#1}%
-    \else
-      \addcontentsline{toc}{part}{#1}%
-    \fi
-%%% BEGIN CHANGE
-%    \markboth{}{}%
-    \partmark{\thepart\hspace{1em}#1}%
-%%% END CHANGE
-    {\centering
-     \interlinepenalty \@M
-     \normalfont
-     \ifnum \c@secnumdepth >-2\relax
-       \huge\bfseries \partname\nobreakspace\thepart
-       \par
-       \vskip 20\p@
-     \fi
-     \Huge \bfseries #2\par}%
-    \@endpart}
-\def\@spart#1{%
-    {\centering
-     \interlinepenalty \@M
-     \normalfont
-     \Huge \bfseries #1\par}%
-    \@endpart}
-\def\@endpart{\vfil\newpage
-              \if@twoside
-%%% BEGIN CHANGE
-%               \if@openright
-%%% END CHANGE
-                \null
-                \thispagestyle{empty}%
-                \newpage
-               \fi
-%%% BEGIN CHANGE
-%              \fi
-%%% END CHANGE
-              \if@tempswa
-                \twocolumn
-              \fi}
-%% End of copy
 
-% Hyperref am Ende, damit es die Befehle aus book.cls überschreiben kann!
-\usepackage[unicode=true,
- bookmarks=false,
- breaklinks=false,pdfborder={0 0 0},backref=page,colorlinks=false]
- {hyperref}
-\usepackage{breakurl}
+% Damit nicht immer "Kapitel 1" etc. über der Kapitelüberschrift steht
+\titleformat{\chapter}
+  {\normalfont\sffamily\Huge\bfseries}
+  {\gdef\chapterlabel{\thechapter\ }}{0pt}
+  {\textrm{\thechapter\ #1} \thispagestyle{fancy}
+  }
 
-% Default definition for new command \partmark
-% to get the same behaviour as the standard book class.
-\newcommand\partmark[1]{\markboth{}{}}
-
-% Now redefine the \<sectioning>mark hooks
-% to save the title of \part and \chapter
-% instead of \chapter and \section.
-
+% Neudefinition der Abschnittsmarker für die Kopfzeile
 \renewcommand\partmark[1]{\markboth{#1}{}}
-\renewcommand\sectionmark[1]{\markboth{\leftmark}{\arabic{section} #1}}
+\renewcommand\chaptermark[1]{\markboth{\leftmark}{\arabic{chapter} #1}}
+\renewcommand\sectionmark[1]{}
 \renewcommand\subsectionmark[1]{}
 
 % Kopf- und Fußzeile
@@ -199,11 +129,6 @@
 %\date{Stand: \today}
 \end_preamble
 \use_default_options false
-\begin_modules
-eqs-within-sections
-figs-within-sections
-tabs-within-sections
-\end_modules
 \maintain_unincluded_children false
 \language ngerman
 \language_package default
@@ -226,7 +151,7 @@ tabs-within-sections
 \index_command default
 \paperfontsize 11
 \spacing single
-\use_hyperref false
+\use_hyperref true
 \pdf_bookmarks false
 \pdf_bookmarksnumbered false
 \pdf_bookmarksopen false
@@ -487,6 +412,22 @@ TODO: DATEs einfügen
 
 \series bold
 \size huge
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-30mm}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
 Algebra
 \end_layout
 
@@ -519,18 +460,13 @@ im Wintersemester 2011/2012
 
 \noun on
 Andreas Völklein
-\end_layout
-
-\begin_layout Standard
-
-\size small
-\begin_inset VSpace vfill
+\begin_inset Newline newline
 \end_inset
 
 
-\end_layout
+\shape default
+\noun default
 
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -538,18 +474,22 @@ status open
 
 
 \backslash
-thispagestyle{empty}
+vspace*{10mm}
 \end_layout
 
 \end_inset
 
 
-\end_layout
+\shape italic
+\noun on
 
-\begin_layout Standard
-\align center
+\begin_inset Newline newline
+\end_inset
 
-\size small
+
+\shape default
+\noun default
+
 \begin_inset Graphics
 	filename unir.png
 	width 15cm
@@ -558,11 +498,34 @@ thispagestyle{empty}
 \end_inset
 
 
+\shape italic
+\noun on
+
+\begin_inset Newline newline
+\end_inset
+
+
+\shape default
+\noun default
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{5mm}
 \end_layout
 
-\begin_layout Standard
-\noindent
-\align center
+\end_inset
+
+
+\size default
+
+\begin_inset Newline newline
+\end_inset
+
 Stand: 
 \begin_inset ERT
 status open
@@ -574,15 +537,6 @@ status open
 today
 \end_layout
 
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-
-\size small
-\begin_inset Newpage newpage
 \end_inset
 
 
@@ -993,10 +947,10 @@ status open
 
 \end_inset
 
-
+l
 \end_layout
 
-\begin_layout Section
+\begin_layout Chapter
 Gruppentheorie I
 \end_layout
 
@@ -1024,7 +978,7 @@ die Permutationsgruppe
 Untergruppen (Abkürzung: UG).
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Definition 
 \series medium
 (Gruppenhomomorphismus)
@@ -1090,7 +1044,7 @@ Auto(morphismus) & \Leftrightarrow\varphi\text{ Isomorphismus von }G\text{ nach 
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Beispiel
 \end_layout
 
@@ -1252,7 +1206,7 @@ qqed
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Proposition und Definition
 \series medium
  (Kern und Bild)
@@ -1260,7 +1214,7 @@ Proposition und Definition
 
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:PuD-ker"
+name "sec:PuD-ker"
 
 \end_inset
 
@@ -1387,11 +1341,11 @@ qqed
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Proposition
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:Prop-gruphomG"
+name "sec:Prop-gruphomG"
 
 \end_inset
 
@@ -1443,13 +1397,13 @@ qqed
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Beispiel und Definition
 \series medium
  (Automorphismengruppe, Konjugation)
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:BuD-AutGrup"
+name "sec:BuD-AutGrup"
 
 \end_inset
 
@@ -1639,7 +1593,7 @@ Insbesondere:
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Proposition und Definition
 \series medium
  (Linksnebenklasse, Index)
@@ -1647,7 +1601,7 @@ Proposition und Definition
 
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:PuD-Nebenklasse"
+name "sec:PuD-Nebenklasse"
 
 \end_inset
 
@@ -1956,13 +1910,13 @@ qqed
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Korollar 
 \series medium
 (Satz von Lagrange)
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:Kor-Lagrange"
+name "sec:Kor-Lagrange"
 
 \end_inset
 
@@ -2005,7 +1959,7 @@ Beweis
 \begin_layout Standard
 \begin_inset Formula 
 \begin{align*}
-\left|G\right| & \stackrel{\text{\ref{sub:PuD-Nebenklasse}\,\text{iii)}}}{=}\left|\bcupd_{gH\in\moduloScript{G}{H}}\left(gH\right)\right|=\sum_{gH\in\moduloScript{G}{H}}\left|gH\right|=\left|\modulo{G}{H}\right|\cdot\left|H\right|\stackrel{\text{Def.}}{=}\left(G:H\right)\cdot\left|H\right|
+\left|G\right| & \stackrel{\text{\ref{sec:PuD-Nebenklasse}\,\text{iii)}}}{=}\left|\bcupd_{gH\in\moduloScript{G}{H}}\left(gH\right)\right|=\sum_{gH\in\moduloScript{G}{H}}\left|gH\right|=\left|\modulo{G}{H}\right|\cdot\left|H\right|\stackrel{\text{Def.}}{=}\left(G:H\right)\cdot\left|H\right|
 \end{align*}
 
 \end_inset
@@ -2026,13 +1980,13 @@ qqed
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Beispiel
 \series medium
  (Symmetrische und alternierende Gruppe vom Grad 3)
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:Bsp-sym3"
+name "sec:Bsp-sym3"
 
 \end_inset
 
@@ -2093,7 +2047,7 @@ S_{3} & =A_{3}\,\dot{\cup}\,\tau A_{3}=H\,\dot{\cup}\,\omega H\,\dot{\cup}\,\ome
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Definition
 \series medium
  (Normalteiler)
@@ -2101,7 +2055,7 @@ Definition
 
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:Def-normalteiler"
+name "sec:Def-normalteiler"
 
 \end_inset
 
@@ -2156,7 +2110,7 @@ stabil unter Konjugation
 .
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Beispiel
 \end_layout
 
@@ -2177,7 +2131,7 @@ ghg^{-1} & =h\underbrace{gg^{-1}}_{=e}=h\in H
 In 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Bsp-sym3"
+reference "sec:Bsp-sym3"
 
 \end_inset
 
@@ -2192,13 +2146,13 @@ reference "sub:Bsp-sym3"
  ist kein Normalteiler.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Proposition
 \series medium
  (Kern ist Normalteiler)
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:Prop-kerNormalTeiler"
+name "sec:Prop-kerNormalTeiler"
 
 \end_inset
 
@@ -2225,7 +2179,7 @@ Beweis
 Nach 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:PuD-ker"
+reference "sec:PuD-ker"
 
 \end_inset
 
@@ -2241,7 +2195,7 @@ i) ist
  Prüfe nun die Definition 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Def-normalteiler"
+reference "sec:Def-normalteiler"
 
 \end_inset
 
@@ -2285,7 +2239,7 @@ status open
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Beispiel und Definition
 \series medium
  (Zentrum)
@@ -2370,7 +2324,7 @@ Für die Abbildung
  aus 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:BuD-AutGrup"
+reference "sec:BuD-AutGrup"
 
 \end_inset
 
@@ -2385,7 +2339,7 @@ reference "sub:BuD-AutGrup"
 Also folgt die Behauptung aus 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Prop-kerNormalTeiler"
+reference "sec:Prop-kerNormalTeiler"
 
 \end_inset
 
@@ -2408,13 +2362,13 @@ qqed
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Proposition 
 \series medium
 (kanonische Projektionsabbildung)
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:Prop-proj"
+name "sec:Prop-proj"
 
 \end_inset
 
@@ -2504,7 +2458,7 @@ reference "eq:rel"
  in 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:PuD-Nebenklasse"
+reference "sec:PuD-Nebenklasse"
 
 \end_inset
 
@@ -2528,7 +2482,7 @@ Also gilt
 Ferner gilt:
 \begin_inset Formula 
 \begin{align*}
-\text{ker}\left(\pi\right) & =\left\{ g\in G|gN=\pi\left(g\right)=e'=eN=N\in\modulo{G}{N}\right\} \stackrel{\ref{sub:PuD-Nebenklasse}\,\text{i)}}{=}N
+\text{ker}\left(\pi\right) & =\left\{ g\in G|gN=\pi\left(g\right)=e'=eN=N\in\modulo{G}{N}\right\} \stackrel{\ref{sec:PuD-Nebenklasse}\,\text{i)}}{=}N
 \end{align*}
 
 \end_inset
@@ -2549,7 +2503,7 @@ qqed
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Beispiel 
 \series medium
 (
@@ -2567,7 +2521,7 @@ Sei
  wie in 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Bsp-sym3"
+reference "sec:Bsp-sym3"
 
 \end_inset
 
@@ -2643,7 +2597,7 @@ reference "eq:wohldef"
  im Beweis von 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Prop-proj"
+reference "sec:Prop-proj"
 
 \end_inset
 
@@ -2654,7 +2608,7 @@ reference "sub:Prop-proj"
  kein Normalteiler ist.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Satz 
 \series medium
 (universelle Eigenschaft der Projektionsabbildung 
@@ -2664,7 +2618,7 @@ Satz
 )
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:Satz-univEigProj"
+name "sec:Satz-univEigProj"
 
 \end_inset
 
@@ -2797,7 +2751,7 @@ qqed
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Korollar 
 \series medium
 (Isomorphiesatz)
@@ -2805,7 +2759,7 @@ Korollar
 
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:Kor-HomSatzIso"
+name "sec:Kor-HomSatzIso"
 
 \end_inset
 
@@ -2832,7 +2786,7 @@ Beweis
 Nach 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Satz-univEigProj"
+reference "sec:Satz-univEigProj"
 
 \end_inset
 
@@ -2847,7 +2801,7 @@ reference "sub:Satz-univEigProj"
 (Wähle in 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Satz-univEigProj"
+reference "sec:Satz-univEigProj"
 
 \end_inset
 
@@ -2882,7 +2836,7 @@ Aus
 und 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:PuD-ker"
+reference "sec:PuD-ker"
 
 \end_inset
 
@@ -2909,7 +2863,7 @@ qqed
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Satz 
 \series medium
 (Primzahlordnung)
@@ -2917,7 +2871,7 @@ Satz
 
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:Satz-ZpZ"
+name "sec:Satz-ZpZ"
 
 \end_inset
 
@@ -2945,7 +2899,7 @@ G & \stackrel{\sim}{=}\modlo{Z}{p}
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Beispiel
 \end_layout
 
@@ -3029,7 +2983,7 @@ end{iiilist}
 Beide Beispiele zeigen, dass man in 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Satz-ZpZ"
+reference "sec:Satz-ZpZ"
 
 \end_inset
 
@@ -3040,7 +2994,7 @@ reference "sub:Satz-ZpZ"
 Beweis von 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Satz-ZpZ"
+reference "sec:Satz-ZpZ"
 
 \end_inset
 
@@ -3063,7 +3017,7 @@ Wegen
 Nach 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Prop-gruphomG"
+reference "sec:Prop-gruphomG"
 
 \end_inset
 
@@ -3079,7 +3033,7 @@ reference "sub:Prop-gruphomG"
  Es folgt nach 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Kor-Lagrange"
+reference "sec:Kor-Lagrange"
 
 \end_inset
 
@@ -3110,7 +3064,7 @@ Weil
 Nach 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Kor-HomSatzIso"
+reference "sec:Kor-HomSatzIso"
 
 \end_inset
 
@@ -3155,7 +3109,7 @@ status open
 \backslash
 qqed[
 \backslash
-ref{sub:Satz-ZpZ}]
+ref{sec:Satz-ZpZ}]
 \end_layout
 
 \end_inset
@@ -3163,7 +3117,7 @@ ref{sub:Satz-ZpZ}]
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Proposition und Definition 
 \series medium
 (erzeugte Untergruppe)
@@ -3231,7 +3185,7 @@ Beweis
 Wegen 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:PuD-ker"
+reference "sec:PuD-ker"
 
 \end_inset
 
@@ -3286,7 +3240,7 @@ qqed
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Proposition und Definition 
 \series medium
 (zyklische Gruppe, Erzeuger)
@@ -3294,7 +3248,7 @@ Proposition und Definition
 
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:PuD-zyklGrp"
+name "sec:PuD-zyklGrp"
 
 \end_inset
 
@@ -3457,7 +3411,7 @@ qqed
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Satz 
 \series medium
 (Klassifizierung zyklischer Gruppen)
@@ -3500,7 +3454,7 @@ Sei nun
  eine beliebige zyklische Gruppe, dann existiert nach 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:PuD-zyklGrp"
+reference "sec:PuD-zyklGrp"
 
 \end_inset
 
@@ -3511,7 +3465,7 @@ reference "sub:PuD-zyklGrp"
 , weswegen nach 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Kor-HomSatzIso"
+reference "sec:Kor-HomSatzIso"
 
 \end_inset
 
@@ -3566,13 +3520,13 @@ qqed
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Satz 
 \series medium
 (Untergruppe, Kern und Bild zyklischer Gruppen)
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:Satz-UG-kerImZyklG"
+name "sec:Satz-UG-kerImZyklG"
 
 \end_inset
 
@@ -3860,7 +3814,7 @@ end{iiilist}
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Definition 
 \series medium
 (Gruppenordnung)
@@ -3910,11 +3864,11 @@ status open
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Beispiel
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:Bsp-F5*"
+name "sec:Bsp-F5*"
 
 \end_inset
 
@@ -4288,7 +4242,7 @@ Die Rechnung zeigt:
 .
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 
 \series medium
 (kleiner Fermatscher)
@@ -4296,7 +4250,7 @@ Die Rechnung zeigt:
  Satz
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:Satz-kleinFermat"
+name "sec:Satz-kleinFermat"
 
 \end_inset
 
@@ -4355,7 +4309,7 @@ Nun folgt
  aus 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Kor-Lagrange"
+reference "sec:Kor-Lagrange"
 
 \end_inset
 
@@ -4370,7 +4324,7 @@ Klar ist
 , womit folgt:
 \begin_inset Formula 
 \begin{align*}
-x^{\left|G\right|} & \stackrel{\ref{sub:Kor-Lagrange}}{=}x^{\text{ord}\left(x\right)\cdot\left(G:\left\langle x\right\rangle \right)}=e^{\left(G:x\right)}=e
+x^{\left|G\right|} & \stackrel{\ref{sec:Kor-Lagrange}}{=}x^{\text{ord}\left(x\right)\cdot\left(G:\left\langle x\right\rangle \right)}=e^{\left(G:x\right)}=e
 \end{align*}
 
 \end_inset
@@ -4391,11 +4345,11 @@ qqed
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Korollar
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:Kor-aPhin1"
+name "sec:Kor-aPhin1"
 
 \end_inset
 
@@ -4498,7 +4452,7 @@ a^{p-1} & \equiv1\left(\text{mod}\right)p
 (vergleiche 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Bsp-F5*"
+reference "sec:Bsp-F5*"
 
 \end_inset
 
@@ -4569,7 +4523,7 @@ iii
  folgt die Behauptung aus 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Satz-kleinFermat"
+reference "sec:Satz-kleinFermat"
 
 \end_inset
 
@@ -4636,7 +4590,7 @@ qqed
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Proposition 
 \series medium
 (Kriterium für zyklische Gruppen)
@@ -4644,7 +4598,7 @@ Proposition
 
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:Prop-GxdledGzykl"
+name "sec:Prop-GxdledGzykl"
 
 \end_inset
 
@@ -4699,7 +4653,7 @@ Für
 Aus 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Satz-kleinFermat"
+reference "sec:Satz-kleinFermat"
 
 \end_inset
 
@@ -4734,7 +4688,7 @@ Seien
 Aus 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Satz-kleinFermat"
+reference "sec:Satz-kleinFermat"
 
 \end_inset
 
@@ -4879,11 +4833,11 @@ qqed
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Korollar
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:Kor-endlUGzykl"
+name "sec:Kor-endlUGzykl"
 
 \end_inset
 
@@ -4926,7 +4880,7 @@ Die Gruppe
 Beweis von 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Kor-endlUGzykl"
+reference "sec:Kor-endlUGzykl"
 
 \end_inset
 
@@ -4937,7 +4891,7 @@ reference "sub:Kor-endlUGzykl"
 Wegen 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Prop-GxdledGzykl"
+reference "sec:Prop-GxdledGzykl"
 
 \end_inset
 
@@ -4988,7 +4942,7 @@ qqed
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Bemerkung
 \end_layout
 
@@ -4999,14 +4953,14 @@ Bemerkung
  ist nicht zyklisch (!), also kann man in 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Kor-endlUGzykl"
+reference "sec:Kor-endlUGzykl"
 
 \end_inset
 
  nicht auf „endlich“ verzichten.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Korollar
 \end_layout
 
@@ -5075,7 +5029,7 @@ iii
  (vergleiche 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Bsp-F5*"
+reference "sec:Bsp-F5*"
 
 \end_inset
 
@@ -5134,7 +5088,7 @@ iii
  
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Kor-endlUGzykl"
+reference "sec:Kor-endlUGzykl"
 
 \end_inset
 
@@ -5204,11 +5158,11 @@ qqed
 
 \end_layout
 
-\begin_layout Section
+\begin_layout Chapter
 Lokalisierungen
 \begin_inset CommandInset label
 LatexCommand label
-name "sec:Lokalisierungen"
+name "chap:Lokalisierungen"
 
 \end_inset
 
@@ -5232,13 +5186,13 @@ Referenz
 Siehe Literaturliste am Anfang.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Proposition und Definition 
 \series medium
 (multiplikativ abgeschlossen)
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:PuD-multAbg"
+name "sec:PuD-multAbg"
 
 \end_inset
 
@@ -5474,17 +5428,17 @@ qqed
 \end_layout
 
 \begin_layout Subsubsection*
-Fixiere in Abschnitt 
+Fixiere in Kapitel 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sec:Lokalisierungen"
+reference "chap:Lokalisierungen"
 
 \end_inset
 
  (
 \begin_inset CommandInset ref
 LatexCommand nameref
-reference "sec:Lokalisierungen"
+reference "chap:Lokalisierungen"
 
 \end_inset
 
@@ -5503,13 +5457,13 @@ Seien
  multiplikativ abgeschlossen.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Konstruktion und Definition 
 \series medium
 (Quotientenring)
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:KuD-QuotRing"
+name "sec:KuD-QuotRing"
 
 \end_inset
 
@@ -5597,7 +5551,7 @@ Quotientenring von
 .
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Beispiel 
 \series medium
 (Quotientenkörper)
@@ -5611,7 +5565,7 @@ Ist
  in 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:KuD-QuotRing"
+reference "sec:KuD-QuotRing"
 
 \end_inset
 
@@ -5669,7 +5623,7 @@ der Quotientenkörper von
 Beweis von 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:KuD-QuotRing"
+reference "sec:KuD-QuotRing"
 
 \end_inset
 
@@ -5792,7 +5746,7 @@ status open
 \backslash
 qqed[
 \backslash
-ref{sub:KuD-QuotRing}]
+ref{sec:KuD-QuotRing}]
 \end_layout
 
 \end_inset
@@ -5800,7 +5754,7 @@ ref{sub:KuD-QuotRing}]
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Proposition 
 \series medium
 (Universelle Eigenschaft von 
@@ -5810,7 +5764,7 @@ Proposition
 )
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:Prop-UnivEigSinvA"
+name "sec:Prop-UnivEigSinvA"
 
 \end_inset
 
@@ -6031,7 +5985,7 @@ status open
 Beweis von 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Prop-UnivEigSinvA"
+reference "sec:Prop-UnivEigSinvA"
 
 \end_inset
 
@@ -6082,7 +6036,7 @@ Rechne zum Beispiel
  nach:
 \begin_inset Formula 
 \begin{align*}
-\varphi\left(a\right)+\varphi\left(b\right) & =\frac{a}{1}+\frac{b}{1}\stackrel{\ref{sub:KuD-QuotRing}}{=}\frac{a\cdot1+b\cdot1}{1\cdot1}=\frac{a+b}{1}=\varphi\left(a+b\right)
+\varphi\left(a\right)+\varphi\left(b\right) & =\frac{a}{1}+\frac{b}{1}\stackrel{\ref{sec:KuD-QuotRing}}{=}\frac{a\cdot1+b\cdot1}{1\cdot1}=\frac{a+b}{1}=\varphi\left(a+b\right)
 \end{align*}
 
 \end_inset
@@ -6269,7 +6223,7 @@ Aus
  in 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:KuD-QuotRing"
+reference "sec:KuD-QuotRing"
 
 \end_inset
 
@@ -6338,7 +6292,7 @@ end{iiilist}
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Korollar
 \end_layout
 
@@ -6466,7 +6420,7 @@ iii
 Dies ist nach 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:KuD-QuotRing"
+reference "sec:KuD-QuotRing"
 
 \end_inset
 
@@ -6581,7 +6535,7 @@ end{iiilist}
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Beispiel 
 \series medium
 (Lokalisierung)
@@ -6677,7 +6631,7 @@ Zeige nur, dass
  multiplikativ abgeschlossen ist, prüfe also die Definition 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:PuD-multAbg"
+reference "sec:PuD-multAbg"
 
 \end_inset
 
@@ -6810,7 +6764,7 @@ qqed
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Konstruktion 
 \series medium
 (Lokalisierung)
@@ -6818,7 +6772,7 @@ Konstruktion
 
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:Konstr-SinvM"
+name "sec:Konstr-SinvM"
 
 \end_inset
 
@@ -6947,7 +6901,7 @@ Beweis
 Analog zu 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:KuD-QuotRing"
+reference "sec:KuD-QuotRing"
 
 \end_inset
 
@@ -6970,11 +6924,11 @@ qqed
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Proposition
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:Prop-exaktAModuln"
+name "sec:Prop-exaktAModuln"
 
 \end_inset
 
@@ -7073,7 +7027,7 @@ S^{-1}\psi\circ S^{-1}\varphi & \stackrel{\left(!\right)}{=}S^{-1}\left(\psi\cir
 :
 \begin_inset Formula 
 \begin{align*}
-0 & =\left(S^{-1}\psi\right)\left(x\right)=\left(S^{-1}\psi\right)\left(\frac{n}{s}\right)\stackrel{\ref{sub:Konstr-SinvM}}{=}\frac{\psi\left(n\right)}{s}
+0 & =\left(S^{-1}\psi\right)\left(x\right)=\left(S^{-1}\psi\right)\left(\frac{n}{s}\right)\stackrel{\ref{sec:Konstr-SinvM}}{=}\frac{\psi\left(n\right)}{s}
 \end{align*}
 
 \end_inset
@@ -7081,7 +7035,7 @@ S^{-1}\psi\circ S^{-1}\varphi & \stackrel{\left(!\right)}{=}S^{-1}\left(\psi\cir
 Nach 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Konstr-SinvM"
+reference "sec:Konstr-SinvM"
 
 \end_inset
 
@@ -7149,11 +7103,11 @@ qqed
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Proposition
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:Prop-AModulnIso"
+name "sec:Prop-AModulnIso"
 
 \end_inset
 
@@ -7258,7 +7212,7 @@ f\left(\frac{a}{s}\cdot\left(\frac{b}{t}\otimes m\right)\right) & =f\left(\frac{
 Nach 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Konstr-SinvM"
+reference "sec:Konstr-SinvM"
 
 \end_inset
 
@@ -7499,11 +7453,11 @@ qqed
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Beispiel
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:Bsp-exaktFolge"
+name "sec:Bsp-exaktFolge"
 
 \end_inset
 
@@ -7554,14 +7508,14 @@ Beweis
 Folgt aus 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Prop-exaktAModuln"
+reference "sec:Prop-exaktAModuln"
 
 \end_inset
 
  und 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Prop-AModulnIso"
+reference "sec:Prop-AModulnIso"
 
 \end_inset
 
@@ -7588,7 +7542,7 @@ qqed
 Beweis von 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Bsp-exaktFolge"
+reference "sec:Bsp-exaktFolge"
 
 \end_inset
 
@@ -7609,7 +7563,7 @@ TODO: Diagramm einfügen
 Nach 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Prop-exaktAModuln"
+reference "sec:Prop-exaktAModuln"
 
 \end_inset
 
@@ -7628,7 +7582,7 @@ reference "sub:Prop-exaktAModuln"
 Die senkrechten Isomorphismen sind wie in 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Prop-exaktAModuln"
+reference "sec:Prop-exaktAModuln"
 
 \end_inset
 
@@ -7673,11 +7627,11 @@ textcolor{green}{???TODO???}]
 
 \end_layout
 
-\begin_layout Section
+\begin_layout Chapter
 Der Satz von Gauß
 \begin_inset CommandInset label
 LatexCommand label
-name "sec:Der-Satz-von-Gauss"
+name "chap:Der-Satz-von-Gauss"
 
 \end_inset
 
@@ -7685,17 +7639,17 @@ name "sec:Der-Satz-von-Gauss"
 \end_layout
 
 \begin_layout Subsubsection*
-Fixiere in Abschnitt 
+Fixiere in Kapitel 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sec:Der-Satz-von-Gauss"
+reference "chap:Der-Satz-von-Gauss"
 
 \end_inset
 
  (
 \begin_inset CommandInset ref
 LatexCommand nameref
-reference "sec:Der-Satz-von-Gauss"
+reference "chap:Der-Satz-von-Gauss"
 
 \end_inset
 
@@ -7759,13 +7713,13 @@ Beispiel
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Erinnerung 
 \series medium
 (Primfaktorzerlegung)
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:Erin-PFZ"
+name "sec:Erin-PFZ"
 
 \end_inset
 
@@ -7878,11 +7832,11 @@ Setze
 .
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Bemerkung
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:Bem-phiX"
+name "sec:Bem-phiX"
 
 \end_inset
 
@@ -8009,13 +7963,13 @@ qqed
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Proposition und Definition 
 \series medium
 (Lemma von Gauß)
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:PuD-LemmaGauss"
+name "sec:PuD-LemmaGauss"
 
 \end_inset
 
@@ -8202,7 +8156,7 @@ iii
 \end_inset
 
  
-\begin_inset Formula $\fall_{p}:\nu_{p}\left(f\right)=\infty\Leftrightarrow\fall_{p,i}:\nu_{p}\left(a_{i}\right)=\infty\stackrel{\ref{sub:Erin-PFZ}}{\Leftrightarrow}\fall_{i}:a_{i}=0\Leftrightarrow f=0$
+\begin_inset Formula $\fall_{p}:\nu_{p}\left(f\right)=\infty\Leftrightarrow\fall_{p,i}:\nu_{p}\left(a_{i}\right)=\infty\stackrel{\ref{sec:Erin-PFZ}}{\Leftrightarrow}\fall_{i}:a_{i}=0\Leftrightarrow f=0$
 \end_inset
 
 
@@ -8222,7 +8176,7 @@ iii
 \end_inset
 
  
-\begin_inset Formula $f\in R\left[X\right]\Leftrightarrow\fall_{i}:a_{i}\in R\stackrel{\ref{sub:Erin-PFZ}}{\Leftrightarrow}\fall_{p\in\mathcal{P},i}:\nu_{p}\left(a_{i}\right)\ge0\Leftrightarrow\fall_{p\in\mathcal{P}}\nu_{p}\left(f\right)\ge0$
+\begin_inset Formula $f\in R\left[X\right]\Leftrightarrow\fall_{i}:a_{i}\in R\stackrel{\ref{sec:Erin-PFZ}}{\Leftrightarrow}\fall_{p\in\mathcal{P},i}:\nu_{p}\left(a_{i}\right)\ge0\Leftrightarrow\fall_{p\in\mathcal{P}}\nu_{p}\left(f\right)\ge0$
 \end_inset
 
 
@@ -8262,7 +8216,7 @@ Schreibe
  Dann folgt:
 \begin_inset Formula 
 \begin{align*}
-\nu_{p}\left(f\cdot g\right) & =\nu_{p}\left(\sum_{i}\left(fb_{i}\right)X^{i}\right)\stackrel{\text{Def.}}{=}\min\left\{ \nu_{p}\left(fb_{i}\right)\right\} \stackrel{\ref{sub:Erin-PFZ},\text{ da }f\in Q}{=}\min\left\{ \nu_{p}\left(f\right)+\nu_{p}\left(b_{i}\right)\right\} =\\
+\nu_{p}\left(f\cdot g\right) & =\nu_{p}\left(\sum_{i}\left(fb_{i}\right)X^{i}\right)\stackrel{\text{Def.}}{=}\min\left\{ \nu_{p}\left(fb_{i}\right)\right\} \stackrel{\ref{sec:Erin-PFZ},\text{ da }f\in Q}{=}\min\left\{ \nu_{p}\left(f\right)+\nu_{p}\left(b_{i}\right)\right\} =\\
  & =\nu_{p}\left(f\right)+\min\left\{ \nu_{p}\left(b_{i}\right)\right\} =\nu_{p}\left(f\right)+\nu_{p}\left(g\right)
 \end{align*}
 
@@ -8345,7 +8299,7 @@ Sei
  wie in 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Bem-phiX"
+reference "sec:Bem-phiX"
 
 \end_inset
 
@@ -8378,7 +8332,7 @@ Also gibt es ein
  Nach 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Bem-phiX"
+reference "sec:Bem-phiX"
 
 \end_inset
 
@@ -8449,11 +8403,11 @@ qqed
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Korollar
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:Kor-hfgNormiert"
+name "sec:Kor-hfgNormiert"
 
 \end_inset
 
@@ -8540,7 +8494,7 @@ Weil für alle
 
 \begin_inset Formula 
 \begin{align*}
-0 & =\nu_{p}\left(h\right)\sr{=}{\eqref{eq:hfg}}{\ref{sub:PuD-LemmaGauss}\text{ iii)}}\underbrace{\nu_{p}\left(f\right)}_{\le0}+\underbrace{\nu_{p}\left(g\right)}_{\le0}
+0 & =\nu_{p}\left(h\right)\sr{=}{\eqref{eq:hfg}}{\ref{sec:PuD-LemmaGauss}\text{ iii)}}\underbrace{\nu_{p}\left(f\right)}_{\le0}+\underbrace{\nu_{p}\left(g\right)}_{\le0}
 \end{align*}
 
 \end_inset
@@ -8576,11 +8530,11 @@ qqed
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Beispiel
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:Bsp-Vieta"
+name "sec:Bsp-Vieta"
 
 \end_inset
 
@@ -8663,7 +8617,7 @@ Weil
 Aus 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Kor-hfgNormiert"
+reference "sec:Kor-hfgNormiert"
 
 \end_inset
 
@@ -8719,7 +8673,7 @@ qqed
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Beispiel
 \end_layout
 
@@ -8767,7 +8721,7 @@ Gäbe es ein
 , so folgte aus 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Bsp-Vieta"
+reference "sec:Bsp-Vieta"
 
 \end_inset
 
@@ -8807,7 +8761,7 @@ qqed
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Proposition und Definition 
 \series medium
 (primitiv)
@@ -8815,7 +8769,7 @@ Proposition und Definition
 
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:PuD-primitiv"
+name "sec:PuD-primitiv"
 
 \end_inset
 
@@ -8992,7 +8946,7 @@ iii
 Wendet man
 \begin_inset Formula 
 \begin{align*}
-\fall_{q\in Q^{*}}: & \left(\fall_{p\in\mathcal{P}}:\nu_{p}\left(q\right)=0\stackrel{\ref{sub:Erin-PFZ}}{\Leftrightarrow}q\in R^{*}\right)
+\fall_{q\in Q^{*}}: & \left(\fall_{p\in\mathcal{P}}:\nu_{p}\left(q\right)=0\stackrel{\ref{sec:Erin-PFZ}}{\Leftrightarrow}q\in R^{*}\right)
 \end{align*}
 
 \end_inset
@@ -9061,7 +9015,7 @@ iii
  gilt nach 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:PuD-LemmaGauss"
+reference "sec:PuD-LemmaGauss"
 
 \end_inset
 
@@ -9112,7 +9066,7 @@ Deswegen ist
 :
 \begin_inset Formula 
 \begin{align*}
-\nu_{p}\left(\tilde{f}\right) & =\nu_{p}\left(\alpha^{-1}f\right)\stackrel{\ref{sub:PuD-LemmaGauss}\text{ iii)}}{=}-\underbrace{\nu_{p}\left(\alpha\right)}_{=\nu_{p}\left(f\right)}+\nu_{p}\left(f\right)=0
+\nu_{p}\left(\tilde{f}\right) & =\nu_{p}\left(\alpha^{-1}f\right)\stackrel{\ref{sec:PuD-LemmaGauss}\text{ iii)}}{=}-\underbrace{\nu_{p}\left(\alpha\right)}_{=\nu_{p}\left(f\right)}+\nu_{p}\left(f\right)=0
 \end{align*}
 
 \end_inset
@@ -9193,13 +9147,13 @@ ist nicht primitiv, aber
 ist primitiv.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Satz
 \series medium
  (von Gauß)
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:Satz-Gauss"
+name "sec:Satz-Gauss"
 
 \end_inset
 
@@ -9402,11 +9356,11 @@ end{abclist}
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Beispiel
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:Bsp-Prim"
+name "sec:Bsp-Prim"
 
 \end_inset
 
@@ -9481,7 +9435,7 @@ Das Polynom
 Beweis von 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Satz-Gauss"
+reference "sec:Satz-Gauss"
 
 \end_inset
 
@@ -9509,7 +9463,7 @@ ii)
  wie in 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Bem-phiX"
+reference "sec:Bem-phiX"
 
 \end_inset
 
@@ -9632,7 +9586,7 @@ Es folgt für alle
 :
 \begin_inset Formula 
 \begin{align*}
-0 & \sr{=}{\ref{sub:PuD-primitiv}\text{i)}}{q\text{ prim}}v_{p}\left(q\right)\sr{=}{\eqref{eq:fqh}}{\ref{sub:PuD-LemmaGauss}\text{iii)}}-v_{p}\left(h\right)+\underbrace{v_{p}\left(f\right)}_{\ge0\left(\text{da }f\in R\left[X\right]\right)}
+0 & \sr{=}{\ref{sec:PuD-primitiv}\text{i)}}{q\text{ prim}}v_{p}\left(q\right)\sr{=}{\eqref{eq:fqh}}{\ref{sec:PuD-LemmaGauss}\text{iii)}}-v_{p}\left(h\right)+\underbrace{v_{p}\left(f\right)}_{\ge0\left(\text{da }f\in R\left[X\right]\right)}
 \end{align*}
 
 \end_inset
@@ -9644,7 +9598,7 @@ Daher ist
  und aus 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:PuD-LemmaGauss"
+reference "sec:PuD-LemmaGauss"
 
 \end_inset
 
@@ -9740,9 +9694,11 @@ Schreibe
 \begin_inset Formula $a\in R,\tilde{f}\in R\left[X\right]$
 \end_inset
 
- primitiv (vgl.
- 
-\begin_inset Formula $\ref{sub:PuD-primitiv}$
+ primitiv (vergleiche 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:PuD-primitiv"
+
 \end_inset
 
  ii)).
@@ -9778,7 +9734,7 @@ Schreibe in
  ist ein Hauptidealring, also faktoriell.)
 \begin_inset Formula 
 \begin{align}
-f & =\prod_{i=1}^{n}f_{i}\stackrel{\ref{sub:PuD-primitiv}\text{,i)}}{=}a\cdot\prod_{i=1}^{n}\tilde{f}_{i}
+f & =\prod_{i=1}^{n}f_{i}\stackrel{\ref{sec:PuD-primitiv}\text{,i)}}{=}a\cdot\prod_{i=1}^{n}\tilde{f}_{i}
 \end{align}
 
 \end_inset
@@ -9806,7 +9762,7 @@ Dann folgt für alle
 :
 \begin_inset Formula 
 \begin{align*}
-v_{p}\left(a\right) & \stackrel{\ref{sub:PuD-LemmaGauss}\text{iii)}}{=}\underbrace{v_{p}\left(f\right)}_{=0}-\sum_{i=1}^{n}\underbrace{v_{p}\left(\tilde{f}_{i}\right)}_{=0}=0
+v_{p}\left(a\right) & \stackrel{\ref{sec:PuD-LemmaGauss}\text{iii)}}{=}\underbrace{v_{p}\left(f\right)}_{=0}-\sum_{i=1}^{n}\underbrace{v_{p}\left(\tilde{f}_{i}\right)}_{=0}=0
 \end{align*}
 
 \end_inset
@@ -9814,7 +9770,7 @@ v_{p}\left(a\right) & \stackrel{\ref{sub:PuD-LemmaGauss}\text{iii)}}{=}\underbra
 Daraus folgt mit 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Erin-PFZ"
+reference "sec:Erin-PFZ"
 
 \end_inset
 
@@ -9855,7 +9811,7 @@ status open
 \backslash
 qqed[
 \backslash
-ref{sub:Satz-Gauss}]
+ref{sec:Satz-Gauss}]
 \end_layout
 
 \end_inset
@@ -9863,7 +9819,7 @@ ref{sub:Satz-Gauss}]
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Beispiel und Definition 
 \series medium
 (rationale Funktionen)
@@ -9922,7 +9878,7 @@ der Polynomring in den Variablen
 Wegen 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Satz-Gauss"
+reference "sec:Satz-Gauss"
 
 \end_inset
 
@@ -9958,7 +9914,7 @@ TODO: Überprüfen???
 Wegen 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Satz-Gauss"
+reference "sec:Satz-Gauss"
 
 \end_inset
 
@@ -10022,7 +9978,7 @@ Dies ist äquivalent dazu, dass
 Aus 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Bsp-Vieta"
+reference "sec:Bsp-Vieta"
 
 \end_inset
 
@@ -10080,11 +10036,11 @@ qqed
 
 \end_layout
 
-\begin_layout Section
+\begin_layout Chapter
 Irreduzibilitätskriterien
 \begin_inset CommandInset label
 LatexCommand label
-name "sec:Irreduzibilitätskriterien"
+name "chap:Irreduzibilitätskriterien"
 
 \end_inset
 
@@ -10092,17 +10048,17 @@ name "sec:Irreduzibilitätskriterien"
 \end_layout
 
 \begin_layout Subsubsection*
-Fixiere in Abschnitt 
+Fixiere in Kapitel 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sec:Irreduzibilitätskriterien"
+reference "chap:Irreduzibilitätskriterien"
 
 \end_inset
 
  (
 \begin_inset CommandInset ref
 LatexCommand nameref
-reference "sec:Irreduzibilitätskriterien"
+reference "chap:Irreduzibilitätskriterien"
 
 \end_inset
 
@@ -10121,7 +10077,7 @@ Es sei
  sein Quotientenkörper.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Proposition
 \series medium
  (Äquivalenz von Primelement in 
@@ -10137,7 +10093,7 @@ Proposition
 
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:Prop-primRQ"
+name "sec:Prop-primRQ"
 
 \end_inset
 
@@ -10302,7 +10258,7 @@ end{iiilist}
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Bemerkung
 \end_layout
 
@@ -10310,7 +10266,7 @@ Bemerkung
 Proposition 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Prop-primRQ"
+reference "sec:Prop-primRQ"
 
 \end_inset
 
@@ -10329,7 +10285,7 @@ reference "sub:Prop-primRQ"
 Beweis von 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Prop-primRQ"
+reference "sec:Prop-primRQ"
 
 \end_inset
 
@@ -10368,7 +10324,7 @@ iii
  Die Aussage wurde bereits in 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:PuD-primitiv"
+reference "sec:PuD-primitiv"
 
 \end_inset
 
@@ -10397,7 +10353,7 @@ iii
 \end_inset
 
  ist ein Primelement 
-\begin_inset Formula $\stackrel{\ref{sub:Satz-Gauss}\text{,a)}\Leftrightarrow\text{b)}}{\Leftrightarrow}$
+\begin_inset Formula $\stackrel{\ref{sec:Satz-Gauss}\text{,a)}\Leftrightarrow\text{b)}}{\Leftrightarrow}$
 \end_inset
 
  a)
@@ -10429,7 +10385,7 @@ status open
 \backslash
 qqed[
 \backslash
-ref{sub:Prop-primRQ}]
+ref{sec:Prop-primRQ}]
 \end_layout
 
 \end_inset
@@ -10437,13 +10393,13 @@ ref{sub:Prop-primRQ}]
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Satz
 \series medium
  (Reduktionskriterium)
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:Satz-RedKrit"
+name "sec:Satz-RedKrit"
 
 \end_inset
 
@@ -10483,7 +10439,7 @@ Sei
  wie in 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Bem-phiX"
+reference "sec:Bem-phiX"
 
 \end_inset
 
@@ -10522,7 +10478,7 @@ Ist
 “!)
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Beispiel
 \end_layout
 
@@ -10530,7 +10486,7 @@ Beispiel
 Wähle in 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Satz-RedKrit"
+reference "sec:Satz-RedKrit"
 
 \end_inset
 
@@ -10589,7 +10545,7 @@ Dann ist
  ist nicht irreduzibel, vergleiche 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Bsp-Prim"
+reference "sec:Bsp-Prim"
 
 \end_inset
 
@@ -10721,7 +10677,7 @@ end{iiilist}
 Beweis von 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Satz-RedKrit"
+reference "sec:Satz-RedKrit"
 
 \end_inset
 
@@ -10938,7 +10894,7 @@ Nach dem 1.
  irreduzibel und mit 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Satz-Gauss"
+reference "sec:Satz-Gauss"
 
 \end_inset
 
@@ -10971,7 +10927,7 @@ status open
 \backslash
 qqed[
 \backslash
-ref{sub:Satz-RedKrit}]
+ref{sec:Satz-RedKrit}]
 \end_layout
 
 \end_inset
@@ -10979,13 +10935,13 @@ ref{sub:Satz-RedKrit}]
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Korollar 
 \series medium
 (Eisensteinkriterium)
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:Kor-Eisenstein"
+name "sec:Kor-Eisenstein"
 
 \end_inset
 
@@ -11028,7 +10984,7 @@ Dann ist
  (und damit nach 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Satz-Gauss"
+reference "sec:Satz-Gauss"
 
 \end_inset
 
@@ -11224,8 +11180,15 @@ qqed
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Beispiel
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Bsp-IrreduzKrit"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -11299,7 +11262,7 @@ Zeige noch:
 Dies folgt sofort aus dem Eisensteinkriterium (Korollar 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Kor-Eisenstein"
+reference "sec:Kor-Eisenstein"
 
 \end_inset
 
@@ -11395,7 +11358,7 @@ Beweis
 Die Bedingungen in 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Kor-Eisenstein"
+reference "sec:Kor-Eisenstein"
 
 \end_inset
 
@@ -11677,7 +11640,7 @@ Wegen
  irreduzibel und aus 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Satz-RedKrit"
+reference "sec:Satz-RedKrit"
 
 \end_inset
 
@@ -11772,7 +11735,7 @@ Y-1=p & \:\,\,|\, a_{0}=1-Y=-\left(Y-1\right)\\
 Die Behauptung folgt aus Korollar 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Kor-Eisenstein"
+reference "sec:Kor-Eisenstein"
 
 \end_inset
 
@@ -11829,7 +11792,7 @@ Beweis
  Wegen 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Bsp-Vieta"
+reference "sec:Bsp-Vieta"
 
 \end_inset
 
@@ -11907,7 +11870,7 @@ Wäre nun
  reduzibel, so wäre wegen 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Satz-Gauss"
+reference "sec:Satz-Gauss"
 
 \end_inset
 
@@ -11980,12 +11943,9 @@ reference "eq:overf"
 
 , und keines dieser Polynome besitzt Grad 2.
  Dies ist ein Widerspruch zu der angenommenen Reduzibilität.
-
 \begin_inset Newline newline
 \end_inset
 
-
-\lang ngerman
 
 \begin_inset ERT
 status open
@@ -12206,7 +12166,7 @@ end{iiilist}
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Bemerkung
 \end_layout
 
@@ -12307,17 +12267,17 @@ qqed
 
 \end_layout
 
-\begin_layout Section
+\begin_layout Chapter
 (Algebraische) Körpererweiterungen
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Proposition und Definition 
 \series medium
 (Charakteristik, Primkörper)
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:PuD-Charakteristik"
+name "sec:PuD-Charakteristik"
 
 \end_inset
 
@@ -12582,7 +12542,7 @@ end{iiilist}
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Definition und Beispiel 
 \series medium
 (Körpererweiterung)
@@ -12623,7 +12583,7 @@ Körpererweiterung
 TODO: Abb 3
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Bemerkung
 \end_layout
 
@@ -12643,7 +12603,7 @@ Für den Ringhomomorphismus von Integritätsringen
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Proposition und Definition 
 \series medium
 (Frobenius)
@@ -12878,7 +12838,7 @@ Damit ist
 \begin_inset Formula $\stackrel{k\text{ Körper}}{\Leftrightarrow}$
 \end_inset
 
-
+ 
 \begin_inset Formula $x=0$
 \end_inset
 
@@ -12957,7 +12917,7 @@ iii
  nach 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Kor-aPhin1"
+reference "sec:Kor-aPhin1"
 
 \end_inset
 
@@ -12976,7 +12936,7 @@ reference "sub:Kor-aPhin1"
  und nach 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:PuD-Charakteristik"
+reference "sec:PuD-Charakteristik"
 
 \end_inset
 
@@ -13063,7 +13023,7 @@ qqed
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Proposition und Definition 
 \series medium
 (algebraisch, transzendent, Zwischenkörper)
@@ -13181,7 +13141,7 @@ Beweis
 TODO: Wo?
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Definition
 \end_layout
 
@@ -13229,8 +13189,15 @@ der Grad von
 “)
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 (Grad-)Satz
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Satz-Grad"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -13269,7 +13236,7 @@ status open
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Beispiel
 \end_layout
 
@@ -13329,11 +13296,11 @@ Also ist wegen
 
 \end_layout
 
-\begin_layout Section
+\begin_layout Chapter
 Der algebraische Abschluss eines Körpers
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Proposition und Definition
 \end_layout
 
@@ -13485,7 +13452,7 @@ algebraisch abgeschlossen
 .
 \end_layout
 
-\begin_layout Paragraph*
+\begin_layout Subsubsection*
 Beweis
 \end_layout
 
@@ -13511,11 +13478,14 @@ iv): Seien
 \end_inset
 
 .
- Wegen 
+\end_layout
+
+\begin_layout Standard
+Weil 
 \begin_inset Formula $f$
 \end_inset
 
- irreduzibel folgt aus iii) 
+ irreduzibel ist, folgt aus iii) 
 \begin_inset Formula $\text{deg}\left(f\right)=1$
 \end_inset
 
@@ -13540,14 +13510,14 @@ i): Sei
 \end_inset
 
 .
- Es existiert ein 
+ Es existiert ein irreduzibles 
 \begin_inset Formula $g\in k\left[X\right]$
 \end_inset
 
- irreduzibel:
+ mit:
 \begin_inset Formula 
 \begin{align}
-g|f & \qquad(*)
+g & |f\label{eq:gf}
 \end{align}
 
 \end_inset
@@ -13557,11 +13527,14 @@ g|f & \qquad(*)
 
 \begin_layout Standard
 Nach 
-\begin_inset Formula $\ref{}5.7$
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Satz-Grad"
+
 \end_inset
 
  ist 
-\begin_inset Formula $k\subseteq E:=\modulo{k\left[X\right]}{\left(g\right)}$
+\begin_inset Formula $E:=\modulo{k\left[X\right]}{\left(g\right)}\supseteq k$
 \end_inset
 
  eine endliche (und damit algebraische) Körpererweiterung, und offenbar
@@ -13574,7 +13547,24 @@ Nach
 \end_inset
 
 .
- Nach iv) gilt 
+\end_layout
+
+\begin_layout Standard
+
+\color green
+TODO: Wie kann 
+\begin_inset Formula $\alpha\in\modulo{k\left[X\right]}{\left(g\right)}$
+\end_inset
+
+ eine Nullstelle von 
+\begin_inset Formula $g\in k\left[X\right]$
+\end_inset
+
+ sein?
+\end_layout
+
+\begin_layout Standard
+Nach iv) gilt 
 \begin_inset Formula $k=E$
 \end_inset
 
@@ -13582,11 +13572,14 @@ Nach
 \begin_inset Formula $g$
 \end_inset
 
-, wegen 
-\begin_inset Formula $\ref{}(*)$
+ und wegen 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:gf"
+
 \end_inset
 
- also auch 
+ auch 
 \begin_inset Formula $f$
 \end_inset
 
@@ -13613,7 +13606,7 @@ qqed
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Proposition und Definition
 \end_layout
 
@@ -13623,18 +13616,21 @@ Seien
 \end_inset
 
  eine Menge und für jede endliche Teilmenge 
-\begin_inset Formula $\mathfrak{X}\supseteq\mathfrak{X}'=\left\{ X_{1},\ldots,X_{n}\right\} $
+\begin_inset Formula $\mathfrak{X}'=\left\{ X_{1},\ldots,X_{n}\right\} \subseteq\mathfrak{X}$
 \end_inset
 
- sei 
-\begin_inset Formula $k\left[\mathfrak{X}'\right]:=k\left[X_{1},\ldots,X_{n}\right]$
+ sei definiert:
+\begin_inset Formula 
+\begin{align*}
+k\left[\mathfrak{X}'\right] & :=k\left[X_{1},\ldots,X_{n}\right]
+\end{align*}
+
 \end_inset
 
-.
- Dann heißt
+Dann heißt
 \begin_inset Formula 
 \begin{align}
-k\left[\mathfrak{X}\right]:=\bigcup_{\mathfrak{X}'\subseteq\mathfrak{X}\text{ endlich}}k\left[\mathfrak{X}'\right] & \qquad(+)
+k\left[\mathfrak{X}\right] & :=\bigcup_{\mathfrak{X}'\subseteq\mathfrak{X}\text{ endlich}}k\left[\mathfrak{X}'\right]\label{eq:kX}
 \end{align}
 
 \end_inset
@@ -13659,7 +13655,11 @@ der Polynomring in den Variablen
 \end_layout
 
 \begin_layout Standard
-Er besitzt folgende universelle Eigenschaft: Für jede kommutative 
+Er besitzt folgende universelle Eigenschaft:
+\end_layout
+
+\begin_layout Standard
+Für jede kommutative 
 \begin_inset Formula $k$
 \end_inset
 
@@ -13678,13 +13678,16 @@ Er besitzt folgende universelle Eigenschaft: Für jede kommutative
 bijektiv.
 \end_layout
 
-\begin_layout Paragraph*
+\begin_layout Subsubsection*
 Beweis
 \end_layout
 
 \begin_layout Standard
 Wegen 
-\begin_inset Formula $\left(\ref{}+\right)$
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:kX"
+
 \end_inset
 
  ist die Abbildung
@@ -13750,11 +13753,11 @@ qqed
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Das Lemma von Zorn
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsection
 Definition
 \end_layout
 
@@ -13932,7 +13935,7 @@ obere Schranke für
 .
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsection
 Beispiel
 \end_layout
 
@@ -13970,7 +13973,7 @@ Seien
 .
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsection
 Satz
 \series medium
  (Lemma von Zorn)
@@ -13997,7 +14000,7 @@ Sei
  ein maximales Element.
 \end_layout
 
-\begin_layout Paragraph*
+\begin_layout Subsubsection*
 (ohne Beweis)
 \end_layout
 
@@ -14013,7 +14016,7 @@ Sei
 
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsection
 Beispiel
 \end_layout
 
@@ -14050,7 +14053,7 @@ Sei
  total geordnet.
 \end_layout
 
-\begin_layout Paragraph*
+\begin_layout Subsubsection*
 Behauptung
 \end_layout
 
@@ -14069,7 +14072,7 @@ Behauptung
 )
 \end_layout
 
-\begin_layout Paragraph*
+\begin_layout Subsubsection*
 Beweis
 \end_layout
 
@@ -14181,7 +14184,7 @@ Damit erfüllt
  und es folgt:
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsection
 6.3.4 Satz
 \end_layout
 
@@ -14196,7 +14199,7 @@ Damit erfüllt
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Satz und Definition 
 \series medium
 (algebraischer Abschluss)
@@ -14230,7 +14233,7 @@ ein abgebraischer Abschluss von
 .
 \end_layout
 
-\begin_layout Paragraph*
+\begin_layout Subsubsection*
 Bemerkung
 \end_layout
 
@@ -14246,7 +14249,7 @@ Die Notation
  gerechtfertigt.
 \end_layout
 
-\begin_layout Paragraph*
+\begin_layout Subsubsection*
 Beweis von 
 \begin_inset Formula $\ref{}6.4$
 \end_inset
@@ -14274,7 +14277,7 @@ k\left[\mathfrak{X}\right]\supseteq I & :=\left(f\left(X_{f}\right)|f\in I\right
 
 \end_layout
 
-\begin_layout Paragraph*
+\begin_layout Subsubsection*
 Behauptung
 \end_layout
 
@@ -14285,7 +14288,7 @@ Behauptung
 
 \end_layout
 
-\begin_layout Paragraph*
+\begin_layout Subsubsection*
 Beweis
 \end_layout
 
@@ -14411,7 +14414,7 @@ Wegen Behauptung ist
 .
 \end_layout
 
-\begin_layout Subparagraph*
+\begin_layout Subsubsection*
 Zeige noch:
 \end_layout
 
@@ -14487,7 +14490,7 @@ end{iiilist}
 
 \end_layout
 
-\begin_layout Paragraph*
+\begin_layout Subsubsection*
 Beweis
 \end_layout
 
@@ -14564,7 +14567,7 @@ Teil i) folgt aus
 .
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Notation und Bemerkung
 \end_layout
 
@@ -14605,11 +14608,11 @@ Dann gilt
 TODO: Rest
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Lemma
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:Lem-homkalg"
+name "sec:Lem-homkalg"
 
 \end_inset
 
@@ -14623,7 +14626,7 @@ name "sub:Lem-homkalg"
 
 \end_layout
 
-\begin_layout Section
+\begin_layout Chapter
 Zerfällungskörper
 \end_layout
 
@@ -14684,13 +14687,13 @@ Fixiere:
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Definition 
 \series medium
 (Zerfällungskörper)
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:Def-ZK"
+name "sec:Def-ZK"
 
 \end_inset
 
@@ -14813,11 +14816,11 @@ end{iiilist}
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Beispiel
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:Bsp-ZK"
+name "sec:Bsp-ZK"
 
 \end_inset
 
@@ -15002,13 +15005,13 @@ Insbesondere zerfällt
 TODO: Rest einfügen
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Satz 
 \series medium
 (Existenz und Eindeutigkeit von Zerfällungskörpern)
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:Satz-eeZK"
+name "sec:Satz-eeZK"
 
 \end_inset
 
@@ -15481,13 +15484,13 @@ end{iiilist}
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Satz und Definition 
 \series medium
 (normale Körpererweiterung)
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:SuD-normKE"
+name "sec:SuD-normKE"
 
 \end_inset
 
@@ -15630,7 +15633,7 @@ end{iiilist}
 Beweis von 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:SuD-normKE"
+reference "sec:SuD-normKE"
 
 \end_inset
 
@@ -15731,7 +15734,7 @@ Zeige:
 , das heißt es gelten 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Def-ZK"
+reference "sec:Def-ZK"
 
 \end_inset
 
@@ -15809,7 +15812,7 @@ ii)
  (vergleiche Beweis von 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Satz-eeZK"
+reference "sec:Satz-eeZK"
 
 \end_inset
 
@@ -15832,7 +15835,7 @@ qqed
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Beispiel
 \end_layout
 
@@ -15840,14 +15843,14 @@ Beispiel
 Wegen 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Bsp-ZK"
+reference "sec:Bsp-ZK"
 
 \end_inset
 
  und 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:SuD-normKE"
+reference "sec:SuD-normKE"
 
 \end_inset
 
@@ -15870,13 +15873,13 @@ reference "sub:SuD-normKE"
  in Linearfaktoren.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Proposition 
 \series medium
 (algebraischer Abschluss ist normal)
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:Prop-algAnorm"
+name "sec:Prop-algAnorm"
 
 \end_inset
 
@@ -15916,7 +15919,7 @@ Beweis
 Folgt aus 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:SuD-normKE"
+reference "sec:SuD-normKE"
 
 \end_inset
 
@@ -15943,7 +15946,7 @@ qqed
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Beispiel
 \end_layout
 
@@ -16082,7 +16085,7 @@ iii
  Prüfe 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:SuD-normKE"
+reference "sec:SuD-normKE"
 
 \end_inset
 
@@ -16166,7 +16169,7 @@ iii
  Klar nach 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:SuD-normKE"
+reference "sec:SuD-normKE"
 
 \end_inset
 
@@ -16205,7 +16208,7 @@ end{iiilist}
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Beispiel 
 \series medium
 („normal ist nicht-transitiv“)
@@ -16331,7 +16334,7 @@ qqed
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Definition 
 \series medium
 (normale Hülle)
@@ -16443,13 +16446,13 @@ end{iiilist}
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Satz und Definition 
 \series medium
 (Konjugierte)
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:SuD-Konj"
+name "sec:SuD-Konj"
 
 \end_inset
 
@@ -16552,7 +16555,7 @@ iii
 ,
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Prop-algAnorm"
+reference "sec:Prop-algAnorm"
 
 \end_inset
 
@@ -16659,7 +16662,7 @@ iii
  (vergleiche 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Satz-eeZK"
+reference "sec:Satz-eeZK"
 
 \end_inset
 
@@ -16710,7 +16713,7 @@ iii
  Übung (mit 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Lem-homkalg"
+reference "sec:Lem-homkalg"
 
 \end_inset
 
@@ -16749,7 +16752,7 @@ qqed
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Beispiel
 \end_layout
 
@@ -16761,7 +16764,7 @@ Wähle
  in 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:SuD-Konj"
+reference "sec:SuD-Konj"
 
 \end_inset
 
@@ -16849,7 +16852,7 @@ Für die normale Hülle
  folgt mit 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:SuD-Konj"
+reference "sec:SuD-Konj"
 
 \end_inset
 
@@ -16891,7 +16894,7 @@ TODO: Abb3
 
 \end_layout
 
-\begin_layout Section
+\begin_layout Chapter
 Separabilität
 \end_layout
 
@@ -16903,7 +16906,7 @@ Sei
  ein Körper.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Definition 
 \series medium
 ((formale) Ableitung)
@@ -17057,11 +17060,11 @@ qqed
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Beispiel
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:Bsp-abl"
+name "sec:Bsp-abl"
 
 \end_inset
 
@@ -17102,13 +17105,13 @@ qqed
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Satz und Definition 
 \series medium
 (mehrfache Nullstelle)
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:SuD-mNst"
+name "sec:SuD-mNst"
 
 \end_inset
 
@@ -17257,11 +17260,11 @@ status open
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Lemma
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:Lem-mNst"
+name "sec:Lem-mNst"
 
 \end_inset
 
@@ -17569,7 +17572,7 @@ iii
  aus 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:SuD-mNst"
+reference "sec:SuD-mNst"
 
 \end_inset
 
@@ -17773,7 +17776,7 @@ qqed
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Definition
 \series medium
  (separables Polynom)
@@ -17798,11 +17801,11 @@ separabel
  einfache Nullstellen sind.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Proposition
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:Prop-ch0sep"
+name "sec:Prop-ch0sep"
 
 \end_inset
 
@@ -17837,7 +17840,7 @@ Wegen
  und 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Bsp-abl"
+reference "sec:Bsp-abl"
 
 \end_inset
 
@@ -17849,7 +17852,7 @@ reference "sub:Bsp-abl"
  Aus 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Lem-mNst"
+reference "sec:Lem-mNst"
 
 \end_inset
 
@@ -17872,11 +17875,11 @@ qqed
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Beispiel
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:Bsp-sep"
+name "sec:Bsp-sep"
 
 \end_inset
 
@@ -17903,7 +17906,7 @@ Dann ist
  irreduzibel nach 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:45"
+reference "sec:Bsp-IrreduzKrit"
 
 \end_inset
 
@@ -17930,7 +17933,7 @@ Also ist
  nach 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Lem-mNst"
+reference "sec:Lem-mNst"
 
 \end_inset
 
@@ -17973,7 +17976,7 @@ Damit ist
  und es folgt:
 \begin_inset Formula 
 \begin{align*}
-\text{Hom}_{k\text{-Alg.}}\left(E,\overline{k}\right) & \sr{=}{\sim}{\ref{sub:Lem-homkalg}}\left\{ \beta\in\overline{k}|\beta^{p}=t\right\} \stackrel{\ref{asdf}5.3}{=}\left\{ \alpha\right\} 
+\text{Hom}_{k\text{-Alg.}}\left(E,\overline{k}\right) & \sr{=}{\sim}{\ref{sec:Lem-homkalg}}\left\{ \beta\in\overline{k}|\beta^{p}=t\right\} \stackrel{\ref{asdf}5.3}{=}\left\{ \alpha\right\} 
 \end{align*}
 
 \end_inset
@@ -17989,7 +17992,7 @@ Denn aus
  folgt mit 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Lem-homkalg"
+reference "sec:Lem-homkalg"
 
 \end_inset
 
@@ -18032,14 +18035,14 @@ Insbesondere folgt:
 “ in 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Lem-homkalg"
+reference "sec:Lem-homkalg"
 
 \end_inset
 
 )
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Definition
 \series medium
  (separable(s) Element/Körpererweiterung)
@@ -18157,7 +18160,7 @@ end{iiilist}
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Definition 
 \series medium
 (vollkommener Körper)
@@ -18178,7 +18181,7 @@ vollkommen
  separabel ist.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Beispiel
 \end_layout
 
@@ -18215,7 +18218,7 @@ iii
  (folgt aus 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Prop-ch0sep"
+reference "sec:Prop-ch0sep"
 
 \end_inset
 
@@ -18242,7 +18245,7 @@ iii
  ist nicht vollkommen, denn nach 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Bsp-sep"
+reference "sec:Bsp-sep"
 
 \end_inset
 
@@ -18293,13 +18296,13 @@ end{iiilist}
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Definition 
 \series medium
 (Stabilitätsgrad)
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:Def-sgrad"
+name "sec:Def-sgrad"
 
 \end_inset
 
@@ -18331,7 +18334,7 @@ der Stabilitätsgrad von
  
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Satz
 \end_layout
 
@@ -18542,7 +18545,7 @@ Weil nun
  irreduzibel und nicht separabel, woraus mit 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Lem-mNst"
+reference "sec:Lem-mNst"
 
 \end_inset
 
@@ -18557,7 +18560,7 @@ reference "sub:Lem-mNst"
  folgt und sich aus 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Bsp-abl"
+reference "sec:Bsp-abl"
 
 \end_inset
 
@@ -18668,11 +18671,11 @@ qqed
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Lemma
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:Lem-sepNst"
+name "sec:Lem-sepNst"
 
 \end_inset
 
@@ -18801,7 +18804,7 @@ iii
 \end_inset
 
  
-\begin_inset Formula $\left[k\left(\alpha\right):k\right]_{S}\stackrel{\ref{sub:Def-sgrad}}{=}\left|\text{Hom}_{k\text{-Alg.}}\left(k\left(\alpha\right),k\right)\right|\stackrel{\ref{sub:Lem-homkalg}}{=}\left|\left\{ \beta\in\overline{k}|\text{Mipo}_{k}\left(\alpha\right)\left(\beta\right)=0\right\} \right|$
+\begin_inset Formula $\left[k\left(\alpha\right):k\right]_{S}\stackrel{\ref{sec:Def-sgrad}}{=}\left|\text{Hom}_{k\text{-Alg.}}\left(k\left(\alpha\right),k\right)\right|\stackrel{\ref{sec:Lem-homkalg}}{=}\left|\left\{ \beta\in\overline{k}|\text{Mipo}_{k}\left(\alpha\right)\left(\beta\right)=0\right\} \right|$
 \end_inset
 
 
@@ -18879,11 +18882,11 @@ qqed
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Satz
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:Satz-sgrad"
+name "sec:Satz-sgrad"
 
 \end_inset
 
@@ -18975,7 +18978,7 @@ reference "asdf"
 Es ist nun klar, dass 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Satz-sgrad"
+reference "sec:Satz-sgrad"
 
 \end_inset
 
@@ -19127,7 +19130,7 @@ qqed
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Satz
 \end_layout
 
@@ -19263,7 +19266,7 @@ ii)
  iii): Wegen 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Satz-sgrad"
+reference "sec:Satz-sgrad"
 
 \end_inset
 
@@ -19281,7 +19284,7 @@ reference "asdf"
  annehmen und dann folgt die Behauptung aus 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Lem-sepNst"
+reference "sec:Lem-sepNst"
 
 \end_inset
 
@@ -19321,7 +19324,7 @@ iii)
 Dabei folgen die Ungleichungen aus dem Beweis von 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Lem-sepNst"
+reference "sec:Lem-sepNst"
 
 \end_inset
 
@@ -19344,7 +19347,7 @@ Es folgt
  (nach 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Lem-sepNst"
+reference "sec:Lem-sepNst"
 
 \end_inset
 
@@ -19385,7 +19388,7 @@ status open
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Korollar
 \end_layout
 
@@ -19595,7 +19598,7 @@ Daher ist
 .
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Satz 
 \series medium
 (vom primitiven Element)
@@ -19603,7 +19606,7 @@ Satz
  und Definition
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:SuD-primitel"
+name "sec:SuD-primitel"
 
 \end_inset
 
@@ -19680,7 +19683,7 @@ Sei
 Beweis von 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:SuD-primitel"
+reference "sec:SuD-primitel"
 
 \end_inset
 
@@ -19996,15 +19999,15 @@ qqed
 
 \end_layout
 
-\begin_layout Section
+\begin_layout Chapter
 Endliche Körper
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Lemma
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:Lem-91"
+name "sec:Lem-ZkXpn"
 
 \end_inset
 
@@ -20359,7 +20362,7 @@ qqed
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Satz und Definition 
 \series medium
 (
@@ -20369,7 +20372,7 @@ Satz und Definition
 )
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:SuD-ZkXpn"
+name "sec:SuD-ZkXpn"
 
 \end_inset
 
@@ -20428,7 +20431,7 @@ Für alle Primzahlen
 Beweis von 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:SuD-ZkXpn"
+reference "sec:SuD-ZkXpn"
 
 \end_inset
 
@@ -20439,7 +20442,7 @@ reference "sub:SuD-ZkXpn"
 Eindeutigkeit folgt aus 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Lem-91"
+reference "sec:Lem-ZkXpn"
 
 \end_inset
 
@@ -20553,7 +20556,7 @@ qqed
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Bemerkung
 \end_layout
 
@@ -20597,7 +20600,7 @@ Schreibe daher auch
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Korollar
 \end_layout
 
@@ -20681,7 +20684,7 @@ qqed
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Satz und Definition
 \end_layout
 
@@ -20951,17 +20954,17 @@ status open
 
 \end_layout
 
-\begin_layout Section
+\begin_layout Chapter
 Galoistheorie
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Definition 
 \series medium
 (galoissche Körpererweiterung, Galoisgruppe)
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:Def-Galoisgruppe"
+name "sec:Def-Galoisgruppe"
 
 \end_inset
 
@@ -21012,11 +21015,11 @@ die Galoisgruppe von
 .
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Beispiel und Definition
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:BuD-Galoisgruppe"
+name "sec:BuD-Galoisgruppe"
 
 \end_inset
 
@@ -21446,11 +21449,11 @@ end{iiilist}
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Proposition
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:Prop-EKkgaloissch"
+name "sec:Prop-EKkgaloissch"
 
 \end_inset
 
@@ -21758,7 +21761,7 @@ end{iiilist}
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Proposition
 \end_layout
 
@@ -21888,13 +21891,13 @@ qqed
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Satz und Definition 
 \series medium
 (Fixkörper)
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:SuD-Fixkörper"
+name "sec:SuD-Fixkörper"
 
 \end_inset
 
@@ -22069,15 +22072,15 @@ end{iiilist}
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Beispiel
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Korollar
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Bemerkung und Beispiel
 \end_layout
 
@@ -22095,13 +22098,13 @@ status open
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Satz 
 \series medium
 (Hauptsatz der Galoistheorie)
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:Satz-HSGaloistheorie"
+name "sec:Satz-HSGaloistheorie"
 
 \end_inset
 
@@ -22342,7 +22345,7 @@ iii
  folgt aus 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Prop-EKkgaloissch"
+reference "sec:Prop-EKkgaloissch"
 
 \end_inset
 
@@ -22418,7 +22421,7 @@ Zeige:
 Dies gilt nach 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:SuD-Fixkörper"
+reference "sec:SuD-Fixkörper"
 
 \end_inset
 
@@ -22461,7 +22464,7 @@ iii
  a) und zweite Aussage: 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Prop-EKkgaloissch"
+reference "sec:Prop-EKkgaloissch"
 
 \end_inset
 
@@ -22634,7 +22637,7 @@ qqed
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Korollar
 \end_layout
 
@@ -22689,7 +22692,7 @@ endlich, genauer
  besitzt nur endlich viele Untergruppen, also besitzt nach 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Satz-HSGaloistheorie"
+reference "sec:Satz-HSGaloistheorie"
 
 \end_inset
 
@@ -22773,7 +22776,7 @@ qqed
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Definition und Bemerkung
 \end_layout
 
@@ -22825,11 +22828,11 @@ das Kompositum von
 .
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Satz
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:Satz-UG-KE-Entsprechung"
+name "sec:Satz-UG-KE-Entsprechung"
 
 \end_inset
 
@@ -23083,7 +23086,7 @@ reference "asdf"
 Beweis von 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Satz-UG-KE-Entsprechung"
+reference "sec:Satz-UG-KE-Entsprechung"
 
 \end_inset
 
@@ -23266,7 +23269,7 @@ end{iiilist}
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Beispiel und Definition 
 \series medium
 (Untergruppen-Diagramm)
@@ -23382,14 +23385,14 @@ E & =E^{\left\{ e\right\} }=\mathbb{Q}\left(\alpha,\zeta\right)
 Aus 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Satz-HSGaloistheorie"
+reference "sec:Satz-HSGaloistheorie"
 
 \end_inset
 
  und 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Satz-UG-KE-Entsprechung"
+reference "sec:Satz-UG-KE-Entsprechung"
 
 \end_inset
 
@@ -23657,7 +23660,7 @@ Beweis
 Aus 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Prop-EKkgaloissch"
+reference "sec:Prop-EKkgaloissch"
 
 \end_inset
 
@@ -23700,7 +23703,7 @@ qqed[Bemerkung]
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Definition 
 \series medium
 (abelsche und zyklische Galoiserweiterung)
@@ -23726,7 +23729,7 @@ zyklisch
  abelsch (beziehungsweise zyklisch) ist.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Korollar
 \end_layout
 
@@ -23770,7 +23773,7 @@ Beweis
 Aus 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Satz-HSGaloistheorie"
+reference "sec:Satz-HSGaloistheorie"
 
 \end_inset
 
@@ -23785,7 +23788,7 @@ reference "sub:Satz-HSGaloistheorie"
  endlich zyklisch (beziehungsweise zyklisch nach 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Satz-UG-kerImZyklG"
+reference "sec:Satz-UG-kerImZyklG"
 
 \end_inset
 
@@ -23808,11 +23811,11 @@ qqed
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Satz
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:Satz-Kompositum"
+name "sec:Satz-Kompositum"
 
 \end_inset
 
@@ -23993,7 +23996,7 @@ iii
 ), siehe 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:BuD-Galoisgruppe"
+reference "sec:BuD-Galoisgruppe"
 
 \end_inset
 
@@ -24060,7 +24063,7 @@ K_{2}^{\text{im}\left(\varphi\right)} & \stackrel{\text{Def. von }\varphi}{=}\le
 Mit 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Satz-HSGaloistheorie"
+reference "sec:Satz-HSGaloistheorie"
 
 \end_inset
 
@@ -24320,11 +24323,11 @@ Bemerkung
  endlich und separabel.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Proposition
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:Prop-sigmaInGalKommutiertNSt"
+name "sec:Prop-sigmaInGalKommutiertNSt"
 
 \end_inset
 
@@ -24355,7 +24358,7 @@ Seien
  (vergleiche 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:BuD-Galoisgruppe"
+reference "sec:BuD-Galoisgruppe"
 
 \end_inset
 
@@ -24654,7 +24657,7 @@ qqed
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Beispiel 
 \series medium
 (biquadratische Erweiterung)
@@ -24730,7 +24733,7 @@ Man kann zeigen, dass
  gilt (Übung), und nach 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Satz-Kompositum"
+reference "sec:Satz-Kompositum"
 
 \end_inset
 
@@ -25028,7 +25031,7 @@ Offenbar sind die Nullstellen von
 Aus 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Prop-sigmaInGalKommutiertNSt"
+reference "sec:Prop-sigmaInGalKommutiertNSt"
 
 \end_inset
 
@@ -25081,7 +25084,7 @@ status open
 
 \end_layout
 
-\begin_layout Section
+\begin_layout Chapter
 Bestimmung einiger Galoisgruppen
 \end_layout
 
@@ -25097,7 +25100,7 @@ Sei
  ein Körper.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Satz und Definition 
 \series medium
 (Die Permutationsdarstellung)
@@ -25251,7 +25254,7 @@ qqed
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Quadratische Gleichungen
 \end_layout
 
@@ -25361,7 +25364,7 @@ Dann ist
  eindeutig bestimmt.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Kubische Gleichungen
 \end_layout
 
@@ -25649,7 +25652,7 @@ S_{3} & \text{sonst}
 
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsection
 Beispiel
 \end_layout
 
@@ -25745,7 +25748,7 @@ K & =\mathbb{Q}\left(\delta\right)=\mathbb{Q}\left(\sqrt{-23}\right)
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Die allgemeine Gleichung
 \end_layout
 
@@ -25794,13 +25797,13 @@ und
  als Untergruppe auffassen.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsection
 Proposition und Definition 
 \series medium
 (symmetrische rationale Funktionen)
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:PuD-symRatFkt"
+name "sec:PuD-symRatFkt"
 
 \end_inset
 
@@ -25868,7 +25871,7 @@ qqed
 
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsection
 Beispiel
 \end_layout
 
@@ -25904,11 +25907,11 @@ Beispiel
 .
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsection
 Definition
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:Def-elemSymFkt"
+name "sec:Def-elemSymFkt"
 
 \end_inset
 
@@ -25971,7 +25974,7 @@ Zum Beispiel:
 .
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsection
 Definition 
 \series medium
 (algebraische Unabhängigkeit)
@@ -26033,7 +26036,7 @@ algebraisch unabhängig über
  ist injektiv.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsection
 Beispiel
 \end_layout
 
@@ -26161,11 +26164,11 @@ end{iiilist}
 
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsection
 Satz
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:Satz-HS-symFkt"
+name "sec:Satz-HS-symFkt"
 
 \end_inset
 
@@ -26322,7 +26325,7 @@ status open
 
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsection
 Bemerkung
 \end_layout
 
@@ -26445,7 +26448,7 @@ end{iiilist}
 Beweis von 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Satz-HS-symFkt"
+reference "sec:Satz-HS-symFkt"
 
 \end_inset
 
@@ -26555,7 +26558,7 @@ iii
  und nach 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Def-elemSymFkt"
+reference "sec:Def-elemSymFkt"
 
 \end_inset
 
@@ -26582,7 +26585,7 @@ Aus
  (siehe 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:PuD-symRatFkt"
+reference "sec:PuD-symRatFkt"
 
 \end_inset
 
@@ -26759,7 +26762,7 @@ end{iiilist}
 
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsection
 Definition
 \end_layout
 
@@ -26784,7 +26787,7 @@ allgemeine Polynom
 .
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsection
 Bemerkung
 \end_layout
 
@@ -26836,7 +26839,7 @@ mit
 ).
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsection
 Satz
 \end_layout
 
@@ -26870,7 +26873,7 @@ Beweis
 Wegen 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Satz-HS-symFkt"
+reference "sec:Satz-HS-symFkt"
 
 \end_inset
 
@@ -26893,7 +26896,7 @@ reference "sub:Satz-HS-symFkt"
  wie in 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Def-elemSymFkt"
+reference "sec:Def-elemSymFkt"
 
 \end_inset
 
@@ -26908,14 +26911,14 @@ Die Aussagen folgen nun aus den analogen Aussagen für
 , nämlich in 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Satz-HS-symFkt"
+reference "sec:Satz-HS-symFkt"
 
 \end_inset
 
  i) und 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:PuD-symRatFkt"
+reference "sec:PuD-symRatFkt"
 
 \end_inset
 
@@ -26938,7 +26941,7 @@ qqed
 
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsection
 Satz 
 \series medium
 (Hilbertscher Irreduzibilitätssatz)
@@ -26999,7 +27002,7 @@ Beispiel
 .
 \end_layout
 
-\begin_layout Section
+\begin_layout Chapter
 Kreisteilungskörper 
 \series medium
 (die Galoistheorie von 
@@ -27037,11 +27040,11 @@ Sei
  beliebig).
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Proposition und Definition
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:PuD-Einheitswurzel"
+name "sec:PuD-Einheitswurzel"
 
 \end_inset
 
@@ -27132,7 +27135,7 @@ Insbesondere ist
  endlich, also zyklisch nach 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:Kor-endlUGzykl"
+reference "sec:Kor-endlUGzykl"
 
 \end_inset
 
@@ -27179,7 +27182,7 @@ Sei
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Definition
 \end_layout
 
@@ -27203,7 +27206,7 @@ primitiv
 .
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Beispiel
 \end_layout
 
@@ -27240,7 +27243,7 @@ Es gilt:
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Proposition
 \end_layout
 
@@ -27296,7 +27299,7 @@ Dass
 Wegen 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sub:PuD-Einheitswurzel"
+reference "sec:PuD-Einheitswurzel"
 
 \end_inset
 
