@@ -1,4 +1,4 @@
-%% LyX 2.0.1 created this file.  For more info, see http://www.lyx.org/.
+%% LyX 2.0.2 created this file.  For more info, see http://www.lyx.org/.
 %% Do not edit unless you really know what you are doing.
 \documentclass[11pt,english,ngerman]{report}
 \usepackage[T1]{fontenc}
@@ -134,12 +134,11 @@
 \newenvironment{iiilist}{\begin{itemize} \setcounter{ale2}{0}}{\end{itemize}}
 
 
-
 % Damit nicht immer "Kapitel 1" etc. über der Kapitelüberschrift steht
 \titleformat{\chapter}
-  {\normalfont\sffamily\Huge\bfseries}
-  {\gdef\chapterlabel{\thechapter\ }}{0pt}
-  {\textrm{\thechapter\ #1} \thispagestyle{fancy}
+  {\huge\bfseries}
+  {\textrm{\thechapter} }{0pt}
+  {\textrm{#1} \thispagestyle{fancy}
   }
 
 % Neudefinition der Abschnittsmarker für die Kopfzeile
@@ -184,7 +183,7 @@
 \textit{\small im Wintersemester 2011/2012}\\
 \textit{\small Überarbeitung und Textsatz in \LyX{} von}\\
 \textit{\noun{\small Andreas Völklein}}\\
-{\small \vspace*{10mm}}\textit{\noun{\small }}\\
+{\small \vspace*{10mm}}\\
 {\small \includegraphics[clip,width=15cm]{unir}}\textit{\noun{\small }}\\
 {\small \vspace*{5mm}}\\
 Stand: \today}
@@ -2665,7 +2664,7 @@ G_{p^{r}}\left(X\right) & \stackrel{\text{Def.}}{=}F_{p^{r}}\left(X+1\right)\sta
 \end{iiilist}
 
 
-\section{Bemerkung}
+\section{Bemerkung\label{sec:Bem-zetan}}
 
 Für alle $n,m\in\mathbb{N}_{\ge1}$ gilt:
 \begin{align*}
@@ -2771,6 +2770,8 @@ $\text{char}\left(k\right)=\text{char}\left(E\right)$, denn $k\hookrightarrow E$
 ist injektiv.
 
 \textcolor{green}{TODO: Abb 3}
+
+\textcolor{green}{TODO: Welches Beispiel?}
 
 
 \section{Bemerkung}
@@ -2883,7 +2884,7 @@ Ein Körper $K$ mit $k\subseteq K\subseteq E$ heißt \emph{Zwischenkörper
 \textcolor{green}{TODO: Wo?}
 
 
-\section{Definition}
+\section{Definition \textmd{(Grad)}}
 
 Sei $E\supseteq k$ eine Körpererweiterung.
 
@@ -2895,7 +2896,7 @@ Dann heißt
 \quotedblbase{}die Körpererweiterung $E$ über $k$\textquotedblleft{})
 
 
-\section{(Grad-)Satz\label{sec:Satz-Grad}}
+\section{\textmd{(Grad-)}Satz\label{sec:Satz-Grad}}
 
 Seien $E\supseteq K\supseteq k$ eine Körpererweiterung, dann gilt:
 \begin{align*}
@@ -2903,21 +2904,463 @@ Seien $E\supseteq K\supseteq k$ eine Körpererweiterung, dann gilt:
 \end{align*}
 
 
-\textcolor{green}{TODO: Rest einfügen}
+%DATE: Fr 18.11.2011
+
+
+\subsubsection*{Beweis}
+\begin{enumerate}
+\item Fall: Es gelte:
+\begin{align*}
+\left[E:k\right] & ,\left[K:k\right]<\infty
+\end{align*}
+Dann folgt als $k$-Vektorraum:
+\begin{align*}
+E & \stackrel{\sim}{=}k^{\left[E:k\right]} & K & \stackrel{\sim}{=}k^{\left[K:k\right]}
+\end{align*}
+Damit ergibt sich:
+\begin{align*}
+k^{\left[E:k\right]}\stackrel{\sim}{=}E & \stackrel{\sim}{=}K^{\left[E:K\right]}\stackrel{\sim}{=}\left(k^{\left[K:k\right]}\right)^{\left[E:K\right]}\stackrel{\sim}{=}k^{\left[E:K\right]\cdot\left[K:k\right]}
+\end{align*}
+Also gilt für die Dimension von $E$:
+\begin{align*}
+\dim_{k}\left(E\right) & =\left[E:k\right]=\left[E:K\right]\cdot\left[K:k\right]
+\end{align*}
+\textcolor{green}{TODO: obigen Beweis überprüfen}
+\item Fall: Ist $\left[E:k\right]=\infty$ (oder $\left[K:k\right]=\infty$),
+so existiert eine unendliche $k$-linear unabhängig Menge $X\subseteq E$
+(oder $X\subseteq K\subseteq E$).\\
+In beiden Fällen ist $X\subseteq E$ schon $k$-linear unabhängig
+und es folgt $\left[E:k\right]=\infty$.
+\end{enumerate}
+\qqed
+
+
+\section{Korollar}
+
+Sind $E\supseteq K\supseteq k$ Körpererweiterungen und $\left[E:k\right]$
+eine Primzahl, so folgt $E=K$ oder $E=k$.
+
+
+\subsubsection*{Beweis}
+
+\textcolor{green}{TODO: Einfügen}
+
+
+\section{Beispiel \textmd{(Verfahren von Kronecker)\label{sec:Bsp-VvKronecker}}}
+
+\begin{iiilist}
+
+\iii Seien $k$ ein Körper und $f\in k\left[X\right]$ mit $n:=\deg\left(f\right)$.
+
+Dann liefert die Komposition
+\begin{align*}
+k & \hookrightarrow k\left[X\right]\stackrel{\pi}{\to}\modulo{k\left[X\right]}{\left(f\right)}
+\end{align*}
+mit der kanonischen Projektion $\pi$ einen Homomorphismus, der als
+Körperhomomorphismus schon injektiv ist, also ist $\modulo{k\left[X\right]}{\left(f\right)}=:E\supseteq k$
+eine Körpererweiterung und es gilt $\left[E:k\right]=n$.
+
+Das Element $\alpha:=\pi\left(X\right)=X+\left(f\right)\in E$ erfüllt
+in $E$:
+\begin{align*}
+f\left(\alpha\right) & =f\left(\pi\left(X\right)\right)=\pi\left(f\left(X\right)\right)=\left(f\right)\equiv0
+\end{align*}
+Man sagt \quotedblbase{}$E=k\left(\alpha\right)$ entsteht durch Adjunktion
+der Nullstelle $\alpha$ von $f$.\textquotedblleft{} und nennt dieses
+Vorgehen das \emph{Verfahren von Kronecker}.
+
+\iii $\mathbb{C}\supseteq\mathbb{R}$ und $\mathbb{Q}\left(\sqrt{2}\right):=\modulo{\mathbb{Q}\left[X\right]}{\left(X^{2}-2\right)}\supseteq\mathbb{Q}$
+sind Körpererweiterungen vom Grad 2.
+
+
+\subsubsection*{Beachte}
+
+Es gibt zwei $\mathbb{Q}$-Algebrenhomomorphismen
+\begin{align*}
+\modulo{\mathbb{Q}\left[X\right]}{\left(X^{2}-2\right)} & \hookrightarrow\mathbb{R}
+\end{align*}
+nämlich:
+\begin{align*}
+X\mapsto & \sqrt{2} & X & \mapsto-\sqrt{2}
+\end{align*}
+
+
+\iii Sei $k$ ein Körper, dann ist $\left[k\left(T\right):k\right]=\infty$,
+da $k\subseteq k\left[T\right]\subseteq k\left(T\right)$ ja $k$-Vektorräume
+sind und $\dim_{k}\left(k\left[T\right]\right)=\infty$ ist.
+
+\iii $\left[\mathbb{R}:\mathbb{Q}\right]=\infty$
+
+
+\subsubsection*{Beweis}
+
+Jede endliche Erweiterung von $\mathbb{Q}$ ist eine abzählbare Menge!
+$\mathbb{R}$ ist jedoch überabzählbar.
+
+Alternativ: Seien $n\in\mathbb{N}_{\ge1}$ und $\alpha\in\mathbb{R}$
+mit $\alpha^{n}=2$.
+
+Schreibe:
+\begin{align*}
+\mathbb{Q} & \subseteq\mathbb{Q}\left[\alpha\right]\subseteq\mathbb{R}
+\end{align*}
+für die von $\alpha$ erzeugte $\mathbb{Q}$-Unteralgebra von $\mathbb{R}$.
+Wegen
+\begin{align*}
+\text{Mipo}_{\mathbb{Q}}\left(\alpha\right) & =X^{n}-2
+\end{align*}
+(vergleiche \ref{sec:Bsp-IrreduzKrit} i)) ist
+\begin{align*}
+\modulo{\mathbb{Q}\left[X\right]}{X^{n}-2} & \stackrel{\sim}{=}\mathbb{Q}\left(\alpha\right)
+\end{align*}
+ein Körper mit $\left[\mathbb{Q}\left(\alpha\right):\mathbb{Q}\right]=n$
+(vergleiche \ref{sec:Bsp-VvKronecker} i)).
+
+Aus $\mathbb{Q}\subseteq\mathbb{Q}\left[\alpha\right]\subseteq\mathbb{R}$
+und \ref{sec:Satz-Grad} folgt $n|\left[\mathbb{R}:\mathbb{Q}\right]$.
+
+Weil dabei $n\in\mathbb{N}_{\ge1}$ beliebig groß gewählt werden kann,
+folgt $\left[\mathbb{R}:\mathbb{Q}\right]=\infty$.
+
+\qqed[\roman{ale2})]
+
+\end{iiilist}
+
+
+\section{Definition \textmd{(algebraische Körpererweiterung)\label{sec:Def-algKE}}}
+
+Eine Körpererweiterung $E\supseteq k$ heißt genau dann \emph{algebraisch},
+wenn alle $\alpha\in E$ algebraisch über $k$ sind.
+
+
+\section{Beispiel}
+
+Die Körpererweiterung $k\left(t\right):k$ ist nicht algebraisch,
+aber $\alpha:=0\in k\left(t\right)$ ist algebraisch über $k$.
+
+
+\section{Bemerkung und Definition \textmd{(Grad von $\alpha\in E$)\label{sec:BuD-Grad}}}
+
+Seien $E\supseteq k$ eine Körpererweiterung und $\alpha\in E$.
+
+Dann erhält man eine $k$-Algebra $k\subseteq k\left[\alpha\right]\subseteq E$
+und es gilt:
+\begin{align*}
+\alpha\text{ ist algebraisch über }k. & \Leftrightarrow k\left[\alpha\right]\text{ ist ein Körper.}
+\end{align*}
+Damit folgt
+\begin{align*}
+k\left[\alpha\right] & \stackrel{\sim}{=}\modulo{k\left[X\right]}{\text{Mipo}_{k}\left(\alpha\right)}
+\end{align*}
+und $\left[\alpha:k\right]:=\left[k\left(\alpha\right):k\right]$
+heißt \emph{der Grad von $\alpha$ über $k$}.
+
+\textcolor{green}{TODO: Ist diese Aussage gemeint?}
+
+Ist $\alpha$ transzendent über $k$, so ist der Einsetzungshomomorphismus
+$k\left[X\right]\stackrel{\sim}{\to}k\left[\alpha\right],X\mapsto\alpha$
+ein $k$-Algebrenisomorphismus.
+
+
+\subsubsection*{Beweis}
+
+Übung.
+
+\textcolor{green}{TODO: Beweis ergänzen.}
+
+\qqed
+
+
+\section{Satz\label{sec:Satz-endlKEalg}}
+
+Jede endliche Körpererweiterung ist algebraisch.
+
+
+\subsubsection*{Beweis}
+
+Dies wurde in der Linearen Algebra II gezeigt. (Satz von Cayley-Hamilton)
+
+\textcolor{green}{TODO: Beweis ergänzen}
+
+\qqed
+
+
+\section{Proposition und Definition \textmd{(Polynomring; endlich erzeugte,
+einfache Körpererweiterung)}}
+
+Sei $k$ ein Körper.
+
+\begin{iiilist}
+
+\iii Für $n\in\mathbb{N}_{\ge2}$ definiere
+\begin{align*}
+k\left[X_{1},\ldots,X_{n}\right] & :=\left(k\left[X_{1},\ldots,X_{n-1}\right]\right)\left[X_{n}\right]
+\end{align*}
+\emph{den Polynomring in den Variablen $X_{1},\ldots,X_{n}$ über
+$k$}.
+
+Dann ist für jede kommutative $k$-Algebra $A$ die Abbildung von
+Mengen
+\begin{align*}
+\text{Hom}_{k\text{-Alg.}}\left(k\left[X_{1},\ldots,X_{n}\right],A\right) & \stackrel{\sim}{\to}A^{n}\\
+\varphi & \mapsto\left(\varphi\left(X_{i}\right)\right)_{1\le i\le n}
+\end{align*}
+injektiv. Dies ist die universellen Eigenschaft der $k$-Algebra $k\left[X_{1},\ldots,X_{n}\right]$.
+
+\iii Sei $E\supseteq k$ eine Körpererweiterung und $X\subseteq E$
+eine Teilmenge.
+
+Dann ist
+\begin{align*}
+k\left(X\right) & :=\sr{\bigcap_{k\subseteq K\subseteq E}}{}{\text{ZK mit }X\subseteq K}K
+\end{align*}
+der kleinste Zwischenkörper von $k\subseteq E$, der $X$ enthält.
+
+\iii Gilt in ii) schon $X=\left\{ \alpha_{1},\ldots,\alpha_{n}\right\} $,
+das heißt ist $X$ endlich, so folgt
+\begin{align*}
+k\left(\alpha_{1},\ldots,\alpha_{n}\right) & :=k\left(\left\{ \alpha_{1},\ldots,\alpha_{n}\right\} \right)=\text{Quot}\left(k\left[\alpha_{1},\ldots,\alpha_{n}\right]\right)
+\end{align*}
+wobei
+\begin{align*}
+k\left[\alpha_{1},\ldots,\alpha_{n}\right] & :=\text{im}\left(k\left[X_{1},\ldots,X_{n}\right]\stackrel{\varphi}{\to}E\right)
+\end{align*}
+und $\varphi$ der nach i) eindeutige $k$-Algebrenhomomorphismus
+mit $\varphi\left(X_{i}\right)=\alpha_{i}$ für $1\le i\le n$ ist.
+
+\iii Eine Körpererweiterung $E\supseteq k$ heißt genau dann \emph{endlich
+erzeugt}, wenn endlich viele $\alpha_{1},\ldots,\alpha_{n}\in E$
+existieren mit $E=k\left(\alpha_{1},\ldots,\alpha_{n}\right)$.
+
+\iii Eine Körpererweiterung $E\supseteq k$ heißt genau dann \emph{einfach},
+wenn ein $\alpha\in E$ existiert mit $E=k\left(\alpha\right)$.
+
+\end{iiilist}
+
+
+\subsubsection*{Beweis}
+
+\begin{iiilist}
+
+\iii Die universelle Eigenschaft folgt durch Induktion aus dem bekannten
+Fall $n=1$.
+
+\iii Übung.
+
+\textcolor{green}{TODO: Ergänzen}
+
+\iii Übung.
+
+\textcolor{green}{TODO: Ergänzen}
+
+\end{iiilist}
+
+\qqed
+
+
+\section{Satz\label{sec:Satz-algKEendlich}}
+
+Sei $E=k\left(\alpha_{1},\ldots,\alpha_{n}\right)$ eine endlich erzeugte
+Körpererweiterung und die $\alpha_{i}$ ($1\le i\le n$) über $k$
+algebraisch.
+
+Dann gelten:
+
+\begin{iiilist}
+
+\iii $E=k\left(\alpha_{1},\ldots,\alpha_{n}\right)=k\left[\alpha_{1},\ldots,\alpha_{n}\right]$
+
+\iii $\left[E:k\right]<\infty$
+
+\end{iiilist}
+
+
+\subsubsection*{Beweis}
+
+Induktion über $n\ge1$:
+
+$n=1$: Siehe \ref{sec:BuD-Grad}.
+
+$n>1$: Nach Induktionsvoraussetzung ist $E':=k\left[\alpha_{1},\ldots,\alpha_{n-1}\right]\supseteq k$
+eine endliche Körpererweiterung.
+
+Da $\alpha_{n}$ algebraisch über $k$ ist, ist es insbesondere algebraisch
+über $E'$ und nach \ref{sec:BuD-Grad} ist $E'\left[\alpha_{n}\right]\supseteq E'$
+eine endliche Körpererweiterung.
+
+Mit \ref{sec:Satz-Grad} für $k\subseteq E'\subseteq E'\left[\alpha_{n}\right]$
+folgt, dass $E'\left[\alpha_{n}\right]=k\left[\alpha_{1},\ldots,\alpha_{n}\right]\supseteq k$
+eine endliche Körpererweiterung ist.
+
+Insbesondere ist $k\left[\alpha_{1},\ldots,\alpha_{n}\right]$ ein
+Körper und somit $E=k\left(\alpha_{1},\ldots,\alpha_{n}\right)=k\left[\alpha_{1},\ldots,\alpha_{n}\right]$.
+
+Es folgten i) und ii).
+
+\qqed
+
+
+\section{Beispiel}
+
+Für jedes $n\in\mathbb{N}_{\ge1}$ ist $\cos\left(\frac{\pi}{n}\right)\in\mathbb{R}$
+algebraisch über $\mathbb{Q}$.
+
+
+\subsubsection*{Beweis}
+
+Nach Euler gilt:
+\begin{align*}
+\cos\left(\frac{\pi}{n}\right) & =\frac{1}{2}\left(e^{\frac{\pi\ii}{n}}+e^{-\frac{\pi\ii}{n}}\right)
+\end{align*}
+Außerdem ist
+\begin{align*}
+\alpha & :=e^{\frac{\pi\ii}{n}}\left(=\zeta_{2n}\right)
+\end{align*}
+algebraisch über $\mathbb{Q}$, denn $\alpha^{2n}=1$ (vergleiche
+Bemerkung \ref{sec:Bem-zetan}).
+
+Dann folgt nach \ref{sec:Satz-algKEendlich} ii) schon $\left[\mathbb{Q}\left(\alpha\right):\mathbb{Q}\right]<\infty$
+und mit \ref{sec:Satz-endlKEalg} folgt, dass $\modulo{\mathbb{Q}\left(\alpha\right)}{\mathbb{Q}}$
+algebraisch ist.
+
+Nach \ref{sec:Def-algKE} ist \emph{jedes} Element von $\mathbb{Q}\left(\alpha\right)$
+algebraisch über $\mathbb{Q}$ ist, insbesondere also ${\displaystyle \cos\left(\frac{\pi}{n}\right)=\frac{1}{2}\left(\alpha+\alpha^{-1}\right)}$.
+
+\qqed
+
+
+\subsubsection*{Problem}
+
+Bestimme explizit $0\not=f\in\mathbb{Q}\left[X\right]$ mit ${\displaystyle f\left(\cos\left(\frac{\pi}{n}\right)\right)=0}$.
+
+
+\section{Proposition \textmd{(endlich $\Leftrightarrow$ endlich erzeugt und
+algebraisch)\label{sec:Prop-endlAquivEndlerzUalg}}}
+
+Sei $E\supseteq k$ eine Körpererweiterung.
+
+\begin{iiilist}
+
+\iii Es sind äquivalent:
+
+\begin{abclist}
+
+\abc $\modulo{E}{k}$ ist endlich.
+
+\abc $\modulo{E}{k}$ ist endlich erzeugt und algebraisch.
+
+\end{abclist}
+
+\iii Es sind äquivalent:
+
+\begin{abclist}
+
+\abc $\modulo{E}{k}$ ist algebraisch.
+
+\abc Es gibt eine Menge $X\subseteq E$ mit $E=k\left(X\right)$
+und für alle $x\in X$ ist $x$ algebraisch über $k$.
+
+\end{abclist}
+
+\end{iiilist}
+
+
+\subsubsection*{Beweis}
+
+\begin{iiilist}
+
+\iii a) $\Rightarrow$ b): Ist $\modulo{E}{k}$ endlich, so offenbar
+auch endlich erzeugt und nach \ref{sec:Satz-endlKEalg} algebraisch.
+
+b) $\Rightarrow$ a): Dies wurde in \ref{sec:Satz-algKEendlich} ii)
+gezeigt.
+
+\iii a) $\Rightarrow$ b): Wähle $X=E$.
+
+b) $\Rightarrow$ a): $I:=\left\{ X'|X'\subseteq X\text{ ist endlich}\right\} $
+
+Damit folgt:
+\begin{align*}
+E & =k\left(X\right)=\bigcup_{X'\in I}k\left(X'\right)
+\end{align*}
+Seien nun $\alpha\in E$, dann gibt es ein $X'\in I$ mit $\alpha\in k\left(X'\right)$.
+
+Wegen \ref{sec:Satz-algKEendlich} ist $k\left(X'\right)\supseteq k$
+endlich und nach \ref{sec:Satz-endlKEalg} ist $\alpha\in k\left(X'\right)$
+algebraisch über $k$.
+
+Weil dabei $\alpha\in E$ beliebig ist, folgt, dass $\modulo{E}{k}$
+algebraisch ist.
+
+\end{iiilist}
+
+\qqed
+
+
+\section{Satz \textmd{(Transitivität der Algebraizität)}}
+
+Seien $E\supseteq K\supseteq k$ Körpererweiterungen.
+
+\begin{iiilist}
+
+\iii Ist $\alpha\in E$ algebraisch über $K$ und $\modulo{K}{k}$
+algebraisch, dann ist $\alpha$ algebraisch über $k$.
+
+\iii Sind $\modulo{E}{K}$ und $\modulo{K}{k}$ algebraisch, so ist
+auch $\modulo{E}{k}$ algebraisch.
+
+\end{iiilist}
+
+
+\subsubsection*{Beweis}
+
+\begin{iiilist}
+
+\iii Sei $\text{Mipo}_{K}\left(\alpha\right)=X^{n}+c_{n-1}X^{n-1}+\ldots+c_{0}$,
+dann ist $\alpha$ algebraisch über $K':=k\left[c_{0},\ldots,c_{n-1}\right]\subseteq K$.
+
+Es folgt:
+\begin{align*}
+\left[K'\left(\alpha\right):K'\right] & <\infty
+\end{align*}
+Mit \ref{sec:Satz-algKEendlich} ii) folgt:
+\begin{align*}
+\left[K':k\right] & <\infty
+\end{align*}
+Mit \ref{sec:Satz-Grad} folgt insgesamt:
+\begin{align*}
+\left[K'\left(\alpha\right):k\right] & <\infty
+\end{align*}
+Nach \ref{sec:Satz-endlKEalg} ist dann $\alpha$ algebraisch über
+$k$.
+
+\qqed[\roman{ale2})]
+
+\iii Dies folgt aus i), angewendet auf alle $\alpha\in E$.
+
+\end{iiilist}
+
+\qqed
 
 %DATE: Di 22.11.2011
 
 
 \section{Beispiel}
 
-Es sind $\mathbb{Q}\subseteq\overline{\mathbb{Q}}^{\mathbb{C}}:=\left\{ \alpha\in\mathbb{C}|\alpha\text{ ist algebraisch über }\mathbb{Q}\right\} \subseteq\mathbb{C}$
+Es sind
+\begin{align*}
+\mathbb{C} & \supseteq\overline{\mathbb{Q}}^{\mathbb{C}}:=\left\{ \alpha\in\mathbb{C}|\alpha\text{ ist algebraisch über }\mathbb{Q}\right\} \supseteq\mathbb{Q}
+\end{align*}
 Körpererweiterung.
 
-Wegen $\ref{}5.14$,d)$\Rightarrow$c) ist $\modulo{\overline{\mathbb{Q}}^{\mathbb{C}}}{\mathbb{Q}}$
-algebraisch. Nach dem Beweis von $\ref{}5.7,iv)$ gilt $\left[\overline{\mathbb{Q}}^{\mathbb{C}}:\mathbb{Q}\right]=\infty$
-(N.B.: $\mathbb{Q}\left[2^{\frac{1}{n}}\right]\subseteq\overline{\mathbb{Q}}^{\mathbb{C}}$)
+Wegen \ref{sec:Prop-endlAquivEndlerzUalg} ii) b) $\Rightarrow$ a)
+ist $\modulo{\overline{\mathbb{Q}}^{\mathbb{C}}}{\mathbb{Q}}$ algebraisch.
 
-Also ist wegen $\left(\ref{}5.14,b)\Rightarrow a)\right)$ $\modulo{\overline{\mathbb{Q}}^{\mathbb{C}}}{\mathbb{Q}}$
+Nach dem Beweis von \ref{sec:Bsp-VvKronecker} iv) gilt $\left[\overline{\mathbb{Q}}^{\mathbb{C}}:\mathbb{Q}\right]=\infty$.
+(Nebenbemerkung: ${\displaystyle \mathbb{Q}\left[2^{\frac{1}{n}}\right]\subseteq\overline{\mathbb{Q}}^{\mathbb{C}}}$)
+
+Also ist die Körpererweiterung $\modulo{\overline{\mathbb{Q}}^{\mathbb{C}}}{\mathbb{Q}}$
+wegen \ref{sec:Prop-endlAquivEndlerzUalg} i) b) $\Rightarrow$ a)
 nicht endlich erzeugt.
 
 \newpage{}
@@ -2964,12 +3407,9 @@ g & |f\label{eq:gf}
 
 
 Nach \ref{sec:Satz-Grad} ist $E:=\modulo{k\left[X\right]}{\left(g\right)}\supseteq k$
-eine endliche (und damit algebraische) Körpererweiterung, und offenbar
-ist $\alpha:=\left(X+\left(g\right)\right)\in E$ eine Nullstelle
-von $g$.
-
-\textcolor{green}{TODO: Wie kann $\alpha\in\modulo{k\left[X\right]}{\left(g\right)}$
-eine Nullstelle von $g\in k\left[X\right]$ sein?}
+eine endliche (und damit algebraische) Körpererweiterung, und nach
+\ref{sec:Bsp-VvKronecker} i) ist $\alpha:=\left(X+\left(g\right)\right)\in E$
+eine Nullstelle von $g$.
 
 Nach iv) gilt $k=E$, also besitzt $g$ und wegen \eqref{eq:gf} auch
 $f$, eine Nullstelle in $k$.
@@ -2999,6 +3439,8 @@ Für jede kommutative $k$-Algebra $A$ ist die Abbildung von Mengen
 \text{Hom}_{k\text{-Alg.}}\left(k\left[\mathfrak{X}\right],A\right) & \stackrel{\sim}{\to}A^{\mathfrak{X}},\varphi\mapsto\left(\mathfrak{X}\ni x\mapsto\varphi\left(x\right)\right)
 \end{align*}
 bijektiv.
+
+\textcolor{green}{TODO: Rest einfügen}
 
 
 \subsubsection*{Beweis}
@@ -5638,7 +6080,7 @@ $q_{i}=0$, dann ist $f\left(X\right)=X^{n}$ mit der trivialen Galoisgruppe
 und nicht $S_{n}$.
 
 
-\chapter{Kreisteilungskörper \textmd{(die Galoistheorie von $X^{n}-1=0$)}}
+\chapter{Kreisteilungskörper \textmd{(die Galoistheorie der Gleichung $X^{n}-1=0$)}}
 
 
 \subsubsection*{Fixiere}
@@ -5761,7 +6203,7 @@ sind primitiv, aber $\zeta\cdot\xi=-1\in U_{16}\left(\mathbb{C}\right)$
 hat Ordnung $2\not=16$, ist also nicht primitiv.
 
 
-\part*{Anhang}
+\part*{Anhang\thispagestyle{empty}}
 
 \addcontentsline{toc}{part}{Anhang}
 
@@ -5770,7 +6212,7 @@ hat Ordnung $2\not=16$, ist also nicht primitiv.
 
 \selectlanguage{english}%
 
-\section*{GNU Free Documentation License}
+\chapter*{GNU Free Documentation License}
 
 \addcontentsline{toc}{section}{\hspace*{1.9em}GNU Free Documentation License}
 
@@ -5793,7 +6235,7 @@ but changing it is not allowed.
 \par\end{center}
 
 
-\subsection*{\noun{0. Preamble}}
+\section*{\noun{0. Preamble}}
 
 \noindent The purpose of this License is to make a manual, textbook,
 or other functional and useful document \textquotedblleft{}free\textquotedblright{}
@@ -5818,7 +6260,7 @@ this License principally for works whose purpose is instruction or
 reference.
 
 
-\subsection*{\noun{1. Applicability and definitions}}
+\section*{\noun{1. Applicability and definitions}}
 
 This License applies to any manual or other work, in any medium, that
 contains a notice placed by the copyright holder saying it can be
@@ -5915,7 +6357,7 @@ Warranty Disclaimers may have is void and has no effect on the meaning
 of this License.
 
 
-\subsection*{\noun{2. Verbatim copying}}
+\section*{\noun{2. Verbatim copying}}
 
 You may copy and distribute the Document in any medium, either commercially
 or noncommercially, provided that this License, the copyright notices,
@@ -5931,7 +6373,7 @@ You may also lend copies, under the same conditions stated above,
 and you may publicly display copies.
 
 
-\subsection*{\noun{3. Copying in quantity}}
+\section*{\noun{3. Copying in quantity}}
 
 If you publish printed copies (or copies in media that commonly have
 printed covers) of the Document, numbering more than 100, and the
@@ -5969,7 +6411,7 @@ to give them a chance to provide you with an updated version of the
 Document.
 
 
-\subsection*{\noun{4. Modifications}}
+\section*{\noun{4. Modifications}}
 
 You may copy and distribute a Modified Version of the Document under
 the conditions of sections 2 and 3 above, provided that you release
@@ -6060,7 +6502,7 @@ give permission to use their names for publicity for or to assert
 or imply endorsement of any Modified Version.
 
 
-\subsection*{\noun{5. Combining documents}}
+\section*{\noun{5. Combining documents}}
 
 You may combine the Document with other documents released under this
 License, under the terms defined in section 4 above for modified versions,
@@ -6085,7 +6527,7 @@ and any sections Entitled \textquotedblleft{}Dedications\textquotedblright{}.
 You must delete all sections Entitled \textquotedblleft{}Endorsements\textquotedblright{}.
 
 
-\subsection*{\noun{6. Collections of documents}}
+\section*{\noun{6. Collections of documents}}
 
 You may make a collection consisting of the Document and other documents
 released under this License, and replace the individual copies of
@@ -6099,7 +6541,7 @@ this License into the extracted document, and follow this License
 in all other respects regarding verbatim copying of that document.
 
 
-\subsection*{\noun{7. Aggregation with independent works}}
+\section*{\noun{7. Aggregation with independent works}}
 
 A compilation of the Document or its derivatives with other separate
 and independent documents or works, in or on a volume of a storage
@@ -6118,7 +6560,7 @@ equivalent of covers if the Document is in electronic form. Otherwise
 they must appear on printed covers that bracket the whole aggregate.
 
 
-\subsection*{\noun{8. Translation}}
+\section*{\noun{8. Translation}}
 
 Translation is considered a kind of modification, so you may distribute
 translations of the Document under the terms of section 4. Replacing
@@ -6139,7 +6581,7 @@ the requirement (section 4) to Preserve its Title (section 1) will
 typically require changing the actual title.
 
 
-\subsection*{\noun{9. Termination}}
+\section*{\noun{9. Termination}}
 
 You may not copy, modify, sublicense, or distribute the Document except
 as expressly provided under this License. Any attempt otherwise to
@@ -6167,7 +6609,7 @@ reinstated, receipt of a copy of some or all of the same material
 does not give you any rights to use it.
 
 
-\subsection*{\noun{10. Future revisions of this license}}
+\section*{\noun{10. Future revisions of this license}}
 
 The Free Software Foundation may publish new, revised versions of
 the GNU Free Documentation License from time to time. Such new versions
@@ -6188,7 +6630,7 @@ of a version permanently authorizes you to choose that version for
 the Document.
 
 
-\subsection*{\noun{11. Relicensing}}
+\section*{\noun{11. Relicensing}}
 
 \textquotedblleft{}Massive Multiauthor Collaboration Site\textquotedblright{}
 (or \textquotedblleft{}MMC Site\textquotedblright{}) means any World
@@ -6220,7 +6662,7 @@ site under CC-BY-SA on the same site at any time before August 1,
 2009, provided the MMC is eligible for relicensing.
 
 
-\subsection*{\noun{Addendum}: How to use this License for your documents}
+\section*{\noun{Addendum}: How to use this License for your documents}
 
 To use this License in a document you have written, include a copy
 of the License in the document and put the following copyright and

@@ -101,12 +101,11 @@
 \newenvironment{iiilist}{\begin{itemize} \setcounter{ale2}{0}}{\end{itemize}}
 
 
-
 % Damit nicht immer "Kapitel 1" etc. über der Kapitelüberschrift steht
 \titleformat{\chapter}
-  {\normalfont\sffamily\Huge\bfseries}
-  {\gdef\chapterlabel{\thechapter\ }}{0pt}
-  {\textrm{\thechapter\ #1} \thispagestyle{fancy}
+  {\huge\bfseries}
+  {\textrm{\thechapter} }{0pt}
+  {\textrm{#1} \thispagestyle{fancy}
   }
 
 % Neudefinition der Abschnittsmarker für die Kopfzeile
@@ -201,7 +200,7 @@
 
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 häufige Symbole: $
@@ -263,62 +262,6 @@ langle A
 rangle A 
 \backslash
 sim B
-\end_layout
-
-\begin_layout Plain Layout
-
-\backslash
-textnormal{alt f
-\backslash
-"ur n 
-\backslash
-"uber k: } {n 
-\backslash
-choose k} 
-\backslash
-textnormal{neu f
-\backslash
-"ur n 
-\backslash
-"uber k: } 
-\backslash
-nok{n}{k} 
-\backslash
-textnormal{ mit $
-\backslash
-backslash${}newcommand
-\backslash
-{$
-\backslash
-backslash${}nok
-\backslash
-}[2] 
-\backslash
-{$
-\backslash
-backslash${}genfrac()
-\backslash
-{0pt
-\backslash
-}
-\backslash
-{
-\backslash
-}
-\backslash
-{
-\backslash
-#1
-\backslash
-}
-\backslash
-{
-\backslash
-#2
-\backslash
-}
-\backslash
-} }
 \end_layout
 
 \begin_layout Plain Layout
@@ -480,15 +423,9 @@ vspace*{10mm}
 \end_inset
 
 
-\shape italic
-\noun on
-
 \begin_inset Newline newline
 \end_inset
 
-
-\shape default
-\noun default
 
 \begin_inset Graphics
 	filename unir.png
@@ -12168,6 +12105,13 @@ end{iiilist}
 
 \begin_layout Section
 Bemerkung
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Bem-zetan"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -12581,6 +12525,12 @@ Körpererweiterung
 
 \color green
 TODO: Abb 3
+\end_layout
+
+\begin_layout Standard
+
+\color green
+TODO: Welches Beispiel?
 \end_layout
 
 \begin_layout Section
@@ -13142,7 +13092,9 @@ TODO: Wo?
 \end_layout
 
 \begin_layout Section
-Definition
+Definition 
+\series medium
+(Grad)
 \end_layout
 
 \begin_layout Standard
@@ -13190,7 +13142,11 @@ der Grad von
 \end_layout
 
 \begin_layout Section
-(Grad-)Satz
+
+\series medium
+(Grad-)
+\series default
+Satz
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Satz-Grad"
@@ -13217,9 +13173,2264 @@ Seien
 \end_layout
 
 \begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+%DATE: Fr 18.11.2011
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Beweis
+\end_layout
+
+\begin_layout Enumerate
+Fall: Es gelte:
+\begin_inset Formula 
+\begin{align*}
+\left[E:k\right] & ,\left[K:k\right]<\infty
+\end{align*}
+
+\end_inset
+
+Dann folgt als 
+\begin_inset Formula $k$
+\end_inset
+
+-Vektorraum:
+\begin_inset Formula 
+\begin{align*}
+E & \stackrel{\sim}{=}k^{\left[E:k\right]} & K & \stackrel{\sim}{=}k^{\left[K:k\right]}
+\end{align*}
+
+\end_inset
+
+Damit ergibt sich:
+\begin_inset Formula 
+\begin{align*}
+k^{\left[E:k\right]}\stackrel{\sim}{=}E & \stackrel{\sim}{=}K^{\left[E:K\right]}\stackrel{\sim}{=}\left(k^{\left[K:k\right]}\right)^{\left[E:K\right]}\stackrel{\sim}{=}k^{\left[E:K\right]\cdot\left[K:k\right]}
+\end{align*}
+
+\end_inset
+
+Also gilt für die Dimension von 
+\begin_inset Formula $E$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+\dim_{k}\left(E\right) & =\left[E:k\right]=\left[E:K\right]\cdot\left[K:k\right]
+\end{align*}
+
+\end_inset
+
 
 \color green
-TODO: Rest einfügen
+TODO: obigen Beweis überprüfen
+\end_layout
+
+\begin_layout Enumerate
+Fall: Ist 
+\begin_inset Formula $\left[E:k\right]=\infty$
+\end_inset
+
+ (oder 
+\begin_inset Formula $\left[K:k\right]=\infty$
+\end_inset
+
+), so existiert eine unendliche 
+\begin_inset Formula $k$
+\end_inset
+
+-linear unabhängig Menge 
+\begin_inset Formula $X\subseteq E$
+\end_inset
+
+ (oder 
+\begin_inset Formula $X\subseteq K\subseteq E$
+\end_inset
+
+).
+\begin_inset Newline newline
+\end_inset
+
+In beiden Fällen ist 
+\begin_inset Formula $X\subseteq E$
+\end_inset
+
+ schon 
+\begin_inset Formula $k$
+\end_inset
+
+-linear unabhängig und es folgt 
+\begin_inset Formula $\left[E:k\right]=\infty$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Korollar
+\end_layout
+
+\begin_layout Standard
+Sind 
+\begin_inset Formula $E\supseteq K\supseteq k$
+\end_inset
+
+ Körpererweiterungen und 
+\begin_inset Formula $\left[E:k\right]$
+\end_inset
+
+ eine Primzahl, so folgt 
+\begin_inset Formula $E=K$
+\end_inset
+
+ oder 
+\begin_inset Formula $E=k$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection*
+Beweis
+\end_layout
+
+\begin_layout Standard
+
+\color green
+TODO: Einfügen
+\end_layout
+
+\begin_layout Section
+Beispiel 
+\series medium
+(Verfahren von Kronecker)
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Bsp-VvKronecker"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Seien 
+\begin_inset Formula $k$
+\end_inset
+
+ ein Körper und 
+\begin_inset Formula $f\in k\left[X\right]$
+\end_inset
+
+ mit 
+\begin_inset Formula $n:=\deg\left(f\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Dann liefert die Komposition
+\begin_inset Formula 
+\begin{align*}
+k & \hookrightarrow k\left[X\right]\stackrel{\pi}{\to}\modulo{k\left[X\right]}{\left(f\right)}
+\end{align*}
+
+\end_inset
+
+mit der kanonischen Projektion 
+\begin_inset Formula $\pi$
+\end_inset
+
+ einen Homomorphismus, der als Körperhomomorphismus schon injektiv ist,
+ also ist 
+\begin_inset Formula $\modulo{k\left[X\right]}{\left(f\right)}=:E\supseteq k$
+\end_inset
+
+ eine Körpererweiterung und es gilt 
+\begin_inset Formula $\left[E:k\right]=n$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Das Element 
+\begin_inset Formula $\alpha:=\pi\left(X\right)=X+\left(f\right)\in E$
+\end_inset
+
+ erfüllt in 
+\begin_inset Formula $E$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+f\left(\alpha\right) & =f\left(\pi\left(X\right)\right)=\pi\left(f\left(X\right)\right)=\left(f\right)\equiv0
+\end{align*}
+
+\end_inset
+
+Man sagt „
+\begin_inset Formula $E=k\left(\alpha\right)$
+\end_inset
+
+ entsteht durch Adjunktion der Nullstelle 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ von 
+\begin_inset Formula $f$
+\end_inset
+
+.“ und nennt dieses Vorgehen das 
+\emph on
+Verfahren von Kronecker
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $\mathbb{C}\supseteq\mathbb{R}$
+\end_inset
+
+ und 
+\begin_inset Formula $\mathbb{Q}\left(\sqrt{2}\right):=\modulo{\mathbb{Q}\left[X\right]}{\left(X^{2}-2\right)}\supseteq\mathbb{Q}$
+\end_inset
+
+ sind Körpererweiterungen vom Grad 2.
+\end_layout
+
+\begin_layout Subsubsection*
+Beachte
+\end_layout
+
+\begin_layout Standard
+Es gibt zwei 
+\begin_inset Formula $\mathbb{Q}$
+\end_inset
+
+-Algebrenhomomorphismen
+\begin_inset Formula 
+\begin{align*}
+\modulo{\mathbb{Q}\left[X\right]}{\left(X^{2}-2\right)} & \hookrightarrow\mathbb{R}
+\end{align*}
+
+\end_inset
+
+nämlich:
+\begin_inset Formula 
+\begin{align*}
+X\mapsto & \sqrt{2} & X & \mapsto-\sqrt{2}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Sei 
+\begin_inset Formula $k$
+\end_inset
+
+ ein Körper, dann ist 
+\begin_inset Formula $\left[k\left(T\right):k\right]=\infty$
+\end_inset
+
+, da 
+\begin_inset Formula $k\subseteq k\left[T\right]\subseteq k\left(T\right)$
+\end_inset
+
+ ja 
+\begin_inset Formula $k$
+\end_inset
+
+-Vektorräume sind und 
+\begin_inset Formula $\dim_{k}\left(k\left[T\right]\right)=\infty$
+\end_inset
+
+ ist.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $\left[\mathbb{R}:\mathbb{Q}\right]=\infty$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Beweis
+\end_layout
+
+\begin_layout Standard
+Jede endliche Erweiterung von 
+\begin_inset Formula $\mathbb{Q}$
+\end_inset
+
+ ist eine abzählbare Menge! 
+\begin_inset Formula $\mathbb{R}$
+\end_inset
+
+ ist jedoch überabzählbar.
+\end_layout
+
+\begin_layout Standard
+Alternativ: Seien 
+\begin_inset Formula $n\in\mathbb{N}_{\ge1}$
+\end_inset
+
+ und 
+\begin_inset Formula $\alpha\in\mathbb{R}$
+\end_inset
+
+ mit 
+\begin_inset Formula $\alpha^{n}=2$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Schreibe:
+\begin_inset Formula 
+\begin{align*}
+\mathbb{Q} & \subseteq\mathbb{Q}\left[\alpha\right]\subseteq\mathbb{R}
+\end{align*}
+
+\end_inset
+
+für die von 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ erzeugte 
+\begin_inset Formula $\mathbb{Q}$
+\end_inset
+
+-Unteralgebra von 
+\begin_inset Formula $\mathbb{R}$
+\end_inset
+
+.
+ Wegen
+\begin_inset Formula 
+\begin{align*}
+\text{Mipo}_{\mathbb{Q}}\left(\alpha\right) & =X^{n}-2
+\end{align*}
+
+\end_inset
+
+(vergleiche 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Bsp-IrreduzKrit"
+
+\end_inset
+
+ i)) ist
+\begin_inset Formula 
+\begin{align*}
+\modulo{\mathbb{Q}\left[X\right]}{X^{n}-2} & \stackrel{\sim}{=}\mathbb{Q}\left(\alpha\right)
+\end{align*}
+
+\end_inset
+
+ein Körper mit 
+\begin_inset Formula $\left[\mathbb{Q}\left(\alpha\right):\mathbb{Q}\right]=n$
+\end_inset
+
+ (vergleiche 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Bsp-VvKronecker"
+
+\end_inset
+
+ i)).
+\end_layout
+
+\begin_layout Standard
+Aus 
+\begin_inset Formula $\mathbb{Q}\subseteq\mathbb{Q}\left[\alpha\right]\subseteq\mathbb{R}$
+\end_inset
+
+ und 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Satz-Grad"
+
+\end_inset
+
+ folgt 
+\begin_inset Formula $n|\left[\mathbb{R}:\mathbb{Q}\right]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Weil dabei 
+\begin_inset Formula $n\in\mathbb{N}_{\ge1}$
+\end_inset
+
+ beliebig groß gewählt werden kann, folgt 
+\begin_inset Formula $\left[\mathbb{R}:\mathbb{Q}\right]=\infty$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed[
+\backslash
+roman{ale2})]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Definition 
+\series medium
+(algebraische Körpererweiterung)
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Def-algKE"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Eine Körpererweiterung 
+\begin_inset Formula $E\supseteq k$
+\end_inset
+
+ heißt genau dann 
+\emph on
+algebraisch
+\emph default
+, wenn alle 
+\begin_inset Formula $\alpha\in E$
+\end_inset
+
+ algebraisch über 
+\begin_inset Formula $k$
+\end_inset
+
+ sind.
+\end_layout
+
+\begin_layout Section
+Beispiel
+\end_layout
+
+\begin_layout Standard
+Die Körpererweiterung 
+\begin_inset Formula $k\left(t\right):k$
+\end_inset
+
+ ist nicht algebraisch, aber 
+\begin_inset Formula $\alpha:=0\in k\left(t\right)$
+\end_inset
+
+ ist algebraisch über 
+\begin_inset Formula $k$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Bemerkung und Definition 
+\series medium
+(Grad von 
+\begin_inset Formula $\alpha\in E$
+\end_inset
+
+)
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:BuD-Grad"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Seien 
+\begin_inset Formula $E\supseteq k$
+\end_inset
+
+ eine Körpererweiterung und 
+\begin_inset Formula $\alpha\in E$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Dann erhält man eine 
+\begin_inset Formula $k$
+\end_inset
+
+-Algebra 
+\begin_inset Formula $k\subseteq k\left[\alpha\right]\subseteq E$
+\end_inset
+
+ und es gilt:
+\begin_inset Formula 
+\begin{align*}
+\alpha\text{ ist algebraisch über }k. & \Leftrightarrow k\left[\alpha\right]\text{ ist ein Körper.}
+\end{align*}
+
+\end_inset
+
+Damit folgt
+\begin_inset Formula 
+\begin{align*}
+k\left[\alpha\right] & \stackrel{\sim}{=}\modulo{k\left[X\right]}{\text{Mipo}_{k}\left(\alpha\right)}
+\end{align*}
+
+\end_inset
+
+und 
+\begin_inset Formula $\left[\alpha:k\right]:=\left[k\left(\alpha\right):k\right]$
+\end_inset
+
+ heißt 
+\emph on
+der Grad von 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ über 
+\begin_inset Formula $k$
+\end_inset
+
+
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+
+\color green
+TODO: Ist diese Aussage gemeint?
+\end_layout
+
+\begin_layout Standard
+Ist 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ transzendent über 
+\begin_inset Formula $k$
+\end_inset
+
+, so ist der Einsetzungshomomorphismus 
+\begin_inset Formula $k\left[X\right]\stackrel{\sim}{\to}k\left[\alpha\right],X\mapsto\alpha$
+\end_inset
+
+ ein 
+\begin_inset Formula $k$
+\end_inset
+
+-Algebrenisomorphismus.
+\end_layout
+
+\begin_layout Subsubsection*
+Beweis
+\end_layout
+
+\begin_layout Standard
+Übung.
+\end_layout
+
+\begin_layout Standard
+
+\color green
+TODO: Beweis ergänzen.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Satz
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Satz-endlKEalg"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Jede endliche Körpererweiterung ist algebraisch.
+\end_layout
+
+\begin_layout Subsubsection*
+Beweis
+\end_layout
+
+\begin_layout Standard
+Dies wurde in der Linearen Algebra II gezeigt.
+ (Satz von Cayley-Hamilton)
+\end_layout
+
+\begin_layout Standard
+
+\color green
+TODO: Beweis ergänzen
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Proposition und Definition 
+\series medium
+(Polynomring; endlich erzeugte, einfache Körpererweiterung)
+\end_layout
+
+\begin_layout Standard
+Sei 
+\begin_inset Formula $k$
+\end_inset
+
+ ein Körper.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Für 
+\begin_inset Formula $n\in\mathbb{N}_{\ge2}$
+\end_inset
+
+ definiere
+\begin_inset Formula 
+\begin{align*}
+k\left[X_{1},\ldots,X_{n}\right] & :=\left(k\left[X_{1},\ldots,X_{n-1}\right]\right)\left[X_{n}\right]
+\end{align*}
+
+\end_inset
+
+
+\emph on
+den Polynomring in den Variablen 
+\begin_inset Formula $X_{1},\ldots,X_{n}$
+\end_inset
+
+ über 
+\begin_inset Formula $k$
+\end_inset
+
+
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+Dann ist für jede kommutative 
+\begin_inset Formula $k$
+\end_inset
+
+-Algebra 
+\begin_inset Formula $A$
+\end_inset
+
+ die Abbildung von Mengen
+\begin_inset Formula 
+\begin{align*}
+\text{Hom}_{k\text{-Alg.}}\left(k\left[X_{1},\ldots,X_{n}\right],A\right) & \stackrel{\sim}{\to}A^{n}\\
+\varphi & \mapsto\left(\varphi\left(X_{i}\right)\right)_{1\le i\le n}
+\end{align*}
+
+\end_inset
+
+injektiv.
+ Dies ist die universellen Eigenschaft der 
+\begin_inset Formula $k$
+\end_inset
+
+-Algebra 
+\begin_inset Formula $k\left[X_{1},\ldots,X_{n}\right]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Sei 
+\begin_inset Formula $E\supseteq k$
+\end_inset
+
+ eine Körpererweiterung und 
+\begin_inset Formula $X\subseteq E$
+\end_inset
+
+ eine Teilmenge.
+\end_layout
+
+\begin_layout Standard
+Dann ist
+\begin_inset Formula 
+\begin{align*}
+k\left(X\right) & :=\sr{\bigcap_{k\subseteq K\subseteq E}}{}{\text{ZK mit }X\subseteq K}K
+\end{align*}
+
+\end_inset
+
+der kleinste Zwischenkörper von 
+\begin_inset Formula $k\subseteq E$
+\end_inset
+
+, der 
+\begin_inset Formula $X$
+\end_inset
+
+ enthält.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Gilt in ii) schon 
+\begin_inset Formula $X=\left\{ \alpha_{1},\ldots,\alpha_{n}\right\} $
+\end_inset
+
+, das heißt ist 
+\begin_inset Formula $X$
+\end_inset
+
+ endlich, so folgt
+\begin_inset Formula 
+\begin{align*}
+k\left(\alpha_{1},\ldots,\alpha_{n}\right) & :=k\left(\left\{ \alpha_{1},\ldots,\alpha_{n}\right\} \right)=\text{Quot}\left(k\left[\alpha_{1},\ldots,\alpha_{n}\right]\right)
+\end{align*}
+
+\end_inset
+
+wobei
+\begin_inset Formula 
+\begin{align*}
+k\left[\alpha_{1},\ldots,\alpha_{n}\right] & :=\text{im}\left(k\left[X_{1},\ldots,X_{n}\right]\stackrel{\varphi}{\to}E\right)
+\end{align*}
+
+\end_inset
+
+und 
+\begin_inset Formula $\varphi$
+\end_inset
+
+ der nach i) eindeutige 
+\begin_inset Formula $k$
+\end_inset
+
+-Algebrenhomomorphismus mit 
+\begin_inset Formula $\varphi\left(X_{i}\right)=\alpha_{i}$
+\end_inset
+
+ für 
+\begin_inset Formula $1\le i\le n$
+\end_inset
+
+ ist.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Eine Körpererweiterung 
+\begin_inset Formula $E\supseteq k$
+\end_inset
+
+ heißt genau dann 
+\emph on
+endlich erzeugt
+\emph default
+, wenn endlich viele 
+\begin_inset Formula $\alpha_{1},\ldots,\alpha_{n}\in E$
+\end_inset
+
+ existieren mit 
+\begin_inset Formula $E=k\left(\alpha_{1},\ldots,\alpha_{n}\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Eine Körpererweiterung 
+\begin_inset Formula $E\supseteq k$
+\end_inset
+
+ heißt genau dann 
+\emph on
+einfach
+\emph default
+, wenn ein 
+\begin_inset Formula $\alpha\in E$
+\end_inset
+
+ existiert mit 
+\begin_inset Formula $E=k\left(\alpha\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Beweis
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Die universelle Eigenschaft folgt durch Induktion aus dem bekannten Fall
+ 
+\begin_inset Formula $n=1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Übung.
+\end_layout
+
+\begin_layout Standard
+
+\color green
+TODO: Ergänzen
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Übung.
+\end_layout
+
+\begin_layout Standard
+
+\color green
+TODO: Ergänzen
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Satz
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Satz-algKEendlich"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Sei 
+\begin_inset Formula $E=k\left(\alpha_{1},\ldots,\alpha_{n}\right)$
+\end_inset
+
+ eine endlich erzeugte Körpererweiterung und die 
+\begin_inset Formula $\alpha_{i}$
+\end_inset
+
+ (
+\begin_inset Formula $1\le i\le n$
+\end_inset
+
+) über 
+\begin_inset Formula $k$
+\end_inset
+
+ algebraisch.
+\end_layout
+
+\begin_layout Standard
+Dann gelten:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $E=k\left(\alpha_{1},\ldots,\alpha_{n}\right)=k\left[\alpha_{1},\ldots,\alpha_{n}\right]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $\left[E:k\right]<\infty$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Beweis
+\end_layout
+
+\begin_layout Standard
+Induktion über 
+\begin_inset Formula $n\ge1$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $n=1$
+\end_inset
+
+: Siehe 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:BuD-Grad"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $n>1$
+\end_inset
+
+: Nach Induktionsvoraussetzung ist 
+\begin_inset Formula $E':=k\left[\alpha_{1},\ldots,\alpha_{n-1}\right]\supseteq k$
+\end_inset
+
+ eine endliche Körpererweiterung.
+\end_layout
+
+\begin_layout Standard
+Da 
+\begin_inset Formula $\alpha_{n}$
+\end_inset
+
+ algebraisch über 
+\begin_inset Formula $k$
+\end_inset
+
+ ist, ist es insbesondere algebraisch über 
+\begin_inset Formula $E'$
+\end_inset
+
+ und nach 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:BuD-Grad"
+
+\end_inset
+
+ ist 
+\begin_inset Formula $E'\left[\alpha_{n}\right]\supseteq E'$
+\end_inset
+
+ eine endliche Körpererweiterung.
+\end_layout
+
+\begin_layout Standard
+Mit 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Satz-Grad"
+
+\end_inset
+
+ für 
+\begin_inset Formula $k\subseteq E'\subseteq E'\left[\alpha_{n}\right]$
+\end_inset
+
+ folgt, dass 
+\begin_inset Formula $E'\left[\alpha_{n}\right]=k\left[\alpha_{1},\ldots,\alpha_{n}\right]\supseteq k$
+\end_inset
+
+ eine endliche Körpererweiterung ist.
+\end_layout
+
+\begin_layout Standard
+Insbesondere ist 
+\begin_inset Formula $k\left[\alpha_{1},\ldots,\alpha_{n}\right]$
+\end_inset
+
+ ein Körper und somit 
+\begin_inset Formula $E=k\left(\alpha_{1},\ldots,\alpha_{n}\right)=k\left[\alpha_{1},\ldots,\alpha_{n}\right]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Es folgten i) und ii).
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Beispiel
+\end_layout
+
+\begin_layout Standard
+Für jedes 
+\begin_inset Formula $n\in\mathbb{N}_{\ge1}$
+\end_inset
+
+ ist 
+\begin_inset Formula $\cos\left(\frac{\pi}{n}\right)\in\mathbb{R}$
+\end_inset
+
+ algebraisch über 
+\begin_inset Formula $\mathbb{Q}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection*
+Beweis
+\end_layout
+
+\begin_layout Standard
+Nach Euler gilt:
+\begin_inset Formula 
+\begin{align*}
+\cos\left(\frac{\pi}{n}\right) & =\frac{1}{2}\left(e^{\frac{\pi\ii}{n}}+e^{-\frac{\pi\ii}{n}}\right)
+\end{align*}
+
+\end_inset
+
+Außerdem ist
+\begin_inset Formula 
+\begin{align*}
+\alpha & :=e^{\frac{\pi\ii}{n}}\left(=\zeta_{2n}\right)
+\end{align*}
+
+\end_inset
+
+algebraisch über 
+\begin_inset Formula $\mathbb{Q}$
+\end_inset
+
+, denn 
+\begin_inset Formula $\alpha^{2n}=1$
+\end_inset
+
+ (vergleiche Bemerkung 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Bem-zetan"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+Dann folgt nach 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Satz-algKEendlich"
+
+\end_inset
+
+ ii) schon 
+\begin_inset Formula $\left[\mathbb{Q}\left(\alpha\right):\mathbb{Q}\right]<\infty$
+\end_inset
+
+ und mit 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Satz-endlKEalg"
+
+\end_inset
+
+ folgt, dass 
+\begin_inset Formula $\modulo{\mathbb{Q}\left(\alpha\right)}{\mathbb{Q}}$
+\end_inset
+
+ algebraisch ist.
+\end_layout
+
+\begin_layout Standard
+Nach 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Def-algKE"
+
+\end_inset
+
+ ist 
+\emph on
+jedes
+\emph default
+ Element von 
+\begin_inset Formula $\mathbb{Q}\left(\alpha\right)$
+\end_inset
+
+ algebraisch über 
+\begin_inset Formula $\mathbb{Q}$
+\end_inset
+
+ ist, insbesondere also 
+\begin_inset Formula ${\displaystyle \cos\left(\frac{\pi}{n}\right)=\frac{1}{2}\left(\alpha+\alpha^{-1}\right)}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Problem
+\end_layout
+
+\begin_layout Standard
+Bestimme explizit 
+\begin_inset Formula $0\not=f\in\mathbb{Q}\left[X\right]$
+\end_inset
+
+ mit 
+\begin_inset Formula ${\displaystyle f\left(\cos\left(\frac{\pi}{n}\right)\right)=0}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Proposition 
+\series medium
+(endlich 
+\begin_inset Formula $\Leftrightarrow$
+\end_inset
+
+ endlich erzeugt und algebraisch)
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Prop-endlAquivEndlerzUalg"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Sei 
+\begin_inset Formula $E\supseteq k$
+\end_inset
+
+ eine Körpererweiterung.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Es sind äquivalent:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{abclist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abc
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $\modulo{E}{k}$
+\end_inset
+
+ ist endlich.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abc
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $\modulo{E}{k}$
+\end_inset
+
+ ist endlich erzeugt und algebraisch.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{abclist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Es sind äquivalent:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{abclist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abc
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $\modulo{E}{k}$
+\end_inset
+
+ ist algebraisch.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abc
+\end_layout
+
+\end_inset
+
+ Es gibt eine Menge 
+\begin_inset Formula $X\subseteq E$
+\end_inset
+
+ mit 
+\begin_inset Formula $E=k\left(X\right)$
+\end_inset
+
+ und für alle 
+\begin_inset Formula $x\in X$
+\end_inset
+
+ ist 
+\begin_inset Formula $x$
+\end_inset
+
+ algebraisch über 
+\begin_inset Formula $k$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{abclist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Beweis
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ a) 
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+ b): Ist 
+\begin_inset Formula $\modulo{E}{k}$
+\end_inset
+
+ endlich, so offenbar auch endlich erzeugt und nach 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Satz-endlKEalg"
+
+\end_inset
+
+ algebraisch.
+\end_layout
+
+\begin_layout Standard
+b) 
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+ a): Dies wurde in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Satz-algKEendlich"
+
+\end_inset
+
+ ii) gezeigt.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ a) 
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+ b): Wähle 
+\begin_inset Formula $X=E$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+b) 
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+ a): 
+\begin_inset Formula $I:=\left\{ X'|X'\subseteq X\text{ ist endlich}\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Damit folgt:
+\begin_inset Formula 
+\begin{align*}
+E & =k\left(X\right)=\bigcup_{X'\in I}k\left(X'\right)
+\end{align*}
+
+\end_inset
+
+Seien nun 
+\begin_inset Formula $\alpha\in E$
+\end_inset
+
+, dann gibt es ein 
+\begin_inset Formula $X'\in I$
+\end_inset
+
+ mit 
+\begin_inset Formula $\alpha\in k\left(X'\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Wegen 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Satz-algKEendlich"
+
+\end_inset
+
+ ist 
+\begin_inset Formula $k\left(X'\right)\supseteq k$
+\end_inset
+
+ endlich und nach 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Satz-endlKEalg"
+
+\end_inset
+
+ ist 
+\begin_inset Formula $\alpha\in k\left(X'\right)$
+\end_inset
+
+ algebraisch über 
+\begin_inset Formula $k$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Weil dabei 
+\begin_inset Formula $\alpha\in E$
+\end_inset
+
+ beliebig ist, folgt, dass 
+\begin_inset Formula $\modulo{E}{k}$
+\end_inset
+
+ algebraisch ist.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Satz 
+\series medium
+(Transitivität der Algebraizität)
+\end_layout
+
+\begin_layout Standard
+Seien 
+\begin_inset Formula $E\supseteq K\supseteq k$
+\end_inset
+
+ Körpererweiterungen.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Ist 
+\begin_inset Formula $\alpha\in E$
+\end_inset
+
+ algebraisch über 
+\begin_inset Formula $K$
+\end_inset
+
+ und 
+\begin_inset Formula $\modulo{K}{k}$
+\end_inset
+
+ algebraisch, dann ist 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ algebraisch über 
+\begin_inset Formula $k$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Sind 
+\begin_inset Formula $\modulo{E}{K}$
+\end_inset
+
+ und 
+\begin_inset Formula $\modulo{K}{k}$
+\end_inset
+
+ algebraisch, so ist auch 
+\begin_inset Formula $\modulo{E}{k}$
+\end_inset
+
+ algebraisch.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Beweis
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Sei 
+\begin_inset Formula $\text{Mipo}_{K}\left(\alpha\right)=X^{n}+c_{n-1}X^{n-1}+\ldots+c_{0}$
+\end_inset
+
+, dann ist 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ algebraisch über 
+\begin_inset Formula $K':=k\left[c_{0},\ldots,c_{n-1}\right]\subseteq K$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Es folgt:
+\begin_inset Formula 
+\begin{align*}
+\left[K'\left(\alpha\right):K'\right] & <\infty
+\end{align*}
+
+\end_inset
+
+Mit 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Satz-algKEendlich"
+
+\end_inset
+
+ ii) folgt:
+\begin_inset Formula 
+\begin{align*}
+\left[K':k\right] & <\infty
+\end{align*}
+
+\end_inset
+
+Mit 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Satz-Grad"
+
+\end_inset
+
+ folgt insgesamt:
+\begin_inset Formula 
+\begin{align*}
+\left[K'\left(\alpha\right):k\right] & <\infty
+\end{align*}
+
+\end_inset
+
+Nach 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Satz-endlKEalg"
+
+\end_inset
+
+ ist dann 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ algebraisch über 
+\begin_inset Formula $k$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed[
+\backslash
+roman{ale2})]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Dies folgt aus i), angewendet auf alle 
+\begin_inset Formula $\alpha\in E$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -13241,52 +15452,73 @@ Beispiel
 \end_layout
 
 \begin_layout Standard
-Es sind 
-\begin_inset Formula $\mathbb{Q}\subseteq\overline{\mathbb{Q}}^{\mathbb{C}}:=\left\{ \alpha\in\mathbb{C}|\alpha\text{ ist algebraisch über }\mathbb{Q}\right\} \subseteq\mathbb{C}$
+Es sind
+\begin_inset Formula 
+\begin{align*}
+\mathbb{C} & \supseteq\overline{\mathbb{Q}}^{\mathbb{C}}:=\left\{ \alpha\in\mathbb{C}|\alpha\text{ ist algebraisch über }\mathbb{Q}\right\} \supseteq\mathbb{Q}
+\end{align*}
+
 \end_inset
 
- Körpererweiterung.
+Körpererweiterung.
 \end_layout
 
 \begin_layout Standard
 Wegen 
-\begin_inset Formula $\ref{}5.14$
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Prop-endlAquivEndlerzUalg"
+
 \end_inset
 
-,d)
+ ii) b) 
 \begin_inset Formula $\Rightarrow$
 \end_inset
 
-c) ist 
+ a) ist 
 \begin_inset Formula $\modulo{\overline{\mathbb{Q}}^{\mathbb{C}}}{\mathbb{Q}}$
 \end_inset
 
  algebraisch.
- Nach dem Beweis von 
-\begin_inset Formula $\ref{}5.7,iv)$
+\end_layout
+
+\begin_layout Standard
+Nach dem Beweis von 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Bsp-VvKronecker"
+
 \end_inset
 
- gilt 
+ iv) gilt 
 \begin_inset Formula $\left[\overline{\mathbb{Q}}^{\mathbb{C}}:\mathbb{Q}\right]=\infty$
 \end_inset
 
- (N.B.: 
-\begin_inset Formula $\mathbb{Q}\left[2^{\frac{1}{n}}\right]\subseteq\overline{\mathbb{Q}}^{\mathbb{C}}$
+.
+ (Nebenbemerkung: 
+\begin_inset Formula ${\displaystyle \mathbb{Q}\left[2^{\frac{1}{n}}\right]\subseteq\overline{\mathbb{Q}}^{\mathbb{C}}}$
 \end_inset
 
 )
 \end_layout
 
 \begin_layout Standard
-Also ist wegen 
-\begin_inset Formula $\left(\ref{}5.14,b)\Rightarrow a)\right)$
-\end_inset
-
- 
+Also ist die Körpererweiterung 
 \begin_inset Formula $\modulo{\overline{\mathbb{Q}}^{\mathbb{C}}}{\mathbb{Q}}$
 \end_inset
 
- nicht endlich erzeugt.
+ wegen 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Prop-endlAquivEndlerzUalg"
+
+\end_inset
+
+ i) b) 
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+ a) nicht endlich erzeugt.
 \end_layout
 
 \begin_layout Standard
@@ -13537,8 +15769,14 @@ reference "sec:Satz-Grad"
 \begin_inset Formula $E:=\modulo{k\left[X\right]}{\left(g\right)}\supseteq k$
 \end_inset
 
- eine endliche (und damit algebraische) Körpererweiterung, und offenbar
- ist 
+ eine endliche (und damit algebraische) Körpererweiterung, und nach 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Bsp-VvKronecker"
+
+\end_inset
+
+ i) ist 
 \begin_inset Formula $\alpha:=\left(X+\left(g\right)\right)\in E$
 \end_inset
 
@@ -13547,20 +15785,6 @@ reference "sec:Satz-Grad"
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
-
-\color green
-TODO: Wie kann 
-\begin_inset Formula $\alpha\in\modulo{k\left[X\right]}{\left(g\right)}$
-\end_inset
-
- eine Nullstelle von 
-\begin_inset Formula $g\in k\left[X\right]$
-\end_inset
-
- sein?
 \end_layout
 
 \begin_layout Standard
@@ -13676,6 +15900,12 @@ Für jede kommutative
 \end_inset
 
 bijektiv.
+\end_layout
+
+\begin_layout Standard
+
+\color green
+TODO: Rest einfügen
 \end_layout
 
 \begin_layout Subsubsection*
@@ -27005,7 +29235,7 @@ Beispiel
 \begin_layout Chapter
 Kreisteilungskörper 
 \series medium
-(die Galoistheorie von 
+(die Galoistheorie der Gleichung 
 \begin_inset Formula $X^{n}-1=0$
 \end_inset
 
@@ -27459,6 +29689,19 @@ Bemerkung
 
 \begin_layout Part*
 Anhang
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+thispagestyle{empty}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -27500,7 +29743,7 @@ fancyhead[C]{Anhang}
 
 \end_layout
 
-\begin_layout Section*
+\begin_layout Chapter*
 
 \lang english
 GNU Free Documentation License
@@ -27594,7 +29837,7 @@ Everyone is permitted to copy and distribute verbatim copies of this license
 but changing it is not allowed.
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Section*
 
 \noun on
 \lang english
@@ -27639,7 +29882,7 @@ We have designed this License in order to use it for manuals for free software,
  or reference.
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Section*
 
 \noun on
 \lang english
@@ -27842,7 +30085,7 @@ The Document may include Warranty Disclaimers next to the notice which states
  meaning of this License.
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Section*
 
 \noun on
 \lang english
@@ -27872,7 +30115,7 @@ You may also lend copies, under the same conditions stated above, and you
  may publicly display copies.
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Section*
 
 \noun on
 \lang english
@@ -27930,7 +30173,7 @@ It is requested, but not required, that you contact the authors of the Document
  to provide you with an updated version of the Document.
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Section*
 
 \noun on
 \lang english
@@ -28310,7 +30553,7 @@ The author(s) and publisher(s) of the Document do not by this License give
 nt of any Modified Version.
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Section*
 
 \noun on
 \lang english
@@ -28352,7 +30595,7 @@ In the combination, you must combine any sections Entitled “History” in
  You must delete all sections Entitled “Endorsements”.
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Section*
 
 \noun on
 \lang english
@@ -28379,7 +30622,7 @@ You may extract a single document from such a collection, and distribute
  respects regarding verbatim copying of that document.
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Section*
 
 \noun on
 \lang english
@@ -28411,7 +30654,7 @@ If the Cover Text requirement of section 3 is applicable to these copies
  Otherwise they must appear on printed covers that bracket the whole aggregate.
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Section*
 
 \noun on
 \lang english
@@ -28444,7 +30687,7 @@ If a section in the Document is Entitled “Acknowledgements”, “Dedications�
  1) will typically require changing the actual title.
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Section*
 
 \noun on
 \lang english
@@ -28491,7 +30734,7 @@ Termination of your rights under this section does not terminate the licenses
  to use it.
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Section*
 
 \noun on
 \lang english
@@ -28538,7 +30781,7 @@ n.
  Document.
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Section*
 
 \noun on
 \lang english
@@ -28591,7 +30834,7 @@ The operator of an MMC Site may republish an MMC contained in the site under
  MMC is eligible for relicensing.
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Section*
 
 \noun on
 \lang english
