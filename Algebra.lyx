@@ -7,6 +7,7 @@
 \usepackage{tikz}
 \usepackage{latexsym,stmaryrd,stackrel,array,tabularx,multirow}
 \usepackage[explicit]{titlesec}
+\usepackage{makeidx}
 %\usepackage{polynom} % momentan nicht benötigt
 
 %Inhaltsverzeichnis
@@ -884,7 +885,7 @@ status open
 
 \end_inset
 
-l
+
 \end_layout
 
 \begin_layout Chapter
@@ -892,7 +893,7 @@ Gruppentheorie I
 \end_layout
 
 \begin_layout Standard
-Aus Linearer Algebra I wird vorausgesetzt:
+Aus der Linearen Algebra I wird die Kenntnis folgender Objekte vorausgesetzt:
 \end_layout
 
 \begin_layout Itemize
@@ -13940,6 +13941,13 @@ qqed
 Proposition und Definition 
 \series medium
 (Polynomring; endlich erzeugte, einfache Körpererweiterung)
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:PuD-Polynomring"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -15152,6 +15160,13 @@ qqed
 Satz 
 \series medium
 (Transitivität der Algebraizität)
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Satz-AlgTransitiv"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -15533,7 +15548,16 @@ Der algebraische Abschluss eines Körpers
 \end_layout
 
 \begin_layout Section
-Proposition und Definition
+Proposition und Definition 
+\series medium
+(algebraisch abgeschlossen)
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:PuD-algAbges"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -15831,7 +15855,16 @@ qqed
 \end_layout
 
 \begin_layout Section
-Proposition und Definition
+Proposition und Definition 
+\series medium
+(Polynomring)
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:PuD-PolynomringInfty"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -15902,12 +15935,6 @@ Für jede kommutative
 bijektiv.
 \end_layout
 
-\begin_layout Standard
-
-\color green
-TODO: Rest einfügen
-\end_layout
-
 \begin_layout Subsubsection*
 Beweis
 \end_layout
@@ -15915,7 +15942,7 @@ Beweis
 \begin_layout Standard
 Wegen 
 \begin_inset CommandInset ref
-LatexCommand ref
+LatexCommand eqref
 reference "eq:kX"
 
 \end_inset
@@ -15937,7 +15964,10 @@ bijektiv, wobei
 
 \begin_layout Standard
 Wegen 
-\begin_inset Formula $\ref{}5.11$
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:PuD-Polynomring"
+
 \end_inset
 
  ist folgende Abbildung bijektiv:
@@ -15960,11 +15990,15 @@ Es ist klar, dass die Abbildung
 
 \end_inset
 
-bijektiv ist, und man prüft dass die resultierende Bijektion 
-\begin_inset Formula $\text{Hom}_{k\text{-Alg.}}\left(\mathfrak{X},A\right)\stackrel{\sim}{\to}\text{Abb}\left(\mathfrak{X},A\right)$
+bijektiv ist, und man prüft, dass die resultierende Bijektion
+\begin_inset Formula 
+\begin{align*}
+\text{Hom}_{k\text{-Alg.}}\left(\mathfrak{X},A\right) & \stackrel{\sim}{\to}\text{Abb}\left(\mathfrak{X},A\right)
+\end{align*}
+
 \end_inset
 
- wie angegeben ist.
+wie angegeben ist.
 \end_layout
 
 \begin_layout Standard
@@ -15988,7 +16022,7 @@ Das Lemma von Zorn
 \end_layout
 
 \begin_layout Subsection
-Definition
+Definition (geordnete Menge, obere Schranke)
 \end_layout
 
 \begin_layout Standard
@@ -16012,11 +16046,11 @@ teilweise geordnete Menge
 \begin_inset Formula $M$
 \end_inset
 
- sind, so dass gelten: 
-\begin_inset Formula $\fall_{x,y,z\in M}$
+ sind, so dass für alle 
+\begin_inset Formula $x,y,z\in M$
 \end_inset
 
-
+ gelten:
 \end_layout
 
 \begin_layout Standard
@@ -16115,12 +16149,20 @@ end{iiilist}
 \begin_inset Formula $\left(M,\le\right)$
 \end_inset
 
- heißt 
+ heißt genau dann 
 \emph on
 total geordnet
 \emph default
- genau dann, wenn 
-\begin_inset Formula ${\displaystyle \fall_{x,y\in M}x\le y\vee y\le x}$
+, wenn für alle 
+\begin_inset Formula $x,y\in M$
+\end_inset
+
+ schon 
+\begin_inset Formula $x\le y$
+\end_inset
+
+ oder 
+\begin_inset Formula $y\le x$
 \end_inset
 
  gilt.
@@ -16130,12 +16172,20 @@ total geordnet
 \begin_inset Formula $x\in M$
 \end_inset
 
- heißt 
+ heißt genau dann 
 \emph on
 maximales Element
 \emph default
- genau dann, wenn 
-\begin_inset Formula ${\displaystyle \fall_{y\in M}:x\le y\Rightarrow x=y}$
+, wenn für alle 
+\begin_inset Formula $y\in M$
+\end_inset
+
+ aus 
+\begin_inset Formula $x\le y$
+\end_inset
+
+ schon 
+\begin_inset Formula $x=y$
 \end_inset
 
 .
@@ -16150,7 +16200,7 @@ Für eine Teilmenge
 \begin_inset Formula $x\in M$
 \end_inset
 
- 
+ genau dann 
 \emph on
 obere Schranke für 
 \begin_inset Formula $N$
@@ -16158,8 +16208,12 @@ obere Schranke für
 
 
 \emph default
- genau dann, wenn 
-\begin_inset Formula ${\displaystyle \fall_{y\in N}y\le x}$
+, wenn für alle 
+\begin_inset Formula $y\in N$
+\end_inset
+
+ schon 
+\begin_inset Formula $y\le x$
 \end_inset
 
 .
@@ -16167,6 +16221,13 @@ obere Schranke für
 
 \begin_layout Subsection
 Beispiel
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Bsp-M_IinRideal"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -16175,7 +16236,7 @@ Seien
 \end_inset
 
  ein kommutativer Ring, 
-\begin_inset Formula $M:=\left\{ I|I\subsetneq R\text{ Ideal}\right\} $
+\begin_inset Formula $M:=\left\{ I|I\subsetneq R\text{ ist ein Ideal}\right\} $
 \end_inset
 
  und 
@@ -16183,16 +16244,23 @@ Seien
 \end_inset
 
 .
- Dann ist 
+\end_layout
+
+\begin_layout Standard
+Dann ist 
 \begin_inset Formula $\left(M,\le\right)$
 \end_inset
 
  teilweise geordnet, aber im Allgemeinen nicht total geordnet, zum Beispiel
- für 
-\begin_inset Formula $R=\mathbb{Z},\left(2\right),\left(3\right)\in M$
+ ist für 
+\begin_inset Formula $R=\mathbb{Z}$
 \end_inset
 
-, und weder 
+ schon 
+\begin_inset Formula $\left(2\right),\left(3\right)\in M$
+\end_inset
+
+ und weder 
 \begin_inset Formula $\left(2\right)\le\left(3\right)$
 \end_inset
 
@@ -16207,6 +16275,13 @@ Seien
 Satz
 \series medium
  (Lemma von Zorn)
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Satz-LemmaZorn"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -16218,12 +16293,15 @@ Sei
 \begin_inset Formula $M\not=\emptyset$
 \end_inset
 
- und jede total geordnete Teilfolge 
+ und jede total geordnete Teilmenge 
 \begin_inset Formula $N\subseteq M$
 \end_inset
 
  besitze eine obere Schranke.
- Dann besitzt 
+\end_layout
+
+\begin_layout Standard
+Dann besitzt 
 \begin_inset Formula $M$
 \end_inset
 
@@ -16235,10 +16313,23 @@ Sei
 \end_layout
 
 \begin_layout Standard
-äquivalent zum Auswahlaxiom
+Diese Aussage ist äquivalent zum Auswahlaxiom:
+\end_layout
+
+\begin_layout Standard
+Sei 
+\begin_inset Formula $I\not=\emptyset$
+\end_inset
+
+ eine Menge.
+ Für alle 
+\begin_inset Formula $i\in I$
+\end_inset
+
+ gilt:
 \begin_inset Formula 
 \begin{align*}
-\emptyset\not=I\text{ Menge}, & \fall_{i\in I}:\emptyset\not=X_{i}\Rightarrow\prod_{i\in I}X_{i}\not=\emptyset
+\emptyset\not=X_{i} & \Rightarrow\prod_{i\in I}X_{i}\not=\emptyset
 \end{align*}
 
 \end_inset
@@ -16248,6 +16339,13 @@ Sei
 
 \begin_layout Subsection
 Beispiel
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Bsp-Zorn"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -16256,7 +16354,10 @@ Sei
 \end_inset
 
  wie in 
-\begin_inset Formula $\ref{}6.3.2$
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Bsp-M_IinRideal"
+
 \end_inset
 
  für 
@@ -16264,7 +16365,10 @@ Sei
 \end_inset
 
 .
- Dann ist 
+\end_layout
+
+\begin_layout Standard
+Dann ist 
 \begin_inset Formula $\left\{ 0\right\} \in M$
 \end_inset
 
@@ -16291,15 +16395,15 @@ Behauptung
 \begin_inset Formula ${\displaystyle J:=\bigcup_{I\in N}I\subsetneq R}$
 \end_inset
 
- ist ein Ideal (
-\begin_inset Formula $\Rightarrow J\in M$
+ ist ein Ideal (also ist 
+\begin_inset Formula $J\in M$
 \end_inset
 
- ist eine obere Schranke für 
+ eine obere Schranke für 
 \begin_inset Formula $N$
 \end_inset
 
-)
+).
 \end_layout
 
 \begin_layout Subsubsection*
@@ -16307,6 +16411,25 @@ Beweis
 \end_layout
 
 \begin_layout Enumerate
+Ist 
+\begin_inset Formula $x\in J$
+\end_inset
+
+, so gibt es 
+\begin_inset Formula $I\in N$
+\end_inset
+
+ mit 
+\begin_inset Formula $x\in I\subseteq J$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\color green
+TODO: „
 \begin_inset Formula $x\in J$
 \end_inset
 
@@ -16330,14 +16453,23 @@ Beweis
 \begin_inset Formula ${\displaystyle \exs_{I\subseteq J}}$
 \end_inset
 
-
+“ Was heißt das?
 \end_layout
 
 \begin_layout Enumerate
-\begin_inset Formula $x,y\in J\Rightarrow\exs_{I_{1},I_{2}\in N}:x\in I_{1},y\in I_{2}$
+Sind 
+\begin_inset Formula $x,y\in J$
 \end_inset
 
+, so existieren 
+\begin_inset Formula $I_{1},I_{2}\in N$
+\end_inset
 
+ mit 
+\begin_inset Formula $x\in I_{1},y\in I_{2}$
+\end_inset
+
+.
 \begin_inset Newline newline
 \end_inset
 
@@ -16366,16 +16498,20 @@ Weil
 \begin_inset Formula $I_{1}\subseteq I_{2}$
 \end_inset
 
- 
-\begin_inset Formula $\Rightarrow$
+.
+ Dann gilt 
+\begin_inset Formula $x,y\in I_{2}$
 \end_inset
 
- 
-\begin_inset Formula $x,y\in I_{2}\Rightarrow x+y\in I_{2}\subseteq J$
+ und es folgt 
+\begin_inset Formula $x+y\in I_{2}\subseteq J$
 \end_inset
 
 .
- Also ist 
+\end_layout
+
+\begin_layout Standard
+Also ist 
 \begin_inset Formula $J\subseteq R$
 \end_inset
 
@@ -16387,11 +16523,24 @@ Wäre
 \begin_inset Formula $J=R$
 \end_inset
 
-, so folgt 
-\begin_inset Formula ${\displaystyle 1\in J=\bigcup_{I\in N}I}\Rightarrow\exs_{I\in N}1\in I\Rightarrow I=R\lightning$
+, so würde 
+\begin_inset Formula ${\displaystyle 1\in J=\bigcup_{I\in N}I}$
 \end_inset
 
- zu 
+ folgen.
+ Dann müsste ein 
+\begin_inset Formula $I\in N$
+\end_inset
+
+ existieren mit 
+\begin_inset Formula $1\in I$
+\end_inset
+
+, also 
+\begin_inset Formula $I=R$
+\end_inset
+
+ im Widerspruch zu 
 \begin_inset Formula $I\in M$
 \end_inset
 
@@ -16403,27 +16552,89 @@ Wäre
 \end_layout
 
 \begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed[Behauptung]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 Damit erfüllt 
 \begin_inset Formula $\left(M,\le\right)$
 \end_inset
 
  alle Voraussetzungen von 
-\begin_inset Formula $\ref{}6.3.3$
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Satz-LemmaZorn"
+
 \end_inset
 
  und es folgt:
 \end_layout
 
 \begin_layout Subsection
-6.3.4 Satz
+Satz 
+\series medium
+(Existenz eines maximalen Ideals)
+\series default
+
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Satz-maxIdeal"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
+Ist 
 \begin_inset Formula $R\not=\left\{ 0\right\} $
 \end_inset
 
- kommutativer Ring 
-\begin_inset Formula $\Rightarrow\exs_{\mathfrak{m}\subseteq R\text{ max. Ideal}}$
+ ein kommutativer Ring, so existiert ein maximales Ideal 
+\begin_inset Formula $\mathfrak{m}\subseteq R$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection*
+Beweis
+\end_layout
+
+\begin_layout Standard
+Siehe 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Bsp-Zorn"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed
+\end_layout
+
 \end_inset
 
 
@@ -16433,6 +16644,13 @@ Damit erfüllt
 Satz und Definition 
 \series medium
 (algebraischer Abschluss)
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:SuD-algAbschluss"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -16441,22 +16659,24 @@ Sei
 \end_inset
 
  ein Körper.
- Dann existieren eine algebraische Körpererweiterung 
-\begin_inset Formula $k\subseteq\overline{k}$
+\end_layout
+
+\begin_layout Standard
+Dann existieren eine algebraische Körpererweiterung 
+\begin_inset Formula $\overline{k}\subseteq k$
 \end_inset
 
- mit 
-\begin_inset Formula $\overline{k}$
-\end_inset
+, die algebraisch abgeschlossen ist.
+\end_layout
 
- algebraisch abgeschlossen.
- Jedes solches 
+\begin_layout Standard
+Jedes solches 
 \begin_inset Formula $\overline{k}$
 \end_inset
 
  heißt 
 \emph on
-ein abgebraischer Abschluss von 
+ein algebraischer Abschluss von 
 \begin_inset Formula $k$
 \end_inset
 
@@ -16473,7 +16693,10 @@ Die Notation
 \end_inset
 
  wird später durch 
-\begin_inset Formula $\ref{}6.7$
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:SuD-Fortsetzung"
+
 \end_inset
 
  gerechtfertigt.
@@ -16481,14 +16704,22 @@ Die Notation
 
 \begin_layout Subsubsection*
 Beweis von 
-\begin_inset Formula $\ref{}6.4$
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:SuD-algAbschluss"
+
 \end_inset
 
 
 \family roman
 \series medium
- (E.
- Artin)
+ (
+\family default
+\noun on
+Emil Artin
+\family roman
+\noun default
+)
 \end_layout
 
 \begin_layout Standard
@@ -16496,10 +16727,10 @@ Setze
 \begin_inset Formula $I:=\left\{ f\in k\left[X\right]|\text{deg}\left(f\right)\ge1\right\} ,\,\,\mathfrak{X}:=\left\{ X_{f}|f\in I\right\} $
 \end_inset
 
-, und betrachte das Ideal
+, und betrachte das Ideal:
 \begin_inset Formula 
 \begin{align*}
-k\left[\mathfrak{X}\right]\supseteq I & :=\left(f\left(X_{f}\right)|f\in I\right)
+I & :=\left(f\left(X_{f}\right)|f\in I\right)\subseteq k\left[\mathfrak{X}\right]
 \end{align*}
 
 \end_inset
@@ -16523,23 +16754,23 @@ Beweis
 \end_layout
 
 \begin_layout Standard
-Sonst gilt 
-\begin_inset Formula $1\in I\Rightarrow$
+Sonst würde 
+\begin_inset Formula $1\in I$
 \end_inset
 
- 
+ gelten, woraus folgt:
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \begin{align}
-1= & {\displaystyle \sum_{i=1}^{n}g_{i}\cdot f_{i}\left(X_{fi}\right)}\qquad(1)
+1= & {\displaystyle \sum_{i=1}^{n}g_{i}\cdot f_{i}\left(X_{f_{i}}\right)}\label{eq:gfXf}
 \end{align}
 
 \end_inset
 
-mit 
-\begin_inset Formula $n\ge1$
+Dabei ist 
+\begin_inset Formula $n\in\mathbb{N}_{\ge1}$
 \end_inset
 
 , 
@@ -16551,22 +16782,36 @@ mit
 \end_inset
 
  geeignet.
- Aus 
-\begin_inset Formula $\ref{}5.7,i)$
+\end_layout
+
+\begin_layout Standard
+Aus 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Bsp-VvKronecker"
+
 \end_inset
 
- induktiv angewand auf alle irreduziblen Teiler von 
+ i) induktiv angewendet auf alle irreduziblen Teiler von 
 \begin_inset Formula $f_{1},\ldots,f_{n}$
 \end_inset
 
- folgt 
-\begin_inset Formula ${\displaystyle \exs_{k\subseteq K\text{ endl. KE}}\exs_{\alpha_{1},\ldots,\alpha_{n}\in K}}$
+ folgt, dass es eine endliche Körpererweiterung 
+\begin_inset Formula $K\supseteq k$
 \end_inset
 
-: 
+ und 
+\begin_inset Formula $\alpha_{1},\ldots,\alpha_{n}\in K$
+\end_inset
+
+, sodass für alle 
+\begin_inset Formula $1\le i\le n$
+\end_inset
+
+ gilt: 
 \begin_inset Formula 
 \begin{align}
-f_{i}\left(\alpha_{i}\right)=0 & \fall_{1\le i\le n}\qquad\left(2\right)
+f_{i}\left(\alpha_{i}\right) & =0\label{eq:fa0}
 \end{align}
 
 \end_inset
@@ -16576,33 +16821,40 @@ f_{i}\left(\alpha_{i}\right)=0 & \fall_{1\le i\le n}\qquad\left(2\right)
 
 \begin_layout Standard
 Wegen 
-\begin_inset Formula $\ref{}6.2$
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:PuD-PolynomringInfty"
+
 \end_inset
 
  existiert ein 
 \begin_inset Formula $k$
 \end_inset
 
--Algebra-Homomorphismus 
+-Algebrenhomomorphismus 
 \begin_inset Formula $\phi:k\left[X\right]\to k$
 \end_inset
 
- mit 
-\begin_inset Formula $\left(\ref{}3\right)$
+, sodass für alle 
+\begin_inset Formula $1\le i\le n$
 \end_inset
 
- 
-\begin_inset Formula ${\displaystyle \fall_{1\le i\le n}}\phi\left(X_{f_{I}}\right)=\alpha_{i}$
+ schon
+\begin_inset Formula 
+\begin{align}
+\phi\left(X_{f_{i}}\right) & =\alpha_{i}\label{eq:phiXf}
+\end{align}
+
 \end_inset
 
-, und es folgt in 
+gilt, und es folgt in 
 \begin_inset Formula $K$
 \end_inset
 
 :
 \begin_inset Formula 
 \begin{align*}
-1 & =\phi\left(1\right)\stackrel{\left(\ref{}1\right)}{=}\sum_{i=1}^{n}\phi\left(g_{i}\right)\cdot\underbrace{\phi\left(f_{i}\left(X_{f_{i}}\right)\right)}_{=f_{i}\left(\underbrace{\phi\left(X_{f_{i}}\right)}_{=\alpha_{i}}\right)}\stackrel{\left(\ref{}2\right)}{=}0\lightning
+1 & =\phi\left(1\right)\stackrel{\eqref{eq:gfXf}}{=}\sum_{i=1}^{n}\phi\left(g_{i}\right)\cdot\underbrace{\phi\left(f_{i}\left(X_{f_{i}}\right)\right)}_{=f_{i}\left(\underbrace{\phi\left(X_{f_{i}}\right)}_{=\alpha_{i}}\right)}\stackrel{\eqref{eq:fa0}}{=}0\qquad\lightning
 \end{align*}
 
 \end_inset
@@ -16624,21 +16876,31 @@ qqed
 \end_layout
 
 \begin_layout Standard
-Wegen Behauptung ist 
-\begin_inset Formula $\modulo{k\left[\mathfrak{X}\right]}{I}\not=\left\{ 0\right\} \stackrel{\ref{}6.3.4}{\Rightarrow}$
+Wegen der Behauptung ist 
+\begin_inset Formula $\modulo{k\left[\mathfrak{X}\right]}{I}\not=\left\{ 0\right\} $
 \end_inset
 
- es existiert ein maximales Ideal 
+ und wegen 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Satz-maxIdeal"
+
+\end_inset
+
+ existiert ein maximales Ideal 
 \begin_inset Formula $\mathfrak{m}\subseteq\modulo{k\left[\mathfrak{X}\right]}{I}$
 \end_inset
 
 .
- Erhalte eine Körpererweiterung 
-\begin_inset Formula $\overline{k}\supseteq k$
+\end_layout
+
+\begin_layout Standard
+Erhalte eine Körpererweiterung 
+\begin_inset Formula $\alpha\left(k\right)\supseteq k$
 \end_inset
 
  als Komposition 
-\begin_inset Formula $k\hookrightarrow k\left[\mathfrak{X}\right]\twoheadrightarrow\modulo{k\left[\mathfrak{X}\right]}{I}\twoheadrightarrow\underbrace{\modulo{\modulo{k\left[\mathfrak{X}\right]}{I}}{\mathfrak{m}}}_{=:\overline{k}}$
+\begin_inset Formula $k\hookrightarrow k\left[\mathfrak{X}\right]\twoheadrightarrow\modulo{k\left[\mathfrak{X}\right]}{I}\twoheadrightarrow\underbrace{\modulo{\modulo{k\left[\mathfrak{X}\right]}{I}}{\mathfrak{m}}}_{=:\alpha\left(k\right)}$
 \end_inset
 
 .
@@ -16678,7 +16940,7 @@ iii
 \end_inset
 
  
-\begin_inset Formula $\modulo{\overline{k}}{k}$
+\begin_inset Formula $\modulo{\alpha\left(k\right)}{k}$
 \end_inset
 
  ist algebraisch.
@@ -16698,7 +16960,31 @@ iii
 \end_inset
 
  
-\begin_inset Formula $\overline{k}$
+\begin_inset Formula ${\displaystyle \overline{k}:=\bigcup_{n\ge1}\alpha^{n}\left(k\right)}$
+\end_inset
+
+ ist algebraisch über 
+\begin_inset Formula $k$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $\modulo{\overline{k}}{k}$
 \end_inset
 
  ist algebraisch abgeschlossen.
@@ -16725,16 +17011,44 @@ Beweis
 \end_layout
 
 \begin_layout Standard
-Die 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Die 
 \begin_inset Formula $k$
 \end_inset
 
 -Algebra 
-\begin_inset Formula $\overline{k}$
+\begin_inset Formula $\alpha\left(k\right)$
 \end_inset
 
  wird durch die Bilder 
-\begin_inset Formula $\alpha_{f}\in\overline{k}$
+\begin_inset Formula $\alpha_{f}\in\alpha\left(k\right)$
 \end_inset
 
  der 
@@ -16742,30 +17056,49 @@ Die
 \end_inset
 
  erzeugt.
- Für jedes 
-\begin_inset Formula $f\in I$
-\end_inset
-
- gitl wegen 
-\begin_inset Formula $f\left(X_{f}\right)\in I$
-\end_inset
-
-:
 \end_layout
 
 \begin_layout Standard
+Für jedes 
+\begin_inset Formula $f\in I$
+\end_inset
+
+ gilt wegen 
+\begin_inset Formula $f\left(X_{f}\right)\in I$
+\end_inset
+
+: 
 \begin_inset Formula $f\left(\alpha_{f}\right)=0$
 \end_inset
 
  in 
-\begin_inset Formula $\overline{k}$
+\begin_inset Formula $\alpha\left(k\right)$
 \end_inset
 
-, das heißt nach Definition von 
+.
+\end_layout
+
+\begin_layout Standard
+Teil i) folgt aus 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Prop-endlAquivEndlerzUalg"
+
+\end_inset
+
+ ii) b) 
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+ a).
+\end_layout
+
+\begin_layout Standard
+Nach Definition von 
 \begin_inset Formula $I$
 \end_inset
 
-: Jedes 
+ folgt auch: Jedes 
 \begin_inset Formula $f\in k\left[X\right]$
 \end_inset
 
@@ -16773,28 +17106,203 @@ Die
 \begin_inset Formula $\text{deg}\left(f\right)\ge1$
 \end_inset
 
- besitzt Nullstelle in 
-\begin_inset Formula $k$
+ besitzt eine Nullstelle in 
+\begin_inset Formula $\alpha\left(k\right)$
 \end_inset
 
 .
 \end_layout
 
 \begin_layout Standard
-Damit folgt ii) aus 
-\begin_inset Formula $\ref{}6.1,i)$
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed[
+\backslash
+roman{ale2})]
+\end_layout
+
 \end_inset
 
-.
- (Nicht ganz!!!TODO:später mehr)
+
 \end_layout
 
 \begin_layout Standard
-Teil i) folgt aus 
-\begin_inset Formula $\ref{}5.14,d)\Rightarrow e)$
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Betrachte nun den Körperturm:
+\begin_inset Formula 
+\begin{align*}
+k\subseteq\alpha\left(k\right)\subseteq\alpha\left(\alpha\left(k\right)\right)=:\alpha^{2}\left(k\right)\subseteq\ldots\subseteq\bigcup_{n\ge1}\alpha^{n}\left(k\right) & =:\overline{k}
+\end{align*}
+
+\end_inset
+
+Für alle 
+\begin_inset Formula $n\in\mathbb{N}_{\ge1}$
+\end_inset
+
+ folgt nach i), dass 
+\begin_inset Formula $\modulo{\alpha^{n}\left(k\right)}{\alpha^{n-1}\left(k\right)}$
+\end_inset
+
+ algebraisch ist.
+ (
+\begin_inset Formula $\alpha^{0}\left(k\right):=k$
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Standard
+Induktiv folgt aus 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Satz-AlgTransitiv"
+
+\end_inset
+
+ für alle 
+\begin_inset Formula $n\in\mathbb{N}_{\ge0}$
+\end_inset
+
+, dass 
+\begin_inset Formula $\modulo{\alpha^{n}\left(k\right)}{k}$
+\end_inset
+
+ algebraisch ist.
+\end_layout
+
+\begin_layout Standard
+ii) folgt, da jedes Element von 
+\begin_inset Formula $\overline{k}$
+\end_inset
+
+ in einem 
+\begin_inset Formula $\alpha^{n}\left(k\right)$
+\end_inset
+
+ liegt.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed[
+\backslash
+roman{ale2})]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Sei 
+\begin_inset Formula $f\in\overline{k}\left[X\right]$
+\end_inset
+
+ nicht konstant.
+\end_layout
+
+\begin_layout Standard
+Da 
+\begin_inset Formula $f$
+\end_inset
+
+ nur endlich viele Koeffizienten hat, folgt, dass ein 
+\begin_inset Formula $n\in\mathbb{N}_{\ge0}$
+\end_inset
+
+ existiert mit 
+\begin_inset Formula $f\in\alpha^{n}\left(k\right)\left[X\right]$
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Standard
+Also hat 
+\begin_inset Formula $f$
+\end_inset
+
+ eine Nullstelle in 
+\begin_inset Formula $\alpha^{n+1}\left(k\right)\subseteq\overline{k}$
+\end_inset
+
+.
+ Damit folgt aus 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:PuD-algAbges"
+
+\end_inset
+
+ i) die Behauptung.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -16807,26 +17315,17 @@ Sei
 \end_inset
 
  ein Körperhomomorphismus.
- Schreibe für alle 
-\begin_inset Formula $f=\sum a_{i}X^{i}\in k\left[X\right]:f^{\sigma}:=\sum\sigma\left(a_{i}\right)X^{i}\in L\left[X\right]$
-\end_inset
-
-.
 \end_layout
 
 \begin_layout Standard
-Dann gilt 
-\begin_inset Formula $\fall_{\alpha\in k}\sigma\left(f\left(\alpha\right)\right)=\sigma\left(\sum a_{i}\alpha^{i}\right)=\sum\sigma\left(a_{i}\right)\cdot\sigma\left(\alpha\right)^{i}=f^{\sigma}\left(\sigma\left(\alpha\right)\right)$
+Schreibe für alle 
+\begin_inset Formula ${\displaystyle f=\sum_{i}a_{i}X^{i}\in k\left[X\right]}$
 \end_inset
 
- .
- Insbesondere:
-\end_layout
-
-\begin_layout Standard
+:
 \begin_inset Formula 
 \begin{align*}
-\fall_{\alpha\in k} & f\left(\alpha\right)=0\Rightarrow f^{\sigma}\left(\sigma\left(\alpha\right)\right)=0
+f^{\sigma} & :=\sum_{i}\sigma\left(a_{i}\right)X^{i}\in L\left[X\right]
 \end{align*}
 
 \end_inset
@@ -16835,7 +17334,34 @@ Dann gilt
 \end_layout
 
 \begin_layout Standard
-TODO: Rest
+Dann gilt für alle 
+\begin_inset Formula $\alpha\in k$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+\sigma\left(f\left(\alpha\right)\right) & =\sigma\left(\sum_{i}a_{i}\alpha^{i}\right)=\sum_{i}\sigma\left(a_{i}\right)\cdot\sigma\left(\alpha\right)^{i}=f^{\sigma}\left(\sigma\left(\alpha\right)\right)
+\end{align*}
+
+\end_inset
+
+Insbesondere gilt für alle 
+\begin_inset Formula $\alpha\in k$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+f\left(\alpha\right)=0 & \Rightarrow f^{\sigma}\left(\sigma\left(\alpha\right)\right)=0
+\end{align*}
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -16843,6 +17369,469 @@ Lemma
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Lem-homkalg"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Seien 
+\begin_inset Formula $k$
+\end_inset
+
+ ein Körper, 
+\begin_inset Formula $k\left(\alpha\right)\supseteq k$
+\end_inset
+
+ eine einfache, algebraische Körpererweiterung, 
+\begin_inset Formula $f:=\text{Mipo}_{k}\left(\alpha\right)\in k\left[X\right]$
+\end_inset
+
+ und 
+\begin_inset Formula $\sigma:k\hookrightarrow L$
+\end_inset
+
+ eine Körpererweiterung.
+\end_layout
+
+\begin_layout Standard
+Dann ist die Abbildung
+\begin_inset Formula 
+\begin{align*}
+\text{Hom}_{k\text{-Alg.}}\left(k\left(\alpha\right),L\right) & \stackrel{\sim}{\to}\left\{ \beta\in L|f^{\sigma}\left(\beta\right)=0\right\} \\
+\sigma & \mapsto\sigma'\left(\alpha\right)
+\end{align*}
+
+\end_inset
+
+
+\color green
+TODO: Was bedeutet 
+\begin_inset Formula $f^{\sigma}$
+\end_inset
+
+ in der Menge auf der rechten Seite? Die Menge, in die die Abbildung geht
+ kann doch nicht davon abhängen, was gerade abgebildet wird.
+\end_layout
+
+\begin_layout Standard
+wohldefiniert und bijektiv.
+\end_layout
+
+\begin_layout Standard
+Insbesondere gilt:
+\begin_inset Formula 
+\begin{align*}
+\left|\text{Hom}_{k\text{-Alg.}}\left(k\left(\alpha\right),L\right)\right| & \le\left[k\left(\alpha\right):k\right]
+\end{align*}
+
+\end_inset
+
+
+\color green
+TODO: Abb einfügen
+\end_layout
+
+\begin_layout Subsubsection*
+Beweis
+\end_layout
+
+\begin_layout Standard
+Die erste Aussage folgt aus der universellen Eigenschaf von 
+\begin_inset Formula $k\hookrightarrow k\left[X\right]$
+\end_inset
+
+ und 
+\begin_inset Formula $k\left[X\right]\twoheadrightarrow\modulo{k\left[X\right]}{\left(f\right)}\stackrel{\sim}{=}k\left(\alpha\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Die zweite Aussage folgt aus 
+\begin_inset Formula $\deg\left(f^{\sigma}\right)=\deg\left(f\right)=\left[k\left(\alpha\right):k\right]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Satz und Definition
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:SuD-Fortsetzung"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Seien 
+\begin_inset Formula $k'\supseteq k$
+\end_inset
+
+ eine algebraische Körpererweiterung und 
+\begin_inset Formula $\sigma:k\hookrightarrow L$
+\end_inset
+
+ ...? eine Körpererweiterung.
+ ...
+\end_layout
+
+\begin_layout Standard
+
+\color green
+TODO: Rest einfügen
+\end_layout
+
+\begin_layout Standard
+Dann existiert eine Fortsetzung von 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ (das bedeutet ein 
+\begin_inset Formula $k$
+\end_inset
+
+-Algebrenhomomorphismus 
+\begin_inset Formula $\sigma':k'\to L$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+Sind zusätzlich 
+\begin_inset Formula $k'$
+\end_inset
+
+ algebraisch abgeschlossen und 
+\begin_inset Formula $L$
+\end_inset
+
+ algebraisch über 
+\begin_inset Formula $\sigma\left(k\right)\subseteq L$
+\end_inset
+
+, so ist jedes solche 
+\begin_inset Formula $\sigma'$
+\end_inset
+
+ ein Isomorphismus.
+\end_layout
+
+\begin_layout Subsubsection*
+Beweis
+\end_layout
+
+\begin_layout Standard
+Betrachte die Menge:
+\begin_inset Formula 
+\begin{align*}
+M & :=\left\{ \left(K,\tau\right)|k\subseteq K\subseteq k'\text{ ist ein Zwischenkörper und }\tau:K\to L\right\} 
+\end{align*}
+
+\end_inset
+
+Wegen 
+\begin_inset Formula $\left(k,\sigma\right)\in M$
+\end_inset
+
+ ist 
+\begin_inset Formula $M\not=\emptyset$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Setze für alle 
+\begin_inset Formula $\left(K,\tau\right),\left(K',\tau'\right)\in M$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+\left(K,\tau\right)\le\left(K',\tau'\right) & :\Leftrightarrow K\subseteq K'\wedge\tau'|_{K}=\tau
+\end{align*}
+
+\end_inset
+
+Dann ist 
+\begin_inset Formula $\left(M,\le\right)$
+\end_inset
+
+ eine teilweise geordnete Menge und jede total geordnete Teilmenge besitzt
+ eine obere Schranke in 
+\begin_inset Formula $M$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\color green
+TODO: Welche?
+\end_layout
+
+\begin_layout Standard
+Nach 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Satz-LemmaZorn"
+
+\end_inset
+
+ existiert ein maximales Element in 
+\begin_inset Formula $\left(K,\sigma'\right)\in M$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Zeige nur 
+\begin_inset Formula $K=k'$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+Angenommen 
+\begin_inset Formula $K\subsetneq k'$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Wähle 
+\begin_inset Formula $\alpha\in k'\setminus K$
+\end_inset
+
+, dann besitzt das Minimalpolynom 
+\begin_inset Formula $\text{Mipo}_{K}\left(\alpha\right)\in K\left[X\right]\subseteq L\left[X\right]$
+\end_inset
+
+ wegen 
+\begin_inset Formula $L=\overline{L}$
+\end_inset
+
+ eine Nullstelle in 
+\begin_inset Formula $L$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Nach 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Lem-homkalg"
+
+\end_inset
+
+ besitzt 
+\begin_inset Formula $\sigma':K\hookrightarrow L$
+\end_inset
+
+ eine Fortsetzung 
+\begin_inset Formula $\sigma'':K\left(\alpha\right)\hookrightarrow L$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Wegen 
+\begin_inset Formula $\sigma''|_{k}=\sigma'|_{k}$
+\end_inset
+
+ ist 
+\begin_inset Formula $\left(K\left(\alpha\right),\sigma''\right)\in M$
+\end_inset
+
+, was wegen 
+\begin_inset Formula $K\subsetneq K\left(\alpha\right)$
+\end_inset
+
+ der Maximalität von 
+\begin_inset Formula $\left(K,\sigma\right)\in M$
+\end_inset
+
+ widerspricht.
+\end_layout
+
+\begin_layout Standard
+Damit ist 
+\begin_inset Formula $\sigma':k\hookrightarrow L$
+\end_inset
+
+ eine Fortsetzung von 
+\begin_inset Formula $\sigma$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Seien nun zusätzlich 
+\begin_inset Formula $k'$
+\end_inset
+
+ algebraisch abgeschlossen und 
+\begin_inset Formula $\modulo{L}{\sigma\left(k\right)}$
+\end_inset
+
+ algebraisch.
+\end_layout
+
+\begin_layout Standard
+Dann ist auch 
+\begin_inset Formula $\modulo{L}{\sigma'\left(k\right)}$
+\end_inset
+
+ algebraisch, da 
+\begin_inset Formula $\sigma'\left(k'\right)\supseteq\sigma\left(k\right)$
+\end_inset
+
+ ist.
+\end_layout
+
+\begin_layout Standard
+Weil 
+\begin_inset Formula $\sigma'\left(k'\right)\stackrel{\sim}{=}k'$
+\end_inset
+
+ algebraisch abgeschlossen ist, folgt nach 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Def-algKE"
+
+\end_inset
+
+ iv) schon 
+\begin_inset Formula $L=\sigma'\left(k'\right)$
+\end_inset
+
+, das heißt 
+\begin_inset Formula $\sigma':k'\twoheadrightarrow L$
+\end_inset
+
+ ist surjektiv, also ein Isomorphismus.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Korollar
+\end_layout
+
+\begin_layout Standard
+Seien 
+\begin_inset Formula $k$
+\end_inset
+
+ ein Körper und 
+\begin_inset Formula $\overline{k}_{i}\supseteq k$
+\end_inset
+
+ (für 
+\begin_inset Formula $i\in\left\{ 1,2\right\} $
+\end_inset
+
+) algebraische Abschlüsse von 
+\begin_inset Formula $k$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Dann existiert ein 
+\begin_inset Formula $k$
+\end_inset
+
+-Algebrenhomomorphismus 
+\begin_inset Formula $\overline{k}_{1}\stackrel{\sim}{\to}\overline{k}_{2}$
+\end_inset
+
+ und jeder solche ist ein Isomorphismus.
+\end_layout
+
+\begin_layout Subsubsection*
+Beweis
+\end_layout
+
+\begin_layout Standard
+Aus 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:SuD-Fortsetzung"
+
+\end_inset
+
+ folgt mir 
+\begin_inset Formula $k':=\overline{k}_{1}$
+\end_inset
+
+, 
+\begin_inset Formula $L:=\overline{k}_{2}$
+\end_inset
+
+ und 
+\begin_inset Formula $\sigma:k\to\overline{k}_{2}$
+\end_inset
+
+ wie gegeben schon die Behauptung.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed
+\end_layout
 
 \end_inset
 
@@ -16858,6 +17847,12 @@ name "sec:Lem-homkalg"
 
 \begin_layout Chapter
 Zerfällungskörper
+\end_layout
+
+\begin_layout Standard
+
+\color green
+TODO: Rest einfügen
 \end_layout
 
 \begin_layout Subsection*
@@ -28999,7 +29994,7 @@ Definition
 \begin_layout Standard
 \begin_inset Formula 
 \begin{align*}
-p\left(X\right) & :=X^{n}+\mathcal{S}_{i}X^{n-1}+\ldots+\mathcal{S}_{n}=X^{n}+\sum_{i=1}^{n}\mathcal{S}_{i}\cdot X^{n-i}\in k\left(\mathcal{S}_{1},\ldots,\mathcal{S}_{n}\right)\left[X\right]
+p\left(X\right) & :=X^{n}+\mathcal{S}_{1}X^{n-1}+\ldots+\mathcal{S}_{n}=X^{n}+\sum_{i=1}^{n}\mathcal{S}_{i}\cdot X^{n-i}\in k\left(\mathcal{S}_{1},\ldots,\mathcal{S}_{n}\right)\left[X\right]
 \end{align*}
 
 \end_inset
@@ -29728,7 +30723,7 @@ status open
 
 
 \backslash
-fancyhead[R]{}
+fancyhead[R]{Index}
 \end_layout
 
 \begin_layout Plain Layout

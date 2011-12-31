@@ -1,4 +1,4 @@
-%% LyX 2.0.2 created this file.  For more info, see http://www.lyx.org/.
+%% LyX 2.0.1 created this file.  For more info, see http://www.lyx.org/.
 %% Do not edit unless you really know what you are doing.
 \documentclass[11pt,english,ngerman]{report}
 \usepackage[T1]{fontenc}
@@ -40,6 +40,7 @@
 \usepackage{tikz}
 \usepackage{latexsym,stmaryrd,stackrel,array,tabularx,multirow}
 \usepackage[explicit]{titlesec}
+\usepackage{makeidx}
 %\usepackage{polynom} % momentan nicht benötigt
 
 %Inhaltsverzeichnis
@@ -293,12 +294,12 @@ ISBN 0-201-40751-5, Lokalisierungen: Seite 36-39
 \fancyhead[C]{}
 
 \tableofcontents{}\newpage{}\fancyhead[R]{\rightmark}
-%\fancyhead[C]{\leftmark}%DATE: Di 18.10.2011l
+%\fancyhead[C]{\leftmark}%DATE: Di 18.10.2011
 
 
 \chapter{Gruppentheorie I}
 
-Aus Linearer Algebra I wird vorausgesetzt:
+Aus der Linearen Algebra I wird die Kenntnis folgender Objekte vorausgesetzt:
 \begin{itemize}
 \item Gruppen,
 \item die Permutationsgruppe $\Sigma\left(X\right)$ (für eine Menge $X$)
@@ -3086,7 +3087,7 @@ Dies wurde in der Linearen Algebra II gezeigt. (Satz von Cayley-Hamilton)
 
 
 \section{Proposition und Definition \textmd{(Polynomring; endlich erzeugte,
-einfache Körpererweiterung)}}
+einfache Körpererweiterung)\label{sec:PuD-Polynomring}}}
 
 Sei $k$ ein Körper.
 
@@ -3297,7 +3298,7 @@ algebraisch ist.
 \qqed
 
 
-\section{Satz \textmd{(Transitivität der Algebraizität)}}
+\section{Satz \textmd{(Transitivität der Algebraizität)\label{sec:Satz-AlgTransitiv}}}
 
 Seien $E\supseteq K\supseteq k$ Körpererweiterungen.
 
@@ -3369,7 +3370,7 @@ nicht endlich erzeugt.
 \chapter{Der algebraische Abschluss eines Körpers}
 
 
-\section{Proposition und Definition}
+\section{Proposition und Definition \textmd{(algebraisch abgeschlossen)\label{sec:PuD-algAbges}}}
 
 Für einen Körper $k$ sind folgende Aussagen äquivalent:
 
@@ -3417,7 +3418,7 @@ $f$, eine Nullstelle in $k$.
 \qqed
 
 
-\section{Proposition und Definition}
+\section{Proposition und Definition \textmd{(Polynomring)\label{sec:PuD-PolynomringInfty}}}
 
 Seien $\mathfrak{X}$ eine Menge und für jede endliche Teilmenge $\mathfrak{X}'=\left\{ X_{1},\ldots,X_{n}\right\} \subseteq\mathfrak{X}$
 sei definiert:
@@ -3440,18 +3441,16 @@ Für jede kommutative $k$-Algebra $A$ ist die Abbildung von Mengen
 \end{align*}
 bijektiv.
 
-\textcolor{green}{TODO: Rest einfügen}
-
 
 \subsubsection*{Beweis}
 
-Wegen \ref{eq:kX} ist die Abbildung
+Wegen \eqref{eq:kX} ist die Abbildung
 \begin{align*}
 \text{Hom}_{k\text{-Alg.}}\left(k\left[\mathfrak{X}\right],A\right) & \stackrel{\sim}{\to}\left\{ \left(\varphi_{\mathfrak{X}'}\right)_{\mathfrak{X}'\subseteq\mathfrak{X}\text{ endl.}}\bigg|\fall_{\mathfrak{X}'\subseteq\mathfrak{X}''\subseteq\mathfrak{X}\text{ endl.}}\varphi_{\mathfrak{X}''}\big|_{k\left[\mathfrak{X}'\right]}=\varphi_{\mathfrak{X}'}\right\} 
 \end{align*}
 bijektiv, wobei $\varphi_{\mathfrak{X}'}\in\text{Hom}_{k\text{-Alg.}}\left(k\left[\mathfrak{X}\right],A\right)$.
 
-Wegen $\ref{}5.11$ ist folgende Abbildung bijektiv:
+Wegen \ref{sec:PuD-Polynomring} ist folgende Abbildung bijektiv:
 \begin{align*}
 \text{Hom}_{k\text{-Alg.}}\left(k\left[\mathfrak{X}\right],A\right) & \stackrel{\sim}{\to}\left\{ \left(f_{\mathfrak{X}'}\right)_{\mathfrak{X}'\subseteq\mathfrak{X}\text{ endl.}}\bigg|f_{\mathfrak{X}'}:\mathfrak{X}'\to A;\fall_{\mathfrak{X}'\subseteq\mathfrak{X}''\subseteq\mathfrak{X}\text{ endl.}}f_{\mathfrak{X}''}\big|_{\mathfrak{X}'}=f_{\mathfrak{X}'}\right\} =:\Sigma
 \end{align*}
@@ -3461,7 +3460,10 @@ Es ist klar, dass die Abbildung
 \begin{align*}
 \text{Abb}\left(\mathfrak{X},A\right) & \stackrel{\sim}{\to}\Sigma,f\mapsto\left(f_{\mathfrak{X}'}:=f\big|_{\mathfrak{X}'}\right)_{\mathfrak{X}'\subseteq\mathfrak{X}\text{ endl.}}
 \end{align*}
-bijektiv ist, und man prüft dass die resultierende Bijektion $\text{Hom}_{k\text{-Alg.}}\left(\mathfrak{X},A\right)\stackrel{\sim}{\to}\text{Abb}\left(\mathfrak{X},A\right)$
+bijektiv ist, und man prüft, dass die resultierende Bijektion
+\begin{align*}
+\text{Hom}_{k\text{-Alg.}}\left(\mathfrak{X},A\right) & \stackrel{\sim}{\to}\text{Abb}\left(\mathfrak{X},A\right)
+\end{align*}
 wie angegeben ist.
 
 \qqed
@@ -3470,11 +3472,11 @@ wie angegeben ist.
 \section{Das Lemma von Zorn}
 
 
-\subsection{Definition}
+\subsection{Definition (geordnete Menge, obere Schranke)}
 
 Eine \emph{teilweise geordnete Menge} ist ein Tupel $\left(M,\le\right)$
 wobei $M$ eine Menge und $\le$ eine Relation auf $M$ sind, so dass
-gelten: $\fall_{x,y,z\in M}$
+für alle $x,y,z\in M$ gelten:
 
 \begin{iiilist}
 
@@ -3486,43 +3488,50 @@ gelten: $\fall_{x,y,z\in M}$
 
 \end{iiilist}
 
-$\left(M,\le\right)$ heißt \emph{total geordnet} genau dann, wenn
-${\displaystyle \fall_{x,y\in M}x\le y\vee y\le x}$ gilt.
+$\left(M,\le\right)$ heißt genau dann \emph{total geordnet}, wenn
+für alle $x,y\in M$ schon $x\le y$ oder $y\le x$ gilt.
 
-$x\in M$ heißt \emph{maximales Element} genau dann, wenn ${\displaystyle \fall_{y\in M}:x\le y\Rightarrow x=y}$.
+$x\in M$ heißt genau dann \emph{maximales Element}, wenn für alle
+$y\in M$ aus $x\le y$ schon $x=y$.
 
-Für eine Teilmenge $N\subseteq M$ heißt $x\in M$ \emph{obere Schranke
-für $N$} genau dann, wenn ${\displaystyle \fall_{y\in N}y\le x}$.
-
-
-\subsection{Beispiel}
-
-Seien $R$ ein kommutativer Ring, $M:=\left\{ I|I\subsetneq R\text{ Ideal}\right\} $
-und $I\le J:\Leftrightarrow I\subseteq J$. Dann ist $\left(M,\le\right)$
-teilweise geordnet, aber im Allgemeinen nicht total geordnet, zum
-Beispiel für $R=\mathbb{Z},\left(2\right),\left(3\right)\in M$, und
-weder $\left(2\right)\le\left(3\right)$ noch $\left(3\right)\le\left(2\right)$.
+Für eine Teilmenge $N\subseteq M$ heißt $x\in M$ genau dann \emph{obere
+Schranke für $N$}, wenn für alle $y\in N$ schon $y\le x$.
 
 
-\subsection{Satz\textmd{ (Lemma von Zorn)}}
+\subsection{Beispiel\label{sub:Bsp-M_IinRideal}}
+
+Seien $R$ ein kommutativer Ring, $M:=\left\{ I|I\subsetneq R\text{ ist ein Ideal}\right\} $
+und $I\le J:\Leftrightarrow I\subseteq J$.
+
+Dann ist $\left(M,\le\right)$ teilweise geordnet, aber im Allgemeinen
+nicht total geordnet, zum Beispiel ist für $R=\mathbb{Z}$ schon $\left(2\right),\left(3\right)\in M$
+und weder $\left(2\right)\le\left(3\right)$ noch $\left(3\right)\le\left(2\right)$.
+
+
+\subsection{Satz\textmd{ (Lemma von Zorn)\label{sub:Satz-LemmaZorn}}}
 
 Sei $\left(M,\le\right)$ eine teilweise geordnete Menge, $M\not=\emptyset$
-und jede total geordnete Teilfolge $N\subseteq M$ besitze eine obere
-Schranke. Dann besitzt $M$ ein maximales Element.
+und jede total geordnete Teilmenge $N\subseteq M$ besitze eine obere
+Schranke.
+
+Dann besitzt $M$ ein maximales Element.
 
 
 \subsubsection*{(ohne Beweis)}
 
-äquivalent zum Auswahlaxiom
+Diese Aussage ist äquivalent zum Auswahlaxiom:
+
+Sei $I\not=\emptyset$ eine Menge. Für alle $i\in I$ gilt:
 \begin{align*}
-\emptyset\not=I\text{ Menge}, & \fall_{i\in I}:\emptyset\not=X_{i}\Rightarrow\prod_{i\in I}X_{i}\not=\emptyset
+\emptyset\not=X_{i} & \Rightarrow\prod_{i\in I}X_{i}\not=\emptyset
 \end{align*}
 
 
 
-\subsection{Beispiel}
+\subsection{Beispiel\label{sub:Bsp-Zorn}}
 
-Sei $\left(M,\le\right)$ wie in $\ref{}6.3.2$ für $R\not=\left\{ 0\right\} $.
+Sei $\left(M,\le\right)$ wie in \ref{sub:Bsp-M_IinRideal} für $R\not=\left\{ 0\right\} $.
+
 Dann ist $\left\{ 0\right\} \in M$, also $M\not=\emptyset$.
 
 Sei $N\subseteq M$ total geordnet.
@@ -3531,50 +3540,69 @@ Sei $N\subseteq M$ total geordnet.
 \subsubsection*{Behauptung}
 
 ${\displaystyle J:=\bigcup_{I\in N}I\subsetneq R}$ ist ein Ideal
-($\Rightarrow J\in M$ ist eine obere Schranke für $N$)
+(also ist $J\in M$ eine obere Schranke für $N$).
 
 
 \subsubsection*{Beweis}
 \begin{enumerate}
-\item $x\in J$ und $a\in R$ $\Rightarrow$ ${\displaystyle \exs_{I\in N}}:x\in I$
-$\Rightarrow$ ${\displaystyle \exs_{I\subseteq J}}$
-\item $x,y\in J\Rightarrow\exs_{I_{1},I_{2}\in N}:x\in I_{1},y\in I_{2}$\\
+\item Ist $x\in J$, so gibt es $I\in N$ mit $x\in I\subseteq J$.\\
+\textcolor{green}{TODO: \quotedblbase{}$x\in J$ und $a\in R$ $\Rightarrow$
+${\displaystyle \exs_{I\in N}}:x\in I$ $\Rightarrow$ ${\displaystyle \exs_{I\subseteq J}}$\textquotedblleft{}
+Was heißt das?}
+\item Sind $x,y\in J$, so existieren $I_{1},I_{2}\in N$ mit $x\in I_{1},y\in I_{2}$.\\
 Weil $N$ total geordnet ist, gilt $I_{1}\subseteq I_{2}$ oder $I_{2}\subseteq I_{1}$.
 Durch eventuelles Vertauschen von $x$ und $y$ sei ohne Einschränkung
-$I_{1}\subseteq I_{2}$ $\Rightarrow$ $x,y\in I_{2}\Rightarrow x+y\in I_{2}\subseteq J$.
-Also ist $J\subseteq R$ ein Ideal.
+$I_{1}\subseteq I_{2}$. Dann gilt $x,y\in I_{2}$ und es folgt $x+y\in I_{2}\subseteq J$.
 \end{enumerate}
-Wäre $J=R$, so folgt ${\displaystyle 1\in J=\bigcup_{I\in N}I}\Rightarrow\exs_{I\in N}1\in I\Rightarrow I=R\lightning$
-zu $I\in M$, das heißt $I\subsetneq R$.
+Also ist $J\subseteq R$ ein Ideal.
 
-Damit erfüllt $\left(M,\le\right)$ alle Voraussetzungen von $\ref{}6.3.3$
+Wäre $J=R$, so würde ${\displaystyle 1\in J=\bigcup_{I\in N}I}$
+folgen. Dann müsste ein $I\in N$ existieren mit $1\in I$, also $I=R$
+im Widerspruch zu $I\in M$, das heißt $I\subsetneq R$.
+
+\qqed[Behauptung]
+
+Damit erfüllt $\left(M,\le\right)$ alle Voraussetzungen von \ref{sub:Satz-LemmaZorn}
 und es folgt:
 
 
-\subsection{6.3.4 Satz}
+\subsection{Satz \textmd{(Existenz eines maximalen Ideals)}\label{sub:Satz-maxIdeal}}
 
-$R\not=\left\{ 0\right\} $ kommutativer Ring $\Rightarrow\exs_{\mathfrak{m}\subseteq R\text{ max. Ideal}}$
+Ist $R\not=\left\{ 0\right\} $ ein kommutativer Ring, so existiert
+ein maximales Ideal $\mathfrak{m}\subseteq R$.
 
 
-\section{Satz und Definition \textmd{(algebraischer Abschluss)}}
+\subsubsection*{Beweis}
 
-Sei $k$ ein Körper. Dann existieren eine algebraische Körpererweiterung
-$k\subseteq\overline{k}$ mit $\overline{k}$ algebraisch abgeschlossen.
-Jedes solches $\overline{k}$ heißt \emph{ein abgebraischer Abschluss
+Siehe \ref{sub:Bsp-Zorn}.
+
+\qqed
+
+
+\section{Satz und Definition \textmd{(algebraischer Abschluss)\label{sec:SuD-algAbschluss}}}
+
+Sei $k$ ein Körper.
+
+Dann existieren eine algebraische Körpererweiterung $\overline{k}\subseteq k$,
+die algebraisch abgeschlossen ist.
+
+Jedes solches $\overline{k}$ heißt \emph{ein algebraischer Abschluss
 von $k$.}
 
 
 \subsubsection*{Bemerkung}
 
-Die Notation $\overline{k}$ wird später durch $\ref{}6.7$ gerechtfertigt.
+Die Notation $\overline{k}$ wird später durch \ref{sec:SuD-Fortsetzung}
+gerechtfertigt.
 
 
-\subsubsection*{Beweis von $\ref{}6.4$\textmd{ (E. Artin)}}
+\subsubsection*{Beweis von \ref{sec:SuD-algAbschluss}\textmd{ (}\textmd{\noun{Emil
+Artin}}\textmd{)}}
 
 Setze $I:=\left\{ f\in k\left[X\right]|\text{deg}\left(f\right)\ge1\right\} ,\,\,\mathfrak{X}:=\left\{ X_{f}|f\in I\right\} $,
-und betrachte das Ideal
+und betrachte das Ideal:
 \begin{align*}
-k\left[\mathfrak{X}\right]\supseteq I & :=\left(f\left(X_{f}\right)|f\in I\right)
+I & :=\left(f\left(X_{f}\right)|f\in I\right)\subseteq k\left[\mathfrak{X}\right]
 \end{align*}
 
 
@@ -3586,80 +3614,247 @@ $I\not=k\left[\mathfrak{X}\right]$
 
 \subsubsection*{Beweis}
 
-Sonst gilt $1\in I\Rightarrow$ 
+Sonst würde $1\in I$ gelten, woraus folgt:
 
 \begin{align}
-1= & {\displaystyle \sum_{i=1}^{n}g_{i}\cdot f_{i}\left(X_{fi}\right)}\qquad(1)
+1= & {\displaystyle \sum_{i=1}^{n}g_{i}\cdot f_{i}\left(X_{f_{i}}\right)}\label{eq:gfXf}
 \end{align}
-mit $n\ge1$, $g_{i}\in k\left[\mathfrak{X}\right]$ und $f_{i}\in I$
-geeignet. Aus $\ref{}5.7,i)$ induktiv angewand auf alle irreduziblen
-Teiler von $f_{1},\ldots,f_{n}$ folgt ${\displaystyle \exs_{k\subseteq K\text{ endl. KE}}\exs_{\alpha_{1},\ldots,\alpha_{n}\in K}}$:
+Dabei ist $n\in\mathbb{N}_{\ge1}$, $g_{i}\in k\left[\mathfrak{X}\right]$
+und $f_{i}\in I$ geeignet.
+
+Aus \ref{sec:Bsp-VvKronecker} i) induktiv angewendet auf alle irreduziblen
+Teiler von $f_{1},\ldots,f_{n}$ folgt, dass es eine endliche Körpererweiterung
+$K\supseteq k$ und $\alpha_{1},\ldots,\alpha_{n}\in K$, sodass für
+alle $1\le i\le n$ gilt: 
 \begin{align}
-f_{i}\left(\alpha_{i}\right)=0 & \fall_{1\le i\le n}\qquad\left(2\right)
+f_{i}\left(\alpha_{i}\right) & =0\label{eq:fa0}
 \end{align}
 
 
-Wegen $\ref{}6.2$ existiert ein $k$-Algebra-Homomorphismus $\phi:k\left[X\right]\to k$
-mit $\left(\ref{}3\right)$ ${\displaystyle \fall_{1\le i\le n}}\phi\left(X_{f_{I}}\right)=\alpha_{i}$,
-und es folgt in $K$:
+Wegen \ref{sec:PuD-PolynomringInfty} existiert ein $k$-Algebrenhomomorphismus
+$\phi:k\left[X\right]\to k$, sodass für alle $1\le i\le n$ schon
+\begin{align}
+\phi\left(X_{f_{i}}\right) & =\alpha_{i}\label{eq:phiXf}
+\end{align}
+gilt, und es folgt in $K$:
 \begin{align*}
-1 & =\phi\left(1\right)\stackrel{\left(\ref{}1\right)}{=}\sum_{i=1}^{n}\phi\left(g_{i}\right)\cdot\underbrace{\phi\left(f_{i}\left(X_{f_{i}}\right)\right)}_{=f_{i}\left(\underbrace{\phi\left(X_{f_{i}}\right)}_{=\alpha_{i}}\right)}\stackrel{\left(\ref{}2\right)}{=}0\lightning
+1 & =\phi\left(1\right)\stackrel{\eqref{eq:gfXf}}{=}\sum_{i=1}^{n}\phi\left(g_{i}\right)\cdot\underbrace{\phi\left(f_{i}\left(X_{f_{i}}\right)\right)}_{=f_{i}\left(\underbrace{\phi\left(X_{f_{i}}\right)}_{=\alpha_{i}}\right)}\stackrel{\eqref{eq:fa0}}{=}0\qquad\lightning
 \end{align*}
 \qqed
 
-Wegen Behauptung ist $\modulo{k\left[\mathfrak{X}\right]}{I}\not=\left\{ 0\right\} \stackrel{\ref{}6.3.4}{\Rightarrow}$
-es existiert ein maximales Ideal $\mathfrak{m}\subseteq\modulo{k\left[\mathfrak{X}\right]}{I}$.
-Erhalte eine Körpererweiterung $\overline{k}\supseteq k$ als Komposition
-$k\hookrightarrow k\left[\mathfrak{X}\right]\twoheadrightarrow\modulo{k\left[\mathfrak{X}\right]}{I}\twoheadrightarrow\underbrace{\modulo{\modulo{k\left[\mathfrak{X}\right]}{I}}{\mathfrak{m}}}_{=:\overline{k}}$.
+Wegen der Behauptung ist $\modulo{k\left[\mathfrak{X}\right]}{I}\not=\left\{ 0\right\} $
+und wegen \ref{sub:Satz-maxIdeal} existiert ein maximales Ideal $\mathfrak{m}\subseteq\modulo{k\left[\mathfrak{X}\right]}{I}$.
+
+Erhalte eine Körpererweiterung $\alpha\left(k\right)\supseteq k$
+als Komposition $k\hookrightarrow k\left[\mathfrak{X}\right]\twoheadrightarrow\modulo{k\left[\mathfrak{X}\right]}{I}\twoheadrightarrow\underbrace{\modulo{\modulo{k\left[\mathfrak{X}\right]}{I}}{\mathfrak{m}}}_{=:\alpha\left(k\right)}$.
 
 
 \subsubsection*{Zeige noch:}
 
 \begin{iiilist}
 
-\iii $\modulo{\overline{k}}{k}$ ist algebraisch.
+\iii $\modulo{\alpha\left(k\right)}{k}$ ist algebraisch.
 
-\iii $\overline{k}$ ist algebraisch abgeschlossen.
+\iii ${\displaystyle \overline{k}:=\bigcup_{n\ge1}\alpha^{n}\left(k\right)}$
+ist algebraisch über $k$.
+
+\iii $\modulo{\overline{k}}{k}$ ist algebraisch abgeschlossen.
 
 \end{iiilist}
 
 
 \subsubsection*{Beweis}
 
-Die $k$-Algebra $\overline{k}$ wird durch die Bilder $\alpha_{f}\in\overline{k}$
-der $X_{f}\left(f\in I\right)$ erzeugt. Für jedes $f\in I$ gitl
-wegen $f\left(X_{f}\right)\in I$:
+\begin{iiilist}
 
-$f\left(\alpha_{f}\right)=0$ in $\overline{k}$, das heißt nach Definition
-von $I$: Jedes $f\in k\left[X\right]$ mit $\text{deg}\left(f\right)\ge1$
-besitzt Nullstelle in $k$.
+\iii Die $k$-Algebra $\alpha\left(k\right)$ wird durch die Bilder
+$\alpha_{f}\in\alpha\left(k\right)$ der $X_{f}\left(f\in I\right)$
+erzeugt.
 
-Damit folgt ii) aus $\ref{}6.1,i)$. (Nicht ganz!!!TODO:später mehr)
+Für jedes $f\in I$ gilt wegen $f\left(X_{f}\right)\in I$: $f\left(\alpha_{f}\right)=0$
+in $\alpha\left(k\right)$.
 
-Teil i) folgt aus $\ref{}5.14,d)\Rightarrow e)$.
+Teil i) folgt aus \ref{sec:Prop-endlAquivEndlerzUalg} ii) b) $\Rightarrow$
+a).
+
+Nach Definition von $I$ folgt auch: Jedes $f\in k\left[X\right]$
+mit $\text{deg}\left(f\right)\ge1$ besitzt eine Nullstelle in $\alpha\left(k\right)$.
+
+\qqed[\roman{ale2})]
+
+\iii Betrachte nun den Körperturm:
+\begin{align*}
+k\subseteq\alpha\left(k\right)\subseteq\alpha\left(\alpha\left(k\right)\right)=:\alpha^{2}\left(k\right)\subseteq\ldots\subseteq\bigcup_{n\ge1}\alpha^{n}\left(k\right) & =:\overline{k}
+\end{align*}
+Für alle $n\in\mathbb{N}_{\ge1}$ folgt nach i), dass $\modulo{\alpha^{n}\left(k\right)}{\alpha^{n-1}\left(k\right)}$
+algebraisch ist. ($\alpha^{0}\left(k\right):=k$)
+
+Induktiv folgt aus \ref{sec:Satz-AlgTransitiv} für alle $n\in\mathbb{N}_{\ge0}$,
+dass $\modulo{\alpha^{n}\left(k\right)}{k}$ algebraisch ist.
+
+ii) folgt, da jedes Element von $\overline{k}$ in einem $\alpha^{n}\left(k\right)$
+liegt.
+
+\qqed[\roman{ale2})]
+
+\iii Sei $f\in\overline{k}\left[X\right]$ nicht konstant.
+
+Da $f$ nur endlich viele Koeffizienten hat, folgt, dass ein $n\in\mathbb{N}_{\ge0}$
+existiert mit $f\in\alpha^{n}\left(k\right)\left[X\right]$.
+
+Also hat $f$ eine Nullstelle in $\alpha^{n+1}\left(k\right)\subseteq\overline{k}$.
+Damit folgt aus \ref{sec:PuD-algAbges} i) die Behauptung.
+
+\end{iiilist}
+
+\qqed
 
 
 \section{Notation und Bemerkung}
 
-Sei $z:K\to L$ ein Körperhomomorphismus. Schreibe für alle $f=\sum a_{i}X^{i}\in k\left[X\right]:f^{\sigma}:=\sum\sigma\left(a_{i}\right)X^{i}\in L\left[X\right]$.
+Sei $z:K\to L$ ein Körperhomomorphismus.
 
-Dann gilt $\fall_{\alpha\in k}\sigma\left(f\left(\alpha\right)\right)=\sigma\left(\sum a_{i}\alpha^{i}\right)=\sum\sigma\left(a_{i}\right)\cdot\sigma\left(\alpha\right)^{i}=f^{\sigma}\left(\sigma\left(\alpha\right)\right)$
-. Insbesondere:
-
+Schreibe für alle ${\displaystyle f=\sum_{i}a_{i}X^{i}\in k\left[X\right]}$:
 \begin{align*}
-\fall_{\alpha\in k} & f\left(\alpha\right)=0\Rightarrow f^{\sigma}\left(\sigma\left(\alpha\right)\right)=0
+f^{\sigma} & :=\sum_{i}\sigma\left(a_{i}\right)X^{i}\in L\left[X\right]
 \end{align*}
 
 
-TODO: Rest
+Dann gilt für alle $\alpha\in k$:
+\begin{align*}
+\sigma\left(f\left(\alpha\right)\right) & =\sigma\left(\sum_{i}a_{i}\alpha^{i}\right)=\sum_{i}\sigma\left(a_{i}\right)\cdot\sigma\left(\alpha\right)^{i}=f^{\sigma}\left(\sigma\left(\alpha\right)\right)
+\end{align*}
+Insbesondere gilt für alle $\alpha\in k$:
+
+\begin{align*}
+f\left(\alpha\right)=0 & \Rightarrow f^{\sigma}\left(\sigma\left(\alpha\right)\right)=0
+\end{align*}
+
 
 
 \section{Lemma\label{sec:Lem-homkalg}}
+
+Seien $k$ ein Körper, $k\left(\alpha\right)\supseteq k$ eine einfache,
+algebraische Körpererweiterung, $f:=\text{Mipo}_{k}\left(\alpha\right)\in k\left[X\right]$
+und $\sigma:k\hookrightarrow L$ eine Körpererweiterung.
+
+Dann ist die Abbildung
+\begin{align*}
+\text{Hom}_{k\text{-Alg.}}\left(k\left(\alpha\right),L\right) & \stackrel{\sim}{\to}\left\{ \beta\in L|f^{\sigma}\left(\beta\right)=0\right\} \\
+\sigma & \mapsto\sigma'\left(\alpha\right)
+\end{align*}
+\textcolor{green}{TODO: Was bedeutet $f^{\sigma}$ in der Menge auf
+der rechten Seite? Die Menge, in die die Abbildung geht kann doch
+nicht davon abhängen, was gerade abgebildet wird.}
+
+wohldefiniert und bijektiv.
+
+Insbesondere gilt:
+\begin{align*}
+\left|\text{Hom}_{k\text{-Alg.}}\left(k\left(\alpha\right),L\right)\right| & \le\left[k\left(\alpha\right):k\right]
+\end{align*}
+\textcolor{green}{TODO: Abb einfügen}
+
+
+\subsubsection*{Beweis}
+
+Die erste Aussage folgt aus der universellen Eigenschaf von $k\hookrightarrow k\left[X\right]$
+und $k\left[X\right]\twoheadrightarrow\modulo{k\left[X\right]}{\left(f\right)}\stackrel{\sim}{=}k\left(\alpha\right)$.
+
+Die zweite Aussage folgt aus $\deg\left(f^{\sigma}\right)=\deg\left(f\right)=\left[k\left(\alpha\right):k\right]$.
+
+\qqed
+
+
+\section{Satz und Definition\label{sec:SuD-Fortsetzung}}
+
+Seien $k'\supseteq k$ eine algebraische Körpererweiterung und $\sigma:k\hookrightarrow L$
+...? eine Körpererweiterung. ...
+
+\textcolor{green}{TODO: Rest einfügen}
+
+Dann existiert eine Fortsetzung von $\sigma$ (das bedeutet ein $k$-Algebrenhomomorphismus
+$\sigma':k'\to L$).
+
+Sind zusätzlich $k'$ algebraisch abgeschlossen und $L$ algebraisch
+über $\sigma\left(k\right)\subseteq L$, so ist jedes solche $\sigma'$
+ein Isomorphismus.
+
+
+\subsubsection*{Beweis}
+
+Betrachte die Menge:
+\begin{align*}
+M & :=\left\{ \left(K,\tau\right)|k\subseteq K\subseteq k'\text{ ist ein Zwischenkörper und }\tau:K\to L\right\} 
+\end{align*}
+Wegen $\left(k,\sigma\right)\in M$ ist $M\not=\emptyset$.
+
+Setze für alle $\left(K,\tau\right),\left(K',\tau'\right)\in M$:
+\begin{align*}
+\left(K,\tau\right)\le\left(K',\tau'\right) & :\Leftrightarrow K\subseteq K'\wedge\tau'|_{K}=\tau
+\end{align*}
+Dann ist $\left(M,\le\right)$ eine teilweise geordnete Menge und
+jede total geordnete Teilmenge besitzt eine obere Schranke in $M$.
+
+\textcolor{green}{TODO: Welche?}
+
+Nach \ref{sub:Satz-LemmaZorn} existiert ein maximales Element in
+$\left(K,\sigma'\right)\in M$.
+
+Zeige nur $K=k'$:
+
+Angenommen $K\subsetneq k'$.
+
+Wähle $\alpha\in k'\setminus K$, dann besitzt das Minimalpolynom
+$\text{Mipo}_{K}\left(\alpha\right)\in K\left[X\right]\subseteq L\left[X\right]$
+wegen $L=\overline{L}$ eine Nullstelle in $L$.
+
+Nach \ref{sec:Lem-homkalg} besitzt $\sigma':K\hookrightarrow L$
+eine Fortsetzung $\sigma'':K\left(\alpha\right)\hookrightarrow L$.
+
+Wegen $\sigma''|_{k}=\sigma'|_{k}$ ist $\left(K\left(\alpha\right),\sigma''\right)\in M$,
+was wegen $K\subsetneq K\left(\alpha\right)$ der Maximalität von
+$\left(K,\sigma\right)\in M$ widerspricht.
+
+Damit ist $\sigma':k\hookrightarrow L$ eine Fortsetzung von $\sigma$.
+
+Seien nun zusätzlich $k'$ algebraisch abgeschlossen und $\modulo{L}{\sigma\left(k\right)}$
+algebraisch.
+
+Dann ist auch $\modulo{L}{\sigma'\left(k\right)}$ algebraisch, da
+$\sigma'\left(k'\right)\supseteq\sigma\left(k\right)$ ist.
+
+Weil $\sigma'\left(k'\right)\stackrel{\sim}{=}k'$ algebraisch abgeschlossen
+ist, folgt nach \ref{sec:Def-algKE} iv) schon $L=\sigma'\left(k'\right)$,
+das heißt $\sigma':k'\twoheadrightarrow L$ ist surjektiv, also ein
+Isomorphismus.
+
+\qqed
+
+
+\section{Korollar}
+
+Seien $k$ ein Körper und $\overline{k}_{i}\supseteq k$ (für $i\in\left\{ 1,2\right\} $)
+algebraische Abschlüsse von $k$.
+
+Dann existiert ein $k$-Algebrenhomomorphismus $\overline{k}_{1}\stackrel{\sim}{\to}\overline{k}_{2}$
+und jeder solche ist ein Isomorphismus.
+
+
+\subsubsection*{Beweis}
+
+Aus \ref{sec:SuD-Fortsetzung} folgt mir $k':=\overline{k}_{1}$,
+$L:=\overline{k}_{2}$ und $\sigma:k\to\overline{k}_{2}$ wie gegeben
+schon die Behauptung.
+
+\qqed
 
 \newpage{}
 
 
 \chapter{Zerfällungskörper}
+
+\textcolor{green}{TODO: Rest einfügen}
 
 
 \subsection*{Definition \textmd{($k$-Homomorphismus)}}
@@ -6010,7 +6205,7 @@ algebraisch unabhängig über $k$.\\
 \subsection{Definition}
 
 \begin{align*}
-p\left(X\right) & :=X^{n}+\mathcal{S}_{i}X^{n-1}+\ldots+\mathcal{S}_{n}=X^{n}+\sum_{i=1}^{n}\mathcal{S}_{i}\cdot X^{n-i}\in k\left(\mathcal{S}_{1},\ldots,\mathcal{S}_{n}\right)\left[X\right]
+p\left(X\right) & :=X^{n}+\mathcal{S}_{1}X^{n-1}+\ldots+\mathcal{S}_{n}=X^{n}+\sum_{i=1}^{n}\mathcal{S}_{i}\cdot X^{n-i}\in k\left(\mathcal{S}_{1},\ldots,\mathcal{S}_{n}\right)\left[X\right]
 \end{align*}
 heißt das \emph{allgemeine Polynom $n$-ten Grades über $k$.}
 
@@ -6207,7 +6402,7 @@ hat Ordnung $2\not=16$, ist also nicht primitiv.
 
 \addcontentsline{toc}{part}{Anhang}
 
-\fancyhead[R]{}
+\fancyhead[R]{Index}
 \fancyhead[C]{Anhang}
 
 \selectlanguage{english}%
