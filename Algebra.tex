@@ -20,9 +20,12 @@
 \usepackage{wasysym}
 \usepackage{graphicx}
 \usepackage[unicode=true,
- bookmarks=false,
- breaklinks=false,pdfborder={0 0 0},backref=page,colorlinks=false]
+ bookmarks=true,bookmarksnumbered=true,bookmarksopen=true,bookmarksopenlevel=1,
+ breaklinks=true,pdfborder={0 0 0},backref=page,colorlinks=false]
  {hyperref}
+\hypersetup{pdftitle={Algebra},
+ pdfauthor={Andreas Völklein},
+ pdfkeywords={Algebra, Mathematik}}
 \usepackage{breakurl}
 
 \makeatletter
@@ -338,28 +341,34 @@ Sei $\varphi:G\rightarrow G'$ ein Gruppenhomomorphismus. Dann gelten:
 
 \begin{iiilist}
 
-\iii ${\displaystyle \fall_{a\in G}}\varphi\left(a^{-1}\right)=\varphi\left(a\right)^{-1}$
-
 \iii $\varphi\left(e\right)=e'$ mit den neutralen Elementen $e\in G$
 und $e'\in G'$.
+
+\iii ${\displaystyle \fall_{a\in G}}\varphi\left(a^{-1}\right)=\varphi\left(a\right)^{-1}$
 
 \end{iiilist}
 
 
 \subsubsection*{Beweis}
 
-ii)\vspace*{-0.5cm}
+\begin{iiilist}
+
+\iii \hspace*{1mm}\vspace*{-8mm}
 \begin{align*}
 e'\cdot\varphi\left(e\right) & =\varphi\left(e\right)=\varphi\left(e\cdot e\right)=\varphi\left(e\right)\cdot\varphi\left(e\right)\quad/\cdot\varphi\left(e\right)^{-1}\\
 \stackrel{\text{Kürzen}}{\Rightarrow}\quad e' & =\varphi\left(e\right)
 \end{align*}
+\qqed[\roman{ale2})]
 
-
-i)\vspace*{-0.5cm}
+\iii \hspace*{1mm}\vspace*{-8mm}
 \begin{align*}
-\varphi\left(a\right)\cdot\varphi\left(a\right)^{-1} & =e'\stackrel{\text{ii)}}{=}\varphi\left(e\right)=\varphi\left(a\cdot a^{-1}\right)=\varphi\left(a\right)\cdot\varphi\left(a^{-1}\right)\quad/\varphi\left(a\right)^{-1}\cdot\\
+\varphi\left(a\right)\cdot\varphi\left(a\right)^{-1} & =e'\stackrel{\text{i)}}{=}\varphi\left(e\right)=\varphi\left(a\cdot a^{-1}\right)=\varphi\left(a\right)\cdot\varphi\left(a^{-1}\right)\quad/\varphi\left(a\right)^{-1}\cdot\\
 \stackrel{\text{Kürzen}}{\Rightarrow}\quad\varphi\left(a\right)^{-1} & =\varphi\left(a^{-1}\right)
 \end{align*}
+
+
+\end{iiilist}
+
 \qqed
 
 
@@ -918,7 +927,7 @@ x & \mapsto mx
 Also ist $\psi:\mathbb{Z}\to H$ ein Epimorphismus, das heißt $H$
 ist zyklisch.
 
-\qqed[i)]
+\qqed[\roman{ale2})]
 
 \iii Ist $\psi:\mathbb{Z}\to G$ ein Epimorphismus, so auch die Komposition:
 \begin{align*}
@@ -929,9 +938,9 @@ Daher ist $\text{im}\left(\varphi\right)$ zyklisch.
 Weil $\text{ker}\left(\varphi\right)\subseteq G$ eine Untergruppe
 ist, ist $\text{ker}\left(\varphi\right)$ zyklisch nach i).
 
-\qqed[ii)]
-
 \end{iiilist}
+
+\qqed
 
 
 \section{Definition \textmd{(Gruppenordnung)}}
@@ -1063,7 +1072,11 @@ schon $g^{d}=e$.
 
 Aus $\left|\left\langle z\right\rangle \right|=d$ und \eqref{eq:xdled}
 folgt damit $\left\{ x\in G|x^{d}=e\right\} \subseteq\left\langle z\right\rangle $
-und insbesondere $\left\{ x\in G|\text{ord}\left(x\right)=d\right\} \subseteq\left\langle z\right\rangle \stackrel{\sim}{=}\modlo{Z}{d}$.
+und insbesondere:
+\begin{align*}
+\left\{ x\in G|\text{ord}\left(x\right)=d\right\}  & \subseteq\left\langle z\right\rangle \stackrel{\sim}{=}\modlo{Z}{d}
+\end{align*}
+
 
 Es gilt aber:
 \begin{align*}
@@ -1148,8 +1161,6 @@ nicht auf \quotedblbase{}endlich\textquotedblleft{} verzichten.
 \end{iiilist}
 
 \qqed
-
-\newpage{}
 
 
 \chapter{Lokalisierungen\label{chap:Lokalisierungen}}
@@ -1280,6 +1291,8 @@ Wegen $tvw\in S$ folgt aus \eqref{eq:bruchrel} schon $\left(a,s\right)\sim\left(
 
 Der Rest bleibt als Übung.
 
+\textcolor{green}{TODO: Rest beweisen}
+
 \qqed[\ref{sec:KuD-QuotRing}]
 
 
@@ -1387,10 +1400,12 @@ Weil $\psi$ eindeutig ist, folgt in $B$:
 \psi\left(a\right)\underbrace{\psi\left(t\right)}_{\in B^{*}} & =\psi\left(b\right)\underbrace{\psi\left(s\right)}_{\in B^{*}}\\
 \psi\left(a\right)\psi\left(s\right)^{-1} & =\psi\left(b\right)\psi\left(t\right)^{-1}
 \end{align*}
-\qqed[\roman{ale2})]
+
 \end{description}
 \end{itemize}
 \end{iiilist}
+
+\qqed
 
 
 \section{Korollar}
@@ -1417,7 +1432,7 @@ $s\in S$ gibt, für dass in $A$ gilt:
 \begin{align*}
 0 & =s\cdot\left(a\cdot1-0\cdot1\right)=s\cdot a
 \end{align*}
-\qqed[i)]
+\qqed[\roman{ale2})]
 
 \iii Es gilt:
 
@@ -1433,9 +1448,9 @@ mit:
 \end{align*}
 Das bedeutet $s=0\in S$.
 
-\qqed[ii)]
-
 \end{iiilist}
+
+\qqed
 
 
 \section{Beispiel \textmd{(Lokalisierung)}}
@@ -1698,8 +1713,6 @@ Algebra II)
 Es folgt die Exaktheit der ersten Zeile.
 
 \qqed[\textcolor{green}{???TODO???}]
-
-\newpage{}
 
 
 \chapter{Der Satz von Gauß\label{chap:Der-Satz-von-Gauss}}
@@ -2014,9 +2027,9 @@ wohldefiniert und für $\tilde{f}:=\alpha^{-1}f$ gilt für alle $p\in\mathcal{P}$:
 \end{align*}
 Also ist $\tilde{f}\in R\left[X\right]$ nach Teil i) primitiv.
 
-\qqed[\roman{ale2})]
-
 \end{iiilist}
+
+\qqed
 
 
 \subsubsection*{Beispiel}
@@ -2215,8 +2228,6 @@ und damit $2\cdot\text{deg}\left(\alpha\right)=\deg\left(X^{3}\right)=3$
 in $\mathbb{Z}$, was ein Widerspruch ist.
 
 \qqed
-
-\newpage{}
 
 
 \chapter{Irreduzibilitätskriterien\label{chap:Irreduzibilit=0000E4tskriterien}}
@@ -2703,8 +2714,6 @@ Also gilt:
 
 
 \qqed
-
-\newpage{}
 
 
 \chapter{(Algebraische) Körpererweiterungen}
@@ -3367,8 +3376,6 @@ Also ist die Körpererweiterung $\modulo{\overline{\mathbb{Q}}^{\mathbb{C}}}{\mat
 wegen \ref{sec:Prop-endlAquivEndlerzUalg} i) b) $\Rightarrow$ a)
 nicht endlich erzeugt.
 
-\newpage{}
-
 
 \chapter{Der algebraische Abschluss eines Körpers}
 
@@ -3769,15 +3776,15 @@ Die zweite Aussage folgt aus $\deg\left(f^{\sigma}\right)=\deg\left(f\right)=\le
 \qqed
 
 
-\section{Satz und Definition\label{sec:SuD-Fortsetzung}}
+\section{Satz und Definition \textmd{(Fortsetzung)}\label{sec:SuD-Fortsetzung}}
 
 Seien $k'\supseteq k$ eine algebraische Körpererweiterung und $\sigma:k\hookrightarrow L$
 ...? eine Körpererweiterung. ...
 
 \textcolor{green}{TODO: Rest einfügen}
 
-Dann existiert eine Fortsetzung von $\sigma$ (das bedeutet ein $k$-Algebrenhomomorphismus
-$\sigma':k'\to L$).
+Dann existiert ein $k$-Algebrenhomomorphismus $\sigma':k'\to L$.
+Man nennt diesen eine \emph{Fortsetzung von $\sigma$ auf $k'$}.
 
 Sind zusätzlich $k'$ algebraisch abgeschlossen und $L$ algebraisch
 über $\sigma\left(k\right)\subseteq L$, so ist jedes solche $\sigma'$
@@ -3852,21 +3859,19 @@ schon die Behauptung.
 
 \qqed
 
-\newpage{}
-
 
 \chapter{Zerfällungskörper\label{chap:Zerf=0000E4llungsk=0000F6rper}}
+
+
+\subsubsection*{Fixiere in Kapitel \ref{chap:Zerf=0000E4llungsk=0000F6rper} (\nameref{chap:Zerf=0000E4llungsk=0000F6rper})}
+
+Sei $k$ ein Körper und $\emptyset\not=\mathcal{F}\subseteq\left\{ f\in k\left[X\right]|\text{deg}\left(f\right)\ge1\right\} $.
 
 
 \subsection*{Definition \textmd{($k$-Homomorphismus)}}
 
 Definiere $k$\emph{-Homomorphismus} (Abkürzung: $k$-Hom.) als $k$-Algebrenhomomorphismus
 (nicht zu verwechseln mit einer $k$-linearen Abbildung).
-
-
-\subsubsection*{Fixiere in Kapitel \ref{chap:Zerf=0000E4llungsk=0000F6rper} (\nameref{chap:Zerf=0000E4llungsk=0000F6rper})}
-
-Sei $k$ ein Körper und $\emptyset\not=\mathcal{F}\subseteq\left\{ f\in k\left[X\right]|\text{deg}\left(f\right)\ge1\right\} $.
 
 
 \section{Definition \textmd{(Zerfällungskörper)\label{sec:Def-ZK}}}
@@ -3932,8 +3937,6 @@ folgt (siehe oben).
 Insbesondere zerfällt $f$ über $E$ nicht in Linearfaktoren, das
 heißt $E$ ist kein Zerfällungskörper von 
 
-\textcolor{green}{TODO: Rest einfügen}
-
 
 \section{Satz \textmd{(Existenz und Eindeutigkeit von Zerfällungskörpern)\label{sec:Satz-eeZK}}}
 
@@ -3957,7 +3960,7 @@ Dann gilt $\overline{\sigma}\left(E_{1}\right)=E_{2}$, also $\overline{\sigma}:\
 \end{iiilist}
 
 
-\paragraph*{Beweis}
+\subsubsection*{Beweis}
 
 \begin{iiilist}
 
@@ -3969,10 +3972,13 @@ E & :=k\left(\alpha\bigg|\alpha\in\overline{k}\wedge\exs_{f\in\mathcal{F}}f\left
 Wegen \ref{sec:PuD-algAbges} ii) ist dann $\modulo{E_{i}}{k}$ ein
 Zerfällungskörper von $\mathcal{F}$.
 
-\qqed[i)]
+\qqed[\roman{ale2})]
 
 \iii Weil $\modulo{E_{i}}{k}$ ein Zerfällungskörper von $\mathcal{F}$
-ist, gilt mit ${\displaystyle \mathcal{N}_{i}:=\left\{ \alpha\in E_{i}\left|\exs_{f\in\mathcal{F}}f\left(\alpha\right)=0\right.\right\} }$
+ist, gilt mit
+\begin{align*}
+\mathcal{N}_{i} & :=\left\{ \alpha\in E_{i}\left|\exs_{f\in\mathcal{F}}f\left(\alpha\right)=0\right.\right\} 
+\end{align*}
 für $i\in\left\{ 1,2\right\} $:
 \begin{align}
 E_{i} & =k\left(\mathcal{N}_{i}\right)\label{eq:z1}
@@ -3984,12 +3990,13 @@ Damit folgt:
 \end{align}
 
 \begin{description}
-\item [{Behauptung:}] \hspace*{1mm}
+\item [{Behauptung}] \hspace*{1mm}
 \begin{align}
 \overline{\sigma}\left(\mathcal{N}_{1}\right) & \subseteq\mathcal{N}_{2}\label{eq:z3}
 \end{align}
 
-\item [{Beweis:}] Weil $\alpha\in\mathcal{N}_{1}$ ist, gibt es ein $f\in\mathcal{F}$
+\item [{Beweis}] \hspace*{1mm}\\
+Weil $\alpha\in\mathcal{N}_{1}$ ist, gibt es ein $f\in\mathcal{F}$
 mit $f\left(\alpha\right)=0$, womit folgt: 
 \begin{align*}
 0 & =\overline{\sigma}\left(0\right)=\overline{\sigma}\left(f\left(\alpha\right)\right)=\underbrace{f^{\overline{\sigma}}}_{=f}\left(\overline{\sigma}\left(\alpha\right)\right)
@@ -3997,25 +4004,29 @@ mit $f\left(\alpha\right)=0$, womit folgt:
 Daher ist $\overline{\sigma}\left(\alpha\right)\in\mathcal{N}_{2}$.\\
 \qqed[Behauptung]
 \end{description}
-Dabei ist $f^{\overline{\sigma}}=f$ ,da $f\in k\left[X\right]$ und
+Dabei ist $f^{\overline{\sigma}}=f$, da $f\in k\left[X\right]$ und
 $\overline{\sigma}|_{k}=\text{id}_{k}$.
 
 Es folgt:
 \begin{align*}
-k & \subseteq\overline{\sigma}\left(E_{1}\right)\stackrel{\ref{eq:z2}}{=}k\left(\overline{\sigma}\left(\mathcal{N}_{1}\right)\right)\stackrel{\ref{eq:z3}}{\subseteq}k\left(\mathcal{N}_{2}\right)\stackrel{\ref{eq:z1}}{=}E_{2}
+k & \subseteq\overline{\sigma}\left(E_{1}\right)\stackrel{\eqref{eq:z2}}{=}k\left(\overline{\sigma}\left(\mathcal{N}_{1}\right)\right)\stackrel{\eqref{eq:z3}}{\subseteq}k\left(\mathcal{N}_{2}\right)\stackrel{\eqref{eq:z1}}{=}E_{2}
 \end{align*}
 Und da sowohl $\modulo{\overline{\sigma}\left(E_{1}\right)}{k}$,
 als auch $\modulo{E_{2}}{k}$ Zerfällungskörper von $\mathcal{F}$
 sind, gilt sogar $\overline{\sigma}\left(E_{1}\right)=E_{2}$.
 
-\qqed[ii)]
+\qqed[\roman{ale2})]
 
-\iii Nach $\ref{}6.7$ mit $k':=E_{1}$ und $L:=\overline{E}_{2}$
-existiert $\overline{\sigma}$ $\left(=\sigma\text{ in }\ref{}6.7\right)$
-wie in ii). (N.B.: $\modulo{E}{k}$ Zerfällungskörper $\Rightarrow$
-$\modulo{E}{k}$ algebraisch)
+\iii Nach \ref{sec:SuD-Fortsetzung} mit $k':=E_{1}$ und $L:=\overline{E}_{2}$
+existiert ein $\overline{\sigma}$ ($=\sigma$ in \ref{sec:SuD-Fortsetzung})
+wie in ii).
+
+Nebenbemerkung: Ist $\modulo{E}{k}$ Zerfällungskörper, so ist $\modulo{E}{k}$
+algebraisch.
 
 \end{iiilist}
+
+\qqed
 
 
 \section{Satz und Definition \textmd{(normale Körpererweiterung)\label{sec:SuD-normKE}}}
@@ -4025,30 +4036,45 @@ Für eine algebraische Körpererweiterung $E\supseteq k$ ist äquivalent:
 \begin{iiilist}
 
 \iii Jeder $k$-Homomorphismus $\overline{\sigma}:E\to\overline{E}$
-erfüllt $\overline{\sigma}\left(\overline{E}\right)=E$.
+erfüllt $\overline{\sigma}\left(E\right)=E$.
 
-\iii Es existiert eine nicht-leere Teilmenge $F\subseteq\left\{ f\in k\left[X\right]|\text{deg}\left(f\right)\ge1\right\} $
+\iii Es existiert eine nicht-leere Teilmenge $\mathcal{F}\subseteq\left\{ f\in k\left[X\right]|\text{deg}\left(f\right)\ge1\right\} $
 so, dass $\modulo{E}{k}$ ein Zerfällungskörper von $F$ ist.
 
 \iii Für alle irreduziblen Polynome $f\in k\left[X\right]$ gilt:
 \begin{align*}
 \left(\exs_{\alpha\in E}f\left(\alpha\right)=0\right) & \Rightarrow\left(f\text{ zerfällt über }E\text{ in Linearfaktoren}\right)
 \end{align*}
-In diesem Fall heißt $\modulo{E}{k}$ \emph{normal}.
+
 
 \end{iiilist}
 
+In diesem Fall heißt $\modulo{E}{k}$ \emph{normal}.
 
-\paragraph*{Beweis von \ref{sec:SuD-normKE}}
+%DATE ???
+
+
+\subsubsection*{Beweis von \ref{sec:SuD-normKE}}
 \begin{itemize}
 \item i) $\Rightarrow$ iii): Da $f$ über $\overline{E}$ in Linearfaktoren
-zerfällt, zeige nur: $\beta\in\overline{E},f\left(\beta\right)=0\Rightarrow\beta\in E$.
-Wegen $f$ irreduzibel und ohne Einschränkung normiert ist $f=\text{Mipo}_{k}\left(\alpha\right)=\text{Mipo}_{k}\left(\beta\right)$
-$\stackrel{\ref{}5.7\text{ i)}}{\Rightarrow}$ $\exs_{k\text{-Iso}}\varphi:k\left(\alpha\right)\stackrel{\sim}{\to}k\left(\beta\right),\varphi\left(\alpha\right)=\beta$.\\
-Betrachte $k\left(\alpha\right)\stackrel{\sim}{\to}k\left(\beta\right)\subseteq E$
-TODO: Abb1\\
-Es folgt $\beta=\varphi\left(\alpha\right)\stackrel{\left(*\right)}{=}\sigma\left(\alpha\right)\in\sigma\left(E\right)\stackrel{\text{i)}}{=}E$.\\
-\qqed
+zerfällt, zeige nur:
+\begin{align*}
+\left(\beta\in\overline{E}\wedge f\left(\beta\right)=0\right) & \Rightarrow\beta\in E
+\end{align*}
+Weil $f$ irreduzibel und ohne Einschränkung normiert ist, gilt:
+\begin{align*}
+f & =\text{Mipo}_{k}\left(\alpha\right)=\text{Mipo}_{k}\left(\beta\right)
+\end{align*}
+Nach \ref{sec:Bsp-VvKronecker} i) folgt, dass es einen $k$-Isomorphismus
+$\varphi:k\left(\alpha\right)\stackrel{\sim}{\to}k\left(\beta\right)$
+mit $\varphi\left(\alpha\right)=\beta$ gibt.\\
+Betrachte $k\left(\alpha\right)\stackrel{\sim}{\to}k\left(\beta\right)\subseteq E$:\\
+\textcolor{green}{TODO: Abb1}\\
+Es folgt:
+\begin{align*}
+\beta & =\varphi\left(\alpha\right)\stackrel{\left(*\right)}{=}\overline{\sigma}\left(\alpha\right)\in\overline{\sigma}\left(E\right)\stackrel{\text{i)}}{=}E
+\end{align*}
+\qqed[i) \ensuremath{\Rightarrow} iii)]
 \item iii) $\Rightarrow$ ii): Setze $\mathcal{F}:=\left\{ f\in k\left[X\right]|f\text{ irreduzibel und }\exs_{\alpha\in E}f\left(\alpha\right)=0\right\} $.\\
 Zeige: $\modulo{E}{k}$ ist ein Zerfällungskörper von $\mathcal{F}$,
 das heißt es gelten \ref{sec:Def-ZK} i) und ii):
@@ -4057,14 +4083,18 @@ das heißt es gelten \ref{sec:Def-ZK} i) und ii):
 \item $f\in\mathcal{F}\stackrel{\text{Def.}}{\Rightarrow}\exs_{\alpha\in E}f\left(\alpha\right)=0$
 $\stackrel{\text{iii)}}{\Rightarrow}f$ zerfällt in Linearfaktoren
 über $E$.
-\item Wegen $\modulo{E}{k}$ algebraisch gilt: $\fall_{\alpha\in E}$ ist
-$f:=\text{Mipo}_{k}\left(\alpha\right)\in\mathcal{F}$ und $f\left(\alpha\right)=0$.
-Also wird $\modulo{E}{k}$ von allen Nullstellen aller $f\in\mathcal{F}$
-erzeugt.
 \end{enumerate}
 \item ii) $\Rightarrow$ i): Es sind $E\subseteq\overline{E}$ und $\overline{\sigma}\left(E\right)\subseteq\overline{E}$
 Zerfällungskörper von $\mathcal{F}$, also $E=\overline{\sigma}\left(E\right)$.
 (vergleiche Beweis von \ref{sec:Satz-eeZK} ii))
+
+\begin{enumerate}
+\item Weil $\modulo{E}{k}$ algebraisch ist, ist für alle $\alpha\in E$
+schon $f:=\text{Mipo}_{k}\left(\alpha\right)\in\mathcal{F}$ und $f\left(\alpha\right)=0$.\\
+Also wird $\modulo{E}{k}$ von den Nullstellen aller $f\in\mathcal{F}$
+erzeugt.\\
+\qqed[iii) \ensuremath{\Rightarrow} ii)]
+\end{enumerate}
 \end{itemize}
 \qqed
 
@@ -4080,14 +4110,14 @@ Linearfaktoren.
 
 \section{Proposition \textmd{(algebraischer Abschluss ist normal)\label{sec:Prop-algAnorm}}}
 
-Sei $k\subseteq E=\overline{E}$ eine algebraische Körpererweiterung
-mit $E$ algebraisch abgeschlossen(, das heißt $E$ ist ein algebraischer
+Sei $E=\overline{E}\supseteq k$ eine algebraische Körpererweiterung,
+die algebraisch abgeschlossen ist(, das heißt $E$ ist ein algebraischer
 Abschluss von $k$). Dann ist $\modulo{E}{k}$ normal.
 
 
-\paragraph*{Beweis}
+\subsubsection*{Beweis}
 
-Folgt aus \ref{sec:SuD-normKE} iii) und $\ref{}6.1,\text{iii)}$.
+Folgt aus \ref{sec:SuD-normKE} iii) und \ref{sec:PuD-algAbges} iii).
 
 \qqed
 
@@ -4101,56 +4131,72 @@ Dann ist $\modulo{E}{k}$ normal.
 
 \iii Seien $E\supseteq K\supseteq k$ algebraische Körpererweiterungen
 mit $\modulo{E}{k}$ normal. Dann ist $\modulo{E}{K}$ normal (aber
-im Allgemeinen nicht $\modulo{E}{K}$). ($k\subseteq E\subseteq\overline{k}$!)
+im Allgemeinen nicht $\modulo{K}{k}$). ($k\subseteq E\subseteq\overline{k}$!)
 
 \end{iiilist}
 
 
-\paragraph*{Beweis}
+\subsubsection*{Beweis}
 
 \begin{iiilist}
 
 \iii Prüfe \ref{sec:SuD-normKE} iii): Sei $f\in k\left[X\right]$
-irreduzibel mit $\exs_{\alpha\in E}:f\left(\alpha\right)=0$.
+irreduzibel und es gibt ein $\alpha\in E$ mit $f\left(\alpha\right)=0$.
 
-$\stackrel{\left[E:k\right]=2}{\Rightarrow}\deg\left(f\right)=\left[k\left(\alpha\right):k\right]\stackrel{k\subseteq k\left(\alpha\right)\subseteq E}{\in}\left\{ 1,2\right\} $.
-Der Fall $\deg\left(f\right)=1$ ist trivial. Sei $\deg\left(f\right)=2$
-und ohne Einschränkung $f$ normiert:
+Aus $\left[E:k\right]=2$ folgt dann:
+\begin{align*}
+\deg\left(f\right) & =\left[k\left(\alpha\right):k\right]\stackrel{k\subseteq k\left(\alpha\right)\subseteq E}{\in}\left\{ 1,2\right\} 
+\end{align*}
+Der Fall $\deg\left(f\right)=1$ ist trivial, denn dann ist $k\left(\alpha\right)=k$.
+
+Sei $\deg\left(f\right)=2$ und ohne Einschränkung $f$ normiert:
 \begin{align*}
 f\left(X\right) & =X^{2}+aX+b;\quad a,b\in k
 \end{align*}
-$\Rightarrow$ in $E\left[X\right]:f\left(X\right)=\left(X-\alpha\right)\left(X-\underbrace{\left(-\alpha+a\right)}_{\in E}\right)$
+Dann gilt in $E\left[X\right]$:
+\begin{align*}
+f\left(X\right) & =\left(X-\alpha\right)\left(X-\underbrace{\left(a-\alpha\right)}_{\in E}\right)
+\end{align*}
 
-\qqed[i)]
+
+\qqed[\roman{ale2})]
 
 \iii Klar nach \ref{sec:SuD-normKE} ii).
 
-\qqed[ii)]
-
 \end{iiilist}
 
-
-\section{Beispiel \textmd{(\quotedblbase{}normal ist nicht-transitiv\textquotedblleft{})}}
-
-In dem Körperturm $k:=\mathbb{Q}\stackrel{2}{\subseteq}K:=\mathbb{Q}\left[\sqrt{2}\right]\stackrel{2}{\subseteq}E:=\mathbb{Q}\left(\sqrt{[4]2}\right)$.
-($K\subseteq E$, da $(\left(\sqrt{\left[4\right]}2\right)^{2})^{2}=2$,
-also $\left(\sqrt{\left[4\right]}2\right)^{2}=\sqrt{2}$) sind beide
-Erweiterungen vom Grad 2( $=:$ \emph{quadratisch}), insbesondere
-normal, aber $\modulo{E}{k}$ ist nicht normal. (vergleiche mit $\ref{}5.15$)
+\qqed
 
 
-\paragraph*{Beweis}
+\section{Beispiel \textmd{(Normalität ist nicht-transitiv)}}
+
+Betrachte den Körperturm:
+\begin{align*}
+k & :=\mathbb{Q}\stackrel{2}{\subseteq}K:=\mathbb{Q}\left[\sqrt{2}\right]\stackrel{2}{\subseteq}E:=\mathbb{Q}\left(\sqrt[4]{2}\right)
+\end{align*}
+Es gilt $K\subseteq E$, da ${\displaystyle \left(\left(\sqrt[4]{2}\right)^{2}\right)^{2}=2}$
+ist, also ${\displaystyle \left(\sqrt[4]{2}\right)^{2}=\sqrt{2}}$
+gilt.
+
+Beide Erweiterungen sind vom Grad 2 (man nennt sie \emph{quadratisch})
+und insbesondere normal, aber $\modulo{E}{k}$ ist nicht normal. (vergleiche
+mit \ref{sec:Satz-AlgTransitiv})
+
+
+\subsubsection*{Beweis}
 
 $X^{2}-2,X^{4}-2\in\mathbb{Q}\left[X\right]$ sind irreduzibel, da
-Eisenstein bezüglich 2, und aus der Gradformel folgt die erste Aussage.
+Eisenstein bezüglich 2, und aus dem Gradsatz folgt die erste Aussage.
 
 Nun existieren $\alpha\in\mathbb{R}$ und $\beta\in\mathbb{C}\setminus\mathbb{R}$
-mit $\alpha^{4}=\beta^{4}=2$. Erhalte $\mathbb{Q}$-Homomorphismen
-von $i:\mathbb{Q}\left[\sqrt{[4]2}\right]\hookrightarrow\mathbb{R},\sqrt{[4]2}\to\alpha$
-und $j:\mathbb{Q}\left[\sqrt{[4]2}\right]\hookrightarrow\mathbb{C},\sqrt{[4]2}\to\beta$.
-Wegen ($\beta\not\in\mathbb{R}$ und $i\left(E\right)\subseteq\mathbb{R}$
+mit $\alpha^{4}=\beta^{4}=2$. Erhalte $\mathbb{Q}$-Homomorphismen:
+\begin{align*}
+i & :\mathbb{Q}\left[\sqrt{[4]2}\right]\hookrightarrow\mathbb{R},\sqrt{[4]2}\to\alpha\\
+j & :\mathbb{Q}\left[\sqrt{[4]2}\right]\hookrightarrow\mathbb{C},\sqrt{[4]2}\to\beta
+\end{align*}
+Wegen $\beta\not\in\mathbb{R}$ und $i\left(E\right)\subseteq\mathbb{R}$
 (also $i\left(E\right)\not=j\left(E\right)$) kann $\modulo{E}{k}$
-nach $\ref{}7.4,\text{ i)}$ (oder auch $\ref{}7.4,\text{ iii)}$)
+nach \ref{sec:SuD-normKE} i) (oder auch \ref{sec:SuD-normKE} iii))
 nicht normal sein.
 
 \qqed
@@ -4178,22 +4224,27 @@ Sei $E\supseteq k$ eine algebraische Körpererweiterung.
 
 \begin{iiilist}
 
-\iii Es existiert eine normale Hülle $\modulo{E'}{k}$ von $\modulo{E}{k}$,
-eindeutig bis auf Isomorphie.
+\iii Es existiert eine bis auf Isomorphie eindeutige normale Hülle
+$\modulo{E'}{k}$ von $\modulo{E}{k}$.
 
-\iii $\left[E:k\right]<\infty\,\Rightarrow\,\left[E':k\right]<\infty$.
+\iii $\left[E:k\right]<\infty\,\Rightarrow\,\left[E':k\right]<\infty$
 
-\iii Ist $k\subseteq E\subseteq L$ ein Körperturm mit $\modulo{L}{k}$
-normal (zum Beispiel $L=\overline{k}$,\ref{sec:Prop-algAnorm}),
-so ist $E'=k\left(\sigma\left(E\right)|\sigma:E\to L\text{ ist }k\text{-Homomorphismus}\right)$
+\iii Ist $k\subseteq E\subseteq L$ ein Körperturm und $\modulo{L}{k}$
+normal (zum Beispiel $L=\overline{k}$, \ref{sec:Prop-algAnorm}),
+so ist 
+\begin{align*}
+E' & =k\left(\sigma\left(E\right)|\sigma:E\to L\text{ ist }k\text{-Homomorphismus}\right)
+\end{align*}
 eine normale Hülle von $\modulo{E}{k}$, die \emph{normale Hülle von
-$E$ in }$\modulo{L}{k}$. Die Zerfällungskörper von $k\subseteq\sigma\left(E\right)\subseteq L$
+$E$ in }$\modulo{L}{k}$.
+
+Die Zerfällungskörper von $k\subseteq\sigma\left(E\right)\subseteq L$
 heißen die \emph{Konjugierten von $E$ in $L$.}
 
 \end{iiilist}
 
 
-\paragraph*{Beweis}
+\subsubsection*{Beweis}
 
 \begin{iiilist}
 
@@ -4201,8 +4252,8 @@ heißen die \emph{Konjugierten von $E$ in $L$.}
 über $k$ leistet das Gewünschte. (vergleiche \ref{sec:Satz-eeZK}) 
 
 \iii Dann kann in i) $\left|\mathcal{F}\right|<\infty$ gewählt werden
-und aus $\ref{}5.14\text{, i) b)\ensuremath{\Rightarrow}a)}$ folgt
-$\left[E':k\right]<\infty$.
+und aus \ref{sec:Prop-endlAquivEndlerzUalg} i) b) $\Rightarrow$
+a) folgt $\left[E':k\right]<\infty$.
 
 \iii Übung (mit \ref{sec:Lem-homkalg}).
 
@@ -4213,10 +4264,10 @@ $\left[E':k\right]<\infty$.
 
 \section{Beispiel}
 
-Wähle $k:=\mathbb{Q}\subseteq E:=\mathbb{Q}\left(\sqrt{[3]2}\right)\subseteq L:=\mathbb{C}$
-in \ref{sec:SuD-Konj} iii). Dann ist
+Wähle $k:=\mathbb{Q}\subseteq E:=\mathbb{Q}\left(\sqrt[3]{2}\right)\subseteq L:=\mathbb{C}$
+in \ref{sec:SuD-Konj} iii). Dann gibt es den Isomorphismus:
 \begin{align*}
-\text{Hom}_{\mathbb{Q}\text{-Alg.}}\left(E,L\right) & \stackrel{\sim}{\to}\left\{ \alpha\in\mathbb{C}|\alpha^{3}=2\right\} ;\varphi\mapsto\varphi\left(\sqrt{[3]2}\right)
+\text{Hom}_{\mathbb{Q}\text{-Alg.}}\left(E,L\right) & \stackrel{\sim}{\to}\left\{ \alpha\in\mathbb{C}|\alpha^{3}=2\right\} ;\varphi\mapsto\varphi\left(\sqrt[3]{2}\right)
 \end{align*}
 Es existiert genau ein $\alpha\in\mathbb{R}$ mit $\alpha^{3}=2$
 (Analysis) und setzte:
@@ -4224,30 +4275,33 @@ Es existiert genau ein $\alpha\in\mathbb{R}$ mit $\alpha^{3}=2$
 \zeta & :=\zeta_{3}=\text{exp}\left(\frac{2\pi\ii}{3}\right)
 \end{align*}
 Dann gilt $\mathcal{N}=\left\{ \alpha,\alpha\zeta,\alpha\zeta^{2}\right\} $,
-denn:
+denn für alle $i\in\mathbb{Z}$ gilt:
 \begin{align*}
-\left(\alpha\zeta^{i}\right)^{3} & =\alpha^{3}\cdot\left(\zeta^{3}\right)^{i}=2\cdot1=2\quad\fall_{i\in\mathbb{Z}}
+\left(\alpha\zeta^{i}\right)^{3} & =\alpha^{3}\cdot\left(\zeta^{3}\right)^{i}=2\cdot1=2
 \end{align*}
-Und weil $\text{ord}\left(\zeta\in\mathbb{C}^{*}\right)=3$ (Bemerkung
-zu $\ref{}4.5$) sind $\alpha,\alpha\zeta,\alpha\zeta^{2}\in\mathbb{C}$
+Wegen $\text{ord}\left(\zeta\in\mathbb{C}^{*}\right)=3$ (vergleiche
+Bemerkung \ref{sec:Bem-zetan}) sind $\alpha,\alpha\zeta,\alpha\zeta^{2}\in\mathbb{C}$
 paarweise verschieden, also \emph{alle} Nullstellen von $X^{3}-2$
 in $\mathbb{C}$.
 
-TODO: Abb 2
+\textcolor{green}{TODO: Abb 2}
 
 Für die normale Hülle $E'$ von $E$ in $\mathbb{C}$ folgt mit \ref{sec:SuD-Konj}
-iii): $E'=\mathbb{Q}\left(\alpha,\alpha\zeta,\alpha\zeta^{2}\right)=\mathbb{Q}\left(\alpha,\zeta\right)$,
-denn: \quotedblbase{}$\subseteq$\textquotedblleft{} ist klar, \quotedblbase{}$\supseteq$\textquotedblleft{}
-$\zeta=\frac{\alpha\zeta}{\alpha}$.
+iii):
+\begin{align*}
+E' & =\mathbb{Q}\left(\alpha,\alpha\zeta,\alpha\zeta^{2}\right)=\mathbb{Q}\left(\alpha,\zeta\right)
+\end{align*}
+(Denn: \quotedblbase{}$\subseteq$\textquotedblleft{} ist klar, \quotedblbase{}$\supseteq$\textquotedblleft{}
+$\zeta=\frac{\alpha\zeta}{\alpha}$.)
 
 Es gilt $\left[E':\mathbb{Q}\right]=6$:
 
-TODO: Abb3
-
-\newpage{}
+\textcolor{green}{TODO: Abb3}
 
 
 \chapter{Separabilität}
+
+\textcolor{green}{TODO: Rest überarbeiten}
 
 Sei $k$ ein Körper.
 
@@ -4270,7 +4324,7 @@ Für $f,g\in k\left[X\right],a\in k$ gelten:
 \end{iiilist}
 
 
-\paragraph*{Beweis}
+\subsubsection*{Beweis}
 
 i) und ii) sind klar.
 
@@ -4288,7 +4342,7 @@ k, & \text{falls }\text{char}\left(k\right)=0\\
 \end{cases}$
 
 
-\paragraph*{Beweis}
+\subsubsection*{Beweis}
 
 Übung
 
@@ -4302,7 +4356,7 @@ eine Nullstelle von $f$. Dann ist $\alpha$ genau dann eine mehrfache
 Nullstelle von $f$, wenn $f'\left(\alpha\right)=0$ gilt.
 
 
-\paragraph*{Beweis}
+\subsubsection*{Beweis}
 
 In dem Polynomring $k\left[X\right]$ gilt:
 \begin{align}
@@ -4814,8 +4868,6 @@ Also ist $E=E'$.
 \end{description}
 \qqed
 
-\newpage{}
-
 
 \chapter{Endliche Körper}
 
@@ -5008,8 +5060,6 @@ Dies wird zu $\left|\mathbb{F}_{q'}\right|=q'$.
 
 TODO: Rest
 
-\newpage{}
-
 %DATE: 
 
 
@@ -5083,14 +5133,14 @@ separabel ist.
 
 Zusammen bedeutet das, dass $\modulo{E}{k}$ galoissch ist.
 
-\qqed[i)]
+\qqed[\roman{ale2})]
 
 \iii Folgt aus \ref{asdf}9.1 iii), \ref{asdf}8.12 ii) und \ref{asdf}9.5
 ii).
 
-\qqed[ii)]
-
 \end{iiilist}
+
+\qqed
 
 
 \section{Proposition\label{sec:Prop-EKkgaloissch}}
@@ -5131,7 +5181,7 @@ ii) ist $\modulo{E}{K}$ galoissch.
 
 Der Rest ist klar.
 
-\qqed[i)]
+\qqed[\roman{ale2})]
 
 \iii $\pi$ ist, weil $\modulo{K}{k}$ normal ist, und wegen \ref{asdf}7.4
 i) wohldefiniert, das heißt
@@ -5147,9 +5197,9 @@ surjektiv.
 
 Die Aussage über den Kern von $\pi$ folgt aus i).
 
-\qqed[ii)]
-
 \end{iiilist}
+
+\qqed
 
 
 \section{Proposition}
@@ -5427,7 +5477,7 @@ ist separabel, also ist $\modulo{E'}{k}$ separabel. (nach \ref{asdf}??)
 
 \quotedblbase{}$\Leftarrow$\textquotedblleft{}: $K_{1}\stackrel{\ref{asdf}10.9\, i)}{=}E^{H_{1}}\stackrel{H_{2}\subseteq H_{1}}{\subseteq}E^{H_{2}}\stackrel{\ref{asdf}10.9\, i)}{=}K_{2}$
 
-\qqed[i)]
+\qqed[\roman{ale2})]
 
 \iii $K_{1}\cdot K_{2}=E^{H_{1}}\cdot E^{H_{2}}\stackrel{\text{i)}}{\subseteq}\left(E^{H_{1}\cap H_{2}}\right)\cdot\left(E^{H_{1}\cap H_{2}}\right)=E^{H_{1}\cap H_{2}}$
 
@@ -5441,7 +5491,7 @@ E^{H_{1}\cap H_{2}} & \subseteq K_{1}\cdot K_{2}
 \end{align*}
 
 
-\qqed[ii)]
+\qqed[\roman{ale2})]
 
 \iii $E^{\left\langle H_{1},H_{2}\right\rangle }=E^{H_{1}}\cap E^{H_{2}}=K_{1}\cap K_{2}$
 
@@ -5449,6 +5499,8 @@ E^{H_{1}\cap H_{2}} & \subseteq K_{1}\cdot K_{2}
 Produkt von Elementen aus $H_{1}$ oder $H_{2}$ ist.)
 
 \end{iiilist}
+
+\qqed
 
 
 \section{Beispiel und Definition \textmd{(Untergruppen-Diagramm)}}
@@ -6210,10 +6262,11 @@ für alle $1\le i\le n$:
 \end{align*}
 Da $\left\{ \mathcal{S}_{1},\ldots,\mathcal{S}_{n}\right\} \subseteq k\left[\mathcal{S}_{1},\ldots,\mathcal{S}_{n}\right]$
 algebraisch unabhängig über $k$ ist, ist $\left\{ s_{1},\ldots,s_{n}\right\} \subseteq k\left[s_{1},\ldots,s_{n}\right]$
-algebraisch unabhängig über $k$.\\
-\qqed[\roman{ale2})]
+algebraisch unabhängig über $k$.
 
 \end{iiilist}
+
+\qqed[\ref{sec:Satz-HS-symFkt}]
 
 
 \subsection{Definition}

@@ -152,11 +152,14 @@
 \paperfontsize 11
 \spacing single
 \use_hyperref true
-\pdf_bookmarks false
-\pdf_bookmarksnumbered false
-\pdf_bookmarksopen false
+\pdf_title "Algebra"
+\pdf_author "Andreas Völklein"
+\pdf_keywords "Algebra, Mathematik"
+\pdf_bookmarks true
+\pdf_bookmarksnumbered true
+\pdf_bookmarksopen true
 \pdf_bookmarksopenlevel 1
-\pdf_breaklinks false
+\pdf_breaklinks true
 \pdf_pdfborder true
 \pdf_colorlinks false
 \pdf_backref page
@@ -1098,10 +1101,18 @@ iii
 \end_inset
 
  
-\begin_inset Formula ${\displaystyle \fall_{a\in G}}\varphi\left(a^{-1}\right)=\varphi\left(a\right)^{-1}$
+\begin_inset Formula $\varphi\left(e\right)=e'$
 \end_inset
 
+ mit den neutralen Elementen 
+\begin_inset Formula $e\in G$
+\end_inset
 
+ und 
+\begin_inset Formula $e'\in G'$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -1118,18 +1129,10 @@ iii
 \end_inset
 
  
-\begin_inset Formula $\varphi\left(e\right)=e'$
+\begin_inset Formula ${\displaystyle \fall_{a\in G}}\varphi\left(a^{-1}\right)=\varphi\left(a\right)^{-1}$
 \end_inset
 
- mit den neutralen Elementen 
-\begin_inset Formula $e\in G$
-\end_inset
 
- und 
-\begin_inset Formula $e'\in G'$
-\end_inset
-
-.
 \end_layout
 
 \begin_layout Standard
@@ -1153,7 +1156,6 @@ Beweis
 \end_layout
 
 \begin_layout Standard
-ii)
 \begin_inset ERT
 status open
 
@@ -1161,7 +1163,38 @@ status open
 
 
 \backslash
-vspace*{-0.5cm}
+begin{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hspace*{1mm}
+\backslash
+vspace*{-8mm}
 \end_layout
 
 \end_inset
@@ -1176,10 +1209,6 @@ e'\cdot\varphi\left(e\right) & =\varphi\left(e\right)=\varphi\left(e\cdot e\righ
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-i)
 \begin_inset ERT
 status open
 
@@ -1187,7 +1216,40 @@ status open
 
 
 \backslash
-vspace*{-0.5cm}
+qqed[
+\backslash
+roman{ale2})]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hspace*{1mm}
+\backslash
+vspace*{-8mm}
 \end_layout
 
 \end_inset
@@ -1195,13 +1257,32 @@ vspace*{-0.5cm}
 
 \begin_inset Formula 
 \begin{align*}
-\varphi\left(a\right)\cdot\varphi\left(a\right)^{-1} & =e'\stackrel{\text{ii)}}{=}\varphi\left(e\right)=\varphi\left(a\cdot a^{-1}\right)=\varphi\left(a\right)\cdot\varphi\left(a^{-1}\right)\quad/\varphi\left(a\right)^{-1}\cdot\\
+\varphi\left(a\right)\cdot\varphi\left(a\right)^{-1} & =e'\stackrel{\text{i)}}{=}\varphi\left(e\right)=\varphi\left(a\cdot a^{-1}\right)=\varphi\left(a\right)\cdot\varphi\left(a^{-1}\right)\quad/\varphi\left(a\right)^{-1}\cdot\\
 \stackrel{\text{Kürzen}}{\Rightarrow}\quad\varphi\left(a\right)^{-1} & =\varphi\left(a^{-1}\right)
 \end{align*}
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -3741,7 +3822,9 @@ status open
 
 
 \backslash
-qqed[i)]
+qqed[
+\backslash
+roman{ale2})]
 \end_layout
 
 \end_inset
@@ -3801,7 +3884,7 @@ status open
 
 
 \backslash
-qqed[ii)]
+end{iiilist}
 \end_layout
 
 \end_inset
@@ -3817,7 +3900,7 @@ status open
 
 
 \backslash
-end{iiilist}
+qqed
 \end_layout
 
 \end_inset
@@ -4730,11 +4813,15 @@ reference "eq:xdled"
 \begin_inset Formula $\left\{ x\in G|x^{d}=e\right\} \subseteq\left\langle z\right\rangle $
 \end_inset
 
- und insbesondere 
-\begin_inset Formula $\left\{ x\in G|\text{ord}\left(x\right)=d\right\} \subseteq\left\langle z\right\rangle \stackrel{\sim}{=}\modlo{Z}{d}$
+ und insbesondere:
+\begin_inset Formula 
+\begin{align*}
+\left\{ x\in G|\text{ord}\left(x\right)=d\right\}  & \subseteq\left\langle z\right\rangle \stackrel{\sim}{=}\modlo{Z}{d}
+\end{align*}
+
 \end_inset
 
-.
+
 \end_layout
 
 \begin_layout Standard
@@ -5157,13 +5244,6 @@ status open
 qqed
 \end_layout
 
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Newpage newpage
 \end_inset
 
 
@@ -5748,6 +5828,12 @@ Der Rest bleibt als Übung.
 \end_layout
 
 \begin_layout Standard
+
+\color green
+TODO: Rest beweisen
+\end_layout
+
+\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -6269,21 +6355,6 @@ Weil
 \end_inset
 
 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-qqed[
-\backslash
-roman{ale2})]
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \end_deeper
@@ -6296,6 +6367,22 @@ status open
 
 \backslash
 end{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed
 \end_layout
 
 \end_inset
@@ -6459,7 +6546,9 @@ status open
 
 
 \backslash
-qqed[i)]
+qqed[
+\backslash
+roman{ale2})]
 \end_layout
 
 \end_inset
@@ -6522,7 +6611,7 @@ status open
 
 
 \backslash
-qqed[ii)]
+end{iiilist}
 \end_layout
 
 \end_inset
@@ -6538,7 +6627,7 @@ status open
 
 
 \backslash
-end{iiilist}
+qqed
 \end_layout
 
 \end_inset
@@ -7626,13 +7715,6 @@ qqed[
 textcolor{green}{???TODO???}]
 \end_layout
 
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Newpage newpage
 \end_inset
 
 
@@ -9097,9 +9179,7 @@ status open
 
 
 \backslash
-qqed[
-\backslash
-roman{ale2})]
+end{iiilist}
 \end_layout
 
 \end_inset
@@ -9115,7 +9195,7 @@ status open
 
 
 \backslash
-end{iiilist}
+qqed
 \end_layout
 
 \end_inset
@@ -10035,13 +10115,6 @@ status open
 qqed
 \end_layout
 
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Newpage newpage
 \end_inset
 
 
@@ -12273,13 +12346,6 @@ status open
 qqed
 \end_layout
 
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Newpage newpage
 \end_inset
 
 
@@ -15609,13 +15675,6 @@ reference "sec:Prop-endlAquivEndlerzUalg"
  a) nicht endlich erzeugt.
 \end_layout
 
-\begin_layout Standard
-\begin_inset Newpage newpage
-\end_inset
-
-
-\end_layout
-
 \begin_layout Chapter
 Der algebraische Abschluss eines Körpers
 \end_layout
@@ -17547,7 +17606,11 @@ qqed
 \end_layout
 
 \begin_layout Section
-Satz und Definition
+Satz und Definition 
+\series medium
+(Fortsetzung)
+\series default
+
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:SuD-Fortsetzung"
@@ -17577,11 +17640,7 @@ TODO: Rest einfügen
 \end_layout
 
 \begin_layout Standard
-Dann existiert eine Fortsetzung von 
-\begin_inset Formula $\sigma$
-\end_inset
-
- (das bedeutet ein 
+Dann existiert ein 
 \begin_inset Formula $k$
 \end_inset
 
@@ -17589,7 +17648,20 @@ Dann existiert eine Fortsetzung von
 \begin_inset Formula $\sigma':k'\to L$
 \end_inset
 
-).
+.
+ Man nennt diesen eine 
+\emph on
+Fortsetzung von 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ auf 
+\begin_inset Formula $k'$
+\end_inset
+
+
+\emph default
+.
 \end_layout
 
 \begin_layout Standard
@@ -17911,13 +17983,6 @@ qqed
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset Newpage newpage
-\end_inset
-
-
-\end_layout
-
 \begin_layout Chapter
 Zerfällungskörper
 \begin_inset CommandInset label
@@ -17929,7 +17994,37 @@ name "chap:Zerfällungskörper"
 
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Subsubsection*
+Fixiere in Kapitel 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:Zerfällungskörper"
+
+\end_inset
+
+ (
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "chap:Zerfällungskörper"
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Standard
+Sei 
+\begin_inset Formula $k$
+\end_inset
+
+ ein Körper und 
+\begin_inset Formula $\emptyset\not=\mathcal{F}\subseteq\left\{ f\in k\left[X\right]|\text{deg}\left(f\right)\ge1\right\} $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
 Definition 
 \series medium
 (
@@ -17961,36 +18056,6 @@ Definiere
 \end_inset
 
 -linearen Abbildung).
-\end_layout
-
-\begin_layout Subsubsection*
-Fixiere in Kapitel 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "chap:Zerfällungskörper"
-
-\end_inset
-
- (
-\begin_inset CommandInset ref
-LatexCommand nameref
-reference "chap:Zerfällungskörper"
-
-\end_inset
-
-)
-\end_layout
-
-\begin_layout Standard
-Sei 
-\begin_inset Formula $k$
-\end_inset
-
- ein Körper und 
-\begin_inset Formula $\emptyset\not=\mathcal{F}\subseteq\left\{ f\in k\left[X\right]|\text{deg}\left(f\right)\ge1\right\} $
-\end_inset
-
-.
 \end_layout
 
 \begin_layout Section
@@ -18169,7 +18234,11 @@ reference "sec:Bsp-VvKronecker"
 
 \end_inset
 
- i)).
+
+\begin_inset space ~
+\end_inset
+
+i)).
 \end_layout
 
 \begin_layout Standard
@@ -18320,12 +18389,6 @@ Insbesondere zerfällt
 \end_inset
 
  ist kein Zerfällungskörper von 
-\end_layout
-
-\begin_layout Standard
-
-\color green
-TODO: Rest einfügen
 \end_layout
 
 \begin_layout Section
@@ -18485,7 +18548,7 @@ end{iiilist}
 
 \end_layout
 
-\begin_layout Paragraph*
+\begin_layout Subsubsection*
 Beweis
 \end_layout
 
@@ -18563,7 +18626,9 @@ status open
 
 
 \backslash
-qqed[i)]
+qqed[
+\backslash
+roman{ale2})]
 \end_layout
 
 \end_inset
@@ -18592,11 +18657,15 @@ iii
 \begin_inset Formula $\mathcal{F}$
 \end_inset
 
- ist, gilt mit 
-\begin_inset Formula ${\displaystyle \mathcal{N}_{i}:=\left\{ \alpha\in E_{i}\left|\exs_{f\in\mathcal{F}}f\left(\alpha\right)=0\right.\right\} }$
+ ist, gilt mit
+\begin_inset Formula 
+\begin{align*}
+\mathcal{N}_{i} & :=\left\{ \alpha\in E_{i}\left|\exs_{f\in\mathcal{F}}f\left(\alpha\right)=0\right.\right\} 
+\end{align*}
+
 \end_inset
 
- für 
+für 
 \begin_inset Formula $i\in\left\{ 1,2\right\} $
 \end_inset
 
@@ -18623,7 +18692,7 @@ Damit folgt:
 \end_layout
 
 \begin_layout Description
-Behauptung: 
+Behauptung 
 \begin_inset ERT
 status open
 
@@ -18648,7 +18717,24 @@ hspace*{1mm}
 \end_layout
 
 \begin_layout Description
-Beweis: Weil 
+Beweis 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hspace*{1mm}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Weil 
 \begin_inset Formula $\alpha\in\mathcal{N}_{1}$
 \end_inset
 
@@ -18697,7 +18783,7 @@ Dabei ist
 \begin_inset Formula $f^{\overline{\sigma}}=f$
 \end_inset
 
- ,da 
+, da 
 \begin_inset Formula $f\in k\left[X\right]$
 \end_inset
 
@@ -18712,7 +18798,7 @@ Dabei ist
 Es folgt:
 \begin_inset Formula 
 \begin{align*}
-k & \subseteq\overline{\sigma}\left(E_{1}\right)\stackrel{\ref{eq:z2}}{=}k\left(\overline{\sigma}\left(\mathcal{N}_{1}\right)\right)\stackrel{\ref{eq:z3}}{\subseteq}k\left(\mathcal{N}_{2}\right)\stackrel{\ref{eq:z1}}{=}E_{2}
+k & \subseteq\overline{\sigma}\left(E_{1}\right)\stackrel{\eqref{eq:z2}}{=}k\left(\overline{\sigma}\left(\mathcal{N}_{1}\right)\right)\stackrel{\eqref{eq:z3}}{\subseteq}k\left(\mathcal{N}_{2}\right)\stackrel{\eqref{eq:z1}}{=}E_{2}
 \end{align*}
 
 \end_inset
@@ -18744,7 +18830,9 @@ status open
 
 
 \backslash
-qqed[ii)]
+qqed[
+\backslash
+roman{ale2})]
 \end_layout
 
 \end_inset
@@ -18766,7 +18854,10 @@ iii
 \end_inset
 
  Nach 
-\begin_inset Formula $\ref{}6.7$
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:SuD-Fortsetzung"
+
 \end_inset
 
  mit 
@@ -18777,28 +18868,34 @@ iii
 \begin_inset Formula $L:=\overline{E}_{2}$
 \end_inset
 
- existiert 
+ existiert ein 
 \begin_inset Formula $\overline{\sigma}$
 \end_inset
 
- 
-\begin_inset Formula $\left(=\sigma\text{ in }\ref{}6.7\right)$
+ (
+\begin_inset Formula $=\sigma$
 \end_inset
 
- wie in ii).
- (N.B.: 
+ in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:SuD-Fortsetzung"
+
+\end_inset
+
+) wie in ii).
+\end_layout
+
+\begin_layout Standard
+Nebenbemerkung: Ist 
 \begin_inset Formula $\modulo{E}{k}$
 \end_inset
 
- Zerfällungskörper 
-\begin_inset Formula $\Rightarrow$
-\end_inset
-
- 
+ Zerfällungskörper, so ist 
 \begin_inset Formula $\modulo{E}{k}$
 \end_inset
 
- algebraisch)
+ algebraisch.
 \end_layout
 
 \begin_layout Standard
@@ -18810,6 +18907,22 @@ status open
 
 \backslash
 end{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed
 \end_layout
 
 \end_inset
@@ -18876,7 +18989,7 @@ iii
 \end_inset
 
  erfüllt 
-\begin_inset Formula $\overline{\sigma}\left(\overline{E}\right)=E$
+\begin_inset Formula $\overline{\sigma}\left(E\right)=E$
 \end_inset
 
 .
@@ -18896,7 +19009,7 @@ iii
 \end_inset
 
  Es existiert eine nicht-leere Teilmenge 
-\begin_inset Formula $F\subseteq\left\{ f\in k\left[X\right]|\text{deg}\left(f\right)\ge1\right\} $
+\begin_inset Formula $\mathcal{F}\subseteq\left\{ f\in k\left[X\right]|\text{deg}\left(f\right)\ge1\right\} $
 \end_inset
 
  so, dass 
@@ -18935,15 +19048,7 @@ iii
 
 \end_inset
 
-In diesem Fall heißt 
-\begin_inset Formula $\modulo{E}{k}$
-\end_inset
 
- 
-\emph on
-normal
-\emph default
-.
 \end_layout
 
 \begin_layout Standard
@@ -18962,7 +19067,33 @@ end{iiilist}
 
 \end_layout
 
-\begin_layout Paragraph*
+\begin_layout Standard
+In diesem Fall heißt 
+\begin_inset Formula $\modulo{E}{k}$
+\end_inset
+
+ 
+\emph on
+normal
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+%DATE ???
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
 Beweis von 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -18986,28 +19117,46 @@ i)
 \begin_inset Formula $\overline{E}$
 \end_inset
 
- in Linearfaktoren zerfällt, zeige nur: 
-\begin_inset Formula $\beta\in\overline{E},f\left(\beta\right)=0\Rightarrow\beta\in E$
+ in Linearfaktoren zerfällt, zeige nur:
+\begin_inset Formula 
+\begin{align*}
+\left(\beta\in\overline{E}\wedge f\left(\beta\right)=0\right) & \Rightarrow\beta\in E
+\end{align*}
+
 \end_inset
 
-.
- Wegen 
+Weil 
 \begin_inset Formula $f$
 \end_inset
 
- irreduzibel und ohne Einschränkung normiert ist 
-\begin_inset Formula $f=\text{Mipo}_{k}\left(\alpha\right)=\text{Mipo}_{k}\left(\beta\right)$
+ irreduzibel und ohne Einschränkung normiert ist, gilt:
+\begin_inset Formula 
+\begin{align*}
+f & =\text{Mipo}_{k}\left(\alpha\right)=\text{Mipo}_{k}\left(\beta\right)
+\end{align*}
+
 \end_inset
 
- 
-\begin_inset Formula $\stackrel{\ref{}5.7\text{ i)}}{\Rightarrow}$
+Nach 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Bsp-VvKronecker"
+
 \end_inset
 
- 
-\begin_inset Formula $\exs_{k\text{-Iso}}\varphi:k\left(\alpha\right)\stackrel{\sim}{\to}k\left(\beta\right),\varphi\left(\alpha\right)=\beta$
+ i) folgt, dass es einen 
+\begin_inset Formula $k$
 \end_inset
 
-.
+-Isomorphismus 
+\begin_inset Formula $\varphi:k\left(\alpha\right)\stackrel{\sim}{\to}k\left(\beta\right)$
+\end_inset
+
+ mit 
+\begin_inset Formula $\varphi\left(\alpha\right)=\beta$
+\end_inset
+
+ gibt.
 \begin_inset Newline newline
 \end_inset
 
@@ -19015,16 +19164,24 @@ Betrachte
 \begin_inset Formula $k\left(\alpha\right)\stackrel{\sim}{\to}k\left(\beta\right)\subseteq E$
 \end_inset
 
- TODO: Abb1
+:
 \begin_inset Newline newline
 \end_inset
 
-Es folgt 
-\begin_inset Formula $\beta=\varphi\left(\alpha\right)\stackrel{\left(*\right)}{=}\sigma\left(\alpha\right)\in\sigma\left(E\right)\stackrel{\text{i)}}{=}E$
+
+\color green
+TODO: Abb1
+\color inherit
+
+\begin_inset Newline newline
 \end_inset
 
-.
-\begin_inset Newline newline
+Es folgt:
+\begin_inset Formula 
+\begin{align*}
+\beta & =\varphi\left(\alpha\right)\stackrel{\left(*\right)}{=}\overline{\sigma}\left(\alpha\right)\in\overline{\sigma}\left(E\right)\stackrel{\text{i)}}{=}E
+\end{align*}
+
 \end_inset
 
 
@@ -19035,7 +19192,11 @@ status open
 
 
 \backslash
-qqed
+qqed[i) 
+\backslash
+ensuremath{
+\backslash
+Rightarrow} iii)]
 \end_layout
 
 \end_inset
@@ -19088,35 +19249,27 @@ reference "sec:Def-ZK"
 \end_inset
 
 .
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed[iii) 
+\backslash
+ensuremath{
+\backslash
+Rightarrow} ii)]
 \end_layout
 
-\begin_layout Enumerate
-Wegen 
-\begin_inset Formula $\modulo{E}{k}$
 \end_inset
 
- algebraisch gilt: 
-\begin_inset Formula $\fall_{\alpha\in E}$
-\end_inset
 
- ist 
-\begin_inset Formula $f:=\text{Mipo}_{k}\left(\alpha\right)\in\mathcal{F}$
-\end_inset
-
- und 
-\begin_inset Formula $f\left(\alpha\right)=0$
-\end_inset
-
-.
- Also wird 
-\begin_inset Formula $\modulo{E}{k}$
-\end_inset
-
- von allen Nullstellen aller 
-\begin_inset Formula $f\in\mathcal{F}$
-\end_inset
-
- erzeugt.
 \end_layout
 
 \end_deeper
@@ -19152,6 +19305,40 @@ reference "sec:Satz-eeZK"
  ii))
 \end_layout
 
+\begin_deeper
+\begin_layout Enumerate
+Weil 
+\begin_inset Formula $\modulo{E}{k}$
+\end_inset
+
+ algebraisch ist, ist für alle 
+\begin_inset Formula $\alpha\in E$
+\end_inset
+
+ schon 
+\begin_inset Formula $f:=\text{Mipo}_{k}\left(\alpha\right)\in\mathcal{F}$
+\end_inset
+
+ und 
+\begin_inset Formula $f\left(\alpha\right)=0$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+Also wird 
+\begin_inset Formula $\modulo{E}{k}$
+\end_inset
+
+ von den Nullstellen aller 
+\begin_inset Formula $f\in\mathcal{F}$
+\end_inset
+
+ erzeugt.
+\end_layout
+
+\end_deeper
 \begin_layout Standard
 \begin_inset ERT
 status open
@@ -19221,14 +19408,11 @@ name "sec:Prop-algAnorm"
 
 \begin_layout Standard
 Sei 
-\begin_inset Formula $k\subseteq E=\overline{E}$
+\begin_inset Formula $E=\overline{E}\supseteq k$
 \end_inset
 
- eine algebraische Körpererweiterung mit 
-\begin_inset Formula $E$
-\end_inset
-
- algebraisch abgeschlossen(, das heißt 
+ eine algebraische Körpererweiterung, die algebraisch abgeschlossen ist(,
+ das heißt 
 \begin_inset Formula $E$
 \end_inset
 
@@ -19244,7 +19428,7 @@ Sei
  normal.
 \end_layout
 
-\begin_layout Paragraph*
+\begin_layout Subsubsection*
 Beweis
 \end_layout
 
@@ -19257,10 +19441,13 @@ reference "sec:SuD-normKE"
 \end_inset
 
  iii) und 
-\begin_inset Formula $\ref{}6.1,\text{iii)}$
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:PuD-algAbges"
+
 \end_inset
 
-.
+ iii).
 \end_layout
 
 \begin_layout Standard
@@ -19355,7 +19542,7 @@ iii
 \end_inset
 
  normal (aber im Allgemeinen nicht 
-\begin_inset Formula $\modulo{E}{K}$
+\begin_inset Formula $\modulo{K}{k}$
 \end_inset
 
 ).
@@ -19382,7 +19569,7 @@ end{iiilist}
 
 \end_layout
 
-\begin_layout Paragraph*
+\begin_layout Subsubsection*
 Beweis
 \end_layout
 
@@ -19426,24 +19613,43 @@ reference "sec:SuD-normKE"
 \begin_inset Formula $f\in k\left[X\right]$
 \end_inset
 
- irreduzibel mit 
-\begin_inset Formula $\exs_{\alpha\in E}:f\left(\alpha\right)=0$
+ irreduzibel und es gibt ein 
+\begin_inset Formula $\alpha\in E$
+\end_inset
+
+ mit 
+\begin_inset Formula $f\left(\alpha\right)=0$
 \end_inset
 
 .
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $\stackrel{\left[E:k\right]=2}{\Rightarrow}\deg\left(f\right)=\left[k\left(\alpha\right):k\right]\stackrel{k\subseteq k\left(\alpha\right)\subseteq E}{\in}\left\{ 1,2\right\} $
+Aus 
+\begin_inset Formula $\left[E:k\right]=2$
 \end_inset
 
-.
- Der Fall 
+ folgt dann:
+\begin_inset Formula 
+\begin{align*}
+\deg\left(f\right) & =\left[k\left(\alpha\right):k\right]\stackrel{k\subseteq k\left(\alpha\right)\subseteq E}{\in}\left\{ 1,2\right\} 
+\end{align*}
+
+\end_inset
+
+Der Fall 
 \begin_inset Formula $\deg\left(f\right)=1$
 \end_inset
 
- ist trivial.
- Sei 
+ ist trivial, denn dann ist 
+\begin_inset Formula $k\left(\alpha\right)=k$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Sei 
 \begin_inset Formula $\deg\left(f\right)=2$
 \end_inset
 
@@ -19459,12 +19665,16 @@ f\left(X\right) & =X^{2}+aX+b;\quad a,b\in k
 
 \end_inset
 
-
-\begin_inset Formula $\Rightarrow$
+Dann gilt in 
+\begin_inset Formula $E\left[X\right]$
 \end_inset
 
- in 
-\begin_inset Formula $E\left[X\right]:f\left(X\right)=\left(X-\alpha\right)\left(X-\underbrace{\left(-\alpha+a\right)}_{\in E}\right)$
+:
+\begin_inset Formula 
+\begin{align*}
+f\left(X\right) & =\left(X-\alpha\right)\left(X-\underbrace{\left(a-\alpha\right)}_{\in E}\right)
+\end{align*}
+
 \end_inset
 
 
@@ -19478,7 +19688,9 @@ status open
 
 
 \backslash
-qqed[i)]
+qqed[
+\backslash
+roman{ale2})]
 \end_layout
 
 \end_inset
@@ -19517,7 +19729,7 @@ status open
 
 
 \backslash
-qqed[ii)]
+end{iiilist}
 \end_layout
 
 \end_inset
@@ -19533,7 +19745,7 @@ status open
 
 
 \backslash
-end{iiilist}
+qqed
 \end_layout
 
 \end_inset
@@ -19544,48 +19756,54 @@ end{iiilist}
 \begin_layout Section
 Beispiel 
 \series medium
-(„normal ist nicht-transitiv“)
+(Normalität ist nicht-transitiv)
 \end_layout
 
 \begin_layout Standard
-In dem Körperturm 
-\begin_inset Formula $k:=\mathbb{Q}\stackrel{2}{\subseteq}K:=\mathbb{Q}\left[\sqrt{2}\right]\stackrel{2}{\subseteq}E:=\mathbb{Q}\left(\sqrt{[4]2}\right)$
+Betrachte den Körperturm:
+\begin_inset Formula 
+\begin{align*}
+k & :=\mathbb{Q}\stackrel{2}{\subseteq}K:=\mathbb{Q}\left[\sqrt{2}\right]\stackrel{2}{\subseteq}E:=\mathbb{Q}\left(\sqrt[4]{2}\right)
+\end{align*}
+
 \end_inset
 
-.
- (
+Es gilt 
 \begin_inset Formula $K\subseteq E$
 \end_inset
 
 , da 
-\begin_inset Formula $(\left(\sqrt{\left[4\right]}2\right)^{2})^{2}=2$
+\begin_inset Formula ${\displaystyle \left(\left(\sqrt[4]{2}\right)^{2}\right)^{2}=2}$
 \end_inset
 
-, also 
-\begin_inset Formula $\left(\sqrt{\left[4\right]}2\right)^{2}=\sqrt{2}$
+ ist, also 
+\begin_inset Formula ${\displaystyle \left(\sqrt[4]{2}\right)^{2}=\sqrt{2}}$
 \end_inset
 
-) sind beide Erweiterungen vom Grad 2( 
-\begin_inset Formula $=:$
-\end_inset
+ gilt.
+\end_layout
 
- 
+\begin_layout Standard
+Beide Erweiterungen sind vom Grad 2 (man nennt sie 
 \emph on
 quadratisch
 \emph default
-), insbesondere normal, aber 
+) und insbesondere normal, aber 
 \begin_inset Formula $\modulo{E}{k}$
 \end_inset
 
  ist nicht normal.
  (vergleiche mit 
-\begin_inset Formula $\ref{}5.15$
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Satz-AlgTransitiv"
+
 \end_inset
 
 )
 \end_layout
 
-\begin_layout Paragraph*
+\begin_layout Subsubsection*
 Beweis
 \end_layout
 
@@ -19593,7 +19811,7 @@ Beweis
 \begin_inset Formula $X^{2}-2,X^{4}-2\in\mathbb{Q}\left[X\right]$
 \end_inset
 
- sind irreduzibel, da Eisenstein bezüglich 2, und aus der Gradformel folgt
+ sind irreduzibel, da Eisenstein bezüglich 2, und aus dem Gradsatz folgt
  die erste Aussage.
 \end_layout
 
@@ -19615,16 +19833,16 @@ Nun existieren
 \begin_inset Formula $\mathbb{Q}$
 \end_inset
 
--Homomorphismen von 
-\begin_inset Formula $i:\mathbb{Q}\left[\sqrt{[4]2}\right]\hookrightarrow\mathbb{R},\sqrt{[4]2}\to\alpha$
+-Homomorphismen:
+\begin_inset Formula 
+\begin{align*}
+i & :\mathbb{Q}\left[\sqrt{[4]2}\right]\hookrightarrow\mathbb{R},\sqrt{[4]2}\to\alpha\\
+j & :\mathbb{Q}\left[\sqrt{[4]2}\right]\hookrightarrow\mathbb{C},\sqrt{[4]2}\to\beta
+\end{align*}
+
 \end_inset
 
- und 
-\begin_inset Formula $j:\mathbb{Q}\left[\sqrt{[4]2}\right]\hookrightarrow\mathbb{C},\sqrt{[4]2}\to\beta$
-\end_inset
-
-.
- Wegen (
+Wegen 
 \begin_inset Formula $\beta\not\in\mathbb{R}$
 \end_inset
 
@@ -19641,14 +19859,20 @@ Nun existieren
 \end_inset
 
  nach 
-\begin_inset Formula $\ref{}7.4,\text{ i)}$
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:SuD-normKE"
+
 \end_inset
 
- (oder auch 
-\begin_inset Formula $\ref{}7.4,\text{ iii)}$
+ i) (oder auch 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:SuD-normKE"
+
 \end_inset
 
-) nicht normal sein.
+ iii)) nicht normal sein.
 \end_layout
 
 \begin_layout Standard
@@ -19829,7 +20053,7 @@ iii
 
 \end_inset
 
- Es existiert eine normale Hülle 
+ Es existiert eine bis auf Isomorphie eindeutige normale Hülle 
 \begin_inset Formula $\modulo{E'}{k}$
 \end_inset
 
@@ -19837,7 +20061,7 @@ iii
 \begin_inset Formula $\modulo{E}{k}$
 \end_inset
 
-, eindeutig bis auf Isomorphie.
+.
 \end_layout
 
 \begin_layout Standard
@@ -19857,7 +20081,7 @@ iii
 \begin_inset Formula $\left[E:k\right]<\infty\,\Rightarrow\,\left[E':k\right]<\infty$
 \end_inset
 
-.
+
 \end_layout
 
 \begin_layout Standard
@@ -19877,7 +20101,7 @@ iii
 \begin_inset Formula $k\subseteq E\subseteq L$
 \end_inset
 
- ein Körperturm mit 
+ ein Körperturm und 
 \begin_inset Formula $\modulo{L}{k}$
 \end_inset
 
@@ -19885,7 +20109,7 @@ iii
 \begin_inset Formula $L=\overline{k}$
 \end_inset
 
-,
+, 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:Prop-algAnorm"
@@ -19893,10 +20117,14 @@ reference "sec:Prop-algAnorm"
 \end_inset
 
 ), so ist 
-\begin_inset Formula $E'=k\left(\sigma\left(E\right)|\sigma:E\to L\text{ ist }k\text{-Homomorphismus}\right)$
+\begin_inset Formula 
+\begin{align*}
+E' & =k\left(\sigma\left(E\right)|\sigma:E\to L\text{ ist }k\text{-Homomorphismus}\right)
+\end{align*}
+
 \end_inset
 
- eine normale Hülle von 
+eine normale Hülle von 
 \begin_inset Formula $\modulo{E}{k}$
 \end_inset
 
@@ -19913,7 +20141,10 @@ normale Hülle von
 \end_inset
 
 .
- Die Zerfällungskörper von 
+\end_layout
+
+\begin_layout Standard
+Die Zerfällungskörper von 
 \begin_inset Formula $k\subseteq\sigma\left(E\right)\subseteq L$
 \end_inset
 
@@ -19946,7 +20177,7 @@ end{iiilist}
 
 \end_layout
 
-\begin_layout Paragraph*
+\begin_layout Subsubsection*
 Beweis
 \end_layout
 
@@ -20020,10 +20251,17 @@ iii
 \end_inset
 
  gewählt werden und aus 
-\begin_inset Formula $\ref{}5.14\text{, i) b)\ensuremath{\Rightarrow}a)}$
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Prop-endlAquivEndlerzUalg"
+
 \end_inset
 
- folgt 
+ i) b) 
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+ a) folgt 
 \begin_inset Formula $\left[E':k\right]<\infty$
 \end_inset
 
@@ -20091,7 +20329,7 @@ Beispiel
 
 \begin_layout Standard
 Wähle 
-\begin_inset Formula $k:=\mathbb{Q}\subseteq E:=\mathbb{Q}\left(\sqrt{[3]2}\right)\subseteq L:=\mathbb{C}$
+\begin_inset Formula $k:=\mathbb{Q}\subseteq E:=\mathbb{Q}\left(\sqrt[3]{2}\right)\subseteq L:=\mathbb{C}$
 \end_inset
 
  in 
@@ -20102,10 +20340,10 @@ reference "sec:SuD-Konj"
 \end_inset
 
  iii).
- Dann ist
+ Dann gibt es den Isomorphismus:
 \begin_inset Formula 
 \begin{align*}
-\text{Hom}_{\mathbb{Q}\text{-Alg.}}\left(E,L\right) & \stackrel{\sim}{\to}\left\{ \alpha\in\mathbb{C}|\alpha^{3}=2\right\} ;\varphi\mapsto\varphi\left(\sqrt{[3]2}\right)
+\text{Hom}_{\mathbb{Q}\text{-Alg.}}\left(E,L\right) & \stackrel{\sim}{\to}\left\{ \alpha\in\mathbb{C}|\alpha^{3}=2\right\} ;\varphi\mapsto\varphi\left(\sqrt[3]{2}\right)
 \end{align*}
 
 \end_inset
@@ -20130,20 +20368,27 @@ Dann gilt
 \begin_inset Formula $\mathcal{N}=\left\{ \alpha,\alpha\zeta,\alpha\zeta^{2}\right\} $
 \end_inset
 
-, denn:
+, denn für alle 
+\begin_inset Formula $i\in\mathbb{Z}$
+\end_inset
+
+ gilt:
 \begin_inset Formula 
 \begin{align*}
-\left(\alpha\zeta^{i}\right)^{3} & =\alpha^{3}\cdot\left(\zeta^{3}\right)^{i}=2\cdot1=2\quad\fall_{i\in\mathbb{Z}}
+\left(\alpha\zeta^{i}\right)^{3} & =\alpha^{3}\cdot\left(\zeta^{3}\right)^{i}=2\cdot1=2
 \end{align*}
 
 \end_inset
 
-Und weil 
+Wegen 
 \begin_inset Formula $\text{ord}\left(\zeta\in\mathbb{C}^{*}\right)=3$
 \end_inset
 
- (Bemerkung zu 
-\begin_inset Formula $\ref{}4.5$
+ (vergleiche Bemerkung 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Bem-zetan"
+
 \end_inset
 
 ) sind 
@@ -20166,6 +20411,8 @@ alle
 \end_layout
 
 \begin_layout Standard
+
+\color green
 TODO: Abb 2
 \end_layout
 
@@ -20189,11 +20436,15 @@ reference "sec:SuD-Konj"
 
 \end_inset
 
- iii): 
-\begin_inset Formula $E'=\mathbb{Q}\left(\alpha,\alpha\zeta,\alpha\zeta^{2}\right)=\mathbb{Q}\left(\alpha,\zeta\right)$
+ iii):
+\begin_inset Formula 
+\begin{align*}
+E' & =\mathbb{Q}\left(\alpha,\alpha\zeta,\alpha\zeta^{2}\right)=\mathbb{Q}\left(\alpha,\zeta\right)
+\end{align*}
+
 \end_inset
 
-, denn: „
+(Denn: „
 \begin_inset Formula $\subseteq$
 \end_inset
 
@@ -20205,7 +20456,7 @@ reference "sec:SuD-Konj"
 \begin_inset Formula $\zeta=\frac{\alpha\zeta}{\alpha}$
 \end_inset
 
-.
+.)
 \end_layout
 
 \begin_layout Standard
@@ -20217,18 +20468,19 @@ Es gilt
 \end_layout
 
 \begin_layout Standard
+
+\color green
 TODO: Abb3
-\end_layout
-
-\begin_layout Standard
-\begin_inset Newpage newpage
-\end_inset
-
-
 \end_layout
 
 \begin_layout Chapter
 Separabilität
+\end_layout
+
+\begin_layout Standard
+
+\color green
+TODO: Rest überarbeiten
 \end_layout
 
 \begin_layout Standard
@@ -20357,7 +20609,7 @@ end{iiilist}
 
 \end_layout
 
-\begin_layout Paragraph*
+\begin_layout Subsubsection*
 Beweis
 \end_layout
 
@@ -20414,7 +20666,7 @@ k, & \text{falls }\text{char}\left(k\right)=0\\
 
 \end_layout
 
-\begin_layout Paragraph*
+\begin_layout Subsubsection*
 Beweis
 \end_layout
 
@@ -20480,7 +20732,7 @@ Seien
  gilt.
 \end_layout
 
-\begin_layout Paragraph*
+\begin_layout Subsubsection*
 Beweis
 \end_layout
 
@@ -23325,13 +23577,6 @@ qqed
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset Newpage newpage
-\end_inset
-
-
-\end_layout
-
 \begin_layout Chapter
 Endliche Körper
 \end_layout
@@ -24267,13 +24512,6 @@ TODO: Rest
 \end_layout
 
 \begin_layout Standard
-\begin_inset Newpage newpage
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -24705,7 +24943,9 @@ status open
 
 
 \backslash
-qqed[i)]
+qqed[
+\backslash
+roman{ale2})]
 \end_layout
 
 \end_inset
@@ -24758,7 +24998,7 @@ status open
 
 
 \backslash
-qqed[ii)]
+end{iiilist}
 \end_layout
 
 \end_inset
@@ -24774,7 +25014,7 @@ status open
 
 
 \backslash
-end{iiilist}
+qqed
 \end_layout
 
 \end_inset
@@ -24976,7 +25216,9 @@ status open
 
 
 \backslash
-qqed[i)]
+qqed[
+\backslash
+roman{ale2})]
 \end_layout
 
 \end_inset
@@ -25070,7 +25312,7 @@ status open
 
 
 \backslash
-qqed[ii)]
+end{iiilist}
 \end_layout
 
 \end_inset
@@ -25086,7 +25328,7 @@ status open
 
 
 \backslash
-end{iiilist}
+qqed
 \end_layout
 
 \end_inset
@@ -26486,7 +26728,9 @@ status open
 
 
 \backslash
-qqed[i)]
+qqed[
+\backslash
+roman{ale2})]
 \end_layout
 
 \end_inset
@@ -26542,7 +26786,9 @@ status open
 
 
 \backslash
-qqed[ii)]
+qqed[
+\backslash
+roman{ale2})]
 \end_layout
 
 \end_inset
@@ -26595,6 +26841,22 @@ status open
 
 \backslash
 end{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed
 \end_layout
 
 \end_inset
@@ -30058,10 +30320,9 @@ Da
 \end_inset
 
 .
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
-
+\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -30069,9 +30330,7 @@ status open
 
 
 \backslash
-qqed[
-\backslash
-roman{ale2})]
+end{iiilist}
 \end_layout
 
 \end_inset
@@ -30087,7 +30346,9 @@ status open
 
 
 \backslash
-end{iiilist}
+qqed[
+\backslash
+ref{sec:Satz-HS-symFkt}]
 \end_layout
 
 \end_inset
