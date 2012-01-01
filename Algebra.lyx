@@ -372,6 +372,8 @@ vspace*{-30mm}
 \begin_inset Newline newline
 \end_inset
 
+
+\size giant
 Algebra
 \end_layout
 
@@ -453,7 +455,7 @@ status open
 
 
 \backslash
-vspace*{5mm}
+vspace*{3mm}
 \end_layout
 
 \end_inset
@@ -532,7 +534,7 @@ Copyright Notice
 \begin_layout Standard
 
 \lang english
-Copyright © 2011 
+Copyright © 2011-2012 
 \noun on
 Andreas Völklein
 \end_layout
@@ -571,7 +573,7 @@ Disclaimer of Warranty
 Unless otherwise mutually agreed to by the parties in writing and to the
  extent not prohibited by applicable law, 
 \series bold
-the copyright holder  provides the document “as is
+the copyright holders  provide the document “as is
 \noun default
 ”
 \noun on
@@ -598,7 +600,7 @@ In no event
 \series default
  unless required by applicable law or agreed to in writing 
 \series bold
-will the copyright holder be liable to you for any loss
+will the copyright holders be liable to you for any loss
 \series default
  of revenue, profit or anything else, 
 \series bold
@@ -607,8 +609,8 @@ or for any damages
 , including, but not limited to, any general, special, incidental, consequential
 , punitive or exemplary damages, however caused, regardless of the theory
  of liability, arising out of or related to this license or the use of or
- inability to use the document, even if the copyright holder has been advised
- of the possibility of such damages.
+ inability to use the document, even if the copyright holders have been
+ advised of the possibility of such damages.
 \end_layout
 
 \begin_layout Standard
@@ -616,11 +618,11 @@ or for any damages
 \series bold
 \noun on
 \lang english
-In no event will the copyright holder's liability to you
+In no event will the copyright holders' liability to you
 \series default
 , whether in contract, tort (including negligence), or otherwise, 
 \series bold
-exceed the amount you paid the copyright holder
+exceed the amount you paid the copyright holders
 \series default
  for the document under this agreement.
 \end_layout
@@ -801,8 +803,9 @@ Michael F.
 \lang english
 Introduction to commutative algebra
 \emph default
+, Westview Press
 \lang ngerman
-, Westview Press, 1994
+, 1994
 \begin_inset Newline newline
 \end_inset
 
@@ -17847,12 +17850,13 @@ qqed
 
 \begin_layout Chapter
 Zerfällungskörper
-\end_layout
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:Zerfällungskörper"
 
-\begin_layout Standard
+\end_inset
 
-\color green
-TODO: Rest einfügen
+
 \end_layout
 
 \begin_layout Subsection*
@@ -17866,6 +17870,7 @@ Definition
 \end_layout
 
 \begin_layout Standard
+Definiere 
 \begin_inset Formula $k$
 \end_inset
 
@@ -17873,43 +17878,49 @@ Definition
 \emph on
 -Homomorphismus
 \emph default
+ (Abkürzung: 
+\begin_inset Formula $k$
+\end_inset
+
+-Hom.) als 
+\begin_inset Formula $k$
+\end_inset
+
+-Algebrenhomomorphismus (nicht zu verwechseln mit einer 
+\begin_inset Formula $k$
+\end_inset
+
+-linearen Abbildung).
+\end_layout
+
+\begin_layout Subsubsection*
+Fixiere in Kapitel 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:Zerfällungskörper"
+
+\end_inset
+
  (
-\begin_inset Formula $=:$
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "chap:Zerfällungskörper"
+
 \end_inset
 
- „
-\begin_inset Formula $k$
-\end_inset
-
--Homomorphismus“) 
-\begin_inset Formula $:\Leftrightarrow$
-\end_inset
-
- 
-\begin_inset Formula $k$
-\end_inset
-
--Algebra-Homomorphismus (
-\begin_inset Formula $\not=$
-\end_inset
-
- 
-\begin_inset Formula $k$
-\end_inset
-
--lineare Abbildung)
+)
 \end_layout
 
 \begin_layout Standard
-Fixiere: 
+Sei 
 \begin_inset Formula $k$
 \end_inset
 
- Körper, 
+ ein Körper und 
 \begin_inset Formula $\emptyset\not=\mathcal{F}\subseteq\left\{ f\in k\left[X\right]|\text{deg}\left(f\right)\ge1\right\} $
 \end_inset
 
-
+.
 \end_layout
 
 \begin_layout Section
@@ -17970,23 +17981,31 @@ iii
 
 \end_inset
 
- 
-\begin_inset Formula ${\displaystyle \fall_{f\in\mathcal{F}}}$
+ Für alle 
+\begin_inset Formula $f\in\mathcal{F}$
 \end_inset
 
  gilt in 
-\begin_inset Formula ${\displaystyle E\left[X\right]:f=\alpha\cdot\prod_{i=1}^{n}\left(X-\alpha_{i}\right)}$
+\begin_inset Formula ${\displaystyle E\left[X\right]}$
 \end_inset
 
- mit 
-\begin_inset Formula $n\ge1$
+:
+\begin_inset Formula 
+\begin{align*}
+f & =\alpha\cdot\prod_{i=1}^{n}\left(X-\alpha_{i}\right)
+\end{align*}
+
 \end_inset
 
-, 
+mit geeigneten 
+\begin_inset Formula $n\in\mathbb{N}_{\ge1}$
+\end_inset
+
+ und 
 \begin_inset Formula $\alpha,\alpha_{i}\in E$
 \end_inset
 
- geeignet, das heißt: 
+, das heißt: 
 \begin_inset Formula $f$
 \end_inset
 
@@ -18011,7 +18030,7 @@ iii
 \end_inset
 
  
-\begin_inset Formula ${\displaystyle E=k\left(\alpha|\alpha\in E\wedge\exs_{f\in\mathcal{F}}f\left(\alpha\right)=0\right)}$
+\begin_inset Formula ${\displaystyle E=k\left(\alpha\bigg|\alpha\in E\wedge\exs_{f\in\mathcal{F}}f\left(\alpha\right)=0\right)}$
 \end_inset
 
 , das heißt 
@@ -18074,10 +18093,13 @@ Wähle
 \end_inset
 
  (vergleiche 
-\begin_inset Formula $\ref{}5.7,i)$
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Bsp-VvKronecker"
+
 \end_inset
 
-).
+ i)).
 \end_layout
 
 \begin_layout Standard
@@ -18100,7 +18122,7 @@ Dann hat
  gilt:
 \begin_inset Formula 
 \begin{align}
-f & =\left(X-\alpha\right)\cdot\left(X^{2}+\alpha X+\alpha^{2}\right)\qquad(*)\label{eq:strn}
+f & =\left(X-\alpha\right)\cdot\underbrace{\left(X^{2}+\alpha X+\alpha^{2}\right)}_{=:g\left(X\right)}\label{eq:fXa}
 \end{align}
 
 \end_inset
@@ -18133,10 +18155,14 @@ Hätte
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $\stackrel{\ref{}4.5,iii)}{\Rightarrow}$
+Mit 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Bsp-IrreduzKrit"
+
 \end_inset
 
-
+ iii) folgt:
 \begin_inset Formula 
 \begin{align*}
 \text{Mipo}_{\mathbb{Q}}\left(\zeta\right) & =X^{2}+X+1\\
@@ -18149,7 +18175,7 @@ Wegen
 \begin_inset Formula $\zeta\in E$
 \end_inset
 
- erhalte Körperturm erhalte Körperturm 
+ erhalte den Körperturm 
 \begin_inset Formula $\mathbb{Q}\subseteq\mathbb{Q}\left(\zeta\right)\subseteq E$
 \end_inset
 
@@ -18168,7 +18194,7 @@ Wegen
 Also ist 
 \begin_inset CommandInset ref
 LatexCommand eqref
-reference "eq:strn"
+reference "eq:fXa"
 
 \end_inset
 
@@ -18227,6 +18253,8 @@ Insbesondere zerfällt
 \end_layout
 
 \begin_layout Standard
+
+\color green
 TODO: Rest einfügen
 \end_layout
 
@@ -18317,12 +18345,15 @@ iii
 \end_inset
 
 -Homomorphismus.
- Dann gilt 
+\end_layout
+
+\begin_layout Standard
+Dann gilt 
 \begin_inset Formula $\overline{\sigma}\left(E_{1}\right)=E_{2}$
 \end_inset
 
 , also 
-\begin_inset Formula $\overline{\sigma}:\left(E_{1}\stackrel{\sim}{\rightarrow}E_{2}\hookrightarrow\right)$
+\begin_inset Formula $\overline{\sigma}:\left(E_{1}\stackrel{\sim}{\rightarrow}E_{2}\hookrightarrow\overline{E}_{2}\right)$
 \end_inset
 
 .
@@ -18341,27 +18372,31 @@ iii
 
 \end_inset
 
- 
+ Sind 
 \begin_inset Formula $E_{i}\supseteq k$
 \end_inset
 
- ist ein Zerfällungskörper von 
+ Zerfällungskörper von 
 \begin_inset Formula $\mathcal{F}$
 \end_inset
 
  (
-\begin_inset Formula $i=1,2$
+\begin_inset Formula $i\in\left\{ 1,2\right\} $
 \end_inset
 
-) 
-\begin_inset Formula $\Rightarrow$
+), dann gibt es einen 
+\begin_inset Formula $k$
 \end_inset
 
- 
-\begin_inset Formula ${\displaystyle \exs_{k\text{-Iso.}}\phi:E_{1}\stackrel{\sim}{\to}E_{2}}$
+-Isomorphismus:
+\begin_inset Formula 
+\begin{align*}
+\phi:E_{1} & \stackrel{\sim}{\to}E_{2}
+\end{align*}
+
 \end_inset
 
-.
+
 \end_layout
 
 \begin_layout Standard
@@ -18417,26 +18452,29 @@ iii
 \begin_inset Formula $\overline{k}\supseteq k$
 \end_inset
 
- (
-\begin_inset Formula $\ref{}$
+ (vergleiche 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:SuD-algAbschluss"
+
 \end_inset
 
-?6.4) und setze 
-\begin_inset Formula ${\displaystyle E:=k\left(\alpha|\alpha\in\overline{k}\wedge\exs_{f\in\mathcal{F}}f\left(\alpha\right)=0\right)}$
-\end_inset
+) und setze:
+\begin_inset Formula 
+\begin{align*}
+E & :=k\left(\alpha\bigg|\alpha\in\overline{k}\wedge\exs_{f\in\mathcal{F}}f\left(\alpha\right)=0\right)
+\end{align*}
 
-.
-\begin_inset Newline newline
 \end_inset
 
 Wegen 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "asdf"
+reference "sec:PuD-algAbges"
 
 \end_inset
 
-6.1 ii) ist dann 
+ ii) ist dann 
 \begin_inset Formula $\modulo{E_{i}}{k}$
 \end_inset
 

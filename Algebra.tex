@@ -176,7 +176,7 @@
 
 
 \title{\textbf{\huge \vspace*{-30mm}}\\
-\textbf{\huge Algebra}}
+\textbf{\Huge Algebra}}
 
 
 \author{\textit{\small Vorlesung von}\\
@@ -186,7 +186,7 @@
 \textit{\noun{\small Andreas Völklein}}\\
 {\small \vspace*{10mm}}\\
 {\small \includegraphics[clip,width=15cm]{unir}}\textit{\noun{\small }}\\
-{\small \vspace*{5mm}}\\
+{\small \vspace*{3mm}}\\
 Stand: \today}
 
 \maketitle
@@ -206,7 +206,7 @@ Es wird daher \emph{dringend} empfohlen, die Vorlesung zu besuchen.
 
 \subsubsection*{Copyright Notice}
 
-Copyright © 2011 \noun{Andreas Völklein}
+Copyright © 2011-2012 \noun{Andreas Völklein}
 
 Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.3
@@ -223,7 +223,7 @@ Free Documentation License\textquotedblright{}.
 
 \noun{Unless otherwise mutually agreed to by the parties in writing
 and to the extent not prohibited by applicable law, }\textbf{\noun{the
-copyright holder  provides the document \textquotedblleft{}as is}}\textbf{\textquotedblright{}}\textbf{\noun{
+copyright holders  provide the document \textquotedblleft{}as is}}\textbf{\textquotedblright{}}\textbf{\noun{
 without warranties of any kind}}\noun{, expressed, implied, statutory
 or otherwise, including, but not limited to, the implied warranties
 of merchantability, fitness for a particular purpose, non-infringement,
@@ -234,19 +234,19 @@ errors, whether or not discoverable.}
 \subsubsection*{Limitation of Liability}
 
 \textbf{\noun{In no event}}\noun{ unless required by applicable law
-or agreed to in writing }\textbf{\noun{will the copyright holder be
-liable to you for any loss}}\noun{ of revenue, profit or anything
+or agreed to in writing }\textbf{\noun{will the copyright holders
+be liable to you for any loss}}\noun{ of revenue, profit or anything
 else, }\textbf{\noun{or for any damages}}\noun{, including, but not
 limited to, any general, special, incidental, consequential, punitive
 or exemplary damages, however caused, regardless of the theory of
 liability, arising out of or related to this license or the use of
-or inability to use the document, even if the copyright holder has
+or inability to use the document, even if the copyright holders have
 been advised of the possibility of such damages.}
 
-\textbf{\noun{In no event will the copyright holder's liability to
+\textbf{\noun{In no event will the copyright holders' liability to
 you}}\noun{, whether in contract, tort (including negligence), or
 otherwise, }\textbf{\noun{exceed the amount you paid the copyright
-holder}}\noun{ for the document under this agreement.}
+holders}}\noun{ for the document under this agreement.}
 
 \selectlanguage{ngerman}%
 
@@ -287,7 +287,7 @@ ISBN 978-3-8274-1609-4/978-0-387-72487-4
 \item \noun{Serge Lang}: \emph{Algebra}, Springer, 2005\\
 ISBN 0-387-95385-X
 \item \noun{Michael F. Atiya, Ian G. MacDonald}: \foreignlanguage{english}{\emph{Introduction
-to commutative algebra}}, Westview Press, 1994\\
+to commutative algebra}, Westview Press}, 1994\\
 ISBN 0-201-40751-5, Lokalisierungen: Seite 36-39
 \end{itemize}
 {\small \newpage{}}\fancyhead[R]{Inhaltsverzeichnis}
@@ -3852,18 +3852,18 @@ schon die Behauptung.
 \newpage{}
 
 
-\chapter{Zerfällungskörper}
-
-\textcolor{green}{TODO: Rest einfügen}
+\chapter{Zerfällungskörper\label{chap:Zerf=0000E4llungsk=0000F6rper}}
 
 
 \subsection*{Definition \textmd{($k$-Homomorphismus)}}
 
-$k$\emph{-Homomorphismus} ($=:$ \quotedblbase{}$k$-Homomorphismus\textquotedblleft{})
-$:\Leftrightarrow$ $k$-Algebra-Homomorphismus ($\not=$ $k$-lineare
-Abbildung)
+Definiere $k$\emph{-Homomorphismus} (Abkürzung: $k$-Hom.) als $k$-Algebrenhomomorphismus
+(nicht zu verwechseln mit einer $k$-linearen Abbildung).
 
-Fixiere: $k$ Körper, $\emptyset\not=\mathcal{F}\subseteq\left\{ f\in k\left[X\right]|\text{deg}\left(f\right)\ge1\right\} $
+
+\subsubsection*{Fixiere in Kapitel \ref{chap:Zerf=0000E4llungsk=0000F6rper} (\nameref{chap:Zerf=0000E4llungsk=0000F6rper})}
+
+Sei $k$ ein Körper und $\emptyset\not=\mathcal{F}\subseteq\left\{ f\in k\left[X\right]|\text{deg}\left(f\right)\ge1\right\} $.
 
 
 \section{Definition \textmd{(Zerfällungskörper)\label{sec:Def-ZK}}}
@@ -3873,11 +3873,14 @@ $E\supseteq k$:
 
 \begin{iiilist}
 
-\iii ${\displaystyle \fall_{f\in\mathcal{F}}}$ gilt in ${\displaystyle E\left[X\right]:f=\alpha\cdot\prod_{i=1}^{n}\left(X-\alpha_{i}\right)}$
-mit $n\ge1$, $\alpha,\alpha_{i}\in E$ geeignet, das heißt: $f$
-zerfällt über $E$ in Linearfaktoren.
+\iii Für alle $f\in\mathcal{F}$ gilt in ${\displaystyle E\left[X\right]}$:
+\begin{align*}
+f & =\alpha\cdot\prod_{i=1}^{n}\left(X-\alpha_{i}\right)
+\end{align*}
+mit geeigneten $n\in\mathbb{N}_{\ge1}$ und $\alpha,\alpha_{i}\in E$,
+das heißt: $f$ zerfällt über $E$ in Linearfaktoren.
 
-\iii ${\displaystyle E=k\left(\alpha|\alpha\in E\wedge\exs_{f\in\mathcal{F}}f\left(\alpha\right)=0\right)}$,
+\iii ${\displaystyle E=k\left(\alpha\bigg|\alpha\in E\wedge\exs_{f\in\mathcal{F}}f\left(\alpha\right)=0\right)}$,
 das heißt $\modulo{E}{k}$ wird von den Nullstellen der $f\in\mathcal{F}$
 erzeugt.
 
@@ -3888,12 +3891,12 @@ erzeugt.
 
 Wähle $k=\mathbb{Q}$, $\mathcal{F}=\left\{ f\right\} $ mit $f:=X^{3}-2\in\mathbb{Q}\left[X\right]$
 und $k=\mathbb{Q}\subseteq E:=\mathbb{Q}\left(\alpha\right)$ mit
-$\alpha^{3}=2$ (vergleiche $\ref{}5.7,i)$).
+$\alpha^{3}=2$ (vergleiche \ref{sec:Bsp-VvKronecker} i)).
 
 Dann hat $f$ eine Nullstelle in $E$ (nämlich $\alpha$), und in
 $E\left[X\right]$ gilt:
 \begin{align}
-f & =\left(X-\alpha\right)\cdot\left(X^{2}+\alpha X+\alpha^{2}\right)\qquad(*)\label{eq:strn}
+f & =\left(X-\alpha\right)\cdot\underbrace{\left(X^{2}+\alpha X+\alpha^{2}\right)}_{=:g\left(X\right)}\label{eq:fXa}
 \end{align}
 
 
@@ -3901,19 +3904,19 @@ Hätte $f$ eine weitere Nullstelle $\beta\not=\alpha$ in $E$, so
 folgte ${\displaystyle \left(\frac{\beta}{\alpha}\right)^{3}=\frac{2}{2}=1}$,
 also ${\displaystyle 1\not=\zeta:=\frac{\beta}{\alpha}\in E:\zeta^{3}=1}$.
 
-$\stackrel{\ref{}4.5,iii)}{\Rightarrow}$
+Mit \ref{sec:Bsp-IrreduzKrit} iii) folgt:
 \begin{align*}
 \text{Mipo}_{\mathbb{Q}}\left(\zeta\right) & =X^{2}+X+1\\
 \Rightarrow\quad\left[\mathbb{Q}\left(\zeta\right):\mathbb{Q}\right] & =2
 \end{align*}
-Wegen $\zeta\in E$ erhalte Körperturm erhalte Körperturm $\mathbb{Q}\subseteq\mathbb{Q}\left(\zeta\right)\subseteq E$
+Wegen $\zeta\in E$ erhalte den Körperturm $\mathbb{Q}\subseteq\mathbb{Q}\left(\zeta\right)\subseteq E$
 und es folgt der Widerspruch:
 \begin{align*}
 \underbrace{\left[E:\mathbb{Q}\right]}_{=3} & =\underbrace{\left[E:\mathbb{Q}\left(\zeta\right)\right]}_{\in\mathbb{Z}}\cdot\underbrace{\left[\mathbb{Q}\left(\zeta\right):\mathbb{Q}\right]}_{=2}
 \end{align*}
 
 
-Also ist \eqref{eq:strn} die Primfaktorzerlegung von $f$ in $E\left[X\right]$,
+Also ist \eqref{eq:fXa} die Primfaktorzerlegung von $f$ in $E\left[X\right]$,
 denn:
 
 $g\in E\left[X\right]$ ist irreduzibel, sonst gäbe es ein $\beta\in E$
@@ -3926,7 +3929,7 @@ folgt (siehe oben).
 Insbesondere zerfällt $f$ über $E$ nicht in Linearfaktoren, das
 heißt $E$ ist kein Zerfällungskörper von 
 
-TODO: Rest einfügen
+\textcolor{green}{TODO: Rest einfügen}
 
 
 \section{Satz \textmd{(Existenz und Eindeutigkeit von Zerfällungskörpern)\label{sec:Satz-eeZK}}}
@@ -3937,11 +3940,16 @@ TODO: Rest einfügen
 
 \iii Seien $E_{1}\supseteq k$, $E_{2}\supseteq k$ Zerfällungskörper
 von $\mathcal{F}$ und $\overline{\sigma}:E_{1}\hookrightarrow\overline{E}_{2}$
-ein $k$-Homomorphismus. Dann gilt $\overline{\sigma}\left(E_{1}\right)=E_{2}$,
-also $\overline{\sigma}:\left(E_{1}\stackrel{\sim}{\rightarrow}E_{2}\hookrightarrow\right)$.
+ein $k$-Homomorphismus.
 
-\iii $E_{i}\supseteq k$ ist ein Zerfällungskörper von $\mathcal{F}$
-($i=1,2$) $\Rightarrow$ ${\displaystyle \exs_{k\text{-Iso.}}\phi:E_{1}\stackrel{\sim}{\to}E_{2}}$.
+Dann gilt $\overline{\sigma}\left(E_{1}\right)=E_{2}$, also $\overline{\sigma}:\left(E_{1}\stackrel{\sim}{\rightarrow}E_{2}\hookrightarrow\overline{E}_{2}\right)$.
+
+\iii Sind $E_{i}\supseteq k$ Zerfällungskörper von $\mathcal{F}$
+($i\in\left\{ 1,2\right\} $), dann gibt es einen $k$-Isomorphismus:
+\begin{align*}
+\phi:E_{1} & \stackrel{\sim}{\to}E_{2}
+\end{align*}
+
 
 \end{iiilist}
 
@@ -3951,9 +3959,12 @@ also $\overline{\sigma}:\left(E_{1}\stackrel{\sim}{\rightarrow}E_{2}\hookrightar
 \begin{iiilist}
 
 \iii Wähle einen algebraischen Abschluss $\overline{k}\supseteq k$
-($\ref{}$?6.4) und setze ${\displaystyle E:=k\left(\alpha|\alpha\in\overline{k}\wedge\exs_{f\in\mathcal{F}}f\left(\alpha\right)=0\right)}$.\\
-Wegen \ref{asdf}6.1 ii) ist dann $\modulo{E_{i}}{k}$ ein Zerfällungskörper
-von $\mathcal{F}$.
+(vergleiche \ref{sec:SuD-algAbschluss}) und setze:
+\begin{align*}
+E & :=k\left(\alpha\bigg|\alpha\in\overline{k}\wedge\exs_{f\in\mathcal{F}}f\left(\alpha\right)=0\right)
+\end{align*}
+Wegen \ref{sec:PuD-algAbges} ii) ist dann $\modulo{E_{i}}{k}$ ein
+Zerfällungskörper von $\mathcal{F}$.
 
 \qqed[i)]
 
