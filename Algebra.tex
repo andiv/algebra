@@ -156,7 +156,7 @@
 %\fancyhead[C]{\leftmark} %zentrierte Kopfzeile
 \fancyhead[R]{\rightmark} %Kopfzeile rechts
 %\renewcommand{\headrulewidth}{0.4pt} %obere Trennlinie
-\fancyfoot[C]{\thepage\quad\!\!\!\slash\quad\!\!\!\pageref{END}} %Seitennummer
+\fancyfoot[C]{\thepage\quad\!\!\!\slash\quad\!\!\!\pageref{END-front}} %Seitenzahl der Front-Matter
 
 % Datum
 %\date{Stand: \today}
@@ -172,7 +172,7 @@
 
 
 
-
+\pagenumbering{roman}
 
 
 \title{\textbf{\huge \vspace*{-30mm}}\\
@@ -191,6 +191,7 @@ Stand: \today}
 
 \maketitle
 \fancyhead[R]{Lizenz}
+\setcounter{page}{2} % sonst gibt es aus irgendeinem Grund zweimal die Seite 1!?!?!?
 
 
 \subsubsection*{ACHTUNG}
@@ -293,7 +294,9 @@ ISBN 0-201-40751-5, Lokalisierungen: Seite 36-39
 {\small \newpage{}}\fancyhead[R]{Inhaltsverzeichnis}
 \fancyhead[C]{}
 
-\tableofcontents{}\newpage{}\fancyhead[R]{\rightmark}
+\tableofcontents{}\label{END-front}\newpage{}\pagenumbering{arabic}
+\fancyfoot[C]{\thepage\quad\!\!\!\slash\quad\!\!\!\pageref{END}} % Seitenzahl des Hauptteils
+\fancyhead[R]{\rightmark}
 %\fancyhead[C]{\leftmark}%DATE: Di 18.10.2011
 
 

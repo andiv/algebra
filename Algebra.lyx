@@ -123,7 +123,7 @@
 %\fancyhead[C]{\leftmark} %zentrierte Kopfzeile
 \fancyhead[R]{\rightmark} %Kopfzeile rechts
 %\renewcommand{\headrulewidth}{0.4pt} %obere Trennlinie
-\fancyfoot[C]{\thepage\quad\!\!\!\slash\quad\!\!\!\pageref{END}} %Seitennummer
+\fancyfoot[C]{\thepage\quad\!\!\!\slash\quad\!\!\!\pageref{END-front}} %Seitenzahl der Front-Matter
 
 % Datum
 %\date{Stand: \today}
@@ -350,6 +350,19 @@ TODO: DATEs einfügen
 \end_inset
 
 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pagenumbering{roman}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Title
@@ -491,6 +504,14 @@ status open
 
 \backslash
 fancyhead[R]{Lizenz}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{page}{2} % sonst gibt es aus irgendeinem Grund zweimal die Seite
+ 1!?!?!?
 \end_layout
 
 \end_inset
@@ -850,12 +871,61 @@ LatexCommand tableofcontents
 \end_inset
 
 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+label{END-front}
+\end_layout
+
+\end_inset
+
+
 \begin_inset Newpage newpage
 \end_inset
 
 
 \begin_inset ERT
 status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pagenumbering{arabic}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+fancyfoot[C]{
+\backslash
+thepage
+\backslash
+quad
+\backslash
+!
+\backslash
+!
+\backslash
+!
+\backslash
+slash
+\backslash
+quad
+\backslash
+!
+\backslash
+!
+\backslash
+!
+\backslash
+pageref{END}} % Seitenzahl des Hauptteils
+\end_layout
 
 \begin_layout Plain Layout
 
