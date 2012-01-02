@@ -7410,12 +7410,12 @@ mit geeigneten
 
 Definiere:
 \color green
- (TODO: Formel überprüfen)
+ (TODO: Definition und Formel überprüfen)
 \color inherit
 
 \begin_inset Formula 
 \begin{align}
-t & :=\prod_{i}s_{i} & t_{i} & :=\prod_{j=1}^{i}s_{j}\in S\label{eq:tti}
+t & :=\prod_{j}s_{j} & t_{i} & :=\frac{t}{s_{i}}=\prod_{j\not=i}s_{j}\in S\label{eq:tti}
 \end{align}
 
 \end_inset
@@ -7697,6 +7697,12 @@ Man prüft, dass das Diagramm kommutiert(, das heißt prüfen, dass eines der
 \end_layout
 
 \begin_layout Standard
+
+\color green
+TODO: restlichen Beweis einfügen
+\end_layout
+
+\begin_layout Standard
 Es folgt die Exaktheit der ersten Zeile.
 \end_layout
 
@@ -7708,9 +7714,7 @@ status open
 
 
 \backslash
-qqed[
-\backslash
-textcolor{green}{???TODO???}]
+qqed
 \end_layout
 
 \end_inset
@@ -19477,6 +19481,13 @@ qqed
 
 \begin_layout Section
 Beispiel
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Bsp-normNichtTransitiv"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -21687,6 +21698,13 @@ reference "sec:Lem-homkalg"
 Definition
 \series medium
  (separable(s) Element/Körpererweiterung)
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Def-sepKE"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -23083,6 +23101,13 @@ status open
 Korollar 
 \series medium
 (Transitivität der Separabilität)
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Kor-sepTransitiv"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -24591,7 +24616,18 @@ qqed
 \end_layout
 
 \begin_layout Section
-Satz und Definition
+Satz und Definition 
+\series medium
+(relativer Frobenius)
+\series default
+
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:SuD-relatFrob"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -24904,12 +24940,6 @@ qqed
 \end_layout
 
 \begin_layout Standard
-
-\color green
-TODO: Rest einfügen?
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -24925,12 +24955,6 @@ status open
 
 \begin_layout Chapter
 Galoistheorie
-\end_layout
-
-\begin_layout Standard
-
-\color green
-TODO: Rest überarbeiten
 \end_layout
 
 \begin_layout Section
@@ -24963,11 +24987,18 @@ galoissch
  (siehe 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "asdf"
+reference "sec:SuD-normKE"
 
 \end_inset
 
-7.4 und 8.8 ii))
+ und 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Def-sepKE"
+
+\end_inset
+
+ ii))
 \end_layout
 
 \begin_layout Standard
@@ -24990,8 +25021,22 @@ die Galoisgruppe von
 .
 \end_layout
 
+\begin_layout Standard
+
+\color green
+TODO: Beweis von Blatt 8 Aufgabe 2 einfügen
+\end_layout
+
 \begin_layout Section
-Beispiel und Definition
+Beispiel und Definition 
+\series medium
+(Galoisgruppe von 
+\begin_inset Formula $f$
+\end_inset
+
+)
+\series default
+
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:BuD-Galoisgruppe"
@@ -25114,7 +25159,7 @@ end{abclist}
 \end_layout
 
 \begin_layout Standard
-In diesem Fall kan 
+In diesem Fall kann 
 \begin_inset Formula $f$
 \end_inset
 
@@ -25158,7 +25203,7 @@ iii
 \begin_inset Formula $k=\mathbb{F}_{q}$
 \end_inset
 
- gilt:
+, gilt:
 \end_layout
 
 \begin_layout Standard
@@ -25169,19 +25214,25 @@ iii
 \begin_inset Formula $\left[E:k\right]$
 \end_inset
 
+ und wird von 
+\begin_inset Formula $\left(F_{q}\right)|_{E}$
+\end_inset
 
+ erzeugt.
 \end_layout
 
 \begin_layout Standard
-[TODO: Was bedeutet folgende Zeile?]
-\end_layout
 
-\begin_layout Standard
-erzeugt von 
+\color green
+TODO: Was bedeutet „
+\begin_inset Formula $\text{Gal}\left(\modulo{E}{k}\right)$
+\end_inset
+
+ [...] erzeugt von 
 \begin_inset Formula $\left(\mathbb{F}_{q}\right)\bigg|_{E}=\text{Gal}\left(\modulo{E}{k}\right)$
 \end_inset
 
-.
+.“
 \end_layout
 
 \begin_layout Standard
@@ -25240,11 +25291,11 @@ iii
  b): 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "asdf"
+reference "sec:SuD-primitel"
 
 \end_inset
 
-8.17 impliziert:
+ impliziert:
 \begin_inset Formula 
 \begin{align*}
 \exs_{\alpha\in E} & :E=k\left(\alpha\right)
@@ -25259,11 +25310,11 @@ Weil
  normal ist, folgt aus 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "asdf"
+reference "sec:SuD-normKE"
 
 \end_inset
 
-7.4 iii), dass 
+ iii), dass 
 \begin_inset Formula $\modulo{E}{k}$
 \end_inset
 
@@ -25290,11 +25341,11 @@ b)
  a): 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "asdf"
+reference "sec:SuD-normKE"
 
 \end_inset
 
-7.4 ii) impliziert, dass 
+ ii) impliziert, dass 
 \begin_inset Formula $\modulo{E}{k}$
 \end_inset
 
@@ -25309,18 +25360,18 @@ Weil
  separabel ist, folgt mit 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "asdf"
+reference "sec:SuD-Konj"
 
 \end_inset
 
-7.10 iii) und 
+ iii) und 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "asdf"
+reference "sec:Satz-endlSepAequivSepEZS"
 
 \end_inset
 
-8.15 i) 
+ i) 
 \begin_inset Formula $\Rightarrow$
 \end_inset
 
@@ -25373,25 +25424,25 @@ iii
  Folgt aus 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "asdf"
+reference "sec:Lem-ZkXpn"
 
 \end_inset
 
-9.1 iii), 
+ iii), 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "asdf"
+reference "sec:Satz-vollkommenK"
 
 \end_inset
 
-8.12 ii) und 
+ ii) und 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "asdf"
+reference "sec:SuD-relatFrob"
 
 \end_inset
 
-9.5 ii).
+ ii).
 \end_layout
 
 \begin_layout Standard
@@ -25586,18 +25637,18 @@ iii
  Wegen 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "asdf"
+reference "sec:Bsp-normNichtTransitiv"
 
 \end_inset
 
-7.7 ii) und 
+ ii) und 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "asdf"
+reference "sec:Kor-sepTransitiv"
 
 \end_inset
 
-8.16 i) 
+ i) 
 \begin_inset Formula $\Rightarrow$
 \end_inset
 
@@ -25654,19 +25705,23 @@ iii
  normal ist, und wegen 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "asdf"
+reference "sec:SuD-normKE"
 
 \end_inset
 
-7.4 i) wohldefiniert, das heißt
+ i) wohldefiniert, das heiß für alle 
+\begin_inset Formula $\sigma\in\text{Gal}\left(\modulo{E}{k}\right)$
+\end_inset
+
+ ist
 \begin_inset Formula 
 \begin{align*}
-\fall_{\sigma\in\text{Gal}\left(\moduloScript{E}{k}\right)} & :\sigma\left(K\right)\subseteq K
+\sigma\left(K\right) & \subseteq K
 \end{align*}
 
 \end_inset
 
-und daher 
+und daher ist 
 \begin_inset Formula $\sigma|_{K}\in\text{Gal}\left(\modulo{K}{k}\right)$
 \end_inset
 
@@ -25689,11 +25744,11 @@ Weil
  normal ist und wegen 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "asdf"
+reference "sec:SuD-Fortsetzung"
 
 \end_inset
 
-6.7 ist 
+ ist 
 \begin_inset Formula $\pi$
 \end_inset
 
@@ -25738,6 +25793,12 @@ qqed
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+
+\color green
+TODO: Rest überarbeiten
 \end_layout
 
 \begin_layout Section
@@ -25836,18 +25897,18 @@ Beweis
 Folgt aus 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "asdf"
+reference "sec:Def-sgrad"
 
 \end_inset
 
-8.11 und 
+ und 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "asdf"
+reference "sec:Satz-endlSepAequivSepEZS"
 
 \end_inset
 
-8.15 iii) 
+ iii) 
 \begin_inset Formula $\Rightarrow$
 \end_inset
 
@@ -25891,7 +25952,7 @@ Seien
  ein Körper und
 \begin_inset Formula 
 \begin{align*}
-G\subseteq\text{Aut}\left(E\right) & :=\left\{ \varphi:E\stackrel{\sim}{\to}E|\varphi\text{ist ein Körperisomorphismus}\right\} 
+G\subseteq\text{Aut}\left(E\right) & :=\left\{ \varphi:E\stackrel{\sim}{\to}E|\varphi\text{ ist ein Körperisomorphismus}\right\} 
 \end{align*}
 
 \end_inset
@@ -25930,10 +25991,10 @@ iii
 \end_inset
 
  
-\begin_inset Formula $k:=E^{G}:=\left\{ \alpha\in E|\fall_{B\in G}:\sigma\left(\alpha\right)=\alpha\right\} $
+\begin_inset Formula $k:=E^{G}:=\left\{ \alpha\in E|\fall_{\sigma\in G}:\sigma\left(\alpha\right)=\alpha\right\} $
 \end_inset
 
- ist ein TK(TODO???) und heißt 
+ ist ein Teilkörper und heißt 
 \emph on
 der Fixkörper von 
 \begin_inset Formula $E$
@@ -25969,7 +26030,7 @@ iii
 \begin_inset Formula $\modulo{E}{k}$
 \end_inset
 
- galoissch ist und dass gelten: (TODO: Gleichung überprüfen)
+ galoissch ist und dass gelten:
 \end_layout
 
 \begin_layout Itemize
@@ -25985,7 +26046,7 @@ Mit
 \begin_inset Formula $k$
 \end_inset
 
- die Identiät sind, gilt:
+ die Identität sind, gilt:
 \begin_inset Formula 
 \begin{align*}
 \text{Aut}_{k}\left(E\right)=\text{Gal}\left(\modulo{E}{k}\right) & =G\subseteq\text{Aut}\left(E\right)

@@ -1634,9 +1634,9 @@ Zunächst ist $x$ eine endliche Summe
 x & =\sum_{i}\underbrace{\frac{a_{i}}{s_{i}}\otimes m_{i}}_{\text{\quotedblbase elementarer Tensor\textquotedblleft}}\label{eq:elemTensor}
 \end{align}
 mit geeigneten $a_{i}\in A,s_{i}\in S$ und $m_{i}\in M$.\\
-Definiere:\textcolor{green}{{} (TODO: Formel überprüfen)}
+Definiere:\textcolor{green}{{} (TODO: Definition und Formel überprüfen)}
 \begin{align}
-t & :=\prod_{i}s_{i} & t_{i} & :=\prod_{j=1}^{i}s_{j}\in S\label{eq:tti}
+t & :=\prod_{j}s_{j} & t_{i} & :=\frac{t}{s_{i}}=\prod_{j\not=i}s_{j}\in S\label{eq:tti}
 \end{align}
 Damit folgt:
 \begin{align*}
@@ -1708,9 +1708,11 @@ Man prüft, dass das Diagramm kommutiert(, das heißt prüfen, dass eines
 der Quadrate kommutiert.) (vergleiche Übungsaufgaben aus linearer
 Algebra II)
 
+\textcolor{green}{TODO: restlichen Beweis einfügen}
+
 Es folgt die Exaktheit der ersten Zeile.
 
-\qqed[\textcolor{green}{???TODO???}]
+\qqed
 
 
 \chapter{Der Satz von Gauß\label{chap:Der-Satz-von-Gauss}}
@@ -4118,7 +4120,7 @@ Folgt aus \ref{sec:SuD-normKE} iii) und \ref{sec:PuD-algAbges} iii).
 \qqed
 
 
-\section{Beispiel}
+\section{Beispiel\label{sec:Bsp-normNichtTransitiv}}
 
 \begin{iiilist}
 
@@ -4517,7 +4519,7 @@ Insbesondere folgt:
 (vergleiche \quotedblbase{}$\le$\textquotedblleft{} in \ref{sec:Lem-homkalg})
 
 
-\section{Definition\textmd{ (separable(s) Element/Körpererweiterung)}}
+\section{Definition\textmd{ (separable(s) Element/Körpererweiterung)\label{sec:Def-sepKE}}}
 
 Sei $k\subseteq E$ eine algebraische Körpererweiterung.
 
@@ -4775,7 +4777,7 @@ iii) \quotedblbase{}$\Leftarrow$\textquotedblleft{}).
 %DATE: 6.12.2011
 
 
-\section{Korollar \textmd{(Transitivität der Separabilität)}}
+\section{Korollar \textmd{(Transitivität der Separabilität)\label{sec:Kor-sepTransitiv}}}
 
 Für eine algebraische Körpererweiterung $E\supseteq K\supseteq k$
 sind äquivalent:
@@ -5055,7 +5057,7 @@ folgt $n|m$.
 \qqed
 
 
-\section{Satz und Definition}
+\section{Satz und Definition \textmd{(relativer Frobenius)}\label{sec:SuD-relatFrob}}
 
 Seien $p$ eine Primzahl und $1\le n|m$, $q:=p^{n}$ und $q':=p^{m}$,
 also $\mathbb{F}_{p}\subseteq\mathbb{F}_{q}\subseteq\mathbb{F}_{q'}\subseteq\overline{\mathbb{F}}_{p}$.
@@ -5113,21 +5115,17 @@ Dies wird zu $\left|\mathbb{F}_{q'}\right|=q'$.
 
 \qqed
 
-\textcolor{green}{TODO: Rest einfügen?}
-
 %DATE: 
 
 
 \chapter{Galoistheorie}
-
-\textcolor{green}{TODO: Rest überarbeiten}
 
 
 \section{Definition \textmd{(galoissche Körpererweiterung, Galoisgruppe)\label{sec:Def-Galoisgruppe}}}
 
 Eine algebraische Körpererweiterung $E\supseteq k$ heißt genau dann
 \emph{galoissch}, wenn $\modulo{E}{k}$ normal und separabel ist.
-(siehe \ref{asdf}7.4 und 8.8 ii))
+(siehe \ref{sec:SuD-normKE} und \ref{sec:Def-sepKE} ii))
 
 In diesem Fall heißt
 \begin{align*}
@@ -5135,8 +5133,10 @@ In diesem Fall heißt
 \end{align*}
 \emph{die Galoisgruppe von }$\modulo{E}{k}$.
 
+\textcolor{green}{TODO: Beweis von Blatt 8 Aufgabe 2 einfügen}
 
-\section{Beispiel und Definition\label{sec:BuD-Galoisgruppe}}
+
+\section{Beispiel und Definition \textmd{(Galoisgruppe von $f$)}\label{sec:BuD-Galoisgruppe}}
 
 \begin{iiilist}
 
@@ -5151,17 +5151,17 @@ Polynoms $f\in k\left[X\right]$.
 
 \end{abclist}
 
-In diesem Fall kan $f$ in b) irreduzibel gewählt werden und $\text{Gal}\left(\modulo{E}{k}\right)=:\text{Gal}\left(f\right)$
+In diesem Fall kann $f$ in b) irreduzibel gewählt werden und $\text{Gal}\left(\modulo{E}{k}\right)=:\text{Gal}\left(f\right)$
 heißt \emph{die Galoisgruppe von $f$}.
 
 \iii Jede Erweiterung $E\supseteq k$ endlicher Körper ist galoissch
-und mit $q:=\left|k\right|$, das heißt $k=\mathbb{F}_{q}$ gilt:
+und mit $q:=\left|k\right|$, das heißt $k=\mathbb{F}_{q}$, gilt:
 
 $\text{Gal}\left(\modulo{E}{k}\right)$ ist zyklisch mit Ordnung $\left[E:k\right]$
+und wird von $\left(F_{q}\right)|_{E}$ erzeugt.
 
-{[}TODO: Was bedeutet folgende Zeile?{]}
-
-erzeugt von $\left(\mathbb{F}_{q}\right)\bigg|_{E}=\text{Gal}\left(\modulo{E}{k}\right)$.
+\textcolor{green}{TODO: Was bedeutet \quotedblbase{}$\text{Gal}\left(\modulo{E}{k}\right)$
+{[}...{]} erzeugt von $\left(\mathbb{F}_{q}\right)\bigg|_{E}=\text{Gal}\left(\modulo{E}{k}\right)$.\textquotedblleft{}}
 
 \end{iiilist}
 
@@ -5170,30 +5170,30 @@ erzeugt von $\left(\mathbb{F}_{q}\right)\bigg|_{E}=\text{Gal}\left(\modulo{E}{k}
 
 \begin{iiilist}
 
-\iii a) $\Rightarrow$ b): \ref{asdf}8.17 impliziert:
+\iii a) $\Rightarrow$ b): \ref{sec:SuD-primitel} impliziert:
 \begin{align*}
 \exs_{\alpha\in E} & :E=k\left(\alpha\right)
 \end{align*}
-Weil $\modulo{E}{k}$ normal ist, folgt aus \ref{asdf}7.4 iii), dass
-$\modulo{E}{k}$ ein Zerfällungskörper von
+Weil $\modulo{E}{k}$ normal ist, folgt aus \ref{sec:SuD-normKE}
+iii), dass $\modulo{E}{k}$ ein Zerfällungskörper von
 \begin{align*}
 f & :=\text{Mipo}\left(\alpha\right)\in k\left[X\right]
 \end{align*}
 und $f$ separabel und irreduzibel ist.
 
-b) $\Rightarrow$ a): \ref{asdf}7.4 ii) impliziert, dass $\modulo{E}{k}$
+b) $\Rightarrow$ a): \ref{sec:SuD-normKE} ii) impliziert, dass $\modulo{E}{k}$
 normal ist.
 
-Weil $f\in k\left[X\right]$ separabel ist, folgt mit \ref{asdf}7.10
-iii) und \ref{asdf}8.15 i) $\Rightarrow$ ii), dass $\modulo{E}{k}$
-separabel ist.
+Weil $f\in k\left[X\right]$ separabel ist, folgt mit \ref{sec:SuD-Konj}
+iii) und \ref{sec:Satz-endlSepAequivSepEZS} i) $\Rightarrow$ ii),
+dass $\modulo{E}{k}$ separabel ist.
 
 Zusammen bedeutet das, dass $\modulo{E}{k}$ galoissch ist.
 
 \qqed[\roman{ale2})]
 
-\iii Folgt aus \ref{asdf}9.1 iii), \ref{asdf}8.12 ii) und \ref{asdf}9.5
-ii).
+\iii Folgt aus \ref{sec:Lem-ZkXpn} iii), \ref{sec:Satz-vollkommenK}
+ii) und \ref{sec:SuD-relatFrob} ii).
 
 \end{iiilist}
 
@@ -5233,30 +5233,33 @@ wohldefiniert und ein surjektiver Gruppenhomomorphismus mit:
 
 \begin{iiilist}
 
-\iii Wegen \ref{asdf}7.7 ii) und \ref{asdf}8.16 i) $\Rightarrow$
-ii) ist $\modulo{E}{K}$ galoissch.
+\iii Wegen \ref{sec:Bsp-normNichtTransitiv} ii) und \ref{sec:Kor-sepTransitiv}
+i) $\Rightarrow$ ii) ist $\modulo{E}{K}$ galoissch.
 
 Der Rest ist klar.
 
 \qqed[\roman{ale2})]
 
-\iii $\pi$ ist, weil $\modulo{K}{k}$ normal ist, und wegen \ref{asdf}7.4
-i) wohldefiniert, das heißt
+\iii $\pi$ ist, weil $\modulo{K}{k}$ normal ist, und wegen \ref{sec:SuD-normKE}
+i) wohldefiniert, das heiß für alle $\sigma\in\text{Gal}\left(\modulo{E}{k}\right)$
+ist
 \begin{align*}
-\fall_{\sigma\in\text{Gal}\left(\moduloScript{E}{k}\right)} & :\sigma\left(K\right)\subseteq K
+\sigma\left(K\right) & \subseteq K
 \end{align*}
-und daher $\sigma|_{K}\in\text{Gal}\left(\modulo{K}{k}\right)$.
+und daher ist $\sigma|_{K}\in\text{Gal}\left(\modulo{K}{k}\right)$.
 
 Dass $\pi$ ein Gruppenhomomorphismus ist, ist klar.
 
-Weil $\modulo{E}{k}$ normal ist und wegen \ref{asdf}6.7 ist $\pi$
-surjektiv.
+Weil $\modulo{E}{k}$ normal ist und wegen \ref{sec:SuD-Fortsetzung}
+ist $\pi$ surjektiv.
 
 Die Aussage über den Kern von $\pi$ folgt aus i).
 
 \end{iiilist}
 
 \qqed
+
+\textcolor{green}{TODO: Rest überarbeiten}
 
 
 \section{Proposition}
@@ -5277,8 +5280,8 @@ ist galoissch.
 
 \subsubsection*{Beweis}
 
-Folgt aus \ref{asdf}8.11 und \ref{asdf}8.15 iii) $\Rightarrow$
-i).
+Folgt aus \ref{sec:Def-sgrad} und \ref{sec:Satz-endlSepAequivSepEZS}
+iii) $\Rightarrow$ i).
 
 \qqed
 
@@ -5287,20 +5290,20 @@ i).
 
 Seien $E$ ein Körper und
 \begin{align*}
-G\subseteq\text{Aut}\left(E\right) & :=\left\{ \varphi:E\stackrel{\sim}{\to}E|\varphi\text{ist ein Körperisomorphismus}\right\} 
+G\subseteq\text{Aut}\left(E\right) & :=\left\{ \varphi:E\stackrel{\sim}{\to}E|\varphi\text{ ist ein Körperisomorphismus}\right\} 
 \end{align*}
 eine Untergruppe. Dann gelten:
 
 \begin{iiilist}
 
-\iii $k:=E^{G}:=\left\{ \alpha\in E|\fall_{B\in G}:\sigma\left(\alpha\right)=\alpha\right\} $
-ist ein TK(TODO???) und heißt \emph{der Fixkörper von $E$ unter $G$}.
+\iii $k:=E^{G}:=\left\{ \alpha\in E|\fall_{\sigma\in G}:\sigma\left(\alpha\right)=\alpha\right\} $
+ist ein Teilkörper und heißt \emph{der Fixkörper von $E$ unter $G$}.
 
 \iii Aus $\left|G\right|<\infty$ folgt, dass $\modulo{E}{k}$ galoissch
-ist und dass gelten: (TODO: Gleichung überprüfen)
+ist und dass gelten:
 \begin{itemize}
 \item Mit $\text{Aut}_{k}\left(E\right)$ definiert als die Gruppe der Automorphismen
-von $E$, die auf $k$ die Identiät sind, gilt:
+von $E$, die auf $k$ die Identität sind, gilt:
 \begin{align*}
 \text{Aut}_{k}\left(E\right)=\text{Gal}\left(\modulo{E}{k}\right) & =G\subseteq\text{Aut}\left(E\right)
 \end{align*}
