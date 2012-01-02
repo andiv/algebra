@@ -4563,7 +4563,7 @@ Sei $E\supseteq k$ eine algebraische Körpererweiterung, so heißt
 \emph{der Stabilitätsgrad von $\modulo{E}{k}$}.
 
 
-\section{Satz \textmd{(vollkommene Körper)}}
+\section{Satz \textmd{(vollkommene Körper)\label{sec:Satz-vollkommenK}}}
 
 \begin{iiilist}
 
@@ -4908,8 +4908,6 @@ Also ist $E=E'$.
 
 \chapter{Endliche Körper}
 
-\textcolor{green}{TODO: Rest überarbeiten}
-
 
 \section{Lemma\label{sec:Lem-ZkXpn}}
 
@@ -4935,27 +4933,33 @@ X^{\left(p^{n}\right)}-X & \in\mathbb{F}_{p}\left[X\right]
 
 \begin{iiilist}
 
-\iii Sonst müssten $\text{char}\left(k\right)=0$ gelten, also $\mathbb{Q}\subseteq k$
-im Widerspruch zu $\left|k\right|<\infty$. (vergleiche \ref{asdf}5.1)
+\iii Andernfalls müsste $\text{char}\left(k\right)=0$ gelten, also
+$\mathbb{Q}\subseteq k$ im Widerspruch zu $\left|k\right|<\infty$.
+(vergleiche \ref{sec:PuD-Charakteristik})
+
+\qqed[\roman{ale2})]
 
 \iii $\left|k\right|<\infty$, also folgt $n<\infty$ und aus $k\stackrel{\sim}{=}\mathbb{F}_{p}^{n}$
 als $\mathbb{F}_{p}$-Vektorraum folgt $\left|k\right|=p^{n}$. 
 
+\qqed[\roman{ale2})]
+
 \iii 
 \begin{description}
-\item [{Behauptung:}] \hspace*{1cm}
+\item [{Behauptung}] \hspace*{1mm}
 \begin{align}
 X^{\left(p^{n}\right)}-X & =\prod_{\alpha\in k}\left(X-\alpha\right)\label{eq:str}
 \end{align}
-in $k\left[X\right]$, woraus iii) nach Definition \ref{asdf}7.1
+in $k\left[X\right]$, woraus iii) nach Definition \ref{sec:Def-ZK}
 folgt.
-\item [{Beweis:}] Beide Seiten von \eqref{eq:str} sind nach iii) normierte
-Polynome vom Grad $p^{n}$ und es genügt zu zeigen:
+\item [{Beweis}] \hspace*{1mm}\\
+Beide Seiten von \eqref{eq:str} sind nach iii) normierte Polynome
+vom Grad $p^{n}$ und es genügt zu zeigen:
 \begin{align*}
 \fall_{\alpha\in k} & \alpha^{p^{n}}=\alpha
 \end{align*}
 Das ist klar für $\alpha=0$ und für $0\not=\alpha\in k^{*}$ folgt
-aus \eqref{asdf}1.25 (für $G=k^{*}$):
+aus \ref{sec:Satz-kleinFermat} (für $G=k^{*}$):
 \begin{align*}
 \alpha^{p^{n}-1} & =1 & \Rightarrow\quad\alpha^{p^{n}} & =\alpha
 \end{align*}
@@ -4986,14 +4990,16 @@ Für alle Primzahlen $p$ gilt:
 
 \subsubsection*{Beweis von \ref{sec:SuD-ZkXpn}}
 
-Eindeutigkeit folgt aus \ref{sec:Lem-ZkXpn} iii) und \eqref{asdf}7.3.
+Die Eindeutigkeit folgt aus \ref{sec:Lem-ZkXpn} iii) und \ref{sec:Satz-eeZK}.
 
-Sei $\mathbb{F}_{p}\subseteq\overline{\mathbb{F}_{p}}$ ein algebraischer
+Sei $\mathbb{F}_{p}\subseteq\overline{\mathbb{F}}_{p}$ ein algebraischer
 Abschluss.
 \begin{description}
-\item [{Behauptung:}] $\tilde{\mathbb{F}}_{p^{n}}:=\left\{ \alpha\in\overline{\mathbb{F}_{p}}\left|\alpha^{p^{n}}=\alpha\right.\right\} \subseteq\overline{\mathbb{F}}_{p}$
+\item [{Behauptung}] \hspace*{1mm}\\
+$\tilde{\mathbb{F}}_{p^{n}}:=\left\{ \alpha\in\overline{\mathbb{F}}_{p}\left|\alpha^{p^{n}}=\alpha\right.\right\} \subseteq\overline{\mathbb{F}}_{p}$
 ist ein Teilkörper.
-\item [{Beweis:}] ${\displaystyle \text{Frob}_{\overline{\mathbb{F}}_{p}}^{n}=\underbrace{\text{Frob}_{\overline{\mathbb{F}}_{p}}\circ\ldots\circ\text{Frob}_{\overline{\mathbb{F}}_{p}}}_{n\text{-mal}}:\overline{\mathbb{F}}_{p}\to\overline{\mathbb{F}}_{p}}$
+\item [{Beweis}] \hspace*{1mm}\\
+${\displaystyle \text{Frob}_{\overline{\mathbb{F}}_{p}}^{n}=\underbrace{\text{Frob}_{\overline{\mathbb{F}}_{p}}\circ\ldots\circ\text{Frob}_{\overline{\mathbb{F}}_{p}}}_{n\text{-mal}}:\overline{\mathbb{F}}_{p}\to\overline{\mathbb{F}}_{p}}$
 ist ein Körperisomorphismus mit:
 \begin{align*}
 \tilde{\mathbb{F}}_{p^{n}} & =\left\{ \alpha\in\overline{\mathbb{F}}_{p}\left|\text{Frob}_{\overline{\mathbb{F}}_{p}}^{n}\left(\alpha\right)=\alpha\right.\right\} 
@@ -5004,9 +5010,9 @@ Daraus folgt die Behauptung.\\
 Es ist klar, dass $\tilde{\mathbb{F}}_{p^{n}}$ ein Zerfällungskörper
 von $X^{p^{n}}-X\in\mathbb{F}_{p}\left[X\right]$ ist.
 
-Wegen $\left(X^{p^{n}}-X\right)^{1}=-1$ und \eqref{NICHT VORHANDEN: Querverweis: asdf}8.3
-ist $X^{p^{n}}-X\in\mathbb{F}_{p}\left[X\right]$ separabel, und es
-folgt $\left|\tilde{\mathbb{F}}_{p^{n}}\right|=p^{n}$.
+Wegen $\left(X^{p^{n}}-X\right)'=-1$ und \ref{sec:SuD-mNst} ist
+$X^{p^{n}}-X\in\mathbb{F}_{p}\left[X\right]$ separabel, und es folgt
+$\left|\tilde{\mathbb{F}}_{p^{n}}\right|=p^{n}$.
 
 \qqed
 
@@ -5014,7 +5020,8 @@ folgt $\left|\tilde{\mathbb{F}}_{p^{n}}\right|=p^{n}$.
 \section{Bemerkung}
 
 Da $\modulo{\mathbb{F}_{p^{n}}}{\mathbb{F}_{p}}$ normal ist, gilt
-für jeden $\mathbb{F}_{p}$-Homomorphismus $i:\mathbb{F}_{p^{n}}\hookrightarrow\overline{\mathbb{F}}_{p}:i\left(\mathbb{F}_{p^{n}}\right)=\tilde{\mathbb{F}}_{p^{n}}$.\\
+für jeden $\mathbb{F}_{p}$-Homomorphismus $i:\mathbb{F}_{p^{n}}\hookrightarrow\overline{\mathbb{F}}_{p}$
+schon $i\left(\mathbb{F}_{p^{n}}\right)=\tilde{\mathbb{F}}_{p^{n}}$.\\
 Schreibe daher auch $\mathbb{F}_{p^{n}}=\tilde{\mathbb{F}}_{p^{n}}$
 und fasse im Folgenden alle $\mathbb{F}_{p^{n}}$ als Teilkörper eines
 festen algebraischen Abschlusses $\overline{\mathbb{F}}_{p}$ auf:
@@ -5031,15 +5038,18 @@ Für alle $n,m\ge1$ gilt: $\mathbb{F}_{p^{n}}\subseteq\mathbb{F}_{p^{m}}\Leftrigh
 
 \subsubsection*{Beweis}
 
-\quotedblbase{}$\Rightarrow$\textquotedblleft{}: Schreibe $m=xn$,
-$x\in\mathbb{N}$ geeignet und sei $\alpha\in\mathbb{F}_{p^{n}}$,
+\quotedblbase{}$\Leftarrow$\textquotedblleft{}: Schreibe $m=xn$
+mit $x\in\mathbb{N}$ geeignet und sei $\alpha\in\mathbb{F}_{p^{n}}$,
 dann folgt:
 \begin{align*}
-\alpha^{p^{n}}= & \text{Frob}_{\overline{F}_{p}}^{nx}\left(\alpha\right)=\underbrace{\text{Frob}_{\overline{F}_{p}}^{n}\left(\alpha\right)\circ\ldots\circ\text{Frob}_{\overline{F}_{p}}^{n}\left(\alpha\right)}_{x\text{-mal}}\stackrel{\alpha^{p^{n}}=\alpha}{=}a
+\alpha^{p^{m}}= & \text{Frob}_{\overline{\mathbb{F}}_{p}}^{nx}\left(\alpha\right)=\underbrace{\text{Frob}_{\overline{\mathbb{F}}_{p}}^{n}\left(\alpha\right)\circ\ldots\circ\text{Frob}_{\overline{\mathbb{F}}_{p}}^{n}\left(\alpha\right)}_{x\text{-mal}}\stackrel{\alpha^{p^{n}}=\alpha}{=}\alpha
 \end{align*}
 Also ist $\alpha\in\mathbb{F}_{p^{m}}$.
 
-\quotedblbase{}$\Leftarrow$\textquotedblleft{}: Aus $m=\left[\mathbb{F}_{p^{m}}:\mathbb{F}_{p}\right]\stackrel{\mathbb{F}_{p^{n}}\subseteq\mathbb{F}_{p^{m}}}{=}\underbrace{\left[\overline{\mathbb{F}}_{p^{m}}:\mathbb{F}_{p^{n}}\right]}_{\in\mathbb{N}}\cdot\underbrace{\left[\mathbb{F}_{p^{n}}:\mathbb{F}_{p}\right]}_{=n}$
+\quotedblbase{}$\Rightarrow$\textquotedblleft{}: Aus
+\begin{align*}
+m & =\left[\mathbb{F}_{p^{m}}:\mathbb{F}_{p}\right]\stackrel{\mathbb{F}_{p^{n}}\subseteq\mathbb{F}_{p^{m}}}{=}\underbrace{\left[\overline{\mathbb{F}}_{p^{m}}:\mathbb{F}_{p^{n}}\right]}_{\in\mathbb{N}}\cdot\underbrace{\left[\mathbb{F}_{p^{n}}:\mathbb{F}_{p}\right]}_{=n}
+\end{align*}
 folgt $n|m$.
 
 \qqed
@@ -5047,16 +5057,16 @@ folgt $n|m$.
 
 \section{Satz und Definition}
 
-Seien $p$ eine Primzahl und $1\le n|m$, $q:=p^{n}$, $q':=p^{m}$,
+Seien $p$ eine Primzahl und $1\le n|m$, $q:=p^{n}$ und $q':=p^{m}$,
 also $\mathbb{F}_{p}\subseteq\mathbb{F}_{q}\subseteq\mathbb{F}_{q'}\subseteq\overline{\mathbb{F}}_{p}$.
 
 \begin{iiilist}
 
 \iii $F_{q}:=\text{Frob}_{\overline{\mathbb{F}}_{p}}^{n}\in\text{Aut}_{\mathbb{F}_{q}}\left(\overline{\mathbb{F}}_{p},\overline{\mathbb{F}}_{p}\right)$
-heißt \emph{der relative Frobenius über $F_{q}$}.
+heißt \emph{der relative Frobenius über $\mathbb{F}_{q}$}.
 
 \iii Die Gruppe $\text{Aut}_{\mathbb{F}_{q}\text{-Alg.}}\left(\mathbb{F}_{q'},\mathbb{F}_{q'}\right)$
-ist zyklisch von Ordnung $\frac{m}{n}=\left[\mathbb{F}_{q'}:\mathbb{F}_{q}\right]$
+ist zyklisch von Ordnung ${\displaystyle \frac{m}{n}=\left[\mathbb{F}_{q'}:\mathbb{F}_{q}\right]}$
 und $\sigma:=\left(F_{q}\right)|_{\mathbb{F}_{q'}}$ ist ein Erzeuger.
 
 \end{iiilist}
@@ -5064,17 +5074,21 @@ und $\sigma:=\left(F_{q}\right)|_{\mathbb{F}_{q'}}$ ist ein Erzeuger.
 
 \subsubsection*{Beweis}
 
-i) Zeige $F_{q}|_{\mathbb{F}_{q}}=\text{id}$.
+\begin{iiilist}
 
-Ist $\alpha\in\mathbb{F}_{q}$ so folgt $F_{q}\left(\alpha\right)=\alpha^{q}\stackrel{\left(\ref{}9.2\right)}{=}\alpha$
+\iii Zeige $F_{q}|_{\mathbb{F}_{q}}=\text{id}$.
 
-\qqed[i)]
+Ist $\alpha\in\mathbb{F}_{q}$ so folgt $F_{q}\left(\alpha\right)=\alpha^{q}\stackrel{\ref{sec:SuD-ZkXpn}}{=}\alpha$
 
-ii) Es gilt:
+\qqed[\roman{ale2})]
+
+\iii Es gilt:
 \begin{align*}
 \left|\text{Aut}_{\mathbb{F}_{q}\text{-Alg.}}\left(\mathbb{F}_{q'},\mathbb{F}_{q'}\right)\right| & \stackrel{\text{(Übung)}}{=}\left|\text{Hom}_{\mathbb{F}_{q}\text{-Alg.}}\left(\mathbb{F}_{q'},\mathbb{F}_{q'}\right)\right|\stackrel{\modulo{\mathbb{F}_{q'}}{\mathbb{F}_{q}}\text{ normal}}{=}\left|\text{Hom}_{\mathbb{F}_{q}\text{-Alg.}}\left(\mathbb{F}_{q'},\overline{\mathbb{F}}_{p}\right)\right|=\\
- & \stackrel{\text{Def.}}{=}\left[\mathbb{F}_{q'}:\mathbb{F}_{q}\right]_{S}\stackrel{\ref{}8.12\text{, ii)}}{=}\left[\mathbb{F}_{q'};\mathbb{F}_{q}\right]=\frac{m}{n}=:k
+ & \stackrel{\text{Def.}}{=}\left[\mathbb{F}_{q'}:\mathbb{F}_{q}\right]_{S}\stackrel{\ref{sec:Satz-vollkommenK}\text{ ii)}}{=}\left[\mathbb{F}_{q'}:\mathbb{F}_{q}\right]=\frac{m}{n}=:k
 \end{align*}
+\textcolor{green}{TODO: Übung beweisen}
+
 Weil $\modulo{\mathbb{F}_{q'}}{\mathbb{F}_{q}}$ normal ist, folgt
 $\sigma\left(\mathbb{F}_{q'}\right)=\mathbb{F}_{q}'\subseteq\overline{\mathbb{F}}_{p}$,
 also $\sigma\in\text{Aut}_{\mathbb{F}_{q}\text{-Alg.}}\left(\mathbb{F}_{q'},\mathbb{F}_{q'}\right)$.
@@ -5085,24 +5099,28 @@ Zunächst ist $\sigma^{k}=F_{q}^{k}=F_{q'}=\text{id}_{\mathbb{F}_{q'}}$
 klar.
 
 Wäre nun $a:=\text{ord}\left(\sigma\right)<k$, so wäre $\sigma^{a}=F_{q}^{a}=\text{id}_{F_{q}'}$,
-dass heißt:
+dass heißt für alle $\alpha\in\mathbb{F}_{q'}$ würde gelten:
 \begin{align*}
-\fall_{\alpha\in\mathbb{F}_{q'}} & \alpha=\sigma^{a}\left(\alpha\right)=\alpha^{q^{a}}=\alpha p^{n\cdot a}
+\alpha & =\sigma^{a}\left(\alpha\right)=\alpha^{q^{a}}=\alpha p^{n\cdot a}
 \end{align*}
 Es gilt aber:
 \begin{align*}
-\left|\left\{ \alpha\in\overline{\mathbb{F}}_{p}|\alpha=\alpha p^{n\cdot a}\right\} \right| & \le p^{na}\stackrel{a<k}{<}p^{nk}=p^{m}=\left(q'\right)^{q'}
+\left|\left\{ \alpha\in\overline{\mathbb{F}}_{p}|\alpha=\alpha p^{n\cdot a}\right\} \right| & \le p^{na}\stackrel{a<k}{<}p^{nk}=p^{m}=q'
 \end{align*}
 Dies wird zu $\left|\mathbb{F}_{q'}\right|=q'$.
 
+\end{iiilist}
+
 \qqed
 
-TODO: Rest
+\textcolor{green}{TODO: Rest einfügen?}
 
 %DATE: 
 
 
 \chapter{Galoistheorie}
+
+\textcolor{green}{TODO: Rest überarbeiten}
 
 
 \section{Definition \textmd{(galoissche Körpererweiterung, Galoisgruppe)\label{sec:Def-Galoisgruppe}}}

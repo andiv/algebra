@@ -21974,6 +21974,13 @@ der Stabilitätsgrad von
 Satz 
 \series medium
 (vollkommene Körper)
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Satz-vollkommenK"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -23807,12 +23814,6 @@ qqed
 Endliche Körper
 \end_layout
 
-\begin_layout Standard
-
-\color green
-TODO: Rest überarbeiten
-\end_layout
-
 \begin_layout Section
 Lemma
 \begin_inset CommandInset label
@@ -23978,7 +23979,7 @@ iii
 
 \end_inset
 
- Sonst müssten 
+ Andernfalls müsste 
 \begin_inset Formula $\text{char}\left(k\right)=0$
 \end_inset
 
@@ -23994,11 +23995,29 @@ iii
  (vergleiche 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "asdf"
+reference "sec:PuD-Charakteristik"
 
 \end_inset
 
-5.1)
+)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed[
+\backslash
+roman{ale2})]
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -24046,6 +24065,24 @@ status open
 
 
 \backslash
+qqed[
+\backslash
+roman{ale2})]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
 iii
 \end_layout
 
@@ -24055,7 +24092,7 @@ iii
 \end_layout
 
 \begin_layout Description
-Behauptung: 
+Behauptung 
 \begin_inset ERT
 status open
 
@@ -24063,7 +24100,7 @@ status open
 
 
 \backslash
-hspace*{1cm}
+hspace*{1mm}
 \end_layout
 
 \end_inset
@@ -24083,15 +24120,32 @@ in
 , woraus iii) nach Definition 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "asdf"
+reference "sec:Def-ZK"
 
 \end_inset
 
-7.1 folgt.
+ folgt.
 \end_layout
 
 \begin_layout Description
-Beweis: Beide Seiten von 
+Beweis 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hspace*{1mm}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Beide Seiten von 
 \begin_inset CommandInset ref
 LatexCommand eqref
 reference "eq:str"
@@ -24120,12 +24174,12 @@ Das ist klar für
 
  folgt aus 
 \begin_inset CommandInset ref
-LatexCommand eqref
-reference "asdf"
+LatexCommand ref
+reference "sec:Satz-kleinFermat"
 
 \end_inset
 
-1.25 (für 
+ (für 
 \begin_inset Formula $G=k^{*}$
 \end_inset
 
@@ -24249,7 +24303,7 @@ reference "sec:SuD-ZkXpn"
 \end_layout
 
 \begin_layout Standard
-Eindeutigkeit folgt aus 
+Die Eindeutigkeit folgt aus 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:Lem-ZkXpn"
@@ -24258,32 +24312,66 @@ reference "sec:Lem-ZkXpn"
 
  iii) und 
 \begin_inset CommandInset ref
-LatexCommand eqref
-reference "asdf"
+LatexCommand ref
+reference "sec:Satz-eeZK"
 
 \end_inset
 
-7.3.
+.
 \end_layout
 
 \begin_layout Standard
 Sei 
-\begin_inset Formula $\mathbb{F}_{p}\subseteq\overline{\mathbb{F}_{p}}$
+\begin_inset Formula $\mathbb{F}_{p}\subseteq\overline{\mathbb{F}}_{p}$
 \end_inset
 
  ein algebraischer Abschluss.
 \end_layout
 
 \begin_layout Description
-Behauptung: 
-\begin_inset Formula $\tilde{\mathbb{F}}_{p^{n}}:=\left\{ \alpha\in\overline{\mathbb{F}_{p}}\left|\alpha^{p^{n}}=\alpha\right.\right\} \subseteq\overline{\mathbb{F}}_{p}$
+Behauptung 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hspace*{1mm}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\tilde{\mathbb{F}}_{p^{n}}:=\left\{ \alpha\in\overline{\mathbb{F}}_{p}\left|\alpha^{p^{n}}=\alpha\right.\right\} \subseteq\overline{\mathbb{F}}_{p}$
 \end_inset
 
  ist ein Teilkörper.
 \end_layout
 
 \begin_layout Description
-Beweis: 
+Beweis 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hspace*{1mm}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
 \begin_inset Formula ${\displaystyle \text{Frob}_{\overline{\mathbb{F}}_{p}}^{n}=\underbrace{\text{Frob}_{\overline{\mathbb{F}}_{p}}\circ\ldots\circ\text{Frob}_{\overline{\mathbb{F}}_{p}}}_{n\text{-mal}}:\overline{\mathbb{F}}_{p}\to\overline{\mathbb{F}}_{p}}$
 \end_inset
 
@@ -24329,17 +24417,17 @@ Es ist klar, dass
 
 \begin_layout Standard
 Wegen 
-\begin_inset Formula $\left(X^{p^{n}}-X\right)^{1}=-1$
+\begin_inset Formula $\left(X^{p^{n}}-X\right)'=-1$
 \end_inset
 
  und 
 \begin_inset CommandInset ref
-LatexCommand eqref
-reference "NICHT VORHANDEN: Querverweis: asdf"
+LatexCommand ref
+reference "sec:SuD-mNst"
 
 \end_inset
 
-8.3 ist 
+ ist 
 \begin_inset Formula $X^{p^{n}}-X\in\mathbb{F}_{p}\left[X\right]$
 \end_inset
 
@@ -24380,7 +24468,11 @@ Da
 \end_inset
 
 -Homomorphismus 
-\begin_inset Formula $i:\mathbb{F}_{p^{n}}\hookrightarrow\overline{\mathbb{F}}_{p}:i\left(\mathbb{F}_{p^{n}}\right)=\tilde{\mathbb{F}}_{p^{n}}$
+\begin_inset Formula $i:\mathbb{F}_{p^{n}}\hookrightarrow\overline{\mathbb{F}}_{p}$
+\end_inset
+
+ schon 
+\begin_inset Formula $i\left(\mathbb{F}_{p^{n}}\right)=\tilde{\mathbb{F}}_{p^{n}}$
 \end_inset
 
 .
@@ -24432,14 +24524,14 @@ Beweis
 
 \begin_layout Standard
 „
-\begin_inset Formula $\Rightarrow$
+\begin_inset Formula $\Leftarrow$
 \end_inset
 
 “: Schreibe 
 \begin_inset Formula $m=xn$
 \end_inset
 
-, 
+ mit 
 \begin_inset Formula $x\in\mathbb{N}$
 \end_inset
 
@@ -24450,7 +24542,7 @@ Beweis
 , dann folgt:
 \begin_inset Formula 
 \begin{align*}
-\alpha^{p^{n}}= & \text{Frob}_{\overline{F}_{p}}^{nx}\left(\alpha\right)=\underbrace{\text{Frob}_{\overline{F}_{p}}^{n}\left(\alpha\right)\circ\ldots\circ\text{Frob}_{\overline{F}_{p}}^{n}\left(\alpha\right)}_{x\text{-mal}}\stackrel{\alpha^{p^{n}}=\alpha}{=}a
+\alpha^{p^{m}}= & \text{Frob}_{\overline{\mathbb{F}}_{p}}^{nx}\left(\alpha\right)=\underbrace{\text{Frob}_{\overline{\mathbb{F}}_{p}}^{n}\left(\alpha\right)\circ\ldots\circ\text{Frob}_{\overline{\mathbb{F}}_{p}}^{n}\left(\alpha\right)}_{x\text{-mal}}\stackrel{\alpha^{p^{n}}=\alpha}{=}\alpha
 \end{align*}
 
 \end_inset
@@ -24464,14 +24556,18 @@ Also ist
 
 \begin_layout Standard
 „
-\begin_inset Formula $\Leftarrow$
+\begin_inset Formula $\Rightarrow$
 \end_inset
 
-“: Aus 
-\begin_inset Formula $m=\left[\mathbb{F}_{p^{m}}:\mathbb{F}_{p}\right]\stackrel{\mathbb{F}_{p^{n}}\subseteq\mathbb{F}_{p^{m}}}{=}\underbrace{\left[\overline{\mathbb{F}}_{p^{m}}:\mathbb{F}_{p^{n}}\right]}_{\in\mathbb{N}}\cdot\underbrace{\left[\mathbb{F}_{p^{n}}:\mathbb{F}_{p}\right]}_{=n}$
+“: Aus
+\begin_inset Formula 
+\begin{align*}
+m & =\left[\mathbb{F}_{p^{m}}:\mathbb{F}_{p}\right]\stackrel{\mathbb{F}_{p^{n}}\subseteq\mathbb{F}_{p^{m}}}{=}\underbrace{\left[\overline{\mathbb{F}}_{p^{m}}:\mathbb{F}_{p^{n}}\right]}_{\in\mathbb{N}}\cdot\underbrace{\left[\mathbb{F}_{p^{n}}:\mathbb{F}_{p}\right]}_{=n}
+\end{align*}
+
 \end_inset
 
- folgt 
+folgt 
 \begin_inset Formula $n|m$
 \end_inset
 
@@ -24511,7 +24607,7 @@ Seien
 \begin_inset Formula $q:=p^{n}$
 \end_inset
 
-, 
+ und 
 \begin_inset Formula $q':=p^{m}$
 \end_inset
 
@@ -24558,7 +24654,7 @@ iii
  heißt 
 \emph on
 der relative Frobenius über 
-\begin_inset Formula $F_{q}$
+\begin_inset Formula $\mathbb{F}_{q}$
 \end_inset
 
 
@@ -24584,7 +24680,7 @@ iii
 \end_inset
 
  ist zyklisch von Ordnung 
-\begin_inset Formula $\frac{m}{n}=\left[\mathbb{F}_{q'}:\mathbb{F}_{q}\right]$
+\begin_inset Formula ${\displaystyle \frac{m}{n}=\left[\mathbb{F}_{q'}:\mathbb{F}_{q}\right]}$
 \end_inset
 
  und 
@@ -24615,20 +24711,16 @@ Beweis
 \end_layout
 
 \begin_layout Standard
-i) Zeige 
-\begin_inset Formula $F_{q}|_{\mathbb{F}_{q}}=\text{id}$
-\end_inset
+\begin_inset ERT
+status open
 
-.
+\begin_layout Plain Layout
+
+
+\backslash
+begin{iiilist}
 \end_layout
 
-\begin_layout Standard
-Ist 
-\begin_inset Formula $\alpha\in\mathbb{F}_{q}$
-\end_inset
-
- so folgt 
-\begin_inset Formula $F_{q}\left(\alpha\right)=\alpha^{q}\stackrel{\left(\ref{}9.2\right)}{=}\alpha$
 \end_inset
 
 
@@ -24642,7 +24734,41 @@ status open
 
 
 \backslash
-qqed[i)]
+iii
+\end_layout
+
+\end_inset
+
+ Zeige 
+\begin_inset Formula $F_{q}|_{\mathbb{F}_{q}}=\text{id}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Ist 
+\begin_inset Formula $\alpha\in\mathbb{F}_{q}$
+\end_inset
+
+ so folgt 
+\begin_inset Formula $F_{q}\left(\alpha\right)=\alpha^{q}\stackrel{\ref{sec:SuD-ZkXpn}}{=}\alpha$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed[
+\backslash
+roman{ale2})]
 \end_layout
 
 \end_inset
@@ -24651,15 +24777,33 @@ qqed[i)]
 \end_layout
 
 \begin_layout Standard
-ii) Es gilt:
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Es gilt:
 \begin_inset Formula 
 \begin{align*}
 \left|\text{Aut}_{\mathbb{F}_{q}\text{-Alg.}}\left(\mathbb{F}_{q'},\mathbb{F}_{q'}\right)\right| & \stackrel{\text{(Übung)}}{=}\left|\text{Hom}_{\mathbb{F}_{q}\text{-Alg.}}\left(\mathbb{F}_{q'},\mathbb{F}_{q'}\right)\right|\stackrel{\modulo{\mathbb{F}_{q'}}{\mathbb{F}_{q}}\text{ normal}}{=}\left|\text{Hom}_{\mathbb{F}_{q}\text{-Alg.}}\left(\mathbb{F}_{q'},\overline{\mathbb{F}}_{p}\right)\right|=\\
- & \stackrel{\text{Def.}}{=}\left[\mathbb{F}_{q'}:\mathbb{F}_{q}\right]_{S}\stackrel{\ref{}8.12\text{, ii)}}{=}\left[\mathbb{F}_{q'};\mathbb{F}_{q}\right]=\frac{m}{n}=:k
+ & \stackrel{\text{Def.}}{=}\left[\mathbb{F}_{q'}:\mathbb{F}_{q}\right]_{S}\stackrel{\ref{sec:Satz-vollkommenK}\text{ ii)}}{=}\left[\mathbb{F}_{q'}:\mathbb{F}_{q}\right]=\frac{m}{n}=:k
 \end{align*}
 
 \end_inset
 
+
+\color green
+TODO: Übung beweisen
+\end_layout
+
+\begin_layout Standard
 Weil 
 \begin_inset Formula $\modulo{\mathbb{F}_{q'}}{\mathbb{F}_{q}}$
 \end_inset
@@ -24700,10 +24844,14 @@ Wäre nun
 \begin_inset Formula $\sigma^{a}=F_{q}^{a}=\text{id}_{F_{q}'}$
 \end_inset
 
-, dass heißt:
+, dass heißt für alle 
+\begin_inset Formula $\alpha\in\mathbb{F}_{q'}$
+\end_inset
+
+ würde gelten:
 \begin_inset Formula 
 \begin{align*}
-\fall_{\alpha\in\mathbb{F}_{q'}} & \alpha=\sigma^{a}\left(\alpha\right)=\alpha^{q^{a}}=\alpha p^{n\cdot a}
+\alpha & =\sigma^{a}\left(\alpha\right)=\alpha^{q^{a}}=\alpha p^{n\cdot a}
 \end{align*}
 
 \end_inset
@@ -24711,7 +24859,7 @@ Wäre nun
 Es gilt aber:
 \begin_inset Formula 
 \begin{align*}
-\left|\left\{ \alpha\in\overline{\mathbb{F}}_{p}|\alpha=\alpha p^{n\cdot a}\right\} \right| & \le p^{na}\stackrel{a<k}{<}p^{nk}=p^{m}=\left(q'\right)^{q'}
+\left|\left\{ \alpha\in\overline{\mathbb{F}}_{p}|\alpha=\alpha p^{n\cdot a}\right\} \right| & \le p^{na}\stackrel{a<k}{<}p^{nk}=p^{m}=q'
 \end{align*}
 
 \end_inset
@@ -24731,6 +24879,22 @@ status open
 
 
 \backslash
+end{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
 qqed
 \end_layout
 
@@ -24740,7 +24904,9 @@ qqed
 \end_layout
 
 \begin_layout Standard
-TODO: Rest
+
+\color green
+TODO: Rest einfügen?
 \end_layout
 
 \begin_layout Standard
@@ -24759,6 +24925,12 @@ status open
 
 \begin_layout Chapter
 Galoistheorie
+\end_layout
+
+\begin_layout Standard
+
+\color green
+TODO: Rest überarbeiten
 \end_layout
 
 \begin_layout Section
