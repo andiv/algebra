@@ -20,7 +20,7 @@
 \usepackage{wasysym}
 \usepackage{graphicx}
 \usepackage[unicode=true,
- bookmarks=true,bookmarksnumbered=true,bookmarksopen=true,bookmarksopenlevel=1,
+ bookmarks=true,bookmarksnumbered=true,bookmarksopen=false,
  breaklinks=true,pdfborder={0 0 0},backref=page,colorlinks=false]
  {hyperref}
 \hypersetup{pdftitle={Algebra},
@@ -171,8 +171,6 @@
 \makeatother
 
 \begin{document}
-
-
 
 
 \pagenumbering{roman}
@@ -1138,7 +1136,7 @@ $\mathbb{Q}^{*}$ ist nicht zyklisch (!), also kann man in \ref{sec:Kor-endlUGzyk
 nicht auf \quotedblbase{}endlich\textquotedblleft{} verzichten.
 
 
-\section{Korollar}
+\section{Korollar\label{sec:Kor-Einheitenk=0000F6rperEndlK=0000F6rper}}
 
 \begin{iiilist}
 
@@ -2797,7 +2795,7 @@ gilt:
 
 
 
-\section{Proposition und Definition \textmd{(Frobenius)}}
+\section{Proposition und Definition \textmd{(Frobenius)\label{sec:PuD-Frob}}}
 
 Sei $k$ ein Körper mit $\text{char}\left(k\right)=p>0$.
 
@@ -2872,7 +2870,7 @@ $k=\mathbb{F}_{p}$.
 \qqed
 
 
-\section{Proposition und Definition \textmd{(algebraisch, transzendent, Zwischenkörper)}}
+\section{Proposition und Definition \textmd{(algebraisch, transzendent, Zwischenkörper)\label{sec:PuD-algTranszZK}}}
 
 Sei $E\supseteq k$ eine Körpererweiterung.
 
@@ -3778,10 +3776,8 @@ Die zweite Aussage folgt aus $\deg\left(f^{\sigma}\right)=\deg\left(f\right)=\le
 
 \section{Satz und Definition \textmd{(Fortsetzung)}\label{sec:SuD-Fortsetzung}}
 
-Seien $k'\supseteq k$ eine algebraische Körpererweiterung und $\sigma:k\hookrightarrow L$
-...? eine Körpererweiterung. ...
-
-\textcolor{green}{TODO: Rest einfügen}
+Seien $k'\supseteq k$ eine algebraische Körpererweiterung und $\sigma:k\hookrightarrow L=\overline{L}$
+eine Körpererweiterung und $L$ algebraisch abgeschlossen.
 
 Dann existiert ein $k$-Algebrenhomomorphismus $\sigma':k'\to L$.
 Man nennt diesen eine \emph{Fortsetzung von $\sigma$ auf $k'$}.
@@ -3868,7 +3864,7 @@ schon die Behauptung.
 Sei $k$ ein Körper und $\emptyset\not=\mathcal{F}\subseteq\left\{ f\in k\left[X\right]|\text{deg}\left(f\right)\ge1\right\} $.
 
 
-\subsection*{Definition \textmd{($k$-Homomorphismus)}}
+\subsubsection*{Definition \textmd{($k$-Homomorphismus)}}
 
 Definiere $k$\emph{-Homomorphismus} (Abkürzung: $k$-Hom.) als $k$-Algebrenhomomorphismus
 (nicht zu verwechseln mit einer $k$-linearen Abbildung).
@@ -3886,7 +3882,7 @@ $E\supseteq k$:
 f & =\alpha\cdot\prod_{i=1}^{n}\left(X-\alpha_{i}\right)
 \end{align*}
 mit geeigneten $n\in\mathbb{N}_{\ge1}$ und $\alpha,\alpha_{i}\in E$,
-das heißt: $f$ zerfällt über $E$ in Linearfaktoren.
+das heißt $f$ zerfällt über $E$ in Linearfaktoren.
 
 \iii ${\displaystyle E=k\left(\alpha\bigg|\alpha\in E\wedge\exs_{f\in\mathcal{F}}f\left(\alpha\right)=0\right)}$,
 das heißt $\modulo{E}{k}$ wird von den Nullstellen der $f\in\mathcal{F}$
@@ -3899,7 +3895,7 @@ erzeugt.
 
 Wähle $k=\mathbb{Q}$, $\mathcal{F}=\left\{ f\right\} $ mit $f:=X^{3}-2\in\mathbb{Q}\left[X\right]$
 und $k=\mathbb{Q}\subseteq E:=\mathbb{Q}\left(\alpha\right)$ mit
-$\alpha^{3}=2$ (vergleiche \ref{sec:Bsp-VvKronecker} i)).
+$\alpha^{3}=2$ (vergleiche \ref{sec:Bsp-VvKronecker}~i)).
 
 Dann hat $f$ eine Nullstelle in $E$ (nämlich $\alpha$), und in
 $E\left[X\right]$ gilt:
@@ -3969,7 +3965,7 @@ Dann gilt $\overline{\sigma}\left(E_{1}\right)=E_{2}$, also $\overline{\sigma}:\
 \begin{align*}
 E & :=k\left(\alpha\bigg|\alpha\in\overline{k}\wedge\exs_{f\in\mathcal{F}}f\left(\alpha\right)=0\right)
 \end{align*}
-Wegen \ref{sec:PuD-algAbges} ii) ist dann $\modulo{E_{i}}{k}$ ein
+Wegen \ref{sec:PuD-algAbges} i) ist dann $\modulo{E_{i}}{k}$ ein
 Zerfällungskörper von $\mathcal{F}$.
 
 \qqed[\roman{ale2})]
@@ -4082,7 +4078,8 @@ das heißt es gelten \ref{sec:Def-ZK} i) und ii):
 \begin{enumerate}
 \item $f\in\mathcal{F}\stackrel{\text{Def.}}{\Rightarrow}\exs_{\alpha\in E}f\left(\alpha\right)=0$
 $\stackrel{\text{iii)}}{\Rightarrow}f$ zerfällt in Linearfaktoren
-über $E$.
+über $E$.\\
+\qqed[iii) \ensuremath{\Rightarrow} ii)]
 \end{enumerate}
 \item ii) $\Rightarrow$ i): Es sind $E\subseteq\overline{E}$ und $\overline{\sigma}\left(E\right)\subseteq\overline{E}$
 Zerfällungskörper von $\mathcal{F}$, also $E=\overline{\sigma}\left(E\right)$.
@@ -4092,8 +4089,7 @@ Zerfällungskörper von $\mathcal{F}$, also $E=\overline{\sigma}\left(E\right)$.
 \item Weil $\modulo{E}{k}$ algebraisch ist, ist für alle $\alpha\in E$
 schon $f:=\text{Mipo}_{k}\left(\alpha\right)\in\mathcal{F}$ und $f\left(\alpha\right)=0$.\\
 Also wird $\modulo{E}{k}$ von den Nullstellen aller $f\in\mathcal{F}$
-erzeugt.\\
-\qqed[iii) \ensuremath{\Rightarrow} ii)]
+erzeugt.
 \end{enumerate}
 \end{itemize}
 \qqed
@@ -4102,7 +4098,7 @@ erzeugt.\\
 \section{Beispiel}
 
 Wegen \ref{sec:Bsp-ZK} und \ref{sec:SuD-normKE} iii) ist die algebraische
-Körpererweiterung $E:=\modulo{\mathbb{Q}\left(2^{\frac{1}{3}}\right)}{k:=\mathbb{Q}}$
+Körpererweiterung $E:=\modulo{\mathbb{Q}\left(\sqrt[3]{2}\right)}{k:=\mathbb{Q}}$
 nicht normal, denn das irreduzible Polynom $X^{3}-2\in k\left[X\right]$
 besitzt in $E$ eine Nullstelle, zerfällt aber nicht über $E$ in
 Linearfaktoren.
@@ -4301,14 +4297,16 @@ Es gilt $\left[E':\mathbb{Q}\right]=6$:
 
 \chapter{Separabilität}
 
-\textcolor{green}{TODO: Rest überarbeiten}
-
 Sei $k$ ein Körper.
 
 
-\section{Definition \textmd{((formale) Ableitung)}}
+\section{Definition \textmd{((formale) Ableitung)\label{sec:Def-Ableitung}}}
 
-Die Abbildung $k\left[X\right]\to k\left[X\right],f=\sum_{i=0}a_{i}X^{i}\mapsto f':=\sum_{i=1}i\cdot a_{i}X^{i-1}$
+Die Abbildung 
+\begin{align*}
+k\left[X\right] & \to k\left[X\right]\\
+f=\sum_{i=0}a_{i}X^{i} & \mapsto f':=\sum_{i=1}i\cdot a_{i}X^{i-1}
+\end{align*}
 heißt \emph{(formale) Ableitung}.
 
 Für $f,g\in k\left[X\right],a\in k$ gelten:
@@ -4328,8 +4326,10 @@ Für $f,g\in k\left[X\right],a\in k$ gelten:
 
 i) und ii) sind klar.
 
-iii): direktes Nachrechnen (Wegen i),ii) kann $f=X^{m},g=X^{n}$ ($n,m\ge0$)
-angenommen werden).
+iii): Direktes Nachrechnen. (Wegen i), ii) kann $f=X^{m},g=X^{n}$
+für $n,m\ge0$ angenommen werden.)
+
+\textcolor{green}{TODO: Rechnung einfügen}
 
 \qqed
 
@@ -4337,8 +4337,8 @@ angenommen werden).
 \section{Beispiel\label{sec:Bsp-abl}}
 
 $\left\{ f\in k\left[X\right]|f'=0\right\} =\begin{cases}
-k, & \text{falls }\text{char}\left(k\right)=0\\
-\left\{ g\left(X^{p}\right)|g\in k\left[X\right]\right\} , & \text{falls }\text{char}\left(k\right)=p>0
+k & \text{falls }\text{char}\left(k\right)=0\\
+\left\{ g\left(X^{p}\right)|g\in k\left[X\right]\right\}  & \text{falls }\text{char}\left(k\right)=p>0
 \end{cases}$
 
 
@@ -4346,14 +4346,18 @@ k, & \text{falls }\text{char}\left(k\right)=0\\
 
 Übung
 
+\textcolor{green}{TODO: Beweis einfügen}
+
 \qqed
 
 
 \section{Satz und Definition \textmd{(mehrfache Nullstelle)\label{sec:SuD-mNst}}}
 
 Seien $f\in k\left[X\right]\setminus\left\{ 0\right\} $ und $\alpha\in k$
-eine Nullstelle von $f$. Dann ist $\alpha$ genau dann eine mehrfache
-Nullstelle von $f$, wenn $f'\left(\alpha\right)=0$ gilt.
+eine Nullstelle von $f$.
+
+Dann ist $\alpha$ genau dann eine mehrfache Nullstelle von $f$,
+wenn $f'\left(\alpha\right)=0$ gilt.
 
 
 \subsubsection*{Beweis}
@@ -4362,16 +4366,23 @@ In dem Polynomring $k\left[X\right]$ gilt:
 \begin{align}
 f\left(X\right)=\left(X-\alpha\right)^{r}\cdot g\left(X\right) & \qquad(1)
 \end{align}
-mit $g\left(\alpha\right)\not=0$ und $r\ge1$(, da $f\left(\alpha\right)=0$).
-Hierbei heißt $r$ die \emph{Vielfachheit der Nullstelle $\alpha$}
-und $\alpha$ heißt \emph{mehrfache Nullstelle} genau dann, wenn $r\ge2$
-(sonst \emph{einfache Nullstelle}).
+mit $g\left(\alpha\right)\not=0$ und $r\ge1$, da $f\left(\alpha\right)=0$.
 
-Zeige also: $r\ge2\Leftrightarrow f'\left(\alpha\right)=0$: Rechne
-$f'\left(X\right)\stackrel{\ref{}8.1}{=}r\left(X-\alpha\right)^{r-1}\cdot g\left(X\right)+\left(X-\alpha\right)^{r}\cdot g'\left(X\right)$.
+Hierbei heißt $r$ die \emph{Vielfachheit der Nullstelle $\alpha$}
+und $\alpha$ heißt genau dann \emph{mehrfache Nullstelle}, wenn $r\ge2$
+ist, sonst \emph{einfache Nullstelle}.
+
+Zeige also:
+\begin{align*}
+r\ge2 & \Leftrightarrow f'\left(\alpha\right)=0
+\end{align*}
+Rechne:
+\begin{align*}
+f'\left(X\right) & \stackrel{\ref{sec:Def-Ableitung}}{=}r\left(X-\alpha\right)^{r-1}\cdot g\left(X\right)+\left(X-\alpha\right)^{r}\cdot g'\left(X\right)
+\end{align*}
 Wegen $r\ge1$ folgt:
 \begin{align*}
-f'\left(\alpha\right) & =r\cdot\left(\alpha-\alpha\right)\cdot g\left(\alpha\right)=0\stackrel{g\left(\alpha\right)\not=0,r\not=0}{\Leftrightarrow}r-1\ge1
+f'\left(\alpha\right) & =r\cdot\left(\alpha-\alpha\right)^{r-1}\cdot g\left(\alpha\right)=0\stackrel{g\left(\alpha\right)\not=0,r\not=0}{\Leftrightarrow}r-1\ge1
 \end{align*}
 \qqed
 
@@ -4413,15 +4424,15 @@ Sei $f\in k\left[X\right]$ nicht konstant.
 
 \begin{iiilist}
 
-\iii Wegen $0\not=f\in k\left[X\right]\subseteq\overline{k}\left[X\right]$
-folgt a) $\Leftrightarrow$ b). aus \ref{sec:SuD-mNst}.
-
-Dann gilt:
+\iii Wegen $f\in k\left[X\right]\setminus\left\{ 0\right\} \subseteq\overline{k}\left[X\right]\setminus\left\{ 0\right\} $
+folgt a) $\Leftrightarrow$ b) aus \ref{sec:SuD-mNst}. Dann gilt:
 
 b) $\Leftrightarrow$ $\left(X-\alpha\right)|f,f'$ in $\overline{k}\left[X\right]$
 $\Leftrightarrow$ $\left(X-\alpha\right)|\text{ggT}\left(f,f'\right)$
 in $\overline{k}\left[X\right]$ $\Leftrightarrow$ $\text{ggT}\left(f,f'\right)\left(\alpha\right)=0$
 $\Leftrightarrow$ c)
+
+\qqed[\roman{ale2})]
 
 \iii a) $\Rightarrow$ b):
 
@@ -4450,8 +4461,9 @@ a) ist $\alpha$ eine mehrfache Nullstelle von $f$.
 
 \section{Definition\textmd{ (separables Polynom)}}
 
-$f\in k\left[X\right]\setminus k$ heißt \emph{separabel}, wenn alle
-Nullstellen von $f$ in $\overline{k}$ einfache Nullstellen sind.
+Ein Polynom $f\in k\left[X\right]\setminus k$ heißt \emph{separabel},
+wenn alle Nullstellen von $f$ in $\overline{k}$ einfache Nullstellen
+sind.
 
 
 \section{Proposition\label{sec:Prop-ch0sep}}
@@ -4489,7 +4501,7 @@ f\left(X\right) & =X^{p}-t=X^{p}-\alpha^{p}=\left(X-\alpha\right)^{p}
 \end{align*}
 Damit ist $\modulo{E}{k}$ ein Zerfällungskörper von $f$ und es folgt:
 \begin{align*}
-\text{Hom}_{k\text{-Alg.}}\left(E,\overline{k}\right) & \sr{=}{\sim}{\ref{sec:Lem-homkalg}}\left\{ \beta\in\overline{k}|\beta^{p}=t\right\} \stackrel{\ref{asdf}5.3}{=}\left\{ \alpha\right\} 
+\text{Hom}_{k\text{-Alg.}}\left(E,\overline{k}\right) & \sr{=}{\sim}{\ref{sec:Lem-homkalg}}\left\{ \beta\in\overline{k}|\beta^{p}=t\right\} \stackrel{\ref{sec:PuD-algTranszZK}}{=}\left\{ \alpha\right\} 
 \end{align*}
 Denn aus $\beta\in\overline{k}$ und $\beta^{p}=t$ folgt mit \ref{sec:Lem-homkalg}
 schon $\beta^{p}=t=\alpha^{p}$ und damit
@@ -4514,8 +4526,8 @@ Sei $k\subseteq E$ eine algebraische Körpererweiterung.
 \iii $\alpha\in E$ heißt \emph{separabel über $k$}, wenn $\text{Mipo}_{k}\left(\alpha\right)$
 in $k\left[X\right]$ separabel ist.
 
-\iii $\modulo{E}{k}$ heißt \emph{separabel über $k$}, wenn $\text{Mipo}_{k}\left(\alpha\right)$
-in $k\left[X\right]$ separabel ist.
+\iii $\modulo{E}{k}$ heißt \emph{separabel über $k$}, wenn jedes
+$\alpha\in E$ separabel ist.
 
 \end{iiilist}
 
@@ -4548,10 +4560,10 @@ Sei $E\supseteq k$ eine algebraische Körpererweiterung, so heißt
 \begin{align*}
 \left[E:h\right]_{S} & :=\left|\text{Hom}_{k\text{-Alg.}}\left(E,\overline{k}\right)\right|\in\mathbb{N}\cup\left\{ \infty\right\} 
 \end{align*}
-\emph{der Stabilitätsgrad von $\modulo{E}{k}$}. 
+\emph{der Stabilitätsgrad von $\modulo{E}{k}$}.
 
 
-\section{Satz}
+\section{Satz \textmd{(vollkommene Körper)}}
 
 \begin{iiilist}
 
@@ -4570,8 +4582,8 @@ h\text{ vollkommen} & \Leftrightarrow\text{Frob}_{k}:k\stackrel{\sim}{\longright
 
 \begin{iiilist}
 
-\iii \quotedblbase{}$\Rightarrow$\textquotedblleft{}: Zeige $\text{Frob}_{k}:k\twoheadrightarrow k$
-ist surjektiv.
+\iii \quotedblbase{}$\Rightarrow$\textquotedblleft{}: Zeige, dass
+$\text{Frob}_{k}:k\twoheadrightarrow k$ surjektiv ist.
 
 Sei $\alpha\in k$ und $\modulo{E}{k}$ der Zerfällungskörper von
 $f\left(X\right)=X^{p}-\alpha\in k\left[X\right]$.
@@ -4579,15 +4591,18 @@ $f\left(X\right)=X^{p}-\alpha\in k\left[X\right]$.
 In $E\left[X\right]$ gilt $f\left(X\right)=\left(X-\beta\right)^{p}$
 für ein geeignetes $\beta\in E$.
 
-Vergleiche: \ref{asdf}8.7 für $g=\text{Mipo}_{k}\left(\beta\right)$:
-$g|f$
+Vergleiche \ref{sec:Bsp-sep} für $g=\text{Mipo}_{k}\left(\beta\right)$
+mit $g|f$.
 
 Weil nun $h$ vollkommen ist, ist $g$ separabel, womit folgt $g=X-\beta\in h\left[X\right]$,
 also $\beta\in k$ und $\alpha=\beta^{p}=\text{Frob}_{k}\left(\beta\right)$.
 
+Daher ist $\text{Frob}_{k}$ schon ein Isomorphismus, da er als Körperhomomorphismus
+schon injektiv ist.
+
 \quotedblbase{}$\Leftarrow$\textquotedblleft{}: Sonst existiert ein
-$f\in k\left[X\right]$ irreduzibel und nicht separabel, woraus mit
-\ref{sec:Lem-mNst} ii) schon $f'=0$ in $k\left[X\right]$ folgt
+irreduzibles und nicht separables $f\in k\left[X\right]$, woraus
+mit \ref{sec:Lem-mNst} ii) schon $f'=0$ in $k\left[X\right]$ folgt
 und sich aus \ref{sec:Bsp-abl} schon $f\left(X\right)=g\left(X^{p}\right)$
 mit einem geeigneten $g=\sum a_{i}X^{i}\in k\left[X\right]$ ergibt.
 
@@ -4598,10 +4613,12 @@ f\left(X\right) & =g\left(X^{p}\right)=\sum a_{i}\left(X^{p}\right)^{i}=\sum b_{
 \end{align*}
 
 
+\qqed[\roman{ale2})]
+
 Dies ist wegen $p\ge2$ ein Widerspruch dazu, dass $f$ irreduzibel
 ist.
 
-\iii Dies folgt aus i) und \ref{asdf}5.3 iii).
+\iii Dies folgt aus i) und \ref{sec:PuD-Frob} iii).
 
 \end{iiilist}
 
@@ -4610,7 +4627,7 @@ ist.
 
 \section{Lemma\label{sec:Lem-sepNst}}
 
-Sei $k\subseteq E=k\left(\alpha\right)$ eine einfache algebraische
+Sei $E=:k\left(\alpha\right)\supseteq k$ eine einfache algebraische
 Körpererweiterung.
 
 \begin{iiilist}
@@ -4635,14 +4652,14 @@ zerfällt über $k$ in Linearfaktoren, also gilt:
 \left[k\left(\alpha\right):k\right] & =\text{deg}\left(f\right)\ge\left|\left\{ \beta\in\overline{k}|f\left(\beta\right)=0\right\} \right|=\left[k\left(\alpha\right):k\right]_{S}
 \end{align*}
 Zudem gilt Gleichheit genau dann, wenn alle Nullstellen in $\overline{k}$
-einfach sind, das heißt $f$ separabel ist.
+einfach sind, also $f$ separabel ist.
 
 \end{iiilist}
 
 \qqed
 
 
-\section{Satz\label{sec:Satz-sgrad}}
+\section{Satz \textmd{(Separabilitäts-Gradsatz)}\label{sec:Satz-sgrad}}
 
 Seien $E\supseteq K\supseteq k$ algebraische Körpererweiterungen,
 dann gilt:
@@ -4657,7 +4674,7 @@ dann gilt:
 Sei $\overline{k}\supseteq E$ ein algebraischer Abschluss.
 
 Weil $\modulo{E}{K}$ und $\modulo{K}{k}$ algebraisch sind, sind
-auch $\modulo{\overline{k}}{K}$ und $\modulo{\overline{k}}{k}$ algebraische
+$\modulo{\overline{k}}{K}$ und $\modulo{\overline{k}}{k}$ algebraische
 Abschlüsse und nach Definition gilt:
 \begin{align*}
 \left[E:k\right]_{S} & =\left|\text{Hom}_{k\text{-Alg.}}\left(E,\overline{k}\right)\right|\\
@@ -4665,7 +4682,7 @@ Abschlüsse und nach Definition gilt:
 \left[K:k\right]_{S} & =\left|\text{Hom}_{k\text{-Alg.}}\left(K,\overline{k}\right)\right|
 \end{align*}
 Für jedes $\sigma\in\text{Hom}_{k\text{-Alg.}}\left(K,\overline{k}\right)$
-existiert nach \ref{asdf}6.7 ein $k$-Isomorphismus $\overline{\sigma}:\overline{k}\to\overline{k}$
+existiert nach \ref{sec:SuD-Fortsetzung} ein $k$-Isomorphismus $\overline{\sigma}:\overline{k}\to\overline{k}$
 mit:
 \begin{align}
 \overline{\sigma}|_{K} & =\sigma\label{eq:abssigksig}
@@ -4684,7 +4701,7 @@ Injektivität: Gelte:
 \begin{align}
 \overline{\sigma}_{1}\circ\tau_{1} & =\overline{\sigma}_{2}\circ\tau_{2}\label{eq:plus}
 \end{align}
-Dabei ist $\sigma_{i}\in\text{Hom}_{k\text{-Alg.}}\left(k,\overline{k}\right)$,
+Dabei sind $\sigma_{i}\in\text{Hom}_{k\text{-Alg.}}\left(k,\overline{k}\right)$,
 $\tau_{i}\in\text{Hom}_{k\text{-Alg.}}\left(E,\overline{k}\right)$
 und $i\in\left\{ 1,2\right\} $.\\
 Damit folgt:
@@ -4696,19 +4713,20 @@ Damit folgt:
 Damit folgt $\sigma_{1}=\sigma_{2}$, also $\overline{\sigma}_{1}=\overline{\sigma}_{2}$
 und mit \eqref{eq:plus} ergibt sich $\tau_{1}=\tau_{2}$.\\
 \qqed[injektiv]\hspace*{1mm}\\
-Surjektivität: Sei $\alpha\in\text{Hom}_{k\text{-Alg.}}\left(E,\overline{k}\right):\sigma:=\alpha|_{K}\in\text{Hom}_{k\text{-Alg.}}\left(K,\overline{k}\right)$
-und $\left(\overline{\sigma}^{-1}\circ\alpha\right)|_{K}=\text{id}$.\\
-Also gilt $\tau=\overline{\sigma}^{-1}\circ\alpha\in\text{Hom}_{k\text{-Alg.}}\left(E,\overline{k}\right)$.
+Surjektivität: Sei $\alpha\in\text{Hom}_{k\text{-Alg.}}\left(E,\overline{k}\right)$,
+$\sigma:=\alpha|_{K}\in\text{Hom}_{k\text{-Alg.}}\left(K,\overline{k}\right)$
+und $\left(\overline{\sigma}^{\ -1}\circ\alpha\right)|_{K}=\text{id}$.\\
+Also gilt $\tau=\overline{\sigma}^{\:-1}\circ\alpha\in\text{Hom}_{k\text{-Alg.}}\left(E,\overline{k}\right)$.
 Es folgt:
 \begin{align*}
-\overline{\sigma}\circ\tau & =\overline{\sigma}\circ\left(\overline{\sigma}^{-1}\circ\alpha\right)=\alpha
+\overline{\sigma}\circ\tau & =\overline{\sigma}\circ\left(\overline{\sigma}^{\:-1}\circ\alpha\right)=\alpha
 \end{align*}
 
 \end{description}
 \qqed
 
 
-\section{Satz}
+\section{Satz\label{sec:Satz-endlSepAequivSepEZS}}
 
 Für eine endliche Körpererweiterung $E\supseteq k$ sind äquivalent:
 
@@ -4732,7 +4750,7 @@ E & =k\left(\alpha_{1},\ldots,\alpha_{n}\right)
 
 i) $\Rightarrow$ ii) ist trivial.
 
-ii) $\Rightarrow$ iii): Wegen \ref{sec:Satz-sgrad} und \ref{asdf}5.5
+ii) $\Rightarrow$ iii): Wegen \ref{sec:Satz-sgrad} und \ref{sec:Satz-Grad}
 (Gradsätze) kann man durch Induktion $n=1$ annehmen und dann folgt
 die Behauptung aus \ref{sec:Lem-sepNst} ii) \quotedblbase{}$\Rightarrow$\textquotedblleft{}.
 
@@ -4741,6 +4759,7 @@ iii) $\Rightarrow$ i): Sei $\alpha\in E$ beliebig, dann gilt:
 \left[E:k\right] & \stackrel{k\subseteq k\left(\alpha\right)\subseteq E}{=}\left[E:k\left(\alpha\right)\right]\\
 \stackrel{\rotatebox{90}{\ensuremath{=}}}{\left[E:k\right]_{S}} & \stackrel{\phantom{k\subseteq k\left(\alpha\right)\subseteq E}}{=}\stackrel{\rotatebox{90}{\ensuremath{\le}}}{\left[E:k\left(\alpha\right)\right]_{S}}
 \end{align*}
+\textcolor{green}{TODO: Obige Gleichung überprüfen.}
 \begin{align*}
 \left[k\left(\alpha\right):k\right] & \ge\left[k\left(\alpha\right):k\right]_{S}
 \end{align*}
@@ -4756,9 +4775,9 @@ iii) \quotedblbase{}$\Leftarrow$\textquotedblleft{}).
 %DATE: 6.12.2011
 
 
-\section{Korollar}
+\section{Korollar \textmd{(Transitivität der Separabilität)}}
 
-Für eine algebraische Körpererweiterung $k\subseteq K\subseteq E$
+Für eine algebraische Körpererweiterung $E\supseteq K\supseteq k$
 sind äquivalent:
 
 \begin{iiilist}
@@ -4777,21 +4796,23 @@ Sei $\alpha\in E$, dann folgt $\text{Mipo}_{K}\left(\alpha\right)|\text{Mipo}_{k
 also ist mit $\text{Mipo}_{k}\left(\alpha\right)$ auch $\text{Mipo}_{K}\left(\alpha\right)$
 separabel, das heißt $\alpha$ ist separabel über $K$.
 
-ii) $\Rightarrow$ i): Sei $\alpha\in E$, $f:=\text{Mipo}_{K}\left(\alpha\right)=\sum a_{i}X^{i}\in K\left[X\right]$
-und $K':=k\left(a_{i}\right)\subseteq K$.\\
+ii) $\Rightarrow$ i): Sei $\alpha\in E$, ${\displaystyle f:=\text{Mipo}_{K}\left(\alpha\right)=\sum_{i=0}^{n}a_{i}X^{i}\in K\left[X\right]}$
+und $K':=k\left(a_{i}|0\le i\le n\right)\subseteq K$.\\
 Dann folgt:
 \begin{enumerate}
-\item $\modulo{K'}{k}$ ist endlich und separabel (\ref{asdf}8.15, ii)
-$\Rightarrow$ i)).
+\item $\modulo{K'}{k}$ ist endlich und separabel (\ref{sec:Satz-endlSepAequivSepEZS}
+ii) $\Rightarrow$ i)).
 \item $f\in K'\left[X\right]$ ist separabel $\left(\text{da \modulo{E}{k} separabel ist}\right)$.
 \end{enumerate}
 Es folgt:
 \begin{align*}
-\infty & \stackrel{\text{1.}}{>}\left[K'\left(\alpha\right):k\right]\stackrel{\eqref{asd}5.5}{=}\left[K'\left(\alpha\right):K'\right]\cdot\left[K':k\right]\sr{=}{\text{1., 2.}}{\ref{}8.15\text{, i) \ensuremath{\Leftrightarrow}\ ii)}}\left[K'\left(\alpha\right):K'\right]_{S}\cdot\left[K':k\right]_{S}=\\
- & \stackrel{\left(\ref{}8.14\right)}{=}\left[K'\left(\alpha\right):k\right]_{S}
+\infty & \stackrel{\text{1.}}{>}\left[K'\left(\alpha\right):k\right]\stackrel{\ref{sec:Satz-Grad}}{=}\left[K'\left(\alpha\right):K'\right]\cdot\left[K':k\right]\sr{=}{\text{1., 2.}}{\ref{sec:Satz-endlSepAequivSepEZS}\text{ i) \ensuremath{\Leftrightarrow}\ ii)}}\left[K'\left(\alpha\right):K'\right]_{S}\cdot\left[K':k\right]_{S}=\\
+ & \stackrel{\ref{sec:Satz-sgrad}}{=}\left[K'\left(\alpha\right):k\right]_{S}
 \end{align*}
 Daher ist $\modulo{K'\left(\alpha\right)}{k}$ separabel, also $\alpha$
 separabel über $k$.
+
+\qqed
 
 
 \section{Satz \textmd{(vom primitiven Element)} und Definition\label{sec:SuD-primitel}}
@@ -4805,30 +4826,43 @@ Jedes solche $\alpha$ heißt \emph{primitives Element von $\modulo{E}{k}$.}
 
 \subsubsection*{Bemerkung}
 
-Sei $p$ eine Primzahl, $E:=\mathbb{F}_{p}\left(X,Y\right)$ und $k:=\text{Frob}_{E}\left(E\right)\subseteq\Rightarrow\left[E:k\right]=p^{2}$
-und $\modulo{E}{k}$ ist nicht einfach (ohne Beweis).
+Sei $p$ eine Primzahl, $E:=\mathbb{F}_{p}\left(X,Y\right)$ und $k:=\text{Frob}_{E}\left(E\right)\subseteq E$,
+dann ist $\left[E:k\right]=p^{2}$ und $\modulo{E}{k}$ ist nicht
+einfach (ohne Beweis).
+
+\textcolor{green}{TODO: Beweis einfügen}
 
 
 \subsubsection*{Beweis von \ref{sec:SuD-primitel}}
 \begin{enumerate}
-\item Fall: $k$ ist endlich, also ist $E$ endlich und nach \eqref{asdf}1.30,
+\item Fall: $k$ ist endlich, also ist $E$ endlich und nach \ref{sec:Kor-Einheitenk=0000F6rperEndlK=0000F6rper}
 i) existiert ein $\alpha\in E^{*}$ mit $E^{*}=\left\langle \alpha\right\rangle $,
 womit sich sofort $E=k\left(\alpha\right)$ ergibt.
 \item Fall: $k$ ist unendlich. Induktiv kann man $n=2$ annehmen.\\
 Schreibe $\text{Hom}_{k\text{-Alg.}}\left(E,\overline{k}\right)=\left\{ \sigma_{1},\ldots,\sigma_{n}\right\} $,
 das heißt $n:=\left[E:k\right]_{S}$.\\
-Setze $P\left(X\right):=\sr{\prod_{1\le i,j\le n}}{}{i\not=j}\left(\left(\sigma_{i}\left(\alpha_{1}\right)-\sigma_{j}\left(\alpha_{1}\right)\right)+X\left(\sigma_{i}\left(\alpha_{2}\right)-\sigma_{j}\left(\alpha_{2}\right)\right)\right)\in\overline{k}\left[X\right]$\end{enumerate}
+Setze:
+\begin{align*}
+P\left(X\right) & :=\sr{\prod_{1\le i,j\le n}}{}{i\not=j}\left(\left(\sigma_{i}\left(\alpha_{1}\right)-\sigma_{j}\left(\alpha_{1}\right)\right)+X\left(\sigma_{i}\left(\alpha_{2}\right)-\sigma_{j}\left(\alpha_{2}\right)\right)\right)\in\overline{k}\left[X\right]
+\end{align*}
+\end{enumerate}
 \begin{description}
-\item [{Behauptung:}] \emph{$P\left(X\right)\not=0$} in $\overline{k}\left[X\right]$
-\item [{Beweis:}] Sonst existieren $1\le i,j\le n$, $i\not=j$ mit $\sigma_{i}\left(\alpha_{k}\right)=\sigma_{j}\left(\alpha_{k}\right)$,
+\item [{Behauptung}] \hspace*{1mm}\\
+In $\overline{k}\left[X\right]$ gilt:
+\begin{align*}
+P\left(X\right) & \not=0
+\end{align*}
+
+\item [{Beweis:}] \hspace*{1mm}\\
+Sonst existieren $1\le i,j\le n$, $i\not=j$ mit $\sigma_{i}\left(\alpha_{k}\right)=\sigma_{j}\left(\alpha_{k}\right)$,
 $k\in\left\{ 1,2\right\} $. Damit folgt $\sigma_{i}=\sigma_{j}$
 im Widerspruch zu $i\not=j$.\qqed[Behauptung]
 \end{description}
-Wegen $P\left(X\right)\not=0$ und $k$ unendlich gibt es ein $\beta\in k$
-mit $P\left(\beta\right)\not=0$.\\
+Weil $P\left(X\right)\not=0$ und $k$ unendlich ist, gibt es ein
+$\beta\in k$ mit $P\left(\beta\right)\not=0$.\\
 Darum folgt, dass für $\alpha:=\alpha_{1}+\beta\alpha_{2}\in E$ die
 Elemente $\sigma\left(\alpha_{1}\right),\ldots,\sigma\left(\alpha_{1}\right)\in\overline{k}$
-parrweise verschieden sind, denn:
+paarweise verschieden sind, denn:
 \begin{align*}
 0\not= & P\left(\beta\right)=\sr{\prod_{1\le i,j\le n}}{}{i\not=j}\Bigg(\underbrace{\left(\sigma_{i}\left(\alpha_{1}\right)-\sigma_{j}\left(\alpha_{1}\right)\right)+\beta\cdot\left(\sigma_{i}\left(\alpha_{2}\right)-\sigma_{j}\left(\alpha_{2}\right)\right)}_{\stackrel{\beta\in k}{=}\left(\sigma_{i}\left(\alpha\right)-\sigma_{j}\left(\alpha\right)\right)}\Bigg)
 \end{align*}
@@ -4843,10 +4877,12 @@ Wegen $E'\subseteq E$ folgt:
 \begin{align}
 \left[E:k\right]_{S} & =\left[E':k\right]_{S}\label{eq:1}
 \end{align}
-
+\qqed[Behauptung]
 \begin{description}
-\item [{Behauptung:}] $E=E'\left(=k\left(\alpha\right)\text{, also folgt die Behauptung von \eqref{asdf}8.17}\right)$
-\item [{Beweis:}] Aus $\alpha_{2}$ separabel über $k$ folgt mit \eqref{df}8.15:
+\item [{Behauptung}] \hspace*{1mm}\\
+$E=E'=k\left(\alpha\right)$, also folgt die Behauptung von \ref{sec:SuD-primitel}.
+\item [{Beweis}] \hspace*{1mm}\\
+Weil $\alpha_{2}$ separabel über $k$ ist, folgt mit \ref{sec:Satz-endlSepAequivSepEZS}:
 \begin{align}
 \alpha_{2} & \text{ ist separaber über }E'\label{eq:2}
 \end{align}
@@ -4856,11 +4892,12 @@ Und damit folgt:
 \end{align*}
 Ferner gilt:
 \begin{align*}
-\left[E:k\right]_{S} & \stackrel{\left(\eqref{asdf}8.14\right)}{\ge}\left[E'\left(\alpha_{2}\right):E'\right]_{S}\cdot\left[E':k\right]_{S}\stackrel{\text{\eqref{eq:1}, \eqref{eq:2}}}{=}\left[E'\left(\alpha_{2}\right):E'\right]\cdot\left[E:k\right]_{S}
+\left[E:k\right]_{S} & \stackrel{\ref{sec:Satz-sgrad}}{\ge}\left[E'\left(\alpha_{2}\right):E'\right]_{S}\cdot\left[E':k\right]_{S}\stackrel{\text{\eqref{eq:1}, \eqref{eq:2}}}{=}\left[E'\left(\alpha_{2}\right):E'\right]\cdot\left[E:k\right]_{S}
 \end{align*}
 Daraus folgt $\left[E'\left(\alpha_{2}\right):E'\right]=1$, also
-$\alpha_{2}\in E'$. Wegen $\alpha_{1}=\alpha-\beta\alpha_{2}$ damit
-auch $\alpha_{1}\in E'$ und gesamt:
+$\alpha_{2}\in E'$.\\
+Wegen $\alpha_{1}=\alpha-\beta\alpha_{2}$ folgt damit auch $\alpha_{1}\in E'$
+und insgesamt:
 \begin{align*}
 E'\supseteq & k\left(\alpha_{1},\alpha_{2}\right)=E
 \end{align*}
@@ -4870,6 +4907,8 @@ Also ist $E=E'$.
 
 
 \chapter{Endliche Körper}
+
+\textcolor{green}{TODO: Rest überarbeiten}
 
 
 \section{Lemma\label{sec:Lem-ZkXpn}}

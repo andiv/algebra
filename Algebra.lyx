@@ -157,7 +157,7 @@
 \pdf_keywords "Algebra, Mathematik"
 \pdf_bookmarks true
 \pdf_bookmarksnumbered true
-\pdf_bookmarksopen true
+\pdf_bookmarksopen false
 \pdf_bookmarksopenlevel 1
 \pdf_breaklinks true
 \pdf_pdfborder true
@@ -332,15 +332,6 @@ TODO:
 \backslash
 begin{iiilist} als LyX-Kommandos einbauen.
 \end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
 
 \begin_layout Plain Layout
 TODO: Beweise überarbeiten („klar“ erklären...)
@@ -5060,6 +5051,13 @@ reference "sec:Kor-endlUGzykl"
 
 \begin_layout Section
 Korollar
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Kor-EinheitenkörperEndlKörper"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -12697,6 +12695,13 @@ Für den Ringhomomorphismus von Integritätsringen
 Proposition und Definition 
 \series medium
 (Frobenius)
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:PuD-Frob"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -13117,6 +13122,13 @@ qqed
 Proposition und Definition 
 \series medium
 (algebraisch, transzendent, Zwischenkörper)
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:PuD-algTranszZK"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -17626,17 +17638,14 @@ Seien
 \end_inset
 
  eine algebraische Körpererweiterung und 
-\begin_inset Formula $\sigma:k\hookrightarrow L$
+\begin_inset Formula $\sigma:k\hookrightarrow L=\overline{L}$
 \end_inset
 
- ...? eine Körpererweiterung.
- ...
-\end_layout
+ eine Körpererweiterung und 
+\begin_inset Formula $L$
+\end_inset
 
-\begin_layout Standard
-
-\color green
-TODO: Rest einfügen
+ algebraisch abgeschlossen.
 \end_layout
 
 \begin_layout Standard
@@ -18024,7 +18033,7 @@ Sei
 .
 \end_layout
 
-\begin_layout Section
+\begin_layout Subsubsection*
 Definition 
 \series medium
 (
@@ -18140,7 +18149,7 @@ mit geeigneten
 \begin_inset Formula $\alpha,\alpha_{i}\in E$
 \end_inset
 
-, das heißt: 
+, das heißt 
 \begin_inset Formula $f$
 \end_inset
 
@@ -18607,7 +18616,7 @@ reference "sec:PuD-algAbges"
 
 \end_inset
 
- ii) ist dann 
+ i) ist dann 
 \begin_inset Formula $\modulo{E_{i}}{k}$
 \end_inset
 
@@ -19375,7 +19384,7 @@ reference "sec:SuD-normKE"
 \end_inset
 
  iii) ist die algebraische Körpererweiterung 
-\begin_inset Formula $E:=\modulo{\mathbb{Q}\left(2^{\frac{1}{3}}\right)}{k:=\mathbb{Q}}$
+\begin_inset Formula $E:=\modulo{\mathbb{Q}\left(\sqrt[3]{2}\right)}{k:=\mathbb{Q}}$
 \end_inset
 
  nicht normal, denn das irreduzible Polynom 
@@ -20478,12 +20487,6 @@ Separabilität
 \end_layout
 
 \begin_layout Standard
-
-\color green
-TODO: Rest überarbeiten
-\end_layout
-
-\begin_layout Standard
 Sei 
 \begin_inset Formula $k$
 \end_inset
@@ -20495,14 +20498,26 @@ Sei
 Definition 
 \series medium
 ((formale) Ableitung)
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Def-Ableitung"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 Die Abbildung 
-\begin_inset Formula $k\left[X\right]\to k\left[X\right],f=\sum_{i=0}a_{i}X^{i}\mapsto f':=\sum_{i=1}i\cdot a_{i}X^{i-1}$
+\begin_inset Formula 
+\begin{align*}
+k\left[X\right] & \to k\left[X\right]\\
+f=\sum_{i=0}a_{i}X^{i} & \mapsto f':=\sum_{i=1}i\cdot a_{i}X^{i-1}
+\end{align*}
+
 \end_inset
 
- heißt 
+heißt 
 \emph on
 (formale) Ableitung
 \emph default
@@ -20618,15 +20633,22 @@ i) und ii) sind klar.
 \end_layout
 
 \begin_layout Standard
-iii): direktes Nachrechnen (Wegen i),ii) kann 
+iii): Direktes Nachrechnen.
+ (Wegen i), ii) kann 
 \begin_inset Formula $f=X^{m},g=X^{n}$
 \end_inset
 
- (
+ für 
 \begin_inset Formula $n,m\ge0$
 \end_inset
 
-) angenommen werden).
+ angenommen werden.)
+\end_layout
+
+\begin_layout Standard
+
+\color green
+TODO: Rechnung einfügen
 \end_layout
 
 \begin_layout Standard
@@ -20658,8 +20680,8 @@ name "sec:Bsp-abl"
 
 \begin_layout Standard
 \begin_inset Formula $\left\{ f\in k\left[X\right]|f'=0\right\} =\begin{cases}
-k, & \text{falls }\text{char}\left(k\right)=0\\
-\left\{ g\left(X^{p}\right)|g\in k\left[X\right]\right\} , & \text{falls }\text{char}\left(k\right)=p>0
+k & \text{falls }\text{char}\left(k\right)=0\\
+\left\{ g\left(X^{p}\right)|g\in k\left[X\right]\right\}  & \text{falls }\text{char}\left(k\right)=p>0
 \end{cases}$
 \end_inset
 
@@ -20672,6 +20694,12 @@ Beweis
 
 \begin_layout Standard
 Übung
+\end_layout
+
+\begin_layout Standard
+
+\color green
+TODO: Beweis einfügen
 \end_layout
 
 \begin_layout Standard
@@ -20717,7 +20745,10 @@ Seien
 \end_inset
 
 .
- Dann ist 
+\end_layout
+
+\begin_layout Standard
+Dann ist 
 \begin_inset Formula $\alpha$
 \end_inset
 
@@ -20757,12 +20788,15 @@ mit
 \begin_inset Formula $r\ge1$
 \end_inset
 
-(, da 
+, da 
 \begin_inset Formula $f\left(\alpha\right)=0$
 \end_inset
 
-).
- Hierbei heißt 
+.
+\end_layout
+
+\begin_layout Standard
+Hierbei heißt 
 \begin_inset Formula $r$
 \end_inset
 
@@ -20778,39 +20812,46 @@ Vielfachheit der Nullstelle
 \begin_inset Formula $\alpha$
 \end_inset
 
- heißt 
+ heißt genau dann 
 \emph on
 mehrfache Nullstelle
 \emph default
- genau dann, wenn 
+, wenn 
 \begin_inset Formula $r\ge2$
 \end_inset
 
- (sonst 
+ ist, sonst 
 \emph on
 einfache Nullstelle
 \emph default
-).
+.
 \end_layout
 
 \begin_layout Standard
-Zeige also: 
-\begin_inset Formula $r\ge2\Leftrightarrow f'\left(\alpha\right)=0$
+Zeige also:
+\begin_inset Formula 
+\begin{align*}
+r\ge2 & \Leftrightarrow f'\left(\alpha\right)=0
+\end{align*}
+
 \end_inset
 
-: Rechne 
-\begin_inset Formula $f'\left(X\right)\stackrel{\ref{}8.1}{=}r\left(X-\alpha\right)^{r-1}\cdot g\left(X\right)+\left(X-\alpha\right)^{r}\cdot g'\left(X\right)$
+Rechne:
+\begin_inset Formula 
+\begin{align*}
+f'\left(X\right) & \stackrel{\ref{sec:Def-Ableitung}}{=}r\left(X-\alpha\right)^{r-1}\cdot g\left(X\right)+\left(X-\alpha\right)^{r}\cdot g'\left(X\right)
+\end{align*}
+
 \end_inset
 
-.
- Wegen 
+Wegen 
 \begin_inset Formula $r\ge1$
 \end_inset
 
  folgt:
 \begin_inset Formula 
 \begin{align*}
-f'\left(\alpha\right) & =r\cdot\left(\alpha-\alpha\right)\cdot g\left(\alpha\right)=0\stackrel{g\left(\alpha\right)\not=0,r\not=0}{\Leftrightarrow}r-1\ge1
+f'\left(\alpha\right) & =r\cdot\left(\alpha-\alpha\right)^{r-1}\cdot g\left(\alpha\right)=0\stackrel{g\left(\alpha\right)\not=0,r\not=0}{\Leftrightarrow}r-1\ge1
 \end{align*}
 
 \end_inset
@@ -21146,15 +21187,14 @@ iii
 \end_inset
 
  Wegen 
-\begin_inset Formula $0\not=f\in k\left[X\right]\subseteq\overline{k}\left[X\right]$
+\begin_inset Formula $f\in k\left[X\right]\setminus\left\{ 0\right\} \subseteq\overline{k}\left[X\right]\setminus\left\{ 0\right\} $
 \end_inset
 
  folgt a) 
 \begin_inset Formula $\Leftrightarrow$
 \end_inset
 
- b).
- aus 
+ b) aus 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:SuD-mNst"
@@ -21162,10 +21202,7 @@ reference "sec:SuD-mNst"
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
-Dann gilt:
+ Dann gilt:
 \end_layout
 
 \begin_layout Standard
@@ -21206,6 +21243,24 @@ b)
 \end_inset
 
  c)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed[
+\backslash
+roman{ale2})]
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -21368,6 +21423,7 @@ Definition
 \end_layout
 
 \begin_layout Standard
+Ein Polynom 
 \begin_inset Formula $f\in k\left[X\right]\setminus k$
 \end_inset
 
@@ -21561,7 +21617,7 @@ Damit ist
  und es folgt:
 \begin_inset Formula 
 \begin{align*}
-\text{Hom}_{k\text{-Alg.}}\left(E,\overline{k}\right) & \sr{=}{\sim}{\ref{sec:Lem-homkalg}}\left\{ \beta\in\overline{k}|\beta^{p}=t\right\} \stackrel{\ref{asdf}5.3}{=}\left\{ \alpha\right\} 
+\text{Hom}_{k\text{-Alg.}}\left(E,\overline{k}\right) & \sr{=}{\sim}{\ref{sec:Lem-homkalg}}\left\{ \beta\in\overline{k}|\beta^{p}=t\right\} \stackrel{\ref{sec:PuD-algTranszZK}}{=}\left\{ \alpha\right\} 
 \end{align*}
 
 \end_inset
@@ -21718,12 +21774,8 @@ separabel über
 
 
 \emph default
-, wenn 
-\begin_inset Formula $\text{Mipo}_{k}\left(\alpha\right)$
-\end_inset
-
- in 
-\begin_inset Formula $k\left[X\right]$
+, wenn jedes 
+\begin_inset Formula $\alpha\in E$
 \end_inset
 
  separabel ist.
@@ -21916,11 +21968,12 @@ der Stabilitätsgrad von
 
 \emph default
 .
- 
 \end_layout
 
 \begin_layout Section
-Satz
+Satz 
+\series medium
+(vollkommene Körper)
 \end_layout
 
 \begin_layout Standard
@@ -22036,11 +22089,11 @@ iii
 \begin_inset Formula $\Rightarrow$
 \end_inset
 
-“: Zeige 
+“: Zeige, dass 
 \begin_inset Formula $\text{Frob}_{k}:k\twoheadrightarrow k$
 \end_inset
 
- ist surjektiv.
+ surjektiv ist.
 \end_layout
 
 \begin_layout Standard
@@ -22076,22 +22129,22 @@ In
 \end_layout
 
 \begin_layout Standard
-Vergleiche: 
+Vergleiche 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "asdf"
+reference "sec:Bsp-sep"
 
 \end_inset
 
-8.7 für 
+ für 
 \begin_inset Formula $g=\text{Mipo}_{k}\left(\beta\right)$
 \end_inset
 
-: 
+ mit 
 \begin_inset Formula $g|f$
 \end_inset
 
-
+.
 \end_layout
 
 \begin_layout Standard
@@ -22119,15 +22172,24 @@ Weil nun
 \end_layout
 
 \begin_layout Standard
+Daher ist 
+\begin_inset Formula $\text{Frob}_{k}$
+\end_inset
+
+ schon ein Isomorphismus, da er als Körperhomomorphismus schon injektiv
+ ist.
+\end_layout
+
+\begin_layout Standard
 „
 \begin_inset Formula $\Leftarrow$
 \end_inset
 
-“: Sonst existiert ein 
+“: Sonst existiert ein irreduzibles und nicht separables 
 \begin_inset Formula $f\in k\left[X\right]$
 \end_inset
 
- irreduzibel und nicht separabel, woraus mit 
+, woraus mit 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:Lem-mNst"
@@ -22190,6 +22252,24 @@ f\left(X\right) & =g\left(X^{p}\right)=\sum a_{i}\left(X^{p}\right)^{i}=\sum b_{
 \end_layout
 
 \begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed[
+\backslash
+roman{ale2})]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 Dies ist wegen 
 \begin_inset Formula $p\ge2$
 \end_inset
@@ -22217,11 +22297,11 @@ iii
  Dies folgt aus i) und 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "asdf"
+reference "sec:PuD-Frob"
 
 \end_inset
 
-5.3 iii).
+ iii).
 \end_layout
 
 \begin_layout Standard
@@ -22269,7 +22349,7 @@ name "sec:Lem-sepNst"
 
 \begin_layout Standard
 Sei 
-\begin_inset Formula $k\subseteq E=k\left(\alpha\right)$
+\begin_inset Formula $E=:k\left(\alpha\right)\supseteq k$
 \end_inset
 
  eine einfache algebraische Körpererweiterung.
@@ -22428,7 +22508,7 @@ Zudem gilt Gleichheit genau dann, wenn alle Nullstellen in
 \begin_inset Formula $\overline{k}$
 \end_inset
 
- einfach sind, das heißt 
+ einfach sind, also 
 \begin_inset Formula $f$
 \end_inset
 
@@ -22468,7 +22548,11 @@ qqed
 \end_layout
 
 \begin_layout Section
-Satz
+Satz 
+\series medium
+(Separabilitäts-Gradsatz)
+\series default
+
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Satz-sgrad"
@@ -22515,7 +22599,7 @@ Weil
 \begin_inset Formula $\modulo{K}{k}$
 \end_inset
 
- algebraisch sind, sind auch 
+ algebraisch sind, sind 
 \begin_inset Formula $\modulo{\overline{k}}{K}$
 \end_inset
 
@@ -22540,11 +22624,11 @@ Für jedes
  existiert nach 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "asdf"
+reference "sec:SuD-Fortsetzung"
 
 \end_inset
 
-6.7 ein 
+ ein 
 \begin_inset Formula $k$
 \end_inset
 
@@ -22603,7 +22687,7 @@ Injektivität: Gelte:
 
 \end_inset
 
-Dabei ist 
+Dabei sind 
 \begin_inset Formula $\sigma_{i}\in\text{Hom}_{k\text{-Alg.}}\left(k,\overline{k}\right)$
 \end_inset
 
@@ -22672,11 +22756,15 @@ hspace*{1mm}
 \end_inset
 
 Surjektivität: Sei 
-\begin_inset Formula $\alpha\in\text{Hom}_{k\text{-Alg.}}\left(E,\overline{k}\right):\sigma:=\alpha|_{K}\in\text{Hom}_{k\text{-Alg.}}\left(K,\overline{k}\right)$
+\begin_inset Formula $\alpha\in\text{Hom}_{k\text{-Alg.}}\left(E,\overline{k}\right)$
+\end_inset
+
+, 
+\begin_inset Formula $\sigma:=\alpha|_{K}\in\text{Hom}_{k\text{-Alg.}}\left(K,\overline{k}\right)$
 \end_inset
 
  und 
-\begin_inset Formula $\left(\overline{\sigma}^{-1}\circ\alpha\right)|_{K}=\text{id}$
+\begin_inset Formula $\left(\overline{\sigma}^{\ -1}\circ\alpha\right)|_{K}=\text{id}$
 \end_inset
 
 .
@@ -22684,14 +22772,14 @@ Surjektivität: Sei
 \end_inset
 
 Also gilt 
-\begin_inset Formula $\tau=\overline{\sigma}^{-1}\circ\alpha\in\text{Hom}_{k\text{-Alg.}}\left(E,\overline{k}\right)$
+\begin_inset Formula $\tau=\overline{\sigma}^{\:-1}\circ\alpha\in\text{Hom}_{k\text{-Alg.}}\left(E,\overline{k}\right)$
 \end_inset
 
 .
  Es folgt:
 \begin_inset Formula 
 \begin{align*}
-\overline{\sigma}\circ\tau & =\overline{\sigma}\circ\left(\overline{\sigma}^{-1}\circ\alpha\right)=\alpha
+\overline{\sigma}\circ\tau & =\overline{\sigma}\circ\left(\overline{\sigma}^{\:-1}\circ\alpha\right)=\alpha
 \end{align*}
 
 \end_inset
@@ -22717,6 +22805,13 @@ qqed
 
 \begin_layout Section
 Satz
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Satz-endlSepAequivSepEZS"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -22858,11 +22953,11 @@ reference "sec:Satz-sgrad"
  und 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "asdf"
+reference "sec:Satz-Grad"
 
 \end_inset
 
-5.5 (Gradsätze) kann man durch Induktion 
+ (Gradsätze) kann man durch Induktion 
 \begin_inset Formula $n=1$
 \end_inset
 
@@ -22898,6 +22993,10 @@ iii)
 
 \end_inset
 
+
+\color green
+TODO: Obige Gleichung überprüfen.
+\color inherit
 
 \begin_inset Formula 
 \begin{align*}
@@ -22974,12 +23073,14 @@ status open
 \end_layout
 
 \begin_layout Section
-Korollar
+Korollar 
+\series medium
+(Transitivität der Separabilität)
 \end_layout
 
 \begin_layout Standard
 Für eine algebraische Körpererweiterung 
-\begin_inset Formula $k\subseteq K\subseteq E$
+\begin_inset Formula $E\supseteq K\supseteq k$
 \end_inset
 
  sind äquivalent:
@@ -23115,11 +23216,11 @@ ii)
 \end_inset
 
 , 
-\begin_inset Formula $f:=\text{Mipo}_{K}\left(\alpha\right)=\sum a_{i}X^{i}\in K\left[X\right]$
+\begin_inset Formula ${\displaystyle f:=\text{Mipo}_{K}\left(\alpha\right)=\sum_{i=0}^{n}a_{i}X^{i}\in K\left[X\right]}$
 \end_inset
 
  und 
-\begin_inset Formula $K':=k\left(a_{i}\right)\subseteq K$
+\begin_inset Formula $K':=k\left(a_{i}|0\le i\le n\right)\subseteq K$
 \end_inset
 
 .
@@ -23136,11 +23237,11 @@ Dann folgt:
  ist endlich und separabel (
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "asdf"
+reference "sec:Satz-endlSepAequivSepEZS"
 
 \end_inset
 
-8.15, ii) 
+ ii) 
 \begin_inset Formula $\Rightarrow$
 \end_inset
 
@@ -23162,8 +23263,8 @@ reference "asdf"
 Es folgt:
 \begin_inset Formula 
 \begin{align*}
-\infty & \stackrel{\text{1.}}{>}\left[K'\left(\alpha\right):k\right]\stackrel{\eqref{asd}5.5}{=}\left[K'\left(\alpha\right):K'\right]\cdot\left[K':k\right]\sr{=}{\text{1., 2.}}{\ref{}8.15\text{, i) \Leftrightarrow\ ii)}}\left[K'\left(\alpha\right):K'\right]_{S}\cdot\left[K':k\right]_{S}=\\
- & \stackrel{\left(\ref{}8.14\right)}{=}\left[K'\left(\alpha\right):k\right]_{S}
+\infty & \stackrel{\text{1.}}{>}\left[K'\left(\alpha\right):k\right]\stackrel{\ref{sec:Satz-Grad}}{=}\left[K'\left(\alpha\right):K'\right]\cdot\left[K':k\right]\sr{=}{\text{1., 2.}}{\ref{sec:Satz-endlSepAequivSepEZS}\text{ i) \Leftrightarrow\ ii)}}\left[K'\left(\alpha\right):K'\right]_{S}\cdot\left[K':k\right]_{S}=\\
+ & \stackrel{\ref{sec:Satz-sgrad}}{=}\left[K'\left(\alpha\right):k\right]_{S}
 \end{align*}
 
 \end_inset
@@ -23181,6 +23282,22 @@ Daher ist
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -23254,7 +23371,11 @@ Sei
 \end_inset
 
  und 
-\begin_inset Formula $k:=\text{Frob}_{E}\left(E\right)\subseteq\Rightarrow\left[E:k\right]=p^{2}$
+\begin_inset Formula $k:=\text{Frob}_{E}\left(E\right)\subseteq E$
+\end_inset
+
+, dann ist 
+\begin_inset Formula $\left[E:k\right]=p^{2}$
 \end_inset
 
  und 
@@ -23262,6 +23383,12 @@ Sei
 \end_inset
 
  ist nicht einfach (ohne Beweis).
+\end_layout
+
+\begin_layout Standard
+
+\color green
+TODO: Beweis einfügen
 \end_layout
 
 \begin_layout Subsubsection*
@@ -23286,12 +23413,12 @@ Fall:
 
  endlich und nach 
 \begin_inset CommandInset ref
-LatexCommand eqref
-reference "asdf"
+LatexCommand ref
+reference "sec:Kor-EinheitenkörperEndlKörper"
 
 \end_inset
 
-1.30, i) existiert ein 
+ i) existiert ein 
 \begin_inset Formula $\alpha\in E^{*}$
 \end_inset
 
@@ -23332,24 +23459,49 @@ Schreibe
 \begin_inset Newline newline
 \end_inset
 
-Setze 
-\begin_inset Formula $P\left(X\right):=\sr{\prod_{1\le i,j\le n}}{}{i\not=j}\left(\left(\sigma_{i}\left(\alpha_{1}\right)-\sigma_{j}\left(\alpha_{1}\right)\right)+X\left(\sigma_{i}\left(\alpha_{2}\right)-\sigma_{j}\left(\alpha_{2}\right)\right)\right)\in\overline{k}\left[X\right]$
+Setze:
+\begin_inset Formula 
+\begin{align*}
+P\left(X\right) & :=\sr{\prod_{1\le i,j\le n}}{}{i\not=j}\left(\left(\sigma_{i}\left(\alpha_{1}\right)-\sigma_{j}\left(\alpha_{1}\right)\right)+X\left(\sigma_{i}\left(\alpha_{2}\right)-\sigma_{j}\left(\alpha_{2}\right)\right)\right)\in\overline{k}\left[X\right]
+\end{align*}
+
 \end_inset
 
 
 \end_layout
 
 \begin_layout Description
-Behauptung:
+Behauptung
 \emph on
  
-\begin_inset Formula $P\left(X\right)\not=0$
+\emph default
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hspace*{1mm}
+\end_layout
+
 \end_inset
 
 
-\emph default
- in 
+\begin_inset Newline newline
+\end_inset
+
+In 
 \begin_inset Formula $\overline{k}\left[X\right]$
+\end_inset
+
+ gilt:
+\begin_inset Formula 
+\begin{align*}
+P\left(X\right) & \not=0
+\end{align*}
+
 \end_inset
 
 
@@ -23360,6 +23512,23 @@ Beweis:
 \emph on
  
 \emph default
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hspace*{1mm}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
 Sonst existieren 
 \begin_inset Formula $1\le i,j\le n$
 \end_inset
@@ -23402,7 +23571,7 @@ qqed[Behauptung]
 \end_layout
 
 \begin_layout Standard
-Wegen 
+Weil 
 \begin_inset Formula $P\left(X\right)\not=0$
 \end_inset
 
@@ -23410,7 +23579,7 @@ Wegen
 \begin_inset Formula $k$
 \end_inset
 
- unendlich gibt es ein 
+ unendlich ist, gibt es ein 
 \begin_inset Formula $\beta\in k$
 \end_inset
 
@@ -23430,7 +23599,7 @@ Darum folgt, dass für
 \begin_inset Formula $\sigma\left(\alpha_{1}\right),\ldots,\sigma\left(\alpha_{1}\right)\in\overline{k}$
 \end_inset
 
- parrweise verschieden sind, denn:
+ paarweise verschieden sind, denn:
 \begin_inset Formula 
 \begin{align*}
 0\not= & P\left(\beta\right)=\sr{\prod_{1\le i,j\le n}}{}{i\not=j}\Bigg(\underbrace{\left(\sigma_{i}\left(\alpha_{1}\right)-\sigma_{j}\left(\alpha_{1}\right)\right)+\beta\cdot\left(\sigma_{i}\left(\alpha_{2}\right)-\sigma_{j}\left(\alpha_{2}\right)\right)}_{\stackrel{\beta\in k}{=}\left(\sigma_{i}\left(\alpha\right)-\sigma_{j}\left(\alpha\right)\right)}\Bigg)
@@ -23471,26 +23640,80 @@ Wegen
 \end_inset
 
 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed[Behauptung]
 \end_layout
 
-\begin_layout Description
-Behauptung:
-\emph on
- 
-\emph default
-
-\begin_inset Formula $E=E'\left(=k\left(\alpha\right)\text{, also folgt die Behauptung von \eqref{asdf}8.17}\right)$
 \end_inset
 
 
 \end_layout
 
 \begin_layout Description
-Beweis:
+Behauptung
 \emph on
  
 \emph default
-Aus 
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hspace*{1mm}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $E=E'=k\left(\alpha\right)$
+\end_inset
+
+, also folgt die Behauptung von 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:SuD-primitel"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Description
+Beweis
+\emph on
+ 
+\emph default
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hspace*{1mm}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Weil 
 \begin_inset Formula $\alpha_{2}$
 \end_inset
 
@@ -23498,14 +23721,14 @@ Aus
 \begin_inset Formula $k$
 \end_inset
 
- folgt mit 
+ ist, folgt mit 
 \begin_inset CommandInset ref
-LatexCommand eqref
-reference "df"
+LatexCommand ref
+reference "sec:Satz-endlSepAequivSepEZS"
 
 \end_inset
 
-8.15:
+:
 \begin_inset Formula 
 \begin{align}
 \alpha_{2} & \text{ ist separaber über }E'\label{eq:2}
@@ -23524,7 +23747,7 @@ Und damit folgt:
 Ferner gilt:
 \begin_inset Formula 
 \begin{align*}
-\left[E:k\right]_{S} & \stackrel{\left(\eqref{asdf}8.14\right)}{\ge}\left[E'\left(\alpha_{2}\right):E'\right]_{S}\cdot\left[E':k\right]_{S}\stackrel{\text{\eqref{eq:1}, \eqref{eq:2}}}{=}\left[E'\left(\alpha_{2}\right):E'\right]\cdot\left[E:k\right]_{S}
+\left[E:k\right]_{S} & \stackrel{\ref{sec:Satz-sgrad}}{\ge}\left[E'\left(\alpha_{2}\right):E'\right]_{S}\cdot\left[E':k\right]_{S}\stackrel{\text{\eqref{eq:1}, \eqref{eq:2}}}{=}\left[E'\left(\alpha_{2}\right):E'\right]\cdot\left[E:k\right]_{S}
 \end{align*}
 
 \end_inset
@@ -23538,15 +23761,18 @@ Daraus folgt
 \end_inset
 
 .
- Wegen 
+\begin_inset Newline newline
+\end_inset
+
+Wegen 
 \begin_inset Formula $\alpha_{1}=\alpha-\beta\alpha_{2}$
 \end_inset
 
- damit auch 
+ folgt damit auch 
 \begin_inset Formula $\alpha_{1}\in E'$
 \end_inset
 
- und gesamt:
+ und insgesamt:
 \begin_inset Formula 
 \begin{align*}
 E'\supseteq & k\left(\alpha_{1},\alpha_{2}\right)=E
@@ -23579,6 +23805,12 @@ qqed
 
 \begin_layout Chapter
 Endliche Körper
+\end_layout
+
+\begin_layout Standard
+
+\color green
+TODO: Rest überarbeiten
 \end_layout
 
 \begin_layout Section
