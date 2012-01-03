@@ -1,4 +1,4 @@
-%% LyX 2.0.1 created this file.  For more info, see http://www.lyx.org/.
+%% LyX 2.0.2 created this file.  For more info, see http://www.lyx.org/.
 %% Do not edit unless you really know what you are doing.
 \documentclass[11pt,english,ngerman]{report}
 \usepackage[T1]{fontenc}
@@ -4129,7 +4129,8 @@ Dann ist $\modulo{E}{k}$ normal.
 
 \iii Seien $E\supseteq K\supseteq k$ algebraische Körpererweiterungen
 mit $\modulo{E}{k}$ normal. Dann ist $\modulo{E}{K}$ normal (aber
-im Allgemeinen nicht $\modulo{K}{k}$). ($k\subseteq E\subseteq\overline{k}$!)
+im Allgemeinen nicht $\modulo{K}{k}$). ($k\subseteq E\subseteq\overline{k}$
+(!))
 
 \end{iiilist}
 
@@ -4534,7 +4535,7 @@ $\alpha\in E$ separabel ist.
 \end{iiilist}
 
 
-\section{Definition \textmd{(vollkommener Körper)}}
+\section{Definition \textmd{(vollkommener Körper)\label{sec:Def-vollkommenK}}}
 
 $k$ heißt \emph{vollkommen}, wenn jede algebraische Körpererweiterung
 von $k$ separabel ist.
@@ -5259,10 +5260,8 @@ Die Aussage über den Kern von $\pi$ folgt aus i).
 
 \qqed
 
-\textcolor{green}{TODO: Rest überarbeiten}
 
-
-\section{Proposition}
+\section{Proposition\label{sec:Prop-AutAnzahlGleichSepGrad}}
 
 Sei $E\supseteq k$ eine endliche normale Körpererweiterung.
 
@@ -5318,21 +5317,237 @@ eine Untergruppe.
 \end{iiilist}
 
 
+\subsubsection*{Beweis}
+
+i) ist klar.
+
+ii) und iii): Zeige zunächst, dass $\modulo{E}{k}$ separabel ist:
+
+Sei $\alpha\in E$ und $G\alpha:=\left\{ \sigma\left(\alpha\right)|\sigma\in G\right\} \subseteq E$.
+
+Dann gilt für alle $\sigma\in G$:
+\begin{align*}
+\text{Mipo}_{k}\left(\alpha\right)\left(\sigma\left(\alpha\right)\right) & =\underbrace{\left(\text{Mipo}_{k}\left(\alpha\right)\right)^{\sigma}}_{\in k\left[X\right]=E^{G}\left[X\right]}\left(\alpha\right)=\text{Mipo}_{k}\left(\alpha\right)\left(\alpha\right)=0
+\end{align*}
+
+
+Damit folgt $\left|G\alpha\right|\le\deg\left(\text{Mipo}_{k}\left(\alpha\right)\right)<\infty$
+und
+\begin{align*}
+f\left(X\right) & :=\prod_{\beta\in G\alpha}\left(X-\beta\right)\in E\left[X\right]
+\end{align*}
+ist ein separables Polynom mit $f\left(\alpha\right)=0$, da $\alpha\in G\alpha$
+ist.
+
+Zeige noch, dass $f\in k\left[X\right]$ ist, denn dann ist $\alpha$
+separabel über $k$:
+
+Weil die Abbildung
+\begin{align*}
+\sigma:G\alpha & \to G\alpha\\
+\beta & \mapsto\sigma\left(\beta\right)
+\end{align*}
+bijektiv mit der Umkehrabbildung $\sigma^{-1}$ ist, gilt für alle
+$\sigma\in G$:
+\begin{align*}
+f^{\sigma}\left(X\right) & =\prod_{\beta\in G\alpha}\left(X-\sigma\left(\beta\right)\right)=\prod_{\beta\in G\alpha}\left(X-\beta\right)=f\left(X\right)
+\end{align*}
+Daher hat $f\in E\left[X\right]$ Koeffizienten in $E^{G}=k$.
+
+\qqed[separabel]
+
+Zeige nun, dass $\modulo{E}{k}$ normal ist:
+
+$\modulo{E}{k}$ ist ein Zerfällungskörper aller obigen Polynome $f\in k\left[X\right]$
+(für $\alpha\in E$ variabel).
+
+\qqed[normal]
+
+Insgesamt ist also $\modulo{E}{k}$ galoissch.
+
+Es ist klar, dass
+\begin{align*}
+G & \subseteq\text{Gal}\left(\modulo{E}{k}\right)
+\end{align*}
+eine Untergruppe ist.
+
+Sei nun $n:=\left|G\right|<\infty$.
+
+Dann folgt aus
+\begin{align*}
+\deg\left(f\right) & =\left|G\alpha\right|\le\left|G\right|=n
+\end{align*}
+für alle $\alpha\in E$:
+\begin{align*}
+\left[k\left(\alpha\right):k\right] & \le n
+\end{align*}
+Wegen \ref{sec:SuD-primitel} angewendet auf die endlichen Zwischenkörper
+von $\modulo{E}{k}$ folgt damit:
+\begin{align*}
+\left[E:k\right] & \le n
+\end{align*}
+Insgesamt ergibt sich:
+\begin{align*}
+n & =\left|G\right|\le\left|\text{Gal}\left(\modulo{E}{k}\right)\right|\stackrel{\ref{sec:Prop-AutAnzahlGleichSepGrad}}{\le}\left[E:k\right]\le n
+\end{align*}
+Es folgt:
+\begin{align*}
+\left|G\right| & =\left|\text{Gal}\left(\modulo{E}{k}\right)\right|
+\end{align*}
+Wegen ${\displaystyle G\subseteq\text{Gal}\left(\modulo{E}{k}\right)}$
+folgt schon:
+\begin{align*}
+G & =\text{Gal}\left(\modulo{E}{k}\right)
+\end{align*}
+\qqed
+
+
 \section{Beispiel}
 
+Seien $p$ eine Primzahl, $E=\overline{\mathbb{F}}_{p}$, $\sigma:=\text{Frob}_{\overline{\mathbb{F}}_{p}}$
+und $G:=\left\langle \text{Frob}_{\overline{\mathbb{F}}_{p}}\right\rangle \subseteq\text{Aut}\left(E\right)$.
 
-\section{Korollar}
+Dann gilt:
+
+\begin{iiilist}
+
+\iii $G\stackrel{\sim}{=}\mathbb{Z}$
+
+\iii $k:=E^{G}=\mathbb{F}_{p}$
+
+\iii $G\subsetneq\text{Gal}\left(\modulo{E}{k}\right)$ ist eine
+echte Untergruppe (vergleiche \ref{sec:SuD-Fixk=0000F6rper} ii)).
+
+\end{iiilist}
 
 
-\section{Bemerkung und Beispiel}
+\subsubsection*{Beweis}
+
+Übung
+
+\textcolor{green}{TODO: Beweis einfügen}
+
+\qqed
+
+
+\section{Korollar\label{sec:Kor-GalE_EGistG}}
+
+Seien $E\supseteq k$ eine normale Körpererweiterung und $G:=\text{Aut}_{k}\left(E\right)$.
+
+Dann gelten:
+
+\begin{iiilist}
+
+\iii $\modulo{E}{E^{G}}$ ist galoissch mit $\text{Gal}\left(\modulo{E}{E^{G}}\right)=G$.
+
+\iii Ist $\modulo{E}{k}$ galoissch, so gilt $E^{G}=k$.
+
+\end{iiilist}
+
+
+\subsubsection*{Beweis}
+
+\begin{iiilist}
+
+\iii Nach \ref{sec:SuD-Fixk=0000F6rper} ist $\modulo{E}{E^{G}}$
+galoissch und es gilt:
+\begin{align*}
+\text{Gal}\left(\modulo{E}{E^{G}}\right) & =\text{Aut}_{E^{G}}\left(E\right)\stackrel{*}{=}\text{Aut}\left(\modulo{E}{k}\right)=G
+\end{align*}
+Zeige $*$:
+
+\quotedblbase{}$\subseteq$\textquotedblleft{} ist klar wegen $k\subseteq E^{G}$.
+
+\quotedblbase{}$\supseteq$\textquotedblleft{}: Für $\sigma\in\text{Aut}_{k}\left(E\right)=G$
+gilt:
+\begin{align*}
+\sigma|_{E^{G}} & =\text{id}_{E^{G}}
+\end{align*}
+Damit folgt $\sigma\in\text{Aut}_{E^{G}}\left(E\right)$.
+
+\qqed[\roman{ale2})]
+
+\iii Klar sind $k\subseteq E^{G}\subseteq E$.
+\begin{description}
+\item [{Behauptung}] 
+\begin{align*}
+\left[E^{G}:k\right]_{S} & =1
+\end{align*}
+
+\item [{Beweis}] \hspace*{1mm}\\
+Seien $\sigma\in E^{G}\hookrightarrow\overline{k}$ eine $k$-Homomorphismus
+und $\overline{\sigma}:\overline{k}\to\overline{k}$ eine Fortsetzung
+von $\sigma$ (vergleiche \ref{sec:SuD-Fortsetzung}).\\
+Nach \ref{sec:SuD-normKE} i) gilt, weil $\modulo{E}{k}$ normal ist:
+\begin{align*}
+\tau & :=\left(\overline{\sigma}|_{E}:E\to E\right)\in\text{Aut}_{k}\left(E\right)=G
+\end{align*}
+Damit folgt:
+\begin{align*}
+\sigma & =\tau|_{E^{G}}\stackrel{\tau\in G}{=}\text{id}_{E^{G}}
+\end{align*}
+Es folgt:
+\begin{align*}
+1 & =\left|\text{Hom}_{k\text{-Alg.}}\left(E^{G},\overline{k}\right)\right|=\left[E^{G}:k\right]_{S}
+\end{align*}
+\qqed[Behauptung]
+\end{description}
+Weil nach Voraussetzung $\modulo{E}{k}$ galoissch, also insbesondere
+separabel ist, ist auch $\modulo{E^{G}}{k}$ separabel nach \ref{sec:Kor-sepTransitiv}
+i) $\Rightarrow$ ii), also gilt:
+\begin{align*}
+1 & =\left[E^{G}:k\right]_{S}\stackrel{\ref{sec:Satz-endlSepAequivSepEZS}\text{ i)}\Rightarrow\text{ii)}}{=}\left[E^{G}:k\right]
+\end{align*}
+Also gilt $E^{G}=k$.
+
+\end{iiilist}
+
+\qqed
+
+
+\section{Bemerkung und Beispiel \textmd{(absolute Galoisgruppe)}}
+
+\begin{iiilist}
+
+\iii Aus \ref{sec:Kor-GalE_EGistG} folgt insbesondere:
+\begin{align*}
+\modulo{E}{k}\text{ ist galoissch} & \Rightarrow E^{\text{Gal}\left(\moduloScript{E}{k}\right)}=k
+\end{align*}
+Das heißt für alle $\alpha\in E\setminus k$ gibt es ein $\sigma\in\text{Gal}\left(\modulo{E}{k}\right)$
+mit $\sigma\left(\alpha\right)\not=\alpha=\text{id}\left(\alpha\right)$,
+also separieren die Automorphismen von $\modulo{E}{k}$ die Elemente
+$\alpha\in\modulo{E}{k}$.
+
+\iii Ist $k$ ein vollkommener Körper, so ist $\overline{k}\supseteq k$
+galoissch (vergleiche \ref{sec:PuD-algAbges} und \ref{sec:Def-vollkommenK})
+und
+\begin{align*}
+G_{k} & :=\text{Gal}\left(\modulo{\overline{k}}{k}\right)
+\end{align*}
+heißt \emph{die absolute Galoisgruppe von $k$}.
+
+\iii Seien $p\in\mathcal{P}$ eine Primzahl und $k:=\mathbb{F}_{p}\left(t\right)\subseteq k\left(\alpha\right)$
+mit $\alpha p=t$.
+
+Dann ist $\modulo{E}{k}$ nach \ref{sec:Bsp-sep} normal und:
+\begin{align*}
+G & :=\text{Aut}_{k}\left(E\right)=\left\{ \text{id}\right\} 
+\end{align*}
+Insbesondere ist also $E^{G}=E\supsetneq k$ und:
+\begin{align*}
+\left[E:k\right] & =p\not=1
+\end{align*}
+(vergleiche \ref{sec:Kor-GalE_EGistG} ii))
+
+\end{iiilist}
 
 %DATE: 
 
 
 \section{Satz \textmd{(Hauptsatz der Galoistheorie)\label{sec:Satz-HSGaloistheorie}}}
 
-Seien $E\supseteq k$ eine endliche galoissche Körpererweiterung und
-$G:=\text{Gal}\left(\modulo{E}{k}\right)$. Dann gelten:
+Seien $E\supseteq k$ eine endliche, galoissche Körpererweiterung
+und $G:=\text{Gal}\left(\modulo{E}{k}\right)$. Dann gelten:
 
 \begin{iiilist}
 
@@ -5341,7 +5556,7 @@ $G:=\text{Gal}\left(\modulo{E}{k}\right)$. Dann gelten:
 \phi:\left\{ H|H\subseteq G\text{ Untergruppe}\right\}  & \rightleftarrows\left\{ K|k\subseteq K\subseteq E\text{ Zwischenkörper}\right\} :\psi
 \end{align*}
 \begin{align*}
-\phi\left(H\right) & :=E^{H} & \psi\left(K\right) & :=\text{Gal}\left(\modulo{E}{k}\right)\subseteq G
+\phi\left(H\right) & :=E^{H} & \psi\left(K\right) & :=\text{Gal}\left(\modulo{E}{K}\right)\subseteq G
 \end{align*}
 sind wohldefiniert und zueinander invers.
 
@@ -5377,34 +5592,37 @@ induziert.
 folgt aus \ref{sec:Prop-EKkgaloissch} i).
 \begin{itemize}
 \item $\phi\circ\psi=\text{id}$\\
-Zeige: $k\subseteq K\subseteq E$ Zwischenkörper $\Rightarrow$ $K=\phi\left(\psi\left(K\right)\right)=E^{\text{Gal}\left(\modulo{E}{K}\right)}$.\\
-Dies folgt aus \ref{asdf}10.7 ii) für die Körpererweiterung $E\subseteq K$.
+Für den Zwischenkörper $k\subseteq K\subseteq E$ folgt aus \ref{sec:Kor-GalE_EGistG}
+ii):
+\begin{align*}
+K & =\phi\left(\psi\left(K\right)\right)=E^{\text{Gal}\left(\moduloScript{E}{K}\right)}
+\end{align*}
+
 \item $\psi\circ\phi=\text{id}$\\
-Zeige: $H\subseteq G$ Untergruppe $\Rightarrow$ $\text{Gal}\left(\modulo{E}{E^{H}}\right)=H$
-in $G$.\\
-Dies gilt nach \ref{sec:SuD-Fixk=0000F6rper} ii).
+Für die Untergruppe $H\subseteq G$ gilt nach \ref{sec:SuD-Fixk=0000F6rper}
+ii) in $G$:
+\begin{align*}
+\text{Gal}\left(\modulo{E}{E^{H}}\right)= & H
+\end{align*}
+
 \end{itemize}
 \qqed[i)]
 
-\iii b) $\Rightarrow$ a) und zweite Aussage: \ref{sec:Prop-EKkgaloissch}
-ii)\\
-a) $\Rightarrow$ b): Wegen \ref{asdf}8.16 i) $\Rightarrow$ ii)
-ist mit $\modulo{E}{k}$ auch $\modulo{E^{H}}{k}$ separabel.
+\iii b) $\Rightarrow$ a) und zweite Aussage folgen aus \ref{sec:Prop-EKkgaloissch}
+ii).\\
+a) $\Rightarrow$ b): Wegen \ref{sec:Kor-sepTransitiv} i) $\Rightarrow$
+ii) ist mit $\modulo{E}{k}$ auch $\modulo{E^{H}}{k}$ separabel.
 
-Zeige also noch, dass $\modulo{E^{H}}{k}$ normal ist.
-
-Dazu nach \ref{asdf}7.4 i):
-
+Zeige also noch, dass $\modulo{E^{H}}{k}$ normal ist und dazu nach
+\ref{sec:SuD-normKE} i):
+\begin{description}
+\item [{Behauptung}] \hspace*{1mm}\\
 Für jeden $k$-Homomorphismus $\sigma:E^{H}\hookrightarrow\overline{E}$
 gilt $\sigma\left(E^{H}\right)\subseteq E^{H}$.
-
-
-\subsubsection*{Beweis}
-
+\item [{Beweis}] \hspace*{1mm}\\
 Für eine Fortsetzung $\overline{\sigma}:E\hookrightarrow\overline{E}$
 von $\sigma$ gilt, weil $\modulo{E}{k}$ normal ist, $\overline{\sigma}\left(E\right)=E$,
-also $\overline{\sigma}\in\text{Aut}_{k}\left(E\right)=G$.
-
+also ist $\overline{\sigma}\in\text{Aut}_{k}\left(E\right)=G$.\\
 Seien nun $\alpha\in E^{H}$ und $\omega\in H$ beliebig, dann folgt:
 \begin{align*}
 \omega\left(\sigma\left(\alpha\right)\right) & =\left(\omega\circ\overline{\sigma}\right)\left(\alpha\right)
@@ -5417,8 +5635,8 @@ Also ist:
 \begin{align*}
 \omega\left(\sigma\left(\alpha\right)\right) & =\overline{\sigma}(\underbrace{\omega'\left(\alpha\right)}_{=\alpha\text{, da }\omega'\in H,\alpha\in E^{H}})=\overline{\sigma}\left(\alpha\right)=\sigma\left(\alpha\right)
 \end{align*}
-Weil $\alpha,\omega$ beliebig sind, folgt $\sigma\left(E^{H}\right)\subseteq E^{H}$.
-
+Weil $\alpha$ und $\omega$ beliebig sind, folgt $\sigma\left(E^{H}\right)\subseteq E^{H}$.
+\end{description}
 \end{iiilist}
 
 \qqed
@@ -5432,15 +5650,15 @@ besitzt $\modulo{E}{k}$ nur endlich viele Zwischenkörper.
 
 \subsubsection*{1. Beweis}
 
-Die normale Hülle $\modulo{E'}{k}$ ist endlich (nach \ref{asdf}7.10
-ii)), normal und separabel, also galoissch mit
+Die normale Hülle $\modulo{E'}{k}$ ist endlich (nach \ref{sec:SuD-Konj}
+ii)), normal und separabel, also galoissch, und
 \begin{align*}
 G & :=\text{Gal}\left(\modulo{E'}{k}\right)
 \end{align*}
-endlich, genauer $\left|G\right|=\left[E':k\right]<\infty$.
+ist endlich, genauer $\left|G\right|=\left[E':k\right]<\infty$.
 
-$G$ besitzt nur endlich viele Untergruppen, also besitzt nach \ref{sec:Satz-HSGaloistheorie}
-i) $\modulo{E'}{k}$ nur endlich viele Zwischenkörper.
+$G$ besitzt nur endlich viele Untergruppen, also besitzt $\modulo{E'}{k}$
+nach \ref{sec:Satz-HSGaloistheorie} i) nur endlich viele Zwischenkörper.
 
 Jeder Zwischenkörper von $\modulo{E}{k}$ ist aber insbesondere einer
 von $\modulo{E'}{k}$.
@@ -5450,14 +5668,16 @@ von $\modulo{E'}{k}$.
 
 \subsubsection*{2. Beweis}
 
-Nach \ref{asdf}8.17 existiert ein $\alpha\in E$ mit $E=k\left(\alpha\right)$.
+Nach \ref{sec:SuD-primitel} existiert ein $\alpha\in E$ mit $E=k\left(\alpha\right)$.
 
 Dann folgt die Aussage aus Blatt 6, Aufgabe 4.
+
+\textcolor{green}{TODO: Beweis einfügen}
 
 \qqed
 
 
-\section{Definition und Bemerkung}
+\section{Definition und Bemerkung \textmd{(Kompositum)}}
 
 Seien $E\supseteq k$ eine Körpererweiterung und $k\subseteq K_{1},K_{2}\subseteq E$
 Zwischenkörper.
@@ -5468,11 +5688,11 @@ $K_{2}$ enthält und heißt \emph{das Kompositum von $K_{1}$ und $K_{2}$
 (in $E$)}.
 
 
-\section{Satz\label{sec:Satz-UG-KE-Entsprechung}}
+\section{Satz und Definition \textmd{(Galoiserweiterung)}\label{sec:Satz-UG-KE-Entsprechung}}
 
-Seien $E\supseteq k$ eine endliche Galoiserweiterung (das ist definiert
-als endliche Körpererweiterung, die galoissch ist), $k\subseteq K_{1},K_{2}\subseteq E$
-Zwischenkörper und
+Seien $E\supseteq k$ eine endliche \emph{Galoiserweiterung} (das
+heißt eine endliche Körpererweiterung, die galoissch ist), $k\subseteq K_{1}\subseteq E$
+und $k\subseteq K_{2}\subseteq E$ Zwischenkörper und
 \begin{align*}
 H_{i} & :=\text{Gal}\left(\modulo{E}{K_{i}}\right)\subseteq G:=\text{Gal}\left(\modulo{E}{k}\right)
 \end{align*}
@@ -5495,25 +5715,29 @@ $H_{1}$ und $H_{2}$ erzeugte Untergruppe ist.
 
 \subsubsection*{Bildchen}
 
-TODO: Abb1
+\textcolor{green}{TODO: Abb1}
 
 
 \subsubsection*{Bemerkung}
 
-Ist $\modulo{E}{k}$ endlich separabel und $\modulo{E'}{k}$ normale
-Hülle von $\modulo{E}{k}$, dann ist $\modulo{E'}{k}$ endlich separabel
-(und normal).
+Ist $\modulo{E}{k}$ endlich und separabel und $\modulo{E'}{k}$ normale
+Hülle von $\modulo{E}{k}$, dann ist $\modulo{E'}{k}$ endlich, separabel
+und normal.
 
 
 \subsubsection*{Beweis}
 
-Aus \ref{asdf}8.17 ergibt sich:
+Aus \ref{sec:SuD-primitel} gibt es ein $\alpha\in E$ mit:
 \begin{align*}
-\exs_{\alpha\in E} & E=k\left(\alpha\right)
+E & =k\left(\alpha\right)
 \end{align*}
-Wähle $E\hookrightarrow\overline{E}=\overline{k}$.
+Wähle einen algebraischen Abschluss $\overline{k}$:
+\begin{align*}
+E & \hookrightarrow\overline{E}=\overline{k}
+\end{align*}
 
-Nach \ref{asdf}7.10 folgt:
+
+Nach \ref{sec:SuD-Konj} folgt:
 \begin{align*}
 E' & =k\left(\sigma\left(\alpha\right)|\sigma\in\text{Hom}_{k\text{-Alg.}}\left(E,\overline{E}\right)\right)
 \end{align*}
@@ -5521,12 +5745,17 @@ Aus
 \begin{align*}
 \left|\text{Hom}_{k\text{-Alg.}}\left(E,\overline{E}\right)\right| & =\left[E:k\right]_{S}=\left[E:k\right]<\infty
 \end{align*}
-folgt:
+folgt nach \ref{sec:SuD-Konj} ii):
 \begin{align*}
-\left[E':k'\right] & <\infty\ref{asdf}??
+\left[E':k\right] & <\infty
 \end{align*}
-Für alle $\sigma$ gilt $\text{Mipo}_{k}\left(\sigma\left(\alpha\right)\right)\stackrel{\left(!\right)}{=}\text{Mipo}_{k}\left(\alpha\right)\in k\left[X\right]$
-ist separabel, also ist $\modulo{E'}{k}$ separabel. (nach \ref{asdf}??)
+Für alle $\sigma\in\text{Hom}_{k\text{-Alg.}}\left(E,\overline{E}\right)$
+ist
+\begin{align*}
+\text{Mipo}_{k}\left(\sigma\left(\alpha\right)\right) & \stackrel{\left(!\right)}{=}\text{Mipo}_{k}\left(\alpha\right)\in k\left[X\right]
+\end{align*}
+separabel, also ist $\modulo{E'}{k}$ nach \ref{sec:Satz-endlSepAequivSepEZS}
+separabel.
 
 
 \subsubsection*{Beweis von \ref{sec:Satz-UG-KE-Entsprechung}}
@@ -5535,7 +5764,7 @@ ist separabel, also ist $\modulo{E'}{k}$ separabel. (nach \ref{asdf}??)
 
 \iii \quotedblbase{}$\Rightarrow$\textquotedblleft{}: $H_{2}=\text{Aut}_{K_{2}}\left(E\right)\stackrel{K_{1}\subseteq K_{2}}{\subseteq}\text{Aut}_{K_{1}}\left(E\right)=H_{1}$
 
-\quotedblbase{}$\Leftarrow$\textquotedblleft{}: $K_{1}\stackrel{\ref{asdf}10.9\, i)}{=}E^{H_{1}}\stackrel{H_{2}\subseteq H_{1}}{\subseteq}E^{H_{2}}\stackrel{\ref{asdf}10.9\, i)}{=}K_{2}$
+\quotedblbase{}$\Leftarrow$\textquotedblleft{}: $K_{1}\stackrel{\ref{sec:Satz-HSGaloistheorie}\,\text{i)}}{=}E^{H_{1}}\stackrel{H_{2}\subseteq H_{1}}{\subseteq}E^{H_{2}}\stackrel{\ref{sec:Satz-HSGaloistheorie}\,\text{i)}}{=}K_{2}$
 
 \qqed[\roman{ale2})]
 
@@ -5545,7 +5774,7 @@ Ferner gilt:
 \begin{align*}
 \text{Gal}\left(\modulo{E}{K_{1}\cdot K_{2}}\right) & \stackrel{K_{i}\subseteq K_{1}\cdot K_{2}}{\subseteq}\text{Aut}_{K_{1}}\left(E\right)\cap\text{Aut}_{K_{2}}\left(E\right)=H_{1}\cap H_{2}
 \end{align*}
-Damit folgt mit i):
+Daraus folgt mit i):
 \begin{align*}
 E^{H_{1}\cap H_{2}} & \subseteq K_{1}\cdot K_{2}
 \end{align*}
@@ -5568,7 +5797,9 @@ Produkt von Elementen aus $H_{1}$ oder $H_{2}$ ist.)
 Nach Blatt 7, Aufgabe 2 ist die Galoisgruppe von $f:=X^{3}-2\in\mathbb{Q}\left[X\right]$
 isomorph zu $S_{3}$.
 
-Genauer: $\alpha\in\mathbb{C}:\alpha^{3}=2$ und $\zeta:=\exp\left(\frac{2\pi\ii}{3}\right)\in\mathbb{C}$
+\textcolor{green}{TODO: Beweis einfügen}
+
+Genauer: Seien $\alpha\in\mathbb{C}$ mit $\alpha^{3}=2$ und ${\displaystyle \zeta:=\exp\left(\frac{2\pi\ii}{3}\right)\in\mathbb{C}}$.
 
 Dann ist $\modulo{E:=\mathbb{Q}\left(\alpha,\zeta\right)}{\mathbb{Q}}$
 ist ein Zerfällungskörper von $f$ und die Abbildung
@@ -5576,12 +5807,12 @@ ist ein Zerfällungskörper von $f$ und die Abbildung
 \text{Gal}\left(\modulo{E}{\mathbb{Q}}\right) & \stackrel{\sim}{\to}\sum\underbrace{\left\{ \alpha,\alpha\zeta,\alpha\zeta^{2}\right\} }_{=:\mathcal{N}}\\
 \sigma & \mapsto\sigma|_{\mathcal{N}}
 \end{align*}
-ist wohldefiniert und ein Gruppehnisomorphismus.
+ist wohldefiniert und ein Gruppenisomorphismus.
 
 Aus der linearen Algebra I ist folgendes \emph{Untergruppen-Diagramm}
 der $S_{3}$ bekannt:
 
-TODO: abb2
+\textcolor{green}{TODO: Abb2 einfügen}
 
 $A_{3}\unlhd S_{3}$ ist der einzige nicht-triviale Normalteiler und
 es gilt:
@@ -5591,30 +5822,40 @@ es gilt:
 Die $H_{i}$ sind alle von Ordnung 2 und nicht normal. (vergleiche
 Übungsaufgabe ?)
 
+\textcolor{green}{TODO: Beweis einfügen}
+
 Außerdem können der Durchschnitt und die Erzeugerrelation abgelesen
-werden, zum Beispiel $\left\langle A_{3},H_{i}\right\rangle =S_{3}$
-und $H_{i}\cap A_{3}=\left\{ e\right\} $ für alle $0\le i\le2$.
+werden, zum Beispiel
+\begin{align*}
+\left\langle A_{3},H_{i}\right\rangle  & =S_{3}\\
+H_{i}\cap A_{3} & =\left\{ e\right\} 
+\end{align*}
+für alle $0\le i\le2$.
+
+Außerdem gilt:
 \begin{align*}
 E & =E^{\left\{ e\right\} }=\mathbb{Q}\left(\alpha,\zeta\right)
 \end{align*}
 
 
 Aus \ref{sec:Satz-HSGaloistheorie} und \ref{sec:Satz-UG-KE-Entsprechung}
-folgt daraus folgendes Diagramm von Zwischenkörpern.
+folgt daraus folgendes Diagramm von Zwischenkörpern:
 
-TODO: Abb 4
+\textcolor{green}{TODO: Abb 4}
 
 \begin{align*}
 (\mathbb{Q}\left(\zeta\right) & =E^{A_{3}})
 \end{align*}
 Weil $H_{i}\subseteq S_{3}$ nicht normal ist, ist $\modulo{\mathbb{Q}\left(\alpha\zeta^{i}\right)}{\mathbb{Q}}$
-nicht normal (vergleiche \ref{asdf}7.2).
+nicht normal (vergleiche \ref{sec:Bsp-ZK}).
 
-Weil $A_{3}\unlhd S_{3}$ ist $\modulo{\mathbb{Q}\left(3\right)}{\mathbb{Q}}$
+Weil $A_{3}\unlhd S_{3}$ ist, ist $\modulo{\mathbb{Q}\left(\zeta\right)}{\mathbb{Q}}$
 galoissch mit:
 \begin{align*}
-\text{Gal}\left(\modulo{\mathbb{Q}\left(3\right)}{\mathbb{Q}}\right) & \stackrel{\sim}{=}\modulo{S_{3}}{A_{3}}\stackrel{\sim}{=}\modlo{Z}{2}
+\text{Gal}\left(\modulo{\mathbb{Q}\left(\zeta\right)}{\mathbb{Q}}\right) & \stackrel{\sim}{=}\modulo{S_{3}}{A_{3}}\stackrel{\sim}{=}\modlo{Z}{2}
 \end{align*}
+
+
 Zur Bestimmung der Fixkörper:
 \begin{enumerate}
 \item $\sigma:=\left(\begin{array}{ccc}
@@ -5624,19 +5865,36 @@ Zur Bestimmung der Fixkörper:
 \end{align*}
 Daher ist $\zeta\in E^{A_{3}}$.\\
 Wegen $\left[E^{A_{3}}:\mathbb{Q}\right]=2$ und $\left[\mathbb{Q}\left(\zeta\right):\mathbb{Q}\right]=2$,
-da das $\text{Mipo}_{\mathbb{Q}}\left(\zeta\right)=X^{2}+X+1$ ist,
-also folgt $E^{A_{3}}=\mathbb{Q}\left(\zeta\right)$. %DATE: Fr 16.12.2011
-\item Für $\text{id}\not=\tau_{i}\in H_{i}$ ($0\le i\le2$) gilt $\tau_{i}\left(\alpha\zeta^{i}\right)=\alpha\zeta^{i}$,
-also $\alpha\zeta^{i}\in E^{H_{i}}$.\\
-Wegen $\left[\alpha\zeta^{i}:\mathbb{Q}\right]=3$, da $\text{Mipo}_{\mathbb{Q}}\left(\alpha\zeta^{i}\right)=X^{3}-2$,
-und $\left[E^{H_{i}}:\mathbb{Q}\right]=\left[E^{H_{i}}:E^{S_{3}}\right]=\left[S_{3}:H_{i}\right]=3$
-folgt $E^{H_{i}}=\mathbb{Q}\left(\alpha\zeta^{i}\right)$ ($0\le i\le2$).
+da das Minimalpolynom
+\begin{align*}
+\text{Mipo}_{\mathbb{Q}}\left(\zeta\right) & =X^{2}+X+1
+\end{align*}
+ Grad 2 hat, folgt also $E^{A_{3}}=\mathbb{Q}\left(\zeta\right)$.
+%DATE: Fr 16.12.2011
+\item Für $\text{id}\not=\tau_{i}\in H_{i}$ mit $0\le i\le2$ gilt:
+\begin{align*}
+\tau_{i}\left(\alpha\zeta^{i}\right) & =\alpha\zeta^{i}
+\end{align*}
+ Also gilt:
+\begin{align*}
+\alpha\zeta^{i} & \in E^{H_{i}}
+\end{align*}
+Wegen $\left[\alpha\zeta^{i}:\mathbb{Q}\right]=3$, da 
+\begin{align*}
+\text{Mipo}_{\mathbb{Q}}\left(\alpha\zeta^{i}\right) & =X^{3}-2
+\end{align*}
+Grad 3 hat, und 
+\begin{align*}
+\left[E^{H_{i}}:\mathbb{Q}\right] & =\left[E^{H_{i}}:E^{S_{3}}\right]=\left[S_{3}:H_{i}\right]=3
+\end{align*}
+folgt $E^{H_{i}}=\mathbb{Q}\left(\alpha\zeta^{i}\right)$ für $0\le i\le2$.
 \end{enumerate}
 
 \subsubsection*{Bemerkung}
 
-Seien $E\supseteq k$ endlich und galoissch, $G:=\text{Gal}\left(\modulo{E}{k}\right)$,
-$H\subseteq G$ eine Untergruppe und $K:=E^{H}$.
+Seien $E\supseteq k$ eine endliche und galoissche Körpererweiterung,
+$G:=\text{Gal}\left(\modulo{E}{k}\right)$ und $H\subseteq G$ eine
+Untergruppe.
 
 Dann gilt:
 
@@ -5651,13 +5909,16 @@ Dann gilt:
 
 \subsubsection*{Beweis}
 
-$\text{Gal}\left(\modulo{E}{k}\right)=H$
+\begin{align*}
+\text{Gal}\left(\modulo{E}{E^{H}}\right)= & H
+\end{align*}
+
 
 Aus \ref{sec:Prop-EKkgaloissch} folgt damit a).
 
 Dann gilt:
 \begin{align*}
-\left[E:k\right] & =\left[G:H\right]\cdot\left|H\right|\stackrel{\text{a)}}{=}\left[G:H\right]\cdot\left[E:E^{H}\right]
+\left[E:E^{H}\right]\cdot\left[E^{H}:k\right]=\left[E:k\right] & =\left[G:H\right]\cdot\left|H\right|\stackrel{\text{a)}}{=}\left[G:H\right]\cdot\left[E:E^{H}\right]
 \end{align*}
 Und damit folgt:
 \begin{align*}
@@ -5690,7 +5951,7 @@ dass $H:=\text{Gal}\left(\modulo{E}{K}\right)\unlhd G$ gilt.
 
 Aus \ref{sec:Satz-HSGaloistheorie} ii) folgt damit, dass $\modulo{K}{k}$
 galoissch ist und $\text{Gal}\left(\modulo{K}{k}\right)\stackrel{\sim}{=}\modulo{G}{H}$
-endlich zyklisch (beziehungsweise zyklisch nach \ref{sec:Satz-UG-kerImZyklG}
+endlich und abelsch (beziehungsweise zyklisch nach \ref{sec:Satz-UG-kerImZyklG}
 ii)) ist.
 
 \qqed
@@ -5698,17 +5959,18 @@ ii)) ist.
 
 \section{Satz\label{sec:Satz-Kompositum}}
 
-Seien $E\supseteq k$ eine Körpererweiterung und $k\subseteq K_{1},K_{2}\subseteq E$
-Zwischenkörper mit $\modulo{K_{i}}{k}$ endlich galoissch ($i=1,2$).
+Seien $E\supseteq k$ eine Körpererweiterung, $k\subseteq K_{1}\subseteq E$
+und $k\subseteq K_{2}\subseteq E$ Zwischenkörper und $\modulo{K_{i}}{k}$
+endlich und galoissch für $i\in\left\{ 1,2\right\} $.
 
 Dann gilt:
 
 \begin{iiilist}
 
-\iii Das Kompositum $K_{1}\cdot K_{2}$ ist endlich galoissch und
-die Abbildung
+\iii Das Kompositum $K_{1}\cdot K_{2}$ ist endlich und galoissch
+und die Abbildung
 \begin{align*}
-\varphi:\text{Gal}\left(\modulo{K_{1}\cdot K_{2}}{K_{1}}\right) & \stackrel{\sim}{\to}\text{Gal}\left(\modulo{K_{1}\cap K_{2}}{k}\right)\\
+\varphi:\text{Gal}\left(\modulo{K_{1}\cdot K_{2}}{K_{1}}\right) & \stackrel{\sim}{\to}\text{Gal}\left(\modulo{K_{2}}{K_{1}\cap K_{2}}\right)\\
 \sigma & \mapsto\sigma|_{K_{2}}
 \end{align*}
 ist wohldefiniert und ein Gruppenisomorphismus.
@@ -5729,15 +5991,47 @@ Im Fall $K_{1}\cap K_{2}=k$ ist $\psi$ ein Isomorphismus.
 
 \begin{iiilist}
 
-\iii Es existiert separable $f_{i}\in k\left[X\right]$ so, dass
-$\modulo{K_{i}}{k}$ der Zerfällungskörper von $f_{i}$ ist ($i=1,2$),
-siehe \ref{sec:BuD-Galoisgruppe} a) $\Rightarrow$ b).
+\iii Es existieren separable $f_{i}\in k\left[X\right]$ so, dass
+\begin{align*}
+\modulo{K_{i}}{k}
+\end{align*}
+Zerfällungskörper von $f_{i}$ für $i\in\left\{ 1,2\right\} $ sind
+(siehe \ref{sec:BuD-Galoisgruppe} a) $\Rightarrow$ b)).
 
-Dann ist $\modulo{K_{1}\cdot K_{2}}{k}$ der Zerfällungskörper des
-separablen Polynoms $f_{1}f_{2}$, also endlich und galoissch.
+Nach \ref{sec:SuD-primitel} gibt es $\alpha_{i}\in K_{i}$ mit $K_{i}=k\left(\alpha_{i}\right)$
+für $i\in\left\{ 1,2\right\} $.
 
-$\varphi$ ist wohldefiniert, da $\left(\sigma|_{K_{1}}=\text{id}\Rightarrow\left(\sigma|_{K_{2}}\right)\big|_{K_{1}\cap K_{2}}=\text{id}\right)$
-gilt, und offenbar ein Gruppenhomomorphismus.
+Es gilt $\text{Mipo}_{K_{1}}\left(\alpha_{2}\right)|\text{Mipo}_{k}\left(\alpha_{2}\right)$,
+da $\text{Mipo}_{K_{1}}\left(\alpha_{2}\right)\in K_{1}\left[X\right]$
+schon $\alpha_{2}$ annulliert.
+
+Mit $\text{Mipo}_{k}\left(\alpha_{2}\right)$ ist damit auch $\text{Mipo}_{K_{1}}\left(\alpha_{2}\right)$
+separabel.
+
+Also gilt
+\begin{align*}
+k & \stackrel{\text{endlich, separabel}}{\subseteq}K_{1}\stackrel{\text{endlich, separabel}}{\subseteq}K_{1}\left(\alpha_{2}\right)=K_{1}\left(k\left(\alpha_{2}\right)\right)=K_{1}\left(K_{2}\right)=K_{1}\cdot K_{2}
+\end{align*}
+
+
+nach der Gradformel und Transitivität der Separabilität (vergleiche
+\ref{sec:Satz-Grad}, \ref{sec:Satz-sgrad} und \ref{sec:Kor-sepTransitiv}).
+
+Dann ist 
+\begin{align*}
+\modulo{K_{1}\cdot K_{2}}{k}
+\end{align*}
+also endlich und galoissch.
+
+$\varphi$ ist wohldefiniert, da aus
+\begin{align*}
+\sigma|_{K_{1}} & =\text{id}
+\end{align*}
+schon
+\begin{align*}
+\left(\sigma|_{K_{2}}\right)\big|_{K_{1}\cap K_{2}} & =\text{id}
+\end{align*}
+folgt. Außerdem ist $\varphi$ offenbar ein Gruppenhomomorphismus.
 
 Für $\sigma\in\text{ker}\left(\varphi\right)$ gilt:
 \begin{align*}
@@ -5748,7 +6042,7 @@ Also ist $\varphi$ injektiv.
 
 Ferner gilt:
 \begin{align*}
-K_{2}^{\text{im}\left(\varphi\right)} & \stackrel{\text{Def. von }\varphi}{=}\left(K_{1}\cdot K_{2}\right)^{\text{Gal}\left(\modulo{K_{1}\cdot K_{2}}{K_{1}}\right)}\cap K_{2}\stackrel{\ref{asdf}10.9i)}{=}K_{1}\cap K_{2}=K_{2}^{\text{Gal}\left(\modulo{K_{2}}{K_{1}\cap K_{2}}\right)}
+K_{2}^{\text{im}\left(\varphi\right)} & \stackrel{\text{Def. von }\varphi}{=}\left(K_{1}\cdot K_{2}\right)^{\text{Gal}\left(\modulo{K_{1}\cdot K_{2}}{K_{1}}\right)}\cap K_{2}\stackrel{\ref{sec:Satz-HSGaloistheorie}\,\text{i)}}{=}K_{1}\cap K_{2}=K_{2}^{\text{Gal}\left(\modulo{K_{2}}{K_{1}\cap K_{2}}\right)}
 \end{align*}
 Mit \ref{sec:Satz-HSGaloistheorie} i) folgt:
 \begin{align*}
@@ -5756,17 +6050,34 @@ Mit \ref{sec:Satz-HSGaloistheorie} i) folgt:
 \end{align*}
 Also ist $\varphi$ surjektiv.
 
-\iii Wohldefiniertheit und Gruppenhomomorphismus sind klar.
+\iii Wohldefiniertheit und, dass $\psi$ ein Gruppenhomomorphismus
+ist, sind klar.
 
-Aus $\sigma\in\text{ker}\left(\psi\right)$ folgt $\sigma|_{K_{i}}=\text{id}$
-($i=1,2$) und damit folgt $\sigma=\sigma|_{K_{1}\cdot K_{2}}=\text{id}$,
-weswegen $\psi$ injektiv ist.
+Aus $\sigma\in\text{ker}\left(\psi\right)$ folgt für $i\in\left\{ 1,2\right\} $
+schon 
+\begin{align*}
+\sigma|_{K_{i}} & =\text{id}
+\end{align*}
+und damit ergibt sich: 
+\begin{align*}
+\sigma & =\sigma|_{K_{1}\cdot K_{2}}=\text{id}
+\end{align*}
+Deswegen ist $\psi$ injektiv.
 
-Gelte nun $K_{1}\cap K_{2}=k$ und sei $\left(\sigma,\sigma'\right)\in\text{Gal}\left(\modulo{K_{1}}{k}\right)\times\text{Gal}\left(\modulo{K_{2}}{k}\right)$
+Gelte nun $K_{1}\cap K_{2}=k$ und sei
+\begin{align*}
+\left(\sigma,\sigma'\right) & \in\text{Gal}\left(\modulo{K_{1}}{k}\right)\times\text{Gal}\left(\modulo{K_{2}}{k}\right)
+\end{align*}
 beliebig.
 
-Aus i) folgt damit, dass es ein $\tilde{\sigma}\in\text{Gal}\left(\modulo{K_{1}\cdot K_{2}}{K_{2}}\right)$
-mit $\tilde{\sigma}|_{K_{1}}=\sigma$ gibt, und ebenso ein $\tilde{\sigma}'\in\text{Gal}\left(\modulo{K_{1}\cdot K_{2}}{K_{1}}\right)$
+Aus i) folgt damit, dass es ein
+\begin{align*}
+\tilde{\sigma} & \in\text{Gal}\left(\modulo{K_{1}\cdot K_{2}}{K_{2}}\right)
+\end{align*}
+mit $\tilde{\sigma}|_{K_{1}}=\sigma$ gibt, und ebenso ein
+\begin{align*}
+\tilde{\sigma}' & \in\text{Gal}\left(\modulo{K_{1}\cdot K_{2}}{K_{1}}\right)
+\end{align*}
 mit $\tilde{\sigma}'|_{K_{2}}=\text{id}$.
 
 Dann gilt:
@@ -5775,42 +6086,21 @@ Dann gilt:
 \end{align*}
 
 
-Daher ist $\psi$ surjekiv.
+Daher ist $\psi$ surjektiv.
 
 \end{iiilist}
 
 \qqed
 
 
-\subsubsection*{Beweis}
-
-Nach \ref{asdf}8.17 gibt es ein $\alpha_{i}\in K_{i}$ mit $K_{i}=k\left(\alpha_{i}\right)$
-($i=1,2$).
-
-Es gilt $\text{Mipo}_{K_{1}}\left(\alpha_{2}\right)|\text{Mipo}_{k}\left(\alpha_{2}\right)$,
-da $\text{Mipo}_{k}\left(\alpha_{2}\right)\in K_{1}\left[X\right]$
-schon $\alpha_{2}$ annuliert.
-
-Mit $\text{Mipo}_{k}\left(\alpha_{2}\right)$ ist damit auch $\text{Mipo}_{K_{1}}\left(\alpha_{2}\right)$
-separabel.
-
-Also gilt:
-\begin{align*}
-k & \stackrel{\text{endlich separabel}}{\subseteq}K_{1}\stackrel{\text{endlich separabel}}{\subseteq}K_{1}\left(\alpha_{2}\right)=K_{1}\left(k\left(\alpha_{2}\right)\right)=K_{1}\left(K_{2}\right)=K_{1}\cdot K_{2}
-\end{align*}
-
-
-Nach der Gradformel und Transitivität der Separabilität (vergleiche
-\ref{asdf}6???).
-
-
 \subsubsection*{Bemerkung}
 \begin{enumerate}
-\item $f_{1},f_{2}\in k\left[X\right]$ separable $\not\Rightarrow$ $f_{1}\cdot f_{2}\in k\left[X\right]$
+\item $f_{1},f_{2}\in k\left[X\right]$ separabel $\not\Rightarrow$ $f_{1}\cdot f_{2}\in k\left[X\right]$
 separabel, zum Beispiel $f_{1}=f_{2}=X$.
-\item $k\subseteq K_{1},K_{2}\subseteq E$ Zwischenkörper mit $\modulo{K_{i}}{k}$
-endlich und separabel. Damit folgt $\modulo{K_{1}\cdot K_{2}}{k}$
-endlich und separabel.
+\item Sind $k\subseteq K_{1}\subseteq E$ und $k\subseteq K_{2}\subseteq E$
+Zwischenkörper und $\modulo{K_{i}}{k}$ endlich und separabel für
+$i\in\left\{ 1,2\right\} $.\\
+Dann ist $\modulo{K_{1}\cdot K_{2}}{k}$ endlich und separabel.
 \end{enumerate}
 
 \section{Proposition\label{sec:Prop-sigmaInGalKommutiertNSt}}
@@ -5838,7 +6128,7 @@ mit $\sigma\left(\alpha\right)=\beta$.
 
 Aus $\alpha\in\mathcal{N}$ und $\sigma\in G$ folgt:
 \begin{align*}
-0 & =\sigma(\underbrace{f\left(\alpha\right)}_{=0})=f^{\sigma}\left(\sigma\left(t\alpha\right)\right)\stackrel{f=f^{\sigma},\text{ da }f\in k\left[X\right]}{=}f\left(\sigma\left(\alpha\right)\right)
+0 & =\sigma(\underbrace{f\left(\alpha\right)}_{=0})=f^{\sigma}\left(\sigma\left(\alpha\right)\right)\stackrel{f=f^{\sigma},\text{ da }f\in k\left[X\right]}{=}f\left(\sigma\left(\alpha\right)\right)
 \end{align*}
 Damit folgt $\sigma\left(\alpha\right)\in\mathcal{N}$, das heißt
 für alle $\sigma\in G$ ist $\sigma\left(\mathcal{N}\right)\subseteq\mathcal{N}$.
@@ -5846,8 +6136,10 @@ für alle $\sigma\in G$ ist $\sigma\left(\mathcal{N}\right)\subseteq\mathcal{N}$.
 i) $\Rightarrow$ ii):
 
 Ist $\overline{k}\supseteq E$ ein algebraischer Abschluss, so existiert
-$\tilde{\sigma}:\overline{k}\to\overline{k}$ mit $\tilde{\sigma}\left(\alpha\right)=\beta$.
+ein $\tilde{\sigma}:\overline{k}\to\overline{k}$ mit $\tilde{\sigma}\left(\alpha\right)=\beta$.
 (Blatt 8, A3,d) $\Rightarrow$ a))
+
+\textcolor{green}{TODO: Beweis einfügen}
 
 Weil $\modulo{E}{k}$ normal ist, ist $\sigma:=\tilde{\sigma}|_{E}\in G$
 und es gilt $\sigma\left(\alpha\right)=\tilde{\sigma}\left(\alpha\right)=\beta$.
@@ -5855,11 +6147,11 @@ und es gilt $\sigma\left(\alpha\right)=\tilde{\sigma}\left(\alpha\right)=\beta$.
 ii) $\Rightarrow$ i):
 
 Für $g:=\text{Mipo}_{k}\left(\alpha\right)$ gelten $g|f$ in $k\left[X\right]$
-und:
+und für alle $\beta\in\mathcal{N}$ gibt es ein $\sigma\in G$ mit:
 \begin{align*}
-\fall_{\beta\in\mathcal{N}}\exs_{\sigma\in G}:\sigma\left(\alpha\right)=\beta & \Rightarrow0=\sigma(\underbrace{g\left(\alpha\right)}_{=0})=g^{\sigma}\left(\sigma\left(\alpha\right)\right)=g\left(\beta\right)
+\sigma\left(\alpha\right) & =\beta & \Rightarrow\qquad0 & =\sigma(\underbrace{g\left(\alpha\right)}_{=0})=g^{\sigma}\left(\sigma\left(\alpha\right)\right)=g\left(\beta\right)
 \end{align*}
-Also:
+Also gilt:
 \begin{align}
 g|_{\mathcal{N}} & =0\label{eq:gN0}
 \end{align}
@@ -5896,22 +6188,33 @@ E & =\mathbb{Q}\left(\beta\right)\\
 
 \subsubsection*{Beweis}
 
-Mit $k:=\mathbb{Q}\subseteq K_{1}:=\mathbb{Q}\left(\alpha_{1}\right),K_{2}:=\mathbb{Q}\left(\alpha_{2}\right)\subseteq E=K_{1}\cdot K_{2}$
-ist klar, dass $\modulo{K_{i}}{k}$ galoissch vom Grad 2 ist, also
-folgt:
+Seien $k:=\mathbb{Q},K_{1}:=\mathbb{Q}\left(\alpha_{1}\right),K_{2}:=\mathbb{Q}\left(\alpha_{2}\right)$
+und $E=K_{1}\cdot K_{2}$.
+
+Mit $k\subseteq K_{1}\subseteq E$ und $k\subseteq K_{2}\subseteq E$
+ist klar, dass $\modulo{K_{i}}{k}$ für $i\in\left\{ 1,2\right\} $
+galoissch vom Grad 2 ist, also folgt:
 \begin{align*}
 \text{Gal}\left(\modulo{K_{i}}{k}\right) & \stackrel{\sim}{=}\modlo{Z}{2}
 \end{align*}
-Man kann zeigen, dass $K_{1}\cap K_{2}=k$ gilt (Übung), und nach
-\ref{sec:Satz-Kompositum} ii) ist
+Man kann zeigen, dass $K_{1}\cap K_{2}=k$ gilt (Übung).
+
+\textcolor{green}{TODO: Beweis einfügen}
+
+Nach \ref{sec:Satz-Kompositum} ii) ist
 \begin{align*}
 \varphi:\text{Gal}\left(\modulo{E}{k}\right) & \stackrel{\sim}{\to}\text{Gal}\left(\modulo{K_{1}}{k}\right)\times\text{Gal}\left(\modulo{K_{2}}{k}\right)\stackrel{\sim}{=}\modlo{Z}{2}\times\modlo{Z}{2}\\
 \varphi\left(\sigma\right) & :=\left(\sigma|_{K_{1}},\sigma|_{K_{2}}\right)
 \end{align*}
 ein Isomorphismus.
 
-Für $i=1,2$ gilt $\text{Gal}\left(\modulo{K_{i}}{k}\right)=\left\{ 1,\tau_{i}\right\} $,
-wobei $\tau_{i}:K_{i}\stackrel{\sim}{\to}K_{i}$ durch $\tau_{i}\left(\alpha_{i}\right)=-\alpha_{i}$
+Für $i\in\left\{ 1,2\right\} $ gilt:
+\begin{align*}
+\text{Gal}\left(\modulo{K_{i}}{k}\right) & =\left\{ 1,\tau_{i}\right\} 
+\end{align*}
+
+
+Dabei $\tau_{i}:K_{i}\stackrel{\sim}{\to}K_{i}$ durch $\tau_{i}\left(\alpha_{i}\right)=-\alpha_{i}$
 eindeutig bestimmt ist.
 
 Nach Definition von $\varphi$ folgt:
@@ -5958,10 +6261,12 @@ $f$ normiert ist, gilt $f=\text{Mipo}_{k}\left(\beta\right)$.
 %DATE Di 20.12.2011
 
 
-\chapter{Bestimmung einiger Galoisgruppen}
+\chapter{Bestimmung einiger Galoisgruppen\label{chap:Bestimmung-einiger-Galoisgruppen}}
+
+\textcolor{green}{TODO: Rest überarbeiten}
 
 
-\subsubsection*{Fixiere}
+\subsubsection*{Fixiere in Kapitel \ref{chap:Bestimmung-einiger-Galoisgruppen} (\nameref{chap:Bestimmung-einiger-Galoisgruppen})}
 
 Sei $k$ ein Körper.
 

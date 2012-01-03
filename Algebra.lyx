@@ -341,6 +341,20 @@ TODO: Beweise überarbeiten („klar“ erklären...)
 TODO: DATEs einfügen
 \end_layout
 
+\begin_layout Plain Layout
+TODO: Voraussetzungen aus Linearer Algebra und Analysis präzisieren (z.
+ B.
+ 
+\emph on
+Untergruppen-Diagramm
+\emph default
+ der 
+\begin_inset Formula $S_{3}$
+\end_inset
+
+).
+\end_layout
+
 \end_inset
 
 
@@ -19570,7 +19584,7 @@ iii
 \begin_inset Formula $k\subseteq E\subseteq\overline{k}$
 \end_inset
 
-!)
+ (!))
 \end_layout
 
 \begin_layout Standard
@@ -21819,6 +21833,13 @@ end{iiilist}
 Definition 
 \series medium
 (vollkommener Körper)
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Def-vollkommenK"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -25795,14 +25816,15 @@ qqed
 
 \end_layout
 
-\begin_layout Standard
-
-\color green
-TODO: Rest überarbeiten
-\end_layout
-
 \begin_layout Section
 Proposition
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Prop-AutAnzahlGleichSepGrad"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -26112,16 +26134,1077 @@ end{iiilist}
 
 \end_layout
 
+\begin_layout Subsubsection*
+Beweis
+\end_layout
+
+\begin_layout Standard
+i) ist klar.
+\end_layout
+
+\begin_layout Standard
+ii) und iii): Zeige zunächst, dass 
+\begin_inset Formula $\modulo{E}{k}$
+\end_inset
+
+ separabel ist:
+\end_layout
+
+\begin_layout Standard
+Sei 
+\begin_inset Formula $\alpha\in E$
+\end_inset
+
+ und 
+\begin_inset Formula $G\alpha:=\left\{ \sigma\left(\alpha\right)|\sigma\in G\right\} \subseteq E$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Dann gilt für alle 
+\begin_inset Formula $\sigma\in G$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+\text{Mipo}_{k}\left(\alpha\right)\left(\sigma\left(\alpha\right)\right) & =\underbrace{\left(\text{Mipo}_{k}\left(\alpha\right)\right)^{\sigma}}_{\in k\left[X\right]=E^{G}\left[X\right]}\left(\alpha\right)=\text{Mipo}_{k}\left(\alpha\right)\left(\alpha\right)=0
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Damit folgt 
+\begin_inset Formula $\left|G\alpha\right|\le\deg\left(\text{Mipo}_{k}\left(\alpha\right)\right)<\infty$
+\end_inset
+
+ und
+\begin_inset Formula 
+\begin{align*}
+f\left(X\right) & :=\prod_{\beta\in G\alpha}\left(X-\beta\right)\in E\left[X\right]
+\end{align*}
+
+\end_inset
+
+ist ein separables Polynom mit 
+\begin_inset Formula $f\left(\alpha\right)=0$
+\end_inset
+
+, da 
+\begin_inset Formula $\alpha\in G\alpha$
+\end_inset
+
+ ist.
+\end_layout
+
+\begin_layout Standard
+Zeige noch, dass 
+\begin_inset Formula $f\in k\left[X\right]$
+\end_inset
+
+ ist, denn dann ist 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ separabel über 
+\begin_inset Formula $k$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+Weil die Abbildung
+\begin_inset Formula 
+\begin{align*}
+\sigma:G\alpha & \to G\alpha\\
+\beta & \mapsto\sigma\left(\beta\right)
+\end{align*}
+
+\end_inset
+
+bijektiv mit der Umkehrabbildung 
+\begin_inset Formula $\sigma^{-1}$
+\end_inset
+
+ ist, gilt für alle 
+\begin_inset Formula $\sigma\in G$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+f^{\sigma}\left(X\right) & =\prod_{\beta\in G\alpha}\left(X-\sigma\left(\beta\right)\right)=\prod_{\beta\in G\alpha}\left(X-\beta\right)=f\left(X\right)
+\end{align*}
+
+\end_inset
+
+Daher hat 
+\begin_inset Formula $f\in E\left[X\right]$
+\end_inset
+
+ Koeffizienten in 
+\begin_inset Formula $E^{G}=k$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed[separabel]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Zeige nun, dass 
+\begin_inset Formula $\modulo{E}{k}$
+\end_inset
+
+ normal ist:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\modulo{E}{k}$
+\end_inset
+
+ ist ein Zerfällungskörper aller obigen Polynome 
+\begin_inset Formula $f\in k\left[X\right]$
+\end_inset
+
+ (für 
+\begin_inset Formula $\alpha\in E$
+\end_inset
+
+ variabel).
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed[normal]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Insgesamt ist also 
+\begin_inset Formula $\modulo{E}{k}$
+\end_inset
+
+ galoissch.
+\end_layout
+
+\begin_layout Standard
+Es ist klar, dass
+\begin_inset Formula 
+\begin{align*}
+G & \subseteq\text{Gal}\left(\modulo{E}{k}\right)
+\end{align*}
+
+\end_inset
+
+eine Untergruppe ist.
+\end_layout
+
+\begin_layout Standard
+Sei nun 
+\begin_inset Formula $n:=\left|G\right|<\infty$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Dann folgt aus
+\begin_inset Formula 
+\begin{align*}
+\deg\left(f\right) & =\left|G\alpha\right|\le\left|G\right|=n
+\end{align*}
+
+\end_inset
+
+für alle 
+\begin_inset Formula $\alpha\in E$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+\left[k\left(\alpha\right):k\right] & \le n
+\end{align*}
+
+\end_inset
+
+Wegen 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:SuD-primitel"
+
+\end_inset
+
+ angewendet auf die endlichen Zwischenkörper von 
+\begin_inset Formula $\modulo{E}{k}$
+\end_inset
+
+ folgt damit:
+\begin_inset Formula 
+\begin{align*}
+\left[E:k\right] & \le n
+\end{align*}
+
+\end_inset
+
+Insgesamt ergibt sich:
+\begin_inset Formula 
+\begin{align*}
+n & =\left|G\right|\le\left|\text{Gal}\left(\modulo{E}{k}\right)\right|\stackrel{\ref{sec:Prop-AutAnzahlGleichSepGrad}}{\le}\left[E:k\right]\le n
+\end{align*}
+
+\end_inset
+
+Es folgt:
+\begin_inset Formula 
+\begin{align*}
+\left|G\right| & =\left|\text{Gal}\left(\modulo{E}{k}\right)\right|
+\end{align*}
+
+\end_inset
+
+Wegen 
+\begin_inset Formula ${\displaystyle G\subseteq\text{Gal}\left(\modulo{E}{k}\right)}$
+\end_inset
+
+ folgt schon:
+\begin_inset Formula 
+\begin{align*}
+G & =\text{Gal}\left(\modulo{E}{k}\right)
+\end{align*}
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Beispiel
 \end_layout
 
-\begin_layout Section
-Korollar
+\begin_layout Standard
+Seien 
+\begin_inset Formula $p$
+\end_inset
+
+ eine Primzahl, 
+\begin_inset Formula $E=\overline{\mathbb{F}}_{p}$
+\end_inset
+
+, 
+\begin_inset Formula $\sigma:=\text{Frob}_{\overline{\mathbb{F}}_{p}}$
+\end_inset
+
+ und 
+\begin_inset Formula $G:=\left\langle \text{Frob}_{\overline{\mathbb{F}}_{p}}\right\rangle \subseteq\text{Aut}\left(E\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Dann gilt:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $G\stackrel{\sim}{=}\mathbb{Z}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $k:=E^{G}=\mathbb{F}_{p}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $G\subsetneq\text{Gal}\left(\modulo{E}{k}\right)$
+\end_inset
+
+ ist eine echte Untergruppe (vergleiche 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:SuD-Fixkörper"
+
+\end_inset
+
+ ii)).
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Beweis
+\end_layout
+
+\begin_layout Standard
+Übung
+\end_layout
+
+\begin_layout Standard
+
+\color green
+TODO: Beweis einfügen
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
-Bemerkung und Beispiel
+Korollar
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Kor-GalE_EGistG"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Seien 
+\begin_inset Formula $E\supseteq k$
+\end_inset
+
+ eine normale Körpererweiterung und 
+\begin_inset Formula $G:=\text{Aut}_{k}\left(E\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Dann gelten:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $\modulo{E}{E^{G}}$
+\end_inset
+
+ ist galoissch mit 
+\begin_inset Formula $\text{Gal}\left(\modulo{E}{E^{G}}\right)=G$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Ist 
+\begin_inset Formula $\modulo{E}{k}$
+\end_inset
+
+ galoissch, so gilt 
+\begin_inset Formula $E^{G}=k$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Beweis
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Nach 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:SuD-Fixkörper"
+
+\end_inset
+
+ ist 
+\begin_inset Formula $\modulo{E}{E^{G}}$
+\end_inset
+
+ galoissch und es gilt:
+\begin_inset Formula 
+\begin{align*}
+\text{Gal}\left(\modulo{E}{E^{G}}\right) & =\text{Aut}_{E^{G}}\left(E\right)\stackrel{*}{=}\text{Aut}\left(\modulo{E}{k}\right)=G
+\end{align*}
+
+\end_inset
+
+Zeige 
+\begin_inset Formula $*$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+„
+\begin_inset Formula $\subseteq$
+\end_inset
+
+“ ist klar wegen 
+\begin_inset Formula $k\subseteq E^{G}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+„
+\begin_inset Formula $\supseteq$
+\end_inset
+
+“: Für 
+\begin_inset Formula $\sigma\in\text{Aut}_{k}\left(E\right)=G$
+\end_inset
+
+ gilt:
+\begin_inset Formula 
+\begin{align*}
+\sigma|_{E^{G}} & =\text{id}_{E^{G}}
+\end{align*}
+
+\end_inset
+
+Damit folgt 
+\begin_inset Formula $\sigma\in\text{Aut}_{E^{G}}\left(E\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed[
+\backslash
+roman{ale2})]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Klar sind 
+\begin_inset Formula $k\subseteq E^{G}\subseteq E$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Description
+Behauptung 
+\begin_inset Formula 
+\begin{align*}
+\left[E^{G}:k\right]_{S} & =1
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+Beweis 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hspace*{1mm}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Seien 
+\begin_inset Formula $\sigma\in E^{G}\hookrightarrow\overline{k}$
+\end_inset
+
+ eine 
+\begin_inset Formula $k$
+\end_inset
+
+-Homomorphismus und 
+\begin_inset Formula $\overline{\sigma}:\overline{k}\to\overline{k}$
+\end_inset
+
+ eine Fortsetzung von 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ (vergleiche 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:SuD-Fortsetzung"
+
+\end_inset
+
+).
+\begin_inset Newline newline
+\end_inset
+
+Nach 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:SuD-normKE"
+
+\end_inset
+
+ i) gilt, weil 
+\begin_inset Formula $\modulo{E}{k}$
+\end_inset
+
+ normal ist:
+\begin_inset Formula 
+\begin{align*}
+\tau & :=\left(\overline{\sigma}|_{E}:E\to E\right)\in\text{Aut}_{k}\left(E\right)=G
+\end{align*}
+
+\end_inset
+
+Damit folgt:
+\begin_inset Formula 
+\begin{align*}
+\sigma & =\tau|_{E^{G}}\stackrel{\tau\in G}{=}\text{id}_{E^{G}}
+\end{align*}
+
+\end_inset
+
+Es folgt:
+\begin_inset Formula 
+\begin{align*}
+1 & =\left|\text{Hom}_{k\text{-Alg.}}\left(E^{G},\overline{k}\right)\right|=\left[E^{G}:k\right]_{S}
+\end{align*}
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed[Behauptung]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Weil nach Voraussetzung 
+\begin_inset Formula $\modulo{E}{k}$
+\end_inset
+
+ galoissch, also insbesondere separabel ist, ist auch 
+\begin_inset Formula $\modulo{E^{G}}{k}$
+\end_inset
+
+ separabel nach 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Kor-sepTransitiv"
+
+\end_inset
+
+ i) 
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+ ii), also gilt:
+\begin_inset Formula 
+\begin{align*}
+1 & =\left[E^{G}:k\right]_{S}\stackrel{\ref{sec:Satz-endlSepAequivSepEZS}\text{ i)}\Rightarrow\text{ii)}}{=}\left[E^{G}:k\right]
+\end{align*}
+
+\end_inset
+
+Also gilt 
+\begin_inset Formula $E^{G}=k$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Bemerkung und Beispiel 
+\series medium
+(absolute Galoisgruppe)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Aus 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Kor-GalE_EGistG"
+
+\end_inset
+
+ folgt insbesondere:
+\begin_inset Formula 
+\begin{align*}
+\modulo{E}{k}\text{ ist galoissch} & \Rightarrow E^{\text{Gal}\left(\moduloScript{E}{k}\right)}=k
+\end{align*}
+
+\end_inset
+
+Das heißt für alle 
+\begin_inset Formula $\alpha\in E\setminus k$
+\end_inset
+
+ gibt es ein 
+\begin_inset Formula $\sigma\in\text{Gal}\left(\modulo{E}{k}\right)$
+\end_inset
+
+ mit 
+\begin_inset Formula $\sigma\left(\alpha\right)\not=\alpha=\text{id}\left(\alpha\right)$
+\end_inset
+
+, also separieren die Automorphismen von 
+\begin_inset Formula $\modulo{E}{k}$
+\end_inset
+
+ die Elemente 
+\begin_inset Formula $\alpha\in\modulo{E}{k}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Ist 
+\begin_inset Formula $k$
+\end_inset
+
+ ein vollkommener Körper, so ist 
+\begin_inset Formula $\overline{k}\supseteq k$
+\end_inset
+
+ galoissch (vergleiche 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:PuD-algAbges"
+
+\end_inset
+
+ und 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Def-vollkommenK"
+
+\end_inset
+
+) und
+\begin_inset Formula 
+\begin{align*}
+G_{k} & :=\text{Gal}\left(\modulo{\overline{k}}{k}\right)
+\end{align*}
+
+\end_inset
+
+heißt 
+\emph on
+die absolute Galoisgruppe von 
+\begin_inset Formula $k$
+\end_inset
+
+
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Seien 
+\begin_inset Formula $p\in\mathcal{P}$
+\end_inset
+
+ eine Primzahl und 
+\begin_inset Formula $k:=\mathbb{F}_{p}\left(t\right)\subseteq k\left(\alpha\right)$
+\end_inset
+
+ mit 
+\begin_inset Formula $\alpha p=t$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Dann ist 
+\begin_inset Formula $\modulo{E}{k}$
+\end_inset
+
+ nach 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Bsp-sep"
+
+\end_inset
+
+ normal und:
+\begin_inset Formula 
+\begin{align*}
+G & :=\text{Aut}_{k}\left(E\right)=\left\{ \text{id}\right\} 
+\end{align*}
+
+\end_inset
+
+Insbesondere ist also 
+\begin_inset Formula $E^{G}=E\supsetneq k$
+\end_inset
+
+ und:
+\begin_inset Formula 
+\begin{align*}
+\left[E:k\right] & =p\not=1
+\end{align*}
+
+\end_inset
+
+(vergleiche 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Kor-GalE_EGistG"
+
+\end_inset
+
+ ii))
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{iiilist}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -26156,7 +27239,7 @@ Seien
 \begin_inset Formula $E\supseteq k$
 \end_inset
 
- eine endliche galoissche Körpererweiterung und 
+ eine endliche, galoissche Körpererweiterung und 
 \begin_inset Formula $G:=\text{Gal}\left(\modulo{E}{k}\right)$
 \end_inset
 
@@ -26204,7 +27287,7 @@ iii
 
 \begin_inset Formula 
 \begin{align*}
-\phi\left(H\right) & :=E^{H} & \psi\left(K\right) & :=\text{Gal}\left(\modulo{E}{k}\right)\subseteq G
+\phi\left(H\right) & :=E^{H} & \psi\left(K\right) & :=\text{Gal}\left(\modulo{E}{K}\right)\subseteq G
 \end{align*}
 
 \end_inset
@@ -26400,34 +27483,26 @@ reference "sec:Prop-EKkgaloissch"
 \begin_inset Newline newline
 \end_inset
 
-Zeige: 
+Für den Zwischenkörper 
 \begin_inset Formula $k\subseteq K\subseteq E$
 \end_inset
 
- Zwischenkörper 
-\begin_inset Formula $\Rightarrow$
-\end_inset
-
- 
-\begin_inset Formula $K=\phi\left(\psi\left(K\right)\right)=E^{\text{Gal}\left(\modulo{E}{K}\right)}$
-\end_inset
-
-.
-\begin_inset Newline newline
-\end_inset
-
-Dies folgt aus 
+ folgt aus 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "asdf"
+reference "sec:Kor-GalE_EGistG"
 
 \end_inset
 
-10.7 ii) für die Körpererweiterung 
-\begin_inset Formula $E\subseteq K$
+ ii):
+\begin_inset Formula 
+\begin{align*}
+K & =\phi\left(\psi\left(K\right)\right)=E^{\text{Gal}\left(\moduloScript{E}{K}\right)}
+\end{align*}
+
 \end_inset
 
-.
+
 \end_layout
 
 \begin_layout Itemize
@@ -26438,34 +27513,30 @@ reference "asdf"
 \begin_inset Newline newline
 \end_inset
 
-Zeige: 
+Für die Untergruppe 
 \begin_inset Formula $H\subseteq G$
 \end_inset
 
- Untergruppe 
-\begin_inset Formula $\Rightarrow$
-\end_inset
-
- 
-\begin_inset Formula $\text{Gal}\left(\modulo{E}{E^{H}}\right)=H$
-\end_inset
-
- in 
-\begin_inset Formula $G$
-\end_inset
-
-.
-\begin_inset Newline newline
-\end_inset
-
-Dies gilt nach 
+ gilt nach 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:SuD-Fixkörper"
 
 \end_inset
 
- ii).
+ ii) in 
+\begin_inset Formula $G$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+\text{Gal}\left(\modulo{E}{E^{H}}\right)= & H
+\end{align*}
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -26501,14 +27572,14 @@ iii
 \begin_inset Formula $\Rightarrow$
 \end_inset
 
- a) und zweite Aussage: 
+ a) und zweite Aussage folgen aus 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:Prop-EKkgaloissch"
 
 \end_inset
 
- ii)
+ ii).
 \begin_inset Newline newline
 \end_inset
 
@@ -26519,11 +27590,11 @@ a)
  b): Wegen 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "asdf"
+reference "sec:Kor-sepTransitiv"
 
 \end_inset
 
-8.16 i) 
+ i) 
 \begin_inset Formula $\Rightarrow$
 \end_inset
 
@@ -26543,21 +27614,34 @@ Zeige also noch, dass
 \begin_inset Formula $\modulo{E^{H}}{k}$
 \end_inset
 
- normal ist.
-\end_layout
-
-\begin_layout Standard
-Dazu nach 
+ normal ist und dazu nach 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "asdf"
+reference "sec:SuD-normKE"
 
 \end_inset
 
-7.4 i):
+ i):
 \end_layout
 
-\begin_layout Standard
+\begin_layout Description
+Behauptung 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hspace*{1mm}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
 Für jeden 
 \begin_inset Formula $k$
 \end_inset
@@ -26573,11 +27657,24 @@ Für jeden
 .
 \end_layout
 
-\begin_layout Subsubsection*
-Beweis
+\begin_layout Description
+Beweis 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hspace*{1mm}
 \end_layout
 
-\begin_layout Standard
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
 Für eine Fortsetzung 
 \begin_inset Formula $\overline{\sigma}:E\hookrightarrow\overline{E}$
 \end_inset
@@ -26594,14 +27691,14 @@ Für eine Fortsetzung
 \begin_inset Formula $\overline{\sigma}\left(E\right)=E$
 \end_inset
 
-, also 
+, also ist 
 \begin_inset Formula $\overline{\sigma}\in\text{Aut}_{k}\left(E\right)=G$
 \end_inset
 
 .
-\end_layout
+\begin_inset Newline newline
+\end_inset
 
-\begin_layout Standard
 Seien nun 
 \begin_inset Formula $\alpha\in E^{H}$
 \end_inset
@@ -26635,7 +27732,11 @@ Also ist:
 \end_inset
 
 Weil 
-\begin_inset Formula $\alpha,\omega$
+\begin_inset Formula $\alpha$
+\end_inset
+
+ und 
+\begin_inset Formula $\omega$
 \end_inset
 
  beliebig sind, folgt 
@@ -26706,11 +27807,11 @@ Die normale Hülle
  ist endlich (nach 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "asdf"
+reference "sec:SuD-Konj"
 
 \end_inset
 
-7.10 ii)), normal und separabel, also galoissch mit
+ ii)), normal und separabel, also galoissch, und
 \begin_inset Formula 
 \begin{align*}
 G & :=\text{Gal}\left(\modulo{E'}{k}\right)
@@ -26718,7 +27819,7 @@ G & :=\text{Gal}\left(\modulo{E'}{k}\right)
 
 \end_inset
 
-endlich, genauer 
+ist endlich, genauer 
 \begin_inset Formula $\left|G\right|=\left[E':k\right]<\infty$
 \end_inset
 
@@ -26729,18 +27830,18 @@ endlich, genauer
 \begin_inset Formula $G$
 \end_inset
 
- besitzt nur endlich viele Untergruppen, also besitzt nach 
+ besitzt nur endlich viele Untergruppen, also besitzt 
+\begin_inset Formula $\modulo{E'}{k}$
+\end_inset
+
+ nach 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:Satz-HSGaloistheorie"
 
 \end_inset
 
- i) 
-\begin_inset Formula $\modulo{E'}{k}$
-\end_inset
-
- nur endlich viele Zwischenkörper.
+ i) nur endlich viele Zwischenkörper.
 \end_layout
 
 \begin_layout Standard
@@ -26781,11 +27882,11 @@ qqed[1.
 Nach 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "asdf"
+reference "sec:SuD-primitel"
 
 \end_inset
 
-8.17 existiert ein 
+ existiert ein 
 \begin_inset Formula $\alpha\in E$
 \end_inset
 
@@ -26798,6 +27899,12 @@ reference "asdf"
 
 \begin_layout Standard
 Dann folgt die Aussage aus Blatt 6, Aufgabe 4.
+\end_layout
+
+\begin_layout Standard
+
+\color green
+TODO: Beweis einfügen
 \end_layout
 
 \begin_layout Standard
@@ -26817,7 +27924,9 @@ qqed
 \end_layout
 
 \begin_layout Section
-Definition und Bemerkung
+Definition und Bemerkung 
+\series medium
+(Kompositum)
 \end_layout
 
 \begin_layout Standard
@@ -26869,7 +27978,11 @@ das Kompositum von
 \end_layout
 
 \begin_layout Section
-Satz
+Satz und Definition 
+\series medium
+(Galoiserweiterung)
+\series default
+
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Satz-UG-KE-Entsprechung"
@@ -26884,9 +27997,16 @@ Seien
 \begin_inset Formula $E\supseteq k$
 \end_inset
 
- eine endliche Galoiserweiterung (das ist definiert als endliche Körpererweiteru
-ng, die galoissch ist), 
-\begin_inset Formula $k\subseteq K_{1},K_{2}\subseteq E$
+ eine endliche 
+\emph on
+Galoiserweiterung
+\emph default
+ (das heißt eine endliche Körpererweiterung, die galoissch ist), 
+\begin_inset Formula $k\subseteq K_{1}\subseteq E$
+\end_inset
+
+ und 
+\begin_inset Formula $k\subseteq K_{2}\subseteq E$
 \end_inset
 
  Zwischenkörper und
@@ -27013,6 +28133,8 @@ Bildchen
 \end_layout
 
 \begin_layout Standard
+
+\color green
 TODO: Abb1
 \end_layout
 
@@ -27025,7 +28147,7 @@ Ist
 \begin_inset Formula $\modulo{E}{k}$
 \end_inset
 
- endlich separabel und 
+ endlich und separabel und 
 \begin_inset Formula $\modulo{E'}{k}$
 \end_inset
 
@@ -27037,7 +28159,7 @@ Ist
 \begin_inset Formula $\modulo{E'}{k}$
 \end_inset
 
- endlich separabel (und normal).
+ endlich, separabel und normal.
 \end_layout
 
 \begin_layout Subsubsection*
@@ -27048,34 +28170,46 @@ Beweis
 Aus 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "asdf"
+reference "sec:SuD-primitel"
 
 \end_inset
 
-8.17 ergibt sich:
+ gibt es ein 
+\begin_inset Formula $\alpha\in E$
+\end_inset
+
+ mit:
 \begin_inset Formula 
 \begin{align*}
-\exs_{\alpha\in E} & E=k\left(\alpha\right)
+E & =k\left(\alpha\right)
 \end{align*}
 
 \end_inset
 
-Wähle 
-\begin_inset Formula $E\hookrightarrow\overline{E}=\overline{k}$
+Wähle einen algebraischen Abschluss 
+\begin_inset Formula $\overline{k}$
 \end_inset
 
-.
+:
+\begin_inset Formula 
+\begin{align*}
+E & \hookrightarrow\overline{E}=\overline{k}
+\end{align*}
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 Nach 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "asdf"
+reference "sec:SuD-Konj"
 
 \end_inset
 
-7.10 folgt:
+ folgt:
 \begin_inset Formula 
 \begin{align*}
 E' & =k\left(\sigma\left(\alpha\right)|\sigma\in\text{Hom}_{k\text{-Alg.}}\left(E,\overline{E}\right)\right)
@@ -27091,35 +28225,45 @@ Aus
 
 \end_inset
 
-folgt:
+folgt nach 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:SuD-Konj"
+
+\end_inset
+
+ ii):
 \begin_inset Formula 
 \begin{align*}
-\left[E':k'\right] & <\infty\ref{asdf}??
+\left[E':k\right] & <\infty
 \end{align*}
 
 \end_inset
 
 Für alle 
-\begin_inset Formula $\sigma$
+\begin_inset Formula $\sigma\in\text{Hom}_{k\text{-Alg.}}\left(E,\overline{E}\right)$
 \end_inset
 
- gilt 
-\begin_inset Formula $\text{Mipo}_{k}\left(\sigma\left(\alpha\right)\right)\stackrel{\left(!\right)}{=}\text{Mipo}_{k}\left(\alpha\right)\in k\left[X\right]$
+ ist
+\begin_inset Formula 
+\begin{align*}
+\text{Mipo}_{k}\left(\sigma\left(\alpha\right)\right) & \stackrel{\left(!\right)}{=}\text{Mipo}_{k}\left(\alpha\right)\in k\left[X\right]
+\end{align*}
+
 \end_inset
 
- ist separabel, also ist 
+separabel, also ist 
 \begin_inset Formula $\modulo{E'}{k}$
 \end_inset
 
- separabel.
- (nach 
+ nach 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "asdf"
+reference "sec:Satz-endlSepAequivSepEZS"
 
 \end_inset
 
-??)
+ separabel.
 \end_layout
 
 \begin_layout Subsubsection*
@@ -27179,7 +28323,7 @@ iii
 \end_inset
 
 “: 
-\begin_inset Formula $K_{1}\stackrel{\ref{asdf}10.9\, i)}{=}E^{H_{1}}\stackrel{H_{2}\subseteq H_{1}}{\subseteq}E^{H_{2}}\stackrel{\ref{asdf}10.9\, i)}{=}K_{2}$
+\begin_inset Formula $K_{1}\stackrel{\ref{sec:Satz-HSGaloistheorie}\,\text{i)}}{=}E^{H_{1}}\stackrel{H_{2}\subseteq H_{1}}{\subseteq}E^{H_{2}}\stackrel{\ref{sec:Satz-HSGaloistheorie}\,\text{i)}}{=}K_{2}$
 \end_inset
 
 
@@ -27232,7 +28376,7 @@ Ferner gilt:
 
 \end_inset
 
-Damit folgt mit i):
+Daraus folgt mit i):
 \begin_inset Formula 
 \begin{align*}
 E^{H_{1}\cap H_{2}} & \subseteq K_{1}\cdot K_{2}
@@ -27348,15 +28492,25 @@ Nach Blatt 7, Aufgabe 2 ist die Galoisgruppe von
 \end_layout
 
 \begin_layout Standard
-Genauer: 
-\begin_inset Formula $\alpha\in\mathbb{C}:\alpha^{3}=2$
+
+\color green
+TODO: Beweis einfügen
+\end_layout
+
+\begin_layout Standard
+Genauer: Seien 
+\begin_inset Formula $\alpha\in\mathbb{C}$
+\end_inset
+
+ mit 
+\begin_inset Formula $\alpha^{3}=2$
 \end_inset
 
  und 
-\begin_inset Formula $\zeta:=\exp\left(\frac{2\pi\ii}{3}\right)\in\mathbb{C}$
+\begin_inset Formula ${\displaystyle \zeta:=\exp\left(\frac{2\pi\ii}{3}\right)\in\mathbb{C}}$
 \end_inset
 
-
+.
 \end_layout
 
 \begin_layout Standard
@@ -27377,7 +28531,7 @@ Dann ist
 
 \end_inset
 
-ist wohldefiniert und ein Gruppehnisomorphismus.
+ist wohldefiniert und ein Gruppenisomorphismus.
 \end_layout
 
 \begin_layout Standard
@@ -27393,7 +28547,9 @@ Untergruppen-Diagramm
 \end_layout
 
 \begin_layout Standard
-TODO: abb2
+
+\color green
+TODO: Abb2 einfügen
 \end_layout
 
 \begin_layout Standard
@@ -27417,20 +28573,31 @@ Die
 \end_layout
 
 \begin_layout Standard
+
+\color green
+TODO: Beweis einfügen
+\end_layout
+
+\begin_layout Standard
 Außerdem können der Durchschnitt und die Erzeugerrelation abgelesen werden,
- zum Beispiel 
-\begin_inset Formula $\left\langle A_{3},H_{i}\right\rangle =S_{3}$
+ zum Beispiel
+\begin_inset Formula 
+\begin{align*}
+\left\langle A_{3},H_{i}\right\rangle  & =S_{3}\\
+H_{i}\cap A_{3} & =\left\{ e\right\} 
+\end{align*}
+
 \end_inset
 
- und 
-\begin_inset Formula $H_{i}\cap A_{3}=\left\{ e\right\} $
-\end_inset
-
- für alle 
+für alle 
 \begin_inset Formula $0\le i\le2$
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Standard
+Außerdem gilt:
 \begin_inset Formula 
 \begin{align*}
 E & =E^{\left\{ e\right\} }=\mathbb{Q}\left(\alpha,\zeta\right)
@@ -27456,10 +28623,12 @@ reference "sec:Satz-UG-KE-Entsprechung"
 
 \end_inset
 
- folgt daraus folgendes Diagramm von Zwischenkörpern.
+ folgt daraus folgendes Diagramm von Zwischenkörpern:
 \end_layout
 
 \begin_layout Standard
+
+\color green
 TODO: Abb 4
 \end_layout
 
@@ -27482,11 +28651,11 @@ Weil
  nicht normal (vergleiche 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "asdf"
+reference "sec:Bsp-ZK"
 
 \end_inset
 
-7.2).
+).
 \end_layout
 
 \begin_layout Standard
@@ -27494,18 +28663,22 @@ Weil
 \begin_inset Formula $A_{3}\unlhd S_{3}$
 \end_inset
 
- ist 
-\begin_inset Formula $\modulo{\mathbb{Q}\left(3\right)}{\mathbb{Q}}$
+ ist, ist 
+\begin_inset Formula $\modulo{\mathbb{Q}\left(\zeta\right)}{\mathbb{Q}}$
 \end_inset
 
  galoissch mit:
 \begin_inset Formula 
 \begin{align*}
-\text{Gal}\left(\modulo{\mathbb{Q}\left(3\right)}{\mathbb{Q}}\right) & \stackrel{\sim}{=}\modulo{S_{3}}{A_{3}}\stackrel{\sim}{=}\modlo{Z}{2}
+\text{Gal}\left(\modulo{\mathbb{Q}\left(\zeta\right)}{\mathbb{Q}}\right) & \stackrel{\sim}{=}\modulo{S_{3}}{A_{3}}\stackrel{\sim}{=}\modlo{Z}{2}
 \end{align*}
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Standard
 Zur Bestimmung der Fixkörper:
 \end_layout
 
@@ -27538,11 +28711,15 @@ Wegen
 \begin_inset Formula $\left[\mathbb{Q}\left(\zeta\right):\mathbb{Q}\right]=2$
 \end_inset
 
-, da das 
-\begin_inset Formula $\text{Mipo}_{\mathbb{Q}}\left(\zeta\right)=X^{2}+X+1$
+, da das Minimalpolynom
+\begin_inset Formula 
+\begin{align*}
+\text{Mipo}_{\mathbb{Q}}\left(\zeta\right) & =X^{2}+X+1
+\end{align*}
+
 \end_inset
 
- ist, also folgt 
+ Grad 2 hat, folgt also 
 \begin_inset Formula $E^{A_{3}}=\mathbb{Q}\left(\zeta\right)$
 \end_inset
 
@@ -27566,20 +28743,24 @@ Für
 \begin_inset Formula $\text{id}\not=\tau_{i}\in H_{i}$
 \end_inset
 
- (
+ mit 
 \begin_inset Formula $0\le i\le2$
 \end_inset
 
-) gilt 
-\begin_inset Formula $\tau_{i}\left(\alpha\zeta^{i}\right)=\alpha\zeta^{i}$
+ gilt:
+\begin_inset Formula 
+\begin{align*}
+\tau_{i}\left(\alpha\zeta^{i}\right) & =\alpha\zeta^{i}
+\end{align*}
+
 \end_inset
 
-, also 
-\begin_inset Formula $\alpha\zeta^{i}\in E^{H_{i}}$
-\end_inset
+ Also gilt:
+\begin_inset Formula 
+\begin{align*}
+\alpha\zeta^{i} & \in E^{H_{i}}
+\end{align*}
 
-.
-\begin_inset Newline newline
 \end_inset
 
 Wegen 
@@ -27587,22 +28768,30 @@ Wegen
 \end_inset
 
 , da 
-\begin_inset Formula $\text{Mipo}_{\mathbb{Q}}\left(\alpha\zeta^{i}\right)=X^{3}-2$
+\begin_inset Formula 
+\begin{align*}
+\text{Mipo}_{\mathbb{Q}}\left(\alpha\zeta^{i}\right) & =X^{3}-2
+\end{align*}
+
 \end_inset
 
-, und 
-\begin_inset Formula $\left[E^{H_{i}}:\mathbb{Q}\right]=\left[E^{H_{i}}:E^{S_{3}}\right]=\left[S_{3}:H_{i}\right]=3$
+Grad 3 hat, und 
+\begin_inset Formula 
+\begin{align*}
+\left[E^{H_{i}}:\mathbb{Q}\right] & =\left[E^{H_{i}}:E^{S_{3}}\right]=\left[S_{3}:H_{i}\right]=3
+\end{align*}
+
 \end_inset
 
- folgt 
+folgt 
 \begin_inset Formula $E^{H_{i}}=\mathbb{Q}\left(\alpha\zeta^{i}\right)$
 \end_inset
 
- (
+ für 
 \begin_inset Formula $0\le i\le2$
 \end_inset
 
-).
+.
 \end_layout
 
 \begin_layout Subsubsection*
@@ -27614,19 +28803,15 @@ Seien
 \begin_inset Formula $E\supseteq k$
 \end_inset
 
- endlich und galoissch, 
+ eine endliche und galoissche Körpererweiterung, 
 \begin_inset Formula $G:=\text{Gal}\left(\modulo{E}{k}\right)$
 \end_inset
 
-, 
+ und 
 \begin_inset Formula $H\subseteq G$
 \end_inset
 
- eine Untergruppe und 
-\begin_inset Formula $K:=E^{H}$
-\end_inset
-
-.
+ eine Untergruppe.
 \end_layout
 
 \begin_layout Standard
@@ -27710,7 +28895,11 @@ Beweis
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $\text{Gal}\left(\modulo{E}{k}\right)=H$
+\begin_inset Formula 
+\begin{align*}
+\text{Gal}\left(\modulo{E}{E^{H}}\right)= & H
+\end{align*}
+
 \end_inset
 
 
@@ -27731,7 +28920,7 @@ reference "sec:Prop-EKkgaloissch"
 Dann gilt:
 \begin_inset Formula 
 \begin{align*}
-\left[E:k\right] & =\left[G:H\right]\cdot\left|H\right|\stackrel{\text{a)}}{=}\left[G:H\right]\cdot\left[E:E^{H}\right]
+\left[E:E^{H}\right]\cdot\left[E^{H}:k\right]=\left[E:k\right] & =\left[G:H\right]\cdot\left|H\right|\stackrel{\text{a)}}{=}\left[G:H\right]\cdot\left[E:E^{H}\right]
 \end{align*}
 
 \end_inset
@@ -27845,7 +29034,7 @@ reference "sec:Satz-HSGaloistheorie"
 \begin_inset Formula $\text{Gal}\left(\modulo{K}{k}\right)\stackrel{\sim}{=}\modulo{G}{H}$
 \end_inset
 
- endlich zyklisch (beziehungsweise zyklisch nach 
+ endlich und abelsch (beziehungsweise zyklisch nach 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:Satz-UG-kerImZyklG"
@@ -27887,19 +29076,23 @@ Seien
 \begin_inset Formula $E\supseteq k$
 \end_inset
 
- eine Körpererweiterung und 
-\begin_inset Formula $k\subseteq K_{1},K_{2}\subseteq E$
+ eine Körpererweiterung, 
+\begin_inset Formula $k\subseteq K_{1}\subseteq E$
 \end_inset
 
- Zwischenkörper mit 
+ und 
+\begin_inset Formula $k\subseteq K_{2}\subseteq E$
+\end_inset
+
+ Zwischenkörper und 
 \begin_inset Formula $\modulo{K_{i}}{k}$
 \end_inset
 
- endlich galoissch (
-\begin_inset Formula $i=1,2$
+ endlich und galoissch für 
+\begin_inset Formula $i\in\left\{ 1,2\right\} $
 \end_inset
 
-).
+.
 \end_layout
 
 \begin_layout Standard
@@ -27939,10 +29132,10 @@ iii
 \begin_inset Formula $K_{1}\cdot K_{2}$
 \end_inset
 
- ist endlich galoissch und die Abbildung
+ ist endlich und galoissch und die Abbildung
 \begin_inset Formula 
 \begin{align*}
-\varphi:\text{Gal}\left(\modulo{K_{1}\cdot K_{2}}{K_{1}}\right) & \stackrel{\sim}{\to}\text{Gal}\left(\modulo{K_{1}\cap K_{2}}{k}\right)\\
+\varphi:\text{Gal}\left(\modulo{K_{1}\cdot K_{2}}{K_{1}}\right) & \stackrel{\sim}{\to}\text{Gal}\left(\modulo{K_{2}}{K_{1}\cap K_{2}}\right)\\
 \sigma & \mapsto\sigma|_{K_{2}}
 \end{align*}
 
@@ -28037,23 +29230,27 @@ iii
 
 \end_inset
 
- Es existiert separable 
+ Es existieren separable 
 \begin_inset Formula $f_{i}\in k\left[X\right]$
 \end_inset
 
  so, dass 
-\begin_inset Formula $\modulo{K_{i}}{k}$
+\begin_inset Formula 
+\begin{align*}
+\modulo{K_{i}}{k}
+\end{align*}
+
 \end_inset
 
- der Zerfällungskörper von 
+Zerfällungskörper von 
 \begin_inset Formula $f_{i}$
 \end_inset
 
- ist (
-\begin_inset Formula $i=1,2$
+ für 
+\begin_inset Formula $i\in\left\{ 1,2\right\} $
 \end_inset
 
-), siehe 
+ sind (siehe 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:BuD-Galoisgruppe"
@@ -28064,30 +29261,135 @@ reference "sec:BuD-Galoisgruppe"
 \begin_inset Formula $\Rightarrow$
 \end_inset
 
- b).
+ b)).
+\end_layout
+
+\begin_layout Standard
+Nach 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:SuD-primitel"
+
+\end_inset
+
+ gibt es 
+\begin_inset Formula $\alpha_{i}\in K_{i}$
+\end_inset
+
+ mit 
+\begin_inset Formula $K_{i}=k\left(\alpha_{i}\right)$
+\end_inset
+
+ für 
+\begin_inset Formula $i\in\left\{ 1,2\right\} $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Es gilt 
+\begin_inset Formula $\text{Mipo}_{K_{1}}\left(\alpha_{2}\right)|\text{Mipo}_{k}\left(\alpha_{2}\right)$
+\end_inset
+
+, da 
+\begin_inset Formula $\text{Mipo}_{K_{1}}\left(\alpha_{2}\right)\in K_{1}\left[X\right]$
+\end_inset
+
+ schon 
+\begin_inset Formula $\alpha_{2}$
+\end_inset
+
+ annulliert.
+\end_layout
+
+\begin_layout Standard
+Mit 
+\begin_inset Formula $\text{Mipo}_{k}\left(\alpha_{2}\right)$
+\end_inset
+
+ ist damit auch 
+\begin_inset Formula $\text{Mipo}_{K_{1}}\left(\alpha_{2}\right)$
+\end_inset
+
+ separabel.
+\end_layout
+
+\begin_layout Standard
+Also gilt
+\begin_inset Formula 
+\begin{align*}
+k & \stackrel{\text{endlich, separabel}}{\subseteq}K_{1}\stackrel{\text{endlich, separabel}}{\subseteq}K_{1}\left(\alpha_{2}\right)=K_{1}\left(k\left(\alpha_{2}\right)\right)=K_{1}\left(K_{2}\right)=K_{1}\cdot K_{2}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+nach der Gradformel und Transitivität der Separabilität (vergleiche 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Satz-Grad"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Satz-sgrad"
+
+\end_inset
+
+ und 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Kor-sepTransitiv"
+
+\end_inset
+
+).
 \end_layout
 
 \begin_layout Standard
 Dann ist 
-\begin_inset Formula $\modulo{K_{1}\cdot K_{2}}{k}$
+\begin_inset Formula 
+\begin{align*}
+\modulo{K_{1}\cdot K_{2}}{k}
+\end{align*}
+
 \end_inset
 
- der Zerfällungskörper des separablen Polynoms 
-\begin_inset Formula $f_{1}f_{2}$
-\end_inset
-
-, also endlich und galoissch.
+also endlich und galoissch.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula $\varphi$
 \end_inset
 
- ist wohldefiniert, da 
-\begin_inset Formula $\left(\sigma|_{K_{1}}=\text{id}\Rightarrow\left(\sigma|_{K_{2}}\right)\big|_{K_{1}\cap K_{2}}=\text{id}\right)$
+ ist wohldefiniert, da aus
+\begin_inset Formula 
+\begin{align*}
+\sigma|_{K_{1}} & =\text{id}
+\end{align*}
+
 \end_inset
 
- gilt, und offenbar ein Gruppenhomomorphismus.
+schon
+\begin_inset Formula 
+\begin{align*}
+\left(\sigma|_{K_{2}}\right)\big|_{K_{1}\cap K_{2}} & =\text{id}
+\end{align*}
+
+\end_inset
+
+folgt.
+ Außerdem ist 
+\begin_inset Formula $\varphi$
+\end_inset
+
+ offenbar ein Gruppenhomomorphismus.
 \end_layout
 
 \begin_layout Standard
@@ -28115,7 +29417,7 @@ Also ist
 Ferner gilt:
 \begin_inset Formula 
 \begin{align*}
-K_{2}^{\text{im}\left(\varphi\right)} & \stackrel{\text{Def. von }\varphi}{=}\left(K_{1}\cdot K_{2}\right)^{\text{Gal}\left(\modulo{K_{1}\cdot K_{2}}{K_{1}}\right)}\cap K_{2}\stackrel{\ref{asdf}10.9i)}{=}K_{1}\cap K_{2}=K_{2}^{\text{Gal}\left(\modulo{K_{2}}{K_{1}\cap K_{2}}\right)}
+K_{2}^{\text{im}\left(\varphi\right)} & \stackrel{\text{Def. von }\varphi}{=}\left(K_{1}\cdot K_{2}\right)^{\text{Gal}\left(\modulo{K_{1}\cdot K_{2}}{K_{1}}\right)}\cap K_{2}\stackrel{\ref{sec:Satz-HSGaloistheorie}\,\text{i)}}{=}K_{1}\cap K_{2}=K_{2}^{\text{Gal}\left(\modulo{K_{2}}{K_{1}\cap K_{2}}\right)}
 \end{align*}
 
 \end_inset
@@ -28155,7 +29457,11 @@ iii
 
 \end_inset
 
- Wohldefiniertheit und Gruppenhomomorphismus sind klar.
+ Wohldefiniertheit und, dass 
+\begin_inset Formula $\psi$
+\end_inset
+
+ ein Gruppenhomomorphismus ist, sind klar.
 \end_layout
 
 \begin_layout Standard
@@ -28163,23 +29469,31 @@ Aus
 \begin_inset Formula $\sigma\in\text{ker}\left(\psi\right)$
 \end_inset
 
- folgt 
-\begin_inset Formula $\sigma|_{K_{i}}=\text{id}$
+ folgt für 
+\begin_inset Formula $i\in\left\{ 1,2\right\} $
 \end_inset
 
- (
-\begin_inset Formula $i=1,2$
+ schon 
+\begin_inset Formula 
+\begin{align*}
+\sigma|_{K_{i}} & =\text{id}
+\end{align*}
+
 \end_inset
 
-) und damit folgt 
-\begin_inset Formula $\sigma=\sigma|_{K_{1}\cdot K_{2}}=\text{id}$
+und damit ergibt sich: 
+\begin_inset Formula 
+\begin{align*}
+\sigma & =\sigma|_{K_{1}\cdot K_{2}}=\text{id}
+\end{align*}
+
 \end_inset
 
-, weswegen 
+Deswegen ist 
 \begin_inset Formula $\psi$
 \end_inset
 
- injektiv ist.
+ injektiv.
 \end_layout
 
 \begin_layout Standard
@@ -28187,27 +29501,39 @@ Gelte nun
 \begin_inset Formula $K_{1}\cap K_{2}=k$
 \end_inset
 
- und sei 
-\begin_inset Formula $\left(\sigma,\sigma'\right)\in\text{Gal}\left(\modulo{K_{1}}{k}\right)\times\text{Gal}\left(\modulo{K_{2}}{k}\right)$
+ und sei
+\begin_inset Formula 
+\begin{align*}
+\left(\sigma,\sigma'\right) & \in\text{Gal}\left(\modulo{K_{1}}{k}\right)\times\text{Gal}\left(\modulo{K_{2}}{k}\right)
+\end{align*}
+
 \end_inset
 
- beliebig.
+beliebig.
 \end_layout
 
 \begin_layout Standard
-Aus i) folgt damit, dass es ein 
-\begin_inset Formula $\tilde{\sigma}\in\text{Gal}\left(\modulo{K_{1}\cdot K_{2}}{K_{2}}\right)$
+Aus i) folgt damit, dass es ein
+\begin_inset Formula 
+\begin{align*}
+\tilde{\sigma} & \in\text{Gal}\left(\modulo{K_{1}\cdot K_{2}}{K_{2}}\right)
+\end{align*}
+
 \end_inset
 
- mit 
+mit 
 \begin_inset Formula $\tilde{\sigma}|_{K_{1}}=\sigma$
 \end_inset
 
- gibt, und ebenso ein 
-\begin_inset Formula $\tilde{\sigma}'\in\text{Gal}\left(\modulo{K_{1}\cdot K_{2}}{K_{1}}\right)$
+ gibt, und ebenso ein
+\begin_inset Formula 
+\begin{align*}
+\tilde{\sigma}' & \in\text{Gal}\left(\modulo{K_{1}\cdot K_{2}}{K_{1}}\right)
+\end{align*}
+
 \end_inset
 
- mit 
+mit 
 \begin_inset Formula $\tilde{\sigma}'|_{K_{2}}=\text{id}$
 \end_inset
 
@@ -28231,7 +29557,7 @@ Daher ist
 \begin_inset Formula $\psi$
 \end_inset
 
- surjekiv.
+ surjektiv.
 \end_layout
 
 \begin_layout Standard
@@ -28267,84 +29593,6 @@ qqed
 \end_layout
 
 \begin_layout Subsubsection*
-Beweis
-\end_layout
-
-\begin_layout Standard
-Nach 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "asdf"
-
-\end_inset
-
-8.17 gibt es ein 
-\begin_inset Formula $\alpha_{i}\in K_{i}$
-\end_inset
-
- mit 
-\begin_inset Formula $K_{i}=k\left(\alpha_{i}\right)$
-\end_inset
-
- (
-\begin_inset Formula $i=1,2$
-\end_inset
-
-).
-\end_layout
-
-\begin_layout Standard
-Es gilt 
-\begin_inset Formula $\text{Mipo}_{K_{1}}\left(\alpha_{2}\right)|\text{Mipo}_{k}\left(\alpha_{2}\right)$
-\end_inset
-
-, da 
-\begin_inset Formula $\text{Mipo}_{k}\left(\alpha_{2}\right)\in K_{1}\left[X\right]$
-\end_inset
-
- schon 
-\begin_inset Formula $\alpha_{2}$
-\end_inset
-
- annuliert.
-\end_layout
-
-\begin_layout Standard
-Mit 
-\begin_inset Formula $\text{Mipo}_{k}\left(\alpha_{2}\right)$
-\end_inset
-
- ist damit auch 
-\begin_inset Formula $\text{Mipo}_{K_{1}}\left(\alpha_{2}\right)$
-\end_inset
-
- separabel.
-\end_layout
-
-\begin_layout Standard
-Also gilt:
-\begin_inset Formula 
-\begin{align*}
-k & \stackrel{\text{endlich separabel}}{\subseteq}K_{1}\stackrel{\text{endlich separabel}}{\subseteq}K_{1}\left(\alpha_{2}\right)=K_{1}\left(k\left(\alpha_{2}\right)\right)=K_{1}\left(K_{2}\right)=K_{1}\cdot K_{2}
-\end{align*}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Nach der Gradformel und Transitivität der Separabilität (vergleiche 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "asdf"
-
-\end_inset
-
-6???).
-\end_layout
-
-\begin_layout Subsubsection*
 Bemerkung
 \end_layout
 
@@ -28352,7 +29600,7 @@ Bemerkung
 \begin_inset Formula $f_{1},f_{2}\in k\left[X\right]$
 \end_inset
 
- separable 
+ separabel 
 \begin_inset Formula $\not\Rightarrow$
 \end_inset
 
@@ -28368,15 +29616,27 @@ Bemerkung
 \end_layout
 
 \begin_layout Enumerate
-\begin_inset Formula $k\subseteq K_{1},K_{2}\subseteq E$
+Sind 
+\begin_inset Formula $k\subseteq K_{1}\subseteq E$
 \end_inset
 
- Zwischenkörper mit 
+ und 
+\begin_inset Formula $k\subseteq K_{2}\subseteq E$
+\end_inset
+
+ Zwischenkörper und 
 \begin_inset Formula $\modulo{K_{i}}{k}$
 \end_inset
 
- endlich und separabel.
- Damit folgt 
+ endlich und separabel für 
+\begin_inset Formula $i\in\left\{ 1,2\right\} $
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+Dann ist 
 \begin_inset Formula $\modulo{K_{1}\cdot K_{2}}{k}$
 \end_inset
 
@@ -28545,7 +29805,7 @@ Aus
  folgt:
 \begin_inset Formula 
 \begin{align*}
-0 & =\sigma(\underbrace{f\left(\alpha\right)}_{=0})=f^{\sigma}\left(\sigma\left(t\alpha\right)\right)\stackrel{f=f^{\sigma},\text{ da }f\in k\left[X\right]}{=}f\left(\sigma\left(\alpha\right)\right)
+0 & =\sigma(\underbrace{f\left(\alpha\right)}_{=0})=f^{\sigma}\left(\sigma\left(\alpha\right)\right)\stackrel{f=f^{\sigma},\text{ da }f\in k\left[X\right]}{=}f\left(\sigma\left(\alpha\right)\right)
 \end{align*}
 
 \end_inset
@@ -28578,7 +29838,7 @@ Ist
 \begin_inset Formula $\overline{k}\supseteq E$
 \end_inset
 
- ein algebraischer Abschluss, so existiert 
+ ein algebraischer Abschluss, so existiert ein 
 \begin_inset Formula $\tilde{\sigma}:\overline{k}\to\overline{k}$
 \end_inset
 
@@ -28592,6 +29852,12 @@ Ist
 \end_inset
 
  a))
+\end_layout
+
+\begin_layout Standard
+
+\color green
+TODO: Beweis einfügen
 \end_layout
 
 \begin_layout Standard
@@ -28631,15 +29897,23 @@ Für
 \begin_inset Formula $k\left[X\right]$
 \end_inset
 
- und:
+ und für alle 
+\begin_inset Formula $\beta\in\mathcal{N}$
+\end_inset
+
+ gibt es ein 
+\begin_inset Formula $\sigma\in G$
+\end_inset
+
+ mit:
 \begin_inset Formula 
 \begin{align*}
-\fall_{\beta\in\mathcal{N}}\exs_{\sigma\in G}:\sigma\left(\alpha\right)=\beta & \Rightarrow0=\sigma(\underbrace{g\left(\alpha\right)}_{=0})=g^{\sigma}\left(\sigma\left(\alpha\right)\right)=g\left(\beta\right)
+\sigma\left(\alpha\right) & =\beta & \Rightarrow\qquad0 & =\sigma(\underbrace{g\left(\alpha\right)}_{=0})=g^{\sigma}\left(\sigma\left(\alpha\right)\right)=g\left(\beta\right)
 \end{align*}
 
 \end_inset
 
-Also:
+Also gilt:
 \begin_inset Formula 
 \begin{align}
 g|_{\mathcal{N}} & =0\label{eq:gN0}
@@ -28770,12 +30044,32 @@ Beweis
 \end_layout
 
 \begin_layout Standard
+Seien 
+\begin_inset Formula $k:=\mathbb{Q},K_{1}:=\mathbb{Q}\left(\alpha_{1}\right),K_{2}:=\mathbb{Q}\left(\alpha_{2}\right)$
+\end_inset
+
+ und 
+\begin_inset Formula $E=K_{1}\cdot K_{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
 Mit 
-\begin_inset Formula $k:=\mathbb{Q}\subseteq K_{1}:=\mathbb{Q}\left(\alpha_{1}\right),K_{2}:=\mathbb{Q}\left(\alpha_{2}\right)\subseteq E=K_{1}\cdot K_{2}$
+\begin_inset Formula $k\subseteq K_{1}\subseteq E$
+\end_inset
+
+ und 
+\begin_inset Formula $k\subseteq K_{2}\subseteq E$
 \end_inset
 
  ist klar, dass 
 \begin_inset Formula $\modulo{K_{i}}{k}$
+\end_inset
+
+ für 
+\begin_inset Formula $i\in\left\{ 1,2\right\} $
 \end_inset
 
  galoissch vom Grad 2 ist, also folgt:
@@ -28790,7 +30084,17 @@ Man kann zeigen, dass
 \begin_inset Formula $K_{1}\cap K_{2}=k$
 \end_inset
 
- gilt (Übung), und nach 
+ gilt (Übung).
+\end_layout
+
+\begin_layout Standard
+
+\color green
+TODO: Beweis einfügen
+\end_layout
+
+\begin_layout Standard
+Nach 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:Satz-Kompositum"
@@ -28811,14 +30115,22 @@ ein Isomorphismus.
 
 \begin_layout Standard
 Für 
-\begin_inset Formula $i=1,2$
+\begin_inset Formula $i\in\left\{ 1,2\right\} $
 \end_inset
 
- gilt 
-\begin_inset Formula $\text{Gal}\left(\modulo{K_{i}}{k}\right)=\left\{ 1,\tau_{i}\right\} $
+ gilt:
+\begin_inset Formula 
+\begin{align*}
+\text{Gal}\left(\modulo{K_{i}}{k}\right) & =\left\{ 1,\tau_{i}\right\} 
+\end{align*}
+
 \end_inset
 
-, wobei 
+
+\end_layout
+
+\begin_layout Standard
+Dabei 
 \begin_inset Formula $\tau_{i}:K_{i}\stackrel{\sim}{\to}K_{i}$
 \end_inset
 
@@ -29146,10 +30458,37 @@ status open
 
 \begin_layout Chapter
 Bestimmung einiger Galoisgruppen
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:Bestimmung-einiger-Galoisgruppen"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\color green
+TODO: Rest überarbeiten
 \end_layout
 
 \begin_layout Subsubsection*
-Fixiere
+Fixiere in Kapitel 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:Bestimmung-einiger-Galoisgruppen"
+
+\end_inset
+
+ (
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "chap:Bestimmung-einiger-Galoisgruppen"
+
+\end_inset
+
+)
 \end_layout
 
 \begin_layout Standard
