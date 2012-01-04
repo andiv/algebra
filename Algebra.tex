@@ -6793,13 +6793,14 @@ Sei $k$ ein Körper und $n,m\in\mathbb{N}_{\ge1}$ entweder mit $\text{char}\left(
 oder $\text{char}\left(k\right)\not|\, n,m$.
 
 
-\section{Proposition und Definition\label{sec:PuD-Einheitswurzel}}
+\section{Proposition und Definition \textmd{(Gruppe der $n$-ten Einheitswurzeln)}\label{sec:PuD-Einheitswurzel}}
 
-\textcolor{green}{TODO: Rest überarbeiten}
-
-Die Teilmenge $U_{n}:=U_{n}\left(k\right):=\left\{ \zeta\in\overline{k}\,^{*}\big|\zeta^{n}=1\right\} \subseteq\overline{k}\,^{*}$
+Die Teilmenge 
+\begin{align*}
+U_{n} & :=U_{n}\left(k\right):=\left\{ \zeta\in\overline{k}\,^{*}\big|\zeta^{n}=1\right\} \subseteq\overline{k}\,^{*}
+\end{align*}
 ist eine zyklische Untergruppe der Ordnung $n$, \emph{die Gruppe
-der $n$-ten Einheitswurzeln} (Abkürzung: EW) (in $k$).
+der $n$-ten Einheitswurzeln} (Abkürzung: EW) \emph{(in $k$)}.
 
 
 \subsubsection*{Beweis}
@@ -6807,9 +6808,12 @@ der $n$-ten Einheitswurzeln} (Abkürzung: EW) (in $k$).
 Es ist klar, dass $U_{n}\subseteq\overline{k}\,^{*}$ eine Untergruppe
 ist.
 
-Für $\zeta\in U_{n}$ gelten $\left(X^{n}-1\right)\left(\zeta\right)=0$
-und $\left(X^{n}-1\right)'\left(\zeta\right)=n\zeta^{n-1}\not=0$,
-da $\zeta\not=0$ und $n\not=0$, da $\text{char}\left(k\right)\not|\: n$.
+Für $\zeta\in U_{n}$ gelten: 
+\begin{align*}
+\left(X^{n}-1\right)\left(\zeta\right) & =0\\
+\left(X^{n}-1\right)'\left(\zeta\right) & =n\zeta^{n-1}\not=0
+\end{align*}
+Denn es gilt $\zeta\not=0$ und $n\not=0$, da $\text{char}\left(k\right)\not|\: n$.
 
 Damit ist $X^{n}-1\in k\left[X\right]$ separabel und es folgt:
 \begin{align*}
@@ -6823,14 +6827,14 @@ zyklisch nach \ref{sec:Kor-endlUGzykl}.
 
 \subsubsection*{Bemerkung}
 
-Sei $p$ eine Primzahl und $n\ge1$, dann folgt:
+Sei $p$ eine Primzahl und $n\in\mathbb{N}_{\ge1}$, dann folgt:
 \begin{align*}
-\left\{ \zeta\in\overline{\mathbb{F}_{p}}\big|\zeta^{p^{n}}=1\right\}  & =\left\{ 1\right\} 
+\left\{ \zeta\in\overline{\mathbb{F}}_{p}\big|\zeta^{p^{n}}=1\right\}  & =\left\{ 1\right\} 
 \end{align*}
 
 
 
-\section{Definition}
+\section{Definition \textmd{(primitive Einheitswurzeln)}}
 
 Eine $n$-te Einheitswurzel $\zeta\in U_{n}$ heißt genau dann \emph{primitiv},
 wenn $\left\langle \zeta\right\rangle =U_{n}$.
@@ -6838,11 +6842,12 @@ wenn $\left\langle \zeta\right\rangle =U_{n}$.
 
 \section{Beispiel}
 
-$k=\mathbb{C}$, ${\displaystyle U_{6}=\left\langle \zeta_{6}:=\text{exp}\left(\frac{2\pi\ii}{6}\right)\right\rangle \subseteq\mathbb{C}^{*}}$
-und genau $\zeta_{6},\zeta_{6}^{5}=\zeta_{6}^{-1}\in U_{6}$ sind
+Seien $k=\mathbb{C}$ und ${\displaystyle U_{6}=\left\langle \zeta_{6}:=\text{exp}\left(\frac{2\pi\ii}{6}\right)\right\rangle \subseteq\mathbb{C}^{*}}$.
+
+Dann sind genau $\zeta_{6},\zeta_{6}^{5}=\zeta_{6}^{-1}\in U_{6}$
 primitiv:
 
-TODO: Abb1
+\textcolor{green}{TODO: Abb1}
 
 Es gilt:
 \begin{align*}
@@ -6855,9 +6860,12 @@ Es gilt:
 
 \section{Proposition}
 
-Für $n,m\ge1$ sind $\left(n,m\right)=1$ (und $\text{char}\left(k\right)\not|\, n,m$)
-ist die Abbildung $f:U_{n}\times U_{m}\to U_{nm}$ ist wohldefiniert
-und ein Gruppenisomorphismus.
+Sind $n,m$ teilerfremd (und $\text{char}\left(k\right)\not|\, n,m$),
+so ist die Abbildung
+\begin{align*}
+f & :U_{n}\times U_{m}\to U_{nm}
+\end{align*}
+wohldefiniert und ein Gruppenisomorphismus.
 
 Sind $\zeta\in U_{n}$ und $\psi\in U_{m}$ primitiv, so auch $\zeta\cdot\psi\in U_{n\cdot m}$.
 
@@ -6902,9 +6910,9 @@ Also ist $\zeta\xi\in U_{nm}$ primitiv.\\
 
 \subsubsection*{Bemerkung}
 
-$\left(n,m\right)=1$ wird gebraucht:
+Die Teilerfremdheit von $n$ und $m$ wird gebraucht:
 
-$\zeta:=\ii\in U_{4}\left(\mathbb{C}\right),\xi:=\ii\in U_{4}\left(\mathbb{C}\right)$
+$\zeta:=\ii\in U_{4}\left(\mathbb{C}\right)$ und $\xi:=\ii\in U_{4}\left(\mathbb{C}\right)$
 sind primitiv, aber $\zeta\cdot\xi=-1\in U_{16}\left(\mathbb{C}\right)$
 hat Ordnung $2\not=16$, ist also nicht primitiv.
 

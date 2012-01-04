@@ -32650,7 +32650,15 @@ Sei
 \end_layout
 
 \begin_layout Section
-Proposition und Definition
+Proposition und Definition 
+\series medium
+(Gruppe der 
+\begin_inset Formula $n$
+\end_inset
+
+-ten Einheitswurzeln)
+\series default
+
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:PuD-Einheitswurzel"
@@ -32661,17 +32669,15 @@ name "sec:PuD-Einheitswurzel"
 \end_layout
 
 \begin_layout Standard
-
-\color green
-TODO: Rest überarbeiten
-\end_layout
-
-\begin_layout Standard
 Die Teilmenge 
-\begin_inset Formula $U_{n}:=U_{n}\left(k\right):=\left\{ \zeta\in\overline{k}\,^{*}\big|\zeta^{n}=1\right\} \subseteq\overline{k}\,^{*}$
+\begin_inset Formula 
+\begin{align*}
+U_{n} & :=U_{n}\left(k\right):=\left\{ \zeta\in\overline{k}\,^{*}\big|\zeta^{n}=1\right\} \subseteq\overline{k}\,^{*}
+\end{align*}
+
 \end_inset
 
- ist eine zyklische Untergruppe der Ordnung 
+ist eine zyklische Untergruppe der Ordnung 
 \begin_inset Formula $n$
 \end_inset
 
@@ -32683,11 +32689,15 @@ die Gruppe der
 
 -ten Einheitswurzeln
 \emph default
- (Abkürzung: EW) (in 
+ (Abkürzung: EW) 
+\emph on
+(in 
 \begin_inset Formula $k$
 \end_inset
 
-).
+)
+\emph default
+.
 \end_layout
 
 \begin_layout Subsubsection*
@@ -32707,15 +32717,16 @@ Für
 \begin_inset Formula $\zeta\in U_{n}$
 \end_inset
 
- gelten 
-\begin_inset Formula $\left(X^{n}-1\right)\left(\zeta\right)=0$
+ gelten: 
+\begin_inset Formula 
+\begin{align*}
+\left(X^{n}-1\right)\left(\zeta\right) & =0\\
+\left(X^{n}-1\right)'\left(\zeta\right) & =n\zeta^{n-1}\not=0
+\end{align*}
+
 \end_inset
 
- und 
-\begin_inset Formula $\left(X^{n}-1\right)'\left(\zeta\right)=n\zeta^{n-1}\not=0$
-\end_inset
-
-, da 
+Denn es gilt 
 \begin_inset Formula $\zeta\not=0$
 \end_inset
 
@@ -32783,13 +32794,13 @@ Sei
 \end_inset
 
  eine Primzahl und 
-\begin_inset Formula $n\ge1$
+\begin_inset Formula $n\in\mathbb{N}_{\ge1}$
 \end_inset
 
 , dann folgt:
 \begin_inset Formula 
 \begin{align*}
-\left\{ \zeta\in\overline{\mathbb{F}_{p}}\big|\zeta^{p^{n}}=1\right\}  & =\left\{ 1\right\} 
+\left\{ \zeta\in\overline{\mathbb{F}}_{p}\big|\zeta^{p^{n}}=1\right\}  & =\left\{ 1\right\} 
 \end{align*}
 
 \end_inset
@@ -32798,7 +32809,9 @@ Sei
 \end_layout
 
 \begin_layout Section
-Definition
+Definition 
+\series medium
+(primitive Einheitswurzeln)
 \end_layout
 
 \begin_layout Standard
@@ -32826,21 +32839,28 @@ Beispiel
 \end_layout
 
 \begin_layout Standard
+Seien 
 \begin_inset Formula $k=\mathbb{C}$
 \end_inset
 
-, 
+ und 
 \begin_inset Formula ${\displaystyle U_{6}=\left\langle \zeta_{6}:=\text{exp}\left(\frac{2\pi\ii}{6}\right)\right\rangle \subseteq\mathbb{C}^{*}}$
 \end_inset
 
- und genau 
-\begin_inset Formula $\zeta_{6},\zeta_{6}^{5}=\zeta_{6}^{-1}\in U_{6}$
-\end_inset
-
- sind primitiv:
+.
 \end_layout
 
 \begin_layout Standard
+Dann sind genau 
+\begin_inset Formula $\zeta_{6},\zeta_{6}^{5}=\zeta_{6}^{-1}\in U_{6}$
+\end_inset
+
+ primitiv:
+\end_layout
+
+\begin_layout Standard
+
+\color green
 TODO: Abb1
 \end_layout
 
@@ -32863,23 +32883,23 @@ Proposition
 \end_layout
 
 \begin_layout Standard
-Für 
-\begin_inset Formula $n,m\ge1$
+Sind 
+\begin_inset Formula $n,m$
 \end_inset
 
- sind 
-\begin_inset Formula $\left(n,m\right)=1$
-\end_inset
-
- (und 
+ teilerfremd (und 
 \begin_inset Formula $\text{char}\left(k\right)\not|\, n,m$
 \end_inset
 
-) ist die Abbildung 
-\begin_inset Formula $f:U_{n}\times U_{m}\to U_{nm}$
+), so ist die Abbildung
+\begin_inset Formula 
+\begin{align*}
+f & :U_{n}\times U_{m}\to U_{nm}
+\end{align*}
+
 \end_inset
 
- ist wohldefiniert und ein Gruppenisomorphismus.
+wohldefiniert und ein Gruppenisomorphismus.
 \end_layout
 
 \begin_layout Standard
@@ -33051,14 +33071,23 @@ Bemerkung
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $\left(n,m\right)=1$
+Die Teilerfremdheit von 
+\begin_inset Formula $n$
+\end_inset
+
+ und 
+\begin_inset Formula $m$
 \end_inset
 
  wird gebraucht:
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $\zeta:=\ii\in U_{4}\left(\mathbb{C}\right),\xi:=\ii\in U_{4}\left(\mathbb{C}\right)$
+\begin_inset Formula $\zeta:=\ii\in U_{4}\left(\mathbb{C}\right)$
+\end_inset
+
+ und 
+\begin_inset Formula $\xi:=\ii\in U_{4}\left(\mathbb{C}\right)$
 \end_inset
 
  sind primitiv, aber 
