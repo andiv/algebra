@@ -5792,7 +5792,7 @@ Produkt von Elementen aus $H_{1}$ oder $H_{2}$ ist.)
 \qqed
 
 
-\section{Beispiel und Definition \textmd{(Untergruppen-Diagramm)}}
+\section{Beispiel und Definition \textmd{(Untergruppen-Diagramm)\label{sec:BuD-UntergruppenDiagramm}}}
 
 Nach Blatt 7, Aufgabe 2 ist die Galoisgruppe von $f:=X^{3}-2\in\mathbb{Q}\left[X\right]$
 isomorph zu $S_{3}$.
@@ -6263,23 +6263,24 @@ $f$ normiert ist, gilt $f=\text{Mipo}_{k}\left(\beta\right)$.
 
 \chapter{Bestimmung einiger Galoisgruppen\label{chap:Bestimmung-einiger-Galoisgruppen}}
 
-\textcolor{green}{TODO: Rest überarbeiten}
-
 
 \subsubsection*{Fixiere in Kapitel \ref{chap:Bestimmung-einiger-Galoisgruppen} (\nameref{chap:Bestimmung-einiger-Galoisgruppen})}
 
 Sei $k$ ein Körper.
 
 
-\section{Satz und Definition \textmd{(Die Permutationsdarstellung)}}
+\section{Satz und Definition \textmd{(Die Permutationsdarstellung)\label{sec:SuD-Permutationsdarstellung}}}
 
 Seien $f\in k\left[X\right]$ separabel, $n:=\deg\left(f\right)>0$,
-$E\supseteq k$ ein Zerfällungskörper von $f$ und $\mathcal{N}:=\left\{ \alpha\in E|f\left(\alpha\right)=0\right\} $
-(mit $\left|\mathcal{N}\right|=n$).
+$E\supseteq k$ ein Zerfällungskörper von $f$ und
+\begin{align*}
+\mathcal{N} & :=\left\{ \alpha\in E|f\left(\alpha\right)=0\right\} 
+\end{align*}
+mit $\left|\mathcal{N}\right|=n$.
 
 Dann ist die Abbildung
 \begin{align*}
-p & :\text{Gal}\left(\modulo{E}{k}\right)\hookrightarrow\sum\left(\mathcal{N}\right)\left(\stackrel{\sim}{=}\text{ nach Wahl einer Nummerierung }\mathcal{N}=\left\{ \alpha_{1},\ldots,\alpha_{n}\right\} \right)
+p & :\text{Gal}\left(\modulo{E}{k}\right)\hookrightarrow\sum\left(\mathcal{N}\right)\left(\sr{\stackrel{\sim}{=}}{\text{nach Wahl}}{\text{einer Nummerierung}}\mathcal{N}=\left\{ \alpha_{1},\ldots,\alpha_{n}\right\} \right)
 \end{align*}
 mit
 \begin{align*}
@@ -6299,12 +6300,15 @@ f\in k\left[X\right]\text{ irreduzibel} & \stackrel{\text{a)}}{\Leftrightarrow}\
 
 \subsubsection*{Beweis}
 
-$\modulo{E}{k}$ ist endlich galoissch nach \ref{asdf}10.2 b) $\Rightarrow$
-a).
+$\modulo{E}{k}$ ist endlich und galoissch nach \ref{sec:BuD-Galoisgruppe}
+b) $\Rightarrow$ a).
 
 Die Aussagen über $p$ folgen wie in Aufgabe 2, ii) auf Blatt 7.
 
-a) ist \ref{asdf}10.17 i) $\Leftrightarrow$ ii).
+\textcolor{green}{TODO: Beweis einfügen}
+
+a) ist \ref{sec:Prop-sigmaInGalKommutiertNSt} i) $\Leftrightarrow$
+ii).
 
 b) ist klar.
 
@@ -6317,18 +6321,21 @@ $f=X^{2}+aX+b\in k\left[X\right]$ besitze keine Nullstelle in $k$.
 
 Dann ist $E:=\modulo{k\left(\alpha\right)}{k}$ für $f\left(\alpha\right)=0$
 ein Zerfällungskörper von $f$, und in $E\left[X\right]$ gilt nach
-\ref{asdf}7.1 i):
+\ref{sec:Def-ZK} i):
 \begin{align*}
 f\left(X\right) & =\left(X-\alpha\right)\cdot\left(X-\left(-\alpha-a\right)\right)
 \end{align*}
-Weiter gilt: $f\in k\left[X\right]$ ist nicht separabel $\stackrel{f\text{ irreduzibel}}{\Leftrightarrow}$
-in $k\left[X\right]$ gilt: $0=f\left(X\right)=2X+a$ $\Leftrightarrow$
-($\text{char}\left(k\right)=2$ und $a=0$)
+Weiter ist die Separabilität von $f\in k\left[X\right]$, weil $f$
+irreduzibel ist, äquivalent zu folgender Äquivalenz in $k\left[X\right]$:
+\begin{align*}
+0=f'\left(X\right)=2X+a & \Leftrightarrow\left(\text{char}\left(k\right)=2\wedge a=0\right)
+\end{align*}
 
-Gelte nun ($\text{char}\left(k\right)\not=2$ oder $a\not=0$).
+
+Gelte nun $\text{char}\left(k\right)\not=2$ oder $a\not=0$.
 
 Dann ist $\modulo{E}{k}$ galoissch mit $\text{Gal}\left(\modulo{E}{k}\right)\stackrel{\sim}{=}\modlo{Z}{2}$
-und das eindeutige $1\not=\sigma\in\text{Gal}\left(\modulo{E}{k}\right)$
+und das eindeutige $\sigma\in\text{Gal}\left(\modulo{E}{k}\right)\setminus\left\{ 1\right\} $
 ist durch $\sigma\left(\alpha\right)=-\alpha-a$ eindeutig bestimmt.
 
 
@@ -6339,28 +6346,52 @@ besitze keine Nullstellen in $k$.
 
 Dann ist $F\in k\left[X\right]$ irreduzibel.
 
-Betrachte (ähnlich wie quadratische Ergänzung): (TODO: restliche Terme)
+
+\subsection{Lemma \textmd{(Normalform)}}
+
+Jede kubische Gleichung der Form $F\left(X\right)$ lässt sich reduzieren
+auf:
 \begin{align*}
-f\left(X\right) & :=F\left(X-\frac{A}{3}\right)=X^{3}+X^{2}\left(-3\cdot\frac{A}{3}+\alpha\right)+\ldots(TODO)=\\
- & =X^{3}+aX+b
+f\left(X\right) & =:X^{3}+aX+b
+\end{align*}
+
+
+
+\subsubsection*{Beweis}
+
+Betrachte ähnlich der quadratischen Ergänzung:
+\begin{align*}
+f\left(X\right) & :=F\left(X-\frac{A}{3}\right)=X^{3}+X^{2}\left(-3\cdot\frac{A}{3}+A\right)+\left(B-\frac{A^{2}}{3}\right)X+\frac{2A^{3}}{27}-\frac{AB}{3}+C=\\
+ & =:X^{3}+aX+b
 \end{align*}
 (Hier geht $\text{char}\left(k\right)\not=3$ ein.)
 
 Da ${\displaystyle k\left[X\right]\stackrel{\sim}{\to}k\left[X\right],X\mapsto X-\frac{A}{3}}$
-ein Isomorphismus ist, betrachte im Folgenden $f\left(X\right)$.
+ein Isomorphismus ist, folgt die Behauptung.
+
+\qqed
+
+
+\subsection{Bestimmung der Galoisgruppe}
+
+Betrachte im Folgenden $f\left(X\right)$.
 
 Es gilt $f'\left(X\right)=3X^{2}+a\not=0$, da $3\not=0$ wegen $\text{char}\left(k\right)\not=3$,
-also ist $f\in k\left[X\right]$ separabel nach \ref{asdf} 8.4 ii),
-und der Zerfällungskörper $\modulo{E}{k}$ von $f$ ist galoissch.
+also ist $f\in k\left[X\right]$ separabel nach \ref{sec:Lem-mNst}
+ii), und der Zerfällungskörper $\modulo{E}{k}$ von $f$ ist galoissch.
 
-Nummeriere $\mathcal{N}:=\left\{ \alpha\in E|f\left(\alpha\right)=0\right\} =\left\{ \alpha_{1},\alpha_{2},\alpha_{2}\right\} \stackrel{\ref{asdf}11.1}{\Rightarrow}$
-Es existiert genau ein Gruppenhomomorphismus $\varrho:\text{Gal}\left(\modulo{E}{k}\right)\hookrightarrow S_{3}$
+Nummeriere:
+\begin{align*}
+\mathcal{N} & :=\left\{ \alpha\in E|f\left(\alpha\right)=0\right\} =\left\{ \alpha_{1},\alpha_{2},\alpha_{2}\right\} 
+\end{align*}
+Nach \ref{sec:SuD-Permutationsdarstellung} existiert genau ein Gruppenhomomorphismus
+$\varrho:\text{Gal}\left(\modulo{E}{k}\right)\hookrightarrow S_{3}$
 mit:
 \begin{align}
 \fall_{\sigma\in\text{Gal}\left(\moduloScript{E}{k}\right),1\le i\le3} & :\sigma\left(\alpha_{i}\right)=\alpha_{\varrho\left(\sigma\right)\left(i\right)}\label{eq:sigalphai}
 \end{align}
 Weil $f$ irreduzibel ist, folgt $\left[E:k\right]\ge3$ und aus der
-bekannten Untergruppenstruktur von $S_{3}$ (vergleiche \ref{asdf}10.13)
+bekannten Untergruppenstruktur von $S_{3}$ (vergleiche \ref{sec:BuD-UntergruppenDiagramm})
 folgt:
 \begin{align*}
 \text{Gal}\left(\modulo{E}{k}\right) & \stackrel{\sim}{=}\text{im}\left(\varrho\right)=\begin{cases}
@@ -6387,22 +6418,31 @@ $E^{*}$:
 
 \subsubsection*{Beweis}
 
-Klar wegen \eqref{eq:sigalphai}, Definition von $\sigma$ und $\delta$
-und Definition von $\text{sgn}\left(\varrho\left(\sigma\right)\right)$
+Die Behauptung ist klar wegen \eqref{eq:sigalphai}, der Definition
+von $\sigma$ und $\delta$ und der Definition von $\text{sgn}\left(\varrho\left(\sigma\right)\right)$
 als Anzahl der Fehlstände.
 
 \qqed[Behauptung]
 
-Es folgt in $\mathbb{Z}$: $\text{im}\left(\varrho\right)=A_{3}\stackrel{\text{Definition von }A_{3}}{\Leftrightarrow}\fall_{\sigma\in\text{Gal}\left(\moduloScript{E}{k}\right)}:\text{sgn}\left(\varrho\left(\sigma\right)\right)=1$
-$\sr{\text{Behauptung}}{\Leftrightarrow}{\text{char}\left(k\right)\not=2}$
-$\fall_{\sigma\in\text{Gal}\left(\moduloScript{E}{k}\right)}:\sigma\left(\delta\right)=\delta$.
+Es folgt in $\mathbb{Z}$:
+\begin{align*}
+\text{im}\left(\varrho\right)=A_{3} & \stackrel{\text{Definition von }A_{3}}{\Leftrightarrow}\fall_{\sigma\in\text{Gal}\left(\moduloScript{E}{k}\right)}:\text{sgn}\left(\varrho\left(\sigma\right)\right)=1\sr{\Leftrightarrow}{\text{Behauptung}}{\text{char}\left(k\right)\not=2}\fall_{\sigma\in\text{Gal}\left(\moduloScript{E}{k}\right)}:\sigma\left(\delta\right)=\delta
+\end{align*}
+
 
 Dies ist äquivalent zu $\delta\in E^{\text{Gal}\left(\moduloScript{E}{k}\right)}=k$.
 
-Ferner gilt mit $\Delta:=\delta^{2}:\fall_{\sigma\in\text{Gal}\left(\moduloScript{E}{k}\right)}:\sigma\left(\Delta\right)=\left(\pm\delta\right)^{2}=\Delta$
-und damit folgt $\Delta\in k$.
+Ferner gilt mit $\Delta:=\delta^{2}$ für alle $\sigma\in\text{Gal}\left(\modulo{E}{k}\right)$:
+\begin{align*}
+\sigma\left(\Delta\right) & =\left(\pm\delta\right)^{2}=\Delta
+\end{align*}
+Damit folgt $\Delta\in k$.
 
-Später wird noch gezeigt: $\Delta=-4a^{3}-27b^{2}$.
+Später wird noch gezeigt:
+\begin{align*}
+\Delta= & -4a^{3}-27b^{2}
+\end{align*}
+
 
 Damit gilt für die Galoisgruppe der irreduziblen Gleichung $X^{3}+aX+b$:
 \begin{align*}
@@ -6411,7 +6451,7 @@ A_{3} & \Delta=-3a^{3}-27b^{2}\in\left(k^{*}\right)^{2}\\
 S_{3} & \text{sonst}
 \end{cases}
 \end{align*}
-
+\qqed
 
 
 \subsection{Beispiel}
@@ -6419,18 +6459,20 @@ S_{3} & \text{sonst}
 Seien $k=\mathbb{Q}$ und $f\left(X\right):=X^{3}-X+1\in\mathbb{Q}\left[X\right]$.
 
 Wegen $f\left(\pm1\right)\not=0$ besitzt $f$ keine Nullstelle in
-$\mathbb{Q}$ (benutzt, dass \quotedblbase{}ein ganzzahliges Polynom
-ohne Nullstellen in $\mathbb{Z}$ hat keine Nullstellen in $\mathbb{Q}$\textquotedblleft{}
-und \quotedblbase{}eine ganzzahlige Nullstelle eines normierten Polynoms
-teilt den letzten Koeffizienten\textquotedblleft{}).
+$\mathbb{Q}$ (benutzt, dass ein ganzzahliges Polynom ohne Nullstellen
+in $\mathbb{Z}$ keine Nullstellen in $\mathbb{Q}$ hat und eine ganzzahlige
+Nullstelle eines normierten Polynoms den letzten Koeffizienten teilt).
 
-Außerdem gilt hier: $\Delta=-4\cdot\left(-1\right)^{3}-27\cdot1^{2}=-23\not\in\left(\mathbb{Q}^{*}\right)^{2}$,
-also hat die Gleichung $X^{3}-X+1=0$ über $\mathbb{Q}$ die Galoisgruppe
+Außerdem gilt hier:
+\begin{align*}
+\Delta & =-4\cdot\left(-1\right)^{3}-27\cdot1^{2}=-23\not\in\left(\mathbb{Q}^{*}\right)^{2}
+\end{align*}
+ Also hat die Gleichung $X^{3}-X+1=0$ über $\mathbb{Q}$ die Galoisgruppe
 $S_{3}$.
 
 Ferner gilt mit dem Zerfällungskörper $E$ von $f$ für den eindeutigen
 Zwischenkörper $\mathbb{Q}\subseteq K\subseteq E$ mit $\left[K:\mathbb{Q}\right]=2$
-(vergleiche \eqref{asdf} 10.13):
+(vergleiche \ref{sec:BuD-UntergruppenDiagramm}):
 \begin{align*}
 K & =\mathbb{Q}\left(\delta\right)=\mathbb{Q}\left(\sqrt{-23}\right)
 \end{align*}
@@ -6439,21 +6481,24 @@ K & =\mathbb{Q}\left(\delta\right)=\mathbb{Q}\left(\sqrt{-23}\right)
 
 \section{Die allgemeine Gleichung}
 
-Sei $n\ge1$ fixiert, $E:=k\left(t_{1},\ldots,t_{n}\right)$.
+Sei $n\ge1$ fixiert und $E:=k\left(t_{1},\ldots,t_{n}\right)$.
 
 Dann existiert genau eine Abbildung
 \begin{align*}
 \varrho:S_{n} & \to\text{Aut}\left(E\right)
 \end{align*}
-mit:
+für die für alle $\sigma\in S_{n}$ mit $1\le i\le n$ gilt:
 \begin{align*}
-\fall_{\sigma\in S_{n},1\le i\le n}:\varrho\left(\sigma\right)\left(t_{i}\right) & =t_{\sigma\left(i\right)}
+\varrho\left(\sigma\right)\left(t_{i}\right) & =t_{\sigma\left(i\right)}
 \end{align*}
-(benutze zum Beweis die universelle Eigenschaft des Polynomrings und
-des Quotientenkörpers)
+Benutze zum Beweis die universelle Eigenschaft des Polynomrings und
+des Quotientenkörpers.
 
-und $\varrho$ ist ein injektiver Gruppenhomomorphismus, vermöge dessen
-wir $S_{n}\subseteq\text{Aut}\left(E\right)$ als Untergruppe auffassen.
+Zudem ist $\varrho$ ein injektiver Gruppenhomomorphismus, vermöge
+dessen wir $S_{n}\subseteq\text{Aut}\left(E\right)$ als Untergruppe
+auffassen.
+
+\textcolor{green}{TODO: Beweis einfügen}
 
 
 \subsection{Proposition und Definition \textmd{(symmetrische rationale Funktionen)\label{sec:PuD-symRatFkt}}}
@@ -6467,21 +6512,30 @@ $K$ heißt \emph{der Körper der symmetrischen rationalen Funktionen
 
 \subsubsection*{Beweis}
 
-\eqref{asdf}10.7 i)
+Folgt aus \ref{sec:Kor-GalE_EGistG} i).
 
 \qqed
 
 
 \subsection{Beispiel}
 
-$n=2\Rightarrow S_{2}=\left\{ 1,\left(\begin{array}{cc}
-1 & 2\end{array}\right)=:\sigma\right\} $, also $t_{1}+t_{2}\in k\left(t_{1},t_{2}\right)^{S_{2}}$, da $\sigma\left(t_{1}+t_{2}\right)=t_{2}+t_{1}=t_{1}+t_{2}$,
-aber, falls $\text{char}\left(k\right)\not=2$, $t_{1}-t_{2}\not\in k\left(t_{1},t_{2}\right)^{S_{2}}$,
-da $\sigma\left(t_{1}-t_{2}\right)=t_{2}-t_{1}=-\left(t_{1}-t_{2}\right)\not=t_{1}-t_{2}$,
-da $1\not=-1$.
+Sei $n=2$, betrachte also $S_{2}=\left\{ 1,\left(\begin{array}{cc}
+1 & 2\end{array}\right)=:\sigma\right\} $.
+
+Wegen 
+\begin{align*}
+\sigma\left(t_{1}+t_{2}\right) & =t_{2}+t_{1}=t_{1}+t_{2}
+\end{align*}
+ist $t_{1}+t_{2}\in k\left(t_{1},t_{2}\right)^{S_{2}}$ , aber, falls
+$\text{char}\left(k\right)\not=2$ ist, ist wegen
+\begin{align*}
+\sigma\left(t_{1}-t_{2}\right) & =t_{2}-t_{1}=-\left(t_{1}-t_{2}\right)\not=t_{1}-t_{2}
+\end{align*}
+das Polynom $t_{1}-t_{2}\not\in k\left(t_{1},t_{2}\right)^{S_{2}}$
+, da $1\not=-1$.
 
 
-\subsection{Definition\label{sec:Def-elemSymFkt}}
+\subsection{Definition \textmd{(elementarsymmetrische Polynome)}\label{sec:Def-elemSymFkt}}
 
 Die in der Entwicklung
 \begin{align*}
@@ -6500,7 +6554,7 @@ Zum Beispiel: $s_{0}=1,\: s_{1}=t_{1}+\ldots+t_{n},\: s_{n}=t_{1}\cdot\ldots\cdo
 
 \subsection{Definition \textmd{(algebraische Unabhängigkeit)}}
 
-Seien $A$ eine $k$-Algebra, $I$ eine Menge und für alle $i\in I$
+Seien $A$ eine $k$-Algebra und $I$ eine Menge und für alle $i\in I$
 sei $a_{i}\in A$.
 
 Dann heißt $\left(a_{i}\right)_{i\in I}$ genau dann \emph{algebraisch
@@ -6516,11 +6570,16 @@ $i\in I$ ist injektiv.
 \iii Für $I=\left\{ 1\right\} $ ist $a_{1}\in A$ genau dann algebraisch
 unabhängig über $k$, wenn $a_{1}$ transzendent über $k$ ist.
 
-\iii Die Elemente $a_{1}:=X^{2},a_{s}:=X^{3}\in A:=k\left[X\right]$
-sind transzendent über $k$ (vergleiche Blatt 6 Aufgabe 1 iii)), aber
-$\left(a_{1},a_{2}\right)$ ist nicht algebraisch unabhängig über
-$k$, da für $0\not=f\left(X,Y\right):=X^{3}-Y^{2}\in k\left[X,Y\right]$
+\iii Die Elemente 
+\begin{align*}
+a_{1} & :=X^{2} & a_{2} & :=X^{3}
+\end{align*}
+in $A:=k\left[X\right]$ sind transzendent über $k$ (vergleiche Blatt
+6 Aufgabe 1 iii)), aber $\left(a_{1},a_{2}\right)$ ist nicht algebraisch
+unabhängig über $k$, da für $0\not=f\left(X,Y\right):=X^{3}-Y^{2}\in k\left[X,Y\right]$
 gilt $f\left(a_{1},a_{2}\right)=0$.
+
+\textcolor{green}{TODO: Beweis einfügen}
 
 (Beachte: $\left(a_{1},a_{2}\right)$ sind in $A$ aber $k$-linear
 unabhängig.)
@@ -6528,7 +6587,7 @@ unabhängig.)
 \end{iiilist}
 
 
-\subsection{Satz\label{sec:Satz-HS-symFkt}}
+\subsection{Satz \textmd{(Hauptsatz über symmetrische Funktionen)}\label{sec:Satz-HS-symFkt}}
 
 Es gelten:
 
@@ -6566,12 +6625,16 @@ galoissch vom Grad 2 und für
 \begin{align*}
 \delta & :=\prod_{1\le i<j\le n}\left(t_{i}-t_{j}\right)
 \end{align*}
-gilt $E^{A_{n}}=K\left(\delta\right)\stackrel{\ref{asdf}11.4.6\text{ii)}}{=}k\left(s_{1},\ldots,s_{n},\delta\right)$.
+gilt:
+\begin{align*}
+E^{A_{n}} & =K\left(\delta\right)\stackrel{\ref{sec:Satz-HS-symFkt}\text{ ii)}}{=}k\left(s_{1},\ldots,s_{n},\delta\right)
+\end{align*}
+
 
 Es ist ein offenes Problem, ob $f_{1},\ldots,f_{n}\in E^{A_{n}}$
 existieren, die $E^{A_{n}}=k\left(f_{1},\ldots,f_{n}\right)$ erfüllen.
 
-\iii \textbf{Vermutung:}
+\iii \textbf{Vermutung}
 
 Für jede endliche Gruppe $G$ existiert eine Galoiserweiterung $\modulo{E}{\mathbb{Q}}$
 mit $\text{Gal}\left(\modulo{E}{\mathbb{Q}}\right)\stackrel{\sim}{=}G$.
@@ -6587,7 +6650,7 @@ mit $\text{Gal}\left(\modulo{E}{\mathbb{Q}}\right)\stackrel{\sim}{=}G$.
 \begin{align*}
 f^{\sigma}\left(X\right) & =\prod_{i=1}^{n}\left(X-t_{\sigma\left(i\right)}\right)=f\left(X\right)
 \end{align*}
-Also ist $f\in k\left[X\right]$.
+Also ist $f\in K\left[X\right]$.
 
 Wegen $E=k\left(t_{1},\ldots,t_{n}\right)=K\left(t_{1},\ldots,t_{n}\right)$
 ist klar, dass $\modulo{E}{k}$ ein Zerfällungskörper von $f$ ist.\\
@@ -6619,12 +6682,16 @@ Denn es gilt für alle $i$:
 \begin{align}
 \mathcal{S}_{i} & =s_{i}\left(T_{1},\ldots,T_{n}\right)\in k\left(T_{1},\ldots,T_{n}\right)\label{eq:Sisi}
 \end{align}
-Für den eindeutigen $k$-Algebrenhomomorphismus $\varphi:k\left[t_{1},\ldots,t_{n}\right]\to k\left[T_{1},\ldots,T_{n}\right]$
-mit $\varphi\left(t_{i}\right)=T_{i}$ für alle $1\le i\le n$ gilt
-für alle $1\le i\le n$:
+Für den eindeutigen $k$-Algebrenhomomorphismus 
+\begin{align*}
+\varphi & :k\left[t_{1},\ldots,t_{n}\right]\to k\left[T_{1},\ldots,T_{n}\right]
+\end{align*}
+mit $\varphi\left(t_{i}\right)=T_{i}$ gilt
 \begin{align*}
 \varphi\left(s_{i}\right) & \stackrel{\eqref{eq:Sisi}}{=}\mathcal{S}_{i}
 \end{align*}
+für alle $1\le i\le n$.
+
 Da $\left\{ \mathcal{S}_{1},\ldots,\mathcal{S}_{n}\right\} \subseteq k\left[\mathcal{S}_{1},\ldots,\mathcal{S}_{n}\right]$
 algebraisch unabhängig über $k$ ist, ist $\left\{ s_{1},\ldots,s_{n}\right\} \subseteq k\left[s_{1},\ldots,s_{n}\right]$
 algebraisch unabhängig über $k$.
@@ -6634,7 +6701,7 @@ algebraisch unabhängig über $k$.
 \qqed[\ref{sec:Satz-HS-symFkt}]
 
 
-\subsection{Definition}
+\subsection{Definition \textmd{(allgemeines Polynom $n$-ten Grades)}}
 
 \begin{align*}
 p\left(X\right) & :=X^{n}+\mathcal{S}_{1}X^{n-1}+\ldots+\mathcal{S}_{n}=X^{n}+\sum_{i=1}^{n}\mathcal{S}_{i}\cdot X^{n-i}\in k\left(\mathcal{S}_{1},\ldots,\mathcal{S}_{n}\right)\left[X\right]
@@ -6644,8 +6711,12 @@ heißt das \emph{allgemeine Polynom $n$-ten Grades über $k$.}
 
 \subsection{Bemerkung}
 
-Seien $k\subseteq F$ eine Körpererweiterung und $f\in F\left[X\right]$
-ein normiertes Polynom vom Grad $n$.
+Seien $F\supseteq k$ eine Körpererweiterung und
+\begin{align*}
+f & =X^{n}+\sum_{i=1}^{n}a_{i}X^{n-i}\in F\left[X\right]
+\end{align*}
+mit $a_{i}\in F$ für $1\le i\le n$ ein normiertes Polynom vom Grad
+$n$.
 
 Dann existiert genau ein $k$-Algebrenhomomorphismus
 \begin{align*}
@@ -6653,28 +6724,33 @@ Dann existiert genau ein $k$-Algebrenhomomorphismus
 \end{align*}
 mit
 \begin{align*}
-\varphi\left[X\right]\left(p\left(X\right)\right) & =f
+\varphi\left[X\right]:k\left(\mathcal{S}_{1},\ldots,\mathcal{S}_{n}\right)\left[X\right] & \to F\left[X\right]\\
+\varphi\left[X\right]\left(p\left(X\right)\right) & =f\left(X\right)
 \end{align*}
-(nämlich $\varphi\left(\mathcal{S}_{i}\right)=\left(n-i\right)$-ter
-Koeffizient von $f$).
+also mit $\varphi\left(\mathcal{S}_{i}\right)=a_{i}$ für $1\le i\le n$.
 
 
 \subsection{Satz}
 
 $p\left(X\right)\subseteq k\left(\mathcal{S}_{1},\ldots,\mathcal{S}_{n}\right)\left[X\right]$
-ist irreduzibel, separabel und es gilt:
+ist irreduzibel und separabel und es gilt:
 \begin{align*}
 \text{Gal}\left(p\left(X\right)\right) & \stackrel{\sim}{=}S_{n}
 \end{align*}
-(vergleiche \ref{asdf}10.2 i))
+(vergleiche \ref{sec:BuD-Galoisgruppe} i))
 
 
 \subsubsection*{Beweis}
 
 Wegen \ref{sec:Satz-HS-symFkt} ii) existiert ein $k$-Isomorphismus
-$\varphi:k\left(\mathcal{S}_{1},\ldots,\mathcal{S}_{n}\right)\stackrel{\sim}{\to}k\left(s_{1},\ldots,s_{n}\right)$
+\begin{align*}
+\varphi & :k\left(\mathcal{S}_{1},\ldots,\mathcal{S}_{n}\right)\stackrel{\sim}{\to}k\left(s_{1},\ldots,s_{n}\right)
+\end{align*}
 mit $\varphi\left(\mathcal{S}_{i}\right)=\left(-1\right)^{i}\cdot s_{i}$
-und für diesen gilt $\varphi\left[X\right]\left(p\left(X\right)\right)=f\left(X\right)$
+und für diesen gilt 
+\begin{align*}
+\varphi\left[X\right]\left(p\left(X\right)\right) & =f\left(X\right)
+\end{align*}
 wie in \ref{sec:Def-elemSymFkt}.
 
 Die Aussagen folgen nun aus den analogen Aussagen für $f$, nämlich
@@ -6685,13 +6761,12 @@ in \ref{sec:Satz-HS-symFkt} i) und \ref{sec:PuD-symRatFkt}.
 
 \subsection{Satz \textmd{(Hilbertscher Irreduzibilitätssatz)}}
 
-Für $n\ge1$ existieren unendlich viele Tupel $\left(q_{1},\ldots,q_{n}\right)\in\mathbb{Q}^{n}$
-so, dass für
+Für $n\ge1$ existieren unendlich viele Tupel $\left(q_{1},\ldots,q_{n}\right)\in\mathbb{Q}^{n}$,
+sodass
 \begin{align*}
 f\left(X\right) & =X^{n}+\sum_{i=1}^{n}q_{i}X^{n-i}\in\mathbb{Q}\left[X\right]
 \end{align*}
-ist $f\left(X\right)\in\mathbb{Q}\left[X\right]$ irreduzibel, separabel
-und es gilt:
+irreduzibel und separabel ist und es gilt:
 \begin{align*}
 \text{Gal}\left(f\right) & =S_{n}
 \end{align*}
@@ -6703,20 +6778,24 @@ und es gilt:
 
 \subsubsection*{Beispiel}
 
-$q_{i}=0$, dann ist $f\left(X\right)=X^{n}$ mit der trivialen Galoisgruppe
-und nicht $S_{n}$.
+Obiges gilt nicht für alle $q_{i}$.
+
+Sei zum Beispiel $q_{i}=0$, dann ist $f\left(X\right)=X^{n}$ mit
+der trivialen Galoisgruppe und nicht $S_{n}$.
 
 
-\chapter{Kreisteilungskörper \textmd{(die Galoistheorie der Gleichung $X^{n}-1=0$)}}
+\chapter{Kreisteilungskörper \textmd{(die Galoistheorie der Gleichung $X^{n}-1=0$)\label{chap:Kreisteilungsk=0000F6rper}}}
 
 
-\subsubsection*{Fixiere}
+\subsubsection*{Fixiere in \ref{chap:Kreisteilungsk=0000F6rper} (\nameref{chap:Kreisteilungsk=0000F6rper})}
 
-Sei $k$ ein Körper und $n,m\ge1$ mit $\text{char}\left(k\right)\not|\, n,m$
-(im Fall $\text{char}\left(k\right)=0$ seien $n,m\ge1$ beliebig).
+Sei $k$ ein Körper und $n,m\in\mathbb{N}_{\ge1}$ entweder mit $\text{char}\left(k\right)=0$
+oder $\text{char}\left(k\right)\not|\, n,m$.
 
 
 \section{Proposition und Definition\label{sec:PuD-Einheitswurzel}}
+
+\textcolor{green}{TODO: Rest überarbeiten}
 
 Die Teilmenge $U_{n}:=U_{n}\left(k\right):=\left\{ \zeta\in\overline{k}\,^{*}\big|\zeta^{n}=1\right\} \subseteq\overline{k}\,^{*}$
 ist eine zyklische Untergruppe der Ordnung $n$, \emph{die Gruppe

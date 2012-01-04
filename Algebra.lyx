@@ -28477,6 +28477,13 @@ qqed
 Beispiel und Definition 
 \series medium
 (Untergruppen-Diagramm)
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:BuD-UntergruppenDiagramm"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -30467,12 +30474,6 @@ name "chap:Bestimmung-einiger-Galoisgruppen"
 
 \end_layout
 
-\begin_layout Standard
-
-\color green
-TODO: Rest überarbeiten
-\end_layout
-
 \begin_layout Subsubsection*
 Fixiere in Kapitel 
 \begin_inset CommandInset ref
@@ -30503,6 +30504,13 @@ Sei
 Satz und Definition 
 \series medium
 (Die Permutationsdarstellung)
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:SuD-Permutationsdarstellung"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -30522,22 +30530,26 @@ Seien
 \begin_inset Formula $f$
 \end_inset
 
- und 
-\begin_inset Formula $\mathcal{N}:=\left\{ \alpha\in E|f\left(\alpha\right)=0\right\} $
+ und
+\begin_inset Formula 
+\begin{align*}
+\mathcal{N} & :=\left\{ \alpha\in E|f\left(\alpha\right)=0\right\} 
+\end{align*}
+
 \end_inset
 
- (mit 
+mit 
 \begin_inset Formula $\left|\mathcal{N}\right|=n$
 \end_inset
 
-).
+.
 \end_layout
 
 \begin_layout Standard
 Dann ist die Abbildung
 \begin_inset Formula 
 \begin{align*}
-p & :\text{Gal}\left(\modulo{E}{k}\right)\hookrightarrow\sum\left(\mathcal{N}\right)\left(\stackrel{\sim}{=}\text{ nach Wahl einer Nummerierung }\mathcal{N}=\left\{ \alpha_{1},\ldots,\alpha_{n}\right\} \right)
+p & :\text{Gal}\left(\modulo{E}{k}\right)\hookrightarrow\sum\left(\mathcal{N}\right)\left(\sr{\stackrel{\sim}{=}}{\text{nach Wahl}}{\text{einer Nummerierung}}\mathcal{N}=\left\{ \alpha_{1},\ldots,\alpha_{n}\right\} \right)
 \end{align*}
 
 \end_inset
@@ -30596,14 +30608,14 @@ Beweis
 \begin_inset Formula $\modulo{E}{k}$
 \end_inset
 
- ist endlich galoissch nach 
+ ist endlich und galoissch nach 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "asdf"
+reference "sec:BuD-Galoisgruppe"
 
 \end_inset
 
-10.2 b) 
+ b) 
 \begin_inset Formula $\Rightarrow$
 \end_inset
 
@@ -30619,14 +30631,20 @@ Die Aussagen über
 \end_layout
 
 \begin_layout Standard
+
+\color green
+TODO: Beweis einfügen
+\end_layout
+
+\begin_layout Standard
 a) ist 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "asdf"
+reference "sec:Prop-sigmaInGalKommutiertNSt"
 
 \end_inset
 
-10.17 i) 
+ i) 
 \begin_inset Formula $\Leftrightarrow$
 \end_inset
 
@@ -30688,11 +30706,11 @@ Dann ist
  gilt nach 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "asdf"
+reference "sec:Def-ZK"
 
 \end_inset
 
-7.1 i):
+ i):
 \begin_inset Formula 
 \begin{align*}
 f\left(X\right) & =\left(X-\alpha\right)\cdot\left(X-\left(-\alpha-a\right)\right)
@@ -30700,39 +30718,31 @@ f\left(X\right) & =\left(X-\alpha\right)\cdot\left(X-\left(-\alpha-a\right)\righ
 
 \end_inset
 
-Weiter gilt: 
+Weiter ist die Separabilität von 
 \begin_inset Formula $f\in k\left[X\right]$
 \end_inset
 
- ist nicht separabel 
-\begin_inset Formula $\stackrel{f\text{ irreduzibel}}{\Leftrightarrow}$
+, weil 
+\begin_inset Formula $f$
 \end_inset
 
- in 
+ irreduzibel ist, äquivalent zu folgender Äquivalenz in 
 \begin_inset Formula $k\left[X\right]$
 \end_inset
 
- gilt: 
-\begin_inset Formula $0=f\left(X\right)=2X+a$
+:
+\begin_inset Formula 
+\begin{align*}
+0=f'\left(X\right)=2X+a & \Leftrightarrow\left(\text{char}\left(k\right)=2\wedge a=0\right)
+\end{align*}
+
 \end_inset
 
- 
-\begin_inset Formula $\Leftrightarrow$
-\end_inset
 
- (
-\begin_inset Formula $\text{char}\left(k\right)=2$
-\end_inset
-
- und 
-\begin_inset Formula $a=0$
-\end_inset
-
-)
 \end_layout
 
 \begin_layout Standard
-Gelte nun (
+Gelte nun 
 \begin_inset Formula $\text{char}\left(k\right)\not=2$
 \end_inset
 
@@ -30740,7 +30750,7 @@ Gelte nun (
 \begin_inset Formula $a\not=0$
 \end_inset
 
-).
+.
 \end_layout
 
 \begin_layout Standard
@@ -30753,7 +30763,7 @@ Dann ist
 \end_inset
 
  und das eindeutige 
-\begin_inset Formula $1\not=\sigma\in\text{Gal}\left(\modulo{E}{k}\right)$
+\begin_inset Formula $\sigma\in\text{Gal}\left(\modulo{E}{k}\right)\setminus\left\{ 1\right\} $
 \end_inset
 
  ist durch 
@@ -30791,12 +30801,38 @@ Dann ist
  irreduzibel.
 \end_layout
 
+\begin_layout Subsection
+Lemma 
+\series medium
+(Normalform)
+\end_layout
+
 \begin_layout Standard
-Betrachte (ähnlich wie quadratische Ergänzung): (TODO: restliche Terme)
+Jede kubische Gleichung der Form 
+\begin_inset Formula $F\left(X\right)$
+\end_inset
+
+ lässt sich reduzieren auf:
 \begin_inset Formula 
 \begin{align*}
-f\left(X\right) & :=F\left(X-\frac{A}{3}\right)=X^{3}+X^{2}\left(-3\cdot\frac{A}{3}+\alpha\right)+\ldots(TODO)=\\
- & =X^{3}+aX+b
+f\left(X\right) & =:X^{3}+aX+b
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Beweis
+\end_layout
+
+\begin_layout Standard
+Betrachte ähnlich der quadratischen Ergänzung:
+\begin_inset Formula 
+\begin{align*}
+f\left(X\right) & :=F\left(X-\frac{A}{3}\right)=X^{3}+X^{2}\left(-3\cdot\frac{A}{3}+A\right)+\left(B-\frac{A^{2}}{3}\right)X+\frac{2A^{3}}{27}-\frac{AB}{3}+C=\\
+ & =:X^{3}+aX+b
 \end{align*}
 
 \end_inset
@@ -30813,7 +30849,31 @@ Da
 \begin_inset Formula ${\displaystyle k\left[X\right]\stackrel{\sim}{\to}k\left[X\right],X\mapsto X-\frac{A}{3}}$
 \end_inset
 
- ein Isomorphismus ist, betrachte im Folgenden 
+ ein Isomorphismus ist, folgt die Behauptung.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Bestimmung der Galoisgruppe
+\end_layout
+
+\begin_layout Standard
+Betrachte im Folgenden 
 \begin_inset Formula $f\left(X\right)$
 \end_inset
 
@@ -30840,11 +30900,11 @@ Es gilt
  separabel nach 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "asdf"
+reference "sec:Lem-mNst"
 
 \end_inset
 
- 8.4 ii), und der Zerfällungskörper 
+ ii), und der Zerfällungskörper 
 \begin_inset Formula $\modulo{E}{k}$
 \end_inset
 
@@ -30856,11 +30916,22 @@ reference "asdf"
 \end_layout
 
 \begin_layout Standard
-Nummeriere 
-\begin_inset Formula $\mathcal{N}:=\left\{ \alpha\in E|f\left(\alpha\right)=0\right\} =\left\{ \alpha_{1},\alpha_{2},\alpha_{2}\right\} \stackrel{\ref{asdf}11.1}{\Rightarrow}$
+Nummeriere:
+\begin_inset Formula 
+\begin{align*}
+\mathcal{N} & :=\left\{ \alpha\in E|f\left(\alpha\right)=0\right\} =\left\{ \alpha_{1},\alpha_{2},\alpha_{2}\right\} 
+\end{align*}
+
 \end_inset
 
- Es existiert genau ein Gruppenhomomorphismus 
+Nach 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:SuD-Permutationsdarstellung"
+
+\end_inset
+
+ existiert genau ein Gruppenhomomorphismus 
 \begin_inset Formula $\varrho:\text{Gal}\left(\modulo{E}{k}\right)\hookrightarrow S_{3}$
 \end_inset
 
@@ -30887,11 +30958,11 @@ Weil
  (vergleiche 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "asdf"
+reference "sec:BuD-UntergruppenDiagramm"
 
 \end_inset
 
-10.13) folgt:
+) folgt:
 \begin_inset Formula 
 \begin{align*}
 \text{Gal}\left(\modulo{E}{k}\right) & \stackrel{\sim}{=}\text{im}\left(\varrho\right)=\begin{cases}
@@ -30946,14 +31017,14 @@ Beweis
 \end_layout
 
 \begin_layout Standard
-Klar wegen 
+Die Behauptung ist klar wegen 
 \begin_inset CommandInset ref
 LatexCommand eqref
 reference "eq:sigalphai"
 
 \end_inset
 
-, Definition von 
+, der Definition von 
 \begin_inset Formula $\sigma$
 \end_inset
 
@@ -30961,7 +31032,7 @@ reference "eq:sigalphai"
 \begin_inset Formula $\delta$
 \end_inset
 
- und Definition von 
+ und der Definition von 
 \begin_inset Formula $\text{sgn}\left(\varrho\left(\sigma\right)\right)$
 \end_inset
 
@@ -30989,19 +31060,15 @@ Es folgt in
 \begin_inset Formula $\mathbb{Z}$
 \end_inset
 
-: 
-\begin_inset Formula $\text{im}\left(\varrho\right)=A_{3}\stackrel{\text{Definition von }A_{3}}{\Leftrightarrow}\fall_{\sigma\in\text{Gal}\left(\moduloScript{E}{k}\right)}:\text{sgn}\left(\varrho\left(\sigma\right)\right)=1$
+:
+\begin_inset Formula 
+\begin{align*}
+\text{im}\left(\varrho\right)=A_{3} & \stackrel{\text{Definition von }A_{3}}{\Leftrightarrow}\fall_{\sigma\in\text{Gal}\left(\moduloScript{E}{k}\right)}:\text{sgn}\left(\varrho\left(\sigma\right)\right)=1\sr{\Leftrightarrow}{\text{Behauptung}}{\text{char}\left(k\right)\not=2}\fall_{\sigma\in\text{Gal}\left(\moduloScript{E}{k}\right)}:\sigma\left(\delta\right)=\delta
+\end{align*}
+
 \end_inset
 
- 
-\begin_inset Formula $\sr{\text{Behauptung}}{\Leftrightarrow}{\text{char}\left(k\right)\not=2}$
-\end_inset
 
- 
-\begin_inset Formula $\fall_{\sigma\in\text{Gal}\left(\moduloScript{E}{k}\right)}:\sigma\left(\delta\right)=\delta$
-\end_inset
-
-.
 \end_layout
 
 \begin_layout Standard
@@ -31014,10 +31081,22 @@ Dies ist äquivalent zu
 
 \begin_layout Standard
 Ferner gilt mit 
-\begin_inset Formula $\Delta:=\delta^{2}:\fall_{\sigma\in\text{Gal}\left(\moduloScript{E}{k}\right)}:\sigma\left(\Delta\right)=\left(\pm\delta\right)^{2}=\Delta$
+\begin_inset Formula $\Delta:=\delta^{2}$
 \end_inset
 
- und damit folgt 
+ für alle 
+\begin_inset Formula $\sigma\in\text{Gal}\left(\modulo{E}{k}\right)$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+\sigma\left(\Delta\right) & =\left(\pm\delta\right)^{2}=\Delta
+\end{align*}
+
+\end_inset
+
+Damit folgt 
 \begin_inset Formula $\Delta\in k$
 \end_inset
 
@@ -31025,11 +31104,15 @@ Ferner gilt mit
 \end_layout
 
 \begin_layout Standard
-Später wird noch gezeigt: 
-\begin_inset Formula $\Delta=-4a^{3}-27b^{2}$
+Später wird noch gezeigt:
+\begin_inset Formula 
+\begin{align*}
+\Delta= & -4a^{3}-27b^{2}
+\end{align*}
+
 \end_inset
 
-.
+
 \end_layout
 
 \begin_layout Standard
@@ -31045,6 +31128,19 @@ A_{3} & \Delta=-3a^{3}-27b^{2}\in\left(k^{*}\right)^{2}\\
 S_{3} & \text{sonst}
 \end{cases}
 \end{align*}
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed
+\end_layout
 
 \end_inset
 
@@ -31080,24 +31176,28 @@ Wegen
 \begin_inset Formula $\mathbb{Q}$
 \end_inset
 
- (benutzt, dass „ein ganzzahliges Polynom ohne Nullstellen in 
+ (benutzt, dass ein ganzzahliges Polynom ohne Nullstellen in 
 \begin_inset Formula $\mathbb{Z}$
 \end_inset
 
- hat keine Nullstellen in 
+ keine Nullstellen in 
 \begin_inset Formula $\mathbb{Q}$
 \end_inset
 
-“ und „eine ganzzahlige Nullstelle eines normierten Polynoms teilt den letzten
- Koeffizienten“).
+ hat und eine ganzzahlige Nullstelle eines normierten Polynoms den letzten
+ Koeffizienten teilt).
 \end_layout
 
 \begin_layout Standard
-Außerdem gilt hier: 
-\begin_inset Formula $\Delta=-4\cdot\left(-1\right)^{3}-27\cdot1^{2}=-23\not\in\left(\mathbb{Q}^{*}\right)^{2}$
+Außerdem gilt hier:
+\begin_inset Formula 
+\begin{align*}
+\Delta & =-4\cdot\left(-1\right)^{3}-27\cdot1^{2}=-23\not\in\left(\mathbb{Q}^{*}\right)^{2}
+\end{align*}
+
 \end_inset
 
-, also hat die Gleichung 
+ Also hat die Gleichung 
 \begin_inset Formula $X^{3}-X+1=0$
 \end_inset
 
@@ -31131,12 +31231,12 @@ Ferner gilt mit dem Zerfällungskörper
 
  (vergleiche 
 \begin_inset CommandInset ref
-LatexCommand eqref
-reference "asdf"
+LatexCommand ref
+reference "sec:BuD-UntergruppenDiagramm"
 
 \end_inset
 
- 10.13):
+):
 \begin_inset Formula 
 \begin{align*}
 K & =\mathbb{Q}\left(\delta\right)=\mathbb{Q}\left(\sqrt{-23}\right)
@@ -31156,7 +31256,7 @@ Sei
 \begin_inset Formula $n\ge1$
 \end_inset
 
- fixiert, 
+ fixiert und 
 \begin_inset Formula $E:=k\left(t_{1},\ldots,t_{n}\right)$
 \end_inset
 
@@ -31172,28 +31272,42 @@ Dann existiert genau eine Abbildung
 
 \end_inset
 
-mit:
+für die für alle 
+\begin_inset Formula $\sigma\in S_{n}$
+\end_inset
+
+ mit 
+\begin_inset Formula $1\le i\le n$
+\end_inset
+
+ gilt:
 \begin_inset Formula 
 \begin{align*}
-\fall_{\sigma\in S_{n},1\le i\le n}:\varrho\left(\sigma\right)\left(t_{i}\right) & =t_{\sigma\left(i\right)}
+\varrho\left(\sigma\right)\left(t_{i}\right) & =t_{\sigma\left(i\right)}
 \end{align*}
 
 \end_inset
 
-(benutze zum Beweis die universelle Eigenschaft des Polynomrings und des
- Quotientenkörpers)
+Benutze zum Beweis die universelle Eigenschaft des Polynomrings und des
+ Quotientenkörpers.
 \end_layout
 
 \begin_layout Standard
-und 
+Zudem ist 
 \begin_inset Formula $\varrho$
 \end_inset
 
- ist ein injektiver Gruppenhomomorphismus, vermöge dessen wir 
+ ein injektiver Gruppenhomomorphismus, vermöge dessen wir 
 \begin_inset Formula $S_{n}\subseteq\text{Aut}\left(E\right)$
 \end_inset
 
  als Untergruppe auffassen.
+\end_layout
+
+\begin_layout Standard
+
+\color green
+TODO: Beweis einfügen
 \end_layout
 
 \begin_layout Subsection
@@ -31245,13 +31359,14 @@ Beweis
 \end_layout
 
 \begin_layout Standard
+Folgt aus 
 \begin_inset CommandInset ref
-LatexCommand eqref
-reference "asdf"
+LatexCommand ref
+reference "sec:Kor-GalE_EGistG"
 
 \end_inset
 
-10.7 i)
+ i).
 \end_layout
 
 \begin_layout Standard
@@ -31275,31 +31390,48 @@ Beispiel
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $n=2\Rightarrow S_{2}=\left\{ 1,\left(\begin{array}{cc}
+Sei 
+\begin_inset Formula $n=2$
+\end_inset
+
+, betrachte also 
+\begin_inset Formula $S_{2}=\left\{ 1,\left(\begin{array}{cc}
 1 & 2\end{array}\right)=:\sigma\right\} $
 \end_inset
 
-, also 
+.
+\end_layout
+
+\begin_layout Standard
+Wegen 
+\begin_inset Formula 
+\begin{align*}
+\sigma\left(t_{1}+t_{2}\right) & =t_{2}+t_{1}=t_{1}+t_{2}
+\end{align*}
+
+\end_inset
+
+ist 
 \begin_inset Formula $t_{1}+t_{2}\in k\left(t_{1},t_{2}\right)^{S_{2}}$
 \end_inset
 
-, da 
-\begin_inset Formula $\sigma\left(t_{1}+t_{2}\right)=t_{2}+t_{1}=t_{1}+t_{2}$
-\end_inset
-
-, aber, falls 
+ , aber, falls 
 \begin_inset Formula $\text{char}\left(k\right)\not=2$
 \end_inset
 
-, 
+ ist, ist wegen
+\begin_inset Formula 
+\begin{align*}
+\sigma\left(t_{1}-t_{2}\right) & =t_{2}-t_{1}=-\left(t_{1}-t_{2}\right)\not=t_{1}-t_{2}
+\end{align*}
+
+\end_inset
+
+das Polynom 
 \begin_inset Formula $t_{1}-t_{2}\not\in k\left(t_{1},t_{2}\right)^{S_{2}}$
 \end_inset
 
-, da 
-\begin_inset Formula $\sigma\left(t_{1}-t_{2}\right)=t_{2}-t_{1}=-\left(t_{1}-t_{2}\right)\not=t_{1}-t_{2}$
-\end_inset
-
-, da 
+ , da 
 \begin_inset Formula $1\not=-1$
 \end_inset
 
@@ -31307,7 +31439,11 @@ Beispiel
 \end_layout
 
 \begin_layout Subsection
-Definition
+Definition 
+\series medium
+(elementarsymmetrische Polynome)
+\series default
+
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Def-elemSymFkt"
@@ -31388,7 +31524,7 @@ Seien
 \begin_inset Formula $k$
 \end_inset
 
--Algebra, 
+-Algebra und 
 \begin_inset Formula $I$
 \end_inset
 
@@ -31505,7 +31641,15 @@ iii
 \end_inset
 
  Die Elemente 
-\begin_inset Formula $a_{1}:=X^{2},a_{s}:=X^{3}\in A:=k\left[X\right]$
+\begin_inset Formula 
+\begin{align*}
+a_{1} & :=X^{2} & a_{2} & :=X^{3}
+\end{align*}
+
+\end_inset
+
+in 
+\begin_inset Formula $A:=k\left[X\right]$
 \end_inset
 
  sind transzendent über 
@@ -31529,6 +31673,12 @@ iii
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Standard
+
+\color green
+TODO: Beweis einfügen
 \end_layout
 
 \begin_layout Standard
@@ -31564,7 +31714,11 @@ end{iiilist}
 \end_layout
 
 \begin_layout Subsection
-Satz
+Satz 
+\series medium
+(Hauptsatz über symmetrische Funktionen)
+\series default
+
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Satz-HS-symFkt"
@@ -31774,11 +31928,15 @@ iii
 
 \end_inset
 
-gilt 
-\begin_inset Formula $E^{A_{n}}=K\left(\delta\right)\stackrel{\ref{asdf}11.4.6\text{ii)}}{=}k\left(s_{1},\ldots,s_{n},\delta\right)$
+gilt:
+\begin_inset Formula 
+\begin{align*}
+E^{A_{n}} & =K\left(\delta\right)\stackrel{\ref{sec:Satz-HS-symFkt}\text{ ii)}}{=}k\left(s_{1},\ldots,s_{n},\delta\right)
+\end{align*}
+
 \end_inset
 
-.
+
 \end_layout
 
 \begin_layout Standard
@@ -31808,7 +31966,7 @@ iii
 
  
 \series bold
-Vermutung:
+Vermutung
 \end_layout
 
 \begin_layout Standard
@@ -31896,7 +32054,7 @@ f^{\sigma}\left(X\right) & =\prod_{i=1}^{n}\left(X-t_{\sigma\left(i\right)}\righ
 \end_inset
 
 Also ist 
-\begin_inset Formula $f\in k\left[X\right]$
+\begin_inset Formula $f\in K\left[X\right]$
 \end_inset
 
 .
@@ -32084,22 +32242,18 @@ Für den eindeutigen
 \end_inset
 
 -Algebrenhomomorphismus 
-\begin_inset Formula $\varphi:k\left[t_{1},\ldots,t_{n}\right]\to k\left[T_{1},\ldots,T_{n}\right]$
+\begin_inset Formula 
+\begin{align*}
+\varphi & :k\left[t_{1},\ldots,t_{n}\right]\to k\left[T_{1},\ldots,T_{n}\right]
+\end{align*}
+
 \end_inset
 
- mit 
+mit 
 \begin_inset Formula $\varphi\left(t_{i}\right)=T_{i}$
 \end_inset
 
- für alle 
-\begin_inset Formula $1\le i\le n$
-\end_inset
-
- gilt für alle 
-\begin_inset Formula $1\le i\le n$
-\end_inset
-
-:
+ gilt
 \begin_inset Formula 
 \begin{align*}
 \varphi\left(s_{i}\right) & \stackrel{\eqref{eq:Sisi}}{=}\mathcal{S}_{i}
@@ -32107,6 +32261,14 @@ Für den eindeutigen
 
 \end_inset
 
+für alle 
+\begin_inset Formula $1\le i\le n$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
 Da 
 \begin_inset Formula $\left\{ \mathcal{S}_{1},\ldots,\mathcal{S}_{n}\right\} \subseteq k\left[\mathcal{S}_{1},\ldots,\mathcal{S}_{n}\right]$
 \end_inset
@@ -32161,7 +32323,13 @@ ref{sec:Satz-HS-symFkt}]
 \end_layout
 
 \begin_layout Subsection
-Definition
+Definition 
+\series medium
+(allgemeines Polynom 
+\begin_inset Formula $n$
+\end_inset
+
+-ten Grades)
 \end_layout
 
 \begin_layout Standard
@@ -32191,11 +32359,23 @@ Bemerkung
 
 \begin_layout Standard
 Seien 
-\begin_inset Formula $k\subseteq F$
+\begin_inset Formula $F\supseteq k$
 \end_inset
 
- eine Körpererweiterung und 
-\begin_inset Formula $f\in F\left[X\right]$
+ eine Körpererweiterung und
+\begin_inset Formula 
+\begin{align*}
+f & =X^{n}+\sum_{i=1}^{n}a_{i}X^{n-i}\in F\left[X\right]
+\end{align*}
+
+\end_inset
+
+mit 
+\begin_inset Formula $a_{i}\in F$
+\end_inset
+
+ für 
+\begin_inset Formula $1\le i\le n$
 \end_inset
 
  ein normiertes Polynom vom Grad 
@@ -32221,20 +32401,21 @@ Dann existiert genau ein
 mit
 \begin_inset Formula 
 \begin{align*}
-\varphi\left[X\right]\left(p\left(X\right)\right) & =f
+\varphi\left[X\right]:k\left(\mathcal{S}_{1},\ldots,\mathcal{S}_{n}\right)\left[X\right] & \to F\left[X\right]\\
+\varphi\left[X\right]\left(p\left(X\right)\right) & =f\left(X\right)
 \end{align*}
 
 \end_inset
 
-(nämlich 
-\begin_inset Formula $\varphi\left(\mathcal{S}_{i}\right)=\left(n-i\right)$
+also mit 
+\begin_inset Formula $\varphi\left(\mathcal{S}_{i}\right)=a_{i}$
 \end_inset
 
--ter Koeffizient von 
-\begin_inset Formula $f$
+ für 
+\begin_inset Formula $1\le i\le n$
 \end_inset
 
-).
+.
 \end_layout
 
 \begin_layout Subsection
@@ -32245,7 +32426,7 @@ Satz
 \begin_inset Formula $p\left(X\right)\subseteq k\left(\mathcal{S}_{1},\ldots,\mathcal{S}_{n}\right)\left[X\right]$
 \end_inset
 
- ist irreduzibel, separabel und es gilt:
+ ist irreduzibel und separabel und es gilt:
 \begin_inset Formula 
 \begin{align*}
 \text{Gal}\left(p\left(X\right)\right) & \stackrel{\sim}{=}S_{n}
@@ -32256,11 +32437,11 @@ Satz
 (vergleiche 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "asdf"
+reference "sec:BuD-Galoisgruppe"
 
 \end_inset
 
-10.2 i))
+ i))
 \end_layout
 
 \begin_layout Subsubsection*
@@ -32280,18 +32461,26 @@ reference "sec:Satz-HS-symFkt"
 \end_inset
 
 -Isomorphismus 
-\begin_inset Formula $\varphi:k\left(\mathcal{S}_{1},\ldots,\mathcal{S}_{n}\right)\stackrel{\sim}{\to}k\left(s_{1},\ldots,s_{n}\right)$
+\begin_inset Formula 
+\begin{align*}
+\varphi & :k\left(\mathcal{S}_{1},\ldots,\mathcal{S}_{n}\right)\stackrel{\sim}{\to}k\left(s_{1},\ldots,s_{n}\right)
+\end{align*}
+
 \end_inset
 
- mit 
+mit 
 \begin_inset Formula $\varphi\left(\mathcal{S}_{i}\right)=\left(-1\right)^{i}\cdot s_{i}$
 \end_inset
 
  und für diesen gilt 
-\begin_inset Formula $\varphi\left[X\right]\left(p\left(X\right)\right)=f\left(X\right)$
+\begin_inset Formula 
+\begin{align*}
+\varphi\left[X\right]\left(p\left(X\right)\right) & =f\left(X\right)
+\end{align*}
+
 \end_inset
 
- wie in 
+wie in 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:Def-elemSymFkt"
@@ -32354,7 +32543,7 @@ Für
 \begin_inset Formula $\left(q_{1},\ldots,q_{n}\right)\in\mathbb{Q}^{n}$
 \end_inset
 
- so, dass für
+, sodass
 \begin_inset Formula 
 \begin{align*}
 f\left(X\right) & =X^{n}+\sum_{i=1}^{n}q_{i}X^{n-i}\in\mathbb{Q}\left[X\right]
@@ -32362,11 +32551,7 @@ f\left(X\right) & =X^{n}+\sum_{i=1}^{n}q_{i}X^{n-i}\in\mathbb{Q}\left[X\right]
 
 \end_inset
 
-ist 
-\begin_inset Formula $f\left(X\right)\in\mathbb{Q}\left[X\right]$
-\end_inset
-
- irreduzibel, separabel und es gilt:
+irreduzibel und separabel ist und es gilt:
 \begin_inset Formula 
 \begin{align*}
 \text{Gal}\left(f\right) & =S_{n}
@@ -32386,6 +32571,15 @@ Beispiel
 \end_layout
 
 \begin_layout Standard
+Obiges gilt nicht für alle 
+\begin_inset Formula $q_{i}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Sei zum Beispiel 
 \begin_inset Formula $q_{i}=0$
 \end_inset
 
@@ -32408,10 +32602,31 @@ Kreisteilungskörper
 \end_inset
 
 )
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:Kreisteilungskörper"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection*
-Fixiere
+Fixiere in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:Kreisteilungskörper"
+
+\end_inset
+
+ (
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "chap:Kreisteilungskörper"
+
+\end_inset
+
+)
 \end_layout
 
 \begin_layout Standard
@@ -32420,22 +32635,18 @@ Sei
 \end_inset
 
  ein Körper und 
-\begin_inset Formula $n,m\ge1$
+\begin_inset Formula $n,m\in\mathbb{N}_{\ge1}$
 \end_inset
 
- mit 
-\begin_inset Formula $\text{char}\left(k\right)\not|\, n,m$
-\end_inset
-
- (im Fall 
+ entweder mit 
 \begin_inset Formula $\text{char}\left(k\right)=0$
 \end_inset
 
- seien 
-\begin_inset Formula $n,m\ge1$
+ oder 
+\begin_inset Formula $\text{char}\left(k\right)\not|\, n,m$
 \end_inset
 
- beliebig).
+.
 \end_layout
 
 \begin_layout Section
@@ -32447,6 +32658,12 @@ name "sec:PuD-Einheitswurzel"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+
+\color green
+TODO: Rest überarbeiten
 \end_layout
 
 \begin_layout Standard
