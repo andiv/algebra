@@ -111,7 +111,7 @@
 
 % Neudefinition der Abschnittsmarker für die Kopfzeile
 \renewcommand\partmark[1]{\markboth{#1}{}}
-\renewcommand\chaptermark[1]{\markboth{\leftmark}{\arabic{chapter} #1}}
+\renewcommand\chaptermark[1]{\markright{\arabic{chapter} #1}}
 \renewcommand\sectionmark[1]{}
 \renewcommand\subsectionmark[1]{}
 
@@ -184,8 +184,8 @@
 \topmargin 2.6cm
 \rightmargin 2.6cm
 \bottommargin 3.5cm
-\secnumdepth 3
-\tocdepth 3
+\secnumdepth 2
+\tocdepth 2
 \paragraph_separation skip
 \defskip smallskip
 \quotes_language german
@@ -376,7 +376,7 @@ pagenumbering{roman}
 \begin_layout Title
 
 \series bold
-\size huge
+\size giant
 \begin_inset ERT
 status open
 
@@ -393,8 +393,6 @@ vspace*{-30mm}
 \begin_inset Newline newline
 \end_inset
 
-
-\size giant
 Algebra
 \end_layout
 
@@ -731,7 +729,7 @@ fancyhead[R]{Literatur}
 
 \end_layout
 
-\begin_layout Subsubsection*
+\begin_layout Subsection*
 Literatur
 \end_layout
 
@@ -1880,10 +1878,89 @@ iii
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Subsubsection*
+Bildchen
+\end_layout
 
-\color green
-TODO: Grafik einfügen: disjunkte Vereinigung
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+definecolor{cffffff}{RGB}{255,255,255}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[y=0.80pt, x=0.8pt]
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+path[draw=black] (0,00) rectangle (270,100);
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+path[draw=black] (90,0) -- (90,100);
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+path[draw=black] (180,0) -- (180,100);
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+path[fill=black] (20,50) node[above right] {$H=eH$};
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+path[fill=black] (110,50) node[above right] {$g_1 H$};
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+path[fill=black] (200,50) node[above right] {$g_2 H$};
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+path[fill=black] (280,100) node[above right] {G};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture} 
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -7849,7 +7926,7 @@ Für alle
  ist
 \begin_inset Formula 
 \begin{align*}
-\nu_{p}:\mathbb{Q}^{*} & \to\mathbb{Z}\\
+\nu_{p}:Q^{*} & \to\mathbb{Z}\\
 \frac{a}{b} & \mapsto\nu_{p}\left(a\right)-\nu_{p}\left(b\right)
 \end{align*}
 
@@ -7919,7 +7996,7 @@ q & \mapsto\left(\frac{q}{\prod_{p\in\mathcal{P}}p^{\nu_{p}}},\left(\nu_{p}\left
 \end_inset
 
 Für alle 
-\begin_inset Formula $q\in\mathbb{Q}^{*}$
+\begin_inset Formula $q\in Q^{*}$
 \end_inset
 
  gilt:
@@ -8051,7 +8128,7 @@ Es existiert genau ein
 Daher gilt:
 \begin_inset Formula 
 \begin{align*}
-\varphi\left[X\right]\bigg(\sum_{i}\underbrace{a_{i}}_{\in\mathbb{Q}}X^{i}\bigg) & =\sum_{i}\underbrace{\varphi\left[X\right]\left(a_{i}\right)}_{=\varphi\left(a_{i}\right)}\cdot\underbrace{\varphi\left[X\right]\left(X\right)^{i}}_{=X^{i}}=\sum_{i}\varphi\left(a_{i}\right)\cdot X^{i}
+\varphi\left[X\right]\bigg(\sum_{i}\underbrace{a_{i}}_{\in Q}X^{i}\bigg) & =\sum_{i}\underbrace{\varphi\left[X\right]\left(a_{i}\right)}_{=\varphi\left(a_{i}\right)}\cdot\underbrace{\varphi\left[X\right]\left(X\right)^{i}}_{=X^{i}}=\sum_{i}\varphi\left(a_{i}\right)\cdot X^{i}
 \end{align*}
 
 \end_inset
@@ -8209,7 +8286,7 @@ iii
 \end_inset
 
  Lemma von Gauß: 
-\begin_inset Formula $\fall_{f,g\in\mathbb{Q}\left[X\right]}:\nu_{p}\left(fg\right)=\nu_{p}\left(f\right)+\nu_{p}\left(g\right)$
+\begin_inset Formula $\fall_{f,g\in Q\left[X\right]}:\nu_{p}\left(fg\right)=\nu_{p}\left(f\right)+\nu_{p}\left(g\right)$
 \end_inset
 
 
@@ -23033,8 +23110,8 @@ iii)
  beliebig, dann gilt:
 \begin_inset Formula 
 \begin{align*}
-\left[E:k\right] & \stackrel{k\subseteq k\left(\alpha\right)\subseteq E}{=}\left[E:k\left(\alpha\right)\right]\\
-\stackrel{\rotatebox{90}{\ensuremath{=}}}{\left[E:k\right]_{S}} & \stackrel{\phantom{k\subseteq k\left(\alpha\right)\subseteq E}}{=}\stackrel{\rotatebox{90}{\ensuremath{\le}}}{\left[E:k\left(\alpha\right)\right]_{S}}
+\left[E:k\right] & \stackrel{k\subseteq k\left(\alpha\right)\subseteq E}{\ge}\left[E:k\left(\alpha\right)\right]\\
+\stackrel{\rotatebox{90}{\ensuremath{=}}}{\left[E:k\right]_{S}} & \stackrel{\phantom{k\subseteq k\left(\alpha\right)\subseteq E}}{\ge}\stackrel{\rotatebox{90}{\ensuremath{\le}}}{\left[E:k\left(\alpha\right)\right]_{S}}
 \end{align*}
 
 \end_inset
@@ -25869,7 +25946,7 @@ iii
 \end_inset
 
  
-\begin_inset Formula $\left|\text{Aut}\left(E\right)\right|=\left[E:k\right]_{s}\le\left[E:k\right]$
+\begin_inset Formula $\left|\text{Aut}_{k}\left(E\right)\right|=\left[E:k\right]_{s}\le\left[E:k\right]$
 \end_inset
 
 
@@ -25889,7 +25966,7 @@ iii
 \end_inset
 
  
-\begin_inset Formula $\left(\left|\text{Aut}_{k}\left(E\right)\right|=\left[E:k\right]\right)\Leftrightarrow\modulo{E}{k}$
+\begin_inset Formula $\left|\text{Aut}_{k}\left(E\right)\right|=\left[E:k\right]\Leftrightarrow\modulo{E}{k}$
 \end_inset
 
  ist galoissch.
@@ -26107,7 +26184,11 @@ iii
 \begin_inset Formula $\left|G\right|<\infty$
 \end_inset
 
-, beziehungsweise endlich), so ist 
+, beziehungsweise 
+\begin_inset Formula $G$
+\end_inset
+
+ endlich), so ist 
 \begin_inset Formula $\modulo{E}{k}$
 \end_inset
 
@@ -32812,6 +32893,13 @@ Sei
 Definition 
 \series medium
 (primitive Einheitswurzeln)
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Def-primEinheitswurzel"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -32880,6 +32968,13 @@ Es gilt:
 
 \begin_layout Section
 Proposition
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Prop-zetaPsiInUnm"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -33101,6 +33196,1844 @@ Die Teilerfremdheit von
 , ist also nicht primitiv.
 \end_layout
 
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+%DATE: Di 10.1.12
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Erinnerung
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Erinnerung-EulerPhi"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Für alle 
+\begin_inset Formula $n\ge1$
+\end_inset
+
+ sei die „Eulersche 
+\begin_inset Formula $\varphi$
+\end_inset
+
+-Funktion“ definiert als:
+\begin_inset Formula 
+\begin{align*}
+\varphi\left(n\right) & :=\left|\left(\modlo{\mathbb{Z}}{n}\right)^{*}\right|
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Es gelten:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $\left(\modlo{Z}{n}\right)^{*}=\left\{ \overline{a}\in\modlo{Z}{n}\bigg|\text{ggT}\left(a,n\right)=1\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Insbesondere gilt:
+\begin_inset Formula 
+\begin{align*}
+\varphi\left(n\right) & =\left|\left\{ 0\le a<n-1|\text{ggT}\left(a,n\right)=1\right\} \right|
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $\varphi$
+\end_inset
+
+ ist multiplikativ, das heißt für alle 
+\begin_inset Formula $n,m\in\mathbb{N}_{\ge1}$
+\end_inset
+
+ gilt:
+\begin_inset Formula 
+\begin{align*}
+\text{ggT}\left(n,m\right)=1 & \Rightarrow\varphi\left(n\right)\cdot\varphi\left(m\right)=\varphi\left(nm\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Ist 
+\begin_inset Formula $p>0$
+\end_inset
+
+ eine Primzahl und 
+\begin_inset Formula $r\in\mathbb{N}_{\ge1}$
+\end_inset
+
+, dann folgt:
+\begin_inset Formula 
+\begin{align*}
+\varphi\left(p^{r}\right) & =\left(p-1\right)p^{r-1}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Proposition
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Prop-aErzeugt"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Für alle 
+\begin_inset Formula $\overline{a}\in\modlo{Z}{n}$
+\end_inset
+
+ gilt:
+\begin_inset Formula 
+\begin{align*}
+\overline{a}\text{ erzeugt }\left(\modlo{Z}{n},+\right) & \Leftrightarrow\overline{a}\in\left(\modlo{Z}{n}\right)^{*}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Beweis
+\end_layout
+
+\begin_layout Standard
+„
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+“: Es gibt ein 
+\begin_inset Formula $k\in\mathbb{Z}_{\ge1}$
+\end_inset
+
+ mit:
+\begin_inset Formula 
+\begin{align*}
+\overline{1} & =\underbrace{\overline{a}+\ldots+\overline{a}}_{k\text{ mal}}=\overline{a}\cdot\overline{k}\in\modlo{Z}{n}
+\end{align*}
+
+\end_inset
+
+Also ist 
+\begin_inset Formula $\overline{a}\in\left(\modlo{Z}{n}\right)^{*}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+„
+\begin_inset Formula $\Leftarrow$
+\end_inset
+
+“: Es gibt ein 
+\begin_inset Formula $b\in\mathbb{Z}_{\ge1}$
+\end_inset
+
+ mit 
+\begin_inset Formula 
+\begin{align*}
+\overline{a}\cdot\overline{b} & =\underbrace{\overline{a}+\ldots+\overline{a}}_{b\text{ mal}}=\overline{1}
+\end{align*}
+
+\end_inset
+
+in 
+\begin_inset Formula $\modlo{Z}{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Also ist 
+\begin_inset Formula $\overline{1}\in\left\langle \overline{a}\right\rangle \subseteq\left(\modlo{Z}{n},+\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Wegen 
+\begin_inset Formula $\left\langle \overline{1}\right\rangle =\left(\modlo{Z}{n},+\right)$
+\end_inset
+
+ folgt:
+\begin_inset Formula 
+\begin{align*}
+\left\langle \overline{a}\right\rangle  & =\left(\modlo{Z}{n},+\right)
+\end{align*}
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Korollar
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Kor-ZetaPrimitiv"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Für 
+\begin_inset Formula $n\in\mathbb{N}_{\ge1}$
+\end_inset
+
+ gelten mit 
+\begin_inset Formula $\left(\text{char}\left(k\right)\not|\, n\right)$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $\left|\left\{ \zeta\in U_{n}|\zeta\text{ ist primitiv}\right\} \right|=\varphi\left(n\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Für ein primitives 
+\begin_inset Formula $\zeta\in U_{n}$
+\end_inset
+
+ und 
+\begin_inset Formula $r\in\mathbb{Z}$
+\end_inset
+
+ gilt:
+\begin_inset Formula 
+\begin{align*}
+\zeta^{r}\in U_{n}\text{ ist primitiv} & \Leftrightarrow\overline{r}\in\left(\modlo{Z}{n}\right)^{*}\left(\stackrel{\ref{sec:Erinnerung-EulerPhi}\text{ i)}}{\Leftrightarrow}\text{ggT}\left(r,n\right)=1\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Beweis
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hspace*{1mm}
+\backslash
+vspace*{-7mm}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula 
+\begin{align*}
+\left|\left\{ \zeta\in U_{n}|\zeta\text{ ist primitiv}\right\} \right| & \sr{=}{\ref{sec:PuD-Einheitswurzel}}{\ref{sec:Def-primEinheitswurzel}}\left|\left\{ a\in\left(\modlo{Z}{n},+\right)\bigg|\left\langle a\right\rangle =\left(\modlo{Z}{n},+\right)\right\} \right|=\\
+ & \stackrel{\ref{sec:Prop-aErzeugt}}{=}\left|\left(\modlo{Z}{n}\right)^{*}\right|\stackrel{\ref{sec:Erinnerung-EulerPhi}}{=}\varphi\left(n\right)
+\end{align*}
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed[
+\backslash
+roman{ale2})]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Aus der Primitivität von 
+\begin_inset Formula $\zeta\in U_{n}$
+\end_inset
+
+ folgt:
+\begin_inset Formula 
+\begin{align*}
+\left(\modlo{Z}{n},+\right) & \stackrel{\sim}{\to}U_{n}\\
+\overline{a} & \mapsto\zeta^{a}
+\end{align*}
+
+\end_inset
+
+Also gilt für alle 
+\begin_inset Formula $r\in\mathbb{Z}$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+\zeta^{r}\in U_{n}\text{ ist primitiv} & \Leftrightarrow\left\langle \overline{r}\right\rangle =\left(\modlo{Z}{n},+\right)\stackrel{\ref{sec:Erinnerung-EulerPhi}}{=}\overline{r}\in\left(\modlo{Z}{n}\right)^{*}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Satz
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Satz-primEinheitsWurzel"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Seien 
+\begin_inset Formula $n\in\mathbb{N}_{\ge1}$
+\end_inset
+
+ und 
+\begin_inset Formula $\zeta_{n}\in\overline{k}$
+\end_inset
+
+ eine primitive 
+\begin_inset Formula $n$
+\end_inset
+
+-te Einheitswurzel.
+ Dann gelten:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $\modulo{k\left(\zeta\right)}{k}$
+\end_inset
+
+ ist endlich und abelsch.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Die Abbildung
+\begin_inset Formula 
+\begin{align*}
+\psi:\text{Gal}\left(\modulo{k\left(\zeta_{n}\right)}{k}\right) & \hookrightarrow\text{Aut}\left(U_{n}\right)\\
+\psi\left(\sigma\right) & :=\sigma|_{U_{n}}
+\end{align*}
+
+\end_inset
+
+ist wohldefiniert und ein injektiver Gruppenhomomorphismus.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Die Abbildung 
+\begin_inset Formula 
+\begin{align*}
+\left(\modlo{Z}{n}\right)^{*} & \stackrel{\sim}{\to}\text{Aut}\left(U_{n}\right)\\
+\overline{a} & \mapsto\left(\zeta\mapsto\zeta^{a}\right)
+\end{align*}
+
+\end_inset
+
+ist wohldefiniert und ein Gruppenisomorphismus.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Beweis
+\end_layout
+
+\begin_layout Standard
+Weil 
+\begin_inset Formula $\zeta_{n}$
+\end_inset
+
+ primitiv ist, folgt:
+\begin_inset Formula 
+\begin{align}
+U_{n} & =\left\langle \zeta_{n}\right\rangle =\left\{ \zeta_{n}^{a}|a\in\mathbb{Z}\right\} \subseteq k\left(\zeta_{n}\right)\label{eq:Un}
+\end{align}
+
+\end_inset
+
+Also ist 
+\begin_inset Formula $\modulo{k\left(\zeta_{n}\right)}{k}$
+\end_inset
+
+ ein Zerfällungskörper von 
+\begin_inset Formula $X^{n}-1\in k\left[X\right]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Weil aus 
+\begin_inset Formula $\zeta^{n}=1$
+\end_inset
+
+ schon 
+\begin_inset Formula $\left(X^{n}-1\right)'\left(\zeta\right)=n\zeta^{n-1}\not=0$
+\end_inset
+
+ folgt, ist 
+\begin_inset Formula $X^{n}-1\in k\left[X\right]$
+\end_inset
+
+ separabel, also ist 
+\begin_inset Formula $\modulo{k\left(\zeta_{n}\right)}{k}$
+\end_inset
+
+ endlich und galoissch.
+\end_layout
+
+\begin_layout Standard
+Für 
+\begin_inset Formula $\zeta\in U_{n}$
+\end_inset
+
+ und 
+\begin_inset Formula $\sigma\in\text{Gal}\left(\modulo{k\left(\zeta_{n}\right)}{k}\right)$
+\end_inset
+
+ gilt:
+\begin_inset Formula 
+\begin{align*}
+\left[\sigma\left(\zeta\right)\right]^{n} & =\sigma\left(\zeta^{n}\right)=\sigma\left(1\right)=1
+\end{align*}
+
+\end_inset
+
+Also ist 
+\begin_inset Formula $\sigma\left(\zeta\right)\in U_{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Ferner ist die Abbildung
+\begin_inset Formula 
+\begin{align*}
+U_{n} & \to U_{n}\\
+\zeta & \mapsto\sigma\left(\zeta\right)
+\end{align*}
+
+\end_inset
+
+Wegen 
+\begin_inset Formula $\sigma\left(\zeta\cdot\xi\right)=\sigma\left(\zeta\right)\cdot\sigma\left(\xi\right)$
+\end_inset
+
+ ein Gruppenhomomorphismus mit Inversen 
+\begin_inset Formula $\sigma^{-1}|_{U_{n}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Damit ist 
+\begin_inset Formula $\psi$
+\end_inset
+
+ in ii) wohldefiniert und ein Gruppenhomomorphismus.
+ Wegen 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Un"
+
+\end_inset
+
+ ist 
+\begin_inset Formula $\psi$
+\end_inset
+
+ injektiv.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed[ii)]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+iii) folgt, da 
+\begin_inset Formula $U_{n}$
+\end_inset
+
+ nach 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:PuD-Einheitswurzel"
+
+\end_inset
+
+ ein freier 
+\begin_inset Formula $\left(\modlo{Z}{n}\right)$
+\end_inset
+
+-Modul vom Rang 1 ist.
+\end_layout
+
+\begin_layout Standard
+Zu i): Wegen ii) und iii) ist 
+\begin_inset Formula $\text{Gal}\left(\modulo{k\left(\zeta_{n}\right)}{k}\right)$
+\end_inset
+
+ abelsch.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Bemerkung und Definition
+\end_layout
+
+\begin_layout Standard
+In der Situation von 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Satz-primEinheitsWurzel"
+
+\end_inset
+
+ gilt:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hspace*{1mm}
+\backslash
+vspace*{-7mm}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula 
+\begin{align*}
+\left[k\left(\zeta_{n}\right):k\right] & \,\Bigg|\,\left|\text{Gal}\left(\modulo{k\left(\zeta_{n}\right)}{k}\right)\right|=\varphi\left(n\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Für 
+\begin_inset Formula $k=\mathbb{Q}$
+\end_inset
+
+ in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Satz-primEinheitsWurzel"
+
+\end_inset
+
+ heißt 
+\begin_inset Formula $\mathbb{Q}\left(\zeta_{n}\right)$
+\end_inset
+
+ 
+\emph on
+der 
+\begin_inset Formula $n$
+\end_inset
+
+-te Kreisteilungskörper
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Satz 
+\series medium
+(Gauß)
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Satz-Einheitswurzel-Gauss"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Seien 
+\begin_inset Formula $n\ge1$
+\end_inset
+
+ und 
+\begin_inset Formula $\zeta_{n}\in\overline{\mathbb{Q}}$
+\end_inset
+
+ eine primitive 
+\begin_inset Formula $n$
+\end_inset
+
+-te Einheitswurzel.
+\end_layout
+
+\begin_layout Standard
+Dann ist der Gruppenhomomorphismus
+\begin_inset Formula 
+\begin{align*}
+\psi:\text{Gal}\left(\modulo{\mathbb{Q}\left(\zeta_{n}\right)}{\mathbb{Q}}\right) & \stackrel{\sim}{\to}\left(\modlo{Z}{n}\right)^{*}
+\end{align*}
+
+\end_inset
+
+mit der Eigenschaft, dass für alle 
+\begin_inset Formula $\sigma\in\text{Gal}\left(\modulo{\mathbb{Q}\left(\zeta_{n}\right)}{\mathbb{Q}}\right)$
+\end_inset
+
+ und 
+\begin_inset Formula $\zeta\in\mathbb{Q}\left(U_{n}\right)$
+\end_inset
+
+ schon
+\begin_inset Formula 
+\begin{align*}
+\sigma\left(\zeta\right) & =\zeta^{\psi\left(\sigma\right)}
+\end{align*}
+
+\end_inset
+
+(vergleiche 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Satz-Gauss"
+
+\end_inset
+
+ ii))
+\end_layout
+
+\begin_layout Standard
+
+\color green
+TODO: Verweis überprüfen 2.8 ii) ?
+\end_layout
+
+\begin_layout Standard
+gilt, ein Isomorphismus.
+\end_layout
+
+\begin_layout Standard
+Insbesondere gilt:
+\begin_inset Formula 
+\begin{align*}
+\left[\mathbb{Q}\left(\zeta_{n}\right):\mathbb{Q}\right] & =\varphi\left(n\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Beweis
+\end_layout
+
+\begin_layout Standard
+Sei 
+\begin_inset Formula $f:=\text{Mipo}_{\mathbb{Q}}\left(\zeta_{n}\right)$
+\end_inset
+
+, also gilt:
+\begin_inset Formula 
+\begin{align*}
+f & |X^{n}-1\in\mathbb{Q}\left[X\right]
+\end{align*}
+
+\end_inset
+
+Weil 
+\begin_inset Formula $f$
+\end_inset
+
+ normiert ist und mit 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Kor-hfgNormiert"
+
+\end_inset
+
+ mit 
+\begin_inset Formula $h=X^{n}-1$
+\end_inset
+
+ und 
+\begin_inset Formula $R=\mathbb{Z}$
+\end_inset
+
+ folgt 
+\begin_inset Formula $f\in\mathbb{Z}\left[X\right]$
+\end_inset
+
+ und
+\begin_inset Formula 
+\begin{align}
+X^{n}-1 & =f\cdot h\in\mathbb{Z}\left[X\right]\label{eq:Xnfh}
+\end{align}
+
+\end_inset
+
+für ein geeignetes 
+\begin_inset Formula $h\in\mathbb{Z}\left[X\right]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Description
+Behauptung
+\begin_inset space ~
+\end_inset
+
+1 Ist 
+\begin_inset Formula $p>0$
+\end_inset
+
+ eine Primzahl mit 
+\begin_inset Formula $p\not|\: n$
+\end_inset
+
+, dann ist 
+\begin_inset Formula $f\left(\zeta_{n}^{p}\right)=0$
+\end_inset
+
+ und 
+\begin_inset Formula $\zeta_{n}^{p}\in U_{n}$
+\end_inset
+
+ ist primitiv.
+\end_layout
+
+\begin_layout Description
+Beweis Die zweite Aussage folgt aus 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Kor-ZetaPrimitiv"
+
+\end_inset
+
+ ii).
+\begin_inset Newline newline
+\end_inset
+
+Angenommen 
+\begin_inset Formula $f\left(\zeta_{n}^{p}\right)\not=0$
+\end_inset
+
+, dann würde wegen 
+\begin_inset Formula $\left(\zeta_{n}^{p}\right)^{n}=1$
+\end_inset
+
+ und 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Xnfh"
+
+\end_inset
+
+ gelten:
+\begin_inset Formula 
+\begin{align*}
+h\left(\zeta_{n}^{p}\right) & =0
+\end{align*}
+
+\end_inset
+
+Also gilt:
+\begin_inset Formula 
+\begin{align*}
+h\left(X^{p}\right)\left(\zeta_{n}\right) & =0
+\end{align*}
+
+\end_inset
+
+Wegen 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Kor-hfgNormiert"
+
+\end_inset
+
+ folgt:
+\begin_inset Formula 
+\begin{align*}
+f & |h\left(X^{p}\right)\in\mathbb{Z}\left[X\right]
+\end{align*}
+
+\end_inset
+
+Das heißt 
+\begin_inset Formula $h\left(X^{p}\right)=f\cdot g\in\mathbb{Z}\left[X\right]$
+\end_inset
+
+ für geeignetes 
+\begin_inset Formula $g\in\mathbb{Z}\left[X\right]$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+Also gilt in 
+\begin_inset Formula $\mathbb{F}_{p}\left[X\right]$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+\overline{h}^{p}\sr{=}{\left(+\right)}{\text{siehe unten}}\overline{h\left(X^{p}\right)} & =\overline{f}\cdot\overline{g}
+\end{align*}
+
+\end_inset
+
+Damit folgt 
+\begin_inset Formula $\text{ggT}\left(\overline{h},\overline{f}\right)\not=1$
+\end_inset
+
+ in 
+\begin_inset Formula $\mathbb{F}_{p}\left[X\right]$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+Also besitzt 
+\begin_inset Formula $\overline{X^{n}-1}=\overline{f}\cdot\overline{h}\in\mathbb{F}_{p}\left[X\right]$
+\end_inset
+
+ eine mehrfache Nullstelle in 
+\begin_inset Formula $\overline{\mathbb{F}}_{p}$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+Dies ist ein Widerspruch zur Separabilität von 
+\begin_inset Formula $X^{n}-1$
+\end_inset
+
+ in 
+\begin_inset Formula $\mathbb{F}_{p}\left[X\right]$
+\end_inset
+
+, da 
+\begin_inset Formula $p\not|\: n$
+\end_inset
+
+.
+ (vergleiche mit dem Beweis von 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Lem-mNst"
+
+\end_inset
+
+ i))
+\begin_inset Newline newline
+\end_inset
+
+Zu 
+\begin_inset Formula $\left(+\right)$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+\overline{h} & =\sum_{i}a_{i}X^{i} & a_{i} & \in\mathbb{F}_{p}
+\end{align*}
+
+\end_inset
+
+Dann gilt:
+\begin_inset Formula 
+\begin{align*}
+\overline{h\left(X^{p}\right)} & =\sum_{i}a_{i}\left(X^{p}\right)^{i}\stackrel{a_{i}\in\mathbb{F}_{p}}{=}\sum_{i}a_{i}^{p}\left(X^{i}\right)^{p}=\left(\sum a_{i}X^{i}\right)^{p}=\overline{h}^{p}
+\end{align*}
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed[Behauptung 1]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+Behauptung
+\begin_inset space ~
+\end_inset
+
+2 Ist 
+\begin_inset Formula $\zeta\in U_{n}$
+\end_inset
+
+ primitiv, so ist 
+\begin_inset Formula $f\left(\zeta\right)=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Description
+Beweis Nach 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Kor-ZetaPrimitiv"
+
+\end_inset
+
+ ii) gibt es ein 
+\begin_inset Formula $r\in\mathbb{Z}$
+\end_inset
+
+ mit 
+\begin_inset Formula $\text{ggT}\left(r,n\right)=1$
+\end_inset
+
+ und 
+\begin_inset Formula $\zeta=\zeta_{n}^{r}$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+Dann ist 
+\begin_inset Formula $r=p_{1}\cdot\ldots\cdot p_{m}$
+\end_inset
+
+ ein endliches Produkt von Primzahlen 
+\begin_inset Formula $p_{i}$
+\end_inset
+
+ mit 
+\begin_inset Formula $p_{i}\not|\: n$
+\end_inset
+
+ für alle 
+\begin_inset Formula $1\le i\le n$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+Aus Behauptung 1 folgt induktiv:
+\begin_inset Formula 
+\begin{align*}
+f\left(\zeta_{n}^{p_{1}}\right) & =0
+\end{align*}
+
+\end_inset
+
+und 
+\begin_inset Formula $\zeta_{n}^{p_{1}}\in U_{n}$
+\end_inset
+
+ ist primitiv.
+\begin_inset Newline newline
+\end_inset
+
+Dann folgt aus der Behauptung 1 für 
+\begin_inset Formula $\zeta_{n}^{p_{2}}$
+\end_inset
+
+, dass
+\begin_inset Formula 
+\begin{align*}
+\left(\zeta_{n}^{p_{1}}\right)^{p_{2}} & =\zeta_{n}^{p_{1}\cdot p_{2}}\in U_{n}
+\end{align*}
+
+\end_inset
+
+primitiv ist und gilt:
+\begin_inset Formula 
+\begin{align*}
+f\left(\zeta_{n}^{p_{1}\cdot p_{2}}\right) & =0
+\end{align*}
+
+\end_inset
+
+Dann folgt:
+\begin_inset Formula 
+\begin{align*}
+0 & =f\left(\zeta_{n}^{r}\right)=f\left(\zeta\right)
+\end{align*}
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed[Behauptung 2]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Nach 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Satz-primEinheitsWurzel"
+
+\end_inset
+
+ ii) ist
+\begin_inset Formula 
+\begin{align*}
+\psi:\text{Gal}\left(\modulo{\mathbb{Q}\left(\zeta_{n}\right)}{\mathbb{Q}}\right) & \hookrightarrow\left(\modlo{Z}{n}\right)^{*}
+\end{align*}
+
+\end_inset
+
+injektiv.
+\end_layout
+
+\begin_layout Standard
+Zeige also nur:
+\begin_inset Formula 
+\begin{align*}
+\left[\mathbb{Q}\left(\zeta_{n}\right):\mathbb{Q}\right] & \ge\left|\left(\modlo{Z}{n}\right)^{*}\right|=\varphi\left(n\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Beweis
+\end_layout
+
+\begin_layout Standard
+
+\color green
+TODO: 
+\begin_inset Formula $\left(1\right)$
+\end_inset
+
+ heißt????
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\left[\mathbb{Q}\left(\zeta_{n}\right):\mathbb{Q}\right]\stackrel{\left(1\right)}{=}\deg\left(f\right)\stackrel{\text{Beh. 2}}{\ge}\left|\left\{ \zeta\in U_{n}|\zeta\text{ ist primitiv}\right\} \right|\stackrel{\text{\ref{asdf} i)}}{=}\varphi\left(n\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Korollar
+\end_layout
+
+\begin_layout Standard
+Seien 
+\begin_inset Formula $n,m\ge1$
+\end_inset
+
+ teilerfremd und 
+\begin_inset Formula $\zeta_{n},\zeta_{m}\in\overline{\mathbb{Q}}$
+\end_inset
+
+ primitive 
+\begin_inset Formula $n$
+\end_inset
+
+-te (beziehungsweise 
+\begin_inset Formula $m$
+\end_inset
+
+-te) Einheitswurzeln.
+\end_layout
+
+\begin_layout Standard
+Dann gelten:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $\mathbb{Q}\left(\zeta_{n},\zeta_{m}\right)=\mathbb{Q}\left(\zeta_{n}\right)\cdot\mathbb{Q}\left(\zeta_{m}\right)=\mathbb{Q}\left(\zeta_{n}\cdot\zeta_{m}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $\mathbb{Q}\left(\zeta_{n}\right)\cap\mathbb{Q}\left(\zeta_{m}\right)=\mathbb{Q}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Die Abbildung
+\begin_inset Formula 
+\begin{align*}
+\text{Gal}\left(\modulo{\mathbb{Q}\left(\zeta_{n},\zeta_{m}\right)}{\mathbb{Q}}\right) & \to\text{Gal}\left(\modulo{\mathbb{Q}\left(\zeta_{n}\right)}{\mathbb{Q}}\right)\times\text{Gal}\left(\modulo{\mathbb{Q}\left(\zeta_{m}\right)}{\mathbb{Q}}\right)\\
+\sigma & \mapsto\left(\sigma|_{\mathbb{Q}\left(\zeta_{n}\right)},\sigma|_{\mathbb{Q}\left(\zeta_{m}\right)}\right)
+\end{align*}
+
+\end_inset
+
+ist ein Gruppenisomorphismus.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Beweis
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Da 
+\begin_inset Formula $\zeta_{n}\cdot\zeta_{m}$
+\end_inset
+
+ nach 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Prop-zetaPsiInUnm"
+
+\end_inset
+
+ eine primitive 
+\begin_inset Formula $\left(nm\right)$
+\end_inset
+
+-te Einheitswurzel ist, gelten 
+\begin_inset Formula $\zeta_{n},\zeta_{m}\in\mathbb{Q}\left(\zeta_{n}\cdot\zeta_{m}\right)$
+\end_inset
+
+, denn 
+\begin_inset Formula $U_{n},U_{m}\subseteq U_{nm}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Der Rest ist klar.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed[
+\backslash
+roman{ale2})]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Wir haben folgendes Körperdiagramm:
+\end_layout
+
+\begin_layout Standard
+
+\color green
+TODO: Abbildung Körperdiagramm
+\end_layout
+
+\begin_layout Standard
+Dabei gelten die Grade nach 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Satz-Einheitswurzel-Gauss"
+
+\end_inset
+
+12.10.
+\end_layout
+
+\begin_layout Standard
+Aus der Gradformel für 
+\begin_inset Formula $\mathbb{Q}\subseteq\mathbb{Q}\left(\zeta_{n}\right)\subseteq\mathbb{Q}\left(\zeta_{nm}\right)$
+\end_inset
+
+ folgt:
+\begin_inset Formula 
+\begin{align*}
+\left[\mathbb{Q}\left(\zeta_{nm}\right):\mathbb{Q}\left(\zeta_{m}\right)\right] & =\varphi\left(n\right)\le\left[\mathbb{Q}\left(\zeta_{n}\right):E\right]\le\left[\mathbb{Q}\left(\zeta_{n}\right):\mathbb{Q}\right]\stackrel{\ref{asdf}12.10}{=}\varphi\left(n\right)
+\end{align*}
+
+\end_inset
+
+Also folgt:
+\begin_inset Formula 
+\begin{align*}
+\varphi\left(n\right) & =\left[\mathbb{Q}\left(\zeta_{n}\right):E\right]=\left[\mathbb{Q}\left(\zeta_{n}\right):\mathbb{Q}\right]
+\end{align*}
+
+\end_inset
+
+Also folgt wegen 
+\begin_inset Formula $\mathbb{Q}\subseteq E$
+\end_inset
+
+ schon 
+\begin_inset Formula $E=\mathbb{Q}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed[
+\backslash
+roman{ale2})]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Dies folgt aus i), ii) und 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Satz-Kompositum"
+
+\end_inset
+
+ ii).
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Part*
 Anhang
 \begin_inset ERT
@@ -33248,7 +35181,7 @@ Everyone is permitted to copy and distribute verbatim copies of this license
 \begin_inset Newline newline
 \end_inset
 
-but changing it is not allowed.
+but changing it is not allowed
 \end_layout
 
 \begin_layout Section*

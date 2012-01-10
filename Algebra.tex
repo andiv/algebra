@@ -7,8 +7,6 @@
 \geometry{verbose,tmargin=2.6cm,bmargin=3.5cm,lmargin=2.6cm,rmargin=2.6cm}
 \usepackage{fancyhdr}
 \pagestyle{fancy}
-\setcounter{secnumdepth}{3}
-\setcounter{tocdepth}{3}
 \setlength{\parskip}{\smallskipamount}
 \setlength{\parindent}{0pt}
 \usepackage{color}
@@ -147,7 +145,7 @@
 
 % Neudefinition der Abschnittsmarker für die Kopfzeile
 \renewcommand\partmark[1]{\markboth{#1}{}}
-\renewcommand\chaptermark[1]{\markboth{\leftmark}{\arabic{chapter} #1}}
+\renewcommand\chaptermark[1]{\markright{\arabic{chapter} #1}}
 \renewcommand\sectionmark[1]{}
 \renewcommand\subsectionmark[1]{}
 
@@ -176,7 +174,7 @@
 \pagenumbering{roman}
 
 
-\title{\textbf{\huge \vspace*{-30mm}}\\
+\title{\textbf{\Huge \vspace*{-30mm}}\\
 \textbf{\Huge Algebra}}
 
 
@@ -273,7 +271,7 @@ heruntergeladen werden.
 \fancyhead[R]{Literatur}
 
 
-\subsubsection*{Literatur}
+\subsection*{Literatur}
 \begin{itemize}
 \item \noun{Siegfried Bosch}: \emph{Algebra}, Springer, 2009\\
 ISBN 3-540-40388-4, http://dx.doi.org/10.1007/978-3-540-92812-6
@@ -488,7 +486,21 @@ Für $\left|H\right|<\infty$ ist $\left|gH\right|=\left|g'H\right|$.
 
 \iii ${\displaystyle G=\bcupd_{gH\in\moduloScript{G}{H}}\left(gH\right)}\qquad\qquad\text{(disjunkte Vereinigung)}$
 
-\textcolor{green}{TODO: Grafik einfügen: disjunkte Vereinigung}
+
+\subsubsection*{Bildchen}
+
+\noindent \begin{center}
+\definecolor{cffffff}{RGB}{255,255,255}
+\begin{tikzpicture}[y=0.80pt, x=0.8pt]
+  \path[draw=black] (0,00) rectangle (270,100);
+  \path[draw=black] (90,0) -- (90,100);
+  \path[draw=black] (180,0) -- (180,100);
+  \path[fill=black] (20,50) node[above right] {$H=eH$};
+  \path[fill=black] (110,50) node[above right] {$g_1 H$};
+  \path[fill=black] (200,50) node[above right] {$g_2 H$};
+  \path[fill=black] (280,100) node[above right] {G};
+\end{tikzpicture} 
+\par\end{center}
 
 \end{iiilist}
 
@@ -1739,7 +1751,7 @@ Primzahlen)
 
 Für alle $p\in\mathcal{P}$ ist
 \begin{align*}
-\nu_{p}:\mathbb{Q}^{*} & \to\mathbb{Z}\\
+\nu_{p}:Q^{*} & \to\mathbb{Z}\\
 \frac{a}{b} & \mapsto\nu_{p}\left(a\right)-\nu_{p}\left(b\right)
 \end{align*}
  ($a\not=0$) die \emph{$p$-adische Bewertung von ${\displaystyle \frac{a}{b}}$}
@@ -1760,7 +1772,7 @@ ist ein Isomorphismus von Gruppen mit der inversen Abbildung:
 \begin{align*}
 q & \mapsto\left(\frac{q}{\prod_{p\in\mathcal{P}}p^{\nu_{p}}},\left(\nu_{p}\left(q\right)\right)_{p\in\mathcal{P}}\right)
 \end{align*}
-Für alle $q\in\mathbb{Q}^{*}$ gilt:
+Für alle $q\in Q^{*}$ gilt:
 \begin{align}
 q\in R & \Leftrightarrow\fall_{p\in\mathcal{P}}:\nu_{p}\left(q\right)\ge0\label{eq:qinR}
 \end{align}
@@ -1805,7 +1817,7 @@ mit $\varphi\left[X\right]\left(X\right)=X$.
 
 Daher gilt:
 \begin{align*}
-\varphi\left[X\right]\bigg(\sum_{i}\underbrace{a_{i}}_{\in\mathbb{Q}}X^{i}\bigg) & =\sum_{i}\underbrace{\varphi\left[X\right]\left(a_{i}\right)}_{=\varphi\left(a_{i}\right)}\cdot\underbrace{\varphi\left[X\right]\left(X\right)^{i}}_{=X^{i}}=\sum_{i}\varphi\left(a_{i}\right)\cdot X^{i}
+\varphi\left[X\right]\bigg(\sum_{i}\underbrace{a_{i}}_{\in Q}X^{i}\bigg) & =\sum_{i}\underbrace{\varphi\left[X\right]\left(a_{i}\right)}_{=\varphi\left(a_{i}\right)}\cdot\underbrace{\varphi\left[X\right]\left(X\right)^{i}}_{=X^{i}}=\sum_{i}\varphi\left(a_{i}\right)\cdot X^{i}
 \end{align*}
 \qqed
 
@@ -1831,7 +1843,7 @@ Es gelten:
 
 \iii $f\in R\left[X\right]\Leftrightarrow\fall_{p\in\mathcal{P}}:\nu_{p}\left(f\right)\ge0$
 
-\iii Lemma von Gauß: $\fall_{f,g\in\mathbb{Q}\left[X\right]}:\nu_{p}\left(fg\right)=\nu_{p}\left(f\right)+\nu_{p}\left(g\right)$
+\iii Lemma von Gauß: $\fall_{f,g\in Q\left[X\right]}:\nu_{p}\left(fg\right)=\nu_{p}\left(f\right)+\nu_{p}\left(g\right)$
 
 \end{iiilist}
 
@@ -4759,8 +4771,8 @@ die Behauptung aus \ref{sec:Lem-sepNst} ii) \quotedblbase{}$\Rightarrow$\textquo
 
 iii) $\Rightarrow$ i): Sei $\alpha\in E$ beliebig, dann gilt:
 \begin{align*}
-\left[E:k\right] & \stackrel{k\subseteq k\left(\alpha\right)\subseteq E}{=}\left[E:k\left(\alpha\right)\right]\\
-\stackrel{\rotatebox{90}{\ensuremath{=}}}{\left[E:k\right]_{S}} & \stackrel{\phantom{k\subseteq k\left(\alpha\right)\subseteq E}}{=}\stackrel{\rotatebox{90}{\ensuremath{\le}}}{\left[E:k\left(\alpha\right)\right]_{S}}
+\left[E:k\right] & \stackrel{k\subseteq k\left(\alpha\right)\subseteq E}{\ge}\left[E:k\left(\alpha\right)\right]\\
+\stackrel{\rotatebox{90}{\ensuremath{=}}}{\left[E:k\right]_{S}} & \stackrel{\phantom{k\subseteq k\left(\alpha\right)\subseteq E}}{\ge}\stackrel{\rotatebox{90}{\ensuremath{\le}}}{\left[E:k\left(\alpha\right)\right]_{S}}
 \end{align*}
 \textcolor{green}{TODO: Obige Gleichung überprüfen.}
 \begin{align*}
@@ -5269,9 +5281,9 @@ Dann gelten:
 
 \begin{iiilist}
 
-\iii $\left|\text{Aut}\left(E\right)\right|=\left[E:k\right]_{s}\le\left[E:k\right]$
+\iii $\left|\text{Aut}_{k}\left(E\right)\right|=\left[E:k\right]_{s}\le\left[E:k\right]$
 
-\iii $\left(\left|\text{Aut}_{k}\left(E\right)\right|=\left[E:k\right]\right)\Leftrightarrow\modulo{E}{k}$
+\iii $\left|\text{Aut}_{k}\left(E\right)\right|=\left[E:k\right]\Leftrightarrow\modulo{E}{k}$
 ist galoissch.
 
 \end{iiilist}
@@ -5310,7 +5322,7 @@ von $E$, die auf $k$ die Identität sind, gilt:
 \item $\left[E:k\right]=\left|G\right|$
 \end{itemize}
 \iii Ist $\modulo{E}{k}$ algebraisch (aber nicht notwendigerweise
-$\left|G\right|<\infty$, beziehungsweise endlich), so ist $\modulo{E}{k}$
+$\left|G\right|<\infty$, beziehungsweise $G$ endlich), so ist $\modulo{E}{k}$
 galoissch und $G\subseteq\text{Gal}\left(\modulo{E}{k}\right)$ ist
 eine Untergruppe.
 
@@ -6834,7 +6846,7 @@ Sei $p$ eine Primzahl und $n\in\mathbb{N}_{\ge1}$, dann folgt:
 
 
 
-\section{Definition \textmd{(primitive Einheitswurzeln)}}
+\section{Definition \textmd{(primitive Einheitswurzeln)\label{sec:Def-primEinheitswurzel}}}
 
 Eine $n$-te Einheitswurzel $\zeta\in U_{n}$ heißt genau dann \emph{primitiv},
 wenn $\left\langle \zeta\right\rangle =U_{n}$.
@@ -6858,7 +6870,7 @@ Es gilt:
 
 
 
-\section{Proposition}
+\section{Proposition\label{sec:Prop-zetaPsiInUnm}}
 
 Sind $n,m$ teilerfremd (und $\text{char}\left(k\right)\not|\, n,m$),
 so ist die Abbildung
@@ -6916,6 +6928,398 @@ $\zeta:=\ii\in U_{4}\left(\mathbb{C}\right)$ und $\xi:=\ii\in U_{4}\left(\mathbb
 sind primitiv, aber $\zeta\cdot\xi=-1\in U_{16}\left(\mathbb{C}\right)$
 hat Ordnung $2\not=16$, ist also nicht primitiv.
 
+%DATE: Di 10.1.12
+
+
+\section{Erinnerung\label{sec:Erinnerung-EulerPhi}}
+
+Für alle $n\ge1$ sei die \quotedblbase{}Eulersche $\varphi$-Funktion\textquotedblleft{}
+definiert als:
+\begin{align*}
+\varphi\left(n\right) & :=\left|\left(\modlo{\mathbb{Z}}{n}\right)^{*}\right|
+\end{align*}
+
+
+Es gelten:
+
+\begin{iiilist}
+
+\iii $\left(\modlo{Z}{n}\right)^{*}=\left\{ \overline{a}\in\modlo{Z}{n}\bigg|\text{ggT}\left(a,n\right)=1\right\} $
+
+Insbesondere gilt:
+\begin{align*}
+\varphi\left(n\right) & =\left|\left\{ 0\le a<n-1|\text{ggT}\left(a,n\right)=1\right\} \right|
+\end{align*}
+
+
+\iii $\varphi$ ist multiplikativ, das heißt für alle $n,m\in\mathbb{N}_{\ge1}$
+gilt:
+\begin{align*}
+\text{ggT}\left(n,m\right)=1 & \Rightarrow\varphi\left(n\right)\cdot\varphi\left(m\right)=\varphi\left(nm\right)
+\end{align*}
+
+
+\iii Ist $p>0$ eine Primzahl und $r\in\mathbb{N}_{\ge1}$, dann
+folgt:
+\begin{align*}
+\varphi\left(p^{r}\right) & =\left(p-1\right)p^{r-1}
+\end{align*}
+
+
+\end{iiilist}
+
+
+\section{Proposition\label{sec:Prop-aErzeugt}}
+
+Für alle $\overline{a}\in\modlo{Z}{n}$ gilt:
+\begin{align*}
+\overline{a}\text{ erzeugt }\left(\modlo{Z}{n},+\right) & \Leftrightarrow\overline{a}\in\left(\modlo{Z}{n}\right)^{*}
+\end{align*}
+
+
+
+\subsubsection*{Beweis}
+
+\quotedblbase{}$\Rightarrow$\textquotedblleft{}: Es gibt ein $k\in\mathbb{Z}_{\ge1}$
+mit:
+\begin{align*}
+\overline{1} & =\underbrace{\overline{a}+\ldots+\overline{a}}_{k\text{ mal}}=\overline{a}\cdot\overline{k}\in\modlo{Z}{n}
+\end{align*}
+Also ist $\overline{a}\in\left(\modlo{Z}{n}\right)^{*}$.
+
+\quotedblbase{}$\Leftarrow$\textquotedblleft{}: Es gibt ein $b\in\mathbb{Z}_{\ge1}$
+mit 
+\begin{align*}
+\overline{a}\cdot\overline{b} & =\underbrace{\overline{a}+\ldots+\overline{a}}_{b\text{ mal}}=\overline{1}
+\end{align*}
+in $\modlo{Z}{n}$.
+
+Also ist $\overline{1}\in\left\langle \overline{a}\right\rangle \subseteq\left(\modlo{Z}{n},+\right)$.
+
+Wegen $\left\langle \overline{1}\right\rangle =\left(\modlo{Z}{n},+\right)$
+folgt:
+\begin{align*}
+\left\langle \overline{a}\right\rangle  & =\left(\modlo{Z}{n},+\right)
+\end{align*}
+\qqed
+
+
+\section{Korollar\label{sec:Kor-ZetaPrimitiv}}
+
+Für $n\in\mathbb{N}_{\ge1}$ gelten mit $\left(\text{char}\left(k\right)\not|\, n\right)$:
+
+\begin{iiilist}
+
+\iii $\left|\left\{ \zeta\in U_{n}|\zeta\text{ ist primitiv}\right\} \right|=\varphi\left(n\right)$
+
+\iii Für ein primitives $\zeta\in U_{n}$ und $r\in\mathbb{Z}$ gilt:
+\begin{align*}
+\zeta^{r}\in U_{n}\text{ ist primitiv} & \Leftrightarrow\overline{r}\in\left(\modlo{Z}{n}\right)^{*}\left(\stackrel{\ref{sec:Erinnerung-EulerPhi}\text{ i)}}{\Leftrightarrow}\text{ggT}\left(r,n\right)=1\right)
+\end{align*}
+
+
+\end{iiilist}
+
+
+\subsubsection*{Beweis}
+
+\begin{iiilist}
+
+\iii \hspace*{1mm}\vspace*{-7mm} 
+\begin{align*}
+\left|\left\{ \zeta\in U_{n}|\zeta\text{ ist primitiv}\right\} \right| & \sr{=}{\ref{sec:PuD-Einheitswurzel}}{\ref{sec:Def-primEinheitswurzel}}\left|\left\{ a\in\left(\modlo{Z}{n},+\right)\bigg|\left\langle a\right\rangle =\left(\modlo{Z}{n},+\right)\right\} \right|=\\
+ & \stackrel{\ref{sec:Prop-aErzeugt}}{=}\left|\left(\modlo{Z}{n}\right)^{*}\right|\stackrel{\ref{sec:Erinnerung-EulerPhi}}{=}\varphi\left(n\right)
+\end{align*}
+\qqed[\roman{ale2})]
+
+\iii Aus der Primitivität von $\zeta\in U_{n}$ folgt:
+\begin{align*}
+\left(\modlo{Z}{n},+\right) & \stackrel{\sim}{\to}U_{n}\\
+\overline{a} & \mapsto\zeta^{a}
+\end{align*}
+Also gilt für alle $r\in\mathbb{Z}$:
+\begin{align*}
+\zeta^{r}\in U_{n}\text{ ist primitiv} & \Leftrightarrow\left\langle \overline{r}\right\rangle =\left(\modlo{Z}{n},+\right)\stackrel{\ref{sec:Erinnerung-EulerPhi}}{=}\overline{r}\in\left(\modlo{Z}{n}\right)^{*}
+\end{align*}
+
+
+\end{iiilist}
+
+\qqed
+
+
+\section{Satz\label{sec:Satz-primEinheitsWurzel}}
+
+Seien $n\in\mathbb{N}_{\ge1}$ und $\zeta_{n}\in\overline{k}$ eine
+primitive $n$-te Einheitswurzel. Dann gelten:
+
+\begin{iiilist}
+
+\iii $\modulo{k\left(\zeta\right)}{k}$ ist endlich und abelsch.
+
+\iii Die Abbildung
+\begin{align*}
+\psi:\text{Gal}\left(\modulo{k\left(\zeta_{n}\right)}{k}\right) & \hookrightarrow\text{Aut}\left(U_{n}\right)\\
+\psi\left(\sigma\right) & :=\sigma|_{U_{n}}
+\end{align*}
+ist wohldefiniert und ein injektiver Gruppenhomomorphismus.
+
+\iii Die Abbildung 
+\begin{align*}
+\left(\modlo{Z}{n}\right)^{*} & \stackrel{\sim}{\to}\text{Aut}\left(U_{n}\right)\\
+\overline{a} & \mapsto\left(\zeta\mapsto\zeta^{a}\right)
+\end{align*}
+ist wohldefiniert und ein Gruppenisomorphismus.
+
+\end{iiilist}
+
+
+\subsubsection*{Beweis}
+
+Weil $\zeta_{n}$ primitiv ist, folgt:
+\begin{align}
+U_{n} & =\left\langle \zeta_{n}\right\rangle =\left\{ \zeta_{n}^{a}|a\in\mathbb{Z}\right\} \subseteq k\left(\zeta_{n}\right)\label{eq:Un}
+\end{align}
+Also ist $\modulo{k\left(\zeta_{n}\right)}{k}$ ein Zerfällungskörper
+von $X^{n}-1\in k\left[X\right]$.
+
+Weil aus $\zeta^{n}=1$ schon $\left(X^{n}-1\right)'\left(\zeta\right)=n\zeta^{n-1}\not=0$
+folgt, ist $X^{n}-1\in k\left[X\right]$ separabel, also ist $\modulo{k\left(\zeta_{n}\right)}{k}$
+endlich und galoissch.
+
+Für $\zeta\in U_{n}$ und $\sigma\in\text{Gal}\left(\modulo{k\left(\zeta_{n}\right)}{k}\right)$
+gilt:
+\begin{align*}
+\left[\sigma\left(\zeta\right)\right]^{n} & =\sigma\left(\zeta^{n}\right)=\sigma\left(1\right)=1
+\end{align*}
+Also ist $\sigma\left(\zeta\right)\in U_{n}$.
+
+Ferner ist die Abbildung
+\begin{align*}
+U_{n} & \to U_{n}\\
+\zeta & \mapsto\sigma\left(\zeta\right)
+\end{align*}
+Wegen $\sigma\left(\zeta\cdot\xi\right)=\sigma\left(\zeta\right)\cdot\sigma\left(\xi\right)$
+ein Gruppenhomomorphismus mit Inversen $\sigma^{-1}|_{U_{n}}$.
+
+Damit ist $\psi$ in ii) wohldefiniert und ein Gruppenhomomorphismus.
+Wegen \eqref{eq:Un} ist $\psi$ injektiv.
+
+\qqed[ii)]
+
+iii) folgt, da $U_{n}$ nach \ref{sec:PuD-Einheitswurzel} ein freier
+$\left(\modlo{Z}{n}\right)$-Modul vom Rang 1 ist.
+
+Zu i): Wegen ii) und iii) ist $\text{Gal}\left(\modulo{k\left(\zeta_{n}\right)}{k}\right)$
+abelsch.
+
+\qqed
+
+
+\section{Bemerkung und Definition}
+
+In der Situation von \ref{sec:Satz-primEinheitsWurzel} gilt:
+
+\begin{iiilist}
+
+\iii \hspace*{1mm}\vspace*{-7mm} 
+\begin{align*}
+\left[k\left(\zeta_{n}\right):k\right] & \,\Bigg|\,\left|\text{Gal}\left(\modulo{k\left(\zeta_{n}\right)}{k}\right)\right|=\varphi\left(n\right)
+\end{align*}
+
+
+\iii Für $k=\mathbb{Q}$ in \ref{sec:Satz-primEinheitsWurzel} heißt
+$\mathbb{Q}\left(\zeta_{n}\right)$ \emph{der $n$-te Kreisteilungskörper}.
+
+\end{iiilist}
+
+
+\section{Satz \textmd{(Gauß)\label{sec:Satz-Einheitswurzel-Gauss}}}
+
+Seien $n\ge1$ und $\zeta_{n}\in\overline{\mathbb{Q}}$ eine primitive
+$n$-te Einheitswurzel.
+
+Dann ist der Gruppenhomomorphismus
+\begin{align*}
+\psi:\text{Gal}\left(\modulo{\mathbb{Q}\left(\zeta_{n}\right)}{\mathbb{Q}}\right) & \stackrel{\sim}{\to}\left(\modlo{Z}{n}\right)^{*}
+\end{align*}
+mit der Eigenschaft, dass für alle $\sigma\in\text{Gal}\left(\modulo{\mathbb{Q}\left(\zeta_{n}\right)}{\mathbb{Q}}\right)$
+und $\zeta\in\mathbb{Q}\left(U_{n}\right)$ schon
+\begin{align*}
+\sigma\left(\zeta\right) & =\zeta^{\psi\left(\sigma\right)}
+\end{align*}
+(vergleiche \ref{sec:Satz-Gauss} ii))
+
+\textcolor{green}{TODO: Verweis überprüfen 2.8 ii) ?}
+
+gilt, ein Isomorphismus.
+
+Insbesondere gilt:
+\begin{align*}
+\left[\mathbb{Q}\left(\zeta_{n}\right):\mathbb{Q}\right] & =\varphi\left(n\right)
+\end{align*}
+
+
+
+\subsubsection*{Beweis}
+
+Sei $f:=\text{Mipo}_{\mathbb{Q}}\left(\zeta_{n}\right)$, also gilt:
+\begin{align*}
+f & |X^{n}-1\in\mathbb{Q}\left[X\right]
+\end{align*}
+Weil $f$ normiert ist und mit \ref{sec:Kor-hfgNormiert} mit $h=X^{n}-1$
+und $R=\mathbb{Z}$ folgt $f\in\mathbb{Z}\left[X\right]$ und
+\begin{align}
+X^{n}-1 & =f\cdot h\in\mathbb{Z}\left[X\right]\label{eq:Xnfh}
+\end{align}
+für ein geeignetes $h\in\mathbb{Z}\left[X\right]$.
+\begin{description}
+\item [{Behauptung~1}] Ist $p>0$ eine Primzahl mit $p\not|\: n$, dann
+ist $f\left(\zeta_{n}^{p}\right)=0$ und $\zeta_{n}^{p}\in U_{n}$
+ist primitiv.
+\item [{Beweis}] Die zweite Aussage folgt aus \ref{sec:Kor-ZetaPrimitiv}
+ii).\\
+Angenommen $f\left(\zeta_{n}^{p}\right)\not=0$, dann würde wegen
+$\left(\zeta_{n}^{p}\right)^{n}=1$ und \eqref{eq:Xnfh} gelten:
+\begin{align*}
+h\left(\zeta_{n}^{p}\right) & =0
+\end{align*}
+Also gilt:
+\begin{align*}
+h\left(X^{p}\right)\left(\zeta_{n}\right) & =0
+\end{align*}
+Wegen \ref{sec:Kor-hfgNormiert} folgt:
+\begin{align*}
+f & |h\left(X^{p}\right)\in\mathbb{Z}\left[X\right]
+\end{align*}
+Das heißt $h\left(X^{p}\right)=f\cdot g\in\mathbb{Z}\left[X\right]$
+für geeignetes $g\in\mathbb{Z}\left[X\right]$.\\
+Also gilt in $\mathbb{F}_{p}\left[X\right]$:
+\begin{align*}
+\overline{h}^{p}\sr{=}{\left(+\right)}{\text{siehe unten}}\overline{h\left(X^{p}\right)} & =\overline{f}\cdot\overline{g}
+\end{align*}
+Damit folgt $\text{ggT}\left(\overline{h},\overline{f}\right)\not=1$
+in $\mathbb{F}_{p}\left[X\right]$.\\
+Also besitzt $\overline{X^{n}-1}=\overline{f}\cdot\overline{h}\in\mathbb{F}_{p}\left[X\right]$
+eine mehrfache Nullstelle in $\overline{\mathbb{F}}_{p}$.\\
+Dies ist ein Widerspruch zur Separabilität von $X^{n}-1$ in $\mathbb{F}_{p}\left[X\right]$,
+da $p\not|\: n$. (vergleiche mit dem Beweis von \ref{sec:Lem-mNst}
+i))\\
+Zu $\left(+\right)$:
+\begin{align*}
+\overline{h} & =\sum_{i}a_{i}X^{i} & a_{i} & \in\mathbb{F}_{p}
+\end{align*}
+Dann gilt:
+\begin{align*}
+\overline{h\left(X^{p}\right)} & =\sum_{i}a_{i}\left(X^{p}\right)^{i}\stackrel{a_{i}\in\mathbb{F}_{p}}{=}\sum_{i}a_{i}^{p}\left(X^{i}\right)^{p}=\left(\sum a_{i}X^{i}\right)^{p}=\overline{h}^{p}
+\end{align*}
+\qqed[Behauptung 1]
+\item [{Behauptung~2}] Ist $\zeta\in U_{n}$ primitiv, so ist $f\left(\zeta\right)=0$.
+\item [{Beweis}] Nach \ref{sec:Kor-ZetaPrimitiv} ii) gibt es ein $r\in\mathbb{Z}$
+mit $\text{ggT}\left(r,n\right)=1$ und $\zeta=\zeta_{n}^{r}$.\\
+Dann ist $r=p_{1}\cdot\ldots\cdot p_{m}$ ein endliches Produkt von
+Primzahlen $p_{i}$ mit $p_{i}\not|\: n$ für alle $1\le i\le n$.\\
+Aus Behauptung 1 folgt induktiv:
+\begin{align*}
+f\left(\zeta_{n}^{p_{1}}\right) & =0
+\end{align*}
+und $\zeta_{n}^{p_{1}}\in U_{n}$ ist primitiv.\\
+Dann folgt aus der Behauptung 1 für $\zeta_{n}^{p_{2}}$, dass
+\begin{align*}
+\left(\zeta_{n}^{p_{1}}\right)^{p_{2}} & =\zeta_{n}^{p_{1}\cdot p_{2}}\in U_{n}
+\end{align*}
+primitiv ist und gilt:
+\begin{align*}
+f\left(\zeta_{n}^{p_{1}\cdot p_{2}}\right) & =0
+\end{align*}
+Dann folgt:
+\begin{align*}
+0 & =f\left(\zeta_{n}^{r}\right)=f\left(\zeta\right)
+\end{align*}
+\qqed[Behauptung 2]
+\end{description}
+Nach \ref{sec:Satz-primEinheitsWurzel} ii) ist
+\begin{align*}
+\psi:\text{Gal}\left(\modulo{\mathbb{Q}\left(\zeta_{n}\right)}{\mathbb{Q}}\right) & \hookrightarrow\left(\modlo{Z}{n}\right)^{*}
+\end{align*}
+injektiv.
+
+Zeige also nur:
+\begin{align*}
+\left[\mathbb{Q}\left(\zeta_{n}\right):\mathbb{Q}\right] & \ge\left|\left(\modlo{Z}{n}\right)^{*}\right|=\varphi\left(n\right)
+\end{align*}
+
+
+
+\subsubsection*{Beweis}
+
+\textcolor{green}{TODO: $\left(1\right)$ heißt????}
+
+$\left[\mathbb{Q}\left(\zeta_{n}\right):\mathbb{Q}\right]\stackrel{\left(1\right)}{=}\deg\left(f\right)\stackrel{\text{Beh. 2}}{\ge}\left|\left\{ \zeta\in U_{n}|\zeta\text{ ist primitiv}\right\} \right|\stackrel{\text{\ref{asdf} i)}}{=}\varphi\left(n\right)$
+
+\qqed
+
+
+\section{Korollar}
+
+Seien $n,m\ge1$ teilerfremd und $\zeta_{n},\zeta_{m}\in\overline{\mathbb{Q}}$
+primitive $n$-te (beziehungsweise $m$-te) Einheitswurzeln.
+
+Dann gelten:
+
+\begin{iiilist}
+
+\iii $\mathbb{Q}\left(\zeta_{n},\zeta_{m}\right)=\mathbb{Q}\left(\zeta_{n}\right)\cdot\mathbb{Q}\left(\zeta_{m}\right)=\mathbb{Q}\left(\zeta_{n}\cdot\zeta_{m}\right)$
+
+\iii $\mathbb{Q}\left(\zeta_{n}\right)\cap\mathbb{Q}\left(\zeta_{m}\right)=\mathbb{Q}$
+
+\iii Die Abbildung
+\begin{align*}
+\text{Gal}\left(\modulo{\mathbb{Q}\left(\zeta_{n},\zeta_{m}\right)}{\mathbb{Q}}\right) & \to\text{Gal}\left(\modulo{\mathbb{Q}\left(\zeta_{n}\right)}{\mathbb{Q}}\right)\times\text{Gal}\left(\modulo{\mathbb{Q}\left(\zeta_{m}\right)}{\mathbb{Q}}\right)\\
+\sigma & \mapsto\left(\sigma|_{\mathbb{Q}\left(\zeta_{n}\right)},\sigma|_{\mathbb{Q}\left(\zeta_{m}\right)}\right)
+\end{align*}
+ist ein Gruppenisomorphismus.
+
+\end{iiilist}
+
+
+\subsubsection*{Beweis}
+
+\begin{iiilist}
+
+\iii Da $\zeta_{n}\cdot\zeta_{m}$ nach \ref{sec:Prop-zetaPsiInUnm}
+eine primitive $\left(nm\right)$-te Einheitswurzel ist, gelten $\zeta_{n},\zeta_{m}\in\mathbb{Q}\left(\zeta_{n}\cdot\zeta_{m}\right)$,
+denn $U_{n},U_{m}\subseteq U_{nm}$.
+
+Der Rest ist klar.
+
+\qqed[\roman{ale2})]
+
+\iii Wir haben folgendes Körperdiagramm:
+
+\textcolor{green}{TODO: Abbildung Körperdiagramm}
+
+Dabei gelten die Grade nach \ref{sec:Satz-Einheitswurzel-Gauss}12.10.
+
+Aus der Gradformel für $\mathbb{Q}\subseteq\mathbb{Q}\left(\zeta_{n}\right)\subseteq\mathbb{Q}\left(\zeta_{nm}\right)$
+folgt:
+\begin{align*}
+\left[\mathbb{Q}\left(\zeta_{nm}\right):\mathbb{Q}\left(\zeta_{m}\right)\right] & =\varphi\left(n\right)\le\left[\mathbb{Q}\left(\zeta_{n}\right):E\right]\le\left[\mathbb{Q}\left(\zeta_{n}\right):\mathbb{Q}\right]\stackrel{\ref{asdf}12.10}{=}\varphi\left(n\right)
+\end{align*}
+Also folgt:
+\begin{align*}
+\varphi\left(n\right) & =\left[\mathbb{Q}\left(\zeta_{n}\right):E\right]=\left[\mathbb{Q}\left(\zeta_{n}\right):\mathbb{Q}\right]
+\end{align*}
+Also folgt wegen $\mathbb{Q}\subseteq E$ schon $E=\mathbb{Q}$.
+
+\qqed[\roman{ale2})]
+
+\iii Dies folgt aus i), ii) und \ref{sec:Satz-Kompositum} ii).
+
+\end{iiilist}
+
+\qqed
+
 
 \part*{Anhang\thispagestyle{empty}}
 
@@ -6945,7 +7349,7 @@ Inc.
 \noindent \begin{center}
 Everyone is permitted to copy and distribute verbatim copies of this
 license document,\\
-but changing it is not allowed.
+but changing it is not allowed
 \par\end{center}
 
 
