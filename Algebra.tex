@@ -63,6 +63,11 @@
 
 %Kommandos mit optionalem Argument (für Lyx)
 \newcommand{\sr}[3]{\stackrel[#3]{#2}{#1}}
+\newcommand{\Rotate}[1]{
+\begin{tikzpicture}
+\node[rotate=90] {\ensuremath{#1}};
+\end{tikzpicture}
+}
 
 %Mathe-Operatoren
 \DeclareMathOperator*{\exs}{\exists}
@@ -1646,7 +1651,7 @@ Zunächst ist $x$ eine endliche Summe
 x & =\sum_{i}\underbrace{\frac{a_{i}}{s_{i}}\otimes m_{i}}_{\text{\quotedblbase elementarer Tensor\textquotedblleft}}\label{eq:elemTensor}
 \end{align}
 mit geeigneten $a_{i}\in A,s_{i}\in S$ und $m_{i}\in M$.\\
-Definiere:\textcolor{green}{{} (TODO: Definition und Formel überprüfen)}
+Definiere:
 \begin{align}
 t & :=\prod_{j}s_{j} & t_{i} & :=\frac{t}{s_{i}}=\prod_{j\not=i}s_{j}\in S\label{eq:tti}
 \end{align}
@@ -1747,21 +1752,18 @@ Primzahlen)
 
 \section{Erinnerung \textmd{(Primfaktorzerlegung)\label{sec:Erin-PFZ}}}
 
-\textcolor{green}{TODO: ??? Überprüfen}
-
 Für alle $p\in\mathcal{P}$ ist
 \begin{align*}
 \nu_{p}:Q^{*} & \to\mathbb{Z}\\
 \frac{a}{b} & \mapsto\nu_{p}\left(a\right)-\nu_{p}\left(b\right)
 \end{align*}
- ($a\not=0$) die \emph{$p$-adische Bewertung von ${\displaystyle \frac{a}{b}}$}
-und für alle $a\in R\setminus\left\{ 0\right\} $ ist die \emph{Primfaktorzerlegung}
+die \emph{$p$-adische Bewertung von ${\displaystyle \frac{a}{b}}$}
+ein Homomorphismus und für alle $a\in R\setminus\left\{ 0\right\} $
+ist mit einem geeigneten $\varepsilon\in R^{*}$ die \emph{Primfaktorzerlegung}:
 \begin{align*}
 a & =\varepsilon\prod_{p\in\mathcal{P}}p^{\nu_{p}\left(a\right)}
 \end{align*}
-($\varepsilon\in R^{*}$ geeignet) ein Homomorphismus.
 
-\textcolor{green}{TODO: ? obige Aussage überprüfen! Homomorphismus?}
 
 Die Abbildung
 \begin{align*}
@@ -1826,7 +1828,7 @@ Daher gilt:
 
 Sei $p\in\mathcal{P}$. Für $f=\sum_{i}a_{i}X^{i}\in Q\left[X\right]$
 heißt $\nu_{p}\left(f\right)=\min_{i}\left\{ \nu_{p}\left(a_{i}\right)\right\} \in\mathbb{Z}\cup\left\{ \infty\right\} $
-\emph{die $p$-adische Bewertung von $f$}. ($Q\subseteq Q^{*}$;\textcolor{green}{TODO:
+\emph{die $p$-adische Bewertung von $f$}. (\textcolor{green}{$||Q\subseteq Q^{*}$;TODO:
 ???}).
 
 Zum Beispiel ist:
@@ -1986,8 +1988,6 @@ h\left(\pm1\right) & =1\pm3\not=0
 
 
 \section{Proposition und Definition \textmd{(primitiv)}\label{sec:PuD-primitiv}}
-
-\textcolor{green}{TODO: $\left(1\right)$ ??? oder doch $1$?}
 
 Für ${\displaystyle f=\sum_{i}a_{i}X^{i}}\in R\left[X\right]$ gilt:
 
@@ -2219,8 +2219,6 @@ $f:=X^{3}+Y^{2}\in k\left[X,Y\right]$ ist irreduzibel.
 
 \subsubsection*{Beweis}
 
-\textcolor{green}{TODO: Überprüfen???}
-
 Wegen \ref{sec:Satz-Gauss} \quotedblbase{}Primelement $\Leftrightarrow$
 irreduzibel\textquotedblleft{} folgt mit $R:=k\left[X\right]$ und
 weil $f\in R\left[Y\right]$ normiert vom Grad 2 ($f=Y^{2}+X^{3}\cdot Y^{0}$),
@@ -2228,15 +2226,20 @@ also primitiv ist, dass $f\in R\left[X,Y\right]$ ein Primelement
 ist.
 
 Dies ist äquivalent dazu, dass $f\in\text{Quot}\left(R\right)\left[Y\right]=k\left(X\right)\left[Y\right]$
-irreduzibel ist. Wegen $\text{deg}\left(f\right)=2$ ist dies äquivalent
-dazu, dass $f$ keine Nullstelle in $k\left(X\right)$ hat, denn angenommen
-$f$ hat doch eine Nullstelle, so würde in $k\left(X\right)$ folgen:
+irreduzibel ist.
+
+Wegen $\text{deg}\left(f\right)=2$ ist dies äquivalent dazu, dass
+$f$ keine Nullstelle in $k\left(X\right)$ hat, denn angenommen $f$
+hat doch eine Nullstelle, so würde in $k\left(X\right)$ folgen:
 \begin{align*}
 \exs_{\alpha\in k\left(X\right)} & 0=f\left(\alpha\right)=\alpha^{2}+X^{3}
 \end{align*}
 Aus \ref{sec:Bsp-Vieta} mit $h:=f$ und $R:=k\left(X\right)$ folgt
-$\alpha\in k\left[X\right]$, also $-\alpha^{2}=X^{3}$ in $k\left(X\right)$
-und damit $2\cdot\text{deg}\left(\alpha\right)=\deg\left(X^{3}\right)=3$
+$\alpha\in k\left[X\right]$, also $-\alpha^{2}=X^{3}$ in $k\left[X\right]$
+und damit
+\begin{align*}
+2\cdot\text{deg}\left(\alpha\right) & =\deg\left(X^{3}\right)=3
+\end{align*}
 in $\mathbb{Z}$, was ein Widerspruch ist.
 
 \qqed
@@ -2254,9 +2257,6 @@ sein Quotientenkörper.
 \section{Proposition\textmd{ (Äquivalenz von Primelement in $R$ und $Q$)}\label{sec:Prop-primRQ}}
 
 Sei $0\not=f\in Q\left[X\right]$.
-
-\textcolor{green}{TODO: \quotedblbase{}Dann sind äquivalent:\textquotedblleft{}
-???}
 
 \begin{iiilist}
 
@@ -2429,8 +2429,7 @@ Also gilt in $\left(\modulo{R}{\left(p\right)}\right)\left[X\right]\subseteq\tex
 Weil $\tilde{a}_{d}=\pi\left(a_{d}\right)\in\left(\modulo{Q}{\left(p\right)}\right)^{*}$
 und $X\in\tilde{Q}\left[X\right]$ Primelemente sind, folgt aus der
 Primfaktorzerlegung in $\tilde{Q}\left[X\right]$ und wegen \eqref{eq:pifgh}
-folgt mit $\alpha,\beta\in\tilde{Q}^{*}$, $a,b\ge0$ und $a+b=d$:\\
-\textcolor{green}{TODO: $\pi\left(a_{d}\right)\in Q^{*}$ ???}
+folgt mit $\alpha,\beta\in\tilde{Q}^{*}$, $a,b\ge0$ und $a+b=d$:
 \begin{align*}
 \pi\left(g\right) & =\alpha X^{a} & \pi\left(h\right) & =\beta X^{b}
 \end{align*}
@@ -2950,7 +2949,7 @@ Also gilt für die Dimension von $E$:
 \begin{align*}
 \dim_{k}\left(E\right) & =\left[E:k\right]=\left[E:K\right]\cdot\left[K:k\right]
 \end{align*}
-\textcolor{green}{TODO: obigen Beweis überprüfen}
+
 \item Fall: Ist $\left[E:k\right]=\infty$ (oder $\left[K:k\right]=\infty$),
 so existiert eine unendliche $k$-linear unabhängig Menge $X\subseteq E$
 (oder $X\subseteq K\subseteq E$).\\
@@ -3075,15 +3074,16 @@ und es gilt:
 \end{align*}
 Damit folgt
 \begin{align*}
-k\left[\alpha\right] & \stackrel{\sim}{=}\modulo{k\left[X\right]}{\text{Mipo}_{k}\left(\alpha\right)}
+k\left[\alpha\right] & \stackrel{\sim}{=}\modulo{k\left[X\right]}{\text{Mipo}_{k}\left(\alpha\right)}=k\left(\alpha\right)
 \end{align*}
 und $\left[\alpha:k\right]:=\left[k\left(\alpha\right):k\right]$
 heißt \emph{der Grad von $\alpha$ über $k$}.
 
-\textcolor{green}{TODO: Ist diese Aussage gemeint?}
-
 Ist $\alpha$ transzendent über $k$, so ist der Einsetzungshomomorphismus
-$k\left[X\right]\stackrel{\sim}{\to}k\left[\alpha\right],X\mapsto\alpha$
+\begin{align*}
+k\left[X\right] & \stackrel{\sim}{\to}k\left[\alpha\right]\\
+X & \mapsto\alpha
+\end{align*}
 ein $k$-Algebrenisomorphismus.
 
 
@@ -3567,10 +3567,8 @@ ${\displaystyle J:=\bigcup_{I\in N}I\subsetneq R}$ ist ein Ideal
 
 \subsubsection*{Beweis}
 \begin{enumerate}
-\item Ist $x\in J$, so gibt es $I\in N$ mit $x\in I\subseteq J$.\\
-\textcolor{green}{TODO: \quotedblbase{}$x\in J$ und $a\in R$ $\Rightarrow$
-${\displaystyle \exs_{I\in N}}:x\in I$ $\Rightarrow$ ${\displaystyle \exs_{I\subseteq J}}$\textquotedblleft{}
-Was heißt das?}
+\item Ist $x\in J$, so gibt es $I\in N$ mit $x\in I\subseteq J$ und da
+$I$ ein Ideal ist, folgt für alle $a\in R$ schon $ax\in I\subseteq J$.
 \item Sind $x,y\in J$, so existieren $I_{1},I_{2}\in N$ mit $x\in I_{1},y\in I_{2}$.\\
 Weil $N$ total geordnet ist, gilt $I_{1}\subseteq I_{2}$ oder $I_{2}\subseteq I_{1}$.
 Durch eventuelles Vertauschen von $x$ und $y$ sei ohne Einschränkung
@@ -3763,11 +3761,9 @@ und $\sigma:k\hookrightarrow L$ eine Körpererweiterung.
 Dann ist die Abbildung
 \begin{align*}
 \text{Hom}_{k\text{-Alg.}}\left(k\left(\alpha\right),L\right) & \stackrel{\sim}{\to}\left\{ \beta\in L|f^{\sigma}\left(\beta\right)=0\right\} \\
-\sigma & \mapsto\sigma'\left(\alpha\right)
+\tau & \mapsto\tau\left(\alpha\right)
 \end{align*}
-\textcolor{green}{TODO: Was bedeutet $f^{\sigma}$ in der Menge auf
-der rechten Seite? Die Menge, in die die Abbildung geht kann doch
-nicht davon abhängen, was gerade abgebildet wird.}
+
 
 wohldefiniert und bijektiv.
 
@@ -3814,9 +3810,9 @@ Setze für alle $\left(K,\tau\right),\left(K',\tau'\right)\in M$:
 \left(K,\tau\right)\le\left(K',\tau'\right) & :\Leftrightarrow K\subseteq K'\wedge\tau'|_{K}=\tau
 \end{align*}
 Dann ist $\left(M,\le\right)$ eine teilweise geordnete Menge und
-jede total geordnete Teilmenge besitzt eine obere Schranke in $M$.
-
-\textcolor{green}{TODO: Welche?}
+jede total geordnete Teilmenge besitzt eine obere Schranke in $M$,
+nämlich die Vereinigung aller Elemente Elemente der total geordneten
+Teilmenge.
 
 Nach \ref{sub:Satz-LemmaZorn} existiert ein maximales Element in
 $\left(K,\sigma'\right)\in M$.
@@ -4569,13 +4565,13 @@ mit $\alpha^{p}=t$ nicht separabel über $\mathbb{F}_{p}\left(t\right)$.
 \end{iiilist}
 
 
-\section{Definition \textmd{(Stabilitätsgrad)\label{sec:Def-sgrad}}}
+\section{Definition \textmd{(Separabilitätsgrad)\label{sec:Def-sgrad}}}
 
 Sei $E\supseteq k$ eine algebraische Körpererweiterung, so heißt
 \begin{align*}
 \left[E:h\right]_{S} & :=\left|\text{Hom}_{k\text{-Alg.}}\left(E,\overline{k}\right)\right|\in\mathbb{N}\cup\left\{ \infty\right\} 
 \end{align*}
-\emph{der Stabilitätsgrad von $\modulo{E}{k}$}.
+\emph{der Separabilitätsgrad von $\modulo{E}{k}$}.
 
 
 \section{Satz \textmd{(vollkommene Körper)\label{sec:Satz-vollkommenK}}}
@@ -4765,24 +4761,34 @@ E & =k\left(\alpha_{1},\ldots,\alpha_{n}\right)
 
 i) $\Rightarrow$ ii) ist trivial.
 
-ii) $\Rightarrow$ iii): Wegen \ref{sec:Satz-sgrad} und \ref{sec:Satz-Grad}
-(Gradsätze) kann man durch Induktion $n=1$ annehmen und dann folgt
-die Behauptung aus \ref{sec:Lem-sepNst} ii) \quotedblbase{}$\Rightarrow$\textquotedblleft{}.
+ii) $\Rightarrow$ iii): Wegen den Gradsätzen \ref{sec:Satz-sgrad}
+und \ref{sec:Satz-Grad} kann man durch Induktion $n=1$ annehmen
+und dann folgt die Behauptung aus \ref{sec:Lem-sepNst} ii) \quotedblbase{}$\Rightarrow$\textquotedblleft{}.
 
-iii) $\Rightarrow$ i): Sei $\alpha\in E$ beliebig, dann gilt:
+iii) $\Rightarrow$ i): Sei $\alpha\in E$ beliebig. Da $E$ endlich
+ist, ist es insbesondere endlich erzeugt, also $E=k\left(\alpha_{1}:=\alpha,\ldots,\alpha_{n}\right)$.
+
+Sei $K_{m}:=k\left(\alpha_{1},\ldots,\alpha_{m}\right)$, also $K_{n}=E$
+und $K_{0}=k$.
+
+Dann gilt wegen den Gradsätzen \ref{sec:Satz-sgrad} und \ref{sec:Satz-Grad}:
 \begin{align*}
-\left[E:k\right] & \stackrel{k\subseteq k\left(\alpha\right)\subseteq E}{\ge}\left[E:k\left(\alpha\right)\right]\\
-\stackrel{\rotatebox{90}{\ensuremath{=}}}{\left[E:k\right]_{S}} & \stackrel{\phantom{k\subseteq k\left(\alpha\right)\subseteq E}}{\ge}\stackrel{\rotatebox{90}{\ensuremath{\le}}}{\left[E:k\left(\alpha\right)\right]_{S}}
+\left[E:k\right] & =\prod_{m=1}^{n}\left[K_{m}:K_{m-1}\right]\\
+\Rotate{=}\quad & \qquad\qquad\quad\Rotate{\le}\\
+\left[E:k\right]_{S} & =\prod_{m=1}^{n}\left[K_{m}:K_{m-1}\right]_{S}
 \end{align*}
-\textcolor{green}{TODO: Obige Gleichung überprüfen.}
+Daher folgt schon:
 \begin{align*}
-\left[k\left(\alpha\right):k\right] & \ge\left[k\left(\alpha\right):k\right]_{S}
+\left[K_{m}:K_{m-1}\right] & =\left[K_{m}:K_{m-1}\right]_{S}
 \end{align*}
 Dabei folgen die Ungleichungen aus dem Beweis von \ref{sec:Lem-sepNst}
 ii).
 
-Es folgt $\left[k\left(\alpha\right):k\right]_{S}=\left[k\left(\alpha\right):k\right]$,
-also ist $\alpha$ separabel über $k$ (nach \ref{sec:Lem-sepNst}
+Es folgt insbesondere:
+\begin{align*}
+\left[K_{1}=k\left(\alpha\right):K_{0}=k\right]_{S} & =\left[K_{1}=k\left(\alpha\right):K_{0}=k\right]
+\end{align*}
+Also ist $\alpha$ separabel über $k$ (nach \ref{sec:Lem-sepNst}
 iii) \quotedblbase{}$\Leftarrow$\textquotedblleft{}).
 
 \qqed
@@ -5171,10 +5177,7 @@ heißt \emph{die Galoisgruppe von $f$}.
 und mit $q:=\left|k\right|$, das heißt $k=\mathbb{F}_{q}$, gilt:
 
 $\text{Gal}\left(\modulo{E}{k}\right)$ ist zyklisch mit Ordnung $\left[E:k\right]$
-und wird von $\left(F_{q}\right)|_{E}$ erzeugt.
-
-\textcolor{green}{TODO: Was bedeutet \quotedblbase{}$\text{Gal}\left(\modulo{E}{k}\right)$
-{[}...{]} erzeugt von $\left(\mathbb{F}_{q}\right)\bigg|_{E}=\text{Gal}\left(\modulo{E}{k}\right)$.\textquotedblleft{}}
+und wird von $F_{q}|_{E}$ erzeugt, also $\text{Gal}\left(\modulo{E}{k}\right)=\left\langle F_{q}|_{E}\right\rangle $.
 
 \end{iiilist}
 
@@ -5702,9 +5705,11 @@ $K_{2}$ enthält und heißt \emph{das Kompositum von $K_{1}$ und $K_{2}$
 
 \section{Satz und Definition \textmd{(Galoiserweiterung)}\label{sec:Satz-UG-KE-Entsprechung}}
 
-Seien $E\supseteq k$ eine endliche \emph{Galoiserweiterung} (das
-heißt eine endliche Körpererweiterung, die galoissch ist), $k\subseteq K_{1}\subseteq E$
-und $k\subseteq K_{2}\subseteq E$ Zwischenkörper und
+Sei $E\supseteq k$ eine endliche \emph{Galoiserweiterung,} das heißt
+eine Körpererweiterung, die galoissch ist.
+
+Seien $k\subseteq K_{1}\subseteq E$ und $k\subseteq K_{2}\subseteq E$
+Zwischenkörper und
 \begin{align*}
 H_{i} & :=\text{Gal}\left(\modulo{E}{K_{i}}\right)\subseteq G:=\text{Gal}\left(\modulo{E}{k}\right)
 \end{align*}
@@ -7163,7 +7168,10 @@ Insbesondere gilt:
 
 \subsubsection*{Beweis}
 
-Sei $f:=\text{Mipo}_{\mathbb{Q}}\left(\zeta_{n}\right)$, also gilt:
+\begin{align}
+f:= & \text{Mipo}_{\mathbb{Q}}\left(\zeta_{n}\right)\label{eq:fMipo}
+\end{align}
+Also gilt:
 \begin{align*}
 f & |X^{n}-1\in\mathbb{Q}\left[X\right]
 \end{align*}
@@ -7253,9 +7261,7 @@ Zeige also nur:
 
 \subsubsection*{Beweis}
 
-\textcolor{green}{TODO: $\left(1\right)$ heißt????}
-
-$\left[\mathbb{Q}\left(\zeta_{n}\right):\mathbb{Q}\right]\stackrel{\left(1\right)}{=}\deg\left(f\right)\stackrel{\text{Beh. 2}}{\ge}\left|\left\{ \zeta\in U_{n}|\zeta\text{ ist primitiv}\right\} \right|\stackrel{\text{\ref{asdf} i)}}{=}\varphi\left(n\right)$
+$\left[\mathbb{Q}\left(\zeta_{n}\right):\mathbb{Q}\right]\stackrel{\eqref{eq:fMipo}}{=}\deg\left(f\right)\stackrel{\text{Beh. 2}}{\ge}\left|\left\{ \zeta\in U_{n}|\zeta\text{ ist primitiv}\right\} \right|\stackrel{\text{\ref{asdf} i)}}{=}\varphi\left(n\right)$
 
 \qqed
 
@@ -7299,12 +7305,12 @@ Der Rest ist klar.
 
 \textcolor{green}{TODO: Abbildung Körperdiagramm}
 
-Dabei gelten die Grade nach \ref{sec:Satz-Einheitswurzel-Gauss}12.10.
+Dabei gelten die Grade nach \ref{sec:Satz-Einheitswurzel-Gauss}.
 
 Aus der Gradformel für $\mathbb{Q}\subseteq\mathbb{Q}\left(\zeta_{n}\right)\subseteq\mathbb{Q}\left(\zeta_{nm}\right)$
 folgt:
 \begin{align*}
-\left[\mathbb{Q}\left(\zeta_{nm}\right):\mathbb{Q}\left(\zeta_{m}\right)\right] & =\varphi\left(n\right)\le\left[\mathbb{Q}\left(\zeta_{n}\right):E\right]\le\left[\mathbb{Q}\left(\zeta_{n}\right):\mathbb{Q}\right]\stackrel{\ref{asdf}12.10}{=}\varphi\left(n\right)
+\left[\mathbb{Q}\left(\zeta_{nm}\right):\mathbb{Q}\left(\zeta_{m}\right)\right] & =\varphi\left(n\right)\le\left[\mathbb{Q}\left(\zeta_{n}\right):E\right]\le\left[\mathbb{Q}\left(\zeta_{n}\right):\mathbb{Q}\right]\stackrel{\ref{sec:Satz-Einheitswurzel-Gauss}}{=}\varphi\left(n\right)
 \end{align*}
 Also folgt:
 \begin{align*}

@@ -29,6 +29,11 @@
 
 %Kommandos mit optionalem Argument (für Lyx)
 \newcommand{\sr}[3]{\stackrel[#3]{#2}{#1}}
+\newcommand{\Rotate}[1]{
+\begin{tikzpicture}
+\node[rotate=90] {\ensuremath{#1}};
+\end{tikzpicture}
+}
 
 %Mathe-Operatoren
 \DeclareMathOperator*{\exs}{\exists}
@@ -7500,10 +7505,6 @@ mit geeigneten
 \end_inset
 
 Definiere:
-\color green
- (TODO: Definition und Formel überprüfen)
-\color inherit
-
 \begin_inset Formula 
 \begin{align}
 t & :=\prod_{j}s_{j} & t_{i} & :=\frac{t}{s_{i}}=\prod_{j\not=i}s_{j}\in S\label{eq:tti}
@@ -7913,12 +7914,6 @@ name "sec:Erin-PFZ"
 \end_layout
 
 \begin_layout Standard
-
-\color green
-TODO: ??? Überprüfen
-\end_layout
-
-\begin_layout Standard
 Für alle 
 \begin_inset Formula $p\in\mathcal{P}$
 \end_inset
@@ -7932,11 +7927,7 @@ Für alle
 
 \end_inset
 
- (
-\begin_inset Formula $a\not=0$
-\end_inset
-
-) die 
+die 
 \emph on
 
 \begin_inset Formula $p$
@@ -7948,15 +7939,19 @@ Für alle
 
 
 \emph default
- und für alle 
+ ein Homomorphismus und für alle 
 \begin_inset Formula $a\in R\setminus\left\{ 0\right\} $
 \end_inset
 
- ist die 
+ ist mit einem geeigneten 
+\begin_inset Formula $\varepsilon\in R^{*}$
+\end_inset
+
+ die 
 \emph on
 Primfaktorzerlegung
 \emph default
- 
+: 
 \begin_inset Formula 
 \begin{align*}
 a & =\varepsilon\prod_{p\in\mathcal{P}}p^{\nu_{p}\left(a\right)}
@@ -7964,17 +7959,7 @@ a & =\varepsilon\prod_{p\in\mathcal{P}}p^{\nu_{p}\left(a\right)}
 
 \end_inset
 
-(
-\begin_inset Formula $\varepsilon\in R^{*}$
-\end_inset
 
- geeignet) ein Homomorphismus.
-\end_layout
-
-\begin_layout Standard
-
-\color green
-TODO: ? obige Aussage überprüfen! Homomorphismus?
 \end_layout
 
 \begin_layout Standard
@@ -8190,12 +8175,12 @@ die
 \emph default
 .
  (
-\begin_inset Formula $Q\subseteq Q^{*}$
+\color green
+
+\begin_inset Formula $||Q\subseteq Q^{*}$
 \end_inset
 
-;
-\color green
-TODO: ???
+;TODO: ???
 \color inherit
 ).
 \end_layout
@@ -8960,20 +8945,6 @@ name "sec:PuD-primitiv"
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-
-\color green
-TODO: 
-\begin_inset Formula $\left(1\right)$
-\end_inset
-
- ??? oder doch 
-\begin_inset Formula $1$
-\end_inset
-
-?
 \end_layout
 
 \begin_layout Standard
@@ -10089,12 +10060,6 @@ Beweis
 \end_layout
 
 \begin_layout Standard
-
-\color green
-TODO: Überprüfen???
-\end_layout
-
-\begin_layout Standard
 Wegen 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -10131,7 +10096,10 @@ Dies ist äquivalent dazu, dass
 \end_inset
 
  irreduzibel ist.
- Wegen 
+\end_layout
+
+\begin_layout Standard
+Wegen 
 \begin_inset Formula $\text{deg}\left(f\right)=2$
 \end_inset
 
@@ -10183,14 +10151,18 @@ reference "sec:Bsp-Vieta"
 \end_inset
 
  in 
-\begin_inset Formula $k\left(X\right)$
+\begin_inset Formula $k\left[X\right]$
 \end_inset
 
- und damit 
-\begin_inset Formula $2\cdot\text{deg}\left(\alpha\right)=\deg\left(X^{3}\right)=3$
+ und damit
+\begin_inset Formula 
+\begin{align*}
+2\cdot\text{deg}\left(\alpha\right) & =\deg\left(X^{3}\right)=3
+\end{align*}
+
 \end_inset
 
- in 
+in 
 \begin_inset Formula $\mathbb{Z}$
 \end_inset
 
@@ -10283,12 +10255,6 @@ Sei
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
-
-\color green
-TODO: „Dann sind äquivalent:“ ???
 \end_layout
 
 \begin_layout Standard
@@ -11255,18 +11221,6 @@ reference "eq:pifgh"
 \end_inset
 
 :
-\begin_inset Newline newline
-\end_inset
-
-
-\color green
-TODO: 
-\begin_inset Formula $\pi\left(a_{d}\right)\in Q^{*}$
-\end_inset
-
- ???
-\color inherit
-
 \begin_inset Formula 
 \begin{align*}
 \pi\left(g\right) & =\alpha X^{a} & \pi\left(h\right) & =\beta X^{b}
@@ -13479,8 +13433,6 @@ Also gilt für die Dimension von
 \end_inset
 
 
-\color green
-TODO: obigen Beweis überprüfen
 \end_layout
 
 \begin_layout Enumerate
@@ -14057,7 +14009,7 @@ Dann erhält man eine
 Damit folgt
 \begin_inset Formula 
 \begin{align*}
-k\left[\alpha\right] & \stackrel{\sim}{=}\modulo{k\left[X\right]}{\text{Mipo}_{k}\left(\alpha\right)}
+k\left[\alpha\right] & \stackrel{\sim}{=}\modulo{k\left[X\right]}{\text{Mipo}_{k}\left(\alpha\right)}=k\left(\alpha\right)
 \end{align*}
 
 \end_inset
@@ -14082,12 +14034,6 @@ der Grad von
 \end_layout
 
 \begin_layout Standard
-
-\color green
-TODO: Ist diese Aussage gemeint?
-\end_layout
-
-\begin_layout Standard
 Ist 
 \begin_inset Formula $\alpha$
 \end_inset
@@ -14096,11 +14042,16 @@ Ist
 \begin_inset Formula $k$
 \end_inset
 
-, so ist der Einsetzungshomomorphismus 
-\begin_inset Formula $k\left[X\right]\stackrel{\sim}{\to}k\left[\alpha\right],X\mapsto\alpha$
+, so ist der Einsetzungshomomorphismus
+\begin_inset Formula 
+\begin{align*}
+k\left[X\right] & \stackrel{\sim}{\to}k\left[\alpha\right]\\
+X & \mapsto\alpha
+\end{align*}
+
 \end_inset
 
- ein 
+ein 
 \begin_inset Formula $k$
 \end_inset
 
@@ -16662,37 +16613,19 @@ Ist
 \begin_inset Formula $x\in I\subseteq J$
 \end_inset
 
-.
-\begin_inset Newline newline
+ und da 
+\begin_inset Formula $I$
 \end_inset
 
-
-\color green
-TODO: „
-\begin_inset Formula $x\in J$
-\end_inset
-
- und 
+ ein Ideal ist, folgt für alle 
 \begin_inset Formula $a\in R$
 \end_inset
 
- 
-\begin_inset Formula $\Rightarrow$
+ schon 
+\begin_inset Formula $ax\in I\subseteq J$
 \end_inset
 
- 
-\begin_inset Formula ${\displaystyle \exs_{I\in N}}:x\in I$
-\end_inset
-
- 
-\begin_inset Formula $\Rightarrow$
-\end_inset
-
- 
-\begin_inset Formula ${\displaystyle \exs_{I\subseteq J}}$
-\end_inset
-
-“ Was heißt das?
+.
 \end_layout
 
 \begin_layout Enumerate
@@ -17639,19 +17572,12 @@ Dann ist die Abbildung
 \begin_inset Formula 
 \begin{align*}
 \text{Hom}_{k\text{-Alg.}}\left(k\left(\alpha\right),L\right) & \stackrel{\sim}{\to}\left\{ \beta\in L|f^{\sigma}\left(\beta\right)=0\right\} \\
-\sigma & \mapsto\sigma'\left(\alpha\right)
+\tau & \mapsto\tau\left(\alpha\right)
 \end{align*}
 
 \end_inset
 
 
-\color green
-TODO: Was bedeutet 
-\begin_inset Formula $f^{\sigma}$
-\end_inset
-
- in der Menge auf der rechten Seite? Die Menge, in die die Abbildung geht
- kann doch nicht davon abhängen, was gerade abgebildet wird.
 \end_layout
 
 \begin_layout Standard
@@ -17834,13 +17760,7 @@ Dann ist
 \begin_inset Formula $M$
 \end_inset
 
-.
-\end_layout
-
-\begin_layout Standard
-
-\color green
-TODO: Welche?
+, nämlich die Vereinigung aller Elemente Elemente der total geordneten Teilmenge.
 \end_layout
 
 \begin_layout Standard
@@ -22052,7 +21972,7 @@ end{iiilist}
 \begin_layout Section
 Definition 
 \series medium
-(Stabilitätsgrad)
+(Separabilitätsgrad)
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Def-sgrad"
@@ -22077,7 +21997,7 @@ Sei
 
 
 \emph on
-der Stabilitätsgrad von 
+der Separabilitätsgrad von 
 \begin_inset Formula $\modulo{E}{k}$
 \end_inset
 
@@ -23066,7 +22986,7 @@ ii)
 \begin_inset Formula $\Rightarrow$
 \end_inset
 
- iii): Wegen 
+ iii): Wegen den Gradsätzen 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:Satz-sgrad"
@@ -23080,7 +23000,7 @@ reference "sec:Satz-Grad"
 
 \end_inset
 
- (Gradsätze) kann man durch Induktion 
+ kann man durch Induktion 
 \begin_inset Formula $n=1$
 \end_inset
 
@@ -23107,23 +23027,63 @@ iii)
 \begin_inset Formula $\alpha\in E$
 \end_inset
 
- beliebig, dann gilt:
+ beliebig.
+ Da 
+\begin_inset Formula $E$
+\end_inset
+
+ endlich ist, ist es insbesondere endlich erzeugt, also 
+\begin_inset Formula $E=k\left(\alpha_{1}:=\alpha,\ldots,\alpha_{n}\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Sei 
+\begin_inset Formula $K_{m}:=k\left(\alpha_{1},\ldots,\alpha_{m}\right)$
+\end_inset
+
+, also 
+\begin_inset Formula $K_{n}=E$
+\end_inset
+
+ und 
+\begin_inset Formula $K_{0}=k$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Dann gilt wegen den Gradsätzen 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Satz-sgrad"
+
+\end_inset
+
+ und 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Satz-Grad"
+
+\end_inset
+
+:
 \begin_inset Formula 
 \begin{align*}
-\left[E:k\right] & \stackrel{k\subseteq k\left(\alpha\right)\subseteq E}{\ge}\left[E:k\left(\alpha\right)\right]\\
-\stackrel{\rotatebox{90}{\ensuremath{=}}}{\left[E:k\right]_{S}} & \stackrel{\phantom{k\subseteq k\left(\alpha\right)\subseteq E}}{\ge}\stackrel{\rotatebox{90}{\ensuremath{\le}}}{\left[E:k\left(\alpha\right)\right]_{S}}
+\left[E:k\right] & =\prod_{m=1}^{n}\left[K_{m}:K_{m-1}\right]\\
+\Rotate{=}\quad & \qquad\qquad\quad\Rotate{\le}\\
+\left[E:k\right]_{S} & =\prod_{m=1}^{n}\left[K_{m}:K_{m-1}\right]_{S}
 \end{align*}
 
 \end_inset
 
-
-\color green
-TODO: Obige Gleichung überprüfen.
-\color inherit
-
+Daher folgt schon:
 \begin_inset Formula 
 \begin{align*}
-\left[k\left(\alpha\right):k\right] & \ge\left[k\left(\alpha\right):k\right]_{S}
+\left[K_{m}:K_{m-1}\right] & =\left[K_{m}:K_{m-1}\right]_{S}
 \end{align*}
 
 \end_inset
@@ -23139,11 +23099,15 @@ reference "sec:Lem-sepNst"
 \end_layout
 
 \begin_layout Standard
-Es folgt 
-\begin_inset Formula $\left[k\left(\alpha\right):k\right]_{S}=\left[k\left(\alpha\right):k\right]$
+Es folgt insbesondere:
+\begin_inset Formula 
+\begin{align*}
+\left[K_{1}=k\left(\alpha\right):K_{0}=k\right]_{S} & =\left[K_{1}=k\left(\alpha\right):K_{0}=k\right]
+\end{align*}
+
 \end_inset
 
-, also ist 
+Also ist 
 \begin_inset Formula $\alpha$
 \end_inset
 
@@ -25313,24 +25277,14 @@ iii
 \end_inset
 
  und wird von 
-\begin_inset Formula $\left(F_{q}\right)|_{E}$
+\begin_inset Formula $F_{q}|_{E}$
 \end_inset
 
- erzeugt.
-\end_layout
-
-\begin_layout Standard
-
-\color green
-TODO: Was bedeutet „
-\begin_inset Formula $\text{Gal}\left(\modulo{E}{k}\right)$
+ erzeugt, also 
+\begin_inset Formula $\text{Gal}\left(\modulo{E}{k}\right)=\left\langle F_{q}|_{E}\right\rangle $
 \end_inset
 
- [...] erzeugt von 
-\begin_inset Formula $\left(\mathbb{F}_{q}\right)\bigg|_{E}=\text{Gal}\left(\modulo{E}{k}\right)$
-\end_inset
-
-.“
+.
 \end_layout
 
 \begin_layout Standard
@@ -28074,15 +28028,19 @@ name "sec:Satz-UG-KE-Entsprechung"
 \end_layout
 
 \begin_layout Standard
-Seien 
+Sei 
 \begin_inset Formula $E\supseteq k$
 \end_inset
 
  eine endliche 
 \emph on
-Galoiserweiterung
+Galoiserweiterung,
 \emph default
- (das heißt eine endliche Körpererweiterung, die galoissch ist), 
+ das heißt eine Körpererweiterung, die galoissch ist.
+\end_layout
+
+\begin_layout Standard
+Seien 
 \begin_inset Formula $k\subseteq K_{1}\subseteq E$
 \end_inset
 
@@ -34262,11 +34220,14 @@ Beweis
 \end_layout
 
 \begin_layout Standard
-Sei 
-\begin_inset Formula $f:=\text{Mipo}_{\mathbb{Q}}\left(\zeta_{n}\right)$
+\begin_inset Formula 
+\begin{align}
+f:= & \text{Mipo}_{\mathbb{Q}}\left(\zeta_{n}\right)\label{eq:fMipo}
+\end{align}
+
 \end_inset
 
-, also gilt:
+Also gilt:
 \begin_inset Formula 
 \begin{align*}
 f & |X^{n}-1\in\mathbb{Q}\left[X\right]
@@ -34658,17 +34619,7 @@ Beweis
 \end_layout
 
 \begin_layout Standard
-
-\color green
-TODO: 
-\begin_inset Formula $\left(1\right)$
-\end_inset
-
- heißt????
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula $\left[\mathbb{Q}\left(\zeta_{n}\right):\mathbb{Q}\right]\stackrel{\left(1\right)}{=}\deg\left(f\right)\stackrel{\text{Beh. 2}}{\ge}\left|\left\{ \zeta\in U_{n}|\zeta\text{ ist primitiv}\right\} \right|\stackrel{\text{\ref{asdf} i)}}{=}\varphi\left(n\right)$
+\begin_inset Formula $\left[\mathbb{Q}\left(\zeta_{n}\right):\mathbb{Q}\right]\stackrel{\eqref{eq:fMipo}}{=}\deg\left(f\right)\stackrel{\text{Beh. 2}}{\ge}\left|\left\{ \zeta\in U_{n}|\zeta\text{ ist primitiv}\right\} \right|\stackrel{\text{\ref{asdf} i)}}{=}\varphi\left(n\right)$
 \end_inset
 
 
@@ -34926,7 +34877,7 @@ reference "sec:Satz-Einheitswurzel-Gauss"
 
 \end_inset
 
-12.10.
+.
 \end_layout
 
 \begin_layout Standard
@@ -34937,7 +34888,7 @@ Aus der Gradformel für
  folgt:
 \begin_inset Formula 
 \begin{align*}
-\left[\mathbb{Q}\left(\zeta_{nm}\right):\mathbb{Q}\left(\zeta_{m}\right)\right] & =\varphi\left(n\right)\le\left[\mathbb{Q}\left(\zeta_{n}\right):E\right]\le\left[\mathbb{Q}\left(\zeta_{n}\right):\mathbb{Q}\right]\stackrel{\ref{asdf}12.10}{=}\varphi\left(n\right)
+\left[\mathbb{Q}\left(\zeta_{nm}\right):\mathbb{Q}\left(\zeta_{m}\right)\right] & =\varphi\left(n\right)\le\left[\mathbb{Q}\left(\zeta_{n}\right):E\right]\le\left[\mathbb{Q}\left(\zeta_{n}\right):\mathbb{Q}\right]\stackrel{\ref{sec:Satz-Einheitswurzel-Gauss}}{=}\varphi\left(n\right)
 \end{align*}
 
 \end_inset
