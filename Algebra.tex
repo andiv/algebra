@@ -1,4 +1,4 @@
-%% LyX 2.0.2 created this file.  For more info, see http://www.lyx.org/.
+%% LyX 2.0.1 created this file.  For more info, see http://www.lyx.org/.
 %% Do not edit unless you really know what you are doing.
 \documentclass[11pt,english,ngerman]{report}
 \usepackage[T1]{fontenc}
@@ -11,6 +11,7 @@
 \setlength{\parindent}{0pt}
 \usepackage{color}
 \usepackage{babel}
+\usepackage{array}
 \usepackage{textcomp}
 \usepackage{url}
 \usepackage{amsmath}
@@ -979,13 +980,13 @@ Betrachte $G:=\left(\modlo{Z}{5}\right)^{*}=\mathbb{F}_{5}^{*}$
 $x\in\mathbb{F}_{5}^{*}$ & $x^{2}$ & $x^{3}$ & $x^{4}$ & $\text{ord}\left(x\right)$\tabularnewline
 \hline 
 \hline 
-$\overline{1}$ & $\overline{1}$ & $\overline{1}$ & $\overline{1}$ & 1\tabularnewline
+\parbox[0pt][1.5em][c]{0cm}{}$\overline{1}$ & $\overline{1}$ & $\overline{1}$ & $\overline{1}$ & 1\tabularnewline
 \hline 
-$\overline{2}$ & $\overline{4}$ & $\overline{3}$ & $\overline{1}$ & 4\tabularnewline
+\parbox[0pt][1.5em][c]{0cm}{}$\overline{2}$ & $\overline{4}$ & $\overline{3}$ & $\overline{1}$ & 4\tabularnewline
 \hline 
-$\overline{3}$ & $\overline{4}$ & $\overline{2}$ & $\overline{1}$ & 4\tabularnewline
+\parbox[0pt][1.5em][c]{0cm}{}$\overline{3}$ & $\overline{4}$ & $\overline{2}$ & $\overline{1}$ & 4\tabularnewline
 \hline 
-$\overline{4}$ & $\overline{1}$ & $\overline{4}$ & $\overline{1}$ & 2\tabularnewline
+\parbox[0pt][1.5em][c]{0cm}{}$\overline{4}$ & $\overline{1}$ & $\overline{4}$ & $\overline{1}$ & 2\tabularnewline
 \hline 
 \end{tabular}
 \par\end{center}
@@ -1828,8 +1829,7 @@ Daher gilt:
 
 Sei $p\in\mathcal{P}$. Für $f=\sum_{i}a_{i}X^{i}\in Q\left[X\right]$
 heißt $\nu_{p}\left(f\right)=\min_{i}\left\{ \nu_{p}\left(a_{i}\right)\right\} \in\mathbb{Z}\cup\left\{ \infty\right\} $
-\emph{die $p$-adische Bewertung von $f$}. (\textcolor{green}{$||Q\subseteq Q^{*}$;TODO:
-???}).
+\emph{die $p$-adische Bewertung von $f$}. ($Q\subseteq Q\left[X\right]$).
 
 Zum Beispiel ist:
 \begin{align*}
@@ -2781,24 +2781,15 @@ man erhält für
 p=0: & \,\, Q\stackrel{\sim}{=}\text{Quot}\bigg(\underbrace{\modulo{\mathbb{Z}}{\left(p\right)}}_{\stackrel{\sim}{=}\mathbb{Z}}\bigg)\stackrel{\sim}{=}\mathbb{Q}\\
 p>0: & \,\, Q\stackrel{\sim}{=}\text{Quot}\bigg(\underbrace{\modulo{\mathbb{Z}}{\left(p\right)}}_{\stackrel{\sim}{=}\mathbb{F}_{p}}\bigg)\stackrel{\sim}{=}\mathbb{F}_{p}
 \end{align*}
+Es folgt $\text{char}\left(k\right)=\text{char}\left(E\right)$, denn
+$k\hookrightarrow E$ ist injektiv.
 
+TODO: Abb Homsatz 5.1
 
 \end{iiilist}
 
 
-\section{Definition und Beispiel \textmd{(Körpererweiterung)}}
-
-Eine \emph{Körpererweiterung} ist ein injektiver Ringhomomorphismus
-$k\hookrightarrow E$, bei dem $k$ und $E$ Körper sind. Es folgt
-$\text{char}\left(k\right)=\text{char}\left(E\right)$, denn $k\hookrightarrow E$
-ist injektiv.
-
-\textcolor{green}{TODO: Abb 3}
-
-\textcolor{green}{TODO: Welches Beispiel?}
-
-
-\section{Bemerkung}
+\section{Bemerkung und Definition \textmd{(Körpererweiterung)}}
 
 Für den Ringhomomorphismus von Integritätsringen $\mathbb{Z}\rightarrow\mathbb{F}_{p}$
 gilt:
@@ -2806,6 +2797,11 @@ gilt:
 \text{char}\left(\mathbb{Z}\right)=0 & \not=p=\text{char}\left(\mathbb{F}_{p}\right)
 \end{align*}
 
+
+Eine \emph{Körpererweiterung} ist ein injektiver Ringhomomorphismus
+$k\hookrightarrow E$, bei dem $k$ und $E$ Körper sind.
+
+\textcolor{green}{TODO: Abb 3}
 
 
 \section{Proposition und Definition \textmd{(Frobenius)\label{sec:PuD-Frob}}}
@@ -5401,6 +5397,17 @@ von $\modulo{E}{k}$ folgt damit:
 \begin{align*}
 \left[E:k\right] & \le n
 \end{align*}
+Dies ist klar, wenn $E\supseteq k$ endlich ist, da dann $E$ insbesondere
+ein endlicher Zwischenkörper $k\left(\alpha\right)$ ist.
+
+Wäre $E$ nicht endlich, so gäbe es für jedes $m\in\mathbb{N}$ einen
+Zwischenkörper $k\subseteq K=k\left(\alpha\right)\subseteq E$ mit
+$\left[E:K\right]>m$, denn $E$ ist das Kompositum aller endlichen
+Zwischenkörper. Dies ist ein Widerspruch zu $\left[K=k\left(\alpha\right):k\right]\le n$.
+Also ist $E$ endlich.
+
+\textcolor{green}{TODO: Beweis für diese Aussage einfügen}
+
 Insgesamt ergibt sich:
 \begin{align*}
 n & =\left|G\right|\le\left|\text{Gal}\left(\modulo{E}{k}\right)\right|\stackrel{\ref{sec:Prop-AutAnzahlGleichSepGrad}}{\le}\left[E:k\right]\le n
@@ -5440,7 +5447,7 @@ echte Untergruppe (vergleiche \ref{sec:SuD-Fixk=0000F6rper} ii)).
 
 Übung
 
-\textcolor{green}{TODO: Beweis einfügen}
+\textcolor{green}{TODO: Beweis einfügen von Zusatzaufgabe Blatt 9}
 
 \qqed
 
@@ -6857,7 +6864,7 @@ Eine $n$-te Einheitswurzel $\zeta\in U_{n}$ heißt genau dann \emph{primitiv},
 wenn $\left\langle \zeta\right\rangle =U_{n}$.
 
 
-\section{Beispiel}
+\section{Beispiel\label{sec:Bsp-U6}}
 
 Seien $k=\mathbb{C}$ und ${\displaystyle U_{6}=\left\langle \zeta_{6}:=\text{exp}\left(\frac{2\pi\ii}{6}\right)\right\rangle \subseteq\mathbb{C}^{*}}$.
 
@@ -7149,7 +7156,7 @@ Dann ist der Gruppenhomomorphismus
 \psi:\text{Gal}\left(\modulo{\mathbb{Q}\left(\zeta_{n}\right)}{\mathbb{Q}}\right) & \stackrel{\sim}{\to}\left(\modlo{Z}{n}\right)^{*}
 \end{align*}
 mit der Eigenschaft, dass für alle $\sigma\in\text{Gal}\left(\modulo{\mathbb{Q}\left(\zeta_{n}\right)}{\mathbb{Q}}\right)$
-und $\zeta\in\mathbb{Q}\left(U_{n}\right)$ schon
+und $\zeta\in U_{n}\left(\mathbb{Q}\right)$ schon
 \begin{align*}
 \sigma\left(\zeta\right) & =\zeta^{\psi\left(\sigma\right)}
 \end{align*}
@@ -7266,7 +7273,7 @@ $\left[\mathbb{Q}\left(\zeta_{n}\right):\mathbb{Q}\right]\stackrel{\eqref{eq:fMi
 \qqed
 
 
-\section{Korollar}
+\section{Korollar\label{sec:Kor-nmTeEinheitswurzeln}}
 
 Seien $n,m\ge1$ teilerfremd und $\zeta_{n},\zeta_{m}\in\overline{\mathbb{Q}}$
 primitive $n$-te (beziehungsweise $m$-te) Einheitswurzeln.
@@ -7326,6 +7333,362 @@ Also folgt wegen $\mathbb{Q}\subseteq E$ schon $E=\mathbb{Q}$.
 
 \qqed
 
+%DATE: Fr 13.1.12
+
+
+\section{Bemerkung}
+
+In der Situation von \ref{sec:Kor-nmTeEinheitswurzeln} ist das Diagramm
+
+\textcolor{green}{TODO: Abb1 einfügen}
+
+kommutativ.
+
+
+\subsubsection*{Beweis}
+
+\textcolor{green}{TODO: Beweis einfügen (als Übung)}
+
+
+\section{Definition \textmd{(Kreisteilungspolynom)\label{sec:Def-Kreisteilungspolynom}}}
+
+Seien $n\in\mathbb{N}_{\ge1}$ und $\left\{ \zeta_{1},\ldots,\zeta_{\varphi\left(n\right)}\right\} \subseteq U_{n}\subseteq\overline{k}^{*}$
+die primitiven $n$-ten Einheitswurzeln (vergleiche \ref{sec:Kor-ZetaPrimitiv}
+i)).
+
+Dann heißt \emph{
+\begin{align*}
+\phi_{n}\left(X\right) & :=\prod_{i=1}^{\varphi\left(n\right)}\left(X-\zeta_{i}\right)\in\overline{k}\left[X\right]
+\end{align*}
+das $n$-te Kreisteilungspolynom über $k$}.
+
+
+\section{Satz\label{sec:Satz-phiN}}
+
+Für $n\ge1$ (und $\text{char}\left(k\right)\!\!{\not|}\, n$) gelten:
+
+\begin{iiilist}
+
+\iii $\phi_{n}\left(X\right)\in k\left[X\right]$ ist separabel und
+normiert mit $\deg\left(\phi_{n}\right)=\varphi\left(n\right)$.
+
+\iii Aus $k=\mathbb{Q}$ folgt, dass $\phi_{n}\left(X\right)\in\mathbb{Z}\left[X\right]$
+und irreduzibel ist.
+
+\iii ${\displaystyle X^{n}-1=\prod_{0<d|n}\phi_{d}\left(X\right)\in k\left[X\right]}$
+
+\end{iiilist}
+
+
+\subsubsection*{Beweis}
+
+\begin{iiilist}
+
+\iii Nach \ref{sec:Def-Kreisteilungspolynom} ist klar, dass $\phi_{n}\left(X\right)\in\overline{k}\left[X\right]$
+normiert, separabel und vom Grad $\varphi\left(n\right)$ ist.
+
+Zeige also nur:
+\begin{align*}
+\phi_{n}\left(X\right) & \in k\left[X\right]
+\end{align*}
+Für 
+\begin{align*}
+E & :=k\left(\zeta_{n}\right)=k\left(\zeta|\zeta\in U_{n}\right)
+\end{align*}
+ist $\phi_{n}\left(X\right)\in E\left[X\right]$ und $\modulo{E}{k}$
+ist endlich und galoissch nach \ref{sec:Satz-primEinheitsWurzel}
+ii).
+
+Für jedes $\sigma\in\text{Gal}\left(\modulo{E}{k}\right)$ und jedes
+primitive $\zeta\in U_{n}$ ist auch $\sigma\left(\zeta\right)\in U_{n}$
+primitiv, womit nach \ref{sec:Def-Kreisteilungspolynom} folgt:
+\begin{align*}
+\phi_{n}^{\sigma}\left(X\right) & =\phi_{n}\left(X\right)
+\end{align*}
+Also folgt mit dem Hauptsatz der Galoistheorie:
+\begin{align*}
+\phi_{n}\left(X\right) & \in\left(E^{\text{Gal}\left(\moduloScript{E}{k}\right)}\right)\left[X\right]=k\left[X\right]
+\end{align*}
+\qqed[\roman{ale2})]
+
+\iii $\phi_{n}\left(X\right)\subseteq\mathbb{Q}\left[X\right]$ ist
+irreduzibel, denn genauer gilt für ein primitives $\zeta\in U_{n}\left(\mathbb{Q}\right)$:
+
+\begin{align*}
+\left[\zeta_{n}:\mathbb{Q}\right] & \stackrel{\ref{sec:Satz-Einheitswurzel-Gauss}}{=}\varphi\left(n\right)\\
+\deg\left(\phi_{n}\left(X\right)\right) & \stackrel{\ref{sec:Def-Kreisteilungspolynom}}{=}\varphi\left(n\right)\\
+\phi_{n}\left(\zeta_{n}\right) & \stackrel{\ref{sec:Def-Kreisteilungspolynom}}{=}0
+\end{align*}
+Also gilt sogar:
+\begin{align*}
+\phi_{n}\left(X\right) & =\text{Mipo}_{\mathbb{Q}}\left(\zeta_{n}\right)
+\end{align*}
+Weil $\phi_{n}\left(X\right)$ normiert ist, folgt $\phi_{n}\left(X\right)|X^{n}-1$
+in $\mathbb{Q}\left[X\right]$ und mit \ref{sec:Kor-hfgNormiert}
+folgt $\phi_{n}\left(X\right)\in\mathbb{Z}\left[X\right]$.
+
+\qqed[\roman{ale2})]
+
+\iii Für alle $0<d|n$ gilt:
+\begin{align*}
+P_{d} & :=\left\{ \zeta\in U_{n}|\text{ord}\left(\zeta\right)=d\right\} 
+\end{align*}
+Damit folgt:
+\begin{align}
+U_{n} & =\bcupd_{0<d|n}P_{d}\label{eq:unVereinigung}
+\end{align}
+Daher gilt in $\overline{k}\left[X\right]$:
+\begin{align*}
+X^{n}-1 & \stackrel{\text{klar}}{=}\prod_{\zeta\in U_{n}}\left(X-\zeta\right)\sr{=}{\eqref{eq:unVereinigung}}{\ref{sec:Bsp-U6}}\prod_{0<d|n}\phi_{d}\left(X\right)
+\end{align*}
+Beachte auch, dass für alle Teiler $d$ von $n$ schon $U_{d}\subseteq U_{n}$
+gilt.
+
+\end{iiilist}
+
+\qqed
+
+
+\section{Beispiel\label{sec:Bsp-phiNxInzX}}
+
+Sei $k=\mathbb{Q}$. Mit \ref{sec:Satz-phiN} iii) kann man $\phi_{n}\left(X\right)\in\mathbb{Z}\left[X\right]$
+durch Induktion über die Anzahl der Primfaktoren von $n$ explizit
+berechnen:
+
+\begin{iiilist}
+
+\iii Für eine Primzahl $p>0$ folgt mit \ref{sec:Satz-phiN} iii):
+\begin{align*}
+X^{p}-1 & =\underbrace{\phi_{1}\left(X\right)}_{X-1}\cdot\phi_{p}\left(X\right)
+\end{align*}
+Daher gilt:
+\begin{align*}
+\phi_{p}\left(X\right) & =\frac{X^{p}-1}{X-1}=X^{p-1}+\ldots+1=\text{Mipo}_{\mathbb{Q}}\left(\zeta_{p}\right)
+\end{align*}
+(vergleiche \ref{sec:Kor-Eisenstein} iii))
+
+\iii Seien $p,q>0$ Primzahlen mit $p\not=q$, so folgt mit \ref{sec:Satz-phiN}
+iii):
+\begin{align*}
+X^{pq}-1 & =\phi_{1}\left(X\right)\cdot\phi_{p}\left(X\right)\cdot\phi_{q}\left(X\right)\cdot\phi_{pq}\left(X\right)
+\end{align*}
+Damit folgt nach i):
+\begin{align*}
+\phi_{pq}\left(X\right) & =\frac{\left(X^{pq}-1\right)\left(X-1\right)\left(X-1\right)}{\left(X-1\right)\left(X^{p}-1\right)\left(X^{q}-1\right)}=\frac{\left(X^{pq}-1\right)\left(X-1\right)}{\left(X^{p}-1\right)\left(X^{q}-1\right)}
+\end{align*}
+Zur Einübung:
+\begin{align*}
+\deg\left(\phi_{pq}\right) & =\varphi\left(pq\right)=\varphi\left(p\right)\cdot\varphi\left(q\right)=\left(p-1\right)\cdot\left(q-1\right)=\\
+ & =\deg\left(\frac{\left(X^{pq}-1\right)\left(X-1\right)}{\left(X^{p}-1\right)\left(X^{q}-1\right)}\right)=pq+1-p-q
+\end{align*}
+
+
+Zum Beispiel gilt für $p=2$ und $q=3$:
+\begin{align*}
+\phi_{6}\left(X\right) & =X^{2}-X+1=\text{Mipo}_{\mathbb{Q}}\left(\zeta_{6}=e^{\frac{\pi\ii}{3}}\right)
+\end{align*}
+
+
+\end{iiilist}
+
+
+\section{Satz und Definition \textmd{(Nullstelle modulo $p$)\label{sec:SuD-NullstelleModuloP}}}
+
+Seien $\mathbb{F}_{q}$ ein endlicher Körper (vergleiche \ref{sec:Lem-ZkXpn}),
+$n\in\mathbb{N}_{\ge1}$0 eine natürliche Zahl mit $\text{ggT}\left(n,q\right)=1$
+und $\zeta_{n}\in\overline{\mathbb{F}}_{p}$ eine primitive $n$-te
+Einheitswurzel. Dann gilt:
+
+\begin{iiilist}
+
+\iii Der surjektive Gruppenhomomorphismus $\psi:\text{Gal}\left(\modulo{\mathbb{F}_{q}\left(\zeta_{n}\right)}{\mathbb{F}_{q}}\right)\hookrightarrow\left(\modlo{Z}{n}\right)^{*}$
+(vergleiche \ref{sec:Satz-primEinheitsWurzel} ii) und iii)) erfüllt:
+\begin{align*}
+\psi\left(\text{Frob}_{q}\right) & =\overline{q}
+\end{align*}
+(vergleiche \ref{sec:SuD-relatFrob} i))
+
+Insbesondere induziert $\psi$ einen Isomorphismus:
+\begin{align*}
+\text{Gal}\left(\modulo{\mathbb{F}_{q}\left(\zeta_{n}\right)}{\mathbb{F}_{q}}\right) & \stackrel{\sim}{\to}\left\langle \overline{q}\right\rangle \subseteq\left(\modlo{Z}{n}\right)^{*}
+\end{align*}
+
+
+\iii $\left[\mathbb{F}_{q}\left(\zeta_{n}\right):\mathbb{F}_{q}\right]=\text{ord}\left(\overline{q}\in\left(\modlo{Z}{n}\right)^{*}\right)$
+
+\iii $\phi_{n}\left(X\right)\in\mathbb{F}_{q}\left[X\right]$ ist
+genau dann irreduzibel, wenn $\left\langle \overline{q}\right\rangle =\left(\modlo{Z}{n}\right)^{*}$.
+
+\iii Ist $q=p$ eine Primzahl, so gilt:
+\begin{align*}
+p & \equiv1\left(\text{mod}\right)n\quad\Leftrightarrow\quad\zeta_{n}\in\mathbb{F}_{p}\subseteq\overline{\mathbb{F}}_{p}
+\end{align*}
+Letzteres ist äquivalent dazu, dass $\phi_{n}\left(X\right)\in\mathbb{Z}\left[X\right]$\emph{
+eine Nullstelle modulo $p$} \emph{besitzt}, das heißt:
+\begin{align*}
+\exs_{x\in\mathbb{Z}}: & \phi_{n}\left(x\right)\equiv0\left(\text{mod}\right)p
+\end{align*}
+
+
+\end{iiilist}
+
+
+\subsubsection*{Beweis}
+
+\begin{iiilist}
+
+\iii $\zeta_{n}^{\psi\left(\text{Frob}_{q}\right)}\stackrel{\ref{sec:Satz-Einheitswurzel-Gauss}}{=}\text{Frob}_{q}\left(\zeta_{n}\right)\stackrel{\text{Def.}}{=}\zeta_{n}^{q}$
+
+Also folgt wegen $\text{ord}\left(\zeta_{n}\right)=n$ schon:
+\begin{align*}
+\psi\left(\text{Frob}_{q}\right) & \equiv\overline{q}\left(n\right)
+\end{align*}
+Die zweite Aussage folgt aus:
+\begin{align*}
+\text{Gal}\left(\modulo{\mathbb{F}_{q}\left(\zeta_{n}\right)}{\mathbb{F}_{q}}\right) & =\left\langle \text{Frob}_{q}\right\rangle 
+\end{align*}
+(vergleiche \ref{sec:SuD-relatFrob} ii))
+
+\qqed[\roman{ale2})]
+
+\iii $\left[\mathbb{F}_{q}\left(\zeta_{n}\right):\mathbb{F}_{q}\right]=\left|\text{Gal}\left(\modulo{\mathbb{F}_{q}\left(\zeta_{n}\right)}{\mathbb{F}_{1}}\right)\right|\stackrel{\text{i)}}{=}\left|\left\langle \overline{q}\right\rangle \right|=\text{ord}\left(\overline{q}\in\left(\modlo{Z}{n}\right)^{*}\right)$
+
+\qqed[\roman{ale2})]
+
+\iii Die Irreduzibilität von $\phi_{n}\left(X\right)\in\mathbb{F}_{q}\left[X\right]$
+ist äquivalent zu folgenden Aussagen:
+\begin{align*}
+\Leftrightarrow\qquad & \phi_{n}\left(X\right)=\text{Mipo}_{\mathbb{F}_{q}}\left(\zeta_{n}\right)\\
+\Leftrightarrow\qquad & \left[\mathbb{F}_{q}\left(\zeta_{n}\right):\mathbb{F}_{q}\right]=\varphi\left(n\right)\\
+\Leftrightarrow\qquad & \psi\text{ in i) ist surjektiv.}\\
+\stackrel{\text{i)}}{\Leftrightarrow}\qquad & \left\langle \overline{q}\right\rangle =\left(\modlo{Z}{n}\right)^{*}
+\end{align*}
+
+
+\qqed[\roman{ale2})]
+
+\iii \hspace*{1mm}\vspace*{-8mm} 
+\begin{align*}
+p\equiv1\left(\text{mod}\right)n & \quad\Leftrightarrow\quad\left\langle \overline{p}\right\rangle =\left\{ \tau\right\} \subseteq\left(\modlo{Z}{n}\right)^{*}\\
+ & \quad\stackrel{\text{i)}}{\Leftrightarrow}\quad\text{Gal}\left(\modulo{\mathbb{F}_{p}\left(\zeta_{n}\right)}{\mathbb{F}_{p}}\right)=\left\{ 1\right\} \\
+ & \!\stackrel{\phi_{n}\left(\zeta_{n}\right)=0}{\Leftrightarrow}\quad\phi_{n}\text{ besitzt eine Nullstelle in \ensuremath{\mathbb{F}_{p}}.}
+\end{align*}
+
+
+\end{iiilist}
+
+\qqed
+
+
+\section{Beispiel}
+
+\noindent \begin{flushleft}
+Sei $n=4$, so folgt:
+\begin{align*}
+\phi_{n}\left(X\right) & =\phi_{n}\left(X\right)\stackrel{\text{vergleiche }\ref{sec:Bsp-phiNxInzX}\text{ iii)}}{=}X^{2}+1
+\end{align*}
+
+\par\end{flushleft}
+
+\noindent \begin{center}
+\begin{tabular}{|>{\raggedright}p{3cm}|c|c|c|c|c|c|}
+\hline 
+$p\negthickspace\not|n$ & 3 & 5 & 7 & 11 & 13 & $\ldots$\tabularnewline
+\hline 
+Nullstelle von $X^{2}+1\left(\text{mod}\right)p$ & / & 2 & / & / & 8 & $\ldots$\tabularnewline
+\hline 
+$p\left(\text{mod}\right)n$ & -1 & 1 & -1 & -1 & 1 & $\ldots$\tabularnewline
+\hline 
+\end{tabular}
+\par\end{center}
+
+
+\section{Lemma\label{sec:Lem-PfInfty}}
+
+Sei $f\in\mathbb{Z}\left[X\right]$ mit $\deg\left(f\right)\ge1$
+und setze:
+\begin{align*}
+P\left(f\right) & :=\left\{ p|p>0\text{ ist eine Primzahl}\wedge f\text{ besitzt eine Nullstelle}\left(\text{mod}\right)p\right\} 
+\end{align*}
+Dann gilt:
+\begin{align*}
+\left|P\left(f\right)\right| & =\infty
+\end{align*}
+
+
+
+\subsubsection*{Beweis}
+
+Offenbar ist:
+\begin{align*}
+P\left(f\right) & =\left\{ p\in\mathbb{Z}_{>0}\bigg|p\text{ ist eine Primzahl}\wedge\exs_{z\in\mathbb{Z}}:p|f\left(z\right)\text{ in }\mathbb{Z}\right\} 
+\end{align*}
+Schreibe $f=a_{n}X^{n}+\ldots+a_{0}$ mit $a_{i}\in\mathbb{Z}$ und
+$a_{n}\not=0$.
+
+Ist $a_{0}=0$, so gilt $p|f\left(p\right)$ für alle Primzahlen $p$
+von $\mathbb{Z}$.
+
+Sei also ohne Einschränkung $a_{0}\not=0$, dann folgt:
+\begin{align*}
+f\left(a_{0}X\right) & =a_{0}\cdot\underbrace{\left(a_{n}a_{0}^{n-1}X^{n}+\ldots+1\right)}_{=:g\left(X\right)}
+\end{align*}
+Damit folgt $P\left(g\right)\subseteq P\left(f\right)$.
+
+Zeige also nur noch $\left|P\left(g\right)\right|=\infty$.
+
+Angenommen dies wäre nicht so, dann sei:
+\begin{align*}
+P\left(g\right) & =\left\{ p_{1},\ldots,p_{m}\right\} 
+\end{align*}
+Dann existiert ein $\alpha\in\mathbb{Z}_{\ge1}$ so, dass $0,\pm1\not=g\left(\alpha,p_{1},\ldots,p_{m}\right)=:N$,
+da $\deg\left(g\right)\ge1$ ist.
+
+\textcolor{green}{TODO: Was ist $g\left(\alpha,p_{1},\ldots,p_{n}\right)$?}
+\begin{align}
+N & \stackrel{\text{Def. von }g}{\equiv}1\left(\text{mod}\right)p_{i}\qquad\fall_{1\le i\le m}\label{eq:Nequiv1}
+\end{align}
+Daher gibt es eine Primzahl $q$ mit:
+\begin{align*}
+q|N & \quad\Rightarrow\quad q\in P\left(g\right)
+\end{align*}
+Damit folgt
+\begin{align*}
+N & \equiv0\left(\text{mod}\right)q
+\end{align*}
+und:
+\begin{align*}
+N & \equiv1\not\equiv0\left(\text{mod}\right)q
+\end{align*}
+Dies ist ein Widerspruch zur Endlichkeit von $P\left(g\right)$.
+
+\qqed
+
+
+\section{Satz}
+
+Für jede Zahl $n\ge1$ existieren unendlich viele Primzahlen $p$
+mit $p\equiv1\left(\text{mod}\right)n$.
+
+
+\subsubsection*{Beweis}
+
+\ref{sec:SuD-NullstelleModuloP} iv) und \ref{sec:Lem-PfInfty} mit
+$f=\phi_{n}\left(X\right)$.
+
+\qqed
+
+
+\section{Bemerkung}
+
+Allgemeiner gilt der Satz von \noun{Dirichlet}:
+
+Für $a,n\in\mathbb{N}_{\ge1}$ mit $\text{ggT}\left(a,n\right)=1$,
+gibt es unendlich viele Primzahlen $p$ mit $p\equiv a\left(\text{mod}\right)n$.
+
+(vergleiche \noun{Jean-Pierre Serre}, \quotedblbase{}\foreignlanguage{english}{A
+Course in Arithmetics}\textquotedblleft{})
+
 
 \part*{Anhang\thispagestyle{empty}}
 
@@ -7338,7 +7701,7 @@ Also folgt wegen $\mathbb{Q}\subseteq E$ schon $E=\mathbb{Q}$.
 
 \chapter*{GNU Free Documentation License}
 
-\addcontentsline{toc}{section}{\hspace*{1.9em}GNU Free Documentation License}
+\addcontentsline{toc}{section}{\hspace*{2.7em}GNU Free Documentation License}
 
 \fancyhead[R]{GNU Free Documentation License}
 

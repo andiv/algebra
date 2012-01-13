@@ -360,6 +360,18 @@ Untergruppen-Diagramm
 ).
 \end_layout
 
+\begin_layout Plain Layout
+TODO: 
+\begin_inset Formula $\left(\text{mod}\right)$
+\end_inset
+
+ durch 
+\begin_inset Formula $\text{mod}$
+\end_inset
+
+ ersetzen.
+\end_layout
+
 \end_inset
 
 
@@ -4142,6 +4154,19 @@ Betrachte
 \begin_inset Text
 
 \begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+parbox[0pt][1.5em][c]{0cm}{}
+\end_layout
+
+\end_inset
+
+
 \begin_inset Formula $\overline{1}$
 \end_inset
 
@@ -4201,6 +4226,19 @@ Betrachte
 \begin_inset Text
 
 \begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+parbox[0pt][1.5em][c]{0cm}{}
+\end_layout
+
+\end_inset
+
+
 \begin_inset Formula $\overline{2}$
 \end_inset
 
@@ -4260,6 +4298,19 @@ Betrachte
 \begin_inset Text
 
 \begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+parbox[0pt][1.5em][c]{0cm}{}
+\end_layout
+
+\end_inset
+
+
 \begin_inset Formula $\overline{3}$
 \end_inset
 
@@ -4319,6 +4370,19 @@ Betrachte
 \begin_inset Text
 
 \begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+parbox[0pt][1.5em][c]{0cm}{}
+\end_layout
+
+\end_inset
+
+
 \begin_inset Formula $\overline{4}$
 \end_inset
 
@@ -8175,13 +8239,9 @@ die
 \emph default
 .
  (
-\color green
-
-\begin_inset Formula $||Q\subseteq Q^{*}$
+\begin_inset Formula $Q\subseteq Q\left[X\right]$
 \end_inset
 
-;TODO: ???
-\color inherit
 ).
 \end_layout
 
@@ -12654,7 +12714,19 @@ p>0: & \,\, Q\stackrel{\sim}{=}\text{Quot}\bigg(\underbrace{\modulo{\mathbb{Z}}{
 
 \end_inset
 
+Es folgt 
+\begin_inset Formula $\text{char}\left(k\right)=\text{char}\left(E\right)$
+\end_inset
 
+, denn 
+\begin_inset Formula $k\hookrightarrow E$
+\end_inset
+
+ ist injektiv.
+\end_layout
+
+\begin_layout Standard
+TODO: Abb Homsatz 5.1
 \end_layout
 
 \begin_layout Standard
@@ -12674,9 +12746,25 @@ end{iiilist}
 \end_layout
 
 \begin_layout Section
-Definition und Beispiel 
+Bemerkung und Definition 
 \series medium
 (Körpererweiterung)
+\end_layout
+
+\begin_layout Standard
+Für den Ringhomomorphismus von Integritätsringen 
+\begin_inset Formula $\mathbb{Z}\rightarrow\mathbb{F}_{p}$
+\end_inset
+
+ gilt:
+\begin_inset Formula 
+\begin{align*}
+\text{char}\left(\mathbb{Z}\right)=0 & \not=p=\text{char}\left(\mathbb{F}_{p}\right)
+\end{align*}
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -12697,47 +12785,12 @@ Körpererweiterung
 \end_inset
 
  Körper sind.
- Es folgt 
-\begin_inset Formula $\text{char}\left(k\right)=\text{char}\left(E\right)$
-\end_inset
-
-, denn 
-\begin_inset Formula $k\hookrightarrow E$
-\end_inset
-
- ist injektiv.
 \end_layout
 
 \begin_layout Standard
 
 \color green
 TODO: Abb 3
-\end_layout
-
-\begin_layout Standard
-
-\color green
-TODO: Welches Beispiel?
-\end_layout
-
-\begin_layout Section
-Bemerkung
-\end_layout
-
-\begin_layout Standard
-Für den Ringhomomorphismus von Integritätsringen 
-\begin_inset Formula $\mathbb{Z}\rightarrow\mathbb{F}_{p}$
-\end_inset
-
- gilt:
-\begin_inset Formula 
-\begin{align*}
-\text{char}\left(\mathbb{Z}\right)=0 & \not=p=\text{char}\left(\mathbb{F}_{p}\right)
-\end{align*}
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Section
@@ -26413,6 +26466,62 @@ reference "sec:SuD-primitel"
 
 \end_inset
 
+Dies ist klar, wenn 
+\begin_inset Formula $E\supseteq k$
+\end_inset
+
+ endlich ist, da dann 
+\begin_inset Formula $E$
+\end_inset
+
+ insbesondere ein endlicher Zwischenkörper 
+\begin_inset Formula $k\left(\alpha\right)$
+\end_inset
+
+ ist.
+\end_layout
+
+\begin_layout Standard
+Wäre 
+\begin_inset Formula $E$
+\end_inset
+
+ nicht endlich, so gäbe es für jedes 
+\begin_inset Formula $m\in\mathbb{N}$
+\end_inset
+
+ einen Zwischenkörper 
+\begin_inset Formula $k\subseteq K=k\left(\alpha\right)\subseteq E$
+\end_inset
+
+ mit 
+\begin_inset Formula $\left[E:K\right]>m$
+\end_inset
+
+, denn 
+\begin_inset Formula $E$
+\end_inset
+
+ ist das Kompositum aller endlichen Zwischenkörper.
+ Dies ist ein Widerspruch zu 
+\begin_inset Formula $\left[K=k\left(\alpha\right):k\right]\le n$
+\end_inset
+
+.
+ Also ist 
+\begin_inset Formula $E$
+\end_inset
+
+ endlich.
+\end_layout
+
+\begin_layout Standard
+
+\color green
+TODO: Beweis für diese Aussage einfügen
+\end_layout
+
+\begin_layout Standard
 Insgesamt ergibt sich:
 \begin_inset Formula 
 \begin{align*}
@@ -26595,7 +26704,7 @@ Beweis
 \begin_layout Standard
 
 \color green
-TODO: Beweis einfügen
+TODO: Beweis einfügen von Zusatzaufgabe Blatt 9
 \end_layout
 
 \begin_layout Standard
@@ -32882,6 +32991,13 @@ primitiv
 
 \begin_layout Section
 Beispiel
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Bsp-U6"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -34172,7 +34288,7 @@ mit der Eigenschaft, dass für alle
 \end_inset
 
  und 
-\begin_inset Formula $\zeta\in\mathbb{Q}\left(U_{n}\right)$
+\begin_inset Formula $\zeta\in U_{n}\left(\mathbb{Q}\right)$
 \end_inset
 
  schon
@@ -34643,6 +34759,13 @@ qqed
 
 \begin_layout Section
 Korollar
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Kor-nmTeEinheitswurzeln"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -34985,6 +35108,1801 @@ qqed
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+%DATE: Fr 13.1.12
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Bemerkung
+\end_layout
+
+\begin_layout Standard
+In der Situation von 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Kor-nmTeEinheitswurzeln"
+
+\end_inset
+
+ ist das Diagramm
+\end_layout
+
+\begin_layout Standard
+
+\color green
+TODO: Abb1 einfügen
+\end_layout
+
+\begin_layout Standard
+kommutativ.
+\end_layout
+
+\begin_layout Subsubsection*
+Beweis
+\end_layout
+
+\begin_layout Standard
+
+\color green
+TODO: Beweis einfügen (als Übung)
+\end_layout
+
+\begin_layout Section
+Definition 
+\series medium
+(Kreisteilungspolynom)
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Def-Kreisteilungspolynom"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Seien 
+\begin_inset Formula $n\in\mathbb{N}_{\ge1}$
+\end_inset
+
+ und 
+\begin_inset Formula $\left\{ \zeta_{1},\ldots,\zeta_{\varphi\left(n\right)}\right\} \subseteq U_{n}\subseteq\overline{k}^{*}$
+\end_inset
+
+ die primitiven 
+\begin_inset Formula $n$
+\end_inset
+
+-ten Einheitswurzeln (vergleiche 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Kor-ZetaPrimitiv"
+
+\end_inset
+
+ i)).
+\end_layout
+
+\begin_layout Standard
+Dann heißt 
+\emph on
+
+\begin_inset Formula 
+\begin{align*}
+\phi_{n}\left(X\right) & :=\prod_{i=1}^{\varphi\left(n\right)}\left(X-\zeta_{i}\right)\in\overline{k}\left[X\right]
+\end{align*}
+
+\end_inset
+
+das 
+\begin_inset Formula $n$
+\end_inset
+
+-te Kreisteilungspolynom über 
+\begin_inset Formula $k$
+\end_inset
+
+
+\emph default
+.
+\end_layout
+
+\begin_layout Section
+Satz
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Satz-phiN"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Für 
+\begin_inset Formula $n\ge1$
+\end_inset
+
+ (und 
+\begin_inset Formula $\text{char}\left(k\right)\!\!{\not|}\, n$
+\end_inset
+
+) gelten:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $\phi_{n}\left(X\right)\in k\left[X\right]$
+\end_inset
+
+ ist separabel und normiert mit 
+\begin_inset Formula $\deg\left(\phi_{n}\right)=\varphi\left(n\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Aus 
+\begin_inset Formula $k=\mathbb{Q}$
+\end_inset
+
+ folgt, dass 
+\begin_inset Formula $\phi_{n}\left(X\right)\in\mathbb{Z}\left[X\right]$
+\end_inset
+
+ und irreduzibel ist.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula ${\displaystyle X^{n}-1=\prod_{0<d|n}\phi_{d}\left(X\right)\in k\left[X\right]}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Beweis
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Nach 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Def-Kreisteilungspolynom"
+
+\end_inset
+
+ ist klar, dass 
+\begin_inset Formula $\phi_{n}\left(X\right)\in\overline{k}\left[X\right]$
+\end_inset
+
+ normiert, separabel und vom Grad 
+\begin_inset Formula $\varphi\left(n\right)$
+\end_inset
+
+ ist.
+\end_layout
+
+\begin_layout Standard
+Zeige also nur:
+\begin_inset Formula 
+\begin{align*}
+\phi_{n}\left(X\right) & \in k\left[X\right]
+\end{align*}
+
+\end_inset
+
+Für 
+\begin_inset Formula 
+\begin{align*}
+E & :=k\left(\zeta_{n}\right)=k\left(\zeta|\zeta\in U_{n}\right)
+\end{align*}
+
+\end_inset
+
+ist 
+\begin_inset Formula $\phi_{n}\left(X\right)\in E\left[X\right]$
+\end_inset
+
+ und 
+\begin_inset Formula $\modulo{E}{k}$
+\end_inset
+
+ ist endlich und galoissch nach 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Satz-primEinheitsWurzel"
+
+\end_inset
+
+ ii).
+\end_layout
+
+\begin_layout Standard
+Für jedes 
+\begin_inset Formula $\sigma\in\text{Gal}\left(\modulo{E}{k}\right)$
+\end_inset
+
+ und jedes primitive 
+\begin_inset Formula $\zeta\in U_{n}$
+\end_inset
+
+ ist auch 
+\begin_inset Formula $\sigma\left(\zeta\right)\in U_{n}$
+\end_inset
+
+ primitiv, womit nach 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Def-Kreisteilungspolynom"
+
+\end_inset
+
+ folgt:
+\begin_inset Formula 
+\begin{align*}
+\phi_{n}^{\sigma}\left(X\right) & =\phi_{n}\left(X\right)
+\end{align*}
+
+\end_inset
+
+Also folgt mit dem Hauptsatz der Galoistheorie:
+\begin_inset Formula 
+\begin{align*}
+\phi_{n}\left(X\right) & \in\left(E^{\text{Gal}\left(\moduloScript{E}{k}\right)}\right)\left[X\right]=k\left[X\right]
+\end{align*}
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed[
+\backslash
+roman{ale2})]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $\phi_{n}\left(X\right)\subseteq\mathbb{Q}\left[X\right]$
+\end_inset
+
+ ist irreduzibel, denn genauer gilt für ein primitives 
+\begin_inset Formula $\zeta\in U_{n}\left(\mathbb{Q}\right)$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\left[\zeta_{n}:\mathbb{Q}\right] & \stackrel{\ref{sec:Satz-Einheitswurzel-Gauss}}{=}\varphi\left(n\right)\\
+\deg\left(\phi_{n}\left(X\right)\right) & \stackrel{\ref{sec:Def-Kreisteilungspolynom}}{=}\varphi\left(n\right)\\
+\phi_{n}\left(\zeta_{n}\right) & \stackrel{\ref{sec:Def-Kreisteilungspolynom}}{=}0
+\end{align*}
+
+\end_inset
+
+Also gilt sogar:
+\begin_inset Formula 
+\begin{align*}
+\phi_{n}\left(X\right) & =\text{Mipo}_{\mathbb{Q}}\left(\zeta_{n}\right)
+\end{align*}
+
+\end_inset
+
+Weil 
+\begin_inset Formula $\phi_{n}\left(X\right)$
+\end_inset
+
+ normiert ist, folgt 
+\begin_inset Formula $\phi_{n}\left(X\right)|X^{n}-1$
+\end_inset
+
+ in 
+\begin_inset Formula $\mathbb{Q}\left[X\right]$
+\end_inset
+
+ und mit 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Kor-hfgNormiert"
+
+\end_inset
+
+ folgt 
+\begin_inset Formula $\phi_{n}\left(X\right)\in\mathbb{Z}\left[X\right]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed[
+\backslash
+roman{ale2})]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Für alle 
+\begin_inset Formula $0<d|n$
+\end_inset
+
+ gilt:
+\begin_inset Formula 
+\begin{align*}
+P_{d} & :=\left\{ \zeta\in U_{n}|\text{ord}\left(\zeta\right)=d\right\} 
+\end{align*}
+
+\end_inset
+
+Damit folgt:
+\begin_inset Formula 
+\begin{align}
+U_{n} & =\bcupd_{0<d|n}P_{d}\label{eq:unVereinigung}
+\end{align}
+
+\end_inset
+
+Daher gilt in 
+\begin_inset Formula $\overline{k}\left[X\right]$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+X^{n}-1 & \stackrel{\text{klar}}{=}\prod_{\zeta\in U_{n}}\left(X-\zeta\right)\sr{=}{\eqref{eq:unVereinigung}}{\ref{sec:Bsp-U6}}\prod_{0<d|n}\phi_{d}\left(X\right)
+\end{align*}
+
+\end_inset
+
+Beachte auch, dass für alle Teiler 
+\begin_inset Formula $d$
+\end_inset
+
+ von 
+\begin_inset Formula $n$
+\end_inset
+
+ schon 
+\begin_inset Formula $U_{d}\subseteq U_{n}$
+\end_inset
+
+ gilt.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Beispiel
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Bsp-phiNxInzX"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Sei 
+\begin_inset Formula $k=\mathbb{Q}$
+\end_inset
+
+.
+ Mit 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Satz-phiN"
+
+\end_inset
+
+ iii) kann man 
+\begin_inset Formula $\phi_{n}\left(X\right)\in\mathbb{Z}\left[X\right]$
+\end_inset
+
+ durch Induktion über die Anzahl der Primfaktoren von 
+\begin_inset Formula $n$
+\end_inset
+
+ explizit berechnen:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Für eine Primzahl 
+\begin_inset Formula $p>0$
+\end_inset
+
+ folgt mit 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Satz-phiN"
+
+\end_inset
+
+ iii):
+\begin_inset Formula 
+\begin{align*}
+X^{p}-1 & =\underbrace{\phi_{1}\left(X\right)}_{X-1}\cdot\phi_{p}\left(X\right)
+\end{align*}
+
+\end_inset
+
+Daher gilt:
+\begin_inset Formula 
+\begin{align*}
+\phi_{p}\left(X\right) & =\frac{X^{p}-1}{X-1}=X^{p-1}+\ldots+1=\text{Mipo}_{\mathbb{Q}}\left(\zeta_{p}\right)
+\end{align*}
+
+\end_inset
+
+(vergleiche 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Kor-Eisenstein"
+
+\end_inset
+
+ iii))
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Seien 
+\begin_inset Formula $p,q>0$
+\end_inset
+
+ Primzahlen mit 
+\begin_inset Formula $p\not=q$
+\end_inset
+
+, so folgt mit 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Satz-phiN"
+
+\end_inset
+
+ iii):
+\begin_inset Formula 
+\begin{align*}
+X^{pq}-1 & =\phi_{1}\left(X\right)\cdot\phi_{p}\left(X\right)\cdot\phi_{q}\left(X\right)\cdot\phi_{pq}\left(X\right)
+\end{align*}
+
+\end_inset
+
+Damit folgt nach i):
+\begin_inset Formula 
+\begin{align*}
+\phi_{pq}\left(X\right) & =\frac{\left(X^{pq}-1\right)\left(X-1\right)\left(X-1\right)}{\left(X-1\right)\left(X^{p}-1\right)\left(X^{q}-1\right)}=\frac{\left(X^{pq}-1\right)\left(X-1\right)}{\left(X^{p}-1\right)\left(X^{q}-1\right)}
+\end{align*}
+
+\end_inset
+
+Zur Einübung:
+\begin_inset Formula 
+\begin{align*}
+\deg\left(\phi_{pq}\right) & =\varphi\left(pq\right)=\varphi\left(p\right)\cdot\varphi\left(q\right)=\left(p-1\right)\cdot\left(q-1\right)=\\
+ & =\deg\left(\frac{\left(X^{pq}-1\right)\left(X-1\right)}{\left(X^{p}-1\right)\left(X^{q}-1\right)}\right)=pq+1-p-q
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Zum Beispiel gilt für 
+\begin_inset Formula $p=2$
+\end_inset
+
+ und 
+\begin_inset Formula $q=3$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+\phi_{6}\left(X\right) & =X^{2}-X+1=\text{Mipo}_{\mathbb{Q}}\left(\zeta_{6}=e^{\frac{\pi\ii}{3}}\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Satz und Definition 
+\series medium
+(Nullstelle modulo 
+\begin_inset Formula $p$
+\end_inset
+
+)
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:SuD-NullstelleModuloP"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Seien 
+\begin_inset Formula $\mathbb{F}_{q}$
+\end_inset
+
+ ein endlicher Körper (vergleiche 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Lem-ZkXpn"
+
+\end_inset
+
+), 
+\begin_inset Formula $n\in\mathbb{N}_{\ge1}$
+\end_inset
+
+0 eine natürliche Zahl mit 
+\begin_inset Formula $\text{ggT}\left(n,q\right)=1$
+\end_inset
+
+ und 
+\begin_inset Formula $\zeta_{n}\in\overline{\mathbb{F}}_{p}$
+\end_inset
+
+ eine primitive 
+\begin_inset Formula $n$
+\end_inset
+
+-te Einheitswurzel.
+ Dann gilt:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Der surjektive Gruppenhomomorphismus 
+\begin_inset Formula $\psi:\text{Gal}\left(\modulo{\mathbb{F}_{q}\left(\zeta_{n}\right)}{\mathbb{F}_{q}}\right)\hookrightarrow\left(\modlo{Z}{n}\right)^{*}$
+\end_inset
+
+ (vergleiche 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Satz-primEinheitsWurzel"
+
+\end_inset
+
+ ii) und iii)) erfüllt:
+\begin_inset Formula 
+\begin{align*}
+\psi\left(\text{Frob}_{q}\right) & =\overline{q}
+\end{align*}
+
+\end_inset
+
+(vergleiche 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:SuD-relatFrob"
+
+\end_inset
+
+ i))
+\end_layout
+
+\begin_layout Standard
+Insbesondere induziert 
+\begin_inset Formula $\psi$
+\end_inset
+
+ einen Isomorphismus:
+\begin_inset Formula 
+\begin{align*}
+\text{Gal}\left(\modulo{\mathbb{F}_{q}\left(\zeta_{n}\right)}{\mathbb{F}_{q}}\right) & \stackrel{\sim}{\to}\left\langle \overline{q}\right\rangle \subseteq\left(\modlo{Z}{n}\right)^{*}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $\left[\mathbb{F}_{q}\left(\zeta_{n}\right):\mathbb{F}_{q}\right]=\text{ord}\left(\overline{q}\in\left(\modlo{Z}{n}\right)^{*}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $\phi_{n}\left(X\right)\in\mathbb{F}_{q}\left[X\right]$
+\end_inset
+
+ ist genau dann irreduzibel, wenn 
+\begin_inset Formula $\left\langle \overline{q}\right\rangle =\left(\modlo{Z}{n}\right)^{*}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Ist 
+\begin_inset Formula $q=p$
+\end_inset
+
+ eine Primzahl, so gilt:
+\begin_inset Formula 
+\begin{align*}
+p & \equiv1\left(\text{mod}\right)n\quad\Leftrightarrow\quad\zeta_{n}\in\mathbb{F}_{p}\subseteq\overline{\mathbb{F}}_{p}
+\end{align*}
+
+\end_inset
+
+Letzteres ist äquivalent dazu, dass 
+\begin_inset Formula $\phi_{n}\left(X\right)\in\mathbb{Z}\left[X\right]$
+\end_inset
+
+
+\emph on
+ eine Nullstelle modulo 
+\begin_inset Formula $p$
+\end_inset
+
+
+\emph default
+ 
+\emph on
+besitzt
+\emph default
+, das heißt:
+\begin_inset Formula 
+\begin{align*}
+\exs_{x\in\mathbb{Z}}: & \phi_{n}\left(x\right)\equiv0\left(\text{mod}\right)p
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Beweis
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $\zeta_{n}^{\psi\left(\text{Frob}_{q}\right)}\stackrel{\ref{sec:Satz-Einheitswurzel-Gauss}}{=}\text{Frob}_{q}\left(\zeta_{n}\right)\stackrel{\text{Def.}}{=}\zeta_{n}^{q}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Also folgt wegen 
+\begin_inset Formula $\text{ord}\left(\zeta_{n}\right)=n$
+\end_inset
+
+ schon:
+\begin_inset Formula 
+\begin{align*}
+\psi\left(\text{Frob}_{q}\right) & \equiv\overline{q}\left(n\right)
+\end{align*}
+
+\end_inset
+
+Die zweite Aussage folgt aus:
+\begin_inset Formula 
+\begin{align*}
+\text{Gal}\left(\modulo{\mathbb{F}_{q}\left(\zeta_{n}\right)}{\mathbb{F}_{q}}\right) & =\left\langle \text{Frob}_{q}\right\rangle 
+\end{align*}
+
+\end_inset
+
+(vergleiche 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:SuD-relatFrob"
+
+\end_inset
+
+ ii))
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed[
+\backslash
+roman{ale2})]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $\left[\mathbb{F}_{q}\left(\zeta_{n}\right):\mathbb{F}_{q}\right]=\left|\text{Gal}\left(\modulo{\mathbb{F}_{q}\left(\zeta_{n}\right)}{\mathbb{F}_{1}}\right)\right|\stackrel{\text{i)}}{=}\left|\left\langle \overline{q}\right\rangle \right|=\text{ord}\left(\overline{q}\in\left(\modlo{Z}{n}\right)^{*}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed[
+\backslash
+roman{ale2})]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Die Irreduzibilität von 
+\begin_inset Formula $\phi_{n}\left(X\right)\in\mathbb{F}_{q}\left[X\right]$
+\end_inset
+
+ ist äquivalent zu folgenden Aussagen:
+\begin_inset Formula 
+\begin{align*}
+\Leftrightarrow\qquad & \phi_{n}\left(X\right)=\text{Mipo}_{\mathbb{F}_{q}}\left(\zeta_{n}\right)\\
+\Leftrightarrow\qquad & \left[\mathbb{F}_{q}\left(\zeta_{n}\right):\mathbb{F}_{q}\right]=\varphi\left(n\right)\\
+\Leftrightarrow\qquad & \psi\text{ in i) ist surjektiv.}\\
+\stackrel{\text{i)}}{\Leftrightarrow}\qquad & \left\langle \overline{q}\right\rangle =\left(\modlo{Z}{n}\right)^{*}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed[
+\backslash
+roman{ale2})]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hspace*{1mm}
+\backslash
+vspace*{-8mm}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula 
+\begin{align*}
+p\equiv1\left(\text{mod}\right)n & \quad\Leftrightarrow\quad\left\langle \overline{p}\right\rangle =\left\{ \tau\right\} \subseteq\left(\modlo{Z}{n}\right)^{*}\\
+ & \quad\stackrel{\text{i)}}{\Leftrightarrow}\quad\text{Gal}\left(\modulo{\mathbb{F}_{p}\left(\zeta_{n}\right)}{\mathbb{F}_{p}}\right)=\left\{ 1\right\} \\
+ & \!\stackrel{\phi_{n}\left(\zeta_{n}\right)=0}{\Leftrightarrow}\quad\phi_{n}\text{ besitzt eine Nullstelle in \ensuremath{\mathbb{F}_{p}}.}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Beispiel
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align left
+Sei 
+\begin_inset Formula $n=4$
+\end_inset
+
+, so folgt:
+\begin_inset Formula 
+\begin{align*}
+\phi_{n}\left(X\right) & =\phi_{n}\left(X\right)\stackrel{\text{vergleiche }\ref{sec:Bsp-phiNxInzX}\text{ iii)}}{=}X^{2}+1
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="7">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="3cm">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $p\negthickspace\not|n$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+11
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+13
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\ldots$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Nullstelle von 
+\begin_inset Formula $X^{2}+1\left(\text{mod}\right)p$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+/
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+/
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+/
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\ldots$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $p\left(\text{mod}\right)n$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\ldots$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Lemma
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Lem-PfInfty"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Sei 
+\begin_inset Formula $f\in\mathbb{Z}\left[X\right]$
+\end_inset
+
+ mit 
+\begin_inset Formula $\deg\left(f\right)\ge1$
+\end_inset
+
+ und setze:
+\begin_inset Formula 
+\begin{align*}
+P\left(f\right) & :=\left\{ p|p>0\text{ ist eine Primzahl}\wedge f\text{ besitzt eine Nullstelle}\left(\text{mod}\right)p\right\} 
+\end{align*}
+
+\end_inset
+
+Dann gilt:
+\begin_inset Formula 
+\begin{align*}
+\left|P\left(f\right)\right| & =\infty
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Beweis
+\end_layout
+
+\begin_layout Standard
+Offenbar ist:
+\begin_inset Formula 
+\begin{align*}
+P\left(f\right) & =\left\{ p\in\mathbb{Z}_{>0}\bigg|p\text{ ist eine Primzahl}\wedge\exs_{z\in\mathbb{Z}}:p|f\left(z\right)\text{ in }\mathbb{Z}\right\} 
+\end{align*}
+
+\end_inset
+
+Schreibe 
+\begin_inset Formula $f=a_{n}X^{n}+\ldots+a_{0}$
+\end_inset
+
+ mit 
+\begin_inset Formula $a_{i}\in\mathbb{Z}$
+\end_inset
+
+ und 
+\begin_inset Formula $a_{n}\not=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Ist 
+\begin_inset Formula $a_{0}=0$
+\end_inset
+
+, so gilt 
+\begin_inset Formula $p|f\left(p\right)$
+\end_inset
+
+ für alle Primzahlen 
+\begin_inset Formula $p$
+\end_inset
+
+ von 
+\begin_inset Formula $\mathbb{Z}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Sei also ohne Einschränkung 
+\begin_inset Formula $a_{0}\not=0$
+\end_inset
+
+, dann folgt:
+\begin_inset Formula 
+\begin{align*}
+f\left(a_{0}X\right) & =a_{0}\cdot\underbrace{\left(a_{n}a_{0}^{n-1}X^{n}+\ldots+1\right)}_{=:g\left(X\right)}
+\end{align*}
+
+\end_inset
+
+Damit folgt 
+\begin_inset Formula $P\left(g\right)\subseteq P\left(f\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Zeige also nur noch 
+\begin_inset Formula $\left|P\left(g\right)\right|=\infty$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Angenommen dies wäre nicht so, dann sei:
+\begin_inset Formula 
+\begin{align*}
+P\left(g\right) & =\left\{ p_{1},\ldots,p_{m}\right\} 
+\end{align*}
+
+\end_inset
+
+Dann existiert ein 
+\begin_inset Formula $\alpha\in\mathbb{Z}_{\ge1}$
+\end_inset
+
+ so, dass 
+\begin_inset Formula $0,\pm1\not=g\left(\alpha,p_{1},\ldots,p_{m}\right)=:N$
+\end_inset
+
+, da 
+\begin_inset Formula $\deg\left(g\right)\ge1$
+\end_inset
+
+ ist.
+\end_layout
+
+\begin_layout Standard
+
+\color green
+TODO: Was ist 
+\begin_inset Formula $g\left(\alpha,p_{1},\ldots,p_{n}\right)$
+\end_inset
+
+?
+\color inherit
+
+\begin_inset Formula 
+\begin{align}
+N & \stackrel{\text{Def. von }g}{\equiv}1\left(\text{mod}\right)p_{i}\qquad\fall_{1\le i\le m}\label{eq:Nequiv1}
+\end{align}
+
+\end_inset
+
+Daher gibt es eine Primzahl 
+\begin_inset Formula $q$
+\end_inset
+
+ mit:
+\begin_inset Formula 
+\begin{align*}
+q|N & \quad\Rightarrow\quad q\in P\left(g\right)
+\end{align*}
+
+\end_inset
+
+Damit folgt
+\begin_inset Formula 
+\begin{align*}
+N & \equiv0\left(\text{mod}\right)q
+\end{align*}
+
+\end_inset
+
+und:
+\begin_inset Formula 
+\begin{align*}
+N & \equiv1\not\equiv0\left(\text{mod}\right)q
+\end{align*}
+
+\end_inset
+
+Dies ist ein Widerspruch zur Endlichkeit von 
+\begin_inset Formula $P\left(g\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Satz
+\end_layout
+
+\begin_layout Standard
+Für jede Zahl 
+\begin_inset Formula $n\ge1$
+\end_inset
+
+ existieren unendlich viele Primzahlen 
+\begin_inset Formula $p$
+\end_inset
+
+ mit 
+\begin_inset Formula $p\equiv1\left(\text{mod}\right)n$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection*
+Beweis
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:SuD-NullstelleModuloP"
+
+\end_inset
+
+ iv) und 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Lem-PfInfty"
+
+\end_inset
+
+ mit 
+\begin_inset Formula $f=\phi_{n}\left(X\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Bemerkung
+\end_layout
+
+\begin_layout Standard
+Allgemeiner gilt der Satz von 
+\noun on
+Dirichlet
+\noun default
+:
+\end_layout
+
+\begin_layout Standard
+Für 
+\begin_inset Formula $a,n\in\mathbb{N}_{\ge1}$
+\end_inset
+
+ mit 
+\begin_inset Formula $\text{ggT}\left(a,n\right)=1$
+\end_inset
+
+, gibt es unendlich viele Primzahlen 
+\begin_inset Formula $p$
+\end_inset
+
+ mit 
+\begin_inset Formula $p\equiv a\left(\text{mod}\right)n$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+(vergleiche 
+\noun on
+Jean-Pierre Serre
+\noun default
+, „
+\lang english
+A Course in Arithmetics
+\lang ngerman
+“)
+\end_layout
+
 \begin_layout Part*
 Anhang
 \begin_inset ERT
@@ -35059,7 +36977,7 @@ status open
 \backslash
 addcontentsline{toc}{section}{
 \backslash
-hspace*{1.9em}GNU Free Documentation License}
+hspace*{2.7em}GNU Free Documentation License}
 \end_layout
 
 \end_inset
