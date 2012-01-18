@@ -85,7 +85,7 @@
 
 %QED-Zeichen (Box)
 \newcommand{\qed}{\ensuremath{\Box}}
-\newcommand{\qqed}[1][\arabic{chapter}.\arabic{section}]{\begin{flushright}\qed\ensuremath{_{\text{#1}}}\end{flushright}}
+\newcommand{\qqed}[1][\arabic{chapter}.\arabic{section}\ifnum\arabic{subsection}>0{.\arabic{subsection}}\fi]{\begin{flushright}\qed\ensuremath{_{\text{#1}}}\end{flushright}}
 
 %Definitons-Zeichen
 \newcommand{\dfn}{\mathrel{\mathop:}=}
@@ -102,6 +102,14 @@
 }%
 }
 
+% Links Modulo
+\newcommand{\lmodulo}[2]{%
+\mbox{\raisebox{-0.6ex}{\ensuremath{\displaystyle #1}}%
+{\Large \ensuremath{\backslash}}%
+\raisebox{0.6ex}{\normalsize\ensuremath{\displaystyle #2}}%
+}%
+}
+
 % Für Z/2Z, um nicht soviel schreiben zu müssen
 \newcommand{\modlo}[2]{%
 \mbox{\raisebox{0.6ex}{\ensuremath{\displaystyle \mathbb{#1}}}%
@@ -115,6 +123,14 @@
 \mbox{\raisebox{0.4ex}{\scriptsize\ensuremath{\displaystyle #1}}%
 {\footnotesize /}%
 \raisebox{-0.4ex}{\scriptsize\ensuremath{\displaystyle #2}}%
+}%
+}
+
+% Links Modulo Script
+\newcommand{\lmoduloScript}[2]{%
+\mbox{\raisebox{-0.4ex}{\scriptsize\ensuremath{\displaystyle #1}}%
+{\footnotesize \ensuremath{\backslash}}%
+\raisebox{0.4ex}{\scriptsize\ensuremath{\displaystyle #2}}%
 }%
 }
 
@@ -330,9 +346,9 @@ Ferner heißt $\varphi$
 \begin{align*}
 Mono(morphismus) & \Leftrightarrow\varphi\text{ injektiv,}\\
 Epi(morphismus) & \Leftrightarrow\varphi\text{ surjektiv,}\\
-Iso(morphismus) & \Leftrightarrow\varphi\text{ bijektiver Gruppenhomomorphismus,}\\
+Iso(morphismus) & \Leftrightarrow\varphi\text{ ein bijektiver Gruppenhomomorphismus,}\\
 Endo(morphismus) & \Leftrightarrow G=G'\text{ und}\\
-Auto(morphismus) & \Leftrightarrow\varphi\text{ Isomorphismus von }G\text{ nach }G\text{.}
+Auto(morphismus) & \Leftrightarrow\varphi\text{ ein Isomorphismus von }G\text{ nach }G\text{ ist.}
 \end{align*}
 
 
@@ -2681,7 +2697,8 @@ Zeige noch durch Rechnen in $\modulo{\mathbb{Z}\left[X\right]}{\left(p\right)}\s
 dass alle weiteren Koeffizienten von $G_{p^{r}}$ durch $p$ teilbar
 sind:
 \begin{align*}
-G_{p^{r}}\left(X\right) & \stackrel{\text{Def.}}{=}F_{p^{r}}\left(X+1\right)\stackrel{\eqref{eq:Fpr}}{=}F_{p}\left(\left(X+1\right)^{p^{r-1}}\right)\stackrel{!}{\equiv}F_{p}\left(X^{p^{r-1}}+1\right)\stackrel{F_{p}\left(X+1\right)\equiv X^{p-1}(\text{iii)})}{\equiv}X^{\left(p^{r-1}\right)\left(p-1\right)}\mod p
+G_{p^{r}}\left(X\right) & \stackrel{\text{Def.}}{=}F_{p^{r}}\left(X+1\right)=\\
+ & \stackrel{\eqref{eq:Fpr}}{=}F_{p}\left(\left(X+1\right)^{p^{r-1}}\right)\stackrel{\left(!\right)}{\equiv}F_{p}\left(X^{p^{r-1}}+1\right)\stackrel{F_{p}\left(X+1\right)\equiv X^{p-1}(\text{iii)})}{\equiv}X^{\left(p^{r-1}\right)\left(p-1\right)}\mod p
 \end{align*}
 
 
@@ -4194,8 +4211,8 @@ Eisenstein bezüglich 2, und aus dem Gradsatz folgt die erste Aussage.
 Nun existieren $\alpha\in\mathbb{R}$ und $\beta\in\mathbb{C}\setminus\mathbb{R}$
 mit $\alpha^{4}=\beta^{4}=2$. Erhalte $\mathbb{Q}$-Homomorphismen:
 \begin{align*}
-i & :\mathbb{Q}\left[\sqrt{[4]2}\right]\hookrightarrow\mathbb{R},\sqrt{[4]2}\to\alpha\\
-j & :\mathbb{Q}\left[\sqrt{[4]2}\right]\hookrightarrow\mathbb{C},\sqrt{[4]2}\to\beta
+i & :\mathbb{Q}\left[\sqrt[4]{2}\right]\hookrightarrow\mathbb{R},\sqrt[4]{2}\to\alpha\\
+j & :\mathbb{Q}\left[\sqrt[4]{2}\right]\hookrightarrow\mathbb{C},\sqrt[4]{2}\to\beta
 \end{align*}
 Wegen $\beta\not\in\mathbb{R}$ und $i\left(E\right)\subseteq\mathbb{R}$
 (also $i\left(E\right)\not=j\left(E\right)$) kann $\modulo{E}{k}$
@@ -6864,7 +6881,7 @@ Eine $n$-te Einheitswurzel $\zeta\in U_{n}$ heißt genau dann \emph{primitiv},
 wenn $\left\langle \zeta\right\rangle =U_{n}$.
 
 
-\section{Beispiel\label{sec:Bsp-U6}}
+\section{Beispiel \textmd{($U_{6}$)}\label{sec:Bsp-U6}}
 
 Seien $k=\mathbb{C}$ und ${\displaystyle U_{6}=\left\langle \zeta_{6}:=\text{exp}\left(\frac{2\pi\ii}{6}\right)\right\rangle \subseteq\mathbb{C}^{*}}$.
 
@@ -6943,7 +6960,7 @@ hat Ordnung $2\not=16$, ist also nicht primitiv.
 %DATE: Di 10.1.12
 
 
-\section{Erinnerung\label{sec:Erinnerung-EulerPhi}}
+\section{Erinnerung \textmd{(Eulersche $\varphi$-Funktion)}\label{sec:Erinnerung-EulerPhi}}
 
 Für alle $n\ge1$ sei die \quotedblbase{}Eulersche $\varphi$-Funktion\textquotedblleft{}
 definiert als:
@@ -7128,7 +7145,7 @@ abelsch.
 \qqed
 
 
-\section{Bemerkung und Definition}
+\section{Bemerkung und Definition \textmd{($n$-ter Kreisteilungskörper)}}
 
 In der Situation von \ref{sec:Satz-primEinheitsWurzel} gilt:
 
@@ -7189,11 +7206,11 @@ X^{n}-1 & =f\cdot h\in\mathbb{Z}\left[X\right]\label{eq:Xnfh}
 \end{align}
 für ein geeignetes $h\in\mathbb{Z}\left[X\right]$.
 \begin{description}
-\item [{Behauptung~1}] Ist $p>0$ eine Primzahl mit $p\not|\: n$, dann
-ist $f\left(\zeta_{n}^{p}\right)=0$ und $\zeta_{n}^{p}\in U_{n}$
-ist primitiv.
-\item [{Beweis}] Die zweite Aussage folgt aus \ref{sec:Kor-ZetaPrimitiv}
-ii).\\
+\item [{Behauptung~1}] \hspace*{1mm}\vspace*{1mm}\\
+Ist $p>0$ eine Primzahl mit $p\not|\: n$, dann ist $f\left(\zeta_{n}^{p}\right)=0$
+und $\zeta_{n}^{p}\in U_{n}$ ist primitiv.
+\item [{Beweis}] \hspace*{1mm}\vspace*{1mm}\\
+Die zweite Aussage folgt aus \ref{sec:Kor-ZetaPrimitiv} ii).\\
 Angenommen $f\left(\zeta_{n}^{p}\right)\not=0$, dann würde wegen
 $\left(\zeta_{n}^{p}\right)^{n}=1$ und \eqref{eq:Xnfh} gelten:
 \begin{align*}
@@ -7229,8 +7246,10 @@ Dann gilt:
 \overline{h\left(X^{p}\right)} & =\sum_{i}a_{i}\left(X^{p}\right)^{i}\stackrel{a_{i}\in\mathbb{F}_{p}}{=}\sum_{i}a_{i}^{p}\left(X^{i}\right)^{p}=\left(\sum a_{i}X^{i}\right)^{p}=\overline{h}^{p}
 \end{align*}
 \qqed[Behauptung 1]
-\item [{Behauptung~2}] Ist $\zeta\in U_{n}$ primitiv, so ist $f\left(\zeta\right)=0$.
-\item [{Beweis}] Nach \ref{sec:Kor-ZetaPrimitiv} ii) gibt es ein $r\in\mathbb{Z}$
+\item [{Behauptung~2}] \hspace*{1mm}\vspace*{1mm}\\
+Ist $\zeta\in U_{n}$ primitiv, so ist $f\left(\zeta\right)=0$.
+\item [{Beweis}] \hspace*{1mm}\vspace*{1mm}\\
+Nach \ref{sec:Kor-ZetaPrimitiv} ii) gibt es ein $r\in\mathbb{Z}$
 mit $\text{ggT}\left(r,n\right)=1$ und $\zeta=\zeta_{n}^{r}$.\\
 Dann ist $r=p_{1}\cdot\ldots\cdot p_{m}$ ein endliches Produkt von
 Primzahlen $p_{i}$ mit $p_{i}\not|\: n$ für alle $1\le i\le n$.\\
@@ -7449,7 +7468,7 @@ gilt.
 \qqed
 
 
-\section{Beispiel\label{sec:Bsp-phiNxInzX}}
+\section{Beispiel \textmd{($k=\mathbb{Q}$)}\label{sec:Bsp-phiNxInzX}}
 
 Sei $k=\mathbb{Q}$. Mit \ref{sec:Satz-phiN} iii) kann man $\phi_{n}\left(X\right)\in\mathbb{Z}\left[X\right]$
 durch Induktion über die Anzahl der Primfaktoren von $n$ explizit
@@ -7580,12 +7599,13 @@ p\equiv1\left(\text{mod}\right)n & \quad\Leftrightarrow\quad\left\langle \overli
 \qqed
 
 
-\section{Beispiel}
+\section{Beispiel \textmd{($n=4$)}}
 
 \noindent \begin{flushleft}
-Sei $n=4$, so folgt:
+Sei $k=\mathbb{Q}$ und $n=4$, so folgt:
 \begin{align*}
-\phi_{n}\left(X\right) & =\phi_{n}\left(X\right)\stackrel{\text{vergleiche }\ref{sec:Bsp-phiNxInzX}\text{ iii)}}{=}X^{2}+1
+X^{4}-1 & \stackrel{\ref{sec:Satz-phiN}\text{ iii)}}{=}\phi_{1}\left(X\right)\phi_{2}\left(X\right)\phi_{4}\left(X\right)\\
+\phi_{4}\left(X\right) & =\frac{X^{4}-1}{\phi_{1}\left(X\right)\phi_{2}\left(X\right)}=\frac{X^{4}-1}{\left(X-1\right)\frac{X^{2}-1}{\left(X-1\right)}}=\frac{X^{4}-1}{X^{2}-1}=X^{2}+1
 \end{align*}
 
 \par\end{flushleft}
@@ -7641,10 +7661,8 @@ Angenommen dies wäre nicht so, dann sei:
 \begin{align*}
 P\left(g\right) & =\left\{ p_{1},\ldots,p_{m}\right\} 
 \end{align*}
-Dann existiert ein $\alpha\in\mathbb{Z}_{\ge1}$ so, dass $0,\pm1\not=g\left(\alpha,p_{1},\ldots,p_{m}\right)=:N$,
+Dann existiert ein $\alpha\in\mathbb{Z}_{\ge1}$ so, dass $0,\pm1\not=g\left(\alpha\cdot p_{1}\cdot\ldots\cdot p_{m}\right)=:N$,
 da $\deg\left(g\right)\ge1$ ist.
-
-\textcolor{green}{TODO: Was ist $g\left(\alpha,p_{1},\ldots,p_{n}\right)$?}
 \begin{align}
 N & \stackrel{\text{Def. von }g}{\equiv}1\left(\text{mod}\right)p_{i}\qquad\fall_{1\le i\le m}\label{eq:Nequiv1}
 \end{align}
@@ -7686,8 +7704,450 @@ Allgemeiner gilt der Satz von \noun{Dirichlet}:
 Für $a,n\in\mathbb{N}_{\ge1}$ mit $\text{ggT}\left(a,n\right)=1$,
 gibt es unendlich viele Primzahlen $p$ mit $p\equiv a\left(\text{mod}\right)n$.
 
-(vergleiche \noun{Jean-Pierre Serre}, \quotedblbase{}\foreignlanguage{english}{A
-Course in Arithmetics}\textquotedblleft{})
+(vergleiche \noun{Jean-Pierre Serre}: \foreignlanguage{english}{\emph{A
+Course in Arithmetics}})
+
+
+
+%DATE: Di 17.1.12
+
+
+\chapter{Gruppentheorie II\label{chap:Gruppentheorie-II}}
+
+
+\section{Operationen von Gruppen auf Mengen}
+
+
+\subsection{Proposition und Definition \textmd{(Operation)\label{sub:PuD-Operation}}}
+
+Seien $G$ eine Gruppe, $X$ eine Menge und $\varrho:G\to\Sigma\left(X\right)$
+ein Gruppenhomomorphismus.
+
+Dann gelten für die Abbildung
+\begin{align*}
+\cdot:G\times X & \to X\\
+\left(g,x\right) & \mapsto g\cdot x:=\varrho\left(g\right)\left(x\right)
+\end{align*}
+folgende Aussagen:
+
+\begin{iiilist}
+
+\iii Für alle $x\in X$ und das neutrale Element $e\in G$ gilt:
+\begin{align*}
+e\cdot x & =x
+\end{align*}
+
+
+\iii Für alle $g,h\in G$ und alle $x\in X$ gilt:
+\begin{align*}
+g\cdot\left(h\cdot x\right) & =\left(gh\right)\cdot x
+\end{align*}
+
+
+\end{iiilist}
+
+Eine Abbildung, die i) und ii) erfüllt, heißt \emph{Operation von
+$G$ auf $X$}.
+
+Ist umgekehrt $\cdot$ eine Operation von $G$ auf $X$, so ist die
+Abbildung
+\begin{align}
+G & \to\Sigma\left(X\right)\\
+g & \mapsto\left(x\mapsto g\cdot x\right)\nonumber 
+\end{align}
+wohldefiniert und ein Gruppenhomomorphismus.
+
+
+\subsubsection*{Beweis}
+
+\begin{iiilist}
+
+\iii Da $\varrho$ ein Gruppenhomomorphismus ist, gilt $\varrho\left(e\right)=\text{id}_{X}$
+und es folgt:
+
+\begin{align*}
+e\cdot x & \stackrel{\text{Def.}}{=}\underbrace{\varrho\left(e\right)}_{=\text{id}_{X}}\left(x\right)=x
+\end{align*}
+
+
+\qqed[\roman{ale2})]
+
+\iii Es gilt:
+\begin{align*}
+g\cdot\left(h\cdot x\right) & \stackrel{\text{Def.}}{=}\varrho\left(g\right)\left(\varrho\left(h\right)\left(x\right)\right)=\left(\varrho\left(g\right)\circ\varrho\left(h\right)\right)\left(x\right)\stackrel{\varrho\text{ Gruphom.}}{=}\left(\varrho\left(gh\right)\right)\left(x\right)\stackrel{\text{Def.}}{=}\left(gh\right)\cdot x
+\end{align*}
+
+
+\qqed[\roman{ale2})]
+
+\end{iiilist}
+
+Sei umgekehrt $\cdot$ eine Operation von $G$ auf $X$, so gilt für
+alle $x\in X$, alle $g,h\in G$ und das neutrale Element $e\in G$
+:
+
+\begin{align}
+e\cdot x & =x & g\cdot\left(h\cdot x\right) & =\left(gh\right)\cdot x\label{eq:exxGhxGHx}
+\end{align}
+
+
+Die Abbildung
+\begin{align*}
+\varrho:G & \to\Sigma\left(X\right)\\
+g & \mapsto\left(x\mapsto g\cdot x\right)
+\end{align*}
+ist wohldefiniert, da die Abbildung $g\cdot$ wegen
+\begin{align*}
+g\cdot g^{-1} & =g^{-1}\cdot g=\text{id}_{X}
+\end{align*}
+bijektiv mit der Inversen $g^{-1}\cdot$ ist, also $\varrho\left(g\right)\in\Sigma\left(X\right)$
+ist.
+
+Zudem gilt:
+\begin{align*}
+\varrho\left(e\right)\left(x\right) & =e\cdot x\stackrel{\eqref{eq:exxGhxGHx}}{=}x & \Rightarrow\quad\varrho\left(e\right) & =\text{id}_{X}
+\end{align*}
+\begin{align*}
+\varrho\left(gh\right)\left(x\right) & =gh\cdot x\stackrel{\eqref{eq:exxGhxGHx}}{=}g\cdot h\cdot x=\varrho\left(g\right)\left(\varrho\left(h\right)\left(x\right)\right)=\left(\varrho\left(g\right)\circ\varrho\left(h\right)\right)\left(x\right)
+\end{align*}
+Also gilt $\varrho\left(gh\right)=\varrho\left(g\right)\circ\varrho\left(h\right)$
+und daher ist $\varrho$ ein Gruppenhomomorphismus.
+
+\qqed
+
+
+\subsection{Beispiel und Definition \textmd{(Linkstranslation)}}
+
+\begin{iiilist}
+
+\iii Sei
+\begin{align*}
+G\times X & \to X\\
+\left(g,x\right) & \mapsto g\cdot x
+\end{align*}
+eine Operation der Gruppe $G$ auf der Menge $X$.
+
+Dann ist für jedes $\sigma\in G$ \emph{die Linkstranslation mit $\sigma$}
+definiert durch
+\begin{align*}
+l_{\sigma}:X & \stackrel{\sim}{\to}X\\
+x & \mapsto\sigma\cdot x
+\end{align*}
+und bijektiv.
+
+
+\subsubsection*{Beweis}
+
+Man sieht leicht:
+\begin{align*}
+l_{\sigma}\circ l_{\sigma^{-1}} & =l_{\sigma^{-1}}\circ l_{\sigma}=\text{id}_{X}
+\end{align*}
+(vergleiche Beweis von \ref{sub:PuD-Operation})
+
+\qqed[\roman{ale2})]
+
+\iii Ist $\modulo{E}{k}$ eine Körpererweiterung, so ist
+\begin{align*}
+\text{Aut}_{k}\left(E\right)\times E & \to E\\
+\left(\sigma,x\right) & \mapsto\sigma\left(x\right)
+\end{align*}
+eine Operation.
+
+\iii Sei $G$ eine Gruppe. Dann ist die Multiplikation
+\begin{align*}
+G\times G & \to G\\
+\left(g,h\right) & \mapsto gh
+\end{align*}
+eine Operation der Gruppe $G$ auf der Menge $G$ und der zugehörige
+Gruppenhomomorphismus
+\begin{align*}
+\varrho:G & \to\Sigma\left(G\right)
+\end{align*}
+(vergleichen \ref{sub:PuD-Operation}) ist injektiv, denn $\text{ker}\left(\varrho\right)=\left\{ e\right\} $,
+da das neutrale Element eindeutig ist.
+
+\iii Sei $G$ eine Gruppe. Dann ist
+\begin{align*}
+G\times G & \to G\\
+\left(g,h\right) & \mapsto ghg^{-1}
+\end{align*}
+eine Operation, \emph{die Operation von $G$ auf sich selbst durch
+Konjugation}. Dies folgt aus \ref{sec:BuD-AutGrup} und \ref{sub:PuD-Operation}.
+
+\end{iiilist}
+
+
+\subsubsection*{Fixiere im Rest des Kapitels \ref{chap:Gruppentheorie-II} (\nameref{chap:Gruppentheorie-II})
+eine Operation $\cdot:G\times X\to X$}
+
+
+\subsection{Proposition und Definition \textmd{(Bahn, Standuntergruppe)\label{sub:PuD-Bahn}}}
+
+\begin{iiilist}
+
+\iii Für alle $x\in X$ heißt
+\begin{align*}
+Gx & :=\left\{ g\cdot x|g\in G\right\} \subseteq X
+\end{align*}
+\emph{die Bahn von $x$ unter $G$}.
+
+\iii Für alle $x\in X$ ist
+\begin{align*}
+G_{x} & :=\left\{ \sigma\in G|\sigma\cdot x=x\right\} \subseteq G
+\end{align*}
+eine Untergruppe, \emph{die Standuntergruppe von $x\in X$}.
+
+\end{iiilist}
+
+
+\subsubsection*{Beweis}
+
+Es ist nur zu zeigen, dass die Teilmenge $G_{x}\subseteq G$ eine
+Untergruppe ist.
+\begin{align*}
+e\cdot x & =x
+\end{align*}
+Also ist $e\in G_{x}$ und für $\sigma,\tau\in G_{x}$ gilt:
+\begin{align*}
+\left(\sigma\tau^{-1}\right)\cdot\sr{\underbrace{x}_{=\tau\cdot x}}{}{\text{wg. }\tau\in G_{x}} & =\left(\sigma\left(\tau^{-1}\tau\right)\right)\cdot x=\sigma x=x
+\end{align*}
+Also gilt $\sigma\tau^{-1}\in G_{x}$.
+
+\qqed
+
+
+\subsection{Proposition}
+
+Sei $y\in X$ und $x\in Gy$.
+
+Die Untergruppe $G_{x},G_{y}\subseteq G$ sind zueinander konjugiert.
+
+
+\subsubsection*{Beweis}
+
+Wegen $x\in Gy$ gibt es nach \nameref{sub:PuD-Bahn} i) ein $\sigma\in G$
+mit:
+\begin{align}
+x & =\sigma\cdot y\label{eq:sigmaY}
+\end{align}
+Dann gilt für alle $\omega\in G$:
+\begin{align*}
+\omega\in G_{x} & \Leftrightarrow\omega\cdot x=x\\
+ & \negmedspace\stackrel{\eqref{eq:sigmaY}}{\Leftrightarrow}\omega\cdot\left(\sigma y\right)=\sigma y\\
+ & \Leftrightarrow\left(\sigma^{-1}\omega\sigma\right)\cdot y=y\\
+ & \Leftrightarrow\sigma^{-1}\omega\sigma\in G_{y}\\
+ & \Leftrightarrow\omega\in\sigma G_{y}\sigma^{-1}
+\end{align*}
+Weil $\omega\in G$ beliebig ist, folgt, dass
+\begin{align*}
+G_{x} & =\sigma G_{y}\sigma^{-1}
+\end{align*}
+gilt, also $G_{x}$ konjugiert zu $G_{y}$ ist.
+
+\qqed
+
+
+\subsection{Proposition und Definition \textmd{(Menge der Bahnen)\label{sub:PuD-BahnenMenge}}}
+
+\begin{iiilist}
+
+\iii Die Relation $\sim$ auf $X$, die für alle $x,y\in X$ durch
+\begin{align*}
+x\sim y & :\Leftrightarrow\exs_{\sigma\in G}:y=\sigma\cdot x
+\end{align*}
+definiert ist, ist eine Äquivalenzrelation, deren Äquivalenzklassen
+genau die Bahnen $G_{x}\subseteq X$ mit $x\in X$ sind.
+
+\iii Für alle $x,y\in X$ gilt:
+\begin{align*}
+\left(Gx\cap Gy\right)=\emptyset & \vee Gx=Gy
+\end{align*}
+\iii Für \emph{die Menge der Bahnen}
+\begin{align*}
+\lmodulo{G}{X} & :=\modulo{X}{\sim}
+\end{align*}
+gilt:
+\begin{align*}
+X & =\bcupd_{Gx\in\lmoduloScript{G}{X}}Gx
+\end{align*}
+Das heißt $X$ ist die disjunkte Vereinigung aller Bahnen.
+
+\end{iiilist}
+
+
+\subsubsection*{Beweis}
+
+\begin{iiilist}
+
+\iii Reflexivität: Sei $e\in G$, dann gilt $x=e\cdot x$, also ist
+$x=e\cdot x\sim x$.
+
+Symmetrie: Sei $x\sim y$, dann existiert ein $\sigma\in G$ mit $y=\sigma\cdot x$,
+also gilt:
+\begin{align*}
+\sigma^{-1}\cdot y & =\sigma^{-1}\left(\sigma\cdot x\right)=\left(\sigma^{-1}\sigma\right)\cdot x=e\cdot x=x
+\end{align*}
+Daher ist $y\sim x$.
+
+Transitivität: Sei $x\sim y\sim z$, dann gibt es $\sigma,\tau\in G$
+mit:
+\begin{align*}
+\sigma\cdot x & =y & \tau\cdot y & =z
+\end{align*}
+Also gilt:
+\begin{align*}
+z & =\tau\cdot y=\tau\cdot\left(\sigma\cdot x\right)=\left(\tau\sigma\right)\cdot x
+\end{align*}
+Daher ist $x\sim z$.
+
+Also ist $\sim$ eine Äquivalenzrelation auf $X$, und die zweite
+Aussage ist klar.
+
+\qqed[\roman{ale2})]
+
+\iii und iii) sind allgemeine Eigenschaften einer Äquivalenzrelation. 
+
+\end{iiilist}
+
+\qqed
+
+
+\subsection{Proposition\label{sub:Prop-sGxSx}}
+
+Für $x\in X$ ist die Abbildung
+\begin{align}
+\modulo{G}{G_{x}} & \stackrel{\sim}{\to}Gx\label{eq:GModG_xToGx}\\
+\sigma G_{x} & \mapsto\sigma\cdot x\nonumber 
+\end{align}
+wohldefiniert und bijektiv.
+
+Sind $G$ und $X$ endlich, so folgt:
+\begin{align*}
+\left|Gx\right| & =\left|\modulo{G}{G_{x}}\right|=\left(G:G_{x}\right)
+\end{align*}
+
+
+
+\subsubsection*{Beweis}
+
+Für alle $\sigma,\tau\in G$ mit $\sigma G_{x}=\tau G_{x}$ gibt es
+ein $\omega\in G_{x}$ mit $\sigma=\tau\omega$.
+
+Damit folgt:
+\begin{align*}
+\tau\cdot x & \stackrel{\omega\in G_{x}}{=}\tau\cdot\left(\omega\cdot x\right)=\left(\tau\omega\right)\cdot x=\sigma\cdot x
+\end{align*}
+Also ist die Abbildung \eqref{eq:GModG_xToGx} wohldefiniert und offenbar
+surjektiv.
+
+Für $\sigma,\tau\in G$ mit $\sigma\cdot x=\tau\cdot x$ folgt:
+\begin{align*}
+\left(\tau^{-1}\sigma\right)\cdot x & =\tau^{-1}\cdot\left(\sigma\cdot x\right)=\tau^{-1}\cdot\left(\tau\cdot x\right)=\left(\tau^{-1}\tau\right)\cdot x=e\cdot x=x
+\end{align*}
+Damit folgt:
+\begin{align*}
+\tau^{-1}\sigma & \in G_{x}
+\end{align*}
+Also gilt:
+\begin{align*}
+\sigma G_{x} & =\tau G_{x}
+\end{align*}
+Daher ist die Abbildung \eqref{eq:GModG_xToGx} injektiv.
+
+Der Rest ist klar.
+
+\qqed
+
+
+\subsection{Satz \textmd{(Bahngleichung)\label{sub:Satz-Bahngleichung}}}
+
+Sind $G$ und $X$ endlich und ist $\left\{ x_{1},\ldots,x_{n}\right\} $
+ein Vertretersystem der Bahnen, das heißt es gilt:
+\begin{align*}
+\lmodulo{G}{X} & =\left\{ Gx_{1},\ldots,Gx_{n}\right\} 
+\end{align*}
+Dann folgt:
+\begin{align*}
+\left|X\right| & =\sum_{i=1}^{n}\left|Gx_{i}\right|=\sum_{i=1}^{n}\left(G:G_{x_{i}}\right)
+\end{align*}
+
+
+
+\subsubsection*{Beweis}
+
+Dies folgt aus \ref{sub:PuD-BahnenMenge} iii) und \ref{sub:Prop-sGxSx}.
+
+\qqed
+
+
+\subsection{Definition \textmd{(Konjugationsklasse, Zentralisator)}}
+
+Sei $G$ eine Gruppe, $\tau\in G$.
+
+Dann heißt die Bahn von $\tau$ bezüglich der Operation von $G$ auf
+$G$ durch Konjugation die \emph{Konjugationsklasse von $\tau$ in
+$G$.}
+
+Die Standuntergruppe $G_{\tau}$ von $\tau$ bezüglich der betrachteten
+Operation heißt \emph{Zentralisator von $\tau$ in $G$}.
+
+Sie wird mit $Z_{G}\left(\tau\right)$ bezeichnet.
+
+
+\subsection{Proposition\label{sub:Prop-M=0000E4chtigkeitZentralisatoren}}
+
+Ist $G$ eine endliche Gruppe und $\tau_{1},\ldots,\tau_{r}$ mit
+$r\in\mathbb{N}_{\ge0}$ ein vollständiges Vertretersystem derjenigen
+Konjugationsunterklassen von $G$, welche aus mehr als einem Element
+bestehen, so gilt:
+\begin{align*}
+\left|G\right| & =\left|Z\left(G\right)\right|+\sum_{i=1}^{r}\left(G:Z_{G}\left(\tau_{i}\right)\right)
+\end{align*}
+
+
+
+\subsubsection*{Beweis}
+
+Die Konjugationsunterklasse eines $\tau\in G$ ist genau dann einelementig,
+wenn $\tau\in Z\left(G\right)$ liegt.
+
+Damit folgt die Proposition aus der Bahngleichung \ref{sub:Satz-Bahngleichung}.
+
+\qqed
+
+
+\subsection{Definition \textmd{($p$-Gruppen)}}
+
+Sei $p$ eine Primzahl.
+
+Eine endliche Gruppe $G$ heißt eine \emph{$p$-Gruppe}, wenn die
+Mächtigkeit $\left|G\right|$ von $G$ eine Potenz von $p$ ist.
+
+
+\subsection{Satz}
+
+Jede nicht-triviale endliche $p$-Gruppe $G$ besitzt ein nicht-triviales
+Zentrum.
+
+
+\subsubsection*{Beweis}
+
+Es gilt $\left|G\right|=p^{k}$ mit $k\in\mathbb{N}_{\ge1}$ für bestimmte
+$l_{i}\in\mathbb{N}_{\ge1}$:
+\begin{align*}
+p & \,|\,\left|G\right|=p^{k} & p & \,|\,\left(G:Z_{G}\left(\tau_{i}\right)\right)=\frac{\left|G\right|}{\left|Z_{G}\left(\tau_{i}\right)\right|}=p^{l_{i}}
+\end{align*}
+
+
+Nach \ref{sub:Prop-M=0000E4chtigkeitZentralisatoren} gilt also:
+\begin{align*}
+p & \,|\,\left|Z\left(G\right)\right|
+\end{align*}
+Daher ist $Z\left(G\right)\not=1$.
+
+\qqed
+
+%DATE: 
 
 
 \part*{Anhang\thispagestyle{empty}}

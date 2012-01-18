@@ -50,7 +50,7 @@
 
 %QED-Zeichen (Box)
 \newcommand{\qed}{\ensuremath{\Box}}
-\newcommand{\qqed}[1][\arabic{chapter}.\arabic{section}]{\begin{flushright}\qed\ensuremath{_{\text{#1}}}\end{flushright}}
+\newcommand{\qqed}[1][\arabic{chapter}.\arabic{section}\ifnum\arabic{subsection}>0{.\arabic{subsection}}\fi]{\begin{flushright}\qed\ensuremath{_{\text{#1}}}\end{flushright}}
 
 %Definitons-Zeichen
 \newcommand{\dfn}{\mathrel{\mathop:}=}
@@ -67,6 +67,14 @@
 }%
 }
 
+% Links Modulo
+\newcommand{\lmodulo}[2]{%
+\mbox{\raisebox{-0.6ex}{\ensuremath{\displaystyle #1}}%
+{\Large \ensuremath{\backslash}}%
+\raisebox{0.6ex}{\normalsize\ensuremath{\displaystyle #2}}%
+}%
+}
+
 % Für Z/2Z, um nicht soviel schreiben zu müssen
 \newcommand{\modlo}[2]{%
 \mbox{\raisebox{0.6ex}{\ensuremath{\displaystyle \mathbb{#1}}}%
@@ -80,6 +88,14 @@
 \mbox{\raisebox{0.4ex}{\scriptsize\ensuremath{\displaystyle #1}}%
 {\footnotesize /}%
 \raisebox{-0.4ex}{\scriptsize\ensuremath{\displaystyle #2}}%
+}%
+}
+
+% Links Modulo Script
+\newcommand{\lmoduloScript}[2]{%
+\mbox{\raisebox{-0.4ex}{\scriptsize\ensuremath{\displaystyle #1}}%
+{\footnotesize \ensuremath{\backslash}}%
+\raisebox{0.4ex}{\scriptsize\ensuremath{\displaystyle #2}}%
 }%
 }
 
@@ -1068,9 +1084,9 @@ Ferner heißt
 \begin{align*}
 Mono(morphismus) & \Leftrightarrow\varphi\text{ injektiv,}\\
 Epi(morphismus) & \Leftrightarrow\varphi\text{ surjektiv,}\\
-Iso(morphismus) & \Leftrightarrow\varphi\text{ bijektiver Gruppenhomomorphismus,}\\
+Iso(morphismus) & \Leftrightarrow\varphi\text{ ein bijektiver Gruppenhomomorphismus,}\\
 Endo(morphismus) & \Leftrightarrow G=G'\text{ und}\\
-Auto(morphismus) & \Leftrightarrow\varphi\text{ Isomorphismus von }G\text{ nach }G\text{.}
+Auto(morphismus) & \Leftrightarrow\varphi\text{ ein Isomorphismus von }G\text{ nach }G\text{ ist.}
 \end{align*}
 
 \end_inset
@@ -12315,7 +12331,8 @@ Zeige noch durch Rechnen in
  teilbar sind:
 \begin_inset Formula 
 \begin{align*}
-G_{p^{r}}\left(X\right) & \stackrel{\text{Def.}}{=}F_{p^{r}}\left(X+1\right)\stackrel{\eqref{eq:Fpr}}{=}F_{p}\left(\left(X+1\right)^{p^{r-1}}\right)\stackrel{!}{\equiv}F_{p}\left(X^{p^{r-1}}+1\right)\stackrel{F_{p}\left(X+1\right)\equiv X^{p-1}(\text{iii)})}{\equiv}X^{\left(p^{r-1}\right)\left(p-1\right)}\mod p
+G_{p^{r}}\left(X\right) & \stackrel{\text{Def.}}{=}F_{p^{r}}\left(X+1\right)=\\
+ & \stackrel{\eqref{eq:Fpr}}{=}F_{p}\left(\left(X+1\right)^{p^{r-1}}\right)\stackrel{\left(!\right)}{\equiv}F_{p}\left(X^{p^{r-1}}+1\right)\stackrel{F_{p}\left(X+1\right)\equiv X^{p-1}(\text{iii)})}{\equiv}X^{\left(p^{r-1}\right)\left(p-1\right)}\mod p
 \end{align*}
 
 \end_inset
@@ -19920,8 +19937,8 @@ Nun existieren
 -Homomorphismen:
 \begin_inset Formula 
 \begin{align*}
-i & :\mathbb{Q}\left[\sqrt{[4]2}\right]\hookrightarrow\mathbb{R},\sqrt{[4]2}\to\alpha\\
-j & :\mathbb{Q}\left[\sqrt{[4]2}\right]\hookrightarrow\mathbb{C},\sqrt{[4]2}\to\beta
+i & :\mathbb{Q}\left[\sqrt[4]{2}\right]\hookrightarrow\mathbb{R},\sqrt[4]{2}\to\alpha\\
+j & :\mathbb{Q}\left[\sqrt[4]{2}\right]\hookrightarrow\mathbb{C},\sqrt[4]{2}\to\beta
 \end{align*}
 
 \end_inset
@@ -32990,7 +33007,15 @@ primitiv
 \end_layout
 
 \begin_layout Section
-Beispiel
+Beispiel 
+\series medium
+(
+\begin_inset Formula $U_{6}$
+\end_inset
+
+)
+\series default
+
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Bsp-U6"
@@ -33285,7 +33310,15 @@ status open
 \end_layout
 
 \begin_layout Section
-Erinnerung
+Erinnerung 
+\series medium
+(Eulersche 
+\begin_inset Formula $\varphi$
+\end_inset
+
+-Funktion)
+\series default
+
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Erinnerung-EulerPhi"
@@ -34121,7 +34154,13 @@ qqed
 \end_layout
 
 \begin_layout Section
-Bemerkung und Definition
+Bemerkung und Definition 
+\series medium
+(
+\begin_inset Formula $n$
+\end_inset
+
+-ter Kreisteilungskörper)
 \end_layout
 
 \begin_layout Standard
@@ -34394,7 +34433,26 @@ Behauptung
 \begin_inset space ~
 \end_inset
 
-1 Ist 
+1 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hspace*{1mm}
+\backslash
+vspace*{1mm}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Ist 
 \begin_inset Formula $p>0$
 \end_inset
 
@@ -34414,7 +34472,26 @@ Behauptung
 \end_layout
 
 \begin_layout Description
-Beweis Die zweite Aussage folgt aus 
+Beweis 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hspace*{1mm}
+\backslash
+vspace*{1mm}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Die zweite Aussage folgt aus 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:Kor-ZetaPrimitiv"
@@ -34584,7 +34661,26 @@ Behauptung
 \begin_inset space ~
 \end_inset
 
-2 Ist 
+2 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hspace*{1mm}
+\backslash
+vspace*{1mm}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Ist 
 \begin_inset Formula $\zeta\in U_{n}$
 \end_inset
 
@@ -34596,7 +34692,26 @@ Behauptung
 \end_layout
 
 \begin_layout Description
-Beweis Nach 
+Beweis 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hspace*{1mm}
+\backslash
+vspace*{1mm}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Nach 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:Kor-ZetaPrimitiv"
@@ -35659,7 +35774,15 @@ qqed
 \end_layout
 
 \begin_layout Section
-Beispiel
+Beispiel 
+\series medium
+(
+\begin_inset Formula $k=\mathbb{Q}$
+\end_inset
+
+)
+\series default
+
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Bsp-phiNxInzX"
@@ -36336,20 +36459,31 @@ qqed
 \end_layout
 
 \begin_layout Section
-Beispiel
+Beispiel 
+\series medium
+(
+\begin_inset Formula $n=4$
+\end_inset
+
+)
 \end_layout
 
 \begin_layout Standard
 \noindent
 \align left
 Sei 
+\begin_inset Formula $k=\mathbb{Q}$
+\end_inset
+
+ und 
 \begin_inset Formula $n=4$
 \end_inset
 
 , so folgt:
 \begin_inset Formula 
 \begin{align*}
-\phi_{n}\left(X\right) & =\phi_{n}\left(X\right)\stackrel{\text{vergleiche }\ref{sec:Bsp-phiNxInzX}\text{ iii)}}{=}X^{2}+1
+X^{4}-1 & \stackrel{\ref{sec:Satz-phiN}\text{ iii)}}{=}\phi_{1}\left(X\right)\phi_{2}\left(X\right)\phi_{4}\left(X\right)\\
+\phi_{4}\left(X\right) & =\frac{X^{4}-1}{\phi_{1}\left(X\right)\phi_{2}\left(X\right)}=\frac{X^{4}-1}{\left(X-1\right)\frac{X^{2}-1}{\left(X-1\right)}}=\frac{X^{4}-1}{X^{2}-1}=X^{2}+1
 \end{align*}
 
 \end_inset
@@ -36720,7 +36854,7 @@ Dann existiert ein
 \end_inset
 
  so, dass 
-\begin_inset Formula $0,\pm1\not=g\left(\alpha,p_{1},\ldots,p_{m}\right)=:N$
+\begin_inset Formula $0,\pm1\not=g\left(\alpha\cdot p_{1}\cdot\ldots\cdot p_{m}\right)=:N$
 \end_inset
 
 , da 
@@ -36728,18 +36862,6 @@ Dann existiert ein
 \end_inset
 
  ist.
-\end_layout
-
-\begin_layout Standard
-
-\color green
-TODO: Was ist 
-\begin_inset Formula $g\left(\alpha,p_{1},\ldots,p_{n}\right)$
-\end_inset
-
-?
-\color inherit
-
 \begin_inset Formula 
 \begin{align}
 N & \stackrel{\text{Def. von }g}{\equiv}1\left(\text{mod}\right)p_{i}\qquad\fall_{1\le i\le m}\label{eq:Nequiv1}
@@ -36896,11 +37018,1944 @@ Für
 \noun on
 Jean-Pierre Serre
 \noun default
-, „
+: 
+\emph on
 \lang english
 A Course in Arithmetics
+\emph default
 \lang ngerman
-“)
+)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+TODO: In Bücherverzeichnis verschieben und Verweis anlegen.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+%DATE: Di 17.1.12
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Gruppentheorie II
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:Gruppentheorie-II"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Operationen von Gruppen auf Mengen
+\end_layout
+
+\begin_layout Subsection
+Proposition und Definition 
+\series medium
+(Operation)
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:PuD-Operation"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Seien 
+\begin_inset Formula $G$
+\end_inset
+
+ eine Gruppe, 
+\begin_inset Formula $X$
+\end_inset
+
+ eine Menge und 
+\begin_inset Formula $\varrho:G\to\Sigma\left(X\right)$
+\end_inset
+
+ ein Gruppenhomomorphismus.
+\end_layout
+
+\begin_layout Standard
+Dann gelten für die Abbildung
+\begin_inset Formula 
+\begin{align*}
+\cdot:G\times X & \to X\\
+\left(g,x\right) & \mapsto g\cdot x:=\varrho\left(g\right)\left(x\right)
+\end{align*}
+
+\end_inset
+
+folgende Aussagen:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Für alle 
+\begin_inset Formula $x\in X$
+\end_inset
+
+ und das neutrale Element 
+\begin_inset Formula $e\in G$
+\end_inset
+
+ gilt:
+\begin_inset Formula 
+\begin{align*}
+e\cdot x & =x
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Für alle 
+\begin_inset Formula $g,h\in G$
+\end_inset
+
+ und alle 
+\begin_inset Formula $x\in X$
+\end_inset
+
+ gilt:
+\begin_inset Formula 
+\begin{align*}
+g\cdot\left(h\cdot x\right) & =\left(gh\right)\cdot x
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Eine Abbildung, die i) und ii) erfüllt, heißt 
+\emph on
+Operation von 
+\begin_inset Formula $G$
+\end_inset
+
+ auf 
+\begin_inset Formula $X$
+\end_inset
+
+
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+Ist umgekehrt 
+\begin_inset Formula $\cdot$
+\end_inset
+
+ eine Operation von 
+\begin_inset Formula $G$
+\end_inset
+
+ auf 
+\begin_inset Formula $X$
+\end_inset
+
+, so ist die Abbildung
+\begin_inset Formula 
+\begin{align}
+G & \to\Sigma\left(X\right)\\
+g & \mapsto\left(x\mapsto g\cdot x\right)\nonumber 
+\end{align}
+
+\end_inset
+
+wohldefiniert und ein Gruppenhomomorphismus.
+\end_layout
+
+\begin_layout Subsubsection*
+Beweis
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Da 
+\begin_inset Formula $\varrho$
+\end_inset
+
+ ein Gruppenhomomorphismus ist, gilt 
+\begin_inset Formula $\varrho\left(e\right)=\text{id}_{X}$
+\end_inset
+
+ und es folgt:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+e\cdot x & \stackrel{\text{Def.}}{=}\underbrace{\varrho\left(e\right)}_{=\text{id}_{X}}\left(x\right)=x
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed[
+\backslash
+roman{ale2})]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Es gilt:
+\begin_inset Formula 
+\begin{align*}
+g\cdot\left(h\cdot x\right) & \stackrel{\text{Def.}}{=}\varrho\left(g\right)\left(\varrho\left(h\right)\left(x\right)\right)=\left(\varrho\left(g\right)\circ\varrho\left(h\right)\right)\left(x\right)\stackrel{\varrho\text{ Gruphom.}}{=}\left(\varrho\left(gh\right)\right)\left(x\right)\stackrel{\text{Def.}}{=}\left(gh\right)\cdot x
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed[
+\backslash
+roman{ale2})]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Sei umgekehrt 
+\begin_inset Formula $\cdot$
+\end_inset
+
+ eine Operation von 
+\begin_inset Formula $G$
+\end_inset
+
+ auf 
+\begin_inset Formula $X$
+\end_inset
+
+, so gilt für alle 
+\begin_inset Formula $x\in X$
+\end_inset
+
+, alle 
+\begin_inset Formula $g,h\in G$
+\end_inset
+
+ und das neutrale Element 
+\begin_inset Formula $e\in G$
+\end_inset
+
+ :
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+e\cdot x & =x & g\cdot\left(h\cdot x\right) & =\left(gh\right)\cdot x\label{eq:exxGhxGHx}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Die Abbildung
+\begin_inset Formula 
+\begin{align*}
+\varrho:G & \to\Sigma\left(X\right)\\
+g & \mapsto\left(x\mapsto g\cdot x\right)
+\end{align*}
+
+\end_inset
+
+ist wohldefiniert, da die Abbildung 
+\begin_inset Formula $g\cdot$
+\end_inset
+
+ wegen
+\begin_inset Formula 
+\begin{align*}
+g\cdot g^{-1} & =g^{-1}\cdot g=\text{id}_{X}
+\end{align*}
+
+\end_inset
+
+bijektiv mit der Inversen 
+\begin_inset Formula $g^{-1}\cdot$
+\end_inset
+
+ ist, also 
+\begin_inset Formula $\varrho\left(g\right)\in\Sigma\left(X\right)$
+\end_inset
+
+ ist.
+\end_layout
+
+\begin_layout Standard
+Zudem gilt:
+\begin_inset Formula 
+\begin{align*}
+\varrho\left(e\right)\left(x\right) & =e\cdot x\stackrel{\eqref{eq:exxGhxGHx}}{=}x & \Rightarrow\quad\varrho\left(e\right) & =\text{id}_{X}
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+\varrho\left(gh\right)\left(x\right) & =gh\cdot x\stackrel{\eqref{eq:exxGhxGHx}}{=}g\cdot h\cdot x=\varrho\left(g\right)\left(\varrho\left(h\right)\left(x\right)\right)=\left(\varrho\left(g\right)\circ\varrho\left(h\right)\right)\left(x\right)
+\end{align*}
+
+\end_inset
+
+Also gilt 
+\begin_inset Formula $\varrho\left(gh\right)=\varrho\left(g\right)\circ\varrho\left(h\right)$
+\end_inset
+
+ und daher ist 
+\begin_inset Formula $\varrho$
+\end_inset
+
+ ein Gruppenhomomorphismus.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Beispiel und Definition 
+\series medium
+(Linkstranslation)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Sei
+\begin_inset Formula 
+\begin{align*}
+G\times X & \to X\\
+\left(g,x\right) & \mapsto g\cdot x
+\end{align*}
+
+\end_inset
+
+eine Operation der Gruppe 
+\begin_inset Formula $G$
+\end_inset
+
+ auf der Menge 
+\begin_inset Formula $X$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Dann ist für jedes 
+\begin_inset Formula $\sigma\in G$
+\end_inset
+
+ 
+\emph on
+die Linkstranslation mit 
+\begin_inset Formula $\sigma$
+\end_inset
+
+
+\emph default
+ definiert durch
+\begin_inset Formula 
+\begin{align*}
+l_{\sigma}:X & \stackrel{\sim}{\to}X\\
+x & \mapsto\sigma\cdot x
+\end{align*}
+
+\end_inset
+
+und bijektiv.
+\end_layout
+
+\begin_layout Subsubsection*
+Beweis
+\end_layout
+
+\begin_layout Standard
+Man sieht leicht:
+\begin_inset Formula 
+\begin{align*}
+l_{\sigma}\circ l_{\sigma^{-1}} & =l_{\sigma^{-1}}\circ l_{\sigma}=\text{id}_{X}
+\end{align*}
+
+\end_inset
+
+(vergleiche Beweis von 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:PuD-Operation"
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed[
+\backslash
+roman{ale2})]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Ist 
+\begin_inset Formula $\modulo{E}{k}$
+\end_inset
+
+ eine Körpererweiterung, so ist
+\begin_inset Formula 
+\begin{align*}
+\text{Aut}_{k}\left(E\right)\times E & \to E\\
+\left(\sigma,x\right) & \mapsto\sigma\left(x\right)
+\end{align*}
+
+\end_inset
+
+eine Operation.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Sei 
+\begin_inset Formula $G$
+\end_inset
+
+ eine Gruppe.
+ Dann ist die Multiplikation
+\begin_inset Formula 
+\begin{align*}
+G\times G & \to G\\
+\left(g,h\right) & \mapsto gh
+\end{align*}
+
+\end_inset
+
+eine Operation der Gruppe 
+\begin_inset Formula $G$
+\end_inset
+
+ auf der Menge 
+\begin_inset Formula $G$
+\end_inset
+
+ und der zugehörige Gruppenhomomorphismus
+\begin_inset Formula 
+\begin{align*}
+\varrho:G & \to\Sigma\left(G\right)
+\end{align*}
+
+\end_inset
+
+(vergleichen 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:PuD-Operation"
+
+\end_inset
+
+) ist injektiv, denn 
+\begin_inset Formula $\text{ker}\left(\varrho\right)=\left\{ e\right\} $
+\end_inset
+
+, da das neutrale Element eindeutig ist.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Sei 
+\begin_inset Formula $G$
+\end_inset
+
+ eine Gruppe.
+ Dann ist
+\begin_inset Formula 
+\begin{align*}
+G\times G & \to G\\
+\left(g,h\right) & \mapsto ghg^{-1}
+\end{align*}
+
+\end_inset
+
+eine Operation, 
+\emph on
+die Operation von 
+\begin_inset Formula $G$
+\end_inset
+
+ auf sich selbst durch Konjugation
+\emph default
+.
+ Dies folgt aus 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:BuD-AutGrup"
+
+\end_inset
+
+ und 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:PuD-Operation"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Fixiere im Rest des Kapitels 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:Gruppentheorie-II"
+
+\end_inset
+
+ (
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "chap:Gruppentheorie-II"
+
+\end_inset
+
+) eine Operation 
+\begin_inset Formula $\cdot:G\times X\to X$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Proposition und Definition 
+\series medium
+(Bahn, Standuntergruppe)
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:PuD-Bahn"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Für alle 
+\begin_inset Formula $x\in X$
+\end_inset
+
+ heißt
+\begin_inset Formula 
+\begin{align*}
+Gx & :=\left\{ g\cdot x|g\in G\right\} \subseteq X
+\end{align*}
+
+\end_inset
+
+
+\emph on
+die Bahn von 
+\begin_inset Formula $x$
+\end_inset
+
+ unter 
+\begin_inset Formula $G$
+\end_inset
+
+
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Für alle 
+\begin_inset Formula $x\in X$
+\end_inset
+
+ ist
+\begin_inset Formula 
+\begin{align*}
+G_{x} & :=\left\{ \sigma\in G|\sigma\cdot x=x\right\} \subseteq G
+\end{align*}
+
+\end_inset
+
+eine Untergruppe, 
+\emph on
+die Standuntergruppe von 
+\begin_inset Formula $x\in X$
+\end_inset
+
+
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Beweis
+\end_layout
+
+\begin_layout Standard
+Es ist nur zu zeigen, dass die Teilmenge 
+\begin_inset Formula $G_{x}\subseteq G$
+\end_inset
+
+ eine Untergruppe ist.
+\begin_inset Formula 
+\begin{align*}
+e\cdot x & =x
+\end{align*}
+
+\end_inset
+
+Also ist 
+\begin_inset Formula $e\in G_{x}$
+\end_inset
+
+ und für 
+\begin_inset Formula $\sigma,\tau\in G_{x}$
+\end_inset
+
+ gilt:
+\begin_inset Formula 
+\begin{align*}
+\left(\sigma\tau^{-1}\right)\cdot\sr{\underbrace{x}_{=\tau\cdot x}}{}{\text{wg. }\tau\in G_{x}} & =\left(\sigma\left(\tau^{-1}\tau\right)\right)\cdot x=\sigma x=x
+\end{align*}
+
+\end_inset
+
+Also gilt 
+\begin_inset Formula $\sigma\tau^{-1}\in G_{x}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Proposition
+\end_layout
+
+\begin_layout Standard
+Sei 
+\begin_inset Formula $y\in X$
+\end_inset
+
+ und 
+\begin_inset Formula $x\in Gy$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Die Untergruppe 
+\begin_inset Formula $G_{x},G_{y}\subseteq G$
+\end_inset
+
+ sind zueinander konjugiert.
+\end_layout
+
+\begin_layout Subsubsection*
+Beweis
+\end_layout
+
+\begin_layout Standard
+Wegen 
+\begin_inset Formula $x\in Gy$
+\end_inset
+
+ gibt es nach 
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "sub:PuD-Bahn"
+
+\end_inset
+
+ i) ein 
+\begin_inset Formula $\sigma\in G$
+\end_inset
+
+ mit:
+\begin_inset Formula 
+\begin{align}
+x & =\sigma\cdot y\label{eq:sigmaY}
+\end{align}
+
+\end_inset
+
+Dann gilt für alle 
+\begin_inset Formula $\omega\in G$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+\omega\in G_{x} & \Leftrightarrow\omega\cdot x=x\\
+ & \negmedspace\stackrel{\eqref{eq:sigmaY}}{\Leftrightarrow}\omega\cdot\left(\sigma y\right)=\sigma y\\
+ & \Leftrightarrow\left(\sigma^{-1}\omega\sigma\right)\cdot y=y\\
+ & \Leftrightarrow\sigma^{-1}\omega\sigma\in G_{y}\\
+ & \Leftrightarrow\omega\in\sigma G_{y}\sigma^{-1}
+\end{align*}
+
+\end_inset
+
+Weil 
+\begin_inset Formula $\omega\in G$
+\end_inset
+
+ beliebig ist, folgt, dass
+\begin_inset Formula 
+\begin{align*}
+G_{x} & =\sigma G_{y}\sigma^{-1}
+\end{align*}
+
+\end_inset
+
+gilt, also 
+\begin_inset Formula $G_{x}$
+\end_inset
+
+ konjugiert zu 
+\begin_inset Formula $G_{y}$
+\end_inset
+
+ ist.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Proposition und Definition 
+\series medium
+(Menge der Bahnen)
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:PuD-BahnenMenge"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Die Relation 
+\begin_inset Formula $\sim$
+\end_inset
+
+ auf 
+\begin_inset Formula $X$
+\end_inset
+
+, die für alle 
+\begin_inset Formula $x,y\in X$
+\end_inset
+
+ durch
+\begin_inset Formula 
+\begin{align*}
+x\sim y & :\Leftrightarrow\exs_{\sigma\in G}:y=\sigma\cdot x
+\end{align*}
+
+\end_inset
+
+definiert ist, ist eine Äquivalenzrelation, deren Äquivalenzklassen genau
+ die Bahnen 
+\begin_inset Formula $G_{x}\subseteq X$
+\end_inset
+
+ mit 
+\begin_inset Formula $x\in X$
+\end_inset
+
+ sind.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Für alle 
+\begin_inset Formula $x,y\in X$
+\end_inset
+
+ gilt:
+\begin_inset Formula 
+\begin{align*}
+\left(Gx\cap Gy\right)=\emptyset & \vee Gx=Gy
+\end{align*}
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Für 
+\emph on
+die Menge der Bahnen
+\emph default
+
+\begin_inset Formula 
+\begin{align*}
+\lmodulo{G}{X} & :=\modulo{X}{\sim}
+\end{align*}
+
+\end_inset
+
+gilt:
+\begin_inset Formula 
+\begin{align*}
+X & =\bcupd_{Gx\in\lmoduloScript{G}{X}}Gx
+\end{align*}
+
+\end_inset
+
+Das heißt 
+\begin_inset Formula $X$
+\end_inset
+
+ ist die disjunkte Vereinigung aller Bahnen.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Beweis
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Reflexivität: Sei 
+\begin_inset Formula $e\in G$
+\end_inset
+
+, dann gilt 
+\begin_inset Formula $x=e\cdot x$
+\end_inset
+
+, also ist 
+\begin_inset Formula $x=e\cdot x\sim x$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Symmetrie: Sei 
+\begin_inset Formula $x\sim y$
+\end_inset
+
+, dann existiert ein 
+\begin_inset Formula $\sigma\in G$
+\end_inset
+
+ mit 
+\begin_inset Formula $y=\sigma\cdot x$
+\end_inset
+
+, also gilt:
+\begin_inset Formula 
+\begin{align*}
+\sigma^{-1}\cdot y & =\sigma^{-1}\left(\sigma\cdot x\right)=\left(\sigma^{-1}\sigma\right)\cdot x=e\cdot x=x
+\end{align*}
+
+\end_inset
+
+Daher ist 
+\begin_inset Formula $y\sim x$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Transitivität: Sei 
+\begin_inset Formula $x\sim y\sim z$
+\end_inset
+
+, dann gibt es 
+\begin_inset Formula $\sigma,\tau\in G$
+\end_inset
+
+ mit:
+\begin_inset Formula 
+\begin{align*}
+\sigma\cdot x & =y & \tau\cdot y & =z
+\end{align*}
+
+\end_inset
+
+Also gilt:
+\begin_inset Formula 
+\begin{align*}
+z & =\tau\cdot y=\tau\cdot\left(\sigma\cdot x\right)=\left(\tau\sigma\right)\cdot x
+\end{align*}
+
+\end_inset
+
+Daher ist 
+\begin_inset Formula $x\sim z$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Also ist 
+\begin_inset Formula $\sim$
+\end_inset
+
+ eine Äquivalenzrelation auf 
+\begin_inset Formula $X$
+\end_inset
+
+, und die zweite Aussage ist klar.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed[
+\backslash
+roman{ale2})]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ und iii) sind allgemeine Eigenschaften einer Äquivalenzrelation.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Proposition
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Prop-sGxSx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Für 
+\begin_inset Formula $x\in X$
+\end_inset
+
+ ist die Abbildung
+\begin_inset Formula 
+\begin{align}
+\modulo{G}{G_{x}} & \stackrel{\sim}{\to}Gx\label{eq:GModG_xToGx}\\
+\sigma G_{x} & \mapsto\sigma\cdot x\nonumber 
+\end{align}
+
+\end_inset
+
+wohldefiniert und bijektiv.
+\end_layout
+
+\begin_layout Standard
+Sind 
+\begin_inset Formula $G$
+\end_inset
+
+ und 
+\begin_inset Formula $X$
+\end_inset
+
+ endlich, so folgt:
+\begin_inset Formula 
+\begin{align*}
+\left|Gx\right| & =\left|\modulo{G}{G_{x}}\right|=\left(G:G_{x}\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Beweis
+\end_layout
+
+\begin_layout Standard
+Für alle 
+\begin_inset Formula $\sigma,\tau\in G$
+\end_inset
+
+ mit 
+\begin_inset Formula $\sigma G_{x}=\tau G_{x}$
+\end_inset
+
+ gibt es ein 
+\begin_inset Formula $\omega\in G_{x}$
+\end_inset
+
+ mit 
+\begin_inset Formula $\sigma=\tau\omega$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Damit folgt:
+\begin_inset Formula 
+\begin{align*}
+\tau\cdot x & \stackrel{\omega\in G_{x}}{=}\tau\cdot\left(\omega\cdot x\right)=\left(\tau\omega\right)\cdot x=\sigma\cdot x
+\end{align*}
+
+\end_inset
+
+Also ist die Abbildung 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:GModG_xToGx"
+
+\end_inset
+
+ wohldefiniert und offenbar surjektiv.
+\end_layout
+
+\begin_layout Standard
+Für 
+\begin_inset Formula $\sigma,\tau\in G$
+\end_inset
+
+ mit 
+\begin_inset Formula $\sigma\cdot x=\tau\cdot x$
+\end_inset
+
+ folgt:
+\begin_inset Formula 
+\begin{align*}
+\left(\tau^{-1}\sigma\right)\cdot x & =\tau^{-1}\cdot\left(\sigma\cdot x\right)=\tau^{-1}\cdot\left(\tau\cdot x\right)=\left(\tau^{-1}\tau\right)\cdot x=e\cdot x=x
+\end{align*}
+
+\end_inset
+
+Damit folgt:
+\begin_inset Formula 
+\begin{align*}
+\tau^{-1}\sigma & \in G_{x}
+\end{align*}
+
+\end_inset
+
+Also gilt:
+\begin_inset Formula 
+\begin{align*}
+\sigma G_{x} & =\tau G_{x}
+\end{align*}
+
+\end_inset
+
+Daher ist die Abbildung 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:GModG_xToGx"
+
+\end_inset
+
+ injektiv.
+\end_layout
+
+\begin_layout Standard
+Der Rest ist klar.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Satz 
+\series medium
+(Bahngleichung)
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Satz-Bahngleichung"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Sind 
+\begin_inset Formula $G$
+\end_inset
+
+ und 
+\begin_inset Formula $X$
+\end_inset
+
+ endlich und ist 
+\begin_inset Formula $\left\{ x_{1},\ldots,x_{n}\right\} $
+\end_inset
+
+ ein Vertretersystem der Bahnen, das heißt es gilt:
+\begin_inset Formula 
+\begin{align*}
+\lmodulo{G}{X} & =\left\{ Gx_{1},\ldots,Gx_{n}\right\} 
+\end{align*}
+
+\end_inset
+
+Dann folgt:
+\begin_inset Formula 
+\begin{align*}
+\left|X\right| & =\sum_{i=1}^{n}\left|Gx_{i}\right|=\sum_{i=1}^{n}\left(G:G_{x_{i}}\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Beweis
+\end_layout
+
+\begin_layout Standard
+Dies folgt aus 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:PuD-BahnenMenge"
+
+\end_inset
+
+ iii) und 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Prop-sGxSx"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Definition 
+\series medium
+(Konjugationsklasse, Zentralisator)
+\end_layout
+
+\begin_layout Standard
+Sei 
+\begin_inset Formula $G$
+\end_inset
+
+ eine Gruppe, 
+\begin_inset Formula $\tau\in G$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Dann heißt die Bahn von 
+\begin_inset Formula $\tau$
+\end_inset
+
+ bezüglich der Operation von 
+\begin_inset Formula $G$
+\end_inset
+
+ auf 
+\begin_inset Formula $G$
+\end_inset
+
+ durch Konjugation die 
+\emph on
+Konjugationsklasse von 
+\begin_inset Formula $\tau$
+\end_inset
+
+ in 
+\begin_inset Formula $G$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Die Standuntergruppe 
+\begin_inset Formula $G_{\tau}$
+\end_inset
+
+ von 
+\begin_inset Formula $\tau$
+\end_inset
+
+ bezüglich der betrachteten Operation heißt 
+\emph on
+Zentralisator von 
+\begin_inset Formula $\tau$
+\end_inset
+
+ in 
+\begin_inset Formula $G$
+\end_inset
+
+
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+Sie wird mit 
+\begin_inset Formula $Z_{G}\left(\tau\right)$
+\end_inset
+
+ bezeichnet.
+\end_layout
+
+\begin_layout Subsection
+Proposition
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Prop-MächtigkeitZentralisatoren"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ist 
+\begin_inset Formula $G$
+\end_inset
+
+ eine endliche Gruppe und 
+\begin_inset Formula $\tau_{1},\ldots,\tau_{r}$
+\end_inset
+
+ mit 
+\begin_inset Formula $r\in\mathbb{N}_{\ge0}$
+\end_inset
+
+ ein vollständiges Vertretersystem derjenigen Konjugationsunterklassen von
+ 
+\begin_inset Formula $G$
+\end_inset
+
+, welche aus mehr als einem Element bestehen, so gilt:
+\begin_inset Formula 
+\begin{align*}
+\left|G\right| & =\left|Z\left(G\right)\right|+\sum_{i=1}^{r}\left(G:Z_{G}\left(\tau_{i}\right)\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Beweis
+\end_layout
+
+\begin_layout Standard
+Die Konjugationsunterklasse eines 
+\begin_inset Formula $\tau\in G$
+\end_inset
+
+ ist genau dann einelementig, wenn 
+\begin_inset Formula $\tau\in Z\left(G\right)$
+\end_inset
+
+ liegt.
+\end_layout
+
+\begin_layout Standard
+Damit folgt die Proposition aus der Bahngleichung 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Satz-Bahngleichung"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Definition 
+\series medium
+(
+\begin_inset Formula $p$
+\end_inset
+
+-Gruppen)
+\end_layout
+
+\begin_layout Standard
+Sei 
+\begin_inset Formula $p$
+\end_inset
+
+ eine Primzahl.
+\end_layout
+
+\begin_layout Standard
+Eine endliche Gruppe 
+\begin_inset Formula $G$
+\end_inset
+
+ heißt eine 
+\emph on
+
+\begin_inset Formula $p$
+\end_inset
+
+-Gruppe
+\emph default
+, wenn die Mächtigkeit 
+\begin_inset Formula $\left|G\right|$
+\end_inset
+
+ von 
+\begin_inset Formula $G$
+\end_inset
+
+ eine Potenz von 
+\begin_inset Formula $p$
+\end_inset
+
+ ist.
+\end_layout
+
+\begin_layout Subsection
+Satz
+\end_layout
+
+\begin_layout Standard
+Jede nicht-triviale endliche 
+\begin_inset Formula $p$
+\end_inset
+
+-Gruppe 
+\begin_inset Formula $G$
+\end_inset
+
+ besitzt ein nicht-triviales Zentrum.
+\end_layout
+
+\begin_layout Subsubsection*
+Beweis
+\end_layout
+
+\begin_layout Standard
+Es gilt 
+\begin_inset Formula $\left|G\right|=p^{k}$
+\end_inset
+
+ mit 
+\begin_inset Formula $k\in\mathbb{N}_{\ge1}$
+\end_inset
+
+ für bestimmte 
+\begin_inset Formula $l_{i}\in\mathbb{N}_{\ge1}$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+p & \,|\,\left|G\right|=p^{k} & p & \,|\,\left(G:Z_{G}\left(\tau_{i}\right)\right)=\frac{\left|G\right|}{\left|Z_{G}\left(\tau_{i}\right)\right|}=p^{l_{i}}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Nach 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Prop-MächtigkeitZentralisatoren"
+
+\end_inset
+
+ gilt also:
+\begin_inset Formula 
+\begin{align*}
+p & \,|\,\left|Z\left(G\right)\right|
+\end{align*}
+
+\end_inset
+
+Daher ist 
+\begin_inset Formula $Z\left(G\right)\not=1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+%DATE: 
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Part*
