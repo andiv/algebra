@@ -40,6 +40,7 @@
 \@ifundefined{date}{}{\date{}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
 \usepackage{tikz}
+\usetikzlibrary{matrix,arrows}
 \usepackage{latexsym,stmaryrd,stackrel,array,tabularx,multirow}
 \usepackage[explicit]{titlesec}
 %\usepackage{polynom} % momentan nicht benötigt
@@ -186,6 +187,8 @@
 \makeatother
 
 \begin{document}
+
+
 
 
 \pagenumbering{roman}
@@ -394,7 +397,7 @@ Sei $\varphi:G\rightarrow G'$ ein Gruppenhomomorphismus.
 \iii $\ker\left(\varphi\right):=\{a\in G|\varphi\left(a\right)=e'\}\subseteq G$
 ist eine Untergruppe, der \emph{Kern von $\varphi$}, und es gilt:
 \begin{align*}
-\varphi\text{ Mono} & \Leftrightarrow\ker\left(\varphi\right)=\{e\}
+\varphi\text{ ist ein Monomorphismus} & \Leftrightarrow\ker\left(\varphi\right)=\{e\}
 \end{align*}
 
 
@@ -405,7 +408,52 @@ ist eine Untergruppe, der \emph{Kern von $\varphi$}, und es gilt:
 
 \subsubsection*{Beweis}
 
-Übung
+\begin{iiilist}
+
+\iii Wegen $\varphi\left(e\right)=e'$ folgt $e\in\text{ker}\left(\varphi\right)$.
+
+Seien $a,b\in\text{ker}\left(\varphi\right)$, also $\varphi\left(a\right)=e'=\varphi\left(b\right)$,
+dann folgt:
+\begin{align*}
+\varphi\left(a\cdot b^{-1}\right) & =\varphi\left(a\right)\cdot\varphi\left(b\right)^{-1}=e'\cdot\left(e'\right)^{-1}=e'
+\end{align*}
+Also ist auch $a\cdot b\in\text{ker}\left(\varphi\right)$ und daher
+$\text{ker}\left(\varphi\right)\subseteq G$ eine Untergruppe.
+
+Ist $\varphi$ ein Monomorphismus, also injektiv, so gilt für $a\in\text{ker}\left(\varphi\right)$:
+\begin{align*}
+\varphi\left(a\right) & =e'=\varphi\left(e\right)
+\end{align*}
+Da $\varphi$ injektiv ist, folgt schon $a=e$ und damit $\text{ker}\left(\varphi\right)=\left\{ e\right\} $.
+
+Gelte umgekehrt $\text{ker}\left(\varphi\right)=\left\{ e\right\} $.
+
+Dann folgt für $a,b\in G$:
+\begin{align*}
+\varphi\left(a\right) & =\varphi\left(b\right)\\
+e' & =\varphi\left(a\right)^{-1}\cdot\varphi\left(b\right)=\varphi\left(a^{-1}b\right)
+\end{align*}
+Also gilt $a^{-1}b\in\text{ker}\left(\varphi\right)=\left\{ e\right\} $
+und damit:
+\begin{align*}
+a^{-1}b & =e\\
+b & =a
+\end{align*}
+Also ist $\varphi$ injektiv.
+
+\iii Wegen $\varphi\left(e\right)=e'$ folgt $e'\in\text{im}\left(\varphi\right)$.
+
+Seien $g,h\in\text{im}\left(\varphi\right)$, also gibt es $a,b\in G$
+mit $\varphi\left(a\right)=g$ und $\varphi\left(b\right)=h$.
+
+Damit folgt:
+\begin{align*}
+g\cdot h^{-1} & =\varphi\left(a\right)\cdot\varphi\left(b\right)^{-1}=\varphi\left(ab^{-1}\right)
+\end{align*}
+Also ist $ab^{-1}\in\text{im}\left(\varphi\right)$ und daher $\text{im}\left(\varphi\right)\subseteq G'$
+eine Untergruppe.
+
+\end{iiilist}
 
 \qqed
 
@@ -504,18 +552,17 @@ Für $\left|H\right|<\infty$ ist $\left|gH\right|=\left|g'H\right|$.
 \iii ${\displaystyle G=\bcupd_{gH\in\moduloScript{G}{H}}\left(gH\right)}\qquad\qquad\text{(disjunkte Vereinigung)}$
 
 
-\subsubsection*{Bildchen}
+\subsubsection*{Skizze}
 
 \noindent \begin{center}
-\definecolor{cffffff}{RGB}{255,255,255}
-\begin{tikzpicture}[y=0.80pt, x=0.8pt]
-  \path[draw=black] (0,00) rectangle (270,100);
-  \path[draw=black] (90,0) -- (90,100);
-  \path[draw=black] (180,0) -- (180,100);
-  \path[fill=black] (20,50) node[above right] {$H=eH$};
-  \path[fill=black] (110,50) node[above right] {$g_1 H$};
-  \path[fill=black] (200,50) node[above right] {$g_2 H$};
-  \path[fill=black] (280,100) node[above right] {G};
+\begin{tikzpicture}[y=10pt, x=6pt]
+  \draw ( 0,0) rectangle (30,10);
+  \draw (10,0) -- (10,10);
+  \draw (20,0) -- (20,10);
+  \path ( 5,5) node {$H=eH$};
+  \path (15,5) node {$g_1 H$};
+  \path (25,5) node {$g_2 H$};
+  \path (30,10) node[above right] {G};
 \end{tikzpicture} 
 \par\end{center}
 
@@ -709,7 +756,6 @@ Sei $H=\left\{ 1,\left(12\right)\right\} \subseteq S_{3}$ wie in
 Die \quotedblbase{}Abbildung\textquotedblleft{} $\modulo{G}{H}\times\modulo{G}{H}\dashrightarrow\modulo{G}{H},\,\left(gH,g'H\right)\mapsto\left(gg'\right)H$
 ist nicht wohldefiniert, denn es gelten
 
-%\begin{tikzpicture}\draw[style=dashed,->] (0,0) -- (0.5,0);\draw[color=white] (0,-.07) -- (.3,-.07);\end{tikzpicture}
 \begin{align*}
 eH & =\left(12\right)H
 \end{align*}
@@ -742,16 +788,23 @@ Dann sind äquivalent:
 \iii ${\displaystyle \exsg_{\text{Grphom. }\overline{\varphi}:\moduloScript{G}{N}\to G'}}\varphi=\overline{\varphi}\circ\pi$ 
 
 
-\subsubsection*{Bildchen}
+\subsubsection*{Skizze}
 
-\textcolor{green}{TODO: Abb}
+\noindent \begin{center}
+\begin{tikzpicture}
+  \matrix (m) [matrix of math nodes, row sep=3em, column sep=3em, text height=2ex, text depth=0.25ex]
+    { G & G' \\ \modulo{G}{N}  & \\ };
+  \path[->,font=\scriptsize] (m-1-1) edge node[auto] {$ \varphi $} (m-1-2) edge node[left] {$ \pi $} (m-2-1);
+  \path[->,font=\scriptsize,dashed] (m-2-1) edge node[below right] { $\exsg \overline{\varphi}$ Gruppenhom. $\Leftrightarrow N\subseteq \text{ker}(\varphi)$ } (m-1-2); 
+\end{tikzpicture}
+\par\end{center}
 
 \end{iiilist}
 
 
 \subsubsection*{Beweis}
 
-Übung
+\textcolor{green}{TODO: Beweis als Übung einfügen}
 
 \qqed
 
@@ -940,7 +993,19 @@ Epimorphismus $\varphi:\mathbb{Z}\to G$.
 Dann ist auch $\psi:=\varphi|_{\varphi^{-1}\left(H\right)}:\varphi^{-1}\left(H\right)\to H$
 ein Epimorphismus.
 
-\textcolor{green}{TODO: Abb einfügen}
+
+\subsubsection*{Skizze}
+
+\noindent \begin{center}
+\begin{tikzpicture}
+  \matrix (m) [matrix of math nodes, row sep=3em, column sep=3em, text height=1.5ex, text depth=0.25ex]
+    { \mathbb{Z} & G \\ \varphi^{-1}(H)  & H\\ };
+  \path[->>,font=\scriptsize] (m-1-1) edge node[auto] {$ \varphi $} (m-1-2);
+  \path[->>,font=\scriptsize] (m-2-1) edge node[auto] {$ \psi $} (m-2-2);
+  \path[right hook->,font=\scriptsize] (m-2-1) edge (m-1-1);
+  \path[right hook->,font=\scriptsize] (m-2-2) edge (m-1-2);
+\end{tikzpicture}
+\par\end{center}
 
 Wegen $H\not=\left\{ e\right\} $ ist $\left\{ 0\right\} \not=\varphi^{-1}\left(H\right)\subseteq\mathbb{Z}$
 eine nicht triviale Untergruppe.
@@ -1314,11 +1379,9 @@ Damit folgt in $A$:
 
 Wegen $tvw\in S$ folgt aus \eqref{eq:bruchrel} schon $\left(a,s\right)\sim\left(c,u\right)$.
 
-\qqed[$\sim$ Äquivrel.]
+Also ist $\sim$ eine Äquivalenzrelation.
 
-Der Rest bleibt als Übung.
-
-\textcolor{green}{TODO: Rest beweisen}
+\textcolor{green}{TODO: Restlichen Beweis als Übung einfügen}
 
 \qqed[\ref{sec:KuD-QuotRing}]
 
@@ -1345,18 +1408,40 @@ mit $\psi=f\circ\varphi$.
 
 \end{abclist}
 
-\end{iiilist}
 
-\textcolor{green}{TODO: Abbildung Homomorphiesatz}
+\subsubsection*{Skizze}
+
+\noindent \begin{center}
+\begin{tikzpicture}
+  \matrix (m) [matrix of math nodes, row sep=3em, column sep=3em, text height=1.5ex, text depth=0.25ex]
+    { A & B \\ S^{-1}A  & \\ };
+  \path[->,font=\scriptsize] (m-1-1) edge node[auto] {$ \psi $} (m-1-2) edge node[left] {$ \varphi $} (m-2-1);
+  \path[->,font=\scriptsize,dashed] (m-2-1) edge node[below right] { $\exsg f$ Ringhom. $\Leftrightarrow \psi(S)\subseteq B^*$ } (m-1-2); 
+\end{tikzpicture}
+\par\end{center}
+
+\end{iiilist}
 
 
 \subsubsection*{Beispiel}
 
 Es gibt genau einen Ringhomomorphismus $\mathbb{Q}\to\mathbb{C}$,
-denn:\\
+denn:
+
 Es gibt genau einen Ringhomomorphismus $\psi:\mathbb{Z}\to\mathbb{C}$
-und es gilt $\psi\left(\mathbb{Z}\setminus\left\{ 0\right\} \right)\subseteq\mathbb{C}^{*}$.\\
-\textcolor{green}{TODO: Abb Homomorphiesatz $\psi$}
+und es gilt $\psi\left(\mathbb{Z}\setminus\left\{ 0\right\} \right)\subseteq\mathbb{C}^{*}$.
+
+
+\subsubsection*{Skizze}
+
+\noindent \begin{center}
+\begin{tikzpicture}
+  \matrix (m) [matrix of math nodes, row sep=3em, column sep=1em, text height=1.5ex, text depth=0.25ex]
+    { \mathbb{Z} & \mathbb{C} \\ \mathbb{Q}=(\mathbb{Z}\setminus\{0\})^{-1}\mathbb{Z}  & \\ };
+  \path[->,font=\scriptsize] (m-1-1) edge node[auto] {$ \psi $} (m-1-2) edge node[left] {$ \varphi $} (m-2-1);
+  \path[->,font=\scriptsize,dashed] (m-2-1) edge (m-1-2); 
+\end{tikzpicture}
+\par\end{center}
 
 %DATE: Fr 28.10.11
 
@@ -1716,28 +1801,37 @@ exakt.
 
 \subsubsection*{Beweis}
 
-Folgt aus \ref{sec:Prop-exaktAModuln} und \ref{sec:Prop-AModulnIso}.
-
-\qqed
-
-
-\subsubsection*{Beweis von \ref{sec:Bsp-exaktFolge}}
-
 Betrachte das Diagramm:
 
-\textcolor{green}{TODO: Diagramm einfügen}
+\noindent \begin{center}
+\begin{tikzpicture}
+  \matrix (m) [matrix of math nodes, row sep=4em, column sep=5em, text height=1.5ex, text depth=0.25ex]
+    { M \otimes_{\mathbb{Z}}\mathbb{Q} & N \otimes_{\mathbb{Z}}\mathbb{Q} & P \otimes_{\mathbb{Z}}\mathbb{Q}\\
+      \left(\mathbb{Z}\setminus\{0\}\right)^{-1}M  & \left(\mathbb{Z}\setminus\{0\}\right)^{-1}N & \left(\mathbb{Z}\setminus\{0\}\right)^{-1}P \\ };
+  \path[->,font=\scriptsize] (m-1-1) edge node[auto] {$ \varphi\otimes\text{id} $} (m-1-2);
+  \path[->,font=\scriptsize] (m-1-2) edge node[auto] {$ \psi\otimes\text{id} $} (m-1-3);
+
+  \path[->,font=\scriptsize] (m-1-1) edge node[left] {$ \Rotate{\sim} $\hspace*{-.4em}} (m-2-1);
+  \path[->,font=\scriptsize] (m-1-2) edge node[left] {$ \Rotate{\sim} $\hspace*{-.4em}} (m-2-2);
+  \path[->,font=\scriptsize] (m-1-3) edge node[left] {$ \Rotate{\sim} $\hspace*{-.4em}} (m-2-3);
+
+  \path[->,font=\scriptsize] (m-2-1) edge node[auto] {$ \left(\mathbb{Z}\setminus\{0\}\right)^{-1}\varphi $} (m-2-2);
+  \path[->,font=\scriptsize] (m-2-2) edge node[auto] {$ \left(\mathbb{Z}\setminus\{0\}\right)^{-1}\psi $} (m-2-3);
+\end{tikzpicture}
+\par\end{center}
 
 Nach \ref{sec:Prop-exaktAModuln} mit $A=\mathbb{Z}$, $S=\mathbb{Z}\setminus\left\{ 0\right\} $
 ist die zweite Zeile exakt.
 
-Die senkrechten Isomorphismen sind wie in \ref{sec:Prop-exaktAModuln},
+Die senkrechten Isomorphismen sind wie in \ref{sec:Prop-AModulnIso},
 beachte $S^{-1}A\stackrel{\sim}{=}\mathbb{Q}$.
 
-Man prüft, dass das Diagramm kommutiert(, das heißt prüfen, dass eines
-der Quadrate kommutiert.) (vergleiche Übungsaufgaben aus linearer
-Algebra II)
+Man prüft, dass das Diagramm kommutiert, das heißt man prüft, dass
+eines der Quadrate kommutiert.
 
-\textcolor{green}{TODO: restlichen Beweis einfügen}
+(vergleiche Übungsaufgaben aus linearer Algebra II)
+
+\textcolor{green}{TODO: Restlichen Beweis einfügen}
 
 Es folgt die Exaktheit der ersten Zeile.
 
@@ -1824,7 +1918,16 @@ ein surjektiver Ringhomomorphismus mit:
 
 Betrachte:
 
-\textcolor{green}{TODO: Abb Homomorphiesatz}
+\noindent \begin{center}
+\begin{tikzpicture}
+  \matrix (m) [matrix of math nodes, row sep=3em, column sep=2em, text height=2ex, text depth=0.25ex]
+    { R & R' & R'[X] \\ R[X]  & & \\ };
+  \path[->,font=\scriptsize] (m-1-1) edge node[auto] {$ \varphi $} (m-1-2);
+  \path[right hook->] (m-1-2) edge (m-1-3);
+  \path[right hook->] (m-1-1) edge (m-2-1);
+  \path[->,font=\scriptsize,dashed] (m-2-1) edge node[below right] { $\exsg R$-Algebrenhom. $\varphi [X]$ mit $\varphi[X](X)=X$ } (m-1-3); 
+\end{tikzpicture}
+\par\end{center}
 
 Es existiert genau ein $R$-Algebrenhomomorphismus $\varphi\left[X\right]$
 mit $\varphi\left[X\right]\left(X\right)=X$.
@@ -1982,6 +2085,24 @@ Also gilt $\alpha|a_{0}$ in $R$.
 Es existiert keine rationale Zahl $q\in\mathbb{Q}$ mit $q^{3}+2q+1=0$,
 obwohl diese Gleichung, wie jede Gleichung dritten Grades, eine Lösung
 in $\mathbb{R}$ hat.
+
+
+\subsubsection*{Skizze}
+
+\hspace*{5cm}
+\begin{tikzpicture}[x=3em,y=1.5em]
+  \draw[->, thick] (-1.5,0) -- (1.5,0) node[right]{$q$};
+  \draw[->, thick] (0,-2.5) -- (0,4.5) node[above]{$h(q)$};
+  \foreach \x in {-1,...,-1}
+    \draw (\x,0.2) -- (\x,-0.2) node[below] {\x};
+  \foreach \x in {1,...,1}
+    \draw (\x,0.2) -- (\x,-0.2) node[below] {\x};
+  \foreach \y in {-2,...,-1}
+    \draw (0.1,\y) -- (-0.1,\y) node[left] {\y};
+  \foreach \y in {1,...,4}
+    \draw (0.1,\y) -- (-0.1,\y) node[left] {\y};
+  \draw[domain=-1:1] plot (\x,\x^3+2*\x+1);
+\end{tikzpicture}
 
 
 \subsubsection*{Beweis}
@@ -2702,6 +2823,8 @@ G_{p^{r}}\left(X\right) & \stackrel{\text{Def.}}{=}F_{p^{r}}\left(X+1\right)=\\
 
 \end{iiilist}
 
+%DATE: Di 15.11.2011
+
 
 \section{Bemerkung\label{sec:Bem-zetan}}
 
@@ -3098,9 +3221,7 @@ ein $k$-Algebrenisomorphismus.
 
 \subsubsection*{Beweis}
 
-Übung.
-
-\textcolor{green}{TODO: Beweis ergänzen.}
+\textcolor{green}{TODO: Beweis als Übung einfügen}
 
 \qqed
 
@@ -3179,13 +3300,9 @@ wenn ein $\alpha\in E$ existiert mit $E=k\left(\alpha\right)$.
 \iii Die universelle Eigenschaft folgt durch Induktion aus dem bekannten
 Fall $n=1$.
 
-\iii Übung.
+\iii \textcolor{green}{TODO: Beweis als Übung einfügen}
 
-\textcolor{green}{TODO: Ergänzen}
-
-\iii Übung.
-
-\textcolor{green}{TODO: Ergänzen}
+\iii \textcolor{green}{TODO: Beweis als Übung einfügen}
 
 \end{iiilist}
 
@@ -4270,7 +4387,9 @@ heißen die \emph{Konjugierten von $E$ in $L$.}
 und aus \ref{sec:Prop-endlAquivEndlerzUalg} i) b) $\Rightarrow$
 a) folgt $\left[E':k\right]<\infty$.
 
-\iii Übung (mit \ref{sec:Lem-homkalg}).
+\iii Folgt mit \ref{sec:Lem-homkalg}.
+
+\textcolor{green}{TODO: Beweis als Übung einfügen}
 
 \end{iiilist}
 
@@ -4363,9 +4482,7 @@ k & \text{falls }\text{char}\left(k\right)=0\\
 
 \subsubsection*{Beweis}
 
-Übung
-
-\textcolor{green}{TODO: Beweis einfügen}
+\textcolor{green}{TODO: Beweis als Übung einfügen}
 
 \qqed
 
@@ -5456,8 +5573,6 @@ echte Untergruppe (vergleiche \ref{sec:SuD-Fixk=0000F6rper} ii)).
 
 
 \subsubsection*{Beweis}
-
-Übung
 
 \textcolor{green}{TODO: Beweis einfügen von Zusatzaufgabe Blatt 9}
 
@@ -7172,11 +7287,8 @@ und $\zeta\in U_{n}\left(\mathbb{Q}\right)$ schon
 \begin{align*}
 \sigma\left(\zeta\right) & =\zeta^{\psi\left(\sigma\right)}
 \end{align*}
-(vergleiche \ref{sec:Satz-Gauss} ii))
-
-\textcolor{green}{TODO: Verweis überprüfen 2.8 ii) ?}
-
-gilt, ein Isomorphismus.
+gilt, ein Isomorphismus. (vergleiche \ref{sec:Satz-primEinheitsWurzel}
+ii), iii))
 
 Insbesondere gilt:
 \begin{align*}
@@ -7361,7 +7473,7 @@ kommutativ.
 
 \subsubsection*{Beweis}
 
-\textcolor{green}{TODO: Beweis einfügen (als Übung)}
+\textcolor{green}{TODO: Beweis als Übung einfügen}
 
 
 \section{Definition \textmd{(Kreisteilungspolynom)\label{sec:Def-Kreisteilungspolynom}}}

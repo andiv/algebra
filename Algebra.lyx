@@ -5,6 +5,7 @@
 \textclass report
 \begin_preamble
 \usepackage{tikz}
+\usetikzlibrary{matrix,arrows}
 \usepackage{latexsym,stmaryrd,stackrel,array,tabularx,multirow}
 \usepackage[explicit]{titlesec}
 %\usepackage{polynom} % momentan nicht benötigt
@@ -332,6 +333,155 @@ frac{km}{h}}$ entspricht $
 unit[864]{
 \backslash
 frac{km}{h}}$
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Vorlage: Kommutatives Diagramm
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[description/.style={fill=white,inner sep=2pt}]
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+matrix (m) [matrix of math nodes, row sep=3em, column sep=2.5em, text height=1.5ex
+, text depth=0.25ex] { G & & G' 
+\backslash
+
+\backslash
+  & a & 
+\backslash
+
+\backslash
+ };
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+path[->,font=
+\backslash
+scriptsize] (m-1-1) edge node[auto] {$ 
+\backslash
+varphi $} (m-1-3) edge node[description] {$ 
+\backslash
+Psi $} (m-2-2) (m-1-3) edge node[auto] {$ 
+\backslash
+Phi $} (m-2-2); 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Vorlage: Funktions-Plot
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[domain=0:4]
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw[very thin,color=gray] (-0.1,-1.1) grid (3.9,3.9);
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw[->] (-0.2,0) -- (4.2,0) node[right] {$x$};
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw[->] (0,-1.2) -- (0,4.2) node[above] {$f(x)$};
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw[color=red] plot (
+\backslash
+x,
+\backslash
+x) node[right] {$f(x) =x$};
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw[color=blue] plot (
+\backslash
+x,{sin(
+\backslash
+x r)}) node[right] {$f(x) = 
+\backslash
+sin x$}; 
+\backslash
+draw[color=orange] plot (
+\backslash
+x,{0.05*exp(
+\backslash
+x)}) node[right] {$f(x) = 
+\backslash
+frac{1}{20} 
+\backslash
+mathrm e^x$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture} 
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1396,7 +1546,7 @@ Kern von
 , und es gilt:
 \begin_inset Formula 
 \begin{align*}
-\varphi\text{ Mono} & \Leftrightarrow\ker\left(\varphi\right)=\{e\}
+\varphi\text{ ist ein Monomorphismus} & \Leftrightarrow\ker\left(\varphi\right)=\{e\}
 \end{align*}
 
 \end_inset
@@ -1445,7 +1595,225 @@ Beweis
 \end_layout
 
 \begin_layout Standard
-Übung
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Wegen 
+\begin_inset Formula $\varphi\left(e\right)=e'$
+\end_inset
+
+ folgt 
+\begin_inset Formula $e\in\text{ker}\left(\varphi\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Seien 
+\begin_inset Formula $a,b\in\text{ker}\left(\varphi\right)$
+\end_inset
+
+, also 
+\begin_inset Formula $\varphi\left(a\right)=e'=\varphi\left(b\right)$
+\end_inset
+
+, dann folgt:
+\begin_inset Formula 
+\begin{align*}
+\varphi\left(a\cdot b^{-1}\right) & =\varphi\left(a\right)\cdot\varphi\left(b\right)^{-1}=e'\cdot\left(e'\right)^{-1}=e'
+\end{align*}
+
+\end_inset
+
+Also ist auch 
+\begin_inset Formula $a\cdot b\in\text{ker}\left(\varphi\right)$
+\end_inset
+
+ und daher 
+\begin_inset Formula $\text{ker}\left(\varphi\right)\subseteq G$
+\end_inset
+
+ eine Untergruppe.
+\end_layout
+
+\begin_layout Standard
+Ist 
+\begin_inset Formula $\varphi$
+\end_inset
+
+ ein Monomorphismus, also injektiv, so gilt für 
+\begin_inset Formula $a\in\text{ker}\left(\varphi\right)$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+\varphi\left(a\right) & =e'=\varphi\left(e\right)
+\end{align*}
+
+\end_inset
+
+Da 
+\begin_inset Formula $\varphi$
+\end_inset
+
+ injektiv ist, folgt schon 
+\begin_inset Formula $a=e$
+\end_inset
+
+ und damit 
+\begin_inset Formula $\text{ker}\left(\varphi\right)=\left\{ e\right\} $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Gelte umgekehrt 
+\begin_inset Formula $\text{ker}\left(\varphi\right)=\left\{ e\right\} $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Dann folgt für 
+\begin_inset Formula $a,b\in G$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+\varphi\left(a\right) & =\varphi\left(b\right)\\
+e' & =\varphi\left(a\right)^{-1}\cdot\varphi\left(b\right)=\varphi\left(a^{-1}b\right)
+\end{align*}
+
+\end_inset
+
+Also gilt 
+\begin_inset Formula $a^{-1}b\in\text{ker}\left(\varphi\right)=\left\{ e\right\} $
+\end_inset
+
+ und damit:
+\begin_inset Formula 
+\begin{align*}
+a^{-1}b & =e\\
+b & =a
+\end{align*}
+
+\end_inset
+
+Also ist 
+\begin_inset Formula $\varphi$
+\end_inset
+
+ injektiv.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Wegen 
+\begin_inset Formula $\varphi\left(e\right)=e'$
+\end_inset
+
+ folgt 
+\begin_inset Formula $e'\in\text{im}\left(\varphi\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Seien 
+\begin_inset Formula $g,h\in\text{im}\left(\varphi\right)$
+\end_inset
+
+, also gibt es 
+\begin_inset Formula $a,b\in G$
+\end_inset
+
+ mit 
+\begin_inset Formula $\varphi\left(a\right)=g$
+\end_inset
+
+ und 
+\begin_inset Formula $\varphi\left(b\right)=h$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Damit folgt:
+\begin_inset Formula 
+\begin{align*}
+g\cdot h^{-1} & =\varphi\left(a\right)\cdot\varphi\left(b\right)^{-1}=\varphi\left(ab^{-1}\right)
+\end{align*}
+
+\end_inset
+
+Also ist 
+\begin_inset Formula $ab^{-1}\in\text{im}\left(\varphi\right)$
+\end_inset
+
+ und daher 
+\begin_inset Formula $\text{im}\left(\varphi\right)\subseteq G'$
+\end_inset
+
+ eine Untergruppe.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{iiilist}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1907,7 +2275,7 @@ iii
 \end_layout
 
 \begin_layout Subsubsection*
-Bildchen
+Skizze
 \end_layout
 
 \begin_layout Standard
@@ -1920,63 +2288,56 @@ status open
 
 
 \backslash
-definecolor{cffffff}{RGB}{255,255,255}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{tikzpicture}[y=0.80pt, x=0.8pt]
+begin{tikzpicture}[y=10pt, x=6pt]
 \end_layout
 
 \begin_layout Plain Layout
 
   
 \backslash
-path[draw=black] (0,00) rectangle (270,100);
+draw ( 0,0) rectangle (30,10);
 \end_layout
 
 \begin_layout Plain Layout
 
   
 \backslash
-path[draw=black] (90,0) -- (90,100);
+draw (10,0) -- (10,10);
 \end_layout
 
 \begin_layout Plain Layout
 
   
 \backslash
-path[draw=black] (180,0) -- (180,100);
+draw (20,0) -- (20,10);
 \end_layout
 
 \begin_layout Plain Layout
 
   
 \backslash
-path[fill=black] (20,50) node[above right] {$H=eH$};
+path ( 5,5) node {$H=eH$};
 \end_layout
 
 \begin_layout Plain Layout
 
   
 \backslash
-path[fill=black] (110,50) node[above right] {$g_1 H$};
+path (15,5) node {$g_1 H$};
 \end_layout
 
 \begin_layout Plain Layout
 
   
 \backslash
-path[fill=black] (200,50) node[above right] {$g_2 H$};
+path (25,5) node {$g_2 H$};
 \end_layout
 
 \begin_layout Plain Layout
 
   
 \backslash
-path[fill=black] (280,100) node[above right] {G};
+path (30,10) node[above right] {G};
 \end_layout
 
 \begin_layout Plain Layout
@@ -2739,25 +3100,6 @@ Die „Abbildung“
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-%
-\backslash
-begin{tikzpicture}
-\backslash
-draw[style=dashed,->] (0,0) -- (0.5,0);
-\backslash
-draw[color=white] (0,-.07) -- (.3,-.07);
-\backslash
-end{tikzpicture}
-\end_layout
-
-\end_inset
-
-
 \begin_inset Formula 
 \begin{align*}
 eH & =\left(12\right)H
@@ -2904,13 +3246,92 @@ iii
 \end_layout
 
 \begin_layout Subsubsection*
-Bildchen
+Skizze
 \end_layout
 
 \begin_layout Standard
+\noindent
+\align center
+\begin_inset ERT
+status open
 
-\color green
-TODO: Abb
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+matrix (m) [matrix of math nodes, row sep=3em, column sep=3em, text height=2ex,
+ text depth=0.25ex]
+\end_layout
+
+\begin_layout Plain Layout
+
+    { G & G' 
+\backslash
+
+\backslash
+ 
+\backslash
+modulo{G}{N}  & 
+\backslash
+
+\backslash
+ };
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+path[->,font=
+\backslash
+scriptsize] (m-1-1) edge node[auto] {$ 
+\backslash
+varphi $} (m-1-2) edge node[left] {$ 
+\backslash
+pi $} (m-2-1);
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+path[->,font=
+\backslash
+scriptsize,dashed] (m-2-1) edge node[below right] { $
+\backslash
+exsg 
+\backslash
+overline{
+\backslash
+varphi}$ Gruppenhom.
+ $
+\backslash
+Leftrightarrow N
+\backslash
+subseteq 
+\backslash
+text{ker}(
+\backslash
+varphi)$ } (m-1-2); 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2934,7 +3355,9 @@ Beweis
 \end_layout
 
 \begin_layout Standard
-Übung
+
+\color green
+TODO: Beweis als Übung einfügen
 \end_layout
 
 \begin_layout Standard
@@ -3877,10 +4300,98 @@ Dann ist auch
  ein Epimorphismus.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Subsubsection*
+Skizze
+\end_layout
 
-\color green
-TODO: Abb einfügen
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+matrix (m) [matrix of math nodes, row sep=3em, column sep=3em, text height=1.5ex,
+ text depth=0.25ex]
+\end_layout
+
+\begin_layout Plain Layout
+
+    { 
+\backslash
+mathbb{Z} & G 
+\backslash
+
+\backslash
+ 
+\backslash
+varphi^{-1}(H)  & H
+\backslash
+
+\backslash
+ };
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+path[->>,font=
+\backslash
+scriptsize] (m-1-1) edge node[auto] {$ 
+\backslash
+varphi $} (m-1-2);
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+path[->>,font=
+\backslash
+scriptsize] (m-2-1) edge node[auto] {$ 
+\backslash
+psi $} (m-2-2);
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+path[right hook->,font=
+\backslash
+scriptsize] (m-2-1) edge (m-1-1);
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+path[right hook->,font=
+\backslash
+scriptsize] (m-2-2) edge (m-1-2);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -5975,31 +6486,17 @@ reference "eq:bruchrel"
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-qqed[$
-\backslash
-sim$ Äquivrel.]
-\end_layout
-
+Also ist 
+\begin_inset Formula $\sim$
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
-Der Rest bleibt als Übung.
+ eine Äquivalenzrelation.
 \end_layout
 
 \begin_layout Standard
 
 \color green
-TODO: Rest beweisen
+TODO: Restlichen Beweis als Übung einfügen
 \end_layout
 
 \begin_layout Standard
@@ -6177,6 +6674,87 @@ end{abclist}
 
 \end_layout
 
+\begin_layout Subsubsection*
+Skizze
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+matrix (m) [matrix of math nodes, row sep=3em, column sep=3em, text height=1.5ex,
+ text depth=0.25ex]
+\end_layout
+
+\begin_layout Plain Layout
+
+    { A & B 
+\backslash
+
+\backslash
+ S^{-1}A  & 
+\backslash
+
+\backslash
+ };
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+path[->,font=
+\backslash
+scriptsize] (m-1-1) edge node[auto] {$ 
+\backslash
+psi $} (m-1-2) edge node[left] {$ 
+\backslash
+varphi $} (m-2-1);
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+path[->,font=
+\backslash
+scriptsize,dashed] (m-2-1) edge node[below right] { $
+\backslash
+exsg f$ Ringhom.
+ $
+\backslash
+Leftrightarrow 
+\backslash
+psi(S)
+\backslash
+subseteq B^*$ } (m-1-2); 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
 \begin_inset ERT
 status open
@@ -6193,12 +6771,6 @@ end{iiilist}
 
 \end_layout
 
-\begin_layout Standard
-
-\color green
-TODO: Abbildung Homomorphiesatz
-\end_layout
-
 \begin_layout Subsubsection*
 Beispiel
 \end_layout
@@ -6209,9 +6781,9 @@ Es gibt genau einen Ringhomomorphismus
 \end_inset
 
 , denn:
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
+\begin_layout Standard
 Es gibt genau einen Ringhomomorphismus 
 \begin_inset Formula $\psi:\mathbb{Z}\to\mathbb{C}$
 \end_inset
@@ -6221,13 +6793,91 @@ Es gibt genau einen Ringhomomorphismus
 \end_inset
 
 .
-\begin_inset Newline newline
-\end_inset
+\end_layout
+
+\begin_layout Subsubsection*
+Skizze
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
 
 
-\color green
-TODO: Abb Homomorphiesatz 
-\begin_inset Formula $\psi$
+\backslash
+begin{tikzpicture}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+matrix (m) [matrix of math nodes, row sep=3em, column sep=1em, text height=1.5ex,
+ text depth=0.25ex]
+\end_layout
+
+\begin_layout Plain Layout
+
+    { 
+\backslash
+mathbb{Z} & 
+\backslash
+mathbb{C} 
+\backslash
+
+\backslash
+ 
+\backslash
+mathbb{Q}=(
+\backslash
+mathbb{Z}
+\backslash
+setminus
+\backslash
+{0
+\backslash
+})^{-1}
+\backslash
+mathbb{Z}  & 
+\backslash
+
+\backslash
+ };
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+path[->,font=
+\backslash
+scriptsize] (m-1-1) edge node[auto] {$ 
+\backslash
+psi $} (m-1-2) edge node[left] {$ 
+\backslash
+varphi $} (m-2-1);
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+path[->,font=
+\backslash
+scriptsize,dashed] (m-2-1) edge (m-1-2); 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
 \end_inset
 
 
@@ -7770,24 +8420,12 @@ Beweis
 \end_layout
 
 \begin_layout Standard
-Folgt aus 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sec:Prop-exaktAModuln"
-
-\end_inset
-
- und 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sec:Prop-AModulnIso"
-
-\end_inset
-
-.
+Betrachte das Diagramm:
 \end_layout
 
 \begin_layout Standard
+\noindent
+\align center
 \begin_inset ERT
 status open
 
@@ -7795,33 +8433,228 @@ status open
 
 
 \backslash
-qqed
+begin{tikzpicture}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+matrix (m) [matrix of math nodes, row sep=4em, column sep=5em, text height=1.5ex,
+ text depth=0.25ex]
+\end_layout
+
+\begin_layout Plain Layout
+
+    { M 
+\backslash
+otimes_{
+\backslash
+mathbb{Z}}
+\backslash
+mathbb{Q} & N 
+\backslash
+otimes_{
+\backslash
+mathbb{Z}}
+\backslash
+mathbb{Q} & P 
+\backslash
+otimes_{
+\backslash
+mathbb{Z}}
+\backslash
+mathbb{Q}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+      
+\backslash
+left(
+\backslash
+mathbb{Z}
+\backslash
+setminus
+\backslash
+{0
+\backslash
+}
+\backslash
+right)^{-1}M  & 
+\backslash
+left(
+\backslash
+mathbb{Z}
+\backslash
+setminus
+\backslash
+{0
+\backslash
+}
+\backslash
+right)^{-1}N & 
+\backslash
+left(
+\backslash
+mathbb{Z}
+\backslash
+setminus
+\backslash
+{0
+\backslash
+}
+\backslash
+right)^{-1}P 
+\backslash
+
+\backslash
+ };
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+path[->,font=
+\backslash
+scriptsize] (m-1-1) edge node[auto] {$ 
+\backslash
+varphi
+\backslash
+otimes
+\backslash
+text{id} $} (m-1-2);
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+path[->,font=
+\backslash
+scriptsize] (m-1-2) edge node[auto] {$ 
+\backslash
+psi
+\backslash
+otimes
+\backslash
+text{id} $} (m-1-3);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+path[->,font=
+\backslash
+scriptsize] (m-1-1) edge node[left] {$ 
+\backslash
+Rotate{
+\backslash
+sim} $
+\backslash
+hspace*{-.4em}} (m-2-1);
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+path[->,font=
+\backslash
+scriptsize] (m-1-2) edge node[left] {$ 
+\backslash
+Rotate{
+\backslash
+sim} $
+\backslash
+hspace*{-.4em}} (m-2-2);
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+path[->,font=
+\backslash
+scriptsize] (m-1-3) edge node[left] {$ 
+\backslash
+Rotate{
+\backslash
+sim} $
+\backslash
+hspace*{-.4em}} (m-2-3);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+path[->,font=
+\backslash
+scriptsize] (m-2-1) edge node[auto] {$ 
+\backslash
+left(
+\backslash
+mathbb{Z}
+\backslash
+setminus
+\backslash
+{0
+\backslash
+}
+\backslash
+right)^{-1}
+\backslash
+varphi $} (m-2-2);
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+path[->,font=
+\backslash
+scriptsize] (m-2-2) edge node[auto] {$ 
+\backslash
+left(
+\backslash
+mathbb{Z}
+\backslash
+setminus
+\backslash
+{0
+\backslash
+}
+\backslash
+right)^{-1}
+\backslash
+psi $} (m-2-3);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
 \end_layout
 
 \end_inset
 
 
-\end_layout
-
-\begin_layout Subsubsection*
-Beweis von 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sec:Bsp-exaktFolge"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Betrachte das Diagramm:
-\end_layout
-
-\begin_layout Standard
-
-\color green
-TODO: Diagramm einfügen
 \end_layout
 
 \begin_layout Standard
@@ -7847,7 +8680,7 @@ reference "sec:Prop-exaktAModuln"
 Die senkrechten Isomorphismen sind wie in 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sec:Prop-exaktAModuln"
+reference "sec:Prop-AModulnIso"
 
 \end_inset
 
@@ -7859,14 +8692,18 @@ reference "sec:Prop-exaktAModuln"
 \end_layout
 
 \begin_layout Standard
-Man prüft, dass das Diagramm kommutiert(, das heißt prüfen, dass eines der
- Quadrate kommutiert.) (vergleiche Übungsaufgaben aus linearer Algebra II)
+Man prüft, dass das Diagramm kommutiert, das heißt man prüft, dass eines
+ der Quadrate kommutiert.
+\end_layout
+
+\begin_layout Standard
+(vergleiche Übungsaufgaben aus linearer Algebra II)
 \end_layout
 
 \begin_layout Standard
 
 \color green
-TODO: restlichen Beweis einfügen
+TODO: Restlichen Beweis einfügen
 \end_layout
 
 \begin_layout Standard
@@ -8163,9 +9000,90 @@ Betrachte:
 \end_layout
 
 \begin_layout Standard
+\noindent
+\align center
+\begin_inset ERT
+status open
 
-\color green
-TODO: Abb Homomorphiesatz
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+matrix (m) [matrix of math nodes, row sep=3em, column sep=2em, text height=2ex,
+ text depth=0.25ex]
+\end_layout
+
+\begin_layout Plain Layout
+
+    { R & R' & R'[X] 
+\backslash
+
+\backslash
+ R[X]  & & 
+\backslash
+
+\backslash
+ };
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+path[->,font=
+\backslash
+scriptsize] (m-1-1) edge node[auto] {$ 
+\backslash
+varphi $} (m-1-2);
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+path[right hook->] (m-1-2) edge (m-1-3);
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+path[right hook->] (m-1-1) edge (m-2-1);
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+path[->,font=
+\backslash
+scriptsize,dashed] (m-2-1) edge node[below right] { $
+\backslash
+exsg R$-Algebrenhom.
+ $
+\backslash
+varphi [X]$ mit $
+\backslash
+varphi[X](X)=X$ } (m-1-3); 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -8934,6 +9852,155 @@ Es existiert keine rationale Zahl
 \end_inset
 
  hat.
+\end_layout
+
+\begin_layout Subsubsection*
+Skizze
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hspace*{5cm}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[x=3em,y=1.5em]
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw[->, thick] (-1.5,0) -- (1.5,0) node[right]{$q$};
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw[->, thick] (0,-2.5) -- (0,4.5) node[above]{$h(q)$};
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+foreach 
+\backslash
+x in {-1,...,-1}
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+draw (
+\backslash
+x,0.2) -- (
+\backslash
+x,-0.2) node[below] {
+\backslash
+x};
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+foreach 
+\backslash
+x in {1,...,1}
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+draw (
+\backslash
+x,0.2) -- (
+\backslash
+x,-0.2) node[below] {
+\backslash
+x};
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+foreach 
+\backslash
+y in {-2,...,-1}
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+draw (0.1,
+\backslash
+y) -- (-0.1,
+\backslash
+y) node[left] {
+\backslash
+y};
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+foreach 
+\backslash
+y in {1,...,4}
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+draw (0.1,
+\backslash
+y) -- (-0.1,
+\backslash
+y) node[left] {
+\backslash
+y};
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw[domain=-1:1] plot (
+\backslash
+x,
+\backslash
+x^3+2*
+\backslash
+x+1);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection*
@@ -12372,6 +13439,20 @@ end{iiilist}
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+%DATE: Di 15.11.2011
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Bemerkung
 \begin_inset CommandInset label
@@ -14131,13 +15212,9 @@ Beweis
 \end_layout
 
 \begin_layout Standard
-Übung.
-\end_layout
-
-\begin_layout Standard
 
 \color green
-TODO: Beweis ergänzen.
+TODO: Beweis als Übung einfügen
 \end_layout
 
 \begin_layout Standard
@@ -14543,13 +15620,9 @@ iii
 
 \end_inset
 
- Übung.
-\end_layout
-
-\begin_layout Standard
-
+ 
 \color green
-TODO: Ergänzen
+TODO: Beweis als Übung einfügen
 \end_layout
 
 \begin_layout Standard
@@ -14565,13 +15638,9 @@ iii
 
 \end_inset
 
- Übung.
-\end_layout
-
-\begin_layout Standard
-
+ 
 \color green
-TODO: Ergänzen
+TODO: Beweis als Übung einfügen
 \end_layout
 
 \begin_layout Standard
@@ -20376,14 +21445,20 @@ iii
 
 \end_inset
 
- Übung (mit 
+ Folgt mit 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:Lem-homkalg"
 
 \end_inset
 
-).
+.
+\end_layout
+
+\begin_layout Standard
+
+\color green
+TODO: Beweis als Übung einfügen
 \end_layout
 
 \begin_layout Standard
@@ -20779,13 +21854,9 @@ Beweis
 \end_layout
 
 \begin_layout Standard
-Übung
-\end_layout
-
-\begin_layout Standard
 
 \color green
-TODO: Beweis einfügen
+TODO: Beweis als Übung einfügen
 \end_layout
 
 \begin_layout Standard
@@ -26706,10 +27777,6 @@ end{iiilist}
 
 \begin_layout Subsubsection*
 Beweis
-\end_layout
-
-\begin_layout Standard
-Übung
 \end_layout
 
 \begin_layout Standard
@@ -34332,24 +35399,15 @@ mit der Eigenschaft, dass für alle
 
 \end_inset
 
-(vergleiche 
+gilt, ein Isomorphismus.
+ (vergleiche 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sec:Satz-Gauss"
+reference "sec:Satz-primEinheitsWurzel"
 
 \end_inset
 
- ii))
-\end_layout
-
-\begin_layout Standard
-
-\color green
-TODO: Verweis überprüfen 2.8 ii) ?
-\end_layout
-
-\begin_layout Standard
-gilt, ein Isomorphismus.
+ ii), iii))
 \end_layout
 
 \begin_layout Standard
@@ -35263,7 +36321,7 @@ Beweis
 \begin_layout Standard
 
 \color green
-TODO: Beweis einfügen (als Übung)
+TODO: Beweis als Übung einfügen
 \end_layout
 
 \begin_layout Section
