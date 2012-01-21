@@ -42,10 +42,9 @@
 \usepackage{tikz}
 \usepackage{latexsym,stmaryrd,stackrel,array,tabularx,multirow}
 \usepackage[explicit]{titlesec}
-\usepackage{makeidx}
 %\usepackage{polynom} % momentan nicht benötigt
 
-%Inhaltsverzeichnis
+% Inhaltsverzeichnis
 \usepackage{tocloft}
 \tocloftpagestyle{fancy}
 
@@ -61,37 +60,36 @@
 \renewcommand{\cftsubsubsecindent}{9 em}
 \renewcommand{\cftsubsubsecnumwidth}{4.5 em}
 
-
-%Kommandos mit optionalem Argument (für Lyx)
+% Kommandos mit optionalem Argument (für Lyx)
 \newcommand{\sr}[3]{\stackrel[#3]{#2}{#1}}
-\newcommand{\Rotate}[1]{
-\begin{tikzpicture}
-\node[rotate=90] {\ensuremath{#1}};
-\end{tikzpicture}
-}
 
-%Mathe-Operatoren
+% Mathe-Operatoren
 \DeclareMathOperator*{\exs}{\exists}
 \DeclareMathOperator*{\exsg}{\exists!}
 \DeclareMathOperator*{\fall}{\forall}
 \DeclareMathOperator*{\bcupd}{\dot{\bigcup}}
 \DeclareMathOperator*{\bcapd}{\dot{\bigcap}}
 
-%Eigene Abkürzungen
+% Eigene Abkürzungen
 \newcommand{\dd}{\textnormal{d}}
-\newcommand{\im}{\textnormal{im}}
-\newcommand{\id}{\textnormal{id}}
 \newcommand{\ii}{\textbf{i}}
+
+% Rotieren
+\newcommand{\Rotate}[1]{
+\begin{tikzpicture}
+\node[rotate=90] {\ensuremath{#1}};
+\end{tikzpicture}
+}
 
 %QED-Zeichen (Box)
 \newcommand{\qed}{\ensuremath{\Box}}
 \newcommand{\qqed}[1][\arabic{chapter}.\arabic{section}\ifnum\arabic{subsection}>0{.\arabic{subsection}}\fi]{\begin{flushright}\qed\ensuremath{_{\text{#1}}}\end{flushright}}
 
-%Definitons-Zeichen
+% Definitons-Zeichen
 \newcommand{\dfn}{\mathrel{\mathop:}=}
-%Menge: TODO: auch die Höhe der zweiten Hälfte für den Strich berücksichtigen!
+% Menge: TODO: auch die Höhe der zweiten Hälfte für den Strich berücksichtigen!
 \newcommand{\mng}[2]{\ensuremath{\left\{#1\,\left.\vphantom{#1#2}\right|\,#2\right\}}}
-%Abbildung:
+% Abbildung
 \newcommand{\abb}[5]{#1:#2\to #3:#4\mapsto #5}
 
 % Mengen Modulo
@@ -141,13 +139,13 @@
 }%
 }
 
-%Wurzel mit Häkchen
+% Wurzel mit Häkchen
 \newcommand{\hsqrt}[2][{}]{\setbox0=\hbox{$\sqrt[#1]{\phantom{|}\!\! #2\hspace*{1pt}}$}\dimen0=\ht0
   \advance\dimen0-0.2\ht0
   \setbox2=\hbox{\vrule height\ht0 depth -\dimen0}
   {\box0\lower0.4pt\box2}}
 
-%alphabetische Aufzählung
+% alphabetische Aufzählung
 \newcounter{ale}
 \newcommand{\abc}{\stepcounter{ale}\item[\alph{ale})]}
 \newenvironment{abclist}{\begin{itemize} \setcounter{ale}{0}}{\end{itemize}}
@@ -156,7 +154,6 @@
 \newcounter{ale2}
 \newcommand{\iii}{\stepcounter{ale2}\item[\textnormal{\roman{ale2})}]}
 \newenvironment{iiilist}{\begin{itemize} \setcounter{ale2}{0}}{\end{itemize}}
-
 
 % Damit nicht immer "Kapitel 1" etc. über der Kapitelüberschrift steht
 \titleformat{\chapter}
@@ -174,15 +171,13 @@
 % Kopf- und Fußzeile
 % Höhe der Kopfzeile
 \setlength{\headheight}{14pt}
+% obere Trennlinie
+%\renewcommand{\headrulewidth}{0.4pt}
 \fancyhf{} %alle Kopf- und Fußzeilenfelder bereinigen
 \fancyhead[L]{\textbf{Algebra}} %Kopfzeile links
 %\fancyhead[C]{\leftmark} %zentrierte Kopfzeile
 \fancyhead[R]{\rightmark} %Kopfzeile rechts
-%\renewcommand{\headrulewidth}{0.4pt} %obere Trennlinie
 \fancyfoot[C]{\thepage\quad\!\!\!\slash\quad\!\!\!\pageref{END-front}} %Seitenzahl der Front-Matter
-
-% Datum
-%\date{Stand: \today}
 
 \AtBeginDocument{
   \def\labelitemiii{\(\succ\)}
@@ -403,7 +398,7 @@ ist eine Untergruppe, der \emph{Kern von $\varphi$}, und es gilt:
 \end{align*}
 
 
-\iii $\im\left(\varphi\right)\subseteq G'$ ist eine Untergruppe.
+\iii $\text{im}\left(\varphi\right)\subseteq G'$ ist eine Untergruppe.
 
 \end{iiilist}
 
@@ -437,7 +432,7 @@ Lineare Algebra I
 
 Sei $G$ eine Gruppe. Dann ist $\text{Aut}\left(G\right):=\{\varphi|\varphi:G\rightarrow G\text{ Automorphismus}\}$
 eine Gruppe bezüglich der Komposition $\circ$ mit dem neutralem Element
-$\id_{G}$ (Nebenbemerkung: im Allgemeinen ist $\text{Aut}\left(G\right)\lneqq\Sigma\left(G\right)$
+$\text{id}_{G}$ (Nebenbemerkung: im Allgemeinen ist $\text{Aut}\left(G\right)\lneqq\Sigma\left(G\right)$
 eine echte Untergruppe) und heißt die \emph{Automorphismengruppe von
 $G$.}
 
@@ -458,7 +453,7 @@ denn:
 Also ist $\phi\left(g\right)$ ein Gruppenhomomorphismus.
 \item ${\displaystyle \fall_{g,h\in G}:\left(\phi\left(g\right)\circ\phi\left(g^{-1}\right)\right)\left(h\right)=g\cdot\phi\left(g^{-1}\right)\left(h\right)\cdot g^{-1}=\underbrace{gg^{-1}}_{=e}h\underbrace{\underbrace{\left(g^{-1}\right)^{-1}}_{=g}g^{-1}}_{=e}=h}$
 \\
-$\Rightarrow\,\,\phi\left(g\right)\circ\phi\left(g^{-1}\right)=\id_{G}$;
+$\Rightarrow\,\,\phi\left(g\right)\circ\phi\left(g^{-1}\right)=\text{id}_{G}$;
 Also ist $\phi\left(g\right)\in\text{Aut}\left(G\right)$.
 \item Für $g,g',h\in G$ gilt:
 \begin{align*}
@@ -649,7 +644,7 @@ ein Normalteiler, das \emph{Zentrum von $G$}.
 
 \subsubsection*{Beispiel}
 \begin{itemize}
-\item Ist $k$ ein Körper und $n\in\mathbb{N}_{\ge1}$, dann ist $Z\left(\text{Gl}_{n}\left(k\right)\right)=k^{*}\cdot\id_{k^{n}}$
+\item Ist $k$ ein Körper und $n\in\mathbb{N}_{\ge1}$, dann ist $Z\left(\text{Gl}_{n}\left(k\right)\right)=k^{*}\cdot\text{id}_{k^{n}}$
 \item $Z\left(S_{3}\right)\stackrel{\left(!\right)}{=}\left\{ e\right\} $
 \item $G=Z\left(G\right)\Leftrightarrow G$ ist abelsch.
 \end{itemize}
@@ -975,7 +970,7 @@ ist, ist $\text{ker}\left(\varphi\right)$ zyklisch nach i).
 \qqed
 
 
-\section{Definition \textmd{(Gruppenordnung)}}
+\section{Definition \textmd{(Ordnung)}}
 
 Seien $G$ eine Gruppe und $x\in G$, dann heißt
 \begin{align*}
@@ -1042,14 +1037,14 @@ x^{\left|G\right|} & \stackrel{\ref{sec:Kor-Lagrange}}{=}x^{\text{ord}\left(x\ri
 \begin{iiilist}
 
 \iii Seien $n\ge1$ und $a\in\mathbb{Z}$ teilerfremd zu $n$, dann
-folgt $a^{\varphi\left(n\right)}\equiv1\text{(mod)}n$.
+folgt $a^{\varphi\left(n\right)}\equiv1\text{ mod }n$.
 
 (Hier ist $\varphi\left(n\right)$ die Eulersche $\varphi$-Funktion.)
 
 \iii Ist $p$ eine Primzahl und $a\in\mathbb{Z}$ mit $p\not=a$,
 so gilt:
 \begin{align*}
-a^{p-1} & \equiv1\left(\text{mod}\right)p
+a^{p-1} & \equiv1\text{ mod }p
 \end{align*}
 (vergleiche \ref{sec:Bsp-F5*})
 
@@ -1816,7 +1811,7 @@ Es gilt:
 Ist zum Beispiel $p\in R$, so ist
 \begin{align*}
 \pi:R\left[X\right] & \to\left(\modulo{R}{\left(p\right)}\right)\left[X\right]\\
-\sum_{i}a_{i}X^{i} & \mapsto\sum_{i}\left(a_{i}\left(\text{mod}\right)p\right)X^{i}
+\sum_{i}a_{i}X^{i} & \mapsto\sum_{i}\left(a_{i}\text{ mod }p\right)X^{i}
 \end{align*}
 ein surjektiver Ringhomomorphismus mit:
 \begin{align}
@@ -2650,9 +2645,10 @@ folgen und weil $\text{deg}\left(\overline{f}\right)=4$ ist, also
 schon $\text{deg}\left(\overline{g}\right)=\text{deg}\left(\overline{h}\right)=2$.
 
 Wegen \eqref{eq:overf} besitzt aber $\overline{f}\in\mathbb{F}_{2}\left[X\right]$
-bis auf Assoziiertheit genau die Teiler $\left\{ 1,X+1,X^{3}+X+1,\overline{f}\right\} $,
+bis auf Assoziiertheit genau die Teiler $1,X+1,X^{3}+X+1$ und $\overline{f}$,
 und keines dieser Polynome besitzt Grad 2. Dies ist ein Widerspruch
-zu der angenommenen Reduzibilität.\\
+zu der angenommenen Reduzibilität.
+
 \qqed[\roman{ale2})]
 
 \iii Seien $p$ eine Primzahl und ${\displaystyle F_{p}\left(X\right):=\frac{X^{p}-1}{X-1}=X^{p}+\ldots+1\in\mathbb{Z}\left[X\right]}$
@@ -4020,8 +4016,7 @@ mit $f\left(\alpha\right)=0$, womit folgt:
 \begin{align*}
 0 & =\overline{\sigma}\left(0\right)=\overline{\sigma}\left(f\left(\alpha\right)\right)=\underbrace{f^{\overline{\sigma}}}_{=f}\left(\overline{\sigma}\left(\alpha\right)\right)
 \end{align*}
-Daher ist $\overline{\sigma}\left(\alpha\right)\in\mathcal{N}_{2}$.\\
-\qqed[Behauptung]
+Daher ist $\overline{\sigma}\left(\alpha\right)\in\mathcal{N}_{2}$.\qqed[Behauptung]
 \end{description}
 Dabei ist $f^{\overline{\sigma}}=f$, da $f\in k\left[X\right]$ und
 $\overline{\sigma}|_{k}=\text{id}_{k}$.
@@ -7153,7 +7148,7 @@ In der Situation von \ref{sec:Satz-primEinheitsWurzel} gilt:
 
 \iii \hspace*{1mm}\vspace*{-7mm} 
 \begin{align*}
-\left[k\left(\zeta_{n}\right):k\right] & \,\Bigg|\,\left|\text{Gal}\left(\modulo{k\left(\zeta_{n}\right)}{k}\right)\right|=\varphi\left(n\right)
+\left[k\left(\zeta_{n}\right):k\right] & =\left|\text{Gal}\left(\modulo{k\left(\zeta_{n}\right)}{k}\right)\right|\,\Bigg|\,\varphi\left(n\right)
 \end{align*}
 
 
@@ -7540,12 +7535,12 @@ genau dann irreduzibel, wenn $\left\langle \overline{q}\right\rangle =\left(\mod
 
 \iii Ist $q=p$ eine Primzahl, so gilt:
 \begin{align*}
-p & \equiv1\left(\text{mod}\right)n\quad\Leftrightarrow\quad\zeta_{n}\in\mathbb{F}_{p}\subseteq\overline{\mathbb{F}}_{p}
+p & \equiv1\text{ mod }n\quad\Leftrightarrow\quad\zeta_{n}\in\mathbb{F}_{p}\subseteq\overline{\mathbb{F}}_{p}
 \end{align*}
 Letzteres ist äquivalent dazu, dass $\phi_{n}\left(X\right)\in\mathbb{Z}\left[X\right]$\emph{
 eine Nullstelle modulo $p$} \emph{besitzt}, das heißt:
 \begin{align*}
-\exs_{x\in\mathbb{Z}}: & \phi_{n}\left(x\right)\equiv0\left(\text{mod}\right)p
+\exs_{x\in\mathbb{Z}}: & \phi_{n}\left(x\right)\equiv0\text{ mod }p
 \end{align*}
 
 
@@ -7588,7 +7583,7 @@ ist äquivalent zu folgenden Aussagen:
 
 \iii \hspace*{1mm}\vspace*{-8mm} 
 \begin{align*}
-p\equiv1\left(\text{mod}\right)n & \quad\Leftrightarrow\quad\left\langle \overline{p}\right\rangle =\left\{ \tau\right\} \subseteq\left(\modlo{Z}{n}\right)^{*}\\
+p\equiv1\text{ mod }n & \quad\Leftrightarrow\quad\left\langle \overline{p}\right\rangle =\left\{ \tau\right\} \subseteq\left(\modlo{Z}{n}\right)^{*}\\
  & \quad\stackrel{\text{i)}}{\Leftrightarrow}\quad\text{Gal}\left(\modulo{\mathbb{F}_{p}\left(\zeta_{n}\right)}{\mathbb{F}_{p}}\right)=\left\{ 1\right\} \\
  & \!\stackrel{\phi_{n}\left(\zeta_{n}\right)=0}{\Leftrightarrow}\quad\phi_{n}\text{ besitzt eine Nullstelle in \ensuremath{\mathbb{F}_{p}}.}
 \end{align*}
@@ -7615,9 +7610,9 @@ X^{4}-1 & \stackrel{\ref{sec:Satz-phiN}\text{ iii)}}{=}\phi_{1}\left(X\right)\ph
 \hline 
 $p\negthickspace\not|n$ & 3 & 5 & 7 & 11 & 13 & $\ldots$\tabularnewline
 \hline 
-Nullstelle von $X^{2}+1\left(\text{mod}\right)p$ & / & 2 & / & / & 8 & $\ldots$\tabularnewline
+Nullstelle von $X^{2}+1\text{ mod }p$ & / & 2 & / & / & 8 & $\ldots$\tabularnewline
 \hline 
-$p\left(\text{mod}\right)n$ & -1 & 1 & -1 & -1 & 1 & $\ldots$\tabularnewline
+$p\text{ mod }n$ & -1 & 1 & -1 & -1 & 1 & $\ldots$\tabularnewline
 \hline 
 \end{tabular}
 \par\end{center}
@@ -7628,7 +7623,7 @@ $p\left(\text{mod}\right)n$ & -1 & 1 & -1 & -1 & 1 & $\ldots$\tabularnewline
 Sei $f\in\mathbb{Z}\left[X\right]$ mit $\deg\left(f\right)\ge1$
 und setze:
 \begin{align*}
-P\left(f\right) & :=\left\{ p|p>0\text{ ist eine Primzahl}\wedge f\text{ besitzt eine Nullstelle}\left(\text{mod}\right)p\right\} 
+P\left(f\right) & :=\left\{ p|p>0\text{ ist eine Primzahl}\wedge f\text{ besitzt eine Nullstelle}\text{ mod }p\right\} 
 \end{align*}
 Dann gilt:
 \begin{align*}
@@ -7664,7 +7659,7 @@ P\left(g\right) & =\left\{ p_{1},\ldots,p_{m}\right\}
 Dann existiert ein $\alpha\in\mathbb{Z}_{\ge1}$ so, dass $0,\pm1\not=g\left(\alpha\cdot p_{1}\cdot\ldots\cdot p_{m}\right)=:N$,
 da $\deg\left(g\right)\ge1$ ist.
 \begin{align}
-N & \stackrel{\text{Def. von }g}{\equiv}1\left(\text{mod}\right)p_{i}\qquad\fall_{1\le i\le m}\label{eq:Nequiv1}
+N & \stackrel{\text{Def. von }g}{\equiv}1\text{ mod }p_{i}\qquad\fall_{1\le i\le m}\label{eq:Nequiv1}
 \end{align}
 Daher gibt es eine Primzahl $q$ mit:
 \begin{align*}
@@ -7672,11 +7667,11 @@ q|N & \quad\Rightarrow\quad q\in P\left(g\right)
 \end{align*}
 Damit folgt
 \begin{align*}
-N & \equiv0\left(\text{mod}\right)q
+N & \equiv0\text{ mod }q
 \end{align*}
 und:
 \begin{align*}
-N & \equiv1\not\equiv0\left(\text{mod}\right)q
+N & \equiv1\not\equiv0\text{ mod }q
 \end{align*}
 Dies ist ein Widerspruch zur Endlichkeit von $P\left(g\right)$.
 
@@ -7686,7 +7681,7 @@ Dies ist ein Widerspruch zur Endlichkeit von $P\left(g\right)$.
 \section{Satz}
 
 Für jede Zahl $n\ge1$ existieren unendlich viele Primzahlen $p$
-mit $p\equiv1\left(\text{mod}\right)n$.
+mit $p\equiv1\text{ mod }n$.
 
 
 \subsubsection*{Beweis}
@@ -7702,7 +7697,7 @@ $f=\phi_{n}\left(X\right)$.
 Allgemeiner gilt der Satz von \noun{Dirichlet}:
 
 Für $a,n\in\mathbb{N}_{\ge1}$ mit $\text{ggT}\left(a,n\right)=1$,
-gibt es unendlich viele Primzahlen $p$ mit $p\equiv a\left(\text{mod}\right)n$.
+gibt es unendlich viele Primzahlen $p$ mit $p\equiv a\text{ mod }n$.
 
 (vergleiche \noun{Jean-Pierre Serre}: \foreignlanguage{english}{\emph{A
 Course in Arithmetics}})
@@ -8121,10 +8116,15 @@ Damit folgt die Proposition aus der Bahngleichung \ref{sub:Satz-Bahngleichung}.
 Sei $p$ eine Primzahl.
 
 Eine endliche Gruppe $G$ heißt eine \emph{$p$-Gruppe}, wenn die
-Mächtigkeit $\left|G\right|$ von $G$ eine Potenz von $p$ ist.
+Mächtigkeit $\left|G\right|$ von $G$ eine Potenz von $p$ ist, also
+für ein $n\in\mathbb{N}_{\ge0}$ gilt:
+\begin{align*}
+\left|G\right| & =p^{n}
+\end{align*}
 
 
-\subsection{Satz}
+
+\subsection{Satz \textmd{(nicht-triviales Zentrum)}\label{sub:Satz-nTrivPGrupnTrivZentr}}
 
 Jede nicht-triviale endliche $p$-Gruppe $G$ besitzt ein nicht-triviales
 Zentrum.
@@ -8144,6 +8144,399 @@ Nach \ref{sub:Prop-M=0000E4chtigkeitZentralisatoren} gilt also:
 p & \,|\,\left|Z\left(G\right)\right|
 \end{align*}
 Daher ist $Z\left(G\right)\not=1$.
+
+\qqed
+
+%DATE: Fr 20.1.12
+
+
+\subsection{Satz \textmd{(Kette von Normalteilern)}}
+
+Sei $G$ eine $p$-Gruppe der Ordnung $p^{m}$.
+
+Dann gibt es eine Kette von Normalteilern $H_{i}$ von $G$ mit
+\begin{align*}
+H_{i-1} & \supseteq H_{i}\\
+\left(H_{i-1}:H_{i}\right) & =p
+\end{align*}
+für alle $1\le i\le m$.
+
+
+\subsubsection*{Beweis}
+
+Führe Induktion über $m$ durch:
+
+Der Fall $m=0$ ist klar: $p^{0}=1$ und $H_{0}=H_{1}=\left\{ e\right\} =G$.
+
+Sei $m>0$: Nach \ref{sub:Satz-nTrivPGrupnTrivZentr} ist $Z\left(G\right)\not=1$
+und daher gibt es ein $\alpha\in Z\left(G\right)\setminus\left\{ 1\right\} $.
+
+Die zyklische Untergruppe $\left\langle \alpha\right\rangle \subseteq G$
+besitzt eine Untergruppe der Ordnung $p$, nämlich $\left\langle \alpha^{\frac{\text{ord}\left(\alpha\right)}{p}}\right\rangle $.
+
+Wegen $H\subseteq Z\left(G\right)$ ist $H$ ein Normalteiler in $G$.
+
+Sei $\overline{G}:=\modulo{G}{H}$, dann ist $\left|\overline{G}\right|=p^{m-1}$.
+
+Nach Induktionsvoraussetzung gibt es eine Kette
+\begin{align*}
+\overline{G} & =N_{0}\supseteq N_{1}\supseteq\ldots\supseteq N_{m-1}=\left\{ e\right\} 
+\end{align*}
+von Normalteilern $N_{i}$ von $\overline{G}$ mit $\left(N_{i-1}:N_{i}\right)=p$.
+
+Sei $\varphi_{i}$ die Komposition $G\to\overline{G}\to\modulo{\overline{G}}{N_{i}}$
+und $H_{i}:=\ker\left(\varphi_{i}\right)$ für $0\le i\le m-1$ und
+$H_{m}=\left\{ e\right\} $, also $H_{i}\unlhd G$.
+
+Wegen
+\begin{align*}
+\modulo{H_{i-1}}{H_{i}} & =\modulo{\left(\modulo{H_{i-1}}{H}\right)}{\left(\modulo{H_{i}}{H}\right)}=\modulo{N_{i-1}}{N_{i}}
+\end{align*}
+gilt $\left(H_{i-1}:H_{i}\right)=p$ für $1\le i\le m-1$.
+
+Nach der Wahl von $H$ gilt auch $\left(H_{m-1}:H_{m}\right)=p$,
+weswegen
+\begin{align*}
+G & =H_{0}\supseteq\ldots\supseteq H_{m}=\left\{ e\right\} 
+\end{align*}
+eine Kette der gewünschten Art ist.
+
+\qqed
+
+
+\subsection{Proposition und Definition \textmd{(Operation auf Potenzmenge)}}
+
+$G$ operiere auf $X$.
+
+Dann operiert $G$ auf der Potenzmenge $\mathcal{P}\left(X\right)$
+von $X$ vermöge:
+\begin{align*}
+\left(\sigma,M\right) & \mapsto\sigma\cdot M:=\left\{ \sigma\cdot m|m\in M\right\} 
+\end{align*}
+
+
+
+\subsubsection*{Beweis}
+
+Sei $M\in\mathcal{P}\left(X\right)$ beliebig, so gilt:
+
+\begin{iiilist}
+
+\iii $e\cdot M=\left\{ e\cdot m|m\in M\right\} \sr{=}{G\text{ operiert}}{\text{auf }X}\left\{ m|m\in M\right\} =M$
+
+\iii Für alle $g,h\in G$ gilt:
+\begin{align*}
+g\cdot\left(h\cdot M\right) & =\left\{ g\cdot n|n\in hM\right\} =\left\{ g\cdot\left(h\cdot m\right)|m\in M\right\} \sr{=}{G\text{ operiert}}{\text{auf }X}\left\{ \left(gh\right)\cdot m|m\in M\right\} =\left(gh\right)\cdot M
+\end{align*}
+
+
+\end{iiilist}
+
+Daher operiert $G$ auf $\mathcal{P}\left(X\right)$.
+
+\qqed
+
+
+\subsection{Beispiel und Definition \textmd{(Normalisator)}}
+
+$G$ operiere auf $G$ durch Konjugation.
+
+Bezeichnung:
+
+Für $X\subseteq G$ und $\sigma\in G$ sei $X^{\sigma}:=\sigma^{-1}X\sigma$.
+
+Ist $X=H\subseteq G$ eine Untergruppe, so auch $H^{\sigma}$.
+
+Die Standuntergruppe
+\begin{align*}
+N_{G}H & :=\left\{ \sigma\in G|\sigma H\sigma^{-1}=H\right\} 
+\end{align*}
+von $H$ heißt \emph{der Normalisator von $H$ in $G$}.
+
+Es gilt $H\unlhd N_{G}H$ und $H\unlhd G\Leftrightarrow N_{G}H=G$.
+
+
+\section{Die Sylowsätze}
+
+
+\subsection{Lemma\label{sub:Lem-FixpunkteModP}}
+
+Sei $G$ eine endliche $p$-Gruppe, die auf einer endlichen Menge
+$X$ operiert.
+
+Sei
+\begin{align*}
+X_{0} & =\left\{ x\in X\bigg|\fall_{\sigma\in G}\sigma x=x\right\} 
+\end{align*}
+die Menge der Fixpunkte.
+
+Dann ist $\left|X\right|\equiv\left|X_{0}\right|\text{ mod }p$.
+
+
+\subsubsection*{Beweis}
+
+Sei $x_{1},\ldots,x_{n}$ ein vollständiges Vertretersystem der Bahnen,
+die aus mehr als einem Element bestehen.
+
+Die Bahngleichung \ref{sub:Satz-Bahngleichung} lautet:
+\begin{align*}
+\left|X\right| & =\left|X_{0}\right|+\sum_{i=1}^{n}\left(G:G_{x_{i}}\right)
+\end{align*}
+Da $G$ eine $p$-Gruppe ist, also $p|\left(G:G_{x_{i}}\right)$ gilt,
+folgt daraus die Behauptung.
+
+\qqed
+
+
+\subsection{Definition \textmd{($p$-Sylowgruppe)}}
+
+Seien $G$ eine endliche Gruppe, $m\in\mathbb{N}_{\ge1}$, $n\in\mathbb{N}_{\ge0}$,
+$p$ eine Primzahl, $\text{ggT}\left(m,p\right)=1$ und $\left|G\right|=p^{n}\cdot m$.
+
+Ein $H\subseteq G$ mit $\left|H\right|=p^{n}$ heißt eine $p$-Sylowgruppe
+von $G$.
+
+
+\subsection{Beispiel}
+
+\begin{align*}
+H:=\left\{ \left(\begin{array}{ccc}
+1 &  & *\\
+ & \ddots\\
+0 &  & 1
+\end{array}\right)\right\}  & \subseteq\text{Gl}_{n}\left(\mathbb{F}_{p}\right)=:G
+\end{align*}
+ist eine $p$-Sylowgruppe.
+
+
+\subsubsection*{Beweis}
+
+Klar ist, dass $H$ eine Untergruppe von $G$ ist.
+
+Ebenfalls klar ist, dass für ein $m\in\mathbb{N}_{\ge1}$ gilt:
+\begin{align*}
+\left|H\right| & =p^{\frac{n^{2}-n}{2}}\,\bigg|\,\left|G\right|=m\cdot\left|H\right|
+\end{align*}
+Bleibt noch $\text{ggT}\left(p,m\right)=1$ zu zeigen.
+
+\textcolor{green}{TODO: Restlichen Beweis einfügen}
+
+\qqed
+
+
+\subsection{Satz \textmd{(Cauchy)\label{sub:Satz-Cauchy}}}
+
+Sei $p$ eine Primzahl.
+
+Ist die Ordnung einer endlichen Gruppe $G$ durch $p$ teilbar, dann
+enthält $G$ ein Element der Ordnung $p$.
+
+
+\subsubsection*{Beweis}
+
+\begin{align*}
+M & :=\left\{ \left(a_{1},\ldots,a_{p}\right)\in G^{p}|a_{1}\cdot\ldots\cdot a_{p}=1\right\} 
+\end{align*}
+$M$ ist bestimmt durch $a_{1},\ldots,a_{p-1}$, die frei wählbar
+sind, denn dann folgt:
+\begin{align*}
+a_{p} & =\left(a_{1}\cdot\ldots\cdot a_{p-1}\right)^{-1}=a_{p-1}^{-1}\cdot\ldots\cdot a_{1}^{-1}
+\end{align*}
+Daher gilt:
+\begin{align*}
+\left|M\right| & =\left|G\right|^{p-1}
+\end{align*}
+$\modlo{Z}{p}$ operiere auf $M$ durch zyklische Permutation.
+
+Diese Operation ist wohldefiniert, denn aus
+\begin{align*}
+a_{1}\cdot\ldots\cdot a_{p} & =1
+\end{align*}
+folgt schon für ein $z\in\left\{ 1,\ldots,p-1\right\} $:
+\begin{align*}
+a_{1+z}\cdot\ldots\cdot a_{p}\cdot a_{1}\cdot\ldots\cdot a_{z} & =a_{1+z}\cdot\ldots\cdot a_{p-1}^{-1}\cdot\ldots\cdot a_{1}^{-1}\cdot a_{1}\cdot\ldots\cdot a_{z}=1
+\end{align*}
+Sei $M_{0}$ die Menge der Fixpunkte unter dieser Operation, also:
+\begin{align*}
+M & =\left\{ \left(a,\ldots,a\right)|a^{p}=1\right\} 
+\end{align*}
+Wegen $\left(e,\ldots,e\right)\in M_{0}$ ist $\left|M_{0}\right|>0$.
+
+Nach \ref{sub:Lem-FixpunkteModP} folgt:
+\begin{align*}
+\left|M\right| & \equiv\left|M_{0}\right|\text{ mod }p
+\end{align*}
+Aus $p\,|\, G$ folgt also $p\,|\,\left|M\right|=\left|G\right|^{p-1}$,
+woraus also $p\,|\,\left|M_{0}\right|$ folgt.\\
+Wegen $\left|M_{0}\right|>0$ folgt damit $\left|M_{0}\right|\ge p$,
+weswegen es ein $\left(a,\ldots,a\right)\in M_{0}$ mit $a\not=e$
+und $a^{p}=e$ gibt.\\
+Da $p$ eine Primzahl ist, heißt das $\text{ord}\left(a\right)=p$,
+denn $\text{ord}\left(a\right)|p$ und $\text{ord}\left(a\right)\not=1$.
+
+\qqed
+
+
+\subsection{Lemma\label{sub:Lem-NgH=00003DGHmodP}}
+
+Sei $G$ eine endliche Gruppe und $H\subseteq G$ eine Untergruppe.
+
+Dann gilt:
+\begin{align*}
+\left(N_{G}\left(H\right):H\right) & \equiv\left(G:H\right)\text{ mod }p
+\end{align*}
+
+
+
+\subsubsection*{Beweis}
+
+$H$ operiere auf $M=\modulo{G}{H}$ durch Linkstranslation und
+\begin{align*}
+M_{0} & =\left\{ gH\,\bigg|\,\fall_{h\in H}:hgH=gH\right\} 
+\end{align*}
+sei die Menge der Fixpunkte.
+
+Für $h\in H$ und $g\in G$ gilt:
+\begin{align*}
+hgH=gH & \Leftrightarrow g^{-1}hg\in H
+\end{align*}
+Also ist $M_{0}$ die Menge aller $gH$ mit $g\in N_{G}\left(H\right)$.
+Damit folgt:
+\begin{align*}
+\left|M_{0}\right| & =\left(N_{G}\left(H\right):H\right)
+\end{align*}
+Mit $\left|M\right|=\left(G:H\right)$ folgt die Behauptung aus \ref{sub:Lem-FixpunkteModP}.
+
+\qqed
+
+
+\subsection{Korollar\label{sub:Kor-pTeiltNGH}}
+
+Sei $G$ eine endliche Gruppe und $H\subseteq G$ eine Untergruppe.
+
+Aus
+\begin{align*}
+p & \,|\,\left(G:H\right)
+\end{align*}
+folgt:
+\begin{align*}
+p & \,|\,\left(N_{G}\left(H\right):H\right)
+\end{align*}
+
+
+
+\subsubsection*{Beweis}
+
+Dies folgt direkt aus \ref{sub:Lem-NgH=00003DGHmodP}.
+
+\qqed
+
+
+\subsection{Satz \textmd{(1. Sylowsatz)\label{sub:Satz-Sylow1}}}
+
+Seien $G$ eine endliche Gruppe und $p$ eine Primzahl.
+
+Dann besitzt $G$ eine $p$-Sylowgruppe.
+
+Jede $p$-Untergruppe von $G$ ist in einer $p$-Sylowgruppe von $G$
+enthalten.
+
+
+\subsubsection*{Beweis}
+
+Sei $H\subseteq G$ eine $p$-Untergruppe. ($H=\left\{ e\right\} $
+ist erlaubt.)
+
+Zum Beweis des Satzes genügt es zu zeigen, dass, falls $p|\left(G:H\right)$
+gilt, ein $H\subseteq H'\subseteq G$ mit
+\begin{align*}
+\left(H':H\right) & =p
+\end{align*}
+existiert.
+
+(Konstruiere dann sukzessive $H'$ bis man bei einer $p$-Sylowgruppe
+angelangt ist.)
+
+Es gelte also $p|\left(G:H\right)$.
+
+Nach \ref{sub:Kor-pTeiltNGH} gilt:
+\begin{align*}
+p| & \left(N_{G}\left(H\right):H\right)
+\end{align*}
+Nach \ref{sub:Satz-Cauchy} enthält $\modulo{N_{G}\left(H\right)}{H}$
+eine Untergruppe der Ordnung $p$, deren Urbild in $N_{G}\left(H\right)$
+ist ein $H'$ mit den geforderten Eigenschaften.
+
+\qqed
+
+
+\subsection{Satz \textmd{(2. Sylowsatz)\label{sub:Satz-Sylow2}}}
+
+Seien $G$ eine endliche Gruppe und $p$ eine Primzahl.
+
+Zu jeder $p$-Untergruppe $H$ von $G$ und jeder $p$-Sylowgruppe
+$P$ von $G$ existiert ein $g\in G$, sodass gilt:
+\begin{align*}
+gHg^{-1} & \subseteq P
+\end{align*}
+
+
+Je zwei $p$-Sylowgruppen von $G$ sind konjugiert.
+
+
+\subsubsection*{Beweis}
+
+$H$ operiere auf $M:=\modulo{G}{P}$ durch Linkstranslation und $M_{0}$
+sei die Menge der Fixpunkte.
+
+Aus \ref{sub:Lem-FixpunkteModP} folgt:
+\begin{align*}
+\left|M_{0}\right| & \equiv\left|M\right|\text{ mod }p
+\end{align*}
+Da $p\not|\,\left|M\right|=\left(G:P\right)$ gilt, folgt $\left|M_{0}\right|\not=0$.
+
+Also existiert ein $g\in G$, sodass für alle $h\in H$ schon $hgP=gP$,
+also $g^{-1}Hg\subseteq P$ gilt.
+
+Die erste Aussage ist damit bewiesen, die zweite folgt, da je zwei
+$p$-Sylowgruppen die gleiche Ordnung besitzen.
+
+\qqed
+
+
+\subsection{Satz \textmd{(3. Sylowsatz)\label{sub:Satz-Sylow3}}}
+
+Seien $G$ eine endliche Gruppe, $p$ eine Primzahl und $s_{p}$ die
+Anzahl der $p$-Sylowgruppen von $G$.
+
+Seien $n\in\mathbb{N}_{\ge0}$ und $m\in\mathbb{N}_{\ge1}$ mit $\left|G\right|=p^{n}\cdot m$
+und $\text{ggT}\left(m,p\right)=1$.
+
+Dann gilt $s_{p}|m$ und $s_{p}\equiv1\text{ mod }p$.
+
+
+\subsubsection*{Beweis}
+
+$G$ operiere auf der Menge $M$ der $p$-Sylowgruppen von $G$ durch
+Konjugation und $P$ sei eine $p$-Sylowgruppe von $G$.
+
+Nach dem zweiten Sylowsatz \ref{sub:Satz-Sylow2} gibt es nur eine
+Bahn und die Standuntergruppe $G_{P}$ von $P$ enthält $P$.
+
+Damit folgt:
+\begin{align*}
+\left|M\right|=s_{p}=\left(G:G_{P}\right) & \,|\,\left(G:P\right)=m
+\end{align*}
+Sei $P$ eine $p$-Sylowgruppe von $G$, $P$ operiere auf $M$ durch
+Konjugation und $M_{0}$ sei die Menge der Fixpunkte.
+\begin{align*}
+Q\in M_{0} & \Leftrightarrow P\subseteq N_{G}\left(Q\right)
+\end{align*}
+Für $Q\in M_{0}$ sind $P$ und $Q$ bereits $p$-Sylowgruppen von
+$N_{G}\left(Q\right)$ und damit konjugiert nach \ref{sub:Satz-Sylow2},
+also folgt aus $P=Q$ schon $M_{0}=\left\{ P\right\} $.
+
+Die Behauptung folgt nun aus \ref{sub:Lem-FixpunkteModP}.
 
 \qqed
 
