@@ -5,7 +5,7 @@
 \textclass report
 \begin_preamble
 \usepackage{tikz}
-\usetikzlibrary{matrix,arrows}
+\usetikzlibrary{matrix,arrows,calc}
 \usepackage{latexsym,stmaryrd,stackrel,array,tabularx,multirow}
 \usepackage[explicit]{titlesec}
 %\usepackage{polynom} % momentan nicht benötigt
@@ -342,7 +342,7 @@ frac{km}{h}}$
 
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 Vorlage: Kommutatives Diagramm
@@ -504,10 +504,6 @@ TODO: Beweise überarbeiten („klar“ erklären...)
 \end_layout
 
 \begin_layout Plain Layout
-TODO: DATEs einfügen
-\end_layout
-
-\begin_layout Plain Layout
 TODO: Voraussetzungen aus Linearer Algebra und Analysis präzisieren (z.
  B.
  
@@ -519,18 +515,7 @@ Untergruppen-Diagramm
 \end_inset
 
 ).
-\end_layout
-
-\begin_layout Plain Layout
-TODO: 
-\begin_inset Formula $\left(\text{mod}\right)$
-\end_inset
-
- durch 
-\begin_inset Formula $\text{mod}$
-\end_inset
-
- ersetzen.
+ Ab Kapitel 2.
 \end_layout
 
 \end_inset
@@ -703,6 +688,22 @@ setcounter{page}{2} % sonst gibt es aus irgendeinem Grund zweimal die Seite
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{-15mm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsubsection*
 ACHTUNG
 \end_layout
@@ -778,11 +779,12 @@ Disclaimer of Warranty
 Unless otherwise mutually agreed to by the parties in writing and to the
  extent not prohibited by applicable law, 
 \series bold
-the copyright holders  provide the document “as is
+the Copyright Holders and any other party, who may distribute the Document
+ as permitted above,   provide the Document “as is
 \noun default
-”
+”,
 \noun on
- without warranties of any kind
+ without warranty of any kind
 \series default
 , expressed, implied, statutory or otherwise, including, but not limited
  to, the implied warranties of merchantability, fitness for a particular
@@ -805,17 +807,14 @@ In no event
 \series default
  unless required by applicable law or agreed to in writing 
 \series bold
-will the copyright holders be liable to you for any loss
-\series default
- of revenue, profit or anything else, 
-\series bold
-or for any damages
+will the Copyright Holders, or any other party, who may distribute the Document
+ as permitted above, be liable to you for any damages
 \series default
 , including, but not limited to, any general, special, incidental, consequential
 , punitive or exemplary damages, however caused, regardless of the theory
- of liability, arising out of or related to this license or the use of or
- inability to use the document, even if the copyright holders have been
- advised of the possibility of such damages.
+ of liability, arising out of or related to this license or any use of or
+ inability to use the Document, even if they have been advised of the possibilit
+y of such damages.
 \end_layout
 
 \begin_layout Standard
@@ -823,11 +822,11 @@ or for any damages
 \series bold
 \noun on
 \lang english
-In no event will the copyright holders' liability to you
+In no event will the Copyright Holders'/Distributor's liability to you
 \series default
 , whether in contract, tort (including negligence), or otherwise, 
 \series bold
-exceed the amount you paid the copyright holders
+exceed the amount you paid the Copyright Holders/Distributor
 \series default
  for the document under this agreement.
 \end_layout
@@ -1150,11 +1149,76 @@ Gruppentheorie I
 \end_layout
 
 \begin_layout Standard
-Aus der Linearen Algebra I wird die Kenntnis folgender Objekte vorausgesetzt:
+Aus der Linearen Algebra wird die Kenntnis der Definition folgender Begriffe
+ vorausgesetzt:
 \end_layout
 
 \begin_layout Itemize
-Gruppen,
+Quantoren, insbesondere der Existenzquantor 
+\begin_inset Formula $\exs$
+\end_inset
+
+ und der Allquantor 
+\begin_inset Formula $\fall$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Itemize
+(disjunkte) Mengen,
+\end_layout
+
+\begin_layout Itemize
+(endliche, abelsche) Gruppen,
+\end_layout
+
+\begin_layout Itemize
+(echte) Untergruppen (Abkürzung: UG),
+\end_layout
+
+\begin_layout Itemize
+Abbildungen, insbesondere die Identitätsabbildung 
+\begin_inset Formula $\text{id}_{X}$
+\end_inset
+
+ einer Menge 
+\begin_inset Formula $X$
+\end_inset
+
+, und deren Komposition,
+\end_layout
+
+\begin_layout Itemize
+Injektivität, Surjektivität, Bijektivität,
+\end_layout
+
+\begin_layout Itemize
+die natürlichen Zahlen 
+\begin_inset Formula $\mathbb{N}$
+\end_inset
+
+, die ganzen Zahlen 
+\begin_inset Formula $\mathbb{Z}$
+\end_inset
+
+ und die rationalen Zahlen 
+\begin_inset Formula $\mathbb{Q}$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Itemize
+die Restklassenringe 
+\begin_inset Formula $\modlo{Z}{n}$
+\end_inset
+
+ für 
+\begin_inset Formula $n\in\mathbb{N}$
+\end_inset
+
+,
 \end_layout
 
 \begin_layout Itemize
@@ -1162,15 +1226,47 @@ die Permutationsgruppe
 \begin_inset Formula $\Sigma\left(X\right)$
 \end_inset
 
- (für eine Menge 
+ für eine Menge 
 \begin_inset Formula $X$
 \end_inset
 
-) und
+, insbesondere 
+\begin_inset Formula $S_{n}:=\Sigma\left(\left\{ 1,\ldots,n\right\} \right)$
+\end_inset
+
+,
 \end_layout
 
 \begin_layout Itemize
-Untergruppen (Abkürzung: UG).
+Äquivalenzrelationen,
+\end_layout
+
+\begin_layout Itemize
+Körper 
+\begin_inset Formula $k$
+\end_inset
+
+ und die Gruppe der invertierbaren 
+\begin_inset Formula $n\times n$
+\end_inset
+
+-Matrizen 
+\begin_inset Formula $\text{Gl}_{n}\left(k\right)$
+\end_inset
+
+ für 
+\begin_inset Formula $n\in\mathbb{N}_{\ge1}$
+\end_inset
+
+ und
+\end_layout
+
+\begin_layout Itemize
+Primzahlen 
+\begin_inset Formula $p\in\mathbb{Z}$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Section
@@ -1869,7 +1965,9 @@ Beweis
 \end_layout
 
 \begin_layout Standard
-Lineare Algebra I
+
+\color green
+TODO: Beweis aus Linearer Algebra I einfügen
 \end_layout
 
 \begin_layout Standard
@@ -2558,7 +2656,7 @@ name "sec:Bsp-sym3"
 
 \begin_layout Standard
 Sei 
-\begin_inset Formula $S_{3}=\Sigma\left\{ 1,2,3\right\} $
+\begin_inset Formula $S_{3}=\Sigma\left(\left\{ 1,2,3\right\} \right)$
 \end_inset
 
 .
@@ -2806,6 +2904,13 @@ status open
 Beispiel und Definition
 \series medium
  (Zentrum)
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:BuD-Zentrum"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2864,15 +2969,10 @@ Ist
 
 \begin_layout Subsubsection*
 Beweis zu 
-\begin_inset ERT
-status open
 
-\begin_layout Plain Layout
-
-
-\backslash
-thesubsection
-\end_layout
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:BuD-Zentrum"
 
 \end_inset
 
@@ -3246,7 +3346,7 @@ iii
 \end_layout
 
 \begin_layout Subsubsection*
-Skizze
+Kommutatives Diagramm
 \end_layout
 
 \begin_layout Standard
@@ -3713,7 +3813,7 @@ Damit ist
 \end_layout
 
 \begin_layout Standard
-Nach der Vorlesung lineare Algebra I folgt 
+Es folgt 
 \begin_inset Formula $\text{ker}\left(\varphi\right)=p\mathbb{Z}$
 \end_inset
 
@@ -3722,6 +3822,12 @@ Nach der Vorlesung lineare Algebra I folgt
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Standard
+
+\color green
+TODO: Beweis für letzten Schritt aus Linearer Algebra I einfügen
 \end_layout
 
 \begin_layout Standard
@@ -4301,7 +4407,7 @@ Dann ist auch
 \end_layout
 
 \begin_layout Subsubsection*
-Skizze
+Kommutatives Diagramm
 \end_layout
 
 \begin_layout Standard
@@ -6675,7 +6781,7 @@ end{abclist}
 \end_layout
 
 \begin_layout Subsubsection*
-Skizze
+Kommutatives Diagramm
 \end_layout
 
 \begin_layout Standard
@@ -6796,7 +6902,7 @@ Es gibt genau einen Ringhomomorphismus
 \end_layout
 
 \begin_layout Subsubsection*
-Skizze
+Kommutatives Diagramm
 \end_layout
 
 \begin_layout Standard
@@ -8417,6 +8523,20 @@ exakt.
 
 \begin_layout Subsubsection*
 Beweis
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+%DATE: Di 1.11.11
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -10282,7 +10402,7 @@ status open
 
 \begin_layout Plain Layout
 
-%DATE: ???
+%DATE: Fr 4.1.11
 \end_layout
 
 \end_inset
@@ -11844,7 +11964,7 @@ status open
 
 \begin_layout Plain Layout
 
-%DATE 11.11.2011
+%DATE: Fr 11.11.2011
 \end_layout
 
 \end_inset
@@ -13488,10 +13608,178 @@ Das heißt
 .
 \end_layout
 
-\begin_layout Standard
+\begin_layout Subsubsection*
+Skizze
+\end_layout
 
-\color green
-TODO: Abb 1
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hspace*{5cm}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[x=3em,y=3em,scale=2]
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw[->, thick] (-1.5,0) -- (1.5,0) node[right]{Re$(z)$};
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw[->, thick] (0,-1.5) -- (0,1.5) node[above]{Im$z$};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw[domain=0:2*pi,smooth,variable=
+\backslash
+t] plot ({cos(
+\backslash
+t r)},{sin(
+\backslash
+t r)});
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw [fill=black] (0,0) -- ({cos(2*pi/6 r)},{sin(2*pi/6 r)}) circle (0.04)
+ node[above right]{$
+\backslash
+zeta_{6}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw [fill=black] (0,0) -- (1,0) circle (0.04) node[above right]{$
+\backslash
+zeta_{6}^6=1$};
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw [fill=black] (0,0) -- (-1,0) circle (0.04) node[above left]{$
+\backslash
+zeta_{6}^3=-1$};
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+foreach 
+\backslash
+x in {2,4,5}
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+draw [fill=black] (0,0) -- ({cos(2*pi/6*
+\backslash
+x r)},{sin(2*pi/6*
+\backslash
+x r)}) circle (0.04) node[label={60*
+\backslash
+x}:$
+\backslash
+zeta_{6}^{
+\backslash
+x}$] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw (0.5,0) arc (0:60:0.5) node[below=7]{$
+\backslash
+frac{2
+\backslash
+pi}{6}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw (-1,0.1) -- (-1,-0.1) node[below, fill=white] {$-1$};
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw ( 1,0.1) -- ( 1,-0.1) node[below, fill=white] {$1$};
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw (0.1,-1) -- (-0.1,-1) node[anchor=east, fill=white] {$-
+\backslash
+ii$};
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw (0.1, 1) -- (-0.1, 1) node[anchor=east, fill=white] {$
+\backslash
+ii$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection*
@@ -13778,6 +14066,24 @@ status open
 
 
 \backslash
+qqed[
+\backslash
+roman{ale2})]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
 iii
 \end_layout
 
@@ -13787,13 +14093,94 @@ iii
 \begin_inset Formula $R=k$
 \end_inset
 
- ein Körper, so erhalte den Ringhomomorphismus: 
+ ein Körper, so erhalte mit
+\begin_inset Formula 
+\begin{align*}
+Q & :=\text{Quot}\left(\modulo{\mathbb{Z}}{\left(p\right)}\right)
+\end{align*}
+
+\end_inset
+
+den Ringhomomorphismus:
 \end_layout
 
 \begin_layout Standard
+\noindent
+\align center
+\begin_inset ERT
+status open
 
-\color green
-TODO: Abb 2
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+matrix (m) [matrix of math nodes, row sep=3em, column sep=1em, text height=2ex,
+ text depth=0.25ex]
+\end_layout
+
+\begin_layout Plain Layout
+
+    { 
+\backslash
+modulo{
+\backslash
+mathbb{Z}}{(p)} & & R=k 
+\backslash
+
+\backslash
+ & Q  & 
+\backslash
+
+\backslash
+ };
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+path[right hook->,font=
+\backslash
+scriptsize] (m-1-1) edge (m-1-3);
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+path[right hook->,font=
+\backslash
+scriptsize] ($(m-1-1) - (0,0.4)$) edge (m-2-2);
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+path[right hook->,font=
+\backslash
+scriptsize] (m-2-2) edge node[right]{$
+\backslash
+exsg$} (m-1-3);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -13810,22 +14197,7 @@ p>0: & \,\, Q\stackrel{\sim}{=}\text{Quot}\bigg(\underbrace{\modulo{\mathbb{Z}}{
 
 \end_inset
 
-Es folgt 
-\begin_inset Formula $\text{char}\left(k\right)=\text{char}\left(E\right)$
-\end_inset
 
-, denn 
-\begin_inset Formula $k\hookrightarrow E$
-\end_inset
-
- ist injektiv.
-\end_layout
-
-\begin_layout Standard
-TODO: Abb Homsatz 5.1
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -13841,26 +14213,26 @@ end{iiilist}
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Bemerkung und Definition 
 \series medium
 (Körpererweiterung)
-\end_layout
-
-\begin_layout Standard
-Für den Ringhomomorphismus von Integritätsringen 
-\begin_inset Formula $\mathbb{Z}\rightarrow\mathbb{F}_{p}$
-\end_inset
-
- gilt:
-\begin_inset Formula 
-\begin{align*}
-\text{char}\left(\mathbb{Z}\right)=0 & \not=p=\text{char}\left(\mathbb{F}_{p}\right)
-\end{align*}
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -13883,10 +14255,110 @@ Körpererweiterung
  Körper sind.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Subsubsection*
+Kommutatives Diagramm
+\end_layout
 
-\color green
-TODO: Abb 3
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+matrix (m) [matrix of math nodes, row sep=2em, column sep=1em, text height=1.5ex,
+ text depth=0.25ex]
+\end_layout
+
+\begin_layout Plain Layout
+
+    { k & & E 
+\backslash
+
+\backslash
+ & 
+\backslash
+mathbb{Z}  & 
+\backslash
+
+\backslash
+ };
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+path[right hook->,font=
+\backslash
+scriptsize] (m-1-1) edge (m-1-3);
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+path[->,font=
+\backslash
+scriptsize] (m-2-2) edge node[below left]{$
+\backslash
+varphi$} (m-1-1) edge node[below right]{$
+\backslash
+psi$} (m-1-3);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Daraus folgt 
+\begin_inset Formula $\text{ker}\left(\varphi\right)=\text{ker}\left(\psi\right)$
+\end_inset
+
+ und daher gilt 
+\begin_inset Formula $\text{char}\left(k\right)=\text{char}\left(E\right)$
+\end_inset
+
+, denn 
+\begin_inset Formula $k\hookrightarrow E$
+\end_inset
+
+ ist injektiv.
+\end_layout
+
+\begin_layout Standard
+Für den Ringhomomorphismus von Integritätsringen 
+\begin_inset Formula $\mathbb{Z}\rightarrow\mathbb{F}_{p}$
+\end_inset
+
+ gilt:
+\begin_inset Formula 
+\begin{align*}
+\text{char}\left(\mathbb{Z}\right)=0 & \not=p=\text{char}\left(\mathbb{F}_{p}\right)
+\end{align*}
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -14073,13 +14545,27 @@ iii
 
 \end_inset
 
- Die Aussage ist bekannt.
+ 
+\color green
+TODO: Beweis einfügen
 \end_layout
 
 \begin_layout Standard
+\begin_inset ERT
+status open
 
-\color green
-TODO: Woher?
+\begin_layout Plain Layout
+
+
+\backslash
+qqed[
+\backslash
+roman{ale2})]
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -14150,6 +14636,24 @@ status open
 
 
 \backslash
+qqed[
+\backslash
+roman{ale2})]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
 iii
 \end_layout
 
@@ -14164,6 +14668,28 @@ iii
 \end_inset
 
 , ist surjektiv.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed[
+\backslash
+roman{ale2})]
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -14438,7 +14964,23 @@ Beweis
 \begin_layout Standard
 
 \color green
-TODO: Wo?
+TODO: Beweis einfügen
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -14671,7 +15213,23 @@ Beweis
 \begin_layout Standard
 
 \color green
-TODO: Einfügen
+TODO: Beweis einfügen
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -15260,7 +15818,7 @@ Dies wurde in der Linearen Algebra II gezeigt.
 \begin_layout Standard
 
 \color green
-TODO: Beweis ergänzen
+TODO: Beweis einfügen
 \end_layout
 
 \begin_layout Standard
@@ -18671,6 +19229,17 @@ f\left(\alpha\right)=0 & \Rightarrow f^{\sigma}\left(\sigma\left(\alpha\right)\r
 \end_inset
 
 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+%DATE: Fr 25.11.2011
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -18731,8 +19300,91 @@ Insbesondere gilt:
 \end_inset
 
 
-\color green
-TODO: Abb einfügen
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+matrix (m) [matrix of math nodes, row sep=2em, column sep=2em, text height=1.5ex,
+ text depth=0.25ex]
+\end_layout
+
+\begin_layout Plain Layout
+
+    { k(
+\backslash
+alpha) & & L 
+\backslash
+
+\backslash
+ & k & 
+\backslash
+
+\backslash
+ };
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+path[right hook->,font=
+\backslash
+scriptsize] (m-2-2) edge (m-1-1) edge (m-1-3);
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+path[->,font=
+\backslash
+scriptsize,dashed] (m-1-1) edge (m-1-3);
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+node at ($(m-1-3) + (1.5,-0.5)$) {$
+\backslash
+Leftrightarrow 
+\backslash
+quad f^{
+\backslash
+sigma}
+\backslash
+left(
+\backslash
+beta
+\backslash
+right)=0$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection*
@@ -20242,7 +20894,7 @@ status open
 
 \begin_layout Plain Layout
 
-%DATE ???
+%DATE: Di 29.11.2011
 \end_layout
 
 \end_inset
@@ -20251,14 +20903,7 @@ status open
 \end_layout
 
 \begin_layout Subsubsection*
-Beweis von 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sec:SuD-normKE"
-
-\end_inset
-
-
+Beweis
 \end_layout
 
 \begin_layout Itemize
@@ -20326,11 +20971,102 @@ Betrachte
 \end_inset
 
 
-\color green
-TODO: Abb1
-\color inherit
+\begin_inset ERT
+status open
 
-\begin_inset Newline newline
+\begin_layout Plain Layout
+
+
+\backslash
+hspace*{5cm}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+matrix (m) [matrix of math nodes, row sep=3em, column sep=3em, text height=2ex,
+ text depth=0.25ex]
+\end_layout
+
+\begin_layout Plain Layout
+
+    { k(
+\backslash
+alpha) & k(
+\backslash
+beta)
+\backslash
+subseteq 
+\backslash
+overline{E} 
+\backslash
+
+\backslash
+ E  & 
+\backslash
+
+\backslash
+ };
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+path[->,font=
+\backslash
+scriptsize] (m-1-1) edge node[below] {$ 
+\backslash
+varphi $} node[above] {$ 
+\backslash
+sim $} (m-1-2);
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+path[right hook->,font=
+\backslash
+scriptsize] (m-1-1) edge (m-2-1);
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+path[->,font=
+\backslash
+scriptsize,dashed] (m-2-1) edge node[below right] { $
+\backslash
+exsg 
+\backslash
+overline{
+\backslash
+sigma}$ (vergleiche 
+\backslash
+ref{sec:Lem-homkalg})} (m-1-2); 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture} 
+\backslash
+
+\backslash
+
+\end_layout
+
 \end_inset
 
 Es folgt:
@@ -21580,10 +22316,162 @@ alle
 .
 \end_layout
 
-\begin_layout Standard
+\begin_layout Subsubsection*
+Skizze
+\end_layout
 
-\color green
-TODO: Abb 2
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[x=3em,y=3em,scale=2]
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw[->, thick] (-1.7,0) -- (1.7,0) node[right]{Re$(z)$};
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw[->, thick] (0,-1.7) -- (0,1.7) node[above]{Im$z$};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw[domain=0:2*pi,smooth,variable=
+\backslash
+t] plot ({2^(1/3)*cos(
+\backslash
+t r)},{2^(1/3)*sin(
+\backslash
+t r)});
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw[fill=black] (0,0) -- ({2^(1/3)*cos(2*pi/3 r)},{2^(1/3)*sin(2*pi/3 r)})
+ circle (0.04) node[above]{$
+\backslash
+alpha
+\backslash
+zeta$};
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw[fill=black] (0,0) -- ({2^(1/3)*cos(2*pi/3*2 r)},{2^(1/3)*sin(2*pi/3*2
+ r)}) circle (0.04) node[below]{$
+\backslash
+alpha
+\backslash
+zeta^2$};
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw[fill=black] (0,0) -- ({2^(1/3)},0) circle (0.04) node[above right=2]{$
+\backslash
+alpha=
+\backslash
+alpha
+\backslash
+zeta^3$};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw[densely dotted] ({2^(1/3)},0) -- ({2^(1/3)*cos(2*pi/3 r)},{2^(1/3)*sin(2*pi
+/3 r)}) -- ({2^(1/3)*cos(2*pi/3*2 r)},{2^(1/3)*sin(2*pi/3*2 r)}) -- cycle;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw (-1,0.1) -- (-1,-0.1) node[below, fill=white] {$-1$};
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw ({2^(1/3)},0.1) -- ({2^(1/3)},-0.1) node[below, fill=white] {$
+\backslash
+sqrt[3]{2}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw ( 1,0.1) -- ( 1,-0.1) node[below, fill=white] {$1$};
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw (0.1,-1) -- (-0.1,-1) node[anchor=east] {$-
+\backslash
+ii$};
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw (0.1, 1) -- (-0.1, 1) node[anchor=east] {$
+\backslash
+ii$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -21638,9 +22526,106 @@ Es gilt
 \end_layout
 
 \begin_layout Standard
+\noindent
+\align center
+\begin_inset ERT
+status open
 
-\color green
-TODO: Abb3
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+matrix (m) [matrix of math nodes, row sep=2em, column sep=1em, text height=1.5ex,
+ text depth=0.25ex]
+\end_layout
+
+\begin_layout Plain Layout
+
+    { & E'=
+\backslash
+mathbb{Q}(
+\backslash
+alpha,
+\backslash
+zeta) & 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+     
+\backslash
+mathbb{Q}(
+\backslash
+alpha)=E & & 
+\backslash
+mathbb{Q}(
+\backslash
+zeta) 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+      &  k=
+\backslash
+mathbb{Q} & 
+\backslash
+
+\backslash
+};
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+path[font=
+\backslash
+scriptsize] (m-2-1) edge node[above] {2} (m-1-2) edge node[above] {3} (m-3-2);
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+path[font=
+\backslash
+scriptsize] (m-2-3) edge node[above] {3} (m-1-2) edge node[above] {2} (m-3-2);
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+path[font=
+\backslash
+scriptsize] (m-1-2) edge node[right] {6} (m-3-2);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Chapter
@@ -24286,7 +25271,7 @@ status open
 
 \begin_layout Plain Layout
 
-%DATE: 6.12.2011
+%DATE: Di 6.12.2011
 \end_layout
 
 \end_inset
@@ -26142,7 +27127,7 @@ status open
 
 \begin_layout Plain Layout
 
-%DATE: 
+%DATE: Fr 9.12.2011
 \end_layout
 
 \end_inset
@@ -26155,9 +27140,9 @@ Galoistheorie
 \end_layout
 
 \begin_layout Section
-Definition 
+Proposition und Definition 
 \series medium
-(galoissche Körpererweiterung, Galoisgruppe)
+(galoissch, Galoisgruppe)
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Def-Galoisgruppe"
@@ -26218,10 +27203,30 @@ die Galoisgruppe von
 .
 \end_layout
 
+\begin_layout Subsubsection*
+Beweis
+\end_layout
+
 \begin_layout Standard
 
 \color green
 TODO: Beweis von Blatt 8 Aufgabe 2 einfügen
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -28435,7 +29440,7 @@ status open
 
 \begin_layout Plain Layout
 
-%DATE: 
+%DATE: Di 13.12.2011
 \end_layout
 
 \end_inset
@@ -29355,13 +30360,162 @@ end{iiilist}
 \end_layout
 
 \begin_layout Subsubsection*
-Bildchen
+Skizze
 \end_layout
 
 \begin_layout Standard
+\noindent
+\align center
+\begin_inset ERT
+status open
 
-\color green
-TODO: Abb1
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+matrix (m) [matrix of math nodes, row sep=2em, column sep=2em, text height=1.5ex,
+ text depth=0.25ex]
+\end_layout
+
+\begin_layout Plain Layout
+
+    { & E & 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+      & K_1
+\backslash
+cdot K_2 & 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+     K_1 & & K_2 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+      & K_1 
+\backslash
+cap K_2 & 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+      &  k & 
+\backslash
+
+\backslash
+};
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+path[font=
+\backslash
+scriptsize] (m-1-2) edge node[right] {$H_1 
+\backslash
+cap H_2$} (m-2-2);
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw[font=
+\backslash
+scriptsize] (m-1-2) ..
+ controls +(right:2) and +(up:2) ..
+ node[right] {$H_2$} (m-3-3);
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw[font=
+\backslash
+scriptsize] (m-1-2) ..
+ controls +(left:2) and +(up:2) ..
+ node[left] {$H_1$} (m-3-1);
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw[font=
+\backslash
+scriptsize] (m-1-2) ..
+ controls +(4,1) and +(right:4) ..
+ node[right] {$G$} (m-5-2);
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw[font=
+\backslash
+scriptsize] (m-1-2) ..
+ controls +(-4,1) and +(left:4) ..
+ node[left] {$
+\backslash
+left<H_1,H_2
+\backslash
+right>$} (m-4-2);
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+path (m-2-2) edge (m-3-1) edge (m-3-3);
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+path (m-4-2) edge (m-5-2) edge (m-3-1) edge (m-3-3);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection*
@@ -29776,13 +30930,130 @@ Untergruppen-Diagramm
 \begin_inset Formula $S_{3}$
 \end_inset
 
- bekannt:
+ mit
+\begin_inset Formula 
+\begin{align*}
+H_{0} & :=\left\langle \tau_{0}:=\left(\begin{array}{cc}
+\alpha\zeta & \alpha\zeta^{2}\end{array}\right)\right\rangle  & H_{1} & :=\left\langle \tau_{1}:=\left(\begin{array}{cc}
+\alpha & \alpha\zeta^{2}\end{array}\right)\right\rangle  & H_{2} & :=\left\langle \tau_{2}:=\left(\begin{array}{cc}
+\alpha & \alpha\zeta\end{array}\right)\right\rangle 
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+A_{3} & :=\left\langle \left(\begin{array}{ccc}
+\alpha & \alpha\zeta & \alpha\end{array}\zeta^{2}\right)\right\rangle 
+\end{align*}
+
+\end_inset
+
+bekannt:
 \end_layout
 
 \begin_layout Standard
+\noindent
+\align center
+\begin_inset ERT
+status open
 
-\color green
-TODO: Abb2 einfügen
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+matrix (m) [matrix of math nodes, row sep=1.3em, column sep=.7em, text height=1.5ex
+, text depth=0.25ex]
+\end_layout
+
+\begin_layout Plain Layout
+
+    { & 
+\backslash
+Sigma(
+\backslash
+mathcal{N})
+\backslash
+stackrel{
+\backslash
+sim}{=}S_3 & & 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+     A_3 & H_2 & H_1 & H_0 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+      & 
+\backslash
+{e
+\backslash
+} & & 
+\backslash
+
+\backslash
+};
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+path[font=
+\backslash
+scriptsize] (m-1-2) -- node[label=above left:$
+\backslash
+modloScript{Z}{2}
+\backslash
+hspace*{0.5em}$ ,rotate=45] {$
+\backslash
+unlhd
+\backslash
+hspace*{0.5em}$} (m-2-1);
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+path (m-1-2) edge (m-2-2) edge (m-2-3) edge (m-2-4);
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+path (m-3-2) edge (m-2-1) edge (m-2-2) edge (m-2-3) edge (m-2-4);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -29860,19 +31131,139 @@ reference "sec:Satz-UG-KE-Entsprechung"
 \end_layout
 
 \begin_layout Standard
+\noindent
+\align center
+\begin_inset ERT
+status open
 
-\color green
-TODO: Abb 4
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}
 \end_layout
 
-\begin_layout Standard
-\begin_inset Formula 
-\begin{align*}
-(\mathbb{Q}\left(\zeta\right) & =E^{A_{3}})
-\end{align*}
+\begin_layout Plain Layout
+
+  
+\backslash
+matrix (m) [matrix of math nodes, row sep=2.5em, column sep=1em, text height=1.5ex
+, text depth=0.25ex]
+\end_layout
+
+\begin_layout Plain Layout
+
+    { & E=E^{
+\backslash
+{e
+\backslash
+}}=
+\backslash
+mathbb{Q}(
+\backslash
+alpha,
+\backslash
+zeta) & & 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+     E^{A_3}=
+\backslash
+mathbb{Q}(
+\backslash
+zeta) & E^{H_2}=
+\backslash
+mathbb{Q}(
+\backslash
+alpha
+\backslash
+zeta^2) & E^{H_1}=
+\backslash
+mathbb{Q}(
+\backslash
+alpha
+\backslash
+zeta) & E^{H_0}=
+\backslash
+mathbb{Q}(
+\backslash
+alpha) 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+      & E^{S_3}=
+\backslash
+mathbb{Q} & & 
+\backslash
+
+\backslash
+};
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+path (m-2-1) edge (m-1-2);
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+path (m-2-1) edge node[below left]{$
+\backslash
+modloScript{Z}{2}$} (m-3-2);
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+path[font=
+\backslash
+scriptsize] (m-3-2) edge node[left]{3} (m-2-2) edge node[above left]{3}
+ (m-2-3) edge node[below right]{3} (m-2-4);
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+path[font=
+\backslash
+scriptsize] (m-1-2) edge node[left]{$
+\backslash
+modloScript{Z}{2}$} (m-2-2) edge node[left=2]{$
+\backslash
+modloScript{Z}{2}$} (m-2-3) edge node[above right]{$
+\backslash
+modloScript{Z}{2}$} (m-2-4);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Standard
 Weil 
 \begin_inset Formula $H_{i}\subseteq S_{3}$
 \end_inset
@@ -31681,7 +33072,7 @@ status open
 
 \begin_layout Plain Layout
 
-%DATE Di 20.12.2011
+%DATE: Di 20.12.2011
 \end_layout
 
 \end_inset
@@ -33838,7 +35229,7 @@ name "chap:Kreisteilungskörper"
 \end_layout
 
 \begin_layout Subsubsection*
-Fixiere in 
+Fixiere in Kapitel 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "chap:Kreisteilungskörper"
@@ -34107,9 +35498,192 @@ Dann sind genau
 \end_layout
 
 \begin_layout Standard
+\noindent
+\align center
+\begin_inset ERT
+status open
 
-\color green
-TODO: Abb1
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[x=3em,y=3em,scale=2]
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw[->, thick] (-1.5,0) -- (1.5,0) node[right]{Re$(z)$};
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw[->, thick] (0,-1.5) -- (0,1.5) node[above]{Im$z$};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw[domain=0:2*pi,smooth,variable=
+\backslash
+t] plot ({cos(
+\backslash
+t r)},{sin(
+\backslash
+t r)});
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw [fill=black] (0,0) -- ({cos(2*pi/6 r)},{sin(2*pi/6 r)}) circle (0.04)
+ node[above right]{
+\backslash
+framebox{$
+\backslash
+zeta_{6}$}$=
+\backslash
+zeta_6^{-5}=
+\backslash
+frac{1}{2}+
+\backslash
+frac{
+\backslash
+ii
+\backslash
+sqrt{3}}{2}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw [fill=black] (0,0) -- (1,0) circle (0.04) node[above right]{$
+\backslash
+zeta_{6}^6=1$};
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw [fill=black] (0,0) -- (-1,0) circle (0.04) node[above left]{$
+\backslash
+zeta_{6}^3=-1$};
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+foreach 
+\backslash
+x in {2,4}
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\backslash
+draw [fill=black] (0,0) -- ({cos(2*pi/6*
+\backslash
+x r)},{sin(2*pi/6*
+\backslash
+x r)}) circle (0.04) node[label={60*
+\backslash
+x}:$
+\backslash
+zeta_{6}^{
+\backslash
+x}$] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw [fill=black] (0,0) -- ({cos(2*pi/6*5 r)},{sin(2*pi/6*5 r)}) circle
+ (0.04) node[label={60*5}:
+\backslash
+framebox{$
+\backslash
+zeta_{6}^{5}$}] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw (0.5,0) arc (0:60:0.5) node[below=7]{$
+\backslash
+frac{
+\backslash
+pi}{3}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw (-1,0.1) -- (-1,-0.1) node[below, fill=white] {$-1$};
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw ( 1,0.1) -- ( 1,-0.1) node[below, fill=white] {$1$};
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw (0.1,-1) -- (-0.1,-1) node[anchor=east, fill=white] {$-
+\backslash
+ii$};
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw (0.1, 1) -- (-0.1, 1) node[anchor=east, fill=white] {$
+\backslash
+ii$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -36154,9 +37728,175 @@ iii
 \end_layout
 
 \begin_layout Standard
+\noindent
+\align center
+\begin_inset ERT
+status open
 
-\color green
-TODO: Abbildung Körperdiagramm
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+matrix (m) [matrix of math nodes, row sep=2em, column sep=0em, text height=1.5ex,
+ text depth=0.25ex]
+\end_layout
+
+\begin_layout Plain Layout
+
+    { & 
+\backslash
+mathbb{Q}(
+\backslash
+zeta_n)
+\backslash
+cdot 
+\backslash
+mathbb{Q}(
+\backslash
+zeta_m)
+\backslash
+stackrel{
+\backslash
+text{i)}}{=}
+\backslash
+mathbb{Q}(
+\backslash
+zeta_{nm}) & 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+     
+\backslash
+mathbb{Q}(
+\backslash
+zeta_n) &  & 
+\backslash
+mathbb{Q}(
+\backslash
+zeta_m) 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+      & E:=
+\backslash
+mathbb{Q}(
+\backslash
+zeta_n)
+\backslash
+cap 
+\backslash
+mathbb{Q}(
+\backslash
+zeta_m) & 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+      & 
+\backslash
+mathbb{Q} &
+\backslash
+
+\backslash
+};
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+path (m-1-2) edge (m-2-1) edge (m-2-3);
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+path (m-3-2) edge (m-2-1) edge (m-2-3) edge (m-4-2);
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw[font=
+\backslash
+scriptsize] (m-1-2) ..
+ controls +(left:5) and +(left:5) ..
+ node[left] {$
+\backslash
+varphi(nm)
+\backslash
+stackrel{
+\backslash
+ref{sec:Erinnerung-EulerPhi}
+\backslash
+text{ ii)}}{=}
+\backslash
+varphi(n)
+\backslash
+cdot
+\backslash
+varphi(m)$} (m-4-2);
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw[font=
+\backslash
+scriptsize] (m-2-1) ..
+ controls +( 0.5,-1) and +(-1.5,0) ..
+ node[left=2] {$
+\backslash
+varphi(n)$} (m-4-2);
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw[font=
+\backslash
+scriptsize] (m-2-3) ..
+ controls +(-0.5,-1) and +( 1.5,0) ..
+ node[right=2] {$
+\backslash
+varphi(m)$} (m-4-2);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -36305,9 +38045,182 @@ reference "sec:Kor-nmTeEinheitswurzeln"
 \end_layout
 
 \begin_layout Standard
+\noindent
+\align center
+\begin_inset ERT
+status open
 
-\color green
-TODO: Abb1 einfügen
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+matrix (m) [matrix of math nodes, row sep=3em, column sep=2em, text height=2ex,
+ text depth=0.25ex]
+\end_layout
+
+\begin_layout Plain Layout
+
+    { 
+\backslash
+text{Gal}
+\backslash
+left( 
+\backslash
+modulo{
+\backslash
+mathbb{Q}(
+\backslash
+zeta_{nm})}{
+\backslash
+mathbb{Q}} 
+\backslash
+right) & 
+\backslash
+text{Gal}
+\backslash
+left( 
+\backslash
+modulo{
+\backslash
+mathbb{Q}(
+\backslash
+zeta_{n})}{
+\backslash
+mathbb{Q}} 
+\backslash
+right) 
+\backslash
+times 
+\backslash
+text{Gal}
+\backslash
+left( 
+\backslash
+modulo{
+\backslash
+mathbb{Q}(
+\backslash
+zeta_{m})}{
+\backslash
+mathbb{Q}} 
+\backslash
+right) 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+     
+\backslash
+left(
+\backslash
+modlo{Z}{nm}
+\backslash
+right)^* & 
+\backslash
+left(
+\backslash
+modlo{Z}{n}
+\backslash
+right)^* 
+\backslash
+times 
+\backslash
+left(
+\backslash
+modlo{Z}{m}
+\backslash
+right)^* 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+     
+\backslash
+overline{a} & (a
+\backslash
+text{ mod }n, a
+\backslash
+text{ mod }m) 
+\backslash
+
+\backslash
+};
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+path[->] (m-1-1) edge node[above]{$
+\backslash
+sim$} node[below]{
+\backslash
+ref{sec:Kor-nmTeEinheitswurzeln}} (m-1-2);
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+path[->] (m-2-1) edge node[above]{$
+\backslash
+sim$} (m-2-2);
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+path[->] (m-1-1) edge node[below,rotate=90]{$
+\backslash
+sim$} node[left]{
+\backslash
+ref{sec:Satz-Einheitswurzel-Gauss}} (m-2-1);
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+path[->] (m-1-2) edge node[below,rotate=90]{$
+\backslash
+sim$} node[left]{
+\backslash
+ref{sec:Satz-Einheitswurzel-Gauss}} (m-2-2);
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+path[|->] ($(m-3-1)+(1,0)$) edge ($(m-3-2)-(1.85,0)$);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -36322,6 +38235,22 @@ Beweis
 
 \color green
 TODO: Beweis als Übung einfügen
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section

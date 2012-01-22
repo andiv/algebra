@@ -40,7 +40,7 @@
 \@ifundefined{date}{}{\date{}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
 \usepackage{tikz}
-\usetikzlibrary{matrix,arrows}
+\usetikzlibrary{matrix,arrows,calc}
 \usepackage{latexsym,stmaryrd,stackrel,array,tabularx,multirow}
 \usepackage[explicit]{titlesec}
 %\usepackage{polynom} % momentan nicht benötigt
@@ -212,6 +212,8 @@ Stand: \today}
 \fancyhead[R]{Lizenz}
 \setcounter{page}{2} % sonst gibt es aus irgendeinem Grund zweimal die Seite 1!?!?!?
 
+\vspace*{-15mm}
+
 
 \subsubsection*{ACHTUNG}
 
@@ -243,8 +245,9 @@ Free Documentation License\textquotedblright{}.
 
 \noun{Unless otherwise mutually agreed to by the parties in writing
 and to the extent not prohibited by applicable law, }\textbf{\noun{the
-copyright holders  provide the document \textquotedblleft{}as is}}\textbf{\textquotedblright{}}\textbf{\noun{
-without warranties of any kind}}\noun{, expressed, implied, statutory
+Copyright Holders and any other party, who may distribute the Document
+as permitted above,   provide the Document \textquotedblleft{}as is}}\textbf{\textquotedblright{},}\textbf{\noun{
+without warranty of any kind}}\noun{, expressed, implied, statutory
 or otherwise, including, but not limited to, the implied warranties
 of merchantability, fitness for a particular purpose, non-infringement,
 the absence of latent or other defects, accuracy, or the absence of
@@ -254,19 +257,19 @@ errors, whether or not discoverable.}
 \subsubsection*{Limitation of Liability}
 
 \textbf{\noun{In no event}}\noun{ unless required by applicable law
-or agreed to in writing }\textbf{\noun{will the copyright holders
-be liable to you for any loss}}\noun{ of revenue, profit or anything
-else, }\textbf{\noun{or for any damages}}\noun{, including, but not
-limited to, any general, special, incidental, consequential, punitive
-or exemplary damages, however caused, regardless of the theory of
-liability, arising out of or related to this license or the use of
-or inability to use the document, even if the copyright holders have
-been advised of the possibility of such damages.}
+or agreed to in writing }\textbf{\noun{will the Copyright Holders,
+or any other party, who may distribute the Document as permitted above,
+be liable to you for any damages}}\noun{, including, but not limited
+to, any general, special, incidental, consequential, punitive or exemplary
+damages, however caused, regardless of the theory of liability, arising
+out of or related to this license or any use of or inability to use
+the Document, even if they have been advised of the possibility of
+such damages.}
 
-\textbf{\noun{In no event will the copyright holders' liability to
-you}}\noun{, whether in contract, tort (including negligence), or
-otherwise, }\textbf{\noun{exceed the amount you paid the copyright
-holders}}\noun{ for the document under this agreement.}
+\textbf{\noun{In no event will the Copyright Holders'/Distributor's
+liability to you}}\noun{, whether in contract, tort (including negligence),
+or otherwise, }\textbf{\noun{exceed the amount you paid the Copyright
+Holders/Distributor}}\noun{ for the document under this agreement.}
 
 \selectlanguage{ngerman}%
 
@@ -321,12 +324,26 @@ ISBN 0-201-40751-5, Lokalisierungen: Seite 36-39
 
 \chapter{Gruppentheorie I}
 
-Aus der Linearen Algebra I wird die Kenntnis folgender Objekte vorausgesetzt:
+Aus der Linearen Algebra wird die Kenntnis der Definition folgender
+Begriffe vorausgesetzt:
 \begin{itemize}
-\item Gruppen,
-\item die Permutationsgruppe $\Sigma\left(X\right)$ (für eine Menge $X$)
-und
-\item Untergruppen (Abkürzung: UG).
+\item Quantoren, insbesondere der Existenzquantor $\exs$ und der Allquantor
+$\fall$,
+\item (disjunkte) Mengen,
+\item (endliche, abelsche) Gruppen,
+\item (echte) Untergruppen (Abkürzung: UG),
+\item Abbildungen, insbesondere die Identitätsabbildung $\text{id}_{X}$
+einer Menge $X$, und deren Komposition,
+\item Injektivität, Surjektivität, Bijektivität,
+\item die natürlichen Zahlen $\mathbb{N}$, die ganzen Zahlen $\mathbb{Z}$
+und die rationalen Zahlen $\mathbb{Q}$,
+\item die Restklassenringe $\modlo{Z}{n}$ für $n\in\mathbb{N}$,
+\item die Permutationsgruppe $\Sigma\left(X\right)$ für eine Menge $X$,
+insbesondere $S_{n}:=\Sigma\left(\left\{ 1,\ldots,n\right\} \right)$,
+\item Äquivalenzrelationen,
+\item Körper $k$ und die Gruppe der invertierbaren $n\times n$-Matrizen
+$\text{Gl}_{n}\left(k\right)$ für $n\in\mathbb{N}_{\ge1}$ und
+\item Primzahlen $p\in\mathbb{Z}$.
 \end{itemize}
 
 \section{Definition \textmd{(Gruppenhomomorphismus)}}
@@ -471,7 +488,7 @@ bijektiv.
 
 \subsubsection*{Beweis}
 
-Lineare Algebra I
+\textcolor{green}{TODO: Beweis aus Linearer Algebra I einfügen}
 
 \qqed
 
@@ -613,7 +630,7 @@ von $\left|G\right|$.
 \section{Beispiel\textmd{ (Symmetrische und alternierende Gruppe vom Grad
 3)\label{sec:Bsp-sym3}}}
 
-Sei $S_{3}=\Sigma\left\{ 1,2,3\right\} $. Dann sind 
+Sei $S_{3}=\Sigma\left(\left\{ 1,2,3\right\} \right)$. Dann sind
 \begin{align}
 A_{3} & :=\left\{ \sigma\in S_{3}|\text{sgn}\left(\sigma\right)=1\right\} =\left\{ 1,\underbrace{\left(\begin{array}{ccc}
 1 & 2 & 3\\
@@ -683,7 +700,7 @@ g\in G,h\in\ker\left(\varphi\right) & \Rightarrow\varphi\left(ghg^{-1}\right)=\v
 {\small %DATE: Fr 21.10.2011}{\small \par}
 
 
-\section{Beispiel und Definition\textmd{ (Zentrum)}}
+\section{Beispiel und Definition\textmd{ (Zentrum)\label{sec:BuD-Zentrum}}}
 
 Ist $G$ eine Gruppe, so ist ${\displaystyle Z\left(G\right):=\left\{ g\in G\left|\fall_{h\in G}gh=hg\right.\right\} \unlhd G}$
 ein Normalteiler, das \emph{Zentrum von $G$}.
@@ -696,7 +713,7 @@ ein Normalteiler, das \emph{Zentrum von $G$}.
 \item $G=Z\left(G\right)\Leftrightarrow G$ ist abelsch.
 \end{itemize}
 
-\subsubsection*{Beweis zu \thesubsection}
+\subsubsection*{Beweis zu {\ref{sec:BuD-Zentrum}}}
 
 Für die Abbildung $\phi:G\rightarrow\text{Aut}\left(G\right)$ aus
 \ref{sec:BuD-AutGrup} sieht man leicht, dass $\ker\left(\phi\right)=Z\left(G\right)$
@@ -788,7 +805,7 @@ Dann sind äquivalent:
 \iii ${\displaystyle \exsg_{\text{Grphom. }\overline{\varphi}:\moduloScript{G}{N}\to G'}}\varphi=\overline{\varphi}\circ\pi$ 
 
 
-\subsubsection*{Skizze}
+\subsubsection*{Kommutatives Diagramm}
 
 \noindent \begin{center}
 \begin{tikzpicture}
@@ -879,8 +896,10 @@ Nach \ref{sec:Kor-HomSatzIso} existiert ein Isomorphismus ${\displaystyle \modul
 Damit ist $\text{ker}\left(\varphi\right)\subseteq\mathbb{Z}$ eine
 Untergruppe vom Index $\left|G\right|=p$.
 
-Nach der Vorlesung lineare Algebra I folgt $\text{ker}\left(\varphi\right)=p\mathbb{Z}$,
-also $G\stackrel{\sim}{=}\modlo{Z}{p}$.
+Es folgt $\text{ker}\left(\varphi\right)=p\mathbb{Z}$, also $G\stackrel{\sim}{=}\modlo{Z}{p}$.
+
+\textcolor{green}{TODO: Beweis für letzten Schritt aus Linearer Algebra
+I einfügen}
 
 \qqed[\ref{sec:Satz-ZpZ}]
 
@@ -994,7 +1013,7 @@ Dann ist auch $\psi:=\varphi|_{\varphi^{-1}\left(H\right)}:\varphi^{-1}\left(H\r
 ein Epimorphismus.
 
 
-\subsubsection*{Skizze}
+\subsubsection*{Kommutatives Diagramm}
 
 \noindent \begin{center}
 \begin{tikzpicture}
@@ -1409,7 +1428,7 @@ mit $\psi=f\circ\varphi$.
 \end{abclist}
 
 
-\subsubsection*{Skizze}
+\subsubsection*{Kommutatives Diagramm}
 
 \noindent \begin{center}
 \begin{tikzpicture}
@@ -1432,7 +1451,7 @@ Es gibt genau einen Ringhomomorphismus $\psi:\mathbb{Z}\to\mathbb{C}$
 und es gilt $\psi\left(\mathbb{Z}\setminus\left\{ 0\right\} \right)\subseteq\mathbb{C}^{*}$.
 
 
-\subsubsection*{Skizze}
+\subsubsection*{Kommutatives Diagramm}
 
 \noindent \begin{center}
 \begin{tikzpicture}
@@ -1801,6 +1820,8 @@ exakt.
 
 \subsubsection*{Beweis}
 
+%DATE: Di 1.11.11
+
 Betrachte das Diagramm:
 
 \noindent \begin{center}
@@ -2155,7 +2176,7 @@ auf $q=\text{ggT}\left(a_{i}\right)$, so folgt:
 \end{align*}
 \qqed[\roman{ale2})]
 
-%DATE: ???
+%DATE: Fr 4.1.11
 
 \iii Wegen $f\not=0$ gilt nach \ref{sec:PuD-LemmaGauss} i) für
 alle $p\in\mathcal{P}$ schon $\nu_{p}\left(f\right)\not=\infty$.
@@ -2460,7 +2481,7 @@ also ist $2X\in\text{Quot}\left(R\right)\left[X\right]=\mathbb{Q}\left[X\right]$
 irreduzibel, aber $2X\in\mathbb{Z}\left[X\right]$ ist nicht irreduzibel,
 vergleiche \ref{sec:Bsp-Prim}. (Hier ist $f$ nicht primitiv.)
 
-%DATE 11.11.2011
+%DATE: Fr 11.11.2011
 
 \iii $R=\mathbb{Z},p=2,f=2X^{2}+X\in\mathbb{Z}\left[X\right]$
 
@@ -2835,7 +2856,29 @@ Für alle $n,m\in\mathbb{N}_{\ge1}$ gilt:
 Das heißt ${\displaystyle \zeta_{n}:=\text{exp}\left(\frac{2\pi\ii}{n}\right)\in\mathbb{C}^{*}}$
 hat die Ordnung $n$.
 
-\textcolor{green}{TODO: Abb 1}
+
+\subsubsection*{Skizze}
+
+\hspace*{5cm}
+\begin{tikzpicture}[x=3em,y=3em,scale=2]
+  \draw[->, thick] (-1.5,0) -- (1.5,0) node[right]{Re$(z)$};
+  \draw[->, thick] (0,-1.5) -- (0,1.5) node[above]{Im$z$};
+
+  \draw[domain=0:2*pi,smooth,variable=\t] plot ({cos(\t r)},{sin(\t r)});
+
+  \draw [fill=black] (0,0) -- ({cos(2*pi/6 r)},{sin(2*pi/6 r)}) circle (0.04) node[above right]{$\zeta_{6}$};
+  \draw [fill=black] (0,0) -- (1,0) circle (0.04) node[above right]{$\zeta_{6}^6=1$};
+  \draw [fill=black] (0,0) -- (-1,0) circle (0.04) node[above left]{$\zeta_{6}^3=-1$};
+  \foreach \x in {2,4,5}
+    \draw [fill=black] (0,0) -- ({cos(2*pi/6*\x r)},{sin(2*pi/6*\x r)}) circle (0.04) node[label={60*\x}:$\zeta_{6}^{\x}$] {};
+
+  \draw (0.5,0) arc (0:60:0.5) node[below=7]{$\frac{2\pi}{6}$};
+
+  \draw (-1,0.1) -- (-1,-0.1) node[below, fill=white] {$-1$};
+  \draw ( 1,0.1) -- ( 1,-0.1) node[below, fill=white] {$1$};
+  \draw (0.1,-1) -- (-0.1,-1) node[anchor=east, fill=white] {$-\ii$};
+  \draw (0.1, 1) -- (-0.1, 1) node[anchor=east, fill=white] {$\ii$};
+\end{tikzpicture}
 
 
 \subsubsection*{Beweis}
@@ -2907,9 +2950,23 @@ ein Unterring, also ist $\modulo{\mathbb{Z}}{\left(p\right)}$ ein
 Integritätsring, womit aus der linearen Algebra II schon $p=0$ oder
 $p>0$ ist eine Primzahl folgt.
 
-\iii Ist in i) $R=k$ ein Körper, so erhalte den Ringhomomorphismus: 
+\qqed[\roman{ale2})]
 
-\textcolor{green}{TODO: Abb 2}
+\iii Ist in i) $R=k$ ein Körper, so erhalte mit
+\begin{align*}
+Q & :=\text{Quot}\left(\modulo{\mathbb{Z}}{\left(p\right)}\right)
+\end{align*}
+den Ringhomomorphismus:
+
+\noindent \begin{center}
+\begin{tikzpicture}
+  \matrix (m) [matrix of math nodes, row sep=3em, column sep=1em, text height=2ex, text depth=0.25ex]
+    { \modulo{\mathbb{Z}}{(p)} & & R=k \\ & Q  & \\ };
+  \path[right hook->,font=\scriptsize] (m-1-1) edge (m-1-3);
+  \path[right hook->,font=\scriptsize] ($(m-1-1) - (0,0.4)$) edge (m-2-2);
+  \path[right hook->,font=\scriptsize] (m-2-2) edge node[right]{$\exsg$} (m-1-3);
+\end{tikzpicture}
+\par\end{center}
 
 Es ist klar, dass $Q\subseteq k$ der kleinste Teilkörper ist, und
 man erhält für 
@@ -2917,15 +2974,31 @@ man erhält für
 p=0: & \,\, Q\stackrel{\sim}{=}\text{Quot}\bigg(\underbrace{\modulo{\mathbb{Z}}{\left(p\right)}}_{\stackrel{\sim}{=}\mathbb{Z}}\bigg)\stackrel{\sim}{=}\mathbb{Q}\\
 p>0: & \,\, Q\stackrel{\sim}{=}\text{Quot}\bigg(\underbrace{\modulo{\mathbb{Z}}{\left(p\right)}}_{\stackrel{\sim}{=}\mathbb{F}_{p}}\bigg)\stackrel{\sim}{=}\mathbb{F}_{p}
 \end{align*}
-Es folgt $\text{char}\left(k\right)=\text{char}\left(E\right)$, denn
-$k\hookrightarrow E$ ist injektiv.
-
-TODO: Abb Homsatz 5.1
-
 \end{iiilist}
+
+\qqed
 
 
 \section{Bemerkung und Definition \textmd{(Körpererweiterung)}}
+
+Eine \emph{Körpererweiterung} ist ein injektiver Ringhomomorphismus
+$k\hookrightarrow E$, bei dem $k$ und $E$ Körper sind.
+
+
+\subsubsection*{Kommutatives Diagramm}
+
+\noindent \begin{center}
+\begin{tikzpicture}
+  \matrix (m) [matrix of math nodes, row sep=2em, column sep=1em, text height=1.5ex, text depth=0.25ex]
+    { k & & E \\ & \mathbb{Z}  & \\ };
+  \path[right hook->,font=\scriptsize] (m-1-1) edge (m-1-3);
+  \path[->,font=\scriptsize] (m-2-2) edge node[below left]{$\varphi$} (m-1-1) edge node[below right]{$\psi$} (m-1-3);
+\end{tikzpicture}
+\par\end{center}
+
+Daraus folgt $\text{ker}\left(\varphi\right)=\text{ker}\left(\psi\right)$
+und daher gilt $\text{char}\left(k\right)=\text{char}\left(E\right)$,
+denn $k\hookrightarrow E$ ist injektiv.
 
 Für den Ringhomomorphismus von Integritätsringen $\mathbb{Z}\rightarrow\mathbb{F}_{p}$
 gilt:
@@ -2933,11 +3006,6 @@ gilt:
 \text{char}\left(\mathbb{Z}\right)=0 & \not=p=\text{char}\left(\mathbb{F}_{p}\right)
 \end{align*}
 
-
-Eine \emph{Körpererweiterung} ist ein injektiver Ringhomomorphismus
-$k\hookrightarrow E$, bei dem $k$ und $E$ Körper sind.
-
-\textcolor{green}{TODO: Abb 3}
 
 
 \section{Proposition und Definition \textmd{(Frobenius)\label{sec:PuD-Frob}}}
@@ -2966,9 +3034,9 @@ ein Isomorphismus.
 
 \begin{iiilist}
 
-\iii Die Aussage ist bekannt.
+\iii \textcolor{green}{TODO: Beweis einfügen}
 
-\textcolor{green}{TODO: Woher?}
+\qqed[\roman{ale2})]
 
 \iii Klar sind
 \begin{align*}
@@ -2984,8 +3052,12 @@ Damit ist $\text{Frob}_{k}:k\rightarrow k$ ein Ringhomomorphismus,
 und $\text{Frob}_{k}\left(x\right)=x^{p}=0$ $\stackrel{k\text{ Körper}}{\Leftrightarrow}$
 $x=0$, also ist $\text{Frob}_{k}$ injektiv.
 
+\qqed[\roman{ale2})]
+
 \iii Jede injektive Selbstabbildung, wie zum Beispiel $\text{Frob}_{k}$,
 einer endlichen Menge, wie zum Beispiel $k$, ist surjektiv.
+
+\qqed[\roman{ale2})]\ 
 
 \iii \quotedblbase{}$\Leftarrow$\textquotedblleft{}: Für alle $x\in\mathbb{F}_{p}$
 gilt:
@@ -3037,7 +3109,9 @@ Ein Körper $K$ mit $k\subseteq K\subseteq E$ heißt \emph{Zwischenkörper
 
 \subsubsection*{Beweis}
 
-\textcolor{green}{TODO: Wo?}
+\textcolor{green}{TODO: Beweis einfügen}
+
+\qqed
 
 
 \section{Definition \textmd{(Grad)}}
@@ -3099,7 +3173,9 @@ eine Primzahl, so folgt $E=K$ oder $E=k$.
 
 \subsubsection*{Beweis}
 
-\textcolor{green}{TODO: Einfügen}
+\textcolor{green}{TODO: Beweis einfügen}
+
+\qqed
 
 
 \section{Beispiel \textmd{(Verfahren von Kronecker)\label{sec:Bsp-VvKronecker}}}
@@ -3235,7 +3311,7 @@ Jede endliche Körpererweiterung ist algebraisch.
 
 Dies wurde in der Linearen Algebra II gezeigt. (Satz von Cayley-Hamilton)
 
-\textcolor{green}{TODO: Beweis ergänzen}
+\textcolor{green}{TODO: Beweis einfügen}
 
 \qqed
 
@@ -3875,7 +3951,7 @@ Insbesondere gilt für alle $\alpha\in k$:
 \begin{align*}
 f\left(\alpha\right)=0 & \Rightarrow f^{\sigma}\left(\sigma\left(\alpha\right)\right)=0
 \end{align*}
-
+%DATE: Fr 25.11.2011
 
 
 \section{Lemma\label{sec:Lem-homkalg}}
@@ -3897,7 +3973,17 @@ Insbesondere gilt:
 \begin{align*}
 \left|\text{Hom}_{k\text{-Alg.}}\left(k\left(\alpha\right),L\right)\right| & \le\left[k\left(\alpha\right):k\right]
 \end{align*}
-\textcolor{green}{TODO: Abb einfügen}
+
+
+\noindent \begin{center}
+\begin{tikzpicture}
+  \matrix (m) [matrix of math nodes, row sep=2em, column sep=2em, text height=1.5ex, text depth=0.25ex]
+    { k(\alpha) & & L \\ & k & \\ };
+  \path[right hook->,font=\scriptsize] (m-2-2) edge (m-1-1) edge (m-1-3);
+  \path[->,font=\scriptsize,dashed] (m-1-1) edge (m-1-3);
+  \node at ($(m-1-3) + (1.5,-0.5)$) {$\Leftrightarrow \quad f^{\sigma}\left(\beta\right)=0$};
+\end{tikzpicture}
+\par\end{center}
 
 
 \subsubsection*{Beweis}
@@ -4182,10 +4268,10 @@ so, dass $\modulo{E}{k}$ ein Zerfällungskörper von $F$ ist.
 
 In diesem Fall heißt $\modulo{E}{k}$ \emph{normal}.
 
-%DATE ???
+%DATE: Di 29.11.2011
 
 
-\subsubsection*{Beweis von \ref{sec:SuD-normKE}}
+\subsubsection*{Beweis}
 \begin{itemize}
 \item i) $\Rightarrow$ iii): Da $f$ über $\overline{E}$ in Linearfaktoren
 zerfällt, zeige nur:
@@ -4200,8 +4286,14 @@ Nach \ref{sec:Bsp-VvKronecker} i) folgt, dass es einen $k$-Isomorphismus
 $\varphi:k\left(\alpha\right)\stackrel{\sim}{\to}k\left(\beta\right)$
 mit $\varphi\left(\alpha\right)=\beta$ gibt.\\
 Betrachte $k\left(\alpha\right)\stackrel{\sim}{\to}k\left(\beta\right)\subseteq E$:\\
-\textcolor{green}{TODO: Abb1}\\
-Es folgt:
+\hspace*{5cm}
+\begin{tikzpicture}
+  \matrix (m) [matrix of math nodes, row sep=3em, column sep=3em, text height=2ex, text depth=0.25ex]
+    { k(\alpha) & k(\beta)\subseteq \overline{E} \\ E  & \\ };
+  \path[->,font=\scriptsize] (m-1-1) edge node[below] {$ \varphi $} node[above] {$ \sim $} (m-1-2);
+  \path[right hook->,font=\scriptsize] (m-1-1) edge (m-2-1);
+  \path[->,font=\scriptsize,dashed] (m-2-1) edge node[below right] { $\exsg \overline{\sigma}$ (vergleiche \ref{sec:Lem-homkalg})} (m-1-2); 
+\end{tikzpicture} \\Es folgt:
 \begin{align*}
 \beta & =\varphi\left(\alpha\right)\stackrel{\left(*\right)}{=}\overline{\sigma}\left(\alpha\right)\in\overline{\sigma}\left(E\right)\stackrel{\text{i)}}{=}E
 \end{align*}
@@ -4418,7 +4510,29 @@ Bemerkung \ref{sec:Bem-zetan}) sind $\alpha,\alpha\zeta,\alpha\zeta^{2}\in\mathb
 paarweise verschieden, also \emph{alle} Nullstellen von $X^{3}-2$
 in $\mathbb{C}$.
 
-\textcolor{green}{TODO: Abb 2}
+
+\subsubsection*{Skizze}
+
+\noindent \begin{center}
+\begin{tikzpicture}[x=3em,y=3em,scale=2]
+  \draw[->, thick] (-1.7,0) -- (1.7,0) node[right]{Re$(z)$};
+  \draw[->, thick] (0,-1.7) -- (0,1.7) node[above]{Im$z$};
+
+  \draw[domain=0:2*pi,smooth,variable=\t] plot ({2^(1/3)*cos(\t r)},{2^(1/3)*sin(\t r)});
+
+  \draw[fill=black] (0,0) -- ({2^(1/3)*cos(2*pi/3 r)},{2^(1/3)*sin(2*pi/3 r)}) circle (0.04) node[above]{$\alpha\zeta$};
+  \draw[fill=black] (0,0) -- ({2^(1/3)*cos(2*pi/3*2 r)},{2^(1/3)*sin(2*pi/3*2 r)}) circle (0.04) node[below]{$\alpha\zeta^2$};
+  \draw[fill=black] (0,0) -- ({2^(1/3)},0) circle (0.04) node[above right=2]{$\alpha=\alpha\zeta^3$};
+
+  \draw[densely dotted] ({2^(1/3)},0) -- ({2^(1/3)*cos(2*pi/3 r)},{2^(1/3)*sin(2*pi/3 r)}) -- ({2^(1/3)*cos(2*pi/3*2 r)},{2^(1/3)*sin(2*pi/3*2 r)}) -- cycle;
+
+  \draw (-1,0.1) -- (-1,-0.1) node[below, fill=white] {$-1$};
+  \draw ({2^(1/3)},0.1) -- ({2^(1/3)},-0.1) node[below, fill=white] {$\sqrt[3]{2}$};
+  \draw ( 1,0.1) -- ( 1,-0.1) node[below, fill=white] {$1$};
+  \draw (0.1,-1) -- (-0.1,-1) node[anchor=east] {$-\ii$};
+  \draw (0.1, 1) -- (-0.1, 1) node[anchor=east] {$\ii$};
+\end{tikzpicture}
+\par\end{center}
 
 Für die normale Hülle $E'$ von $E$ in $\mathbb{C}$ folgt mit \ref{sec:SuD-Konj}
 iii):
@@ -4430,7 +4544,17 @@ $\zeta=\frac{\alpha\zeta}{\alpha}$.)
 
 Es gilt $\left[E':\mathbb{Q}\right]=6$:
 
-\textcolor{green}{TODO: Abb3}
+\noindent \begin{center}
+\begin{tikzpicture}
+  \matrix (m) [matrix of math nodes, row sep=2em, column sep=1em, text height=1.5ex, text depth=0.25ex]
+    { & E'=\mathbb{Q}(\alpha,\zeta) & \\
+     \mathbb{Q}(\alpha)=E & & \mathbb{Q}(\zeta) \\
+      &  k=\mathbb{Q} & \\};
+  \path[font=\scriptsize] (m-2-1) edge node[above] {2} (m-1-2) edge node[above] {3} (m-3-2);
+  \path[font=\scriptsize] (m-2-3) edge node[above] {3} (m-1-2) edge node[above] {2} (m-3-2);
+  \path[font=\scriptsize] (m-1-2) edge node[right] {6} (m-3-2);
+\end{tikzpicture}
+\par\end{center}
 
 
 \chapter{Separabilität}
@@ -4918,7 +5042,7 @@ iii) \quotedblbase{}$\Leftarrow$\textquotedblleft{}).
 
 \qqed
 
-%DATE: 6.12.2011
+%DATE: Di 6.12.2011
 
 
 \section{Korollar \textmd{(Transitivität der Separabilität)\label{sec:Kor-sepTransitiv}}}
@@ -5259,13 +5383,13 @@ Dies wird zu $\left|\mathbb{F}_{q'}\right|=q'$.
 
 \qqed
 
-%DATE: 
+%DATE: Fr 9.12.2011
 
 
 \chapter{Galoistheorie}
 
 
-\section{Definition \textmd{(galoissche Körpererweiterung, Galoisgruppe)\label{sec:Def-Galoisgruppe}}}
+\section{Proposition und Definition \textmd{(galoissch, Galoisgruppe)\label{sec:Def-Galoisgruppe}}}
 
 Eine algebraische Körpererweiterung $E\supseteq k$ heißt genau dann
 \emph{galoissch}, wenn $\modulo{E}{k}$ normal und separabel ist.
@@ -5277,7 +5401,12 @@ In diesem Fall heißt
 \end{align*}
 \emph{die Galoisgruppe von }$\modulo{E}{k}$.
 
+
+\subsubsection*{Beweis}
+
 \textcolor{green}{TODO: Beweis von Blatt 8 Aufgabe 2 einfügen}
+
+\qqed
 
 
 \section{Beispiel und Definition \textmd{(Galoisgruppe von $f$)}\label{sec:BuD-Galoisgruppe}}
@@ -5690,7 +5819,7 @@ Insbesondere ist also $E^{G}=E\supsetneq k$ und:
 
 \end{iiilist}
 
-%DATE: 
+%DATE: Di 13.12.2011
 
 
 \section{Satz \textmd{(Hauptsatz der Galoistheorie)\label{sec:Satz-HSGaloistheorie}}}
@@ -5864,9 +5993,25 @@ $H_{1}$ und $H_{2}$ erzeugte Untergruppe ist.
 \end{iiilist}
 
 
-\subsubsection*{Bildchen}
+\subsubsection*{Skizze}
 
-\textcolor{green}{TODO: Abb1}
+\noindent \begin{center}
+\begin{tikzpicture}
+  \matrix (m) [matrix of math nodes, row sep=2em, column sep=2em, text height=1.5ex, text depth=0.25ex]
+    { & E & \\
+      & K_1\cdot K_2 & \\
+     K_1 & & K_2 \\
+      & K_1 \cap K_2 & \\
+      &  k & \\};
+  \path[font=\scriptsize] (m-1-2) edge node[right] {$H_1 \cap H_2$} (m-2-2);
+  \draw[font=\scriptsize] (m-1-2) .. controls +(right:2) and +(up:2) .. node[right] {$H_2$} (m-3-3);
+  \draw[font=\scriptsize] (m-1-2) .. controls +(left:2) and +(up:2) .. node[left] {$H_1$} (m-3-1);
+  \draw[font=\scriptsize] (m-1-2) .. controls +(4,1) and +(right:4) .. node[right] {$G$} (m-5-2);
+  \draw[font=\scriptsize] (m-1-2) .. controls +(-4,1) and +(left:4) .. node[left] {$\left<H_1,H_2\right>$} (m-4-2);
+  \path (m-2-2) edge (m-3-1) edge (m-3-3);
+  \path (m-4-2) edge (m-5-2) edge (m-3-1) edge (m-3-3);
+\end{tikzpicture}
+\par\end{center}
 
 
 \subsubsection*{Bemerkung}
@@ -5961,9 +6106,30 @@ ist ein Zerfällungskörper von $f$ und die Abbildung
 ist wohldefiniert und ein Gruppenisomorphismus.
 
 Aus der linearen Algebra I ist folgendes \emph{Untergruppen-Diagramm}
-der $S_{3}$ bekannt:
+der $S_{3}$ mit
+\begin{align*}
+H_{0} & :=\left\langle \tau_{0}:=\left(\begin{array}{cc}
+\alpha\zeta & \alpha\zeta^{2}\end{array}\right)\right\rangle  & H_{1} & :=\left\langle \tau_{1}:=\left(\begin{array}{cc}
+\alpha & \alpha\zeta^{2}\end{array}\right)\right\rangle  & H_{2} & :=\left\langle \tau_{2}:=\left(\begin{array}{cc}
+\alpha & \alpha\zeta\end{array}\right)\right\rangle 
+\end{align*}
+\begin{align*}
+A_{3} & :=\left\langle \left(\begin{array}{ccc}
+\alpha & \alpha\zeta & \alpha\end{array}\zeta^{2}\right)\right\rangle 
+\end{align*}
+bekannt:
 
-\textcolor{green}{TODO: Abb2 einfügen}
+\noindent \begin{center}
+\begin{tikzpicture}
+  \matrix (m) [matrix of math nodes, row sep=1.3em, column sep=.7em, text height=1.5ex, text depth=0.25ex]
+    { & \Sigma(\mathcal{N})\stackrel{\sim}{=}S_3 & & \\
+     A_3 & H_2 & H_1 & H_0 \\
+      & \{e\} & & \\};
+  \path[font=\scriptsize] (m-1-2) -- node[label=above left:$\modloScript{Z}{2}\hspace*{0.5em}$ ,rotate=45] {$\unlhd\hspace*{0.5em}$} (m-2-1);
+  \path (m-1-2) edge (m-2-2) edge (m-2-3) edge (m-2-4);
+  \path (m-3-2) edge (m-2-1) edge (m-2-2) edge (m-2-3) edge (m-2-4);
+\end{tikzpicture}
+\par\end{center}
 
 $A_{3}\unlhd S_{3}$ ist der einzige nicht-triviale Normalteiler und
 es gilt:
@@ -5992,11 +6158,19 @@ E & =E^{\left\{ e\right\} }=\mathbb{Q}\left(\alpha,\zeta\right)
 Aus \ref{sec:Satz-HSGaloistheorie} und \ref{sec:Satz-UG-KE-Entsprechung}
 folgt daraus folgendes Diagramm von Zwischenkörpern:
 
-\textcolor{green}{TODO: Abb 4}
+\noindent \begin{center}
+\begin{tikzpicture}
+  \matrix (m) [matrix of math nodes, row sep=2.5em, column sep=1em, text height=1.5ex, text depth=0.25ex]
+    { & E=E^{\{e\}}=\mathbb{Q}(\alpha,\zeta) & & \\
+     E^{A_3}=\mathbb{Q}(\zeta) & E^{H_2}=\mathbb{Q}(\alpha\zeta^2) & E^{H_1}=\mathbb{Q}(\alpha\zeta) & E^{H_0}=\mathbb{Q}(\alpha) \\
+      & E^{S_3}=\mathbb{Q} & & \\};
+  \path (m-2-1) edge (m-1-2);
+  \path (m-2-1) edge node[below left]{$\modloScript{Z}{2}$} (m-3-2);
+  \path[font=\scriptsize] (m-3-2) edge node[left]{3} (m-2-2) edge node[above left]{3} (m-2-3) edge node[below right]{3} (m-2-4);
+  \path[font=\scriptsize] (m-1-2) edge node[left]{$\modloScript{Z}{2}$} (m-2-2) edge node[left=2]{$\modloScript{Z}{2}$} (m-2-3) edge node[above right]{$\modloScript{Z}{2}$} (m-2-4);
+\end{tikzpicture}
+\par\end{center}
 
-\begin{align*}
-(\mathbb{Q}\left(\zeta\right) & =E^{A_{3}})
-\end{align*}
 Weil $H_{i}\subseteq S_{3}$ nicht normal ist, ist $\modulo{\mathbb{Q}\left(\alpha\zeta^{i}\right)}{\mathbb{Q}}$
 nicht normal (vergleiche \ref{sec:Bsp-ZK}).
 
@@ -6409,7 +6583,7 @@ $f$ normiert ist, gilt $f=\text{Mipo}_{k}\left(\beta\right)$.
 
 \qqed
 
-%DATE Di 20.12.2011
+%DATE: Di 20.12.2011
 
 
 \chapter{Bestimmung einiger Galoisgruppen\label{chap:Bestimmung-einiger-Galoisgruppen}}
@@ -6938,7 +7112,7 @@ der trivialen Galoisgruppe und nicht $S_{n}$.
 \chapter{Kreisteilungskörper \textmd{(die Galoistheorie der Gleichung $X^{n}-1=0$)\label{chap:Kreisteilungsk=0000F6rper}}}
 
 
-\subsubsection*{Fixiere in \ref{chap:Kreisteilungsk=0000F6rper} (\nameref{chap:Kreisteilungsk=0000F6rper})}
+\subsubsection*{Fixiere in Kapitel \ref{chap:Kreisteilungsk=0000F6rper} (\nameref{chap:Kreisteilungsk=0000F6rper})}
 
 Sei $k$ ein Körper und $n,m\in\mathbb{N}_{\ge1}$ entweder mit $\text{char}\left(k\right)=0$
 oder $\text{char}\left(k\right)\not|\, n,m$.
@@ -6998,7 +7172,28 @@ Seien $k=\mathbb{C}$ und ${\displaystyle U_{6}=\left\langle \zeta_{6}:=\text{exp
 Dann sind genau $\zeta_{6},\zeta_{6}^{5}=\zeta_{6}^{-1}\in U_{6}$
 primitiv:
 
-\textcolor{green}{TODO: Abb1}
+\noindent \begin{center}
+\begin{tikzpicture}[x=3em,y=3em,scale=2]
+  \draw[->, thick] (-1.5,0) -- (1.5,0) node[right]{Re$(z)$};
+  \draw[->, thick] (0,-1.5) -- (0,1.5) node[above]{Im$z$};
+
+  \draw[domain=0:2*pi,smooth,variable=\t] plot ({cos(\t r)},{sin(\t r)});
+
+  \draw [fill=black] (0,0) -- ({cos(2*pi/6 r)},{sin(2*pi/6 r)}) circle (0.04) node[above right]{\framebox{$\zeta_{6}$}$=\zeta_6^{-5}=\frac{1}{2}+\frac{\ii\sqrt{3}}{2}$};
+  \draw [fill=black] (0,0) -- (1,0) circle (0.04) node[above right]{$\zeta_{6}^6=1$};
+  \draw [fill=black] (0,0) -- (-1,0) circle (0.04) node[above left]{$\zeta_{6}^3=-1$};
+  \foreach \x in {2,4}
+    \draw [fill=black] (0,0) -- ({cos(2*pi/6*\x r)},{sin(2*pi/6*\x r)}) circle (0.04) node[label={60*\x}:$\zeta_{6}^{\x}$] {};
+  \draw [fill=black] (0,0) -- ({cos(2*pi/6*5 r)},{sin(2*pi/6*5 r)}) circle (0.04) node[label={60*5}:\framebox{$\zeta_{6}^{5}$}] {};
+
+  \draw (0.5,0) arc (0:60:0.5) node[below=7]{$\frac{\pi}{3}$};
+
+  \draw (-1,0.1) -- (-1,-0.1) node[below, fill=white] {$-1$};
+  \draw ( 1,0.1) -- ( 1,-0.1) node[below, fill=white] {$1$};
+  \draw (0.1,-1) -- (-0.1,-1) node[anchor=east, fill=white] {$-\ii$};
+  \draw (0.1, 1) -- (-0.1, 1) node[anchor=east, fill=white] {$\ii$};
+\end{tikzpicture}
+\par\end{center}
 
 Es gilt:
 \begin{align*}
@@ -7436,7 +7631,20 @@ Der Rest ist klar.
 
 \iii Wir haben folgendes Körperdiagramm:
 
-\textcolor{green}{TODO: Abbildung Körperdiagramm}
+\noindent \begin{center}
+\begin{tikzpicture}
+  \matrix (m) [matrix of math nodes, row sep=2em, column sep=0em, text height=1.5ex, text depth=0.25ex]
+    { & \mathbb{Q}(\zeta_n)\cdot \mathbb{Q}(\zeta_m)\stackrel{\text{i)}}{=}\mathbb{Q}(\zeta_{nm}) & \\
+     \mathbb{Q}(\zeta_n) &  & \mathbb{Q}(\zeta_m) \\
+      & E:=\mathbb{Q}(\zeta_n)\cap \mathbb{Q}(\zeta_m) & \\
+      & \mathbb{Q} &\\};
+  \path (m-1-2) edge (m-2-1) edge (m-2-3);
+  \path (m-3-2) edge (m-2-1) edge (m-2-3) edge (m-4-2);
+  \draw[font=\scriptsize] (m-1-2) .. controls +(left:5) and +(left:5) .. node[left] {$\varphi(nm)\stackrel{\ref{sec:Erinnerung-EulerPhi}\text{ ii)}}{=}\varphi(n)\cdot\varphi(m)$} (m-4-2);
+  \draw[font=\scriptsize] (m-2-1) .. controls +( 0.5,-1) and +(-1.5,0) .. node[left=2] {$\varphi(n)$} (m-4-2);
+  \draw[font=\scriptsize] (m-2-3) .. controls +(-0.5,-1) and +( 1.5,0) .. node[right=2] {$\varphi(m)$} (m-4-2);
+\end{tikzpicture}
+\par\end{center}
 
 Dabei gelten die Grade nach \ref{sec:Satz-Einheitswurzel-Gauss}.
 
@@ -7466,7 +7674,19 @@ Also folgt wegen $\mathbb{Q}\subseteq E$ schon $E=\mathbb{Q}$.
 
 In der Situation von \ref{sec:Kor-nmTeEinheitswurzeln} ist das Diagramm
 
-\textcolor{green}{TODO: Abb1 einfügen}
+\noindent \begin{center}
+\begin{tikzpicture}
+  \matrix (m) [matrix of math nodes, row sep=3em, column sep=2em, text height=2ex, text depth=0.25ex]
+    { \text{Gal}\left( \modulo{\mathbb{Q}(\zeta_{nm})}{\mathbb{Q}} \right) & \text{Gal}\left( \modulo{\mathbb{Q}(\zeta_{n})}{\mathbb{Q}} \right) \times \text{Gal}\left( \modulo{\mathbb{Q}(\zeta_{m})}{\mathbb{Q}} \right) \\
+     \left(\modlo{Z}{nm}\right)^* & \left(\modlo{Z}{n}\right)^* \times \left(\modlo{Z}{m}\right)^* \\
+     \overline{a} & (a\text{ mod }n, a\text{ mod }m) \\};
+  \path[->] (m-1-1) edge node[above]{$\sim$} node[below]{\ref{sec:Kor-nmTeEinheitswurzeln}} (m-1-2);
+  \path[->] (m-2-1) edge node[above]{$\sim$} (m-2-2);
+  \path[->] (m-1-1) edge node[below,rotate=90]{$\sim$} node[left]{\ref{sec:Satz-Einheitswurzel-Gauss}} (m-2-1);
+  \path[->] (m-1-2) edge node[below,rotate=90]{$\sim$} node[left]{\ref{sec:Satz-Einheitswurzel-Gauss}} (m-2-2);
+  \path[|->] ($(m-3-1)+(1,0)$) edge ($(m-3-2)-(1.85,0)$);
+\end{tikzpicture}
+\par\end{center}
 
 kommutativ.
 
@@ -7474,6 +7694,8 @@ kommutativ.
 \subsubsection*{Beweis}
 
 \textcolor{green}{TODO: Beweis als Übung einfügen}
+
+\qqed
 
 
 \section{Definition \textmd{(Kreisteilungspolynom)\label{sec:Def-Kreisteilungspolynom}}}
