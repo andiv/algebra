@@ -2969,7 +2969,6 @@ Ist
 
 \begin_layout Subsubsection*
 Beweis zu 
-
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:BuD-Zentrum"
@@ -39148,7 +39147,11 @@ p & \equiv1\text{ mod }n\quad\Leftrightarrow\quad\zeta_{n}\in\mathbb{F}_{p}\subs
 \end_inset
 
 Letzteres ist äquivalent dazu, dass 
-\begin_inset Formula $\phi_{n}\left(X\right)\in\mathbb{Z}\left[X\right]$
+\begin_inset Formula $\phi_{n}\left(X\right)$
+\end_inset
+
+ aufgefasst als Polynom in 
+\begin_inset Formula $\mathbb{Z}\left[X\right]=\pi^{-1}\left(\mathbb{F}_{p}\right)\left[X\right]$
 \end_inset
 
 
@@ -39166,12 +39169,16 @@ besitzt
 , das heißt:
 \begin_inset Formula 
 \begin{align*}
-\exs_{x\in\mathbb{Z}}: & \phi_{n}\left(x\right)\equiv0\text{ mod }p
+\exs_{x\in\pi^{-1}\left(\zeta_{n}\right)\subseteq\mathbb{Z}}: & \phi_{n}\left(x\right)\equiv0\text{ mod }p
 \end{align*}
 
 \end_inset
 
+Dabei ist 
+\begin_inset Formula $\pi:\mathbb{Z}\to\mathbb{F}_{p}$
+\end_inset
 
+ die Projektionsabbildung.
 \end_layout
 
 \begin_layout Standard
@@ -39397,7 +39404,7 @@ vspace*{-8mm}
  
 \begin_inset Formula 
 \begin{align*}
-p\equiv1\text{ mod }n & \quad\Leftrightarrow\quad\left\langle \overline{p}\right\rangle =\left\{ \tau\right\} \subseteq\left(\modlo{Z}{n}\right)^{*}\\
+p\equiv1\text{ mod }n & \quad\Leftrightarrow\quad\left\langle \overline{p}\right\rangle =\left\{ 1\right\} \subseteq\left(\modlo{Z}{n}\right)^{*}\\
  & \quad\stackrel{\text{i)}}{\Leftrightarrow}\quad\text{Gal}\left(\modulo{\mathbb{F}_{p}\left(\zeta_{n}\right)}{\mathbb{F}_{p}}\right)=\left\{ 1\right\} \\
  & \!\stackrel{\phi_{n}\left(\zeta_{n}\right)=0}{\Leftrightarrow}\quad\phi_{n}\text{ besitzt eine Nullstelle in \ensuremath{\mathbb{F}_{p}}.}
 \end{align*}
@@ -39405,6 +39412,12 @@ p\equiv1\text{ mod }n & \quad\Leftrightarrow\quad\left\langle \overline{p}\right
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+
+\color green
+TODO: Restlichen Beweis einfügen
 \end_layout
 
 \begin_layout Standard
@@ -41965,7 +41978,14 @@ status open
 \begin_layout Subsection
 Satz 
 \series medium
-(Kette von Normalteilern)
+(Kette von Normalteilern) 
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Satz-KetteNormalteiler"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -43715,6 +43735,1778 @@ qqed
 \end_layout
 
 \begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+%DATE: Di 24.1.2012
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Auflösbare Gruppen
+\end_layout
+
+\begin_layout Subsection
+Definition 
+\series medium
+(auflösbar)
+\end_layout
+
+\begin_layout Standard
+Eine Gruppe 
+\begin_inset Formula $G$
+\end_inset
+
+ heißt 
+\emph on
+auflösbar
+\emph default
+, wenn es ein 
+\begin_inset Formula $r\in\mathbb{N}$
+\end_inset
+
+ und eine Kette
+\begin_inset Formula 
+\begin{align*}
+G=H_{0} & \supseteq H_{1}\supseteq\ldots\supseteq H_{r}=\left\{ e\right\} 
+\end{align*}
+
+\end_inset
+
+von Untergruppen von 
+\begin_inset Formula $G$
+\end_inset
+
+ gibt, sodass für 
+\begin_inset Formula $i\in\left\{ 1,\ldots,r\right\} $
+\end_inset
+
+ schon 
+\begin_inset Formula $H_{i}\unlhd H_{i-1}$
+\end_inset
+
+ gilt und 
+\begin_inset Formula $\modulo{H_{i}}{H_{i-1}}$
+\end_inset
+
+ zyklisch von Primzahlordnung ist.
+\end_layout
+
+\begin_layout Standard
+(Oder äquivalent, wenn 
+\begin_inset Formula $\modulo{H_{i}}{H_{i-1}}$
+\end_inset
+
+ eine endliche, abelsche Gruppe ist.)
+\end_layout
+
+\begin_layout Standard
+
+\color green
+TODO: Beweis der eingeklammerten Aussage einfügen
+\end_layout
+
+\begin_layout Subsection
+Beispiel
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Ist 
+\begin_inset Formula $G$
+\end_inset
+
+ eine endliche, abelsche Gruppe, so ist 
+\begin_inset Formula $G$
+\end_inset
+
+ auflösbar.
+\end_layout
+
+\begin_layout Subsection*
+Beweis
+\end_layout
+
+\begin_layout Standard
+Dies folgt zum Beispiel aus dem Struktursatz oder durch Induktion über die
+ Gruppenordnung.
+\end_layout
+
+\begin_layout Standard
+Beachte, dass jede, insbesondere jede zyklische, Untergruppe normal ist.
+\end_layout
+
+\begin_layout Standard
+
+\color green
+TODO: Beweis einfügen
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed[
+\backslash
+roman{ale2})]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Jede endliche 
+\begin_inset Formula $p$
+\end_inset
+
+-Gruppe ist auflösbar.
+ (siehe 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Satz-KetteNormalteiler"
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Satz
+\end_layout
+
+\begin_layout Standard
+Sei 
+\begin_inset Formula $G$
+\end_inset
+
+ eine endliche Gruppe.
+\end_layout
+
+\begin_layout Standard
+Dann gelten:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Ist 
+\begin_inset Formula $G$
+\end_inset
+
+ auflösbar, so ist auch jede Untergruppe 
+\begin_inset Formula $A$
+\end_inset
+
+ von 
+\begin_inset Formula $G$
+\end_inset
+
+ auflösbar.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Ist 
+\begin_inset Formula $G$
+\end_inset
+
+ auflösbar und 
+\begin_inset Formula $N\unlhd G$
+\end_inset
+
+ beliebig, so ist auch die Quotientengruppe 
+\begin_inset Formula $\modulo{G}{N}$
+\end_inset
+
+ von 
+\begin_inset Formula $G$
+\end_inset
+
+ auflösbar.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Sei 
+\begin_inset Formula $N\unlhd G$
+\end_inset
+
+.
+ Sind 
+\begin_inset Formula $N$
+\end_inset
+
+ und 
+\begin_inset Formula $\modulo{G}{N}$
+\end_inset
+
+ auflösbar, so auch 
+\begin_inset Formula $G$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Beweis
+\end_layout
+
+\begin_layout Standard
+
+\color green
+TODO: Beweis als Übung einfügen
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Permutationsgruppen
+\end_layout
+
+\begin_layout Standard
+Seien 
+\begin_inset Formula $n\in\mathbb{N}$
+\end_inset
+
+, 
+\begin_inset Formula $M:=\left\{ 1,\ldots,n\right\} $
+\end_inset
+
+ und 
+\begin_inset Formula $S:=\Sigma\left(M\right)=S_{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Seien 
+\begin_inset Formula $\sigma\in S$
+\end_inset
+
+ und 
+\begin_inset Formula $H:=\left\langle \sigma\right\rangle \subseteq S$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Sei 
+\begin_inset Formula $a\in M$
+\end_inset
+
+.
+ Die Bahn 
+\begin_inset Formula $H\cdot a$
+\end_inset
+
+ nennen wir 
+\emph on
+die Bahn von 
+\begin_inset Formula $a$
+\end_inset
+
+ bezüglich 
+\begin_inset Formula $\sigma$
+\end_inset
+
+
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+Sei 
+\begin_inset Formula $H_{a}$
+\end_inset
+
+ die Standuntergruppe und 
+\begin_inset Formula $d:=\left(H:H_{a}\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Dann folgt:
+\begin_inset Formula 
+\begin{align*}
+Ha & =\left\{ \sigma,\sigma a,\sigma^{2}a,\ldots,\sigma^{d-1}\right\} 
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Definition 
+\series medium
+(Zykel)
+\end_layout
+
+\begin_layout Standard
+Ein 
+\begin_inset Formula $\varrho\in S$
+\end_inset
+
+ heißt 
+\emph on
+ein Zykel der Länge 
+\begin_inset Formula $d$
+\end_inset
+
+
+\emph default
+, wenn es 
+\begin_inset Formula $d\in\mathbb{N}_{\ge1}$
+\end_inset
+
+ verschiedene Elemente 
+\begin_inset Formula $a_{1},\ldots,a_{d}\in M$
+\end_inset
+
+ mit:
+\begin_inset Formula 
+\begin{align}
+\varrho a_{i} & =a_{i+1} &  & \text{ für }1\le i\le d\label{eq:rho}\\
+\varrho a_{d} & =a_{1}\nonumber \\
+\varrho a & =a &  & \text{ für alle }a\in M\setminus\left\{ a_{1},\ldots,a_{d}\right\} \nonumber 
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Notation
+\end_layout
+
+\begin_layout Standard
+Zu 
+\begin_inset Formula $d$
+\end_inset
+
+ verschiedenen Elementen 
+\begin_inset Formula $a_{1},\ldots,a_{d}\in M$
+\end_inset
+
+ gibt es genau ein 
+\begin_inset Formula $\varrho\in S$
+\end_inset
+
+ mit 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:rho"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Dieser Zykel wir mit 
+\begin_inset Formula $\varrho=\left(\begin{array}{cccc}
+a_{1} & a_{2} & \ldots & a_{d}\end{array}\right)$
+\end_inset
+
+ bezeichnet.
+\end_layout
+
+\begin_layout Subsection
+Bemerkung
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Bem-Zykel"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Es gilt:
+\begin_inset Formula 
+\begin{align*}
+\left(\begin{array}{cccc}
+a_{1} & a_{2} & \ldots & a_{d}\end{array}\right) & =\left(\begin{array}{ccccc}
+a_{2} & a_{3} & \ldots & a_{d} & a_{1}\end{array}\right)=\ldots=\left(\begin{array}{cccc}
+a_{d} & a_{1} & \ldots & a_{d-1}\end{array}\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Ein Zykel der Länge 
+\begin_inset Formula $d$
+\end_inset
+
+ hat die Ordnung 
+\begin_inset Formula $d$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Für 
+\begin_inset Formula $\tau\in S$
+\end_inset
+
+ gilt:
+\begin_inset Formula 
+\begin{align*}
+\tau\left(\begin{array}{cccc}
+a_{1} & a_{2} & \ldots & a_{d}\end{array}\right)\tau^{-1} & =\left(\begin{array}{cccc}
+\tau a_{1} & \tau a_{2} & \ldots & \tau a_{d}\end{array}\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\color green
+TODO: Beweis einfügen
+\end_layout
+
+\begin_layout Subsection
+Definition
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Für 
+\begin_inset Formula $\sigma\in S$
+\end_inset
+
+ definiere:
+\begin_inset Formula 
+\begin{align*}
+W\left(\sigma\right) & :=\left\{ a\in M|\sigma a\not=a\right\} 
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Die Elemente 
+\begin_inset Formula $\sigma,\tau\in S$
+\end_inset
+
+ heißen 
+\emph on
+disjunkt
+\emph default
+, falls
+\begin_inset Formula 
+\begin{align*}
+W\left(\sigma\right)\cap W\left(\tau\right) & =\emptyset
+\end{align*}
+
+\end_inset
+
+gilt.
+ Dann gilt 
+\begin_inset Formula $\sigma\tau=\tau\sigma$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Proposition
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Prop-disjunkteZykel"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Jedes 
+\begin_inset Formula $\sigma\in S$
+\end_inset
+
+ ist darstellbar als Produkt
+\begin_inset Formula 
+\begin{align*}
+\sigma & =\varrho_{1}\cdot\varrho_{2}\cdot\ldots\cdot\varrho_{r}
+\end{align*}
+
+\end_inset
+
+von 
+\begin_inset Formula $r\in\mathbb{N}_{\ge1}$
+\end_inset
+
+ paarweise disjunkten Zykeln mit Länge 
+\begin_inset Formula $l\left(\varrho_{i}\right)$
+\end_inset
+
+ für 
+\begin_inset Formula $1\le i\le r$
+\end_inset
+
+ und es gilt:
+\begin_inset Formula 
+\begin{align*}
+\sum_{i=1}^{r}l\left(\varrho_{i}\right) & =n
+\end{align*}
+
+\end_inset
+
+Bis auf die Reihenfolge der Zykel ist diese Darstellung eindeutig.
+\end_layout
+
+\begin_layout Subsubsection*
+Beweis
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $C_{1},\ldots C_{r}$
+\end_inset
+
+ seien die verschiedenen Bahnen bezüglich 
+\begin_inset Formula $\sigma$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Für alle 
+\begin_inset Formula $1\le i\le r$
+\end_inset
+
+ gibt es einen Zykel 
+\begin_inset Formula $\varrho_{i}$
+\end_inset
+
+, sodass für alle 
+\begin_inset Formula $a\in C_{i}$
+\end_inset
+
+ gilt: 
+\begin_inset Formula 
+\begin{align*}
+\varrho_{i}a & =\sigma a
+\end{align*}
+
+\end_inset
+
+Zudem sind die 
+\begin_inset Formula $\varrho_{i}$
+\end_inset
+
+ paarweise disjunkt.
+\end_layout
+
+\begin_layout Standard
+Sei 
+\begin_inset Formula $a\in M$
+\end_inset
+
+, dann gibt es genau ein 
+\begin_inset Formula $i\in\left\{ 1,\ldots,r\right\} $
+\end_inset
+
+ mit 
+\begin_inset Formula $a\in C_{i}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Dann gilt 
+\begin_inset Formula $\varrho_{1}\varrho_{2}\ldots\varrho_{r}a=\varrho_{i}a=\sigma a$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Also ist 
+\begin_inset Formula $\sigma=\varrho_{1}\varrho_{2}\ldots\varrho_{r}$
+\end_inset
+
+.
+ Damit ist die Existenz gezeigt.
+\end_layout
+
+\begin_layout Standard
+Ist 
+\begin_inset Formula $\sigma=\gamma_{1}\gamma_{2}\ldots\gamma_{s}$
+\end_inset
+
+ mit 
+\begin_inset Formula $s\in\mathbb{N}_{>1}$
+\end_inset
+
+, paarweise disjunkten Zykeln 
+\begin_inset Formula $\gamma_{i}$
+\end_inset
+
+ für 
+\begin_inset Formula $1\le i\le s$
+\end_inset
+
+ und Länge 
+\begin_inset Formula $l\left(\gamma_{i}\right)$
+\end_inset
+
+ mit:
+\begin_inset Formula 
+\begin{align*}
+\sum_{i=1}^{s}l\left(\gamma_{i}\right) & =n
+\end{align*}
+
+\end_inset
+
+Dann sind 
+\begin_inset Formula $W\left(\gamma_{1}\right),\ldots,W\left(\gamma_{2}\right)$
+\end_inset
+
+ die Bahnen bezüglich 
+\begin_inset Formula $\sigma$
+\end_inset
+
+, also 
+\begin_inset Formula $r=s$
+\end_inset
+
+ und ohne Einschränkung 
+\begin_inset Formula $W\left(\gamma_{i}\right)=C_{i}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Dann muss auch 
+\begin_inset Formula $\gamma_{i}=\varrho_{i}$
+\end_inset
+
+ gelten.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Bemerkung
+\end_layout
+
+\begin_layout Standard
+Ist 
+\begin_inset Formula $\sigma=\varrho_{1}\ldots\varrho_{r}$
+\end_inset
+
+ mit 
+\begin_inset Formula $r\in\mathbb{N}_{\ge1}$
+\end_inset
+
+ und paarweise disjunkten Zykeln 
+\begin_inset Formula $\varrho_{i}$
+\end_inset
+
+ für 
+\begin_inset Formula $1\le i\le r$
+\end_inset
+
+, so ist 
+\begin_inset Formula $\text{ord}\left(\sigma\right)$
+\end_inset
+
+ das kleinste gemeinsame Vielfache der Längen der 
+\begin_inset Formula $\varrho_{i}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Definition 
+\series medium
+(Typ)
+\end_layout
+
+\begin_layout Standard
+Sei 
+\begin_inset Formula $\sigma\in S$
+\end_inset
+
+ mit 
+\begin_inset Formula $\sigma=\varrho_{1}\ldots\varrho_{r}$
+\end_inset
+
+ wie in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Prop-disjunkteZykel"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\sigma$
+\end_inset
+
+ besitze 
+\emph on
+den Typ
+\emph default
+ 
+\begin_inset Formula $c_{1},c_{2},\ldots,c_{n}$
+\end_inset
+
+ mit 
+\begin_inset Formula $n,c_{i}\in\mathbb{N}$
+\end_inset
+
+ für 
+\begin_inset Formula $1\le i\le n$
+\end_inset
+
+, wenn in der Zerlegung von 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ genau 
+\begin_inset Formula $c_{i}$
+\end_inset
+
+ Zyklen der Länge 
+\begin_inset Formula $i$
+\end_inset
+
+ vorkommen.
+\end_layout
+
+\begin_layout Subsection
+Proposition
+\end_layout
+
+\begin_layout Standard
+Elemente 
+\begin_inset Formula $\sigma,\sigma'\in S$
+\end_inset
+
+ sind genau dann konjugiert, wenn sie den gleichen Typ haben.
+\end_layout
+
+\begin_layout Subsubsection*
+Beweis
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\sigma=\varrho_{1}\varrho_{2}\ldots\varrho_{r}$
+\end_inset
+
+ wie in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Prop-disjunkteZykel"
+
+\end_inset
+
+ und 
+\begin_inset Formula $\tau\in S$
+\end_inset
+
+, dann folgt:
+\begin_inset Formula 
+\begin{align*}
+\tau\sigma\tau^{-1} & =\left(\tau\varrho_{1}\tau^{-1}\right)\ldots\left(\tau\varrho_{r}\tau^{-1}\right)
+\end{align*}
+
+\end_inset
+
+ist eine Zerlegung von 
+\begin_inset Formula $\tau\sigma\tau^{-1}$
+\end_inset
+
+ wie in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Prop-disjunkteZykel"
+
+\end_inset
+
+, also ist der Typ von 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ gleich dem Typ von 
+\begin_inset Formula $\tau\sigma\tau^{-1}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Seien nun 
+\begin_inset Formula $\sigma,\sigma'$
+\end_inset
+
+ vom gleichen Typ.
+\begin_inset Formula 
+\begin{align*}
+\sigma & =\varrho_{1}\ldots\varrho_{r} & \sigma' & =\varrho_{1}'\ldots\varrho_{r'}'
+\end{align*}
+
+\end_inset
+
+Wie in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Prop-disjunkteZykel"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Dann folgt 
+\begin_inset Formula $r=r'$
+\end_inset
+
+ und ohne Einschränkung ist die Länge von 
+\begin_inset Formula $\varrho_{i}$
+\end_inset
+
+ gleich der Länge von 
+\begin_inset Formula $\varrho_{i}'$
+\end_inset
+
+ für 
+\begin_inset Formula $1\le i\le r$
+\end_inset
+
+ und es gilt:
+\begin_inset Formula 
+\begin{align*}
+\varrho_{i} & =\left(\begin{array}{ccc}
+a_{1} & \ldots & a_{d}\end{array}\right) & \varrho_{i}' & =\left(\begin{array}{ccc}
+a_{1}' & \ldots & a_{d}'\end{array}\right)
+\end{align*}
+
+\end_inset
+
+Definiere:
+\begin_inset Formula 
+\begin{align*}
+\varphi_{i}:\left\{ a_{1},\ldots,a_{d}\right\}  & \to\left\{ a_{1}',\ldots,a_{d}'\right\} \\
+a_{i} & \mapsto a_{i}'
+\end{align*}
+
+\end_inset
+
+Da die 
+\begin_inset Formula $\varrho_{1},\ldots,\varrho_{r}$
+\end_inset
+
+ und 
+\begin_inset Formula $\varrho_{1}',\ldots,\varrho_{r}'$
+\end_inset
+
+ disjunkte Zykel sind, setzen sich die 
+\begin_inset Formula $\varphi_{i}$
+\end_inset
+
+ zu einer Bijektion 
+\begin_inset Formula $\tau:M\to M$
+\end_inset
+
+ zusammen.
+\end_layout
+
+\begin_layout Standard
+Mit 
+\backslash
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Bem-Zykel"
+
+\end_inset
+
+ iii) gilt:
+\begin_inset Formula 
+\begin{align*}
+\tau\sigma\tau^{-1} & =\left(\tau\varrho_{1}\tau^{-1}\right)\ldots\left(\tau\varrho_{r}\tau^{-1}\right)=\varrho_{1}'\ldots\varrho_{r}^{'}=\sigma'
+\end{align*}
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Wiederholung 
+\series medium
+(Signatur)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\text{sgn}:S & \to\left\{ \pm1\right\} 
+\end{align*}
+
+\end_inset
+
+Seien 
+\begin_inset Formula $s\in\mathbb{N}_{\ge1}$
+\end_inset
+
+, 
+\begin_inset Formula $\sigma=\tau_{1}\ldots\tau_{s}$
+\end_inset
+
+ und 
+\begin_inset Formula $\tau_{i}$
+\end_inset
+
+ für 
+\begin_inset Formula $1\le i\le s$
+\end_inset
+
+ Transpositionen, so gilt:
+\begin_inset Formula 
+\begin{align*}
+\text{sgn}\left(\sigma\right) & =\left(-1\right)^{s}
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+\left(\begin{array}{cccc}
+a_{1} & a_{2} & \ldots & a_{d}\end{array}\right) & =\left(\begin{array}{cc}
+a_{1} & a_{2}\end{array}\right)\left(\begin{array}{cc}
+a_{2} & a_{3}\end{array}\right)\ldots\left(\begin{array}{cc}
+a_{d-1} & a_{d}\end{array}\right)
+\end{align*}
+
+\end_inset
+
+Damit folgt:
+\begin_inset Formula 
+\begin{align*}
+\text{sgn}\left(\left(\begin{array}{cccc}
+a_{1} & a_{2} & \ldots & a_{d}\end{array}\right)\right) & =\left(-1\right)^{d-1}
+\end{align*}
+
+\end_inset
+
+Der Kern
+\begin_inset Formula 
+\begin{align*}
+\text{ker}\left(\text{sgn}\right) & =A_{n}
+\end{align*}
+
+\end_inset
+
+heißt 
+\emph on
+die alternierende Gruppe
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+Für 
+\begin_inset Formula $\sigma\in S$
+\end_inset
+
+ heißt 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ 
+\emph on
+gerade
+\emph default
+, falls 
+\begin_inset Formula $\sigma\in A_{n}$
+\end_inset
+
+, sonst 
+\emph on
+ungerade
+\emph default
+.
+\end_layout
+
+\begin_layout Subsection
+Lemma
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Lem-auflösbar"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Sei 
+\begin_inset Formula $n\in\mathbb{N}_{\ge5}$
+\end_inset
+
+ und 
+\begin_inset Formula $G$
+\end_inset
+
+ eine Untergruppe von 
+\begin_inset Formula $S_{4}$
+\end_inset
+
+, die jeden Zykel der Länge 3 enthält.
+\end_layout
+
+\begin_layout Standard
+Ist dann 
+\begin_inset Formula $N$
+\end_inset
+
+ ein Normalteiler von 
+\begin_inset Formula $G$
+\end_inset
+
+ mit abelscher Quotientengruppe 
+\begin_inset Formula $\modulo{G}{N}$
+\end_inset
+
+, so enthält auch 
+\begin_inset Formula $N$
+\end_inset
+
+ jeden Zykel der Länge 3.
+\end_layout
+
+\begin_layout Subsubsection*
+Beweis
+\end_layout
+
+\begin_layout Standard
+Sei 
+\begin_inset Formula $\left(abc\right)$
+\end_inset
+
+ ein Dreierzykel, so gibt es 
+\begin_inset Formula $u,v\in M\setminus\left\{ a,b,c\right\} $
+\end_inset
+
+ mit 
+\begin_inset Formula $u\not=v$
+\end_inset
+
+.
+\begin_inset Formula 
+\begin{align*}
+\sigma & :=\left(\begin{array}{ccc}
+a & c & v\end{array}\right)\\
+\varrho & :=\left(\begin{array}{ccc}
+a & b & u\end{array}\right)
+\end{align*}
+
+\end_inset
+
+Aus 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Bem-Zykel"
+
+\end_inset
+
+ iii) folgt:
+\begin_inset Formula 
+\begin{align*}
+\varrho\sigma\varrho^{-1} & =\left(\begin{array}{ccc}
+\varrho a & \varrho c & \varrho v\end{array}\right)=\left(\begin{array}{ccc}
+b & c & v\end{array}\right)
+\end{align*}
+
+\end_inset
+
+Also gilt:
+\begin_inset Formula 
+\begin{align*}
+\varrho\sigma\varrho^{-1}\sigma^{-1} & =\left(\begin{array}{ccc}
+b & c & v\end{array}\right)\left(\begin{array}{ccc}
+v & c & a\end{array}\right)=\left(\begin{array}{ccc}
+a & b & c\end{array}\right)
+\end{align*}
+
+\end_inset
+
+Also ist 
+\begin_inset Formula $\left(\begin{array}{ccc}
+a & b & c\end{array}\right)\in N$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Satz
+\end_layout
+
+\begin_layout Standard
+Die Gruppe 
+\begin_inset Formula $S_{n}$
+\end_inset
+
+ ist genau dann auflösbar, wenn 
+\begin_inset Formula $n\le4$
+\end_inset
+
+ ist.
+\end_layout
+
+\begin_layout Subsubsection*
+Beweis
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $n=1$
+\end_inset
+
+ und 
+\begin_inset Formula $n=2$
+\end_inset
+
+ sind klar.
+\end_layout
+
+\begin_layout Standard
+Sei 
+\begin_inset Formula $n=3$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+\left\{ e\right\}  & \unlhd A_{3}\unlhd S_{3}
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+\modulo{S_{3}}{A_{3}} & \stackrel{\sim}{=}\modlo{Z}{2}\\
+\modulo{A_{3}}{\left\{ e\right\} } & \stackrel{\sim}{=}A_{3}\stackrel{\sim}{=}\modlo{Z}{3}
+\end{align*}
+
+\end_inset
+
+Sei 
+\begin_inset Formula $n=4$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+V_{4} & :=\left\{ 1,\left(12\right)\left(34\right),\left(13\right)\left(24\right),\left(14\right)\left(23\right)\right\} \subseteq S_{4}
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+\left(12\right)\left(34\right)\cdot\left(13\right)\left(24\right) & =\left(14\right)\left(23\right)=\left(13\right)\left(24\right)\cdot\left(12\right)\left(34\right)\\
+\left(12\right)\left(34\right)\cdot\left(14\right)\left(23\right) & =\left(13\right)\left(24\right)=\left(14\right)\left(23\right)\cdot\left(12\right)\left(34\right)\\
+\left(13\right)\left(24\right)\cdot\left(14\right)\left(23\right) & =\left(12\right)\left(34\right)=\left(14\right)\left(23\right)\cdot\left(13\right)\left(24\right)
+\end{align*}
+
+\end_inset
+
+Daher ist 
+\begin_inset Formula $V_{4}$
+\end_inset
+
+ eine Untergruppe von 
+\begin_inset Formula $S_{4}$
+\end_inset
+
+, denn jedes Element ist sein eigenes Inverses.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $V_{4}$
+\end_inset
+
+ ist isomorph zu 
+\begin_inset Formula $\modlo{Z}{2}\times\modlo{Z}{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Wegen 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Bem-Zykel"
+
+\end_inset
+
+ iii) ist 
+\begin_inset Formula $V_{4}$
+\end_inset
+
+ ein Normalteiler in 
+\begin_inset Formula $S_{4}$
+\end_inset
+
+ und 
+\begin_inset Formula $V_{4}\subseteq A_{4}$
+\end_inset
+
+ mit 
+\begin_inset Formula $\modulo{A_{4}}{V_{4}}\stackrel{\sim}{=}\modlo{Z}{3}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Daher ist 
+\begin_inset Formula $S_{4}$
+\end_inset
+
+ auflösbar mit 
+\begin_inset Formula $\left\{ e\right\} \unlhd\left\{ e,\left(12\right)\left(34\right)\right\} \unlhd V_{4}\unlhd A_{4}\unlhd S_{4}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $n\ge5$
+\end_inset
+
+.
+ Wäre 
+\begin_inset Formula $S_{n}$
+\end_inset
+
+ auflösbar, so gäbe es eine Kette
+\begin_inset Formula 
+\begin{align*}
+G=H_{0} & \unrhd G_{1}\unrhd G_{2}\ldots\unrhd G_{m}=\left\{ e\right\} 
+\end{align*}
+
+\end_inset
+
+mit 
+\begin_inset Formula $\modulo{G_{i-1}}{G_{i}}$
+\end_inset
+
+ abelsch.
+\end_layout
+
+\begin_layout Standard
+Nach 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Lem-auflösbar"
+
+\end_inset
+
+ wäre induktiv jeder Dreierzykel in jedem 
+\begin_inset Formula $G_{i}$
+\end_inset
+
+ enthalten.
+\end_layout
+
+\begin_layout Standard
+Dies ist ein Widerspruch zu 
+\begin_inset Formula $G_{m}=\left\{ e\right\} $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Definition
+\end_layout
+
+\begin_layout Standard
+Eine Gruppe 
+\begin_inset Formula $G\not=\left\{ e\right\} $
+\end_inset
+
+ heißt 
+\emph on
+einfach
+\emph default
+, wenn 
+\begin_inset Formula $G$
+\end_inset
+
+ außer 
+\begin_inset Formula $\left\{ e\right\} $
+\end_inset
+
+ und 
+\begin_inset Formula $G$
+\end_inset
+
+ keine weiteren Normalteiler besitzt.
+\end_layout
+
+\begin_layout Subsection
+Bemerkung
+\end_layout
+
+\begin_layout Standard
+Es gilt folgender Satz: 
+\begin_inset Formula $A_{n}$
+\end_inset
+
+ ist einfach für 
+\begin_inset Formula $n\ge5$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Semidirekte Produkte
+\end_layout
+
+\begin_layout Standard
+Seien 
+\begin_inset Formula $N$
+\end_inset
+
+ und 
+\begin_inset Formula $H$
+\end_inset
+
+ Gruppen und
+\begin_inset Formula 
+\begin{align*}
+\varphi:H & \to\text{Aut}\left(N\right)
+\end{align*}
+
+\end_inset
+
+ein Homomorphismus.
+\end_layout
+
+\begin_layout Subsection
+Satz und Definition
+\end_layout
+
+\begin_layout Standard
+Die auf der Menge 
+\begin_inset Formula $N\times H$
+\end_inset
+
+ definierte Verknüpfung
+\begin_inset Formula 
+\begin{align*}
+\left(\left(n_{1},h_{1}\right),\left(n_{2},h_{2}\right)\right) & \mapsto\left(n_{1},h_{1}\right)\cdot\left(n_{2},h_{2}\right):=\left(n_{1}\cdot\varphi\left(h_{1}\right)\left(n_{2}\right),h_{1}h_{2}\right)
+\end{align*}
+
+\end_inset
+
+stattet 
+\begin_inset Formula $N\times H$
+\end_inset
+
+ mit der Struktur einer Gruppe aus.
+\end_layout
+
+\begin_layout Standard
+Sie wird als 
+\emph on
+das semidirekte Produkt 
+\begin_inset Formula $N\times_{\varphi}H$
+\end_inset
+
+ oder 
+\begin_inset Formula $N\rtimes H$
+\end_inset
+
+
+\emph default
+ bezeichnet.
+\end_layout
+
+\begin_layout Subsubsection*
+Beweis
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\left(e,e\right)$
+\end_inset
+
+ ist offensichtlich ein (links- und rechts-)neutrales Element.
+\end_layout
+
+\begin_layout Standard
+Assoziativität:
+\begin_inset Formula 
+\begin{align*}
+\left(n_{1}\varphi\left(h_{1}\right)\left(n_{2}\right),h_{1}h_{2}\right)\cdot\left(n_{3},h_{3}\right) & =\left(n_{1}\varphi\left(h_{1}\right)\left(n_{2}\right)\varphi\left(h_{1}h_{2}\right)\left(n_{3}\right),h_{1}h_{2}h_{3}\right)=\\
+ & =\left(n_{1}\varphi\left(h_{1}\right)\left(n_{2}\varphi\left(h_{2}\right)\left(n_{3}\right)\right),h_{1}h_{2}h_{3}\right)=\\
+ & =\left(n_{1},h_{1}\right)\left(n_{2}\varphi\left(h_{2}\right)\left(n_{3}\right),h_{2}h_{3}\right)
+\end{align*}
+
+\end_inset
+
+
 \begin_inset ERT
 status open
 

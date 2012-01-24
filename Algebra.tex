@@ -1,4 +1,4 @@
-%% LyX 2.0.1 created this file.  For more info, see http://www.lyx.org/.
+%% LyX 2.0.2 created this file.  For more info, see http://www.lyx.org/.
 %% Do not edit unless you really know what you are doing.
 \documentclass[11pt,english,ngerman]{report}
 \usepackage[T1]{fontenc}
@@ -713,7 +713,7 @@ ein Normalteiler, das \emph{Zentrum von $G$}.
 \item $G=Z\left(G\right)\Leftrightarrow G$ ist abelsch.
 \end{itemize}
 
-\subsubsection*{Beweis zu {\ref{sec:BuD-Zentrum}}}
+\subsubsection*{Beweis zu \ref{sec:BuD-Zentrum}}
 
 Für die Abbildung $\phi:G\rightarrow\text{Aut}\left(G\right)$ aus
 \ref{sec:BuD-AutGrup} sieht man leicht, dass $\ker\left(\phi\right)=Z\left(G\right)$
@@ -7871,12 +7871,13 @@ genau dann irreduzibel, wenn $\left\langle \overline{q}\right\rangle =\left(\mod
 \begin{align*}
 p & \equiv1\text{ mod }n\quad\Leftrightarrow\quad\zeta_{n}\in\mathbb{F}_{p}\subseteq\overline{\mathbb{F}}_{p}
 \end{align*}
-Letzteres ist äquivalent dazu, dass $\phi_{n}\left(X\right)\in\mathbb{Z}\left[X\right]$\emph{
+Letzteres ist äquivalent dazu, dass $\phi_{n}\left(X\right)$ aufgefasst
+als Polynom in $\mathbb{Z}\left[X\right]=\pi^{-1}\left(\mathbb{F}_{p}\right)\left[X\right]$\emph{
 eine Nullstelle modulo $p$} \emph{besitzt}, das heißt:
 \begin{align*}
-\exs_{x\in\mathbb{Z}}: & \phi_{n}\left(x\right)\equiv0\text{ mod }p
+\exs_{x\in\pi^{-1}\left(\zeta_{n}\right)\subseteq\mathbb{Z}}: & \phi_{n}\left(x\right)\equiv0\text{ mod }p
 \end{align*}
-
+Dabei ist $\pi:\mathbb{Z}\to\mathbb{F}_{p}$ die Projektionsabbildung.
 
 \end{iiilist}
 
@@ -7917,11 +7918,13 @@ ist äquivalent zu folgenden Aussagen:
 
 \iii \hspace*{1mm}\vspace*{-8mm} 
 \begin{align*}
-p\equiv1\text{ mod }n & \quad\Leftrightarrow\quad\left\langle \overline{p}\right\rangle =\left\{ \tau\right\} \subseteq\left(\modlo{Z}{n}\right)^{*}\\
+p\equiv1\text{ mod }n & \quad\Leftrightarrow\quad\left\langle \overline{p}\right\rangle =\left\{ 1\right\} \subseteq\left(\modlo{Z}{n}\right)^{*}\\
  & \quad\stackrel{\text{i)}}{\Leftrightarrow}\quad\text{Gal}\left(\modulo{\mathbb{F}_{p}\left(\zeta_{n}\right)}{\mathbb{F}_{p}}\right)=\left\{ 1\right\} \\
  & \!\stackrel{\phi_{n}\left(\zeta_{n}\right)=0}{\Leftrightarrow}\quad\phi_{n}\text{ besitzt eine Nullstelle in \ensuremath{\mathbb{F}_{p}}.}
 \end{align*}
 
+
+\textcolor{green}{TODO: Restlichen Beweis einfügen}
 
 \end{iiilist}
 
@@ -8484,7 +8487,7 @@ Daher ist $Z\left(G\right)\not=1$.
 %DATE: Fr 20.1.12
 
 
-\subsection{Satz \textmd{(Kette von Normalteilern)}}
+\subsection{Satz \textmd{(Kette von Normalteilern) \label{sub:Satz-KetteNormalteiler}}}
 
 Sei $G$ eine $p$-Gruppe der Ordnung $p^{m}$.
 
@@ -8874,6 +8877,442 @@ Die Behauptung folgt nun aus \ref{sub:Lem-FixpunkteModP}.
 
 \qqed
 
+%DATE: Di 24.1.2012
+
+
+\section{Auflösbare Gruppen}
+
+
+\subsection{Definition \textmd{(auflösbar)}}
+
+Eine Gruppe $G$ heißt \emph{auflösbar}, wenn es ein $r\in\mathbb{N}$
+und eine Kette
+\begin{align*}
+G=H_{0} & \supseteq H_{1}\supseteq\ldots\supseteq H_{r}=\left\{ e\right\} 
+\end{align*}
+von Untergruppen von $G$ gibt, sodass für $i\in\left\{ 1,\ldots,r\right\} $
+schon $H_{i}\unlhd H_{i-1}$ gilt und $\modulo{H_{i}}{H_{i-1}}$ zyklisch
+von Primzahlordnung ist.
+
+(Oder äquivalent, wenn $\modulo{H_{i}}{H_{i-1}}$ eine endliche, abelsche
+Gruppe ist.)
+
+\textcolor{green}{TODO: Beweis der eingeklammerten Aussage einfügen}
+
+
+\subsection{Beispiel}
+
+\begin{iiilist}
+
+\iii Ist $G$ eine endliche, abelsche Gruppe, so ist $G$ auflösbar.
+
+
+\subsection*{Beweis}
+
+Dies folgt zum Beispiel aus dem Struktursatz oder durch Induktion
+über die Gruppenordnung.
+
+Beachte, dass jede, insbesondere jede zyklische, Untergruppe normal
+ist.
+
+\textcolor{green}{TODO: Beweis einfügen}
+
+\qqed[\roman{ale2})]
+
+\iii Jede endliche $p$-Gruppe ist auflösbar. (siehe \ref{sub:Satz-KetteNormalteiler})
+
+\end{iiilist}
+
+
+\subsection{Satz}
+
+Sei $G$ eine endliche Gruppe.
+
+Dann gelten:
+
+\begin{iiilist}
+
+\iii Ist $G$ auflösbar, so ist auch jede Untergruppe $A$ von $G$
+auflösbar.
+
+\iii Ist $G$ auflösbar und $N\unlhd G$ beliebig, so ist auch die
+Quotientengruppe $\modulo{G}{N}$ von $G$ auflösbar.
+
+\iii Sei $N\unlhd G$. Sind $N$ und $\modulo{G}{N}$ auflösbar,
+so auch $G$.
+
+\end{iiilist}
+
+
+\subsubsection*{Beweis}
+
+\textcolor{green}{TODO: Beweis als Übung einfügen}
+
+\qqed
+
+
+\section{Permutationsgruppen}
+
+Seien $n\in\mathbb{N}$, $M:=\left\{ 1,\ldots,n\right\} $ und $S:=\Sigma\left(M\right)=S_{n}$.
+
+Seien $\sigma\in S$ und $H:=\left\langle \sigma\right\rangle \subseteq S$.
+
+Sei $a\in M$. Die Bahn $H\cdot a$ nennen wir \emph{die Bahn von
+$a$ bezüglich $\sigma$}.
+
+Sei $H_{a}$ die Standuntergruppe und $d:=\left(H:H_{a}\right)$.
+
+Dann folgt:
+\begin{align*}
+Ha & =\left\{ \sigma,\sigma a,\sigma^{2}a,\ldots,\sigma^{d-1}\right\} 
+\end{align*}
+
+
+
+\subsection{Definition \textmd{(Zykel)}}
+
+Ein $\varrho\in S$ heißt \emph{ein Zykel der Länge $d$}, wenn es
+$d\in\mathbb{N}_{\ge1}$ verschiedene Elemente $a_{1},\ldots,a_{d}\in M$
+mit:
+\begin{align}
+\varrho a_{i} & =a_{i+1} &  & \text{ für }1\le i\le d\label{eq:rho}\\
+\varrho a_{d} & =a_{1}\nonumber \\
+\varrho a & =a &  & \text{ für alle }a\in M\setminus\left\{ a_{1},\ldots,a_{d}\right\} \nonumber 
+\end{align}
+
+
+
+\subsection{Notation}
+
+Zu $d$ verschiedenen Elementen $a_{1},\ldots,a_{d}\in M$ gibt es
+genau ein $\varrho\in S$ mit \eqref{eq:rho}.
+
+Dieser Zykel wir mit $\varrho=\left(\begin{array}{cccc}
+a_{1} & a_{2} & \ldots & a_{d}\end{array}\right)$ bezeichnet.
+
+
+\subsection{Bemerkung\label{sub:Bem-Zykel}}
+
+\begin{iiilist}
+
+\iii Es gilt:
+\begin{align*}
+\left(\begin{array}{cccc}
+a_{1} & a_{2} & \ldots & a_{d}\end{array}\right) & =\left(\begin{array}{ccccc}
+a_{2} & a_{3} & \ldots & a_{d} & a_{1}\end{array}\right)=\ldots=\left(\begin{array}{cccc}
+a_{d} & a_{1} & \ldots & a_{d-1}\end{array}\right)
+\end{align*}
+
+
+\iii Ein Zykel der Länge $d$ hat die Ordnung $d$.
+
+\iii Für $\tau\in S$ gilt:
+\begin{align*}
+\tau\left(\begin{array}{cccc}
+a_{1} & a_{2} & \ldots & a_{d}\end{array}\right)\tau^{-1} & =\left(\begin{array}{cccc}
+\tau a_{1} & \tau a_{2} & \ldots & \tau a_{d}\end{array}\right)
+\end{align*}
+
+
+\end{iiilist}
+
+\textcolor{green}{TODO: Beweis einfügen}
+
+
+\subsection{Definition}
+
+\begin{iiilist}
+
+\iii Für $\sigma\in S$ definiere:
+\begin{align*}
+W\left(\sigma\right) & :=\left\{ a\in M|\sigma a\not=a\right\} 
+\end{align*}
+
+
+\iii Die Elemente $\sigma,\tau\in S$ heißen \emph{disjunkt}, falls
+\begin{align*}
+W\left(\sigma\right)\cap W\left(\tau\right) & =\emptyset
+\end{align*}
+gilt. Dann gilt $\sigma\tau=\tau\sigma$.
+
+\end{iiilist}
+
+
+\subsection{Proposition\label{sub:Prop-disjunkteZykel}}
+
+Jedes $\sigma\in S$ ist darstellbar als Produkt
+\begin{align*}
+\sigma & =\varrho_{1}\cdot\varrho_{2}\cdot\ldots\cdot\varrho_{r}
+\end{align*}
+von $r\in\mathbb{N}_{\ge1}$ paarweise disjunkten Zykeln mit Länge
+$l\left(\varrho_{i}\right)$ für $1\le i\le r$ und es gilt:
+\begin{align*}
+\sum_{i=1}^{r}l\left(\varrho_{i}\right) & =n
+\end{align*}
+Bis auf die Reihenfolge der Zykel ist diese Darstellung eindeutig.
+
+
+\subsubsection*{Beweis}
+
+$C_{1},\ldots C_{r}$ seien die verschiedenen Bahnen bezüglich $\sigma$.
+
+Für alle $1\le i\le r$ gibt es einen Zykel $\varrho_{i}$, sodass
+für alle $a\in C_{i}$ gilt: 
+\begin{align*}
+\varrho_{i}a & =\sigma a
+\end{align*}
+Zudem sind die $\varrho_{i}$ paarweise disjunkt.
+
+Sei $a\in M$, dann gibt es genau ein $i\in\left\{ 1,\ldots,r\right\} $
+mit $a\in C_{i}$.
+
+Dann gilt $\varrho_{1}\varrho_{2}\ldots\varrho_{r}a=\varrho_{i}a=\sigma a$.
+
+Also ist $\sigma=\varrho_{1}\varrho_{2}\ldots\varrho_{r}$. Damit
+ist die Existenz gezeigt.
+
+Ist $\sigma=\gamma_{1}\gamma_{2}\ldots\gamma_{s}$ mit $s\in\mathbb{N}_{>1}$,
+paarweise disjunkten Zykeln $\gamma_{i}$ für $1\le i\le s$ und Länge
+$l\left(\gamma_{i}\right)$ mit:
+\begin{align*}
+\sum_{i=1}^{s}l\left(\gamma_{i}\right) & =n
+\end{align*}
+Dann sind $W\left(\gamma_{1}\right),\ldots,W\left(\gamma_{2}\right)$
+die Bahnen bezüglich $\sigma$, also $r=s$ und ohne Einschränkung
+$W\left(\gamma_{i}\right)=C_{i}$.
+
+Dann muss auch $\gamma_{i}=\varrho_{i}$ gelten.
+
+\qqed
+
+
+\subsection{Bemerkung}
+
+Ist $\sigma=\varrho_{1}\ldots\varrho_{r}$ mit $r\in\mathbb{N}_{\ge1}$
+und paarweise disjunkten Zykeln $\varrho_{i}$ für $1\le i\le r$,
+so ist $\text{ord}\left(\sigma\right)$ das kleinste gemeinsame Vielfache
+der Längen der $\varrho_{i}$.
+
+
+\subsection{Definition \textmd{(Typ)}}
+
+Sei $\sigma\in S$ mit $\sigma=\varrho_{1}\ldots\varrho_{r}$ wie
+in \ref{sub:Prop-disjunkteZykel}.
+
+$\sigma$ besitze \emph{den Typ} $c_{1},c_{2},\ldots,c_{n}$ mit $n,c_{i}\in\mathbb{N}$
+für $1\le i\le n$, wenn in der Zerlegung von $\sigma$ genau $c_{i}$
+Zyklen der Länge $i$ vorkommen.
+
+
+\subsection{Proposition}
+
+Elemente $\sigma,\sigma'\in S$ sind genau dann konjugiert, wenn sie
+den gleichen Typ haben.
+
+
+\subsubsection*{Beweis}
+
+$\sigma=\varrho_{1}\varrho_{2}\ldots\varrho_{r}$ wie in \ref{sub:Prop-disjunkteZykel}
+und $\tau\in S$, dann folgt:
+\begin{align*}
+\tau\sigma\tau^{-1} & =\left(\tau\varrho_{1}\tau^{-1}\right)\ldots\left(\tau\varrho_{r}\tau^{-1}\right)
+\end{align*}
+ist eine Zerlegung von $\tau\sigma\tau^{-1}$ wie in \ref{sub:Prop-disjunkteZykel},
+also ist der Typ von $\sigma$ gleich dem Typ von $\tau\sigma\tau^{-1}$.
+
+Seien nun $\sigma,\sigma'$ vom gleichen Typ.
+\begin{align*}
+\sigma & =\varrho_{1}\ldots\varrho_{r} & \sigma' & =\varrho_{1}'\ldots\varrho_{r'}'
+\end{align*}
+Wie in \ref{sub:Prop-disjunkteZykel}.
+
+Dann folgt $r=r'$ und ohne Einschränkung ist die Länge von $\varrho_{i}$
+gleich der Länge von $\varrho_{i}'$ für $1\le i\le r$ und es gilt:
+\begin{align*}
+\varrho_{i} & =\left(\begin{array}{ccc}
+a_{1} & \ldots & a_{d}\end{array}\right) & \varrho_{i}' & =\left(\begin{array}{ccc}
+a_{1}' & \ldots & a_{d}'\end{array}\right)
+\end{align*}
+Definiere:
+\begin{align*}
+\varphi_{i}:\left\{ a_{1},\ldots,a_{d}\right\}  & \to\left\{ a_{1}',\ldots,a_{d}'\right\} \\
+a_{i} & \mapsto a_{i}'
+\end{align*}
+Da die $\varrho_{1},\ldots,\varrho_{r}$ und $\varrho_{1}',\ldots,\varrho_{r}'$
+disjunkte Zykel sind, setzen sich die $\varphi_{i}$ zu einer Bijektion
+$\tau:M\to M$ zusammen.
+
+Mit \textbackslash{}\ref{sub:Bem-Zykel} iii) gilt:
+\begin{align*}
+\tau\sigma\tau^{-1} & =\left(\tau\varrho_{1}\tau^{-1}\right)\ldots\left(\tau\varrho_{r}\tau^{-1}\right)=\varrho_{1}'\ldots\varrho_{r}^{'}=\sigma'
+\end{align*}
+\qqed
+
+
+\subsection{Wiederholung \textmd{(Signatur)}}
+
+\begin{align*}
+\text{sgn}:S & \to\left\{ \pm1\right\} 
+\end{align*}
+Seien $s\in\mathbb{N}_{\ge1}$, $\sigma=\tau_{1}\ldots\tau_{s}$ und
+$\tau_{i}$ für $1\le i\le s$ Transpositionen, so gilt:
+\begin{align*}
+\text{sgn}\left(\sigma\right) & =\left(-1\right)^{s}
+\end{align*}
+\begin{align*}
+\left(\begin{array}{cccc}
+a_{1} & a_{2} & \ldots & a_{d}\end{array}\right) & =\left(\begin{array}{cc}
+a_{1} & a_{2}\end{array}\right)\left(\begin{array}{cc}
+a_{2} & a_{3}\end{array}\right)\ldots\left(\begin{array}{cc}
+a_{d-1} & a_{d}\end{array}\right)
+\end{align*}
+Damit folgt:
+\begin{align*}
+\text{sgn}\left(\left(\begin{array}{cccc}
+a_{1} & a_{2} & \ldots & a_{d}\end{array}\right)\right) & =\left(-1\right)^{d-1}
+\end{align*}
+Der Kern
+\begin{align*}
+\text{ker}\left(\text{sgn}\right) & =A_{n}
+\end{align*}
+heißt \emph{die alternierende Gruppe}.
+
+Für $\sigma\in S$ heißt $\sigma$ \emph{gerade}, falls $\sigma\in A_{n}$,
+sonst \emph{ungerade}.
+
+
+\subsection{Lemma\label{sub:Lem-aufl=0000F6sbar}}
+
+Sei $n\in\mathbb{N}_{\ge5}$ und $G$ eine Untergruppe von $S_{4}$,
+die jeden Zykel der Länge 3 enthält.
+
+Ist dann $N$ ein Normalteiler von $G$ mit abelscher Quotientengruppe
+$\modulo{G}{N}$, so enthält auch $N$ jeden Zykel der Länge 3.
+
+
+\subsubsection*{Beweis}
+
+Sei $\left(abc\right)$ ein Dreierzykel, so gibt es $u,v\in M\setminus\left\{ a,b,c\right\} $
+mit $u\not=v$.
+\begin{align*}
+\sigma & :=\left(\begin{array}{ccc}
+a & c & v\end{array}\right)\\
+\varrho & :=\left(\begin{array}{ccc}
+a & b & u\end{array}\right)
+\end{align*}
+Aus \ref{sub:Bem-Zykel} iii) folgt:
+\begin{align*}
+\varrho\sigma\varrho^{-1} & =\left(\begin{array}{ccc}
+\varrho a & \varrho c & \varrho v\end{array}\right)=\left(\begin{array}{ccc}
+b & c & v\end{array}\right)
+\end{align*}
+Also gilt:
+\begin{align*}
+\varrho\sigma\varrho^{-1}\sigma^{-1} & =\left(\begin{array}{ccc}
+b & c & v\end{array}\right)\left(\begin{array}{ccc}
+v & c & a\end{array}\right)=\left(\begin{array}{ccc}
+a & b & c\end{array}\right)
+\end{align*}
+Also ist $\left(\begin{array}{ccc}
+a & b & c\end{array}\right)\in N$.
+
+\qqed
+
+
+\subsection{Satz}
+
+Die Gruppe $S_{n}$ ist genau dann auflösbar, wenn $n\le4$ ist.
+
+
+\subsubsection*{Beweis}
+
+$n=1$ und $n=2$ sind klar.
+
+Sei $n=3$:
+\begin{align*}
+\left\{ e\right\}  & \unlhd A_{3}\unlhd S_{3}
+\end{align*}
+\begin{align*}
+\modulo{S_{3}}{A_{3}} & \stackrel{\sim}{=}\modlo{Z}{2}\\
+\modulo{A_{3}}{\left\{ e\right\} } & \stackrel{\sim}{=}A_{3}\stackrel{\sim}{=}\modlo{Z}{3}
+\end{align*}
+Sei $n=4$:
+\begin{align*}
+V_{4} & :=\left\{ 1,\left(12\right)\left(34\right),\left(13\right)\left(24\right),\left(14\right)\left(23\right)\right\} \subseteq S_{4}
+\end{align*}
+\begin{align*}
+\left(12\right)\left(34\right)\cdot\left(13\right)\left(24\right) & =\left(14\right)\left(23\right)=\left(13\right)\left(24\right)\cdot\left(12\right)\left(34\right)\\
+\left(12\right)\left(34\right)\cdot\left(14\right)\left(23\right) & =\left(13\right)\left(24\right)=\left(14\right)\left(23\right)\cdot\left(12\right)\left(34\right)\\
+\left(13\right)\left(24\right)\cdot\left(14\right)\left(23\right) & =\left(12\right)\left(34\right)=\left(14\right)\left(23\right)\cdot\left(13\right)\left(24\right)
+\end{align*}
+Daher ist $V_{4}$ eine Untergruppe von $S_{4}$, denn jedes Element
+ist sein eigenes Inverses.
+
+$V_{4}$ ist isomorph zu $\modlo{Z}{2}\times\modlo{Z}{2}$.
+
+Wegen \ref{sub:Bem-Zykel} iii) ist $V_{4}$ ein Normalteiler in $S_{4}$
+und $V_{4}\subseteq A_{4}$ mit $\modulo{A_{4}}{V_{4}}\stackrel{\sim}{=}\modlo{Z}{3}$.
+
+Daher ist $S_{4}$ auflösbar mit $\left\{ e\right\} \unlhd\left\{ e,\left(12\right)\left(34\right)\right\} \unlhd V_{4}\unlhd A_{4}\unlhd S_{4}$.
+
+$n\ge5$. Wäre $S_{n}$ auflösbar, so gäbe es eine Kette
+\begin{align*}
+G=H_{0} & \unrhd G_{1}\unrhd G_{2}\ldots\unrhd G_{m}=\left\{ e\right\} 
+\end{align*}
+mit $\modulo{G_{i-1}}{G_{i}}$ abelsch.
+
+Nach \ref{sub:Lem-aufl=0000F6sbar} wäre induktiv jeder Dreierzykel
+in jedem $G_{i}$ enthalten.
+
+Dies ist ein Widerspruch zu $G_{m}=\left\{ e\right\} $.
+
+\qqed
+
+
+\subsection{Definition}
+
+Eine Gruppe $G\not=\left\{ e\right\} $ heißt \emph{einfach}, wenn
+$G$ außer $\left\{ e\right\} $ und $G$ keine weiteren Normalteiler
+besitzt.
+
+
+\subsection{Bemerkung}
+
+Es gilt folgender Satz: $A_{n}$ ist einfach für $n\ge5$.
+
+
+\section{Semidirekte Produkte}
+
+Seien $N$ und $H$ Gruppen und
+\begin{align*}
+\varphi:H & \to\text{Aut}\left(N\right)
+\end{align*}
+ein Homomorphismus.
+
+
+\subsection{Satz und Definition}
+
+Die auf der Menge $N\times H$ definierte Verknüpfung
+\begin{align*}
+\left(\left(n_{1},h_{1}\right),\left(n_{2},h_{2}\right)\right) & \mapsto\left(n_{1},h_{1}\right)\cdot\left(n_{2},h_{2}\right):=\left(n_{1}\cdot\varphi\left(h_{1}\right)\left(n_{2}\right),h_{1}h_{2}\right)
+\end{align*}
+stattet $N\times H$ mit der Struktur einer Gruppe aus.
+
+Sie wird als \emph{das semidirekte Produkt $N\times_{\varphi}H$ oder
+$N\rtimes H$} bezeichnet.
+
+
+\subsubsection*{Beweis}
+
+$\left(e,e\right)$ ist offensichtlich ein (links- und rechts-)neutrales
+Element.
+
+Assoziativität:
+\begin{align*}
+\left(n_{1}\varphi\left(h_{1}\right)\left(n_{2}\right),h_{1}h_{2}\right)\cdot\left(n_{3},h_{3}\right) & =\left(n_{1}\varphi\left(h_{1}\right)\left(n_{2}\right)\varphi\left(h_{1}h_{2}\right)\left(n_{3}\right),h_{1}h_{2}h_{3}\right)=\\
+ & =\left(n_{1}\varphi\left(h_{1}\right)\left(n_{2}\varphi\left(h_{2}\right)\left(n_{3}\right)\right),h_{1}h_{2}h_{3}\right)=\\
+ & =\left(n_{1},h_{1}\right)\left(n_{2}\varphi\left(h_{2}\right)\left(n_{3}\right),h_{2}h_{3}\right)
+\end{align*}
 %DATE: 
 
 
