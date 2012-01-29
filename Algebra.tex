@@ -1,4 +1,4 @@
-%% LyX 2.0.2 created this file.  For more info, see http://www.lyx.org/.
+%% LyX 2.0.1 created this file.  For more info, see http://www.lyx.org/.
 %% Do not edit unless you really know what you are doing.
 \documentclass[11pt,english,ngerman]{report}
 \usepackage[T1]{fontenc}
@@ -138,6 +138,14 @@
 {\footnotesize /}%
 \raisebox{-0.4ex}{\scriptsize\ensuremath{\displaystyle #2\mathbb{#1}}}%
 }%
+}
+
+% stehendes Winkelzeichen
+\newcommand{\winkel}{
+\begin{tikzpicture}[scale=0.25]
+\draw ({-2+3^(1/2)},0) -- (0,1) -- ({2-3^(1/2)},0);
+\draw ($(0,1) + ({cos(235)*0.7},{sin(315)*0.7})$) arc (235:315:0.7);
+\end{tikzpicture}
 }
 
 % Wurzel mit Häkchen
@@ -8891,13 +8899,24 @@ und eine Kette
 G=H_{0} & \supseteq H_{1}\supseteq\ldots\supseteq H_{r}=\left\{ e\right\} 
 \end{align*}
 von Untergruppen von $G$ gibt, sodass für $i\in\left\{ 1,\ldots,r\right\} $
-schon $H_{i}\unlhd H_{i-1}$ gilt und $\modulo{H_{i}}{H_{i-1}}$ zyklisch
-von Primzahlordnung ist.
+schon $H_{i}\unlhd H_{i-1}$ gilt und $\modulo{H_{i}}{H_{i-1}}$ eine
+endliche, abelsche Gruppe ist.
 
-(Oder äquivalent, wenn $\modulo{H_{i}}{H_{i-1}}$ eine endliche, abelsche
-Gruppe ist.)
 
-\textcolor{green}{TODO: Beweis der eingeklammerten Aussage einfügen}
+\subsubsection*{Bemerkung}
+
+Aus dem Struktursatz endlicher Gruppen folgt, dass folgende Aussage
+äquivalent dazu ist:
+
+Es gibt ein $r\in\mathbb{N}$ und eine Kette
+\begin{align*}
+G=H_{0} & \supseteq H_{1}\supseteq\ldots\supseteq H_{r}=\left\{ e\right\} 
+\end{align*}
+von Untergruppen von $G$ gibt, sodass für $i\in\left\{ 1,\ldots,r\right\} $
+schon $H_{i}\unlhd H_{i-1}$ gilt und $\modulo{H_{i}}{H_{i-1}}$ eine
+endliche, zyklisch von Primzahlordnung ist.
+
+\textcolor{green}{TODO: Beweis einfügen}
 
 
 \subsection{Beispiel}
@@ -9019,7 +9038,7 @@ a_{1} & a_{2} & \ldots & a_{d}\end{array}\right)\tau^{-1} & =\left(\begin{array}
 \textcolor{green}{TODO: Beweis einfügen}
 
 
-\subsection{Definition}
+\subsection{Definition \textmd{(disjunkte Permutationen)}}
 
 \begin{iiilist}
 
@@ -9192,7 +9211,8 @@ $\modulo{G}{N}$, so enthält auch $N$ jeden Zykel der Länge 3.
 
 \subsubsection*{Beweis}
 
-Sei $\left(abc\right)$ ein Dreierzykel, so gibt es $u,v\in M\setminus\left\{ a,b,c\right\} $
+Sei $\left(\begin{array}{ccc}
+a & b & c\end{array}\right)$ ein Dreierzykel, so gibt es $u,v\in M\setminus\left\{ a,b,c\right\} $
 mit $u\not=v$.
 \begin{align*}
 \sigma & :=\left(\begin{array}{ccc}
@@ -9219,7 +9239,7 @@ a & b & c\end{array}\right)\in N$.
 \qqed
 
 
-\subsection{Satz}
+\subsection{Satz \textmd{(Auflösbarkeit von $S_{n}$)}}
 
 Die Gruppe $S_{n}$ ist genau dann auflösbar, wenn $n\le4$ ist.
 
@@ -9269,7 +9289,7 @@ Dies ist ein Widerspruch zu $G_{m}=\left\{ e\right\} $.
 \qqed
 
 
-\subsection{Definition}
+\subsection{Definition \textmd{(einfache Gruppe)}}
 
 Eine Gruppe $G\not=\left\{ e\right\} $ heißt \emph{einfach}, wenn
 $G$ außer $\left\{ e\right\} $ und $G$ keine weiteren Normalteiler
@@ -9290,7 +9310,7 @@ Seien $N$ und $H$ Gruppen und
 ein Homomorphismus.
 
 
-\subsection{Satz und Definition}
+\subsection{Satz und Definition \textmd{(semidirektes Produkt)}}
 
 Die auf der Menge $N\times H$ definierte Verknüpfung
 \begin{align*}
@@ -9313,7 +9333,398 @@ Assoziativität:
  & =\left(n_{1}\varphi\left(h_{1}\right)\left(n_{2}\varphi\left(h_{2}\right)\left(n_{3}\right)\right),h_{1}h_{2}h_{3}\right)=\\
  & =\left(n_{1},h_{1}\right)\left(n_{2}\varphi\left(h_{2}\right)\left(n_{3}\right),h_{2}h_{3}\right)
 \end{align*}
-%DATE: 
+%DATE: Fr 27.1.12
+
+Existenz Inverser:
+\begin{align*}
+\left(n,h\right)\left(\varphi\left(h^{-1}\right)\left(n^{-1}\right),h^{-1}\right) & =\left(n\varphi\left(h\right)\varphi\left(h^{-1}\right)\left(n^{-1}\right),e\right)=\left(nn^{-1},e\right)=\left(e,e\right)\\
+\left(\varphi\left(h^{-1}\right)\left(n^{-1}\right),h^{-1}\right)\left(n,h\right) & =\left(\varphi\left(h^{-1}\right)\left(n^{-1}\right)\varphi\left(h^{-1}\right)\left(n\right),e\right)=\\
+ & =\left(\varphi\left(h^{-1}\right)\left(nn^{-1}\right),e\right)=\left(\varphi\left(h^{-1}\right)\left(e\right),e\right)=\left(e,e\right)
+\end{align*}
+\qqed
+
+
+\subsection{Definition \textmd{(kurze exakte Sequenz, Split)}}
+
+Betrachte die Abbildungen von Gruppen:
+\begin{align*}
+N & \stackrel{f}{\longrightarrow}N\times_{\varphi}H & H & \stackrel{g}{\longrightarrow}N\times_{\varphi}H\\
+n & \mapsto\left(n,e\right) & h & \mapsto\left(e,h\right)
+\end{align*}
+$N\unlhd N\times_{\varphi}H$ sei ein Normalteiler.
+\begin{align*}
+\left\{ e\right\}  & \to N\stackrel{f}{\longrightarrow}N\times_{\varphi}H\sr{\longrightarrow}{p_{2}}{\sr{\leftarrow}{}{g}}H\to\left\{ e\right\} 
+\end{align*}
+ist eine \emph{kurze} exakte Sequenz. (Kurz bedeutet, dass genau drei
+nicht-triviale Gruppen vorkommen.)
+
+$g$ ist ein \emph{Split} von $p_{2}$, das heißt $p_{2}\circ g=\text{id}_{H}$.
+
+
+\subsection{Beispiele}
+
+\begin{iiilist}
+
+\iii Andersherum sei
+
+\begin{align*}
+\left\{ e\right\}  & \to N\stackrel{f}{\longrightarrow}G\sr{\longrightarrow}{p}{\sr{\leftarrow}{}{g}}\modulo{G}{N}=:H\to\left\{ e\right\} 
+\end{align*}
+mit $p\circ g=\text{id}_{H}$. $H$ operiert auf $N$ durch Konjugation
+und liefert den Homomorphismus:
+\begin{align*}
+\varphi:H & \to\text{Aut}\left(N\right)\\
+h & \mapsto\left(n\mapsto f^{-1}\left(g\left(h\right)f\left(n\right)g\left(h^{-1}\right)\right)\right)
+\end{align*}
+Damit folgt, dass die Abbildung
+\begin{align*}
+\Phi:N\times_{\varphi}H & \to G\\
+\left(n,h\right) & \mapsto f\left(n\right)\cdot g\left(h\right)
+\end{align*}
+
+
+ein bijektiver Gruppenhomomorphismus ist.
+
+Gruppenhomomorphismus:
+\begin{align*}
+\Phi\left(\left(n_{1},h_{1}\right)\right)\cdot\Phi\left(\left(n_{2},h_{2}\right)\right) & =f\left(n_{1}\right)g\left(h_{1}\right)\cdot f\left(n_{2}\right)g\left(h_{2}\right)=\\
+ & =f\left(n_{1}\right)\underbrace{\left(g\left(h_{1}\right)f\left(n_{2}\right)g\left(h_{1}^{-1}\right)\right)}_{=f\left(\varphi\left(h_{1}\right)\left(n_{2}\right)\right)}g\left(h_{1}\right)g\left(h_{2}\right)=\\
+ & =f\left(n_{1}\varphi\left(h_{1}\right)\left(n_{2}\right)\right)\cdot g\left(h_{1}h_{2}\right)=\\
+ & =\Phi\left(n_{1}\varphi\left(h_{1}\right)\left(n_{2}\right),h_{1}h_{2}\right)=\Phi\left(\left(n_{1},h_{1}\right)\cdot\left(n_{2},h_{2}\right)\right)
+\end{align*}
+Bijektivität:
+\begin{align*}
+\Psi:G & \to N\times_{\varphi}H\\
+x & \mapsto\left(f^{-1}\left(x\cdot g\left(p\left(x\right)\right)^{-1}\right),p\left(x\right)\right)
+\end{align*}
+Es gilt:
+\begin{align*}
+\left(\Psi\circ\Phi\right)\left(n,h\right) & =\left(f^{-1}\left(f\left(n\right)\cdot g\left(h\right)\cdot g\left(p\left(f\left(n\right)\cdot g\left(h\right)\right)\right)^{-1}\right),p\left(f\left(n\right)\cdot g\left(h\right)\right)\right)=\\
+ & =\left(f^{-1}\left(f\left(n\right)\cdot g\left(h\right)\cdot g\left(p\left(f\left(n\right)\right)\right)^{-1}\cdot g\left(p\left(g\left(h\right)\right)\right)^{-1}\right),p\left(f\left(n\right)\right)\cdot p\left(g\left(h\right)\right)\right)=\\
+ & \negthickspace\negthickspace\negthickspace\negthickspace\negthickspace\negthickspace\negthickspace\sr{\stackrel{p\circ g=\text{id}_{H}}{=}}{}{\text{im}\left(f\right)=\text{ker}\left(p\right)}\left(f^{-1}\left(f\left(n\right)\cdot g\left(h\right)\cdot g\left(e\right)^{-1}\cdot g\left(h\right)^{-1}\right),e\cdot h\right)=\left(n,h\right)
+\end{align*}
+Also ist $\Psi\circ\Phi=\text{id}_{N\times_{\varphi}H}$. Andersherum:
+\begin{align*}
+\left(\Phi\circ\Psi\right)\left(x\right) & =f\left(f^{-1}\left(x\cdot g\left(p\left(x\right)\right)^{-1}\right)\right)\cdot g\left(p\left(x\right)\right)=x\cdot g\left(p\left(x\right)\right)^{-1}\cdot g\left(p\left(x\right)\right)=x
+\end{align*}
+Daher gilt auch $\Phi\circ\Psi=\text{id}_{G}$ und daher ist $\Psi$
+die inverse Abbildung zu $\Phi$ und somit $\Phi$ bijektiv.
+
+\iii Die Gruppe der euklidischen Bewegungen im $\mathbb{R}^{n}$:
+\begin{align*}
+E\left(n\right) & =\mathbb{R}^{n}\rtimes O\left(n\right)
+\end{align*}
+mit der Standardoperation von $O\left(n\right)$ (den orthogonalen
+Matrizen) auf $\mathbb{R}^{n}$.
+
+\end{iiilist}
+
+
+\chapter{Konstruktion mit Zirkel und Lineal}
+
+
+\section{Definition (Geraden, Kreise)}
+
+\begin{iiilist}
+
+\iii Für $M\subseteq\mathbb{R}^{2}$ sei $\text{Ge}\left(M\right)$
+\emph{die Menge der Geraden}, die zwei verschiedene Punkte von $M$
+enthalten, und $\text{Kr}\left(M\right)$ \emph{die Menge der Kreise},
+deren Mittelpunkt in $M$ liegt und deren Radius gleich dem Abstand
+zweier Punkte aus $M$ ist.
+
+\iii Für $M\subseteq\mathbb{R}^{2}$ sei $\winkel M$ die kleinste
+Teilmenge $T$ von $\mathbb{R}^{2}$, für die gilt:
+
+\begin{abclist}
+
+\abc $M\subseteq T$
+
+\abc Der Schnitt zweier verschiedener Geraden aus $\text{Ge}\left(T\right)$
+liegt in $T$.
+
+\abc Der Schnitt einer Geraden aus $\text{Ge}\left(T\right)$ mit
+einem Kreis aus $\text{Kr}\left(T\right)$ liegt in $T$.
+
+\abc Der Schnitt zweier verschiedener Kreise aus $\text{Kr}\left(T\right)$
+liegt in $T$.
+
+\end{abclist}
+
+\end{iiilist}
+
+
+\section{Bemerkung \textmd{(mit Zirkel und Lineal konstruierbar)}}
+
+$\winkel M$ ist die Punktmenge aus $\mathbb{R}^{2}$, die aus $M$
+\emph{mit Zirkel und Lineal konstruierbar} ist.
+
+Im Folgenden identifizieren wir $\mathbb{R}^{2}$ mit $\mathbb{C}$.
+
+
+\section{Proposition\label{sec:Prop-WinkelM}}
+
+Sei $M\subseteq\mathbb{C}$ mit $\left\{ 0,1\right\} \subseteq M$.
+
+Dann gelten:
+
+\begin{iiilist}
+
+\iii $\ii\in\winkel M$
+
+\iii $z\in\winkel M$ $\Rightarrow$ $\overline{z}\in\winkel M$
+
+\iii $z\in\winkel M$ $\Rightarrow$ $\text{Re}\left(z\right),\text{Im}\left(z\right)\in\winkel M$
+
+\iii $z\in\winkel M$ $\Rightarrow$ $-z\in\winkel M$
+
+\iii $z_{1},z_{2}\in\winkel M$ $\Rightarrow$ $z_{1}+z_{2}\in\winkel M$
+
+\iii $z_{1},z_{2}\in\winkel M$ $\Rightarrow$ $z_{1}\cdot z_{2}\in\winkel M$
+
+\iii $z\in\winkel M\setminus\left\{ 0\right\} $ $\Rightarrow$ ${\displaystyle \frac{1}{z}\in\winkel M}$
+
+\end{iiilist}
+
+
+\subsubsection*{Beweis}
+
+\begin{iiilist}
+
+\iii $-1$ ist ein Schnittpunkt der Gerade durch 0 und 1 mit dem
+Kreis um 0 vom Radius 1 und liegt daher in $\winkel M$.
+
+Außerdem liegt $\ii\in\winkel M$, weil es ein Schnittpunkt der Mittelsenkrechten
+zu $\left[-1,1\right]$ mit dem Einheitskreis ist.
+
+\iii $\overline{z}$ ist ein Schnittpunkt des Kreises um 0 vom Radius
+$\left|z\right|$ mit dem Kreis um 1 vom Radius $\left|z-1\right|$.
+Also ist auch $\overline{z}\in\winkel M$.
+
+\iii $\text{Re}\left(z\right)\in\winkel M$, da entweder $z\in\mathbb{R}$
+ist, oder $\text{Re}\left(z\right)$ der Schnittpunkt der Gerade durch
+$z$ und $\overline{z}$ mit der Gerade durch 0 und 1 ist.
+
+Analog folgt $\text{Im}\left(z\right)\in\winkel M$.
+
+\iii Der Schnitt von Geraden durch 0 und $z$ mit dem Kreis um 0
+von Radius $\left|z\right|$ ergibt $-z$.
+
+\iii $z_{1}+z_{2}\in\winkel M$, da es ein Schnittpunkt des Kreises
+um $z_{1}$ vom Radius $\left|z_{2}\right|$ mit dem Kreis um $z_{2}$
+vom Radius $\left|z_{1}\right|$ ist.
+
+\iii Wegen iv) und v) genügt es die Behauptung für $r,s\in\mathbb{R}_{>0}\subseteq\mathbb{C}$
+zu zeigen, denn es gilt:
+\begin{align*}
+\left(a+\ii b\right)\left(c+\ii d\right) & =ac-bd+\ii\left(ab+bc\right)
+\end{align*}
+
+
+\noindent \begin{center}
+\begin{tikzpicture}[scale=2]
+  \draw[->] (-0.2,0) -- (3.2,0) node[right] {Re$(z)$};
+  \draw[->] (0,-0.2) -- (0,3.2) node[above] {Im$(z)$};
+  \draw (0.1,1) -- (-0.1,1)  node[left] {$\ii$};
+  \draw (1,0.1) -- (1,-0.1)  node[below] {$1$};
+  \draw (2,0.1) -- (2,-0.1)  node[below] {$s$};
+  \draw (3,0.1) -- (3,-0.1)  node[below] {$x$};
+  \draw (1.5,0.1) -- (1.5,-0.1)  node[below] {$r$};
+  % Winkelhalbierende
+  \draw (-0.2,-0.2) -- (3.2,3.2) node[right]{1.};
+  \draw (0:0.5) arc (0:45:0.5) node[below=5] {$45^\circ$};
+  % Schnittpunkt Kreis s, Winkelhalbierende
+  \draw (0:2) node[above right]{2.} arc (0:45:2);
+  % Gerade durch 1 und Schnittpunkt
+  \draw (1,0) -- +({(2^(1/2)-1)*2},{2^(1/2)*2}) node[right]{3.};
+  % Gerade durch r und Winkelhalbierende
+  \draw[dashed] (1.5,0) -- +({(2^(1/2)-1)*2},{2*2^(1/2)}) node[right]{4.};
+  % Kreis um 0 durch x
+  \draw (3,0) node[above right]{5.} arc (0:45:3);
+\end{tikzpicture} 
+\par\end{center}
+
+Der Strahlensatz ergibt:
+\begin{align*}
+\frac{x}{s} & =\frac{r}{1}\quad\Rightarrow\quad x=rs
+\end{align*}
+
+
+\iii Wegen $z^{-1}=\overline{z}\left(z\overline{z}\right)^{-1}=\overline{z}\cdot\left|z\right|^{-1}$
+genügt es die Behauptung für $r:=\left|z\right|\in\mathbb{R}_{>0}$
+zu zeigen.
+
+\noindent \begin{center}
+\begin{tikzpicture}[scale=3]
+  \draw[->] (-0.2,0) -- (2.2,0) node[right] {Re$(z)$};
+  \draw[->] (0,-0.2) -- (0,1.2) node[above] {Im$(z)$};
+  \draw (0.03,1) -- (-0.03,1)  node[left] {$\ii$};
+  \draw (1,0.03) -- (1,-0.03)  node[below] {$1$};
+  \draw (0.5,0.03) -- (0.5,-0.03)  node[below] {$x$};
+  \draw (2,0.03) -- (2,-0.03)  node[below] {$r$};
+  % Winkelhalbierende
+  \draw (-0.2,-0.2) -- (1.2,1.2) node[right]{1.};
+  \draw (0:0.5) arc (0:45:0.5) node[below=5] {$45^\circ$};
+  % Schnittpunkt Kreis 1, Winkelhalbierende
+  \draw (0:1) node[above right]{2.} arc (0:45:1);
+  % Gerade durch r und Schnittpunkt
+  \draw (2,0)  node[above right]{3.} -- ({2^(1/2)/2},{2^(1/2)/2});
+  % Gerade durch 1 und Winkelhalbierende
+  \draw[dashed] (1,0) -- +({(2^(1/2)/2-2)/2},{2^(1/2)/2/2}) node[right]{4.};
+  % Kreis um 0 durch x
+  \draw (0.5,0) node[above right]{5.} arc (0:45:0.5);
+\end{tikzpicture} 
+\par\end{center}
+
+Der Strahlensatz ergibt:
+\begin{align*}
+\frac{r}{1} & =\frac{1}{x}\quad\Rightarrow\quad x=\frac{1}{r}
+\end{align*}
+
+
+\end{iiilist}
+
+\qqed
+
+
+\section{Korollar}
+
+Seien $M\subseteq\mathbb{C}$ und $\left\{ 0,1\right\} \subseteq M$.
+
+Dann ist $\winkel M$ ein Teilkörper von $\mathbb{C}$.
+
+
+\subsubsection*{Beweis}
+
+Dies folgt sofort aus \ref{sec:Prop-WinkelM}.
+
+\qqed
+
+
+\section{Proposition}
+
+Seien $M\subseteq\mathbb{C}$, $\left\{ 0,1\right\} \subseteq M$
+und $z\in\winkel M$.
+
+Dann ist $w\in\winkel M$ für alle $w\in\mathbb{C}$ mit $w^{2}=z$.
+
+
+\subsubsection*{Beweis}
+
+Aus $w^{2}=z=re^{\ii\varphi}$ folgt $w=\pm\sqrt{r}e^{\ii\frac{\varphi}{2}}$.
+
+Wegen $e^{\ii\frac{\varphi}{2}}\in\winkel M$, genügt es zu zeigen,
+dass $\sqrt{r}\in\winkel M$ ist.
+
+\noindent \begin{center}
+\begin{tikzpicture}[scale=2]
+  \draw[->] (-1.2,0) -- (2.2,0) node[right] {Re$(z)$};
+  \draw[->] (0,-0.2) -- (0,1.7) node[above] {Im$(z)$};
+  \draw (0.05,1) -- (-0.05,1)  node[left] {$\ii$};
+  \draw (1,0.05) -- (1,-0.05)  node[below] {$1$};
+  \draw (-1,0.05) -- (-1,-0.05)  node[below] {$-1$};
+  \draw (0.05,{2^(1/2)}) -- (-0.05,{2^(1/2)})  node[left] {$x\cdot \ii$};
+  \draw (2,0.05) -- (2,-0.05)  node[below] {$r$};
+  % Thaleskreis durch -1 und r
+  \draw (2,0) arc (0:180:1.5);
+\end{tikzpicture} 
+\par\end{center}
+
+Aus dem Höhensatz folgt:
+\begin{align*}
+x^{2} & =1\cdot r
+\end{align*}
+Also ist $x=\sqrt{r}$.
+
+\qqed
+
+
+\section{Proposition und Definition \textmd{(komplex konjugierte Menge)}}
+
+Für $M\subseteq\mathbb{C}$ sei $\overline{M}:=\left\{ \overline{m}|m\in M\right\} \subseteq\mathbb{C}$
+\emph{die} \emph{komplex konjugierte Menge}.
+
+Sei $K\subseteq\mathbb{C}$ ein Teilkörper mit $K=\overline{K}$.
+
+\begin{abclist}
+
+\abc Ist $z$ der Schnittpunkt zweier verschiedener Geraden aus $\text{Ge}\left(K\right)$,
+so folgt $z\in K$.
+
+\abc Ist $z$ ein Schnittpunkt einer Geraden aus $\text{Ge}\left(K\right)$
+mit einem Kreis aus $\text{Kr}\left(K\right)$, so gilt:
+
+\begin{align}
+\exs_{w\in\mathbb{C}}:w^{2} & \in K\wedge z\in K\left(w\right)\label{eq:w2zK}
+\end{align}
+
+
+\abc Ist $z$ ein Schnittpunkt zweier verschiedener Kreise aus $ $$\text{Kr}\left(K\right)$,
+so gilt \ref{eq:w2zK}.
+
+\end{abclist}
+
+
+\subsubsection*{Beweis}
+
+\begin{abclist}
+
+\abc Seien $z_{0},z_{0}'\in K$ und $z_{1},z_{1}'\in K^{*}$, so
+dass für
+\begin{align*}
+G & :=\left\{ z_{0}+tz_{1}|t\in\mathbb{R}\right\} \\
+G' & :=\left\{ z_{0}'+tz_{1}'|t\in\mathbb{R}\right\} 
+\end{align*}
+schon $G\not=G'$ und $G\cap G'\not=\emptyset$ gilt.
+
+Sei $z\in G\cap G'$, $z=z_{0}+t_{1}z_{1}=z_{0}'+t'z_{1}'$.
+
+$\left(t,t'\right)$ ist die eindeutige Lösung des linearen Gleichungssystems
+\begin{align*}
+t\text{Re}\left(z_{1}\right)-t'\text{Re}\left(z_{1}'\right) & =\text{Re}\left(z_{0}'\right)-\text{Re}\left(z_{0}\right)\\
+t\text{Im}\left(z_{1}\right)-t'\text{Im}\left(z_{1}'\right) & =\text{Im}\left(z_{0}'\right)-\text{Im}\left(z_{0}\right)
+\end{align*}
+über $K$, und wegen $K=\overline{K}$, also $\text{Re}\left(z\right),\text{Im}\left(z\right)\in K$
+für alle $z\in K$, sind $t,t'\in K$.
+
+\abc Seien $a,z_{0},\alpha,\beta\in K$, $r^{2}:=\left|\alpha-\beta\right|^{2}\in\mathbb{R}_{\ge0}\cap K$,
+$t\in\mathbb{R}$ und $z_{1}\in K^{*}$.
+\begin{align*}
+k & :=\left\{ z\bigg|\left(z-a\right)\overline{\left(z-a\right)}=r^{2}\right\} 
+\end{align*}
+\begin{align*}
+z_{0}+tz_{1}\in k & \Leftrightarrow\left(z_{0}+z_{1}t-a\right)\left(\overline{z_{0}}+\overline{z_{1}}t-\overline{a}\right)=r^{2}
+\end{align*}
+Also folgt
+\begin{align*}
+t^{2}+pt+q & =\left(t+\frac{p}{2}\right)^{2}+\frac{p^{2}}{4}+q=0
+\end{align*}
+mit $p,q\in K$ wegen $K=\overline{K}$.
+
+Für ${\displaystyle w:=t+\frac{p}{2}}$ gilt
+\begin{align*}
+w^{2} & =-\frac{p^{2}}{4}-q\in K
+\end{align*}
+und $z_{0}+tz_{1}\in K\left(t\right)=K\left(w\right)$.
+
+\abc Sei $a,b,\alpha,\alpha',\beta,\beta'\in K$ mit $a\not=b$,
+$r^{2}:=\left|\alpha-\beta\right|^{2},s^{2}:=\left|\alpha'-\beta'\right|^{2}\in\mathbb{R}_{\ge0}\cap K$
+und $z\in\mathbb{C}$ mit:
+\begin{align}
+\left(z-a\right)\left(\overline{z}-\overline{a}\right) & =r^{2}\label{eq:zar2}\\
+\left(z-b\right)\left(\overline{z}-\overline{b}\right) & =s^{2}\nonumber 
+\end{align}
+Subtraktion der Gleichungen liefert:
+\begin{align*}
+z\left(\overline{b}-\overline{a}\right)+\overline{z}\left(b-a\right) & \in K
+\end{align*}
+Auflösen nach $\overline{z}$ und Einsetzen in \ref{eq:zar2} ergibt
+eine quadratische Gleichung. Der Rest des Beweises geht analog zur
+b).
+
+\end{abclist}
+
+\qqed
 
 
 \part*{Anhang\thispagestyle{empty}}

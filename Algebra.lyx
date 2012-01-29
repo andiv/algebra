@@ -105,6 +105,14 @@
 }%
 }
 
+% stehendes Winkelzeichen
+\newcommand{\winkel}{
+\begin{tikzpicture}[scale=0.25]
+\draw ({-2+3^(1/2)},0) -- (0,1) -- ({2-3^(1/2)},0);
+\draw ($(0,1) + ({cos(235)*0.7},{sin(315)*0.7})$) arc (235:315:0.7);
+\end{tikzpicture}
+}
+
 % Wurzel mit Häkchen
 \newcommand{\hsqrt}[2][{}]{\setbox0=\hbox{$\sqrt[#1]{\phantom{|}\!\! #2\hspace*{1pt}}$}\dimen0=\ht0
   \advance\dimen0-0.2\ht0
@@ -43795,21 +43803,54 @@ von Untergruppen von
 \begin_inset Formula $\modulo{H_{i}}{H_{i-1}}$
 \end_inset
 
- zyklisch von Primzahlordnung ist.
+ eine endliche, abelsche Gruppe ist.
+\end_layout
+
+\begin_layout Subsubsection*
+Bemerkung
 \end_layout
 
 \begin_layout Standard
-(Oder äquivalent, wenn 
+Aus dem Struktursatz endlicher Gruppen folgt, dass folgende Aussage äquivalent
+ dazu ist:
+\end_layout
+
+\begin_layout Standard
+Es gibt ein 
+\begin_inset Formula $r\in\mathbb{N}$
+\end_inset
+
+ und eine Kette
+\begin_inset Formula 
+\begin{align*}
+G=H_{0} & \supseteq H_{1}\supseteq\ldots\supseteq H_{r}=\left\{ e\right\} 
+\end{align*}
+
+\end_inset
+
+von Untergruppen von 
+\begin_inset Formula $G$
+\end_inset
+
+ gibt, sodass für 
+\begin_inset Formula $i\in\left\{ 1,\ldots,r\right\} $
+\end_inset
+
+ schon 
+\begin_inset Formula $H_{i}\unlhd H_{i-1}$
+\end_inset
+
+ gilt und 
 \begin_inset Formula $\modulo{H_{i}}{H_{i-1}}$
 \end_inset
 
- eine endliche, abelsche Gruppe ist.)
+ eine endliche, zyklisch von Primzahlordnung ist.
 \end_layout
 
 \begin_layout Standard
 
 \color green
-TODO: Beweis der eingeklammerten Aussage einfügen
+TODO: Beweis einfügen
 \end_layout
 
 \begin_layout Subsection
@@ -44392,7 +44433,9 @@ TODO: Beweis einfügen
 \end_layout
 
 \begin_layout Subsection
-Definition
+Definition 
+\series medium
+(disjunkte Permutationen)
 \end_layout
 
 \begin_layout Standard
@@ -45103,7 +45146,8 @@ Beweis
 
 \begin_layout Standard
 Sei 
-\begin_inset Formula $\left(abc\right)$
+\begin_inset Formula $\left(\begin{array}{ccc}
+a & b & c\end{array}\right)$
 \end_inset
 
  ein Dreierzykel, so gibt es 
@@ -45178,7 +45222,13 @@ qqed
 \end_layout
 
 \begin_layout Subsection
-Satz
+Satz 
+\series medium
+(Auflösbarkeit von 
+\begin_inset Formula $S_{n}$
+\end_inset
+
+)
 \end_layout
 
 \begin_layout Standard
@@ -45377,7 +45427,9 @@ qqed
 \end_layout
 
 \begin_layout Subsection
-Definition
+Definition 
+\series medium
+(einfache Gruppe)
 \end_layout
 
 \begin_layout Standard
@@ -45445,7 +45497,9 @@ ein Homomorphismus.
 \end_layout
 
 \begin_layout Subsection
-Satz und Definition
+Satz und Definition 
+\series medium
+(semidirektes Produkt)
 \end_layout
 
 \begin_layout Standard
@@ -45512,7 +45566,2112 @@ status open
 
 \begin_layout Plain Layout
 
-%DATE: 
+%DATE: Fr 27.1.12
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Existenz Inverser:
+\begin_inset Formula 
+\begin{align*}
+\left(n,h\right)\left(\varphi\left(h^{-1}\right)\left(n^{-1}\right),h^{-1}\right) & =\left(n\varphi\left(h\right)\varphi\left(h^{-1}\right)\left(n^{-1}\right),e\right)=\left(nn^{-1},e\right)=\left(e,e\right)\\
+\left(\varphi\left(h^{-1}\right)\left(n^{-1}\right),h^{-1}\right)\left(n,h\right) & =\left(\varphi\left(h^{-1}\right)\left(n^{-1}\right)\varphi\left(h^{-1}\right)\left(n\right),e\right)=\\
+ & =\left(\varphi\left(h^{-1}\right)\left(nn^{-1}\right),e\right)=\left(\varphi\left(h^{-1}\right)\left(e\right),e\right)=\left(e,e\right)
+\end{align*}
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Definition 
+\series medium
+(kurze exakte Sequenz, Split)
+\end_layout
+
+\begin_layout Standard
+Betrachte die Abbildungen von Gruppen:
+\begin_inset Formula 
+\begin{align*}
+N & \stackrel{f}{\longrightarrow}N\times_{\varphi}H & H & \stackrel{g}{\longrightarrow}N\times_{\varphi}H\\
+n & \mapsto\left(n,e\right) & h & \mapsto\left(e,h\right)
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Formula $N\unlhd N\times_{\varphi}H$
+\end_inset
+
+ sei ein Normalteiler.
+\begin_inset Formula 
+\begin{align*}
+\left\{ e\right\}  & \to N\stackrel{f}{\longrightarrow}N\times_{\varphi}H\sr{\longrightarrow}{p_{2}}{\sr{\leftarrow}{}{g}}H\to\left\{ e\right\} 
+\end{align*}
+
+\end_inset
+
+ist eine 
+\emph on
+kurze
+\emph default
+ exakte Sequenz.
+ (Kurz bedeutet, dass genau drei nicht-triviale Gruppen vorkommen.)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $g$
+\end_inset
+
+ ist ein 
+\emph on
+Split
+\emph default
+ von 
+\begin_inset Formula $p_{2}$
+\end_inset
+
+, das heißt 
+\begin_inset Formula $p_{2}\circ g=\text{id}_{H}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Beispiele
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Andersherum sei
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\left\{ e\right\}  & \to N\stackrel{f}{\longrightarrow}G\sr{\longrightarrow}{p}{\sr{\leftarrow}{}{g}}\modulo{G}{N}=:H\to\left\{ e\right\} 
+\end{align*}
+
+\end_inset
+
+mit 
+\begin_inset Formula $p\circ g=\text{id}_{H}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $H$
+\end_inset
+
+ operiert auf 
+\begin_inset Formula $N$
+\end_inset
+
+ durch Konjugation und liefert den Homomorphismus:
+\begin_inset Formula 
+\begin{align*}
+\varphi:H & \to\text{Aut}\left(N\right)\\
+h & \mapsto\left(n\mapsto f^{-1}\left(g\left(h\right)f\left(n\right)g\left(h^{-1}\right)\right)\right)
+\end{align*}
+
+\end_inset
+
+Damit folgt, dass die Abbildung
+\begin_inset Formula 
+\begin{align*}
+\Phi:N\times_{\varphi}H & \to G\\
+\left(n,h\right) & \mapsto f\left(n\right)\cdot g\left(h\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+ein bijektiver Gruppenhomomorphismus ist.
+\end_layout
+
+\begin_layout Standard
+Gruppenhomomorphismus:
+\begin_inset Formula 
+\begin{align*}
+\Phi\left(\left(n_{1},h_{1}\right)\right)\cdot\Phi\left(\left(n_{2},h_{2}\right)\right) & =f\left(n_{1}\right)g\left(h_{1}\right)\cdot f\left(n_{2}\right)g\left(h_{2}\right)=\\
+ & =f\left(n_{1}\right)\underbrace{\left(g\left(h_{1}\right)f\left(n_{2}\right)g\left(h_{1}^{-1}\right)\right)}_{=f\left(\varphi\left(h_{1}\right)\left(n_{2}\right)\right)}g\left(h_{1}\right)g\left(h_{2}\right)=\\
+ & =f\left(n_{1}\varphi\left(h_{1}\right)\left(n_{2}\right)\right)\cdot g\left(h_{1}h_{2}\right)=\\
+ & =\Phi\left(n_{1}\varphi\left(h_{1}\right)\left(n_{2}\right),h_{1}h_{2}\right)=\Phi\left(\left(n_{1},h_{1}\right)\cdot\left(n_{2},h_{2}\right)\right)
+\end{align*}
+
+\end_inset
+
+Bijektivität:
+\begin_inset Formula 
+\begin{align*}
+\Psi:G & \to N\times_{\varphi}H\\
+x & \mapsto\left(f^{-1}\left(x\cdot g\left(p\left(x\right)\right)^{-1}\right),p\left(x\right)\right)
+\end{align*}
+
+\end_inset
+
+Es gilt:
+\begin_inset Formula 
+\begin{align*}
+\left(\Psi\circ\Phi\right)\left(n,h\right) & =\left(f^{-1}\left(f\left(n\right)\cdot g\left(h\right)\cdot g\left(p\left(f\left(n\right)\cdot g\left(h\right)\right)\right)^{-1}\right),p\left(f\left(n\right)\cdot g\left(h\right)\right)\right)=\\
+ & =\left(f^{-1}\left(f\left(n\right)\cdot g\left(h\right)\cdot g\left(p\left(f\left(n\right)\right)\right)^{-1}\cdot g\left(p\left(g\left(h\right)\right)\right)^{-1}\right),p\left(f\left(n\right)\right)\cdot p\left(g\left(h\right)\right)\right)=\\
+ & \negthickspace\negthickspace\negthickspace\negthickspace\negthickspace\negthickspace\negthickspace\sr{\stackrel{p\circ g=\text{id}_{H}}{=}}{}{\text{im}\left(f\right)=\text{ker}\left(p\right)}\left(f^{-1}\left(f\left(n\right)\cdot g\left(h\right)\cdot g\left(e\right)^{-1}\cdot g\left(h\right)^{-1}\right),e\cdot h\right)=\left(n,h\right)
+\end{align*}
+
+\end_inset
+
+Also ist 
+\begin_inset Formula $\Psi\circ\Phi=\text{id}_{N\times_{\varphi}H}$
+\end_inset
+
+.
+ Andersherum:
+\begin_inset Formula 
+\begin{align*}
+\left(\Phi\circ\Psi\right)\left(x\right) & =f\left(f^{-1}\left(x\cdot g\left(p\left(x\right)\right)^{-1}\right)\right)\cdot g\left(p\left(x\right)\right)=x\cdot g\left(p\left(x\right)\right)^{-1}\cdot g\left(p\left(x\right)\right)=x
+\end{align*}
+
+\end_inset
+
+Daher gilt auch 
+\begin_inset Formula $\Phi\circ\Psi=\text{id}_{G}$
+\end_inset
+
+ und daher ist 
+\begin_inset Formula $\Psi$
+\end_inset
+
+ die inverse Abbildung zu 
+\begin_inset Formula $\Phi$
+\end_inset
+
+ und somit 
+\begin_inset Formula $\Phi$
+\end_inset
+
+ bijektiv.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Die Gruppe der euklidischen Bewegungen im 
+\begin_inset Formula $\mathbb{R}^{n}$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+E\left(n\right) & =\mathbb{R}^{n}\rtimes O\left(n\right)
+\end{align*}
+
+\end_inset
+
+mit der Standardoperation von 
+\begin_inset Formula $O\left(n\right)$
+\end_inset
+
+ (den orthogonalen Matrizen) auf 
+\begin_inset Formula $\mathbb{R}^{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Konstruktion mit Zirkel und Lineal
+\end_layout
+
+\begin_layout Section
+Definition (Geraden, Kreise)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Für 
+\begin_inset Formula $M\subseteq\mathbb{R}^{2}$
+\end_inset
+
+ sei 
+\begin_inset Formula $\text{Ge}\left(M\right)$
+\end_inset
+
+ 
+\emph on
+die Menge der Geraden
+\emph default
+, die zwei verschiedene Punkte von 
+\begin_inset Formula $M$
+\end_inset
+
+ enthalten, und 
+\begin_inset Formula $\text{Kr}\left(M\right)$
+\end_inset
+
+ 
+\emph on
+die Menge der Kreise
+\emph default
+, deren Mittelpunkt in 
+\begin_inset Formula $M$
+\end_inset
+
+ liegt und deren Radius gleich dem Abstand zweier Punkte aus 
+\begin_inset Formula $M$
+\end_inset
+
+ ist.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Für 
+\begin_inset Formula $M\subseteq\mathbb{R}^{2}$
+\end_inset
+
+ sei 
+\begin_inset Formula $\winkel M$
+\end_inset
+
+ die kleinste Teilmenge 
+\begin_inset Formula $T$
+\end_inset
+
+ von 
+\begin_inset Formula $\mathbb{R}^{2}$
+\end_inset
+
+, für die gilt:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{abclist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abc
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $M\subseteq T$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abc
+\end_layout
+
+\end_inset
+
+ Der Schnitt zweier verschiedener Geraden aus 
+\begin_inset Formula $\text{Ge}\left(T\right)$
+\end_inset
+
+ liegt in 
+\begin_inset Formula $T$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abc
+\end_layout
+
+\end_inset
+
+ Der Schnitt einer Geraden aus 
+\begin_inset Formula $\text{Ge}\left(T\right)$
+\end_inset
+
+ mit einem Kreis aus 
+\begin_inset Formula $\text{Kr}\left(T\right)$
+\end_inset
+
+ liegt in 
+\begin_inset Formula $T$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abc
+\end_layout
+
+\end_inset
+
+ Der Schnitt zweier verschiedener Kreise aus 
+\begin_inset Formula $\text{Kr}\left(T\right)$
+\end_inset
+
+ liegt in 
+\begin_inset Formula $T$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{abclist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Bemerkung 
+\series medium
+(mit Zirkel und Lineal konstruierbar)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\winkel M$
+\end_inset
+
+ ist die Punktmenge aus 
+\begin_inset Formula $\mathbb{R}^{2}$
+\end_inset
+
+, die aus 
+\begin_inset Formula $M$
+\end_inset
+
+ 
+\emph on
+mit Zirkel und Lineal konstruierbar
+\emph default
+ ist.
+\end_layout
+
+\begin_layout Standard
+Im Folgenden identifizieren wir 
+\begin_inset Formula $\mathbb{R}^{2}$
+\end_inset
+
+ mit 
+\begin_inset Formula $\mathbb{C}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Proposition
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Prop-WinkelM"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Sei 
+\begin_inset Formula $M\subseteq\mathbb{C}$
+\end_inset
+
+ mit 
+\begin_inset Formula $\left\{ 0,1\right\} \subseteq M$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Dann gelten:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $\ii\in\winkel M$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $z\in\winkel M$
+\end_inset
+
+ 
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+ 
+\begin_inset Formula $\overline{z}\in\winkel M$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $z\in\winkel M$
+\end_inset
+
+ 
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+ 
+\begin_inset Formula $\text{Re}\left(z\right),\text{Im}\left(z\right)\in\winkel M$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $z\in\winkel M$
+\end_inset
+
+ 
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+ 
+\begin_inset Formula $-z\in\winkel M$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $z_{1},z_{2}\in\winkel M$
+\end_inset
+
+ 
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+ 
+\begin_inset Formula $z_{1}+z_{2}\in\winkel M$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $z_{1},z_{2}\in\winkel M$
+\end_inset
+
+ 
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+ 
+\begin_inset Formula $z_{1}\cdot z_{2}\in\winkel M$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $z\in\winkel M\setminus\left\{ 0\right\} $
+\end_inset
+
+ 
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+ 
+\begin_inset Formula ${\displaystyle \frac{1}{z}\in\winkel M}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Beweis
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $-1$
+\end_inset
+
+ ist ein Schnittpunkt der Gerade durch 0 und 1 mit dem Kreis um 0 vom Radius
+ 1 und liegt daher in 
+\begin_inset Formula $\winkel M$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Außerdem liegt 
+\begin_inset Formula $\ii\in\winkel M$
+\end_inset
+
+, weil es ein Schnittpunkt der Mittelsenkrechten zu 
+\begin_inset Formula $\left[-1,1\right]$
+\end_inset
+
+ mit dem Einheitskreis ist.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $\overline{z}$
+\end_inset
+
+ ist ein Schnittpunkt des Kreises um 0 vom Radius 
+\begin_inset Formula $\left|z\right|$
+\end_inset
+
+ mit dem Kreis um 1 vom Radius 
+\begin_inset Formula $\left|z-1\right|$
+\end_inset
+
+.
+ Also ist auch 
+\begin_inset Formula $\overline{z}\in\winkel M$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $\text{Re}\left(z\right)\in\winkel M$
+\end_inset
+
+, da entweder 
+\begin_inset Formula $z\in\mathbb{R}$
+\end_inset
+
+ ist, oder 
+\begin_inset Formula $\text{Re}\left(z\right)$
+\end_inset
+
+ der Schnittpunkt der Gerade durch 
+\begin_inset Formula $z$
+\end_inset
+
+ und 
+\begin_inset Formula $\overline{z}$
+\end_inset
+
+ mit der Gerade durch 0 und 1 ist.
+\end_layout
+
+\begin_layout Standard
+Analog folgt 
+\begin_inset Formula $\text{Im}\left(z\right)\in\winkel M$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Der Schnitt von Geraden durch 0 und 
+\begin_inset Formula $z$
+\end_inset
+
+ mit dem Kreis um 0 von Radius 
+\begin_inset Formula $\left|z\right|$
+\end_inset
+
+ ergibt 
+\begin_inset Formula $-z$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $z_{1}+z_{2}\in\winkel M$
+\end_inset
+
+, da es ein Schnittpunkt des Kreises um 
+\begin_inset Formula $z_{1}$
+\end_inset
+
+ vom Radius 
+\begin_inset Formula $\left|z_{2}\right|$
+\end_inset
+
+ mit dem Kreis um 
+\begin_inset Formula $z_{2}$
+\end_inset
+
+ vom Radius 
+\begin_inset Formula $\left|z_{1}\right|$
+\end_inset
+
+ ist.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Wegen iv) und v) genügt es die Behauptung für 
+\begin_inset Formula $r,s\in\mathbb{R}_{>0}\subseteq\mathbb{C}$
+\end_inset
+
+ zu zeigen, denn es gilt:
+\begin_inset Formula 
+\begin{align*}
+\left(a+\ii b\right)\left(c+\ii d\right) & =ac-bd+\ii\left(ab+bc\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[scale=2]
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw[->] (-0.2,0) -- (3.2,0) node[right] {Re$(z)$};
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw[->] (0,-0.2) -- (0,3.2) node[above] {Im$(z)$};
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw (0.1,1) -- (-0.1,1)  node[left] {$
+\backslash
+ii$};
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw (1,0.1) -- (1,-0.1)  node[below] {$1$};
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw (2,0.1) -- (2,-0.1)  node[below] {$s$};
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw (3,0.1) -- (3,-0.1)  node[below] {$x$};
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw (1.5,0.1) -- (1.5,-0.1)  node[below] {$r$};
+\end_layout
+
+\begin_layout Plain Layout
+
+  % Winkelhalbierende
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw (-0.2,-0.2) -- (3.2,3.2) node[right]{1.};
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw (0:0.5) arc (0:45:0.5) node[below=5] {$45^
+\backslash
+circ$};
+\end_layout
+
+\begin_layout Plain Layout
+
+  % Schnittpunkt Kreis s, Winkelhalbierende
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw (0:2) node[above right]{2.} arc (0:45:2);
+\end_layout
+
+\begin_layout Plain Layout
+
+  % Gerade durch 1 und Schnittpunkt
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw (1,0) -- +({(2^(1/2)-1)*2},{2^(1/2)*2}) node[right]{3.};
+\end_layout
+
+\begin_layout Plain Layout
+
+  % Gerade durch r und Winkelhalbierende
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw[dashed] (1.5,0) -- +({(2^(1/2)-1)*2},{2*2^(1/2)}) node[right]{4.};
+\end_layout
+
+\begin_layout Plain Layout
+
+  % Kreis um 0 durch x
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw (3,0) node[above right]{5.} arc (0:45:3);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Der Strahlensatz ergibt:
+\begin_inset Formula 
+\begin{align*}
+\frac{x}{s} & =\frac{r}{1}\quad\Rightarrow\quad x=rs
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Wegen 
+\begin_inset Formula $z^{-1}=\overline{z}\left(z\overline{z}\right)^{-1}=\overline{z}\cdot\left|z\right|^{-1}$
+\end_inset
+
+ genügt es die Behauptung für 
+\begin_inset Formula $r:=\left|z\right|\in\mathbb{R}_{>0}$
+\end_inset
+
+ zu zeigen.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[scale=3]
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw[->] (-0.2,0) -- (2.2,0) node[right] {Re$(z)$};
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw[->] (0,-0.2) -- (0,1.2) node[above] {Im$(z)$};
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw (0.03,1) -- (-0.03,1)  node[left] {$
+\backslash
+ii$};
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw (1,0.03) -- (1,-0.03)  node[below] {$1$};
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw (0.5,0.03) -- (0.5,-0.03)  node[below] {$x$};
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw (2,0.03) -- (2,-0.03)  node[below] {$r$};
+\end_layout
+
+\begin_layout Plain Layout
+
+  % Winkelhalbierende
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw (-0.2,-0.2) -- (1.2,1.2) node[right]{1.};
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw (0:0.5) arc (0:45:0.5) node[below=5] {$45^
+\backslash
+circ$};
+\end_layout
+
+\begin_layout Plain Layout
+
+  % Schnittpunkt Kreis 1, Winkelhalbierende
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw (0:1) node[above right]{2.} arc (0:45:1);
+\end_layout
+
+\begin_layout Plain Layout
+
+  % Gerade durch r und Schnittpunkt
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw (2,0)  node[above right]{3.} -- ({2^(1/2)/2},{2^(1/2)/2});
+\end_layout
+
+\begin_layout Plain Layout
+
+  % Gerade durch 1 und Winkelhalbierende
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw[dashed] (1,0) -- +({(2^(1/2)/2-2)/2},{2^(1/2)/2/2}) node[right]{4.};
+\end_layout
+
+\begin_layout Plain Layout
+
+  % Kreis um 0 durch x
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw (0.5,0) node[above right]{5.} arc (0:45:0.5);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Der Strahlensatz ergibt:
+\begin_inset Formula 
+\begin{align*}
+\frac{r}{1} & =\frac{1}{x}\quad\Rightarrow\quad x=\frac{1}{r}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Korollar
+\end_layout
+
+\begin_layout Standard
+Seien 
+\begin_inset Formula $M\subseteq\mathbb{C}$
+\end_inset
+
+ und 
+\begin_inset Formula $\left\{ 0,1\right\} \subseteq M$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Dann ist 
+\begin_inset Formula $\winkel M$
+\end_inset
+
+ ein Teilkörper von 
+\begin_inset Formula $\mathbb{C}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection*
+Beweis
+\end_layout
+
+\begin_layout Standard
+Dies folgt sofort aus 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Prop-WinkelM"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Proposition
+\end_layout
+
+\begin_layout Standard
+Seien 
+\begin_inset Formula $M\subseteq\mathbb{C}$
+\end_inset
+
+, 
+\begin_inset Formula $\left\{ 0,1\right\} \subseteq M$
+\end_inset
+
+ und 
+\begin_inset Formula $z\in\winkel M$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Dann ist 
+\begin_inset Formula $w\in\winkel M$
+\end_inset
+
+ für alle 
+\begin_inset Formula $w\in\mathbb{C}$
+\end_inset
+
+ mit 
+\begin_inset Formula $w^{2}=z$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection*
+Beweis
+\end_layout
+
+\begin_layout Standard
+Aus 
+\begin_inset Formula $w^{2}=z=re^{\ii\varphi}$
+\end_inset
+
+ folgt 
+\begin_inset Formula $w=\pm\sqrt{r}e^{\ii\frac{\varphi}{2}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Wegen 
+\begin_inset Formula $e^{\ii\frac{\varphi}{2}}\in\winkel M$
+\end_inset
+
+, genügt es zu zeigen, dass 
+\begin_inset Formula $\sqrt{r}\in\winkel M$
+\end_inset
+
+ ist.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}[scale=2]
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw[->] (-1.2,0) -- (2.2,0) node[right] {Re$(z)$};
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw[->] (0,-0.2) -- (0,1.7) node[above] {Im$(z)$};
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw (0.05,1) -- (-0.05,1)  node[left] {$
+\backslash
+ii$};
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw (1,0.05) -- (1,-0.05)  node[below] {$1$};
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw (-1,0.05) -- (-1,-0.05)  node[below] {$-1$};
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw (0.05,{2^(1/2)}) -- (-0.05,{2^(1/2)})  node[left] {$x
+\backslash
+cdot 
+\backslash
+ii$};
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw (2,0.05) -- (2,-0.05)  node[below] {$r$};
+\end_layout
+
+\begin_layout Plain Layout
+
+  % Thaleskreis durch -1 und r
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw (2,0) arc (0:180:1.5);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Aus dem Höhensatz folgt:
+\begin_inset Formula 
+\begin{align*}
+x^{2} & =1\cdot r
+\end{align*}
+
+\end_inset
+
+Also ist 
+\begin_inset Formula $x=\sqrt{r}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Proposition und Definition 
+\series medium
+(komplex konjugierte Menge)
+\end_layout
+
+\begin_layout Standard
+Für 
+\begin_inset Formula $M\subseteq\mathbb{C}$
+\end_inset
+
+ sei 
+\begin_inset Formula $\overline{M}:=\left\{ \overline{m}|m\in M\right\} \subseteq\mathbb{C}$
+\end_inset
+
+ 
+\emph on
+die
+\emph default
+ 
+\emph on
+komplex konjugierte Menge
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+Sei 
+\begin_inset Formula $K\subseteq\mathbb{C}$
+\end_inset
+
+ ein Teilkörper mit 
+\begin_inset Formula $K=\overline{K}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{abclist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abc
+\end_layout
+
+\end_inset
+
+ Ist 
+\begin_inset Formula $z$
+\end_inset
+
+ der Schnittpunkt zweier verschiedener Geraden aus 
+\begin_inset Formula $\text{Ge}\left(K\right)$
+\end_inset
+
+, so folgt 
+\begin_inset Formula $z\in K$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abc
+\end_layout
+
+\end_inset
+
+ Ist 
+\begin_inset Formula $z$
+\end_inset
+
+ ein Schnittpunkt einer Geraden aus 
+\begin_inset Formula $\text{Ge}\left(K\right)$
+\end_inset
+
+ mit einem Kreis aus 
+\begin_inset Formula $\text{Kr}\left(K\right)$
+\end_inset
+
+, so gilt:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\exs_{w\in\mathbb{C}}:w^{2} & \in K\wedge z\in K\left(w\right)\label{eq:w2zK}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abc
+\end_layout
+
+\end_inset
+
+ Ist 
+\begin_inset Formula $z$
+\end_inset
+
+ ein Schnittpunkt zweier verschiedener Kreise aus 
+\begin_inset Formula $ $
+\end_inset
+
+
+\begin_inset Formula $\text{Kr}\left(K\right)$
+\end_inset
+
+, so gilt 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:w2zK"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{abclist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Beweis
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{abclist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abc
+\end_layout
+
+\end_inset
+
+ Seien 
+\begin_inset Formula $z_{0},z_{0}'\in K$
+\end_inset
+
+ und 
+\begin_inset Formula $z_{1},z_{1}'\in K^{*}$
+\end_inset
+
+, so dass für
+\begin_inset Formula 
+\begin{align*}
+G & :=\left\{ z_{0}+tz_{1}|t\in\mathbb{R}\right\} \\
+G' & :=\left\{ z_{0}'+tz_{1}'|t\in\mathbb{R}\right\} 
+\end{align*}
+
+\end_inset
+
+schon 
+\begin_inset Formula $G\not=G'$
+\end_inset
+
+ und 
+\begin_inset Formula $G\cap G'\not=\emptyset$
+\end_inset
+
+ gilt.
+\end_layout
+
+\begin_layout Standard
+Sei 
+\begin_inset Formula $z\in G\cap G'$
+\end_inset
+
+, 
+\begin_inset Formula $z=z_{0}+t_{1}z_{1}=z_{0}'+t'z_{1}'$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\left(t,t'\right)$
+\end_inset
+
+ ist die eindeutige Lösung des linearen Gleichungssystems
+\begin_inset Formula 
+\begin{align*}
+t\text{Re}\left(z_{1}\right)-t'\text{Re}\left(z_{1}'\right) & =\text{Re}\left(z_{0}'\right)-\text{Re}\left(z_{0}\right)\\
+t\text{Im}\left(z_{1}\right)-t'\text{Im}\left(z_{1}'\right) & =\text{Im}\left(z_{0}'\right)-\text{Im}\left(z_{0}\right)
+\end{align*}
+
+\end_inset
+
+über 
+\begin_inset Formula $K$
+\end_inset
+
+, und wegen 
+\begin_inset Formula $K=\overline{K}$
+\end_inset
+
+, also 
+\begin_inset Formula $\text{Re}\left(z\right),\text{Im}\left(z\right)\in K$
+\end_inset
+
+ für alle 
+\begin_inset Formula $z\in K$
+\end_inset
+
+, sind 
+\begin_inset Formula $t,t'\in K$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abc
+\end_layout
+
+\end_inset
+
+ Seien 
+\begin_inset Formula $a,z_{0},\alpha,\beta\in K$
+\end_inset
+
+, 
+\begin_inset Formula $r^{2}:=\left|\alpha-\beta\right|^{2}\in\mathbb{R}_{\ge0}\cap K$
+\end_inset
+
+, 
+\begin_inset Formula $t\in\mathbb{R}$
+\end_inset
+
+ und 
+\begin_inset Formula $z_{1}\in K^{*}$
+\end_inset
+
+.
+\begin_inset Formula 
+\begin{align*}
+k & :=\left\{ z\bigg|\left(z-a\right)\overline{\left(z-a\right)}=r^{2}\right\} 
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+z_{0}+tz_{1}\in k & \Leftrightarrow\left(z_{0}+z_{1}t-a\right)\left(\overline{z_{0}}+\overline{z_{1}}t-\overline{a}\right)=r^{2}
+\end{align*}
+
+\end_inset
+
+Also folgt
+\begin_inset Formula 
+\begin{align*}
+t^{2}+pt+q & =\left(t+\frac{p}{2}\right)^{2}+\frac{p^{2}}{4}+q=0
+\end{align*}
+
+\end_inset
+
+mit 
+\begin_inset Formula $p,q\in K$
+\end_inset
+
+ wegen 
+\begin_inset Formula $K=\overline{K}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Für 
+\begin_inset Formula ${\displaystyle w:=t+\frac{p}{2}}$
+\end_inset
+
+ gilt
+\begin_inset Formula 
+\begin{align*}
+w^{2} & =-\frac{p^{2}}{4}-q\in K
+\end{align*}
+
+\end_inset
+
+und 
+\begin_inset Formula $z_{0}+tz_{1}\in K\left(t\right)=K\left(w\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abc
+\end_layout
+
+\end_inset
+
+ Sei 
+\begin_inset Formula $a,b,\alpha,\alpha',\beta,\beta'\in K$
+\end_inset
+
+ mit 
+\begin_inset Formula $a\not=b$
+\end_inset
+
+, 
+\begin_inset Formula $r^{2}:=\left|\alpha-\beta\right|^{2},s^{2}:=\left|\alpha'-\beta'\right|^{2}\in\mathbb{R}_{\ge0}\cap K$
+\end_inset
+
+ und 
+\begin_inset Formula $z\in\mathbb{C}$
+\end_inset
+
+ mit:
+\begin_inset Formula 
+\begin{align}
+\left(z-a\right)\left(\overline{z}-\overline{a}\right) & =r^{2}\label{eq:zar2}\\
+\left(z-b\right)\left(\overline{z}-\overline{b}\right) & =s^{2}\nonumber 
+\end{align}
+
+\end_inset
+
+Subtraktion der Gleichungen liefert:
+\begin_inset Formula 
+\begin{align*}
+z\left(\overline{b}-\overline{a}\right)+\overline{z}\left(b-a\right) & \in K
+\end{align*}
+
+\end_inset
+
+Auflösen nach 
+\begin_inset Formula $\overline{z}$
+\end_inset
+
+ und Einsetzen in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:zar2"
+
+\end_inset
+
+ ergibt eine quadratische Gleichung.
+ Der Rest des Beweises geht analog zur b).
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{abclist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed
 \end_layout
 
 \end_inset
