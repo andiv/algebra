@@ -1,4 +1,4 @@
-%% LyX 2.0.1 created this file.  For more info, see http://www.lyx.org/.
+%% LyX 2.0.2 created this file.  For more info, see http://www.lyx.org/.
 %% Do not edit unless you really know what you are doing.
 \documentclass[11pt,english,ngerman]{report}
 \usepackage[T1]{fontenc}
@@ -9601,7 +9601,7 @@ Dies folgt sofort aus \ref{sec:Prop-WinkelM}.
 \qqed
 
 
-\section{Proposition}
+\section{Proposition\label{sec:Prop-quadrM}}
 
 Seien $M\subseteq\mathbb{C}$, $\left\{ 0,1\right\} \subseteq M$
 und $z\in\winkel M$.
@@ -9639,7 +9639,7 @@ Also ist $x=\sqrt{r}$.
 \qqed
 
 
-\section{Proposition und Definition \textmd{(komplex konjugierte Menge)}}
+\section{Proposition und Definition \textmd{(komplex konjugierte Menge)\label{sec:PuD-komplexKonjugierteMenge}}}
 
 Für $M\subseteq\mathbb{C}$ sei $\overline{M}:=\left\{ \overline{m}|m\in M\right\} \subseteq\mathbb{C}$
 \emph{die} \emph{komplex konjugierte Menge}.
@@ -9725,6 +9725,339 @@ b).
 \end{abclist}
 
 \qqed
+
+%DATE: Di 31.1.2012
+
+
+\section{Satz}
+
+Sei $M\subseteq\mathbb{C}$ mit $\left\{ 0,1\right\} \subseteq M$
+und $K:=\mathbb{Q}\left(M\cup\overline{M}\right)$, also $K=\overline{K}$.
+
+Dann sind für ein $z\in\mathbb{C}$ äquivalent:
+
+\begin{iiilist}
+
+\iii $z\in\winkel M$
+
+\iii $z$ liegt in einem Teilkörper $E$ von $\mathbb{C}$, der $K$
+enthält und durch sukzessive Adjunktion von Quadratwurzeln aus $K$
+entsteht.
+
+\iii Es gibt eine endliche Kette von Teilkörpern
+\begin{align*}
+K=K_{0} & \subseteq K_{1}\subseteq\ldots\subseteq K_{m}
+\end{align*}
+von $\mathbb{C}$ mit
+\begin{align*}
+\left[K_{i}:K_{i-1}\right] & =2
+\end{align*}
+für alle $i\in\left\{ 1,\ldots,m\right\} $, sodass $z\in K_{m}$
+ist.
+
+\iii $z$ ist algebraisch über $K$ und für die normale Hülle $\modulo{E}{K}$
+von $\modulo{K\left(z\right)}{K}$ gilt:
+\begin{align*}
+\left[E:K\right]
+\end{align*}
+ist eine Potenz von $2$.
+
+\end{iiilist}
+
+
+\subsubsection*{Beweis}
+
+i) $\Rightarrow$ ii) folgt aus \ref{sec:PuD-komplexKonjugierteMenge}.
+
+ii) $\Rightarrow$ iii): Entsteht $E'$ aus $E$ durch Adjunktion
+eine Quadratwurzel, so gilt $\left[E':E\right]\in\left\{ 1,2\right\} $.
+
+iii) $\Rightarrow$ iv): Es existiert ein $w_{i}\in K_{i}$ mit $w_{i}^{2}\in K_{i-1}$
+und $K_{i}=K_{i-1}\left(w_{i}\right)$. (quadratische Ergänzung)
+
+Sei $\modulo{E_{m}}{K}$ normale Hülle von $\modulo{K_{m}}{K}$, also
+galoissch. Daher genügt es zu zeigen, dass $\left[E_{m}:K\right]$
+eine Potenz von 2 ist. 
+
+Induktion nach $m$:
+
+$m=1$ ist klar.
+
+Sei also $m>1$ und $E_{m-1}$ eine normale Hülle von $K_{m-1}$ über
+$K$.
+
+Nach Induktionsvoraussetzung ist $\left[E_{m-1}:K\right]$ eine Potenz
+von 2, $K_{m}=K_{m-1}\left(w_{m}\right)$.
+
+Seien $\alpha_{1}=w_{m},\alpha_{2},\ldots,\alpha_{s}$ die verschiedenen
+Konjugierten von $w_{m}$ über $K$ in $\mathbb{C}$.
+
+Dann gilt $\alpha_{i}^{2}\in E_{m-1}$ , da $\alpha_{i}^{2}$ über
+$K$ konjugiert ist zu $w_{m}^{2}\in K_{m-1}$.
+
+Es gilt $E_{m}=E_{m}\left(\alpha_{1},\ldots,\alpha_{s}\right)$.
+
+Damit folgt mit einem geeigneten $a\in\mathbb{N}$:
+\begin{align*}
+\left[E_{m}:E_{m-1}\right] & =2^{a}
+\end{align*}
+Also auch:
+\begin{align*}
+\left[E_{m}:K\right] & =\left[E_{m}:E_{m-1}\right]\cdot\left[E_{m}:K\right]
+\end{align*}
+iv) $\Rightarrow$ i): $\modulo{E}{K}$ ist galoissch und $\text{Gal}\left(\modulo{E}{K}\right)$
+ist eine 2-Gruppe. Nach \ref{sub:Satz-KetteNormalteiler} gibt es
+eine Kette von Untergruppen
+\begin{align*}
+G=H_{0} & \supseteq H_{1}\supseteq\ldots\supseteq H_{n}=\left\{ e\right\} 
+\end{align*}
+von $G$ mit $\left(H_{i-1}:H_{i}\right)=2$.
+
+Dazu gehört eine Kette von Zwischenkörpern
+\begin{align*}
+K=K_{0} & \subseteq K_{1}\subseteq\ldots\subseteq K_{n}=E
+\end{align*}
+mit $\left[K_{i}:K_{i-1}\right]=2$.
+
+Jedes $K_{i}$ entsteht aus $K_{i-1}$ durch Adjunktion einer Quadratwurzel
+(quadratische Ergänzung), also erhält man mit \ref{sec:Prop-quadrM}
+sukzessive:
+\begin{align*}
+K=K_{0} & \subseteq\winkel M & K_{1} & \subseteq\winkel M &  & \ldots & K_{n} & \subseteq\winkel M
+\end{align*}
+Also ist $z\in\winkel M$.
+
+\qqed
+
+
+\section{Beispiele}
+
+\begin{iiilist}
+
+\iii Delisches Problem: Volumenverdopplung eines Würfels:
+\begin{align*}
+\left[\mathbb{Q}\left(\sqrt[3]{2}\right):\mathbb{Q}\right] & =3
+\end{align*}
+Also ist ein Würfel doppelten Volumens nicht konstruierbar.
+
+\iii Quadratur des Kreises: $\pi$ ist transzendent (Lindemann 1882),
+das heißt nicht algebraisch.
+
+Also kann man kein Quadrat konstruieren, dass die gleiche Fläche wie
+ein Kreis hat.
+
+\iii Dreiteilung des Winkels:
+
+Hat die normale Hülle von $\mathbb{Q}\left(e^{\frac{\ii\varphi}{3}}\right)$
+über $\mathbb{Q}\left(e^{\ii\varphi}\right)$ einen 2er Potenzgrad?
+
+Im Allgemeinen nicht:
+
+Wähle $\varphi$ so, dass $e^{\ii\varphi}$ transzendent ist über
+$\mathbb{Q}$, dies geht, da $\mathbb{Q}$ abzählbar ist und die Anzahl
+der Winkel in $[0,2\pi)$ überabzählbar.
+
+Dann ist $\left[\mathbb{Q}\left(e^{\frac{\ii\varphi}{3}}\right):\mathbb{Q}\left(e^{\ii\varphi}\right)\right]=3$,
+denn $X^{3}-t$ ist irreduzibel über $\mathbb{Q}\left(t\right)$.
+
+\iii Konstruktion von regelmäßigen $n$-Ecken ($n$-Teilung des Kreises):
+
+Ein $n$-Eck ist genau dann konstruierbar, wenn $\left[\mathbb{Q}\left(e^{\frac{2\pi\ii}{n}}\right):\mathbb{Q}\right]=\varphi\left(n\right)$
+eine 2er-Potenz ist.
+
+Dies ist äquivalent dazu, dass
+\begin{align*}
+n & =2^{e}\cdot p_{1}\cdot\ldots\cdot p_{r}
+\end{align*}
+ mit paarweise verschiedenen Primzahlen $p_{i}$ mit $p_{i}-1$ ist
+eine Zweierpotenz.
+
+
+\subsubsection*{Lemma}
+
+Für $m\in\mathbb{N}_{>0}$ ist $1+2^{m}$ höchstens dann eine Primzahl,
+wenn $m$ eine Potenz von $2$ ist.
+
+
+\subsubsection*{Beweis}
+
+Sei $p=1+2^{m}$ eine Primzahl.
+
+$m=m_{1}\cdot m_{2}$ mit $m_{2}>1$ und ungerade. Dann ist aber
+\begin{align*}
+p & =1-\left(-2^{m_{1}}\right)^{m_{2}}=\left(1+2^{m_{1}}\right)\left(1-2^{m_{1}}+2^{2m_{1}}-\ldots+2^{m_{1}\left(m_{2}-1\right)}\right)
+\end{align*}
+ein Produkt zweier Zahlen, die größer als 1 sind, was ein Widerspruch
+zur Primzahleigenschaft von $p$ ist.
+
+\qqed[Lemma]
+
+Also $p_{k}=2^{2^{k}}+1$. Zum Beispiel sind $3,5,17,257,65537$ solche
+Primzahlen.
+
+\end{iiilist}
+
+
+\chapter{Auflösbarkeit algebraischer Gleichungen}
+
+
+\section{Charaktere}
+
+
+\subsection{Definition \textmd{(Charakter)}}
+
+\begin{iiilist}
+
+\iii Ist $G$ eine Gruppe und $K$ ein Körper, so heißt ein Homomorphismus
+\begin{align*}
+\chi:G & \to K^{*}
+\end{align*}
+\emph{ein $K$-wertiger Charakter von $G$}.
+
+\iii Seien $G$, $K$ wie in i). Mit $\text{Abb}\left(G,K\right)$
+wird der $K$-Vektorraum der mengentheoretischen Abbildungen von $G$
+nach $K$ bezeichnet.
+
+\end{iiilist}
+
+
+\subsection{Satz \textmd{(Charaktere sind linear unabhängig)\label{sub:Satz-CharaktereLinearUnabhaengig}}}
+
+Paarweise verschiedene Charaktere $\chi_{1},\ldots,\chi_{n}$ einer
+Gruppe $G$ mit Werten in einem Körper $K$ sind linear unabhängig
+in $\text{Abb}\left(G,K\right)$.
+
+
+\subsubsection*{Beweis}
+
+Sei
+\begin{align}
+a_{1}\chi_{1}+\ldots+a_{n}\chi_{n} & =0\label{eq:achi0}
+\end{align}
+eine nicht-triviale Relation und ohne Einschränkung $n$ minimal mit
+dieser Eigenschaft.
+
+Also folgt $a_{i}\not=0$ für alle $i\in\left\{ 1,\ldots,n\right\} $.
+Es gilt also für alle $g,h\in G$:
+\begin{align*}
+a_{1}\chi_{1}\left(gh\right)+\ldots+a_{n}\chi_{n}\left(gh\right) & =0
+\end{align*}
+Wähle $g\in G$ mit $\chi_{1}\left(g\right)\not=\chi_{2}\left(g\right)$
+und lasse $h$ variieren. Daher gilt:
+\begin{align*}
+a_{1}\chi_{1}\left(g\right)\cdot\chi_{1}+\ldots+a_{n}\chi_{n}\left(g\right)\cdot\chi_{n} & =0
+\end{align*}
+Subtraktion von $\chi_{1}\left(g\right)\cdot\eqref{eq:achi0}$ liefert
+eine nicht-triviale Relation kleinerer Länge im Widerspruch zur Minimalität
+von $n$.
+
+Daher können die $\chi_{i}$ nicht linear abhängig sein.
+
+\qqed
+
+
+\section{Zyklische Erweiterungen}
+
+
+\subsection{Proposition und Definition \textmd{(Norm)\label{sub:PuD-Norm}}}
+
+Seien $K\subseteq E$ eine endliche Galoiserweiterung und $a\in E$.
+
+Dann heißt
+\begin{align*}
+N_{\moduloScript{E}{K}}\left(a\right) & :=\prod_{\sigma\in\text{Gal}\left(\moduloScript{E}{K}\right)}\sigma\left(a\right)\in K
+\end{align*}
+die \emph{Norm} von $a$ bezüglich $\modulo{E}{K}$.
+\begin{align*}
+N_{\moduloScript{E}{K}}:E^{*} & \rightarrow K^{*}
+\end{align*}
+ist ein Homomorphismus.
+
+
+\subsubsection*{Beweis}
+
+\begin{align*}
+\prod_{\sigma\in\text{Gal}\left(\moduloScript{E}{K}\right)}\sigma\left(a\right)
+\end{align*}
+ist $\text{Gal}\left(\modulo{E}{K}\right)$-invariant, und daher ein
+Element von $K$.
+\begin{align*}
+N_{\moduloScript{E}{K}}\left(a\cdot b\right) & =\prod_{\sigma\in\text{Gal}\left(\moduloScript{E}{K}\right)}\sigma\left(ab\right)=\prod_{\sigma\in\text{Gal}\left(\moduloScript{E}{K}\right)}\sigma\left(a\right)\cdot\prod_{\sigma\in\text{Gal}\left(\moduloScript{E}{K}\right)}\sigma\left(b\right)=\\
+ & =N_{\moduloScript{E}{K}}\left(a\right)\cdot N_{\moduloScript{E}{K}}\left(b\right)
+\end{align*}
+
+
+
+\subsection{Satz \textmd{(Hilbert 90)}}
+
+Seien $\modulo{L}{K}$ eine endliche zyklische Galoiserweiterung,
+$\sigma\in\text{Gal}\left(\modulo{L}{K}\right)$ ein erzeugendes Element.
+
+Für ein $b\in L$ ist dann äquivalent:
+
+\begin{iiilist}
+
+\iii $N_{\moduloScript{L}{K}}\left(b\right)=1$
+
+\iii Es gibt ein $a\in L^{*}$ mit $b=\frac{a}{\sigma\left(a\right)}$.
+
+\end{iiilist}
+
+
+\subsubsection*{Beweis}
+
+Gilt
+\begin{align*}
+b & =\frac{a}{\sigma\left(a\right)}
+\end{align*}
+mit $a\in L^{*}$, so ist:
+\begin{align*}
+N_{\moduloScript{L}{K}}\left(b\right) & =\frac{\prod_{\tau\in\text{Gal}\left(\moduloScript{L}{K}\right)}\tau\left(a\right)}{\prod_{\tau\in\text{Gal}\left(\moduloScript{L}{K}\right)}\tau\left(\sigma\left(a\right)\right)}=1
+\end{align*}
+Sei umgekehrt $b\in L$ mit $N_{\moduloScript{L}{K}}$ und $n=\left[L:K\right]$.
+
+Wegen \ref{sub:Satz-CharaktereLinearUnabhaengig} ist
+\begin{align*}
+\sigma^{0}+b\sigma^{1}+b\sigma\left(b\right)\sigma^{2}+\ldots+b\sigma\left(b\right)\cdot\ldots\cdot\sigma^{n-2}\left(b\right)\sigma^{n-1}
+\end{align*}
+als Abbildung $L^{*}\to L$ nicht die Nullabbildung.
+
+Also gibt es ein $c\in L^{*}$ mit:
+\begin{align*}
+a & :=c+b\sigma\left(c\right)+b\sigma\left(b\right)\sigma^{2}\left(c\right)+\ldots+b\sigma\left(b\right)\cdot\ldots\cdot\sigma^{n-2}\left(b\right)\sigma^{n-1}\left(c\right)\not=0
+\end{align*}
+Anwenden von $\sigma$ und Multiplikation mit $b$ ergibt:
+\begin{align*}
+b\cdot\sigma\left(a\right) & :=b\cdot\sigma\left(c\right)+b\sigma\left(b\right)\sigma^{2}\left(c\right)+\ldots+\underbrace{b\sigma\left(b\right)\cdot\ldots\cdot\sigma^{n-1}\left(b\right)\sigma^{n}\left(c\right)}_{=c}=a
+\end{align*}
+Denn es gilt
+\begin{align*}
+\sigma^{n} & =\text{id}
+\end{align*}
+und:
+\begin{align*}
+b\cdot\sigma\left(b\right)\cdot\ldots\cdot\sigma^{n-1}\left(b\right) & =N_{\moduloScript{L}{K}}\left(b\right)=1
+\end{align*}
+Also ist ${\displaystyle b=\frac{a}{\sigma\left(a\right)}}$.
+
+\qqed
+
+
+\subsection{Satz}
+
+Sei $\modulo{L}{K}$ eine Körpererweiterung, $n\in\mathbb{N}_{>0}$
+mit $\text{char}\left(K\right)\!\not|\, n$ und $K$ enthalte eine
+primitive $n$-te Einheitswurzel.
+
+\begin{iiilist}
+
+\iii Ist $\modulo{L}{K}$ eine zyklische Galoiserweiterung vom Grad
+$n$, so gilt $L=K\left(a\right)$ für ein Element $a\in L$, dessen
+Minimalpolynom über $K$ von der Form $X^{n}-c$ mit $c\in K$ ist.
+
+\iii 
+
+\end{iiilist}
 
 
 \part*{Anhang\thispagestyle{empty}}

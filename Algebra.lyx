@@ -47035,6 +47035,13 @@ qqed
 
 \begin_layout Section
 Proposition
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Prop-quadrM"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -47225,6 +47232,13 @@ qqed
 Proposition und Definition 
 \series medium
 (komplex konjugierte Menge)
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:PuD-komplexKonjugierteMenge"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -47672,6 +47686,1537 @@ status open
 
 \backslash
 qqed
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+%DATE: Di 31.1.2012
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Satz
+\end_layout
+
+\begin_layout Standard
+Sei 
+\begin_inset Formula $M\subseteq\mathbb{C}$
+\end_inset
+
+ mit 
+\begin_inset Formula $\left\{ 0,1\right\} \subseteq M$
+\end_inset
+
+ und 
+\begin_inset Formula $K:=\mathbb{Q}\left(M\cup\overline{M}\right)$
+\end_inset
+
+, also 
+\begin_inset Formula $K=\overline{K}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Dann sind für ein 
+\begin_inset Formula $z\in\mathbb{C}$
+\end_inset
+
+ äquivalent:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $z\in\winkel M$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $z$
+\end_inset
+
+ liegt in einem Teilkörper 
+\begin_inset Formula $E$
+\end_inset
+
+ von 
+\begin_inset Formula $\mathbb{C}$
+\end_inset
+
+, der 
+\begin_inset Formula $K$
+\end_inset
+
+ enthält und durch sukzessive Adjunktion von Quadratwurzeln aus 
+\begin_inset Formula $K$
+\end_inset
+
+ entsteht.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Es gibt eine endliche Kette von Teilkörpern
+\begin_inset Formula 
+\begin{align*}
+K=K_{0} & \subseteq K_{1}\subseteq\ldots\subseteq K_{m}
+\end{align*}
+
+\end_inset
+
+von 
+\begin_inset Formula $\mathbb{C}$
+\end_inset
+
+ mit
+\begin_inset Formula 
+\begin{align*}
+\left[K_{i}:K_{i-1}\right] & =2
+\end{align*}
+
+\end_inset
+
+für alle 
+\begin_inset Formula $i\in\left\{ 1,\ldots,m\right\} $
+\end_inset
+
+, sodass 
+\begin_inset Formula $z\in K_{m}$
+\end_inset
+
+ ist.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $z$
+\end_inset
+
+ ist algebraisch über 
+\begin_inset Formula $K$
+\end_inset
+
+ und für die normale Hülle 
+\begin_inset Formula $\modulo{E}{K}$
+\end_inset
+
+ von 
+\begin_inset Formula $\modulo{K\left(z\right)}{K}$
+\end_inset
+
+ gilt:
+\begin_inset Formula 
+\begin{align*}
+\left[E:K\right]
+\end{align*}
+
+\end_inset
+
+ist eine Potenz von 
+\begin_inset Formula $2$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Beweis
+\end_layout
+
+\begin_layout Standard
+i) 
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+ ii) folgt aus 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:PuD-komplexKonjugierteMenge"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+ii) 
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+ iii): Entsteht 
+\begin_inset Formula $E'$
+\end_inset
+
+ aus 
+\begin_inset Formula $E$
+\end_inset
+
+ durch Adjunktion eine Quadratwurzel, so gilt 
+\begin_inset Formula $\left[E':E\right]\in\left\{ 1,2\right\} $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+iii) 
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+ iv): Es existiert ein 
+\begin_inset Formula $w_{i}\in K_{i}$
+\end_inset
+
+ mit 
+\begin_inset Formula $w_{i}^{2}\in K_{i-1}$
+\end_inset
+
+ und 
+\begin_inset Formula $K_{i}=K_{i-1}\left(w_{i}\right)$
+\end_inset
+
+.
+ (quadratische Ergänzung)
+\end_layout
+
+\begin_layout Standard
+Sei 
+\begin_inset Formula $\modulo{E_{m}}{K}$
+\end_inset
+
+ normale Hülle von 
+\begin_inset Formula $\modulo{K_{m}}{K}$
+\end_inset
+
+, also galoissch.
+ Daher genügt es zu zeigen, dass 
+\begin_inset Formula $\left[E_{m}:K\right]$
+\end_inset
+
+ eine Potenz von 2 ist.
+ 
+\end_layout
+
+\begin_layout Standard
+Induktion nach 
+\begin_inset Formula $m$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $m=1$
+\end_inset
+
+ ist klar.
+\end_layout
+
+\begin_layout Standard
+Sei also 
+\begin_inset Formula $m>1$
+\end_inset
+
+ und 
+\begin_inset Formula $E_{m-1}$
+\end_inset
+
+ eine normale Hülle von 
+\begin_inset Formula $K_{m-1}$
+\end_inset
+
+ über 
+\begin_inset Formula $K$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Nach Induktionsvoraussetzung ist 
+\begin_inset Formula $\left[E_{m-1}:K\right]$
+\end_inset
+
+ eine Potenz von 2, 
+\begin_inset Formula $K_{m}=K_{m-1}\left(w_{m}\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Seien 
+\begin_inset Formula $\alpha_{1}=w_{m},\alpha_{2},\ldots,\alpha_{s}$
+\end_inset
+
+ die verschiedenen Konjugierten von 
+\begin_inset Formula $w_{m}$
+\end_inset
+
+ über 
+\begin_inset Formula $K$
+\end_inset
+
+ in 
+\begin_inset Formula $\mathbb{C}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Dann gilt 
+\begin_inset Formula $\alpha_{i}^{2}\in E_{m-1}$
+\end_inset
+
+ , da 
+\begin_inset Formula $\alpha_{i}^{2}$
+\end_inset
+
+ über 
+\begin_inset Formula $K$
+\end_inset
+
+ konjugiert ist zu 
+\begin_inset Formula $w_{m}^{2}\in K_{m-1}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Es gilt 
+\begin_inset Formula $E_{m}=E_{m}\left(\alpha_{1},\ldots,\alpha_{s}\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Damit folgt mit einem geeigneten 
+\begin_inset Formula $a\in\mathbb{N}$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+\left[E_{m}:E_{m-1}\right] & =2^{a}
+\end{align*}
+
+\end_inset
+
+Also auch:
+\begin_inset Formula 
+\begin{align*}
+\left[E_{m}:K\right] & =\left[E_{m}:E_{m-1}\right]\cdot\left[E_{m}:K\right]
+\end{align*}
+
+\end_inset
+
+iv) 
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+ i): 
+\begin_inset Formula $\modulo{E}{K}$
+\end_inset
+
+ ist galoissch und 
+\begin_inset Formula $\text{Gal}\left(\modulo{E}{K}\right)$
+\end_inset
+
+ ist eine 2-Gruppe.
+ Nach 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Satz-KetteNormalteiler"
+
+\end_inset
+
+ gibt es eine Kette von Untergruppen
+\begin_inset Formula 
+\begin{align*}
+G=H_{0} & \supseteq H_{1}\supseteq\ldots\supseteq H_{n}=\left\{ e\right\} 
+\end{align*}
+
+\end_inset
+
+von 
+\begin_inset Formula $G$
+\end_inset
+
+ mit 
+\begin_inset Formula $\left(H_{i-1}:H_{i}\right)=2$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Dazu gehört eine Kette von Zwischenkörpern
+\begin_inset Formula 
+\begin{align*}
+K=K_{0} & \subseteq K_{1}\subseteq\ldots\subseteq K_{n}=E
+\end{align*}
+
+\end_inset
+
+mit 
+\begin_inset Formula $\left[K_{i}:K_{i-1}\right]=2$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Jedes 
+\begin_inset Formula $K_{i}$
+\end_inset
+
+ entsteht aus 
+\begin_inset Formula $K_{i-1}$
+\end_inset
+
+ durch Adjunktion einer Quadratwurzel (quadratische Ergänzung), also erhält
+ man mit 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Prop-quadrM"
+
+\end_inset
+
+ sukzessive:
+\begin_inset Formula 
+\begin{align*}
+K=K_{0} & \subseteq\winkel M & K_{1} & \subseteq\winkel M &  & \ldots & K_{n} & \subseteq\winkel M
+\end{align*}
+
+\end_inset
+
+Also ist 
+\begin_inset Formula $z\in\winkel M$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Beispiele
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Delisches Problem: Volumenverdopplung eines Würfels:
+\begin_inset Formula 
+\begin{align*}
+\left[\mathbb{Q}\left(\sqrt[3]{2}\right):\mathbb{Q}\right] & =3
+\end{align*}
+
+\end_inset
+
+Also ist ein Würfel doppelten Volumens nicht konstruierbar.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Quadratur des Kreises: 
+\begin_inset Formula $\pi$
+\end_inset
+
+ ist transzendent (Lindemann 1882), das heißt nicht algebraisch.
+\end_layout
+
+\begin_layout Standard
+Also kann man kein Quadrat konstruieren, dass die gleiche Fläche wie ein
+ Kreis hat.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Dreiteilung des Winkels:
+\end_layout
+
+\begin_layout Standard
+Hat die normale Hülle von 
+\begin_inset Formula $\mathbb{Q}\left(e^{\frac{\ii\varphi}{3}}\right)$
+\end_inset
+
+ über 
+\begin_inset Formula $\mathbb{Q}\left(e^{\ii\varphi}\right)$
+\end_inset
+
+ einen 2er Potenzgrad?
+\end_layout
+
+\begin_layout Standard
+Im Allgemeinen nicht:
+\end_layout
+
+\begin_layout Standard
+Wähle 
+\begin_inset Formula $\varphi$
+\end_inset
+
+ so, dass 
+\begin_inset Formula $e^{\ii\varphi}$
+\end_inset
+
+ transzendent ist über 
+\begin_inset Formula $\mathbb{Q}$
+\end_inset
+
+, dies geht, da 
+\begin_inset Formula $\mathbb{Q}$
+\end_inset
+
+ abzählbar ist und die Anzahl der Winkel in 
+\begin_inset Formula $[0,2\pi)$
+\end_inset
+
+ überabzählbar.
+\end_layout
+
+\begin_layout Standard
+Dann ist 
+\begin_inset Formula $\left[\mathbb{Q}\left(e^{\frac{\ii\varphi}{3}}\right):\mathbb{Q}\left(e^{\ii\varphi}\right)\right]=3$
+\end_inset
+
+, denn 
+\begin_inset Formula $X^{3}-t$
+\end_inset
+
+ ist irreduzibel über 
+\begin_inset Formula $\mathbb{Q}\left(t\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Konstruktion von regelmäßigen 
+\begin_inset Formula $n$
+\end_inset
+
+-Ecken (
+\begin_inset Formula $n$
+\end_inset
+
+-Teilung des Kreises):
+\end_layout
+
+\begin_layout Standard
+Ein 
+\begin_inset Formula $n$
+\end_inset
+
+-Eck ist genau dann konstruierbar, wenn 
+\begin_inset Formula $\left[\mathbb{Q}\left(e^{\frac{2\pi\ii}{n}}\right):\mathbb{Q}\right]=\varphi\left(n\right)$
+\end_inset
+
+ eine 2er-Potenz ist.
+\end_layout
+
+\begin_layout Standard
+Dies ist äquivalent dazu, dass
+\begin_inset Formula 
+\begin{align*}
+n & =2^{e}\cdot p_{1}\cdot\ldots\cdot p_{r}
+\end{align*}
+
+\end_inset
+
+ mit paarweise verschiedenen Primzahlen 
+\begin_inset Formula $p_{i}$
+\end_inset
+
+ mit 
+\begin_inset Formula $p_{i}-1$
+\end_inset
+
+ ist eine Zweierpotenz.
+\end_layout
+
+\begin_layout Subsubsection*
+Lemma
+\end_layout
+
+\begin_layout Standard
+Für 
+\begin_inset Formula $m\in\mathbb{N}_{>0}$
+\end_inset
+
+ ist 
+\begin_inset Formula $1+2^{m}$
+\end_inset
+
+ höchstens dann eine Primzahl, wenn 
+\begin_inset Formula $m$
+\end_inset
+
+ eine Potenz von 
+\begin_inset Formula $2$
+\end_inset
+
+ ist.
+\end_layout
+
+\begin_layout Subsubsection*
+Beweis
+\end_layout
+
+\begin_layout Standard
+Sei 
+\begin_inset Formula $p=1+2^{m}$
+\end_inset
+
+ eine Primzahl.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $m=m_{1}\cdot m_{2}$
+\end_inset
+
+ mit 
+\begin_inset Formula $m_{2}>1$
+\end_inset
+
+ und ungerade.
+ Dann ist aber
+\begin_inset Formula 
+\begin{align*}
+p & =1-\left(-2^{m_{1}}\right)^{m_{2}}=\left(1+2^{m_{1}}\right)\left(1-2^{m_{1}}+2^{2m_{1}}-\ldots+2^{m_{1}\left(m_{2}-1\right)}\right)
+\end{align*}
+
+\end_inset
+
+ein Produkt zweier Zahlen, die größer als 1 sind, was ein Widerspruch zur
+ Primzahleigenschaft von 
+\begin_inset Formula $p$
+\end_inset
+
+ ist.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed[Lemma]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Also 
+\begin_inset Formula $p_{k}=2^{2^{k}}+1$
+\end_inset
+
+.
+ Zum Beispiel sind 
+\begin_inset Formula $3,5,17,257,65537$
+\end_inset
+
+ solche Primzahlen.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Auflösbarkeit algebraischer Gleichungen
+\end_layout
+
+\begin_layout Section
+Charaktere
+\end_layout
+
+\begin_layout Subsection
+Definition 
+\series medium
+(Charakter)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Ist 
+\begin_inset Formula $G$
+\end_inset
+
+ eine Gruppe und 
+\begin_inset Formula $K$
+\end_inset
+
+ ein Körper, so heißt ein Homomorphismus
+\begin_inset Formula 
+\begin{align*}
+\chi:G & \to K^{*}
+\end{align*}
+
+\end_inset
+
+
+\emph on
+ein 
+\begin_inset Formula $K$
+\end_inset
+
+-wertiger Charakter von 
+\begin_inset Formula $G$
+\end_inset
+
+
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Seien 
+\begin_inset Formula $G$
+\end_inset
+
+, 
+\begin_inset Formula $K$
+\end_inset
+
+ wie in i).
+ Mit 
+\begin_inset Formula $\text{Abb}\left(G,K\right)$
+\end_inset
+
+ wird der 
+\begin_inset Formula $K$
+\end_inset
+
+-Vektorraum der mengentheoretischen Abbildungen von 
+\begin_inset Formula $G$
+\end_inset
+
+ nach 
+\begin_inset Formula $K$
+\end_inset
+
+ bezeichnet.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Satz 
+\series medium
+(Charaktere sind linear unabhängig)
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Satz-CharaktereLinearUnabhaengig"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Paarweise verschiedene Charaktere 
+\begin_inset Formula $\chi_{1},\ldots,\chi_{n}$
+\end_inset
+
+ einer Gruppe 
+\begin_inset Formula $G$
+\end_inset
+
+ mit Werten in einem Körper 
+\begin_inset Formula $K$
+\end_inset
+
+ sind linear unabhängig in 
+\begin_inset Formula $\text{Abb}\left(G,K\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection*
+Beweis
+\end_layout
+
+\begin_layout Standard
+Sei
+\begin_inset Formula 
+\begin{align}
+a_{1}\chi_{1}+\ldots+a_{n}\chi_{n} & =0\label{eq:achi0}
+\end{align}
+
+\end_inset
+
+eine nicht-triviale Relation und ohne Einschränkung 
+\begin_inset Formula $n$
+\end_inset
+
+ minimal mit dieser Eigenschaft.
+\end_layout
+
+\begin_layout Standard
+Also folgt 
+\begin_inset Formula $a_{i}\not=0$
+\end_inset
+
+ für alle 
+\begin_inset Formula $i\in\left\{ 1,\ldots,n\right\} $
+\end_inset
+
+.
+ Es gilt also für alle 
+\begin_inset Formula $g,h\in G$
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+a_{1}\chi_{1}\left(gh\right)+\ldots+a_{n}\chi_{n}\left(gh\right) & =0
+\end{align*}
+
+\end_inset
+
+Wähle 
+\begin_inset Formula $g\in G$
+\end_inset
+
+ mit 
+\begin_inset Formula $\chi_{1}\left(g\right)\not=\chi_{2}\left(g\right)$
+\end_inset
+
+ und lasse 
+\begin_inset Formula $h$
+\end_inset
+
+ variieren.
+ Daher gilt:
+\begin_inset Formula 
+\begin{align*}
+a_{1}\chi_{1}\left(g\right)\cdot\chi_{1}+\ldots+a_{n}\chi_{n}\left(g\right)\cdot\chi_{n} & =0
+\end{align*}
+
+\end_inset
+
+Subtraktion von 
+\begin_inset Formula $\chi_{1}\left(g\right)\cdot\eqref{eq:achi0}$
+\end_inset
+
+ liefert eine nicht-triviale Relation kleinerer Länge im Widerspruch zur
+ Minimalität von 
+\begin_inset Formula $n$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Daher können die 
+\begin_inset Formula $\chi_{i}$
+\end_inset
+
+ nicht linear abhängig sein.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Zyklische Erweiterungen
+\end_layout
+
+\begin_layout Subsection
+Proposition und Definition 
+\series medium
+(Norm)
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:PuD-Norm"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Seien 
+\begin_inset Formula $K\subseteq E$
+\end_inset
+
+ eine endliche Galoiserweiterung und 
+\begin_inset Formula $a\in E$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Dann heißt
+\begin_inset Formula 
+\begin{align*}
+N_{\moduloScript{E}{K}}\left(a\right) & :=\prod_{\sigma\in\text{Gal}\left(\moduloScript{E}{K}\right)}\sigma\left(a\right)\in K
+\end{align*}
+
+\end_inset
+
+die 
+\emph on
+Norm
+\emph default
+ von 
+\begin_inset Formula $a$
+\end_inset
+
+ bezüglich 
+\begin_inset Formula $\modulo{E}{K}$
+\end_inset
+
+.
+\begin_inset Formula 
+\begin{align*}
+N_{\moduloScript{E}{K}}:E^{*} & \rightarrow K^{*}
+\end{align*}
+
+\end_inset
+
+ist ein Homomorphismus.
+\end_layout
+
+\begin_layout Subsubsection*
+Beweis
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\prod_{\sigma\in\text{Gal}\left(\moduloScript{E}{K}\right)}\sigma\left(a\right)
+\end{align*}
+
+\end_inset
+
+ist 
+\begin_inset Formula $\text{Gal}\left(\modulo{E}{K}\right)$
+\end_inset
+
+-invariant, und daher ein Element von 
+\begin_inset Formula $K$
+\end_inset
+
+.
+\begin_inset Formula 
+\begin{align*}
+N_{\moduloScript{E}{K}}\left(a\cdot b\right) & =\prod_{\sigma\in\text{Gal}\left(\moduloScript{E}{K}\right)}\sigma\left(ab\right)=\prod_{\sigma\in\text{Gal}\left(\moduloScript{E}{K}\right)}\sigma\left(a\right)\cdot\prod_{\sigma\in\text{Gal}\left(\moduloScript{E}{K}\right)}\sigma\left(b\right)=\\
+ & =N_{\moduloScript{E}{K}}\left(a\right)\cdot N_{\moduloScript{E}{K}}\left(b\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Satz 
+\series medium
+(Hilbert 90)
+\end_layout
+
+\begin_layout Standard
+Seien 
+\begin_inset Formula $\modulo{L}{K}$
+\end_inset
+
+ eine endliche zyklische Galoiserweiterung, 
+\begin_inset Formula $\sigma\in\text{Gal}\left(\modulo{L}{K}\right)$
+\end_inset
+
+ ein erzeugendes Element.
+\end_layout
+
+\begin_layout Standard
+Für ein 
+\begin_inset Formula $b\in L$
+\end_inset
+
+ ist dann äquivalent:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $N_{\moduloScript{L}{K}}\left(b\right)=1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Es gibt ein 
+\begin_inset Formula $a\in L^{*}$
+\end_inset
+
+ mit 
+\begin_inset Formula $b=\frac{a}{\sigma\left(a\right)}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Beweis
+\end_layout
+
+\begin_layout Standard
+Gilt
+\begin_inset Formula 
+\begin{align*}
+b & =\frac{a}{\sigma\left(a\right)}
+\end{align*}
+
+\end_inset
+
+mit 
+\begin_inset Formula $a\in L^{*}$
+\end_inset
+
+, so ist:
+\begin_inset Formula 
+\begin{align*}
+N_{\moduloScript{L}{K}}\left(b\right) & =\frac{\prod_{\tau\in\text{Gal}\left(\moduloScript{L}{K}\right)}\tau\left(a\right)}{\prod_{\tau\in\text{Gal}\left(\moduloScript{L}{K}\right)}\tau\left(\sigma\left(a\right)\right)}=1
+\end{align*}
+
+\end_inset
+
+Sei umgekehrt 
+\begin_inset Formula $b\in L$
+\end_inset
+
+ mit 
+\begin_inset Formula $N_{\moduloScript{L}{K}}$
+\end_inset
+
+ und 
+\begin_inset Formula $n=\left[L:K\right]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Wegen 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Satz-CharaktereLinearUnabhaengig"
+
+\end_inset
+
+ ist
+\begin_inset Formula 
+\begin{align*}
+\sigma^{0}+b\sigma^{1}+b\sigma\left(b\right)\sigma^{2}+\ldots+b\sigma\left(b\right)\cdot\ldots\cdot\sigma^{n-2}\left(b\right)\sigma^{n-1}
+\end{align*}
+
+\end_inset
+
+als Abbildung 
+\begin_inset Formula $L^{*}\to L$
+\end_inset
+
+ nicht die Nullabbildung.
+\end_layout
+
+\begin_layout Standard
+Also gibt es ein 
+\begin_inset Formula $c\in L^{*}$
+\end_inset
+
+ mit:
+\begin_inset Formula 
+\begin{align*}
+a & :=c+b\sigma\left(c\right)+b\sigma\left(b\right)\sigma^{2}\left(c\right)+\ldots+b\sigma\left(b\right)\cdot\ldots\cdot\sigma^{n-2}\left(b\right)\sigma^{n-1}\left(c\right)\not=0
+\end{align*}
+
+\end_inset
+
+Anwenden von 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ und Multiplikation mit 
+\begin_inset Formula $b$
+\end_inset
+
+ ergibt:
+\begin_inset Formula 
+\begin{align*}
+b\cdot\sigma\left(a\right) & :=b\cdot\sigma\left(c\right)+b\sigma\left(b\right)\sigma^{2}\left(c\right)+\ldots+\underbrace{b\sigma\left(b\right)\cdot\ldots\cdot\sigma^{n-1}\left(b\right)\sigma^{n}\left(c\right)}_{=c}=a
+\end{align*}
+
+\end_inset
+
+Denn es gilt
+\begin_inset Formula 
+\begin{align*}
+\sigma^{n} & =\text{id}
+\end{align*}
+
+\end_inset
+
+und:
+\begin_inset Formula 
+\begin{align*}
+b\cdot\sigma\left(b\right)\cdot\ldots\cdot\sigma^{n-1}\left(b\right) & =N_{\moduloScript{L}{K}}\left(b\right)=1
+\end{align*}
+
+\end_inset
+
+Also ist 
+\begin_inset Formula ${\displaystyle b=\frac{a}{\sigma\left(a\right)}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Satz
+\end_layout
+
+\begin_layout Standard
+Sei 
+\begin_inset Formula $\modulo{L}{K}$
+\end_inset
+
+ eine Körpererweiterung, 
+\begin_inset Formula $n\in\mathbb{N}_{>0}$
+\end_inset
+
+ mit 
+\begin_inset Formula $\text{char}\left(K\right)\!\not|\, n$
+\end_inset
+
+ und 
+\begin_inset Formula $K$
+\end_inset
+
+ enthalte eine primitive 
+\begin_inset Formula $n$
+\end_inset
+
+-te Einheitswurzel.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Ist 
+\begin_inset Formula $\modulo{L}{K}$
+\end_inset
+
+ eine zyklische Galoiserweiterung vom Grad 
+\begin_inset Formula $n$
+\end_inset
+
+, so gilt 
+\begin_inset Formula $L=K\left(a\right)$
+\end_inset
+
+ für ein Element 
+\begin_inset Formula $a\in L$
+\end_inset
+
+, dessen Minimalpolynom über 
+\begin_inset Formula $K$
+\end_inset
+
+ von der Form 
+\begin_inset Formula $X^{n}-c$
+\end_inset
+
+ mit 
+\begin_inset Formula $c\in K$
+\end_inset
+
+ ist.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{iiilist}
 \end_layout
 
 \end_inset
