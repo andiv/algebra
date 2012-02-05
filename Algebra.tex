@@ -1,4 +1,4 @@
-%% LyX 2.0.2 created this file.  For more info, see http://www.lyx.org/.
+%% LyX 2.0.1 created this file.  For more info, see http://www.lyx.org/.
 %% Do not edit unless you really know what you are doing.
 \documentclass[11pt,english,ngerman]{report}
 \usepackage[T1]{fontenc}
@@ -84,7 +84,8 @@
 
 %QED-Zeichen (Box)
 \newcommand{\qed}{\ensuremath{\Box}}
-\newcommand{\qqed}[1][\arabic{chapter}.\arabic{section}\ifnum\arabic{subsection}>0{.\arabic{subsection}}\fi]{\begin{flushright}\qed\ensuremath{_{\text{#1}}}\end{flushright}}
+\newcommand{\qqed}[1][\arabic{chapter}.\arabic{section}\ifnum\arabic{subsection}>0{.\arabic{subsection}}\fi]{\hfill\qed\ensuremath{_{\text{#1}}}}
+%\newcommand{\qqed}[1][\arabic{chapter}.\arabic{section}\ifnum\arabic{subsection}>0{.\arabic{subsection}}\fi]{\begin{flushright}\qed\ensuremath{_{\text{#1}}}\end{flushright}}
 
 % Definitons-Zeichen
 \newcommand{\dfn}{\mathrel{\mathop:}=}
@@ -408,9 +409,7 @@ e'\cdot\varphi\left(e\right) & =\varphi\left(e\right)=\varphi\left(e\cdot e\righ
 \end{align*}
 
 
-\end{iiilist}
-
-\qqed
+\end{iiilist}\qqed
 
 
 \section{Proposition und Definition\textmd{ (Kern und Bild)}\label{sec:PuD-ker}}
@@ -563,7 +562,13 @@ Für $g\in G$ heißt die Äquivalenzklasse
  & \left[g\right]=\left\{ g'\in G|g\sim g'\right\} \stackrel{\eqref{eq:rel}}{=}\left\{ gh|h\in H\right\} =:gH\subseteq G
 \end{align}
 die \emph{Linksnebenklasse von $g$ bezüglich $H$}. Wir schreiben
-$\modulo{G}{H}:=\left\{ gH|g\in G\right\} $, und $\left(G:H\right):=\left|\modulo{G}{H}\right|$
+\begin{align*}
+\modulo{G}{H} & :=\left\{ gH|g\in G\right\} 
+\end{align*}
+und
+\begin{align*}
+\left(G:H\right) & :=\left|\modulo{G}{H}\right|
+\end{align*}
 heißt der \emph{Index von $H$ in $G$}. Es gelten:
 
 \begin{iiilist}
@@ -611,9 +616,7 @@ Also ist $\sim$ eine Äquivalenzrelation.
 
 Daraus folgen direkt i) und iii).
 
-ii) ist klar.
-
-\qqed
+ii) ist klar.\qqed
 
 
 \section{Korollar \textmd{(Satz von Lagrange)\label{sec:Kor-Lagrange}}}
@@ -727,9 +730,7 @@ Für die Abbildung $\phi:G\rightarrow\text{Aut}\left(G\right)$ aus
 \ref{sec:BuD-AutGrup} sieht man leicht, dass $\ker\left(\phi\right)=Z\left(G\right)$
 ist.
 
-Also folgt die Behauptung aus \ref{sec:Prop-kerNormalTeiler}.
-
-\qqed
+Also folgt die Behauptung aus \ref{sec:Prop-kerNormalTeiler}.\qqed
 
 
 \section{Proposition \textmd{(kanonische Projektionsabbildung)\label{sec:Prop-proj}}}
@@ -855,9 +856,7 @@ Aus
 \text{ker}\left(\overline{\varphi}\right)= & \modulo{\text{ker}\left(\varphi\right)}{N}=\modulo{\text{ker}\left(\varphi\right)}{\text{ker}\left(\varphi\right)}=\left\{ e\right\} 
 \end{align*}
 und \ref{sec:PuD-ker} folgt, dass $\overline{\varphi}$ injektiv,
-also ein Isomorphismus ist.
-
-\qqed
+also ein Isomorphismus ist.\qqed
 
 
 \section{Satz \textmd{(Primzahlordnung)}\label{sec:Satz-ZpZ}}
@@ -934,9 +933,7 @@ eine Untergruppe und es gilt:
 x & =\varphi\left(1\right)\in\text{im}\left(\varphi\right)=\left\langle x\right\rangle 
 \end{align*}
 Ist $H\subseteq G$ eine Untergruppe mit $x\in H$, so folgt $x^{n}\in H$
-für alle $n\in\mathbb{Z}$, das heißt $\left\langle x\right\rangle \subseteq H$.
-
-\qqed
+für alle $n\in\mathbb{Z}$, das heißt $\left\langle x\right\rangle \subseteq H$.\qqed
 
 
 \section{Proposition und Definition \textmd{(zyklische Gruppe, Erzeuger)}\label{sec:PuD-zyklGrp}}
@@ -959,9 +956,7 @@ $\left\langle x\right\rangle =G$ heißt \emph{Erzeuger von $G$}.
 
 i) $\Rightarrow$ ii): Wähle $\varphi:\mathbb{Z}\to G$ mit $\varphi\left(1\right)=x$.
 
-ii) $\Rightarrow$ i): Wähle $x:=\varphi\left(1\right)$.
-
-\qqed
+ii) $\Rightarrow$ i): Wähle $x:=\varphi\left(1\right)$.\qqed
 
 
 \section{Satz \textmd{(Klassifizierung zyklischer Gruppen)}}
@@ -1044,9 +1039,7 @@ also:
 x & \mapsto mx
 \end{align*}
 Also ist $\psi:\mathbb{Z}\to H$ ein Epimorphismus, das heißt $H$
-ist zyklisch.
-
-\qqed[\roman{ale2})]
+ist zyklisch.\qqed[\roman{ale2})]
 
 \iii Ist $\psi:\mathbb{Z}\to G$ ein Epimorphismus, so auch die Komposition:
 \begin{align*}
@@ -1219,9 +1212,7 @@ insbesondere für $d=n$ folgt wegen $1\in\left(\modlo{Z}{n}\right)^{*}$:
 \psi\left(n\right) & =\varphi\left(n\right)=\left|\left(\modlo{Z}{n}\right)^{*}\right|\not=0
 \end{align*}
 Das heißt es gibt ein $x\in G$ mit $\text{ord}\left(x\right)=n$,
-also ist $G=\left\langle x\right\rangle $ und $G$ ist zyklisch.
-
-\qqed
+also ist $G=\left\langle x\right\rangle $ und $G$ ist zyklisch.\qqed
 
 
 \section{Korollar\label{sec:Kor-endlUGzykl}}
@@ -1246,9 +1237,7 @@ gilt:
 
 
 Das ist klar, denn das Polynom $T^{d}-1\in k\left[T\right]$ hat höchstens
-$d$ Nullstellen in $k$ nach linearer Algebra II.
-
-\qqed
+$d$ Nullstellen in $k$ nach linearer Algebra II.\qqed
 
 
 \section{Bemerkung}
@@ -1485,9 +1474,7 @@ nach:
 \begin{align*}
 \varphi\left(a\right)+\varphi\left(b\right) & =\frac{a}{1}+\frac{b}{1}\stackrel{\ref{sec:KuD-QuotRing}}{=}\frac{a\cdot1+b\cdot1}{1\cdot1}=\frac{a+b}{1}=\varphi\left(a+b\right)
 \end{align*}
-Der Rest geht analog.
-
-\qqed[\roman{ale2})]
+Der Rest geht analog.\qqed[\roman{ale2})]
 
 \iii b) $\Rightarrow$ a): Es gilt $\varphi\left(S\right)\subseteq\left(S^{-1}A\right)^{*}$,
 denn für alle $s\in S$ folgt in $S^{-1}A$:
@@ -1675,9 +1662,7 @@ $S^{-1}A$-linear.
 
 \subsubsection*{Beweis}
 
-Analog zu \ref{sec:KuD-QuotRing}.
-
-\qqed
+Analog zu \ref{sec:KuD-QuotRing}.\qqed
 
 
 \section{Proposition\label{sec:Prop-exaktAModuln}}
@@ -1808,9 +1793,7 @@ Damit ergibt sich:
 \begin{align*}
 x & \stackrel{\eqref{eq:xtm}}{=}\frac{1}{t}\otimes m=\frac{1}{t^{2}s}\otimes\underbrace{\left(stm\right)}_{=0}=0
 \end{align*}
-Es folgt $\text{ker}\left(f\right)=0$, also ist $f$ injektiv.
-
-\qqed
+Es folgt $\text{ker}\left(f\right)=0$, also ist $f$ injektiv.\qqed
 
 
 \section{Beispiel\label{sec:Bsp-exaktFolge}}
@@ -1862,9 +1845,7 @@ eines der Quadrate kommutiert.
 
 \textcolor{green}{TODO: Restlichen Beweis einfügen}
 
-Es folgt die Exaktheit der ersten Zeile.
-
-\qqed
+Es folgt die Exaktheit der ersten Zeile.\qqed
 
 
 \chapter{Der Satz von Gauß\label{chap:Der-Satz-von-Gauss}}
@@ -2075,9 +2056,7 @@ gilt, folgt:
 \begin{align*}
 \nu_{p}\left(f\right) & =\nu_{p}\left(g\right)=0
 \end{align*}
-Daher sind $f,g\in R\left[X\right]$.
-
-\qqed
+Daher sind $f,g\in R\left[X\right]$.\qqed
 
 
 \section{Beispiel\label{sec:Bsp-Vieta}}
@@ -2104,9 +2083,7 @@ Ferner gilt in $R$:
 0 & =h\left(\alpha\right)=\sum_{i\ge0}a_{i}\alpha^{i}=\alpha\left(\sum_{i\ge1}a_{i}\alpha^{i-1}\right)+a_{0}\\
 a_{0} & =\alpha\cdot\underbrace{\left(-\sum_{i\ge1}a_{i}\alpha^{i-1}\right)}_{\in R,\text{ da }a_{i},\alpha\in R}
 \end{align*}
-Also gilt $\alpha|a_{0}$ in $R$.
-
-\qqed
+Also gilt $\alpha|a_{0}$ in $R$.\qqed
 
 
 \section{Beispiel}
@@ -2313,10 +2290,8 @@ Es folgt für alle $p\in\mathcal{P}$:
 Daher ist $\nu_{p}\left(h\right)\ge0$ und aus \ref{sec:PuD-LemmaGauss}
 ii) folgt dann $h\in R\left[X\right]$, also gilt $f=qh$ auch in
 $R\left[X\right]$ und daher $q|f$ in $R\left[X\right]$.\\
-Also ist $q\in R\left[X\right]$ ein Primelement.
+Also ist $q\in R\left[X\right]$ ein Primelement.\qqed[ii) \ensuremath{\Rightarrow} i)]
 \end{itemize}
-\qqed[ii) \ensuremath{\Rightarrow} i)]
-
 Zeige noch:
 
 Jedes
@@ -2353,9 +2328,7 @@ f & =\underbrace{\left(a\tilde{f}_{1}\right)}_{\text{primitiv, da }a\in R^{*}}\c
 
 
 Damit ist $f$ ein Produkt von primitiven Faktoren, die Primelemente
-in $Q\left[X\right]$ sind.
-
-\qqed[\ref{sec:Satz-Gauss}]
+in $Q\left[X\right]$ sind.\qqed[\ref{sec:Satz-Gauss}]
 
 
 \section{Beispiel und Definition \textmd{(rationale Funktionen)}}
@@ -2401,9 +2374,7 @@ und damit
 \begin{align*}
 2\cdot\text{deg}\left(\alpha\right) & =\deg\left(X^{3}\right)=3
 \end{align*}
-in $\mathbb{Z}$, was ein Widerspruch ist.
-
-\qqed
+in $\mathbb{Z}$, was ein Widerspruch ist.\qqed
 
 
 \chapter{Irreduzibilitätskriterien\label{chap:Irreduzibilit=0000E4tskriterien}}
@@ -2607,9 +2578,7 @@ Es folgt in $R$:
 \begin{align*}
 p^{2} & |\alpha_{0}\cdot\beta_{0}=a_{0}
 \end{align*}
-Dies ist ein Widerspruch zur Voraussetzung $p^{2}\not|\, a_{0}$.
-
-\qqed
+Dies ist ein Widerspruch zur Voraussetzung $p^{2}\not|\, a_{0}$.\qqed
 
 
 \section{Beispiel\label{sec:Bsp-IrreduzKrit}}
@@ -2628,9 +2597,7 @@ Zeige noch: $f$ ist in $\mathbb{Q}\left[X\right]$ irreduzibel.
 Dies folgt sofort aus dem Eisensteinkriterium (Korollar \ref{sec:Kor-Eisenstein})
 mit $R=\mathbb{Z}$ und $p=2$.
 
-Man sagt: \quotedblbase{}$f$ ist Eisenstein bezüglich 2.\textquotedblleft{}
-
-\qqed[\roman{ale2})]
+Man sagt: \quotedblbase{}$f$ ist Eisenstein bezüglich 2.\textquotedblleft{}\qqed[\roman{ale2})]
 
 \iii Seien $k$ ein Körper und $n\in\mathbb{N}_{\ge1}$.
 
@@ -2644,9 +2611,7 @@ $R:=k\left[t\right]$ ist faktoriell mit $\text{Quot}\left(R\right)=k\left(t\righ
 und $p:=t\in R$ ist ein Primelement.
 
 Die Bedingungen in \ref{sec:Kor-Eisenstein} sind erfüllt und $f$
-ist primitiv, da es normiert ist.
-
-\qqed[\roman{ale2})]
+ist primitiv, da es normiert ist.\qqed[\roman{ale2})]
 
 \iii Seien $p$ eine Primzahl und ${\displaystyle \zeta_{p}:=\exp\left(\frac{2\pi\ii}{p}\right)\in\mathbb{C}}$.
 
@@ -2708,9 +2673,7 @@ p\\
 i
 \end{array}\right)\right) & =1
 \end{align*}
-Insbesondere ist $g_{p}$ also Eisenstein bezüglich $p$.
-
-\qqed[\roman{ale2})]
+Insbesondere ist $g_{p}$ also Eisenstein bezüglich $p$.\qqed[\roman{ale2})]
 
 \iii $f\left(X\right):=X^{3}+3X^{2}-4X-1\in\mathbb{Q}\left[X\right]$
 ist irreduzibel.
@@ -2727,9 +2690,7 @@ Rechne:
 f\left(-1,0,1\right) & =-1\not=0
 \end{align*}
 Wegen $\deg\left(\overline{f}\right)=3$ ist also $\overline{f}\in\mathbb{F}_{3}\left[X\right]$
-irreduzibel und aus \ref{sec:Satz-RedKrit} folgt die Behauptung.
-
-\qqed[\roman{ale2})]
+irreduzibel und aus \ref{sec:Satz-RedKrit} folgt die Behauptung.\qqed[\roman{ale2})]
 
 \iii $f\left(X,Y\right)=X^{2}Y+XY^{2}-X-Y+1\in\mathbb{Q}\left[X,Y\right]$
 ist irreduzibel.
@@ -2751,9 +2712,7 @@ Y-1=p & \:\,\,|\, a_{1}=Y^{2}-1=\left(Y-1\right)\left(Y+1\right)\\
 Y-1=p & \:\,\,|\, a_{0}=1-Y=-\left(Y-1\right)\\
 \left(Y-1\right)^{2}=p^{2} & \not|\, a_{0}=1-Y=-\left(Y-1\right)
 \end{align*}
-Die Behauptung folgt aus Korollar \ref{sec:Kor-Eisenstein}.
-
-\qqed[\roman{ale2})]
+Die Behauptung folgt aus Korollar \ref{sec:Kor-Eisenstein}.\qqed[\roman{ale2})]
 
 \iii $f\left(X\right)=X^{4}+3X^{3}+X^{2}-2X+1\in\mathbb{Q}\left[X\right]$
 ist irreduzibel.
@@ -2797,9 +2756,7 @@ schon $\text{deg}\left(\overline{g}\right)=\text{deg}\left(\overline{h}\right)=2
 Wegen \eqref{eq:overf} besitzt aber $\overline{f}\in\mathbb{F}_{2}\left[X\right]$
 bis auf Assoziiertheit genau die Teiler $1,X+1,X^{3}+X+1$ und $\overline{f}$,
 und keines dieser Polynome besitzt Grad 2. Dies ist ein Widerspruch
-zu der angenommenen Reduzibilität.
-
-\qqed[\roman{ale2})]
+zu der angenommenen Reduzibilität.\qqed[\roman{ale2})]
 
 \iii Seien $p$ eine Primzahl und ${\displaystyle F_{p}\left(X\right):=\frac{X^{p}-1}{X-1}=X^{p}+\ldots+1\in\mathbb{Z}\left[X\right]}$
 wie in iii).
@@ -2846,8 +2803,6 @@ sind:
 G_{p^{r}}\left(X\right) & \stackrel{\text{Def.}}{=}F_{p^{r}}\left(X+1\right)=\\
  & \stackrel{\eqref{eq:Fpr}}{=}F_{p}\left(\left(X+1\right)^{p^{r-1}}\right)\stackrel{\left(!\right)}{\equiv}F_{p}\left(X^{p^{r-1}}+1\right)\stackrel{F_{p}\left(X+1\right)\equiv X^{p-1}(\text{iii)})}{\equiv}X^{\left(p^{r-1}\right)\left(p-1\right)}\mod p
 \end{align*}
-
-
 \qqed[\roman{ale2})]
 
 \end{iiilist}
@@ -2909,8 +2864,6 @@ Also gilt:
 \begin{align*}
 \zeta_{n}^{m}=1 & \Leftrightarrow\frac{m}{n}\in\mathbb{Z}\Leftrightarrow n|m
 \end{align*}
-
-
 \qqed
 
 
@@ -2956,9 +2909,7 @@ $Q\subseteq k$ heißt der \emph{Primkörper von $k$.}
 \iii $\modulo{\mathbb{Z}}{\left(p\right)}\hookrightarrow R$ ist
 ein Unterring, also ist $\modulo{\mathbb{Z}}{\left(p\right)}$ ein
 Integritätsring, womit aus der linearen Algebra II schon $p=0$ oder
-$p>0$ ist eine Primzahl folgt.
-
-\qqed[\roman{ale2})]
+$p>0$ ist eine Primzahl folgt.\qqed[\roman{ale2})]
 
 \iii Ist in i) $R=k$ ein Körper, so erhalte mit
 \begin{align*}
@@ -3058,14 +3009,10 @@ folgt aus i) für $n=1$.
 
 Damit ist $\text{Frob}_{k}:k\rightarrow k$ ein Ringhomomorphismus,
 und $\text{Frob}_{k}\left(x\right)=x^{p}=0$ $\stackrel{k\text{ Körper}}{\Leftrightarrow}$
-$x=0$, also ist $\text{Frob}_{k}$ injektiv.
-
-\qqed[\roman{ale2})]
+$x=0$, also ist $\text{Frob}_{k}$ injektiv.\qqed[\roman{ale2})]
 
 \iii Jede injektive Selbstabbildung, wie zum Beispiel $\text{Frob}_{k}$,
-einer endlichen Menge, wie zum Beispiel $k$, ist surjektiv.
-
-\qqed[\roman{ale2})]\ 
+einer endlichen Menge, wie zum Beispiel $k$, ist surjektiv.\qqed[\roman{ale2})]\ 
 
 \iii \quotedblbase{}$\Leftarrow$\textquotedblleft{}: Für alle $x\in\mathbb{F}_{p}$
 gilt:
@@ -3260,9 +3207,7 @@ Aus $\mathbb{Q}\subseteq\mathbb{Q}\left[\alpha\right]\subseteq\mathbb{R}$
 und \ref{sec:Satz-Grad} folgt $n|\left[\mathbb{R}:\mathbb{Q}\right]$.
 
 Weil dabei $n\in\mathbb{N}_{\ge1}$ beliebig groß gewählt werden kann,
-folgt $\left[\mathbb{R}:\mathbb{Q}\right]=\infty$.
-
-\qqed[\roman{ale2})]
+folgt $\left[\mathbb{R}:\mathbb{Q}\right]=\infty$.\qqed[\roman{ale2})]
 
 \end{iiilist}
 
@@ -3430,9 +3375,7 @@ eine endliche Körpererweiterung ist.
 Insbesondere ist $k\left[\alpha_{1},\ldots,\alpha_{n}\right]$ ein
 Körper und somit $E=k\left(\alpha_{1},\ldots,\alpha_{n}\right)=k\left[\alpha_{1},\ldots,\alpha_{n}\right]$.
 
-Es folgten i) und ii).
-
-\qqed
+Es folgten i) und ii).\qqed
 
 
 \section{Beispiel}
@@ -3459,9 +3402,7 @@ und mit \ref{sec:Satz-endlKEalg} folgt, dass $\modulo{\mathbb{Q}\left(\alpha\rig
 algebraisch ist.
 
 Nach \ref{sec:Def-algKE} ist \emph{jedes} Element von $\mathbb{Q}\left(\alpha\right)$
-algebraisch über $\mathbb{Q}$ ist, insbesondere also ${\displaystyle \cos\left(\frac{\pi}{n}\right)=\frac{1}{2}\left(\alpha+\alpha^{-1}\right)}$.
-
-\qqed
+algebraisch über $\mathbb{Q}$ ist, insbesondere also ${\displaystyle \cos\left(\frac{\pi}{n}\right)=\frac{1}{2}\left(\alpha+\alpha^{-1}\right)}$.\qqed
 
 
 \subsubsection*{Problem}
@@ -3567,9 +3508,7 @@ Mit \ref{sec:Satz-Grad} folgt insgesamt:
 \left[K'\left(\alpha\right):k\right] & <\infty
 \end{align*}
 Nach \ref{sec:Satz-endlKEalg} ist dann $\alpha$ algebraisch über
-$k$.
-
-\qqed[\roman{ale2})]
+$k$.\qqed[\roman{ale2})]
 
 \iii Dies folgt aus i), angewendet auf alle $\alpha\in E$.
 
@@ -3645,9 +3584,7 @@ eine endliche (und damit algebraische) Körpererweiterung, und nach
 eine Nullstelle von $g$.
 
 Nach iv) gilt $k=E$, also besitzt $g$ und wegen \eqref{eq:gf} auch
-$f$, eine Nullstelle in $k$.
-
-\qqed
+$f$, eine Nullstelle in $k$.\qqed
 
 
 \section{Proposition und Definition \textmd{(Polynomring)\label{sec:PuD-PolynomringInfty}}}
@@ -3696,9 +3633,7 @@ bijektiv ist, und man prüft, dass die resultierende Bijektion
 \begin{align*}
 \text{Hom}_{k\text{-Alg.}}\left(\mathfrak{X},A\right) & \stackrel{\sim}{\to}\text{Abb}\left(\mathfrak{X},A\right)
 \end{align*}
-wie angegeben ist.
-
-\qqed
+wie angegeben ist.\qqed
 
 
 \section{Das Lemma von Zorn}
@@ -3788,9 +3723,7 @@ Also ist $J\subseteq R$ ein Ideal.
 
 Wäre $J=R$, so würde ${\displaystyle 1\in J=\bigcup_{I\in N}I}$
 folgen. Dann müsste ein $I\in N$ existieren mit $1\in I$, also $I=R$
-im Widerspruch zu $I\in M$, das heißt $I\subsetneq R$.
-
-\qqed[Behauptung]
+im Widerspruch zu $I\in M$, das heißt $I\subsetneq R$.\qqed[Behauptung]
 
 Damit erfüllt $\left(M,\le\right)$ alle Voraussetzungen von \ref{sub:Satz-LemmaZorn}
 und es folgt:
@@ -3804,9 +3737,7 @@ ein maximales Ideal $\mathfrak{m}\subseteq R$.
 
 \subsubsection*{Beweis}
 
-Siehe \ref{sub:Bsp-Zorn}.
-
-\qqed
+Siehe \ref{sub:Bsp-Zorn}.\qqed
 
 
 \section{Satz und Definition \textmd{(algebraischer Abschluss)\label{sec:SuD-algAbschluss}}}
@@ -3908,9 +3839,7 @@ Teil i) folgt aus \ref{sec:Prop-endlAquivEndlerzUalg} ii) b) $\Rightarrow$
 a).
 
 Nach Definition von $I$ folgt auch: Jedes $f\in k\left[X\right]$
-mit $\text{deg}\left(f\right)\ge1$ besitzt eine Nullstelle in $\alpha\left(k\right)$.
-
-\qqed[\roman{ale2})]
+mit $\text{deg}\left(f\right)\ge1$ besitzt eine Nullstelle in $\alpha\left(k\right)$.\qqed[\roman{ale2})]
 
 \iii Betrachte nun den Körperturm:
 \begin{align*}
@@ -3923,9 +3852,7 @@ Induktiv folgt aus \ref{sec:Satz-AlgTransitiv} für alle $n\in\mathbb{N}_{\ge0}$,
 dass $\modulo{\alpha^{n}\left(k\right)}{k}$ algebraisch ist.
 
 ii) folgt, da jedes Element von $\overline{k}$ in einem $\alpha^{n}\left(k\right)$
-liegt.
-
-\qqed[\roman{ale2})]
+liegt.\qqed[\roman{ale2})]
 
 \iii Sei $f\in\overline{k}\left[X\right]$ nicht konstant.
 
@@ -3999,9 +3926,7 @@ Insbesondere gilt:
 Die erste Aussage folgt aus der universellen Eigenschaf von $k\hookrightarrow k\left[X\right]$
 und $k\left[X\right]\twoheadrightarrow\modulo{k\left[X\right]}{\left(f\right)}\stackrel{\sim}{=}k\left(\alpha\right)$.
 
-Die zweite Aussage folgt aus $\deg\left(f^{\sigma}\right)=\deg\left(f\right)=\left[k\left(\alpha\right):k\right]$.
-
-\qqed
+Die zweite Aussage folgt aus $\deg\left(f^{\sigma}\right)=\deg\left(f\right)=\left[k\left(\alpha\right):k\right]$.\qqed
 
 
 \section{Satz und Definition \textmd{(Fortsetzung)}\label{sec:SuD-Fortsetzung}}
@@ -4063,9 +3988,7 @@ $\sigma'\left(k'\right)\supseteq\sigma\left(k\right)$ ist.
 Weil $\sigma'\left(k'\right)\stackrel{\sim}{=}k'$ algebraisch abgeschlossen
 ist, folgt nach \ref{sec:Def-algKE} iv) schon $L=\sigma'\left(k'\right)$,
 das heißt $\sigma':k'\twoheadrightarrow L$ ist surjektiv, also ein
-Isomorphismus.
-
-\qqed
+Isomorphismus.\qqed
 
 
 \section{Korollar}
@@ -4081,9 +4004,7 @@ und jeder solche ist ein Isomorphismus.
 
 Aus \ref{sec:SuD-Fortsetzung} folgt mir $k':=\overline{k}_{1}$,
 $L:=\overline{k}_{2}$ und $\sigma:k\to\overline{k}_{2}$ wie gegeben
-schon die Behauptung.
-
-\qqed
+schon die Behauptung.\qqed
 
 
 \chapter{Zerfällungskörper\label{chap:Zerf=0000E4llungsk=0000F6rper}}
@@ -4196,9 +4117,7 @@ Dann gilt $\overline{\sigma}\left(E_{1}\right)=E_{2}$, also $\overline{\sigma}:\
 E & :=k\left(\alpha\bigg|\alpha\in\overline{k}\wedge\exs_{f\in\mathcal{F}}f\left(\alpha\right)=0\right)
 \end{align*}
 Wegen \ref{sec:PuD-algAbges} i) ist dann $\modulo{E_{i}}{k}$ ein
-Zerfällungskörper von $\mathcal{F}$.
-
-\qqed[\roman{ale2})]
+Zerfällungskörper von $\mathcal{F}$.\qqed[\roman{ale2})]
 
 \iii Weil $\modulo{E_{i}}{k}$ ein Zerfällungskörper von $\mathcal{F}$
 ist, gilt mit
@@ -4238,9 +4157,7 @@ k & \subseteq\overline{\sigma}\left(E_{1}\right)\stackrel{\eqref{eq:z2}}{=}k\lef
 \end{align*}
 Und da sowohl $\modulo{\overline{\sigma}\left(E_{1}\right)}{k}$,
 als auch $\modulo{E_{2}}{k}$ Zerfällungskörper von $\mathcal{F}$
-sind, gilt sogar $\overline{\sigma}\left(E_{1}\right)=E_{2}$.
-
-\qqed[\roman{ale2})]
+sind, gilt sogar $\overline{\sigma}\left(E_{1}\right)=E_{2}$.\qqed[\roman{ale2})]
 
 \iii Nach \ref{sec:SuD-Fortsetzung} mit $k':=E_{1}$ und $L:=\overline{E}_{2}$
 existiert ein $\overline{\sigma}$ ($=\sigma$ in \ref{sec:SuD-Fortsetzung})
@@ -4313,8 +4230,7 @@ das heißt es gelten \ref{sec:Def-ZK} i) und ii):
 \begin{enumerate}
 \item $f\in\mathcal{F}\stackrel{\text{Def.}}{\Rightarrow}\exs_{\alpha\in E}f\left(\alpha\right)=0$
 $\stackrel{\text{iii)}}{\Rightarrow}f$ zerfällt in Linearfaktoren
-über $E$.\\
-\qqed[iii) \ensuremath{\Rightarrow} ii)]
+über $E$.\qqed[iii) \ensuremath{\Rightarrow} ii)]
 \end{enumerate}
 \item ii) $\Rightarrow$ i): Es sind $E\subseteq\overline{E}$ und $\overline{\sigma}\left(E\right)\subseteq\overline{E}$
 Zerfällungskörper von $\mathcal{F}$, also $E=\overline{\sigma}\left(E\right)$.
@@ -4348,9 +4264,7 @@ Abschluss von $k$). Dann ist $\modulo{E}{k}$ normal.
 
 \subsubsection*{Beweis}
 
-Folgt aus \ref{sec:SuD-normKE} iii) und \ref{sec:PuD-algAbges} iii).
-
-\qqed
+Folgt aus \ref{sec:SuD-normKE} iii) und \ref{sec:PuD-algAbges} iii).\qqed
 
 
 \section{Beispiel\label{sec:Bsp-normNichtTransitiv}}
@@ -4389,8 +4303,6 @@ Dann gilt in $E\left[X\right]$:
 \begin{align*}
 f\left(X\right) & =\left(X-\alpha\right)\left(X-\underbrace{\left(a-\alpha\right)}_{\in E}\right)
 \end{align*}
-
-
 \qqed[\roman{ale2})]
 
 \iii Klar nach \ref{sec:SuD-normKE} ii).
@@ -4429,9 +4341,7 @@ j & :\mathbb{Q}\left[\sqrt[4]{2}\right]\hookrightarrow\mathbb{C},\sqrt[4]{2}\to\
 Wegen $\beta\not\in\mathbb{R}$ und $i\left(E\right)\subseteq\mathbb{R}$
 (also $i\left(E\right)\not=j\left(E\right)$) kann $\modulo{E}{k}$
 nach \ref{sec:SuD-normKE} i) (oder auch \ref{sec:SuD-normKE} iii))
-nicht normal sein.
-
-\qqed
+nicht normal sein.\qqed
 
 
 \section{Definition \textmd{(normale Hülle)}}
@@ -4698,9 +4608,7 @@ folgt a) $\Leftrightarrow$ b) aus \ref{sec:SuD-mNst}. Dann gilt:
 b) $\Leftrightarrow$ $\left(X-\alpha\right)|f,f'$ in $\overline{k}\left[X\right]$
 $\Leftrightarrow$ $\left(X-\alpha\right)|\text{ggT}\left(f,f'\right)$
 in $\overline{k}\left[X\right]$ $\Leftrightarrow$ $\text{ggT}\left(f,f'\right)\left(\alpha\right)=0$
-$\Leftrightarrow$ c)
-
-\qqed[\roman{ale2})]
+$\Leftrightarrow$ c)\qqed[\roman{ale2})]
 
 \iii a) $\Rightarrow$ b):
 
@@ -4743,9 +4651,7 @@ so ist $f$ separabel.
 \subsubsection*{Beweis}
 
 Wegen $\text{char}\left(k\right)=0$ und \ref{sec:Bsp-abl} ist $f'\not=0$.
-Aus \ref{sec:Lem-mNst} ii) folgt die Behauptung.
-
-\qqed
+Aus \ref{sec:Lem-mNst} ii) folgt die Behauptung.\qqed
 
 
 \section{Beispiel\label{sec:Bsp-sep}}
@@ -4879,8 +4785,6 @@ geeignete $b_{i}\in k$. Es folgt in $k\left[X\right]$:
 \begin{align*}
 f\left(X\right) & =g\left(X^{p}\right)=\sum a_{i}\left(X^{p}\right)^{i}=\sum b_{i}^{p}\left(X^{p}\right)^{i}=\sum\left(b_{i}X^{i}\right)^{p}=\left(\sum b_{i}X^{i}\right)^{p}
 \end{align*}
-
-
 \qqed[\roman{ale2})]
 
 Dies ist wegen $p\ge2$ ein Widerspruch dazu, dass $f$ irreduzibel
@@ -4979,8 +4883,7 @@ Damit folgt:
 \stackrel{\rotatebox{90}{\ensuremath{=}}}{\sigma_{1}} & =\stackrel{\rotatebox{90}{\ensuremath{=}}}{\sigma_{2}}
 \end{align*}
 Damit folgt $\sigma_{1}=\sigma_{2}$, also $\overline{\sigma}_{1}=\overline{\sigma}_{2}$
-und mit \eqref{eq:plus} ergibt sich $\tau_{1}=\tau_{2}$.\\
-\qqed[injektiv]\hspace*{1mm}\\
+und mit \eqref{eq:plus} ergibt sich $\tau_{1}=\tau_{2}$.\qqed[injektiv]\hspace*{1mm}\\
 Surjektivität: Sei $\alpha\in\text{Hom}_{k\text{-Alg.}}\left(E,\overline{k}\right)$,
 $\sigma:=\alpha|_{K}\in\text{Hom}_{k\text{-Alg.}}\left(K,\overline{k}\right)$
 und $\left(\overline{\sigma}^{\ -1}\circ\alpha\right)|_{K}=\text{id}$.\\
@@ -5046,9 +4949,7 @@ Es folgt insbesondere:
 \left[K_{1}=k\left(\alpha\right):K_{0}=k\right]_{S} & =\left[K_{1}=k\left(\alpha\right):K_{0}=k\right]
 \end{align*}
 Also ist $\alpha$ separabel über $k$ (nach \ref{sec:Lem-sepNst}
-iii) \quotedblbase{}$\Leftarrow$\textquotedblleft{}).
-
-\qqed
+iii) \quotedblbase{}$\Leftarrow$\textquotedblleft{}).\qqed
 
 %DATE: Di 6.12.2011
 
@@ -5088,9 +4989,7 @@ Es folgt:
  & \stackrel{\ref{sec:Satz-sgrad}}{=}\left[K'\left(\alpha\right):k\right]_{S}
 \end{align*}
 Daher ist $\modulo{K'\left(\alpha\right)}{k}$ separabel, also $\alpha$
-separabel über $k$.
-
-\qqed
+separabel über $k$.\qqed
 
 
 \section{Satz \textmd{(vom primitiven Element)} und Definition\label{sec:SuD-primitel}}
@@ -5213,14 +5112,10 @@ X^{\left(p^{n}\right)}-X & \in\mathbb{F}_{p}\left[X\right]
 
 \iii Andernfalls müsste $\text{char}\left(k\right)=0$ gelten, also
 $\mathbb{Q}\subseteq k$ im Widerspruch zu $\left|k\right|<\infty$.
-(vergleiche \ref{sec:PuD-Charakteristik})
-
-\qqed[\roman{ale2})]
+(vergleiche \ref{sec:PuD-Charakteristik})\qqed[\roman{ale2})]
 
 \iii $\left|k\right|<\infty$, also folgt $n<\infty$ und aus $k\stackrel{\sim}{=}\mathbb{F}_{p}^{n}$
-als $\mathbb{F}_{p}$-Vektorraum folgt $\left|k\right|=p^{n}$. 
-
-\qqed[\roman{ale2})]
+als $\mathbb{F}_{p}$-Vektorraum folgt $\left|k\right|=p^{n}$. \qqed[\roman{ale2})]
 
 \iii 
 \begin{description}
@@ -5282,17 +5177,14 @@ ist ein Körperisomorphismus mit:
 \begin{align*}
 \tilde{\mathbb{F}}_{p^{n}} & =\left\{ \alpha\in\overline{\mathbb{F}}_{p}\left|\text{Frob}_{\overline{\mathbb{F}}_{p}}^{n}\left(\alpha\right)=\alpha\right.\right\} 
 \end{align*}
-Daraus folgt die Behauptung.\\
-\qqed[Behauptung]
+Daraus folgt die Behauptung.\qqed[Behauptung]
 \end{description}
 Es ist klar, dass $\tilde{\mathbb{F}}_{p^{n}}$ ein Zerfällungskörper
 von $X^{p^{n}}-X\in\mathbb{F}_{p}\left[X\right]$ ist.
 
 Wegen $\left(X^{p^{n}}-X\right)'=-1$ und \ref{sec:SuD-mNst} ist
 $X^{p^{n}}-X\in\mathbb{F}_{p}\left[X\right]$ separabel, und es folgt
-$\left|\tilde{\mathbb{F}}_{p^{n}}\right|=p^{n}$.
-
-\qqed
+$\left|\tilde{\mathbb{F}}_{p^{n}}\right|=p^{n}$.\qqed
 
 
 \section{Bemerkung}
@@ -5328,9 +5220,7 @@ Also ist $\alpha\in\mathbb{F}_{p^{m}}$.
 \begin{align*}
 m & =\left[\mathbb{F}_{p^{m}}:\mathbb{F}_{p}\right]\stackrel{\mathbb{F}_{p^{n}}\subseteq\mathbb{F}_{p^{m}}}{=}\underbrace{\left[\overline{\mathbb{F}}_{p^{m}}:\mathbb{F}_{p^{n}}\right]}_{\in\mathbb{N}}\cdot\underbrace{\left[\mathbb{F}_{p^{n}}:\mathbb{F}_{p}\right]}_{=n}
 \end{align*}
-folgt $n|m$.
-
-\qqed
+folgt $n|m$.\qqed
 
 
 \section{Satz und Definition \textmd{(relativer Frobenius)}\label{sec:SuD-relatFrob}}
@@ -5356,9 +5246,7 @@ und $\sigma:=\left(F_{q}\right)|_{\mathbb{F}_{q'}}$ ist ein Erzeuger.
 
 \iii Zeige $F_{q}|_{\mathbb{F}_{q}}=\text{id}$.
 
-Ist $\alpha\in\mathbb{F}_{q}$ so folgt $F_{q}\left(\alpha\right)=\alpha^{q}\stackrel{\ref{sec:SuD-ZkXpn}}{=}\alpha$
-
-\qqed[\roman{ale2})]
+Ist $\alpha\in\mathbb{F}_{q}$ so folgt $F_{q}\left(\alpha\right)=\alpha^{q}\stackrel{\ref{sec:SuD-ZkXpn}}{=}\alpha$.\qqed[\roman{ale2})]
 
 \iii Es gilt:
 \begin{align*}
@@ -5466,9 +5354,7 @@ Weil $f\in k\left[X\right]$ separabel ist, folgt mit \ref{sec:SuD-Konj}
 iii) und \ref{sec:Satz-endlSepAequivSepEZS} i) $\Rightarrow$ ii),
 dass $\modulo{E}{k}$ separabel ist.
 
-Zusammen bedeutet das, dass $\modulo{E}{k}$ galoissch ist.
-
-\qqed[\roman{ale2})]
+Zusammen bedeutet das, dass $\modulo{E}{k}$ galoissch ist.\qqed[\roman{ale2})]
 
 \iii Folgt aus \ref{sec:Lem-ZkXpn} iii), \ref{sec:Satz-vollkommenK}
 ii) und \ref{sec:SuD-relatFrob} ii).
@@ -5514,9 +5400,7 @@ wohldefiniert und ein surjektiver Gruppenhomomorphismus mit:
 \iii Wegen \ref{sec:Bsp-normNichtTransitiv} ii) und \ref{sec:Kor-sepTransitiv}
 i) $\Rightarrow$ ii) ist $\modulo{E}{K}$ galoissch.
 
-Der Rest ist klar.
-
-\qqed[\roman{ale2})]
+Der Rest ist klar.\qqed[\roman{ale2})]
 
 \iii $\pi$ ist, weil $\modulo{K}{k}$ normal ist, und wegen \ref{sec:SuD-normKE}
 i) wohldefiniert, das heiß für alle $\sigma\in\text{Gal}\left(\modulo{E}{k}\right)$
@@ -5557,9 +5441,7 @@ ist galoissch.
 \subsubsection*{Beweis}
 
 Folgt aus \ref{sec:Def-sgrad} und \ref{sec:Satz-endlSepAequivSepEZS}
-iii) $\Rightarrow$ i).
-
-\qqed
+iii) $\Rightarrow$ i).\qqed
 
 
 \section{Satz und Definition \textmd{(Fixkörper)\label{sec:SuD-Fixk=0000F6rper}}}
@@ -5629,16 +5511,12 @@ $\sigma\in G$:
 \begin{align*}
 f^{\sigma}\left(X\right) & =\prod_{\beta\in G\alpha}\left(X-\sigma\left(\beta\right)\right)=\prod_{\beta\in G\alpha}\left(X-\beta\right)=f\left(X\right)
 \end{align*}
-Daher hat $f\in E\left[X\right]$ Koeffizienten in $E^{G}=k$.
-
-\qqed[separabel]
+Daher hat $f\in E\left[X\right]$ Koeffizienten in $E^{G}=k$.\qqed[separabel]
 
 Zeige nun, dass $\modulo{E}{k}$ normal ist:
 
 $\modulo{E}{k}$ ist ein Zerfällungskörper aller obigen Polynome $f\in k\left[X\right]$
-(für $\alpha\in E$ variabel).
-
-\qqed[normal]
+(für $\alpha\in E$ variabel).\qqed[normal]
 
 Insgesamt ist also $\modulo{E}{k}$ galoissch.
 
@@ -5749,9 +5627,7 @@ gilt:
 \begin{align*}
 \sigma|_{E^{G}} & =\text{id}_{E^{G}}
 \end{align*}
-Damit folgt $\sigma\in\text{Aut}_{E^{G}}\left(E\right)$.
-
-\qqed[\roman{ale2})]
+Damit folgt $\sigma\in\text{Aut}_{E^{G}}\left(E\right)$.\qqed[\roman{ale2})]
 
 \iii Klar sind $k\subseteq E^{G}\subseteq E$.
 \begin{description}
@@ -5947,9 +5823,7 @@ $G$ besitzt nur endlich viele Untergruppen, also besitzt $\modulo{E'}{k}$
 nach \ref{sec:Satz-HSGaloistheorie} i) nur endlich viele Zwischenkörper.
 
 Jeder Zwischenkörper von $\modulo{E}{k}$ ist aber insbesondere einer
-von $\modulo{E'}{k}$.
-
-\qqed[1. Beweis]
+von $\modulo{E'}{k}$.\qqed[1. Beweis]
 
 
 \subsubsection*{2. Beweis}
@@ -6068,9 +5942,7 @@ separabel.
 
 \iii \quotedblbase{}$\Rightarrow$\textquotedblleft{}: $H_{2}=\text{Aut}_{K_{2}}\left(E\right)\stackrel{K_{1}\subseteq K_{2}}{\subseteq}\text{Aut}_{K_{1}}\left(E\right)=H_{1}$
 
-\quotedblbase{}$\Leftarrow$\textquotedblleft{}: $K_{1}\stackrel{\ref{sec:Satz-HSGaloistheorie}\,\text{i)}}{=}E^{H_{1}}\stackrel{H_{2}\subseteq H_{1}}{\subseteq}E^{H_{2}}\stackrel{\ref{sec:Satz-HSGaloistheorie}\,\text{i)}}{=}K_{2}$
-
-\qqed[\roman{ale2})]
+\quotedblbase{}$\Leftarrow$\textquotedblleft{}: $K_{1}\stackrel{\ref{sec:Satz-HSGaloistheorie}\,\text{i)}}{=}E^{H_{1}}\stackrel{H_{2}\subseteq H_{1}}{\subseteq}E^{H_{2}}\stackrel{\ref{sec:Satz-HSGaloistheorie}\,\text{i)}}{=}K_{2}$\qqed[\roman{ale2})]
 
 \iii $K_{1}\cdot K_{2}=E^{H_{1}}\cdot E^{H_{2}}\stackrel{\text{i)}}{\subseteq}\left(E^{H_{1}\cap H_{2}}\right)\cdot\left(E^{H_{1}\cap H_{2}}\right)=E^{H_{1}\cap H_{2}}$
 
@@ -6082,8 +5954,6 @@ Daraus folgt mit i):
 \begin{align*}
 E^{H_{1}\cap H_{2}} & \subseteq K_{1}\cdot K_{2}
 \end{align*}
-
-
 \qqed[\roman{ale2})]
 
 \iii $E^{\left\langle H_{1},H_{2}\right\rangle }=E^{H_{1}}\cap E^{H_{2}}=K_{1}\cap K_{2}$
@@ -6257,8 +6127,6 @@ Und damit folgt:
 \begin{align*}
 \left[E^{H}:k\right] & =\left[G:H\right]
 \end{align*}
-
-
 \qqed[Bemerkung]
 
 
@@ -6285,9 +6153,7 @@ dass $H:=\text{Gal}\left(\modulo{E}{K}\right)\unlhd G$ gilt.
 Aus \ref{sec:Satz-HSGaloistheorie} ii) folgt damit, dass $\modulo{K}{k}$
 galoissch ist und $\text{Gal}\left(\modulo{K}{k}\right)\stackrel{\sim}{=}\modulo{G}{H}$
 endlich und abelsch (beziehungsweise zyklisch nach \ref{sec:Satz-UG-kerImZyklG}
-ii)) ist.
-
-\qqed
+ii)) ist.\qqed
 
 
 \section{Satz\label{sec:Satz-Kompositum}}
@@ -6497,9 +6363,7 @@ Aus \eqref{eq:gN0} folgt:
 \text{deg}\left(g\right) & \ge\text{deg}\left(f\right)
 \end{align*}
 Wegen $g|f$ sind damit $f$ und $g$ in $k\left[X\right]$ assoziiert,
-also ist mit $g$ auch $f$ irreduzibel.
-
-\qqed
+also ist mit $g$ auch $f$ irreduzibel.\qqed
 
 
 \section{Beispiel \textmd{(biquadratische Erweiterung)}}
@@ -6587,9 +6451,7 @@ ist.
 
 Aus \ref{sec:Prop-sigmaInGalKommutiertNSt} i) $\Rightarrow$ ii)
 folgt nun, dass $f\in k\left[X\right]$ irreduzibel ist, und weil
-$f$ normiert ist, gilt $f=\text{Mipo}_{k}\left(\beta\right)$.
-
-\qqed
+$f$ normiert ist, gilt $f=\text{Mipo}_{k}\left(\beta\right)$.\qqed
 
 %DATE: Di 20.12.2011
 
@@ -6643,9 +6505,7 @@ Die Aussagen über $p$ folgen wie in Aufgabe 2, ii) auf Blatt 7.
 a) ist \ref{sec:Prop-sigmaInGalKommutiertNSt} i) $\Leftrightarrow$
 ii).
 
-b) ist klar.
-
-\qqed
+b) ist klar.\qqed
 
 
 \section{Quadratische Gleichungen}
@@ -6700,9 +6560,7 @@ f\left(X\right) & :=F\left(X-\frac{A}{3}\right)=X^{3}+X^{2}\left(-3\cdot\frac{A}
 (Hier geht $\text{char}\left(k\right)\not=3$ ein.)
 
 Da ${\displaystyle k\left[X\right]\stackrel{\sim}{\to}k\left[X\right],X\mapsto X-\frac{A}{3}}$
-ein Isomorphismus ist, folgt die Behauptung.
-
-\qqed
+ein Isomorphismus ist, folgt die Behauptung.\qqed
 
 
 \subsection{Bestimmung der Galoisgruppe}
@@ -6753,9 +6611,7 @@ $E^{*}$:
 
 Die Behauptung ist klar wegen \eqref{eq:sigalphai}, der Definition
 von $\sigma$ und $\delta$ und der Definition von $\text{sgn}\left(\varrho\left(\sigma\right)\right)$
-als Anzahl der Fehlstände.
-
-\qqed[Behauptung]
+als Anzahl der Fehlstände.\qqed[Behauptung]
 
 Es folgt in $\mathbb{Z}$:
 \begin{align*}
@@ -6845,9 +6701,7 @@ $K$ heißt \emph{der Körper der symmetrischen rationalen Funktionen
 
 \subsubsection*{Beweis}
 
-Folgt aus \ref{sec:Kor-GalE_EGistG} i).
-
-\qqed
+Folgt aus \ref{sec:Kor-GalE_EGistG} i).\qqed
 
 
 \subsection{Beispiel}
@@ -6986,8 +6840,7 @@ f^{\sigma}\left(X\right) & =\prod_{i=1}^{n}\left(X-t_{\sigma\left(i\right)}\righ
 Also ist $f\in K\left[X\right]$.
 
 Wegen $E=k\left(t_{1},\ldots,t_{n}\right)=K\left(t_{1},\ldots,t_{n}\right)$
-ist klar, dass $\modulo{E}{k}$ ein Zerfällungskörper von $f$ ist.\\
-\qqed[\roman{ale2})]
+ist klar, dass $\modulo{E}{k}$ ein Zerfällungskörper von $f$ ist.\qqed[\roman{ale2})]
 
 \iii Wir haben $k\left(s_{1},\ldots,s_{n}\right)\stackrel{\text{i)}}{\subseteq}K=E^{S_{n}}\subseteq E$
 und nach \ref{sec:Def-elemSymFkt} gilt sogar $f\left(X\right)\in k\left(s_{1},\ldots,s_{n}\right)\left[X\right]$,
@@ -6996,8 +6849,7 @@ und damit folgt wegen $\deg\left(f\right)=n$ und i):
 \left[E:k\left(s_{1},\ldots,s_{n}\right)\right] & \le n!
 \end{align*}
 Aus $\left[E:E^{S_{n}}\right]=\left|S_{n}\right|=n!$ (siehe \ref{sec:PuD-symRatFkt})
-folgt $K=k\left(s_{1},\ldots,s_{n}\right)$.\\
-\qqed[\roman{ale2})]
+folgt $K=k\left(s_{1},\ldots,s_{n}\right)$.\qqed[\roman{ale2})]
 
 \iii Seien $k\left(S_{1},\ldots,S_{n}\right)\subseteq\tilde{L}$
 ein Zerfällungskörper von
@@ -7087,9 +6939,7 @@ und für diesen gilt
 wie in \ref{sec:Def-elemSymFkt}.
 
 Die Aussagen folgen nun aus den analogen Aussagen für $f$, nämlich
-in \ref{sec:Satz-HS-symFkt} i) und \ref{sec:PuD-symRatFkt}.
-
-\qqed
+in \ref{sec:Satz-HS-symFkt} i) und \ref{sec:PuD-symRatFkt}.\qqed
 
 
 \subsection{Satz \textmd{(Hilbertscher Irreduzibilitätssatz)}}
@@ -7153,9 +7003,7 @@ Damit ist $X^{n}-1\in k\left[X\right]$ separabel und es folgt:
 \left|U_{n}\right| & =\deg\left(X^{n}-1\right)=n
 \end{align*}
 Insbesondere ist $U_{n}\subseteq\overline{k}\,^{*}$ endlich, also
-zyklisch nach \ref{sec:Kor-endlUGzykl}.
-
-\qqed
+zyklisch nach \ref{sec:Kor-endlUGzykl}.\qqed
 
 
 \subsubsection*{Bemerkung}
@@ -7258,8 +7106,7 @@ Da $f$ ein Isomorphismus ist, folgt:
 \begin{align*}
 \text{ord}\left(f\left(\left(\zeta,\xi\right)\right)=\zeta\xi\right) & =nm
 \end{align*}
-Also ist $\zeta\xi\in U_{nm}$ primitiv.\\
-\qqed
+Also ist $\zeta\xi\in U_{nm}$ primitiv.\qqed
 
 
 \subsubsection*{Bemerkung}
@@ -7445,17 +7292,13 @@ Wegen $\sigma\left(\zeta\cdot\xi\right)=\sigma\left(\zeta\right)\cdot\sigma\left
 ein Gruppenhomomorphismus mit Inversen $\sigma^{-1}|_{U_{n}}$.
 
 Damit ist $\psi$ in ii) wohldefiniert und ein Gruppenhomomorphismus.
-Wegen \eqref{eq:Un} ist $\psi$ injektiv.
-
-\qqed[ii)]
+Wegen \eqref{eq:Un} ist $\psi$ injektiv.\qqed[ii)]
 
 iii) folgt, da $U_{n}$ nach \ref{sec:PuD-Einheitswurzel} ein freier
 $\left(\modlo{Z}{n}\right)$-Modul vom Rang 1 ist.
 
 Zu i): Wegen ii) und iii) ist $\text{Gal}\left(\modulo{k\left(\zeta_{n}\right)}{k}\right)$
-abelsch.
-
-\qqed
+abelsch.\qqed
 
 
 \section{Bemerkung und Definition \textmd{($n$-ter Kreisteilungskörper)}}
@@ -7597,9 +7440,7 @@ Zeige also nur:
 
 \subsubsection*{Beweis}
 
-$\left[\mathbb{Q}\left(\zeta_{n}\right):\mathbb{Q}\right]\stackrel{\eqref{eq:fMipo}}{=}\deg\left(f\right)\stackrel{\text{Beh. 2}}{\ge}\left|\left\{ \zeta\in U_{n}|\zeta\text{ ist primitiv}\right\} \right|\stackrel{\text{\ref{asdf} i)}}{=}\varphi\left(n\right)$
-
-\qqed
+$\left[\mathbb{Q}\left(\zeta_{n}\right):\mathbb{Q}\right]\stackrel{\eqref{eq:fMipo}}{=}\deg\left(f\right)\stackrel{\text{Beh. 2}}{\ge}\left|\left\{ \zeta\in U_{n}|\zeta\text{ ist primitiv}\right\} \right|\stackrel{\text{\ref{asdf} i)}}{=}\varphi\left(n\right)$\qqed
 
 
 \section{Korollar\label{sec:Kor-nmTeEinheitswurzeln}}
@@ -7633,9 +7474,7 @@ ist ein Gruppenisomorphismus.
 eine primitive $\left(nm\right)$-te Einheitswurzel ist, gelten $\zeta_{n},\zeta_{m}\in\mathbb{Q}\left(\zeta_{n}\cdot\zeta_{m}\right)$,
 denn $U_{n},U_{m}\subseteq U_{nm}$.
 
-Der Rest ist klar.
-
-\qqed[\roman{ale2})]
+Der Rest ist klar.\qqed[\roman{ale2})]
 
 \iii Wir haben folgendes Körperdiagramm:
 
@@ -7665,9 +7504,7 @@ Also folgt:
 \begin{align*}
 \varphi\left(n\right) & =\left[\mathbb{Q}\left(\zeta_{n}\right):E\right]=\left[\mathbb{Q}\left(\zeta_{n}\right):\mathbb{Q}\right]
 \end{align*}
-Also folgt wegen $\mathbb{Q}\subseteq E$ schon $E=\mathbb{Q}$.
-
-\qqed[\roman{ale2})]
+Also folgt wegen $\mathbb{Q}\subseteq E$ schon $E=\mathbb{Q}$.\qqed[\roman{ale2})]
 
 \iii Dies folgt aus i), ii) und \ref{sec:Satz-Kompositum} ii).
 
@@ -7781,9 +7618,7 @@ Also gilt sogar:
 \end{align*}
 Weil $\phi_{n}\left(X\right)$ normiert ist, folgt $\phi_{n}\left(X\right)|X^{n}-1$
 in $\mathbb{Q}\left[X\right]$ und mit \ref{sec:Kor-hfgNormiert}
-folgt $\phi_{n}\left(X\right)\in\mathbb{Z}\left[X\right]$.
-
-\qqed[\roman{ale2})]
+folgt $\phi_{n}\left(X\right)\in\mathbb{Z}\left[X\right]$.\qqed[\roman{ale2})]
 
 \iii Für alle $0<d|n$ gilt:
 \begin{align*}
@@ -7904,13 +7739,9 @@ Die zweite Aussage folgt aus:
 \begin{align*}
 \text{Gal}\left(\modulo{\mathbb{F}_{q}\left(\zeta_{n}\right)}{\mathbb{F}_{q}}\right) & =\left\langle \text{Frob}_{q}\right\rangle 
 \end{align*}
-(vergleiche \ref{sec:SuD-relatFrob} ii))
+(vergleiche \ref{sec:SuD-relatFrob} ii))\qqed[\roman{ale2})]
 
-\qqed[\roman{ale2})]
-
-\iii $\left[\mathbb{F}_{q}\left(\zeta_{n}\right):\mathbb{F}_{q}\right]=\left|\text{Gal}\left(\modulo{\mathbb{F}_{q}\left(\zeta_{n}\right)}{\mathbb{F}_{1}}\right)\right|\stackrel{\text{i)}}{=}\left|\left\langle \overline{q}\right\rangle \right|=\text{ord}\left(\overline{q}\in\left(\modlo{Z}{n}\right)^{*}\right)$
-
-\qqed[\roman{ale2})]
+\iii $\left[\mathbb{F}_{q}\left(\zeta_{n}\right):\mathbb{F}_{q}\right]=\left|\text{Gal}\left(\modulo{\mathbb{F}_{q}\left(\zeta_{n}\right)}{\mathbb{F}_{1}}\right)\right|\stackrel{\text{i)}}{=}\left|\left\langle \overline{q}\right\rangle \right|=\text{ord}\left(\overline{q}\in\left(\modlo{Z}{n}\right)^{*}\right)$\qqed[\roman{ale2})]
 
 \iii Die Irreduzibilität von $\phi_{n}\left(X\right)\in\mathbb{F}_{q}\left[X\right]$
 ist äquivalent zu folgenden Aussagen:
@@ -7920,8 +7751,6 @@ ist äquivalent zu folgenden Aussagen:
 \Leftrightarrow\qquad & \psi\text{ in i) ist surjektiv.}\\
 \stackrel{\text{i)}}{\Leftrightarrow}\qquad & \left\langle \overline{q}\right\rangle =\left(\modlo{Z}{n}\right)^{*}
 \end{align*}
-
-
 \qqed[\roman{ale2})]
 
 \iii \hspace*{1mm}\vspace*{-8mm} 
@@ -8018,9 +7847,7 @@ und:
 \begin{align*}
 N & \equiv1\not\equiv0\text{ mod }q
 \end{align*}
-Dies ist ein Widerspruch zur Endlichkeit von $P\left(g\right)$.
-
-\qqed
+Dies ist ein Widerspruch zur Endlichkeit von $P\left(g\right)$.\qqed
 
 
 \section{Satz}
@@ -8032,9 +7859,7 @@ mit $p\equiv1\text{ mod }n$.
 \subsubsection*{Beweis}
 
 \ref{sec:SuD-NullstelleModuloP} iv) und \ref{sec:Lem-PfInfty} mit
-$f=\phi_{n}\left(X\right)$.
-
-\qqed
+$f=\phi_{n}\left(X\right)$.\qqed
 
 
 \section{Bemerkung}
@@ -8108,16 +7933,12 @@ und es folgt:
 \begin{align*}
 e\cdot x & \stackrel{\text{Def.}}{=}\underbrace{\varrho\left(e\right)}_{=\text{id}_{X}}\left(x\right)=x
 \end{align*}
-
-
 \qqed[\roman{ale2})]
 
 \iii Es gilt:
 \begin{align*}
 g\cdot\left(h\cdot x\right) & \stackrel{\text{Def.}}{=}\varrho\left(g\right)\left(\varrho\left(h\right)\left(x\right)\right)=\left(\varrho\left(g\right)\circ\varrho\left(h\right)\right)\left(x\right)\stackrel{\varrho\text{ Gruphom.}}{=}\left(\varrho\left(gh\right)\right)\left(x\right)\stackrel{\text{Def.}}{=}\left(gh\right)\cdot x
 \end{align*}
-
-
 \qqed[\roman{ale2})]
 
 \end{iiilist}
@@ -8151,9 +7972,7 @@ Zudem gilt:
 \varrho\left(gh\right)\left(x\right) & =gh\cdot x\stackrel{\eqref{eq:exxGhxGHx}}{=}g\cdot h\cdot x=\varrho\left(g\right)\left(\varrho\left(h\right)\left(x\right)\right)=\left(\varrho\left(g\right)\circ\varrho\left(h\right)\right)\left(x\right)
 \end{align*}
 Also gilt $\varrho\left(gh\right)=\varrho\left(g\right)\circ\varrho\left(h\right)$
-und daher ist $\varrho$ ein Gruppenhomomorphismus.
-
-\qqed
+und daher ist $\varrho$ ein Gruppenhomomorphismus.\qqed
 
 
 \subsection{Beispiel und Definition \textmd{(Linkstranslation)}}
@@ -8182,9 +8001,7 @@ Man sieht leicht:
 \begin{align*}
 l_{\sigma}\circ l_{\sigma^{-1}} & =l_{\sigma^{-1}}\circ l_{\sigma}=\text{id}_{X}
 \end{align*}
-(vergleiche Beweis von \ref{sub:PuD-Operation})
-
-\qqed[\roman{ale2})]
+(vergleiche Beweis von \ref{sub:PuD-Operation})\qqed[\roman{ale2})]
 
 \iii Ist $\modulo{E}{k}$ eine Körpererweiterung, so ist
 \begin{align*}
@@ -8251,9 +8068,7 @@ Also ist $e\in G_{x}$ und für $\sigma,\tau\in G_{x}$ gilt:
 \begin{align*}
 \left(\sigma\tau^{-1}\right)\cdot\sr{\underbrace{x}_{=\tau\cdot x}}{}{\text{wg. }\tau\in G_{x}} & =\left(\sigma\left(\tau^{-1}\tau\right)\right)\cdot x=\sigma x=x
 \end{align*}
-Also gilt $\sigma\tau^{-1}\in G_{x}$.
-
-\qqed
+Also gilt $\sigma\tau^{-1}\in G_{x}$.\qqed
 
 
 \subsection{Proposition}
@@ -8282,9 +8097,7 @@ Weil $\omega\in G$ beliebig ist, folgt, dass
 \begin{align*}
 G_{x} & =\sigma G_{y}\sigma^{-1}
 \end{align*}
-gilt, also $G_{x}$ konjugiert zu $G_{y}$ ist.
-
-\qqed
+gilt, also $G_{x}$ konjugiert zu $G_{y}$ ist.\qqed
 
 
 \subsection{Proposition und Definition \textmd{(Menge der Bahnen)\label{sub:PuD-BahnenMenge}}}
@@ -8341,9 +8154,7 @@ z & =\tau\cdot y=\tau\cdot\left(\sigma\cdot x\right)=\left(\tau\sigma\right)\cdo
 Daher ist $x\sim z$.
 
 Also ist $\sim$ eine Äquivalenzrelation auf $X$, und die zweite
-Aussage ist klar.
-
-\qqed[\roman{ale2})]
+Aussage ist klar.\qqed[\roman{ale2})]
 
 \iii und iii) sind allgemeine Eigenschaften einer Äquivalenzrelation. 
 
@@ -8394,9 +8205,7 @@ Also gilt:
 \end{align*}
 Daher ist die Abbildung \eqref{eq:GModG_xToGx} injektiv.
 
-Der Rest ist klar.
-
-\qqed
+Der Rest ist klar.\qqed
 
 
 \subsection{Satz \textmd{(Bahngleichung)\label{sub:Satz-Bahngleichung}}}
@@ -8415,9 +8224,7 @@ Dann folgt:
 
 \subsubsection*{Beweis}
 
-Dies folgt aus \ref{sub:PuD-BahnenMenge} iii) und \ref{sub:Prop-sGxSx}.
-
-\qqed
+Dies folgt aus \ref{sub:PuD-BahnenMenge} iii) und \ref{sub:Prop-sGxSx}.\qqed
 
 
 \subsection{Definition \textmd{(Konjugationsklasse, Zentralisator)}}
@@ -8451,9 +8258,7 @@ bestehen, so gilt:
 Die Konjugationsunterklasse eines $\tau\in G$ ist genau dann einelementig,
 wenn $\tau\in Z\left(G\right)$ liegt.
 
-Damit folgt die Proposition aus der Bahngleichung \ref{sub:Satz-Bahngleichung}.
-
-\qqed
+Damit folgt die Proposition aus der Bahngleichung \ref{sub:Satz-Bahngleichung}.\qqed
 
 
 \subsection{Definition \textmd{($p$-Gruppen)}}
@@ -8488,9 +8293,7 @@ Nach \ref{sub:Prop-M=0000E4chtigkeitZentralisatoren} gilt also:
 \begin{align*}
 p & \,|\,\left|Z\left(G\right)\right|
 \end{align*}
-Daher ist $Z\left(G\right)\not=1$.
-
-\qqed
+Daher ist $Z\left(G\right)\not=1$.\qqed
 
 %DATE: Fr 20.1.12
 
@@ -8544,9 +8347,7 @@ weswegen
 \begin{align*}
 G & =H_{0}\supseteq\ldots\supseteq H_{m}=\left\{ e\right\} 
 \end{align*}
-eine Kette der gewünschten Art ist.
-
-\qqed
+eine Kette der gewünschten Art ist.\qqed
 
 
 \subsection{Proposition und Definition \textmd{(Operation auf Potenzmenge)}}
@@ -8577,9 +8378,7 @@ g\cdot\left(h\cdot M\right) & =\left\{ g\cdot n|n\in hM\right\} =\left\{ g\cdot\
 
 \end{iiilist}
 
-Daher operiert $G$ auf $\mathcal{P}\left(X\right)$.
-
-\qqed
+Daher operiert $G$ auf $\mathcal{P}\left(X\right)$.\qqed
 
 
 \subsection{Beispiel und Definition \textmd{(Normalisator)}}
@@ -8628,9 +8427,7 @@ Die Bahngleichung \ref{sub:Satz-Bahngleichung} lautet:
 \left|X\right| & =\left|X_{0}\right|+\sum_{i=1}^{n}\left(G:G_{x_{i}}\right)
 \end{align*}
 Da $G$ eine $p$-Gruppe ist, also $p|\left(G:G_{x_{i}}\right)$ gilt,
-folgt daraus die Behauptung.
-
-\qqed
+folgt daraus die Behauptung.\qqed
 
 
 \subsection{Definition \textmd{($p$-Sylowgruppe)}}
@@ -8717,9 +8514,7 @@ Wegen $\left|M_{0}\right|>0$ folgt damit $\left|M_{0}\right|\ge p$,
 weswegen es ein $\left(a,\ldots,a\right)\in M_{0}$ mit $a\not=e$
 und $a^{p}=e$ gibt.\\
 Da $p$ eine Primzahl ist, heißt das $\text{ord}\left(a\right)=p$,
-denn $\text{ord}\left(a\right)|p$ und $\text{ord}\left(a\right)\not=1$.
-
-\qqed
+denn $\text{ord}\left(a\right)|p$ und $\text{ord}\left(a\right)\not=1$.\qqed
 
 
 \subsection{Lemma\label{sub:Lem-NgH=00003DGHmodP}}
@@ -8750,9 +8545,7 @@ Damit folgt:
 \begin{align*}
 \left|M_{0}\right| & =\left(N_{G}\left(H\right):H\right)
 \end{align*}
-Mit $\left|M\right|=\left(G:H\right)$ folgt die Behauptung aus \ref{sub:Lem-FixpunkteModP}.
-
-\qqed
+Mit $\left|M\right|=\left(G:H\right)$ folgt die Behauptung aus \ref{sub:Lem-FixpunkteModP}.\qqed
 
 
 \subsection{Korollar\label{sub:Kor-pTeiltNGH}}
@@ -8772,9 +8565,7 @@ p & \,|\,\left(N_{G}\left(H\right):H\right)
 
 \subsubsection*{Beweis}
 
-Dies folgt direkt aus \ref{sub:Lem-NgH=00003DGHmodP}.
-
-\qqed
+Dies folgt direkt aus \ref{sub:Lem-NgH=00003DGHmodP}.\qqed
 
 
 \subsection{Satz \textmd{(1. Sylowsatz)\label{sub:Satz-Sylow1}}}
@@ -8810,9 +8601,7 @@ p| & \left(N_{G}\left(H\right):H\right)
 \end{align*}
 Nach \ref{sub:Satz-Cauchy} enthält $\modulo{N_{G}\left(H\right)}{H}$
 eine Untergruppe der Ordnung $p$, deren Urbild in $N_{G}\left(H\right)$
-ist ein $H'$ mit den geforderten Eigenschaften.
-
-\qqed
+ist ein $H'$ mit den geforderten Eigenschaften.\qqed
 
 
 \subsection{Satz \textmd{(2. Sylowsatz)\label{sub:Satz-Sylow2}}}
@@ -8844,9 +8633,7 @@ Also existiert ein $g\in G$, sodass für alle $h\in H$ schon $hgP=gP$,
 also $g^{-1}Hg\subseteq P$ gilt.
 
 Die erste Aussage ist damit bewiesen, die zweite folgt, da je zwei
-$p$-Sylowgruppen die gleiche Ordnung besitzen.
-
-\qqed
+$p$-Sylowgruppen die gleiche Ordnung besitzen.\qqed
 
 
 \subsection{Satz \textmd{(3. Sylowsatz)\label{sub:Satz-Sylow3}}}
@@ -8881,9 +8668,7 @@ Für $Q\in M_{0}$ sind $P$ und $Q$ bereits $p$-Sylowgruppen von
 $N_{G}\left(Q\right)$ und damit konjugiert nach \ref{sub:Satz-Sylow2},
 also folgt aus $P=Q$ schon $M_{0}=\left\{ P\right\} $.
 
-Die Behauptung folgt nun aus \ref{sub:Lem-FixpunkteModP}.
-
-\qqed
+Die Behauptung folgt nun aus \ref{sub:Lem-FixpunkteModP}.\qqed
 
 %DATE: Di 24.1.2012
 
@@ -8912,9 +8697,9 @@ Es gibt ein $r\in\mathbb{N}$ und eine Kette
 \begin{align*}
 G=H_{0} & \supseteq H_{1}\supseteq\ldots\supseteq H_{r}=\left\{ e\right\} 
 \end{align*}
-von Untergruppen von $G$ gibt, sodass für $i\in\left\{ 1,\ldots,r\right\} $
-schon $H_{i}\unlhd H_{i-1}$ gilt und $\modulo{H_{i}}{H_{i-1}}$ eine
-endliche, zyklisch von Primzahlordnung ist.
+von Untergruppen von $G$, sodass für $i\in\left\{ 1,\ldots,r\right\} $
+schon $H_{i}\unlhd H_{i-1}$ gilt und $\modulo{H_{i}}{H_{i-1}}$ endlich
+und zyklisch von Primzahlordnung ist.
 
 \textcolor{green}{TODO: Beweis einfügen}
 
@@ -8943,7 +8728,7 @@ ist.
 \end{iiilist}
 
 
-\subsection{Satz}
+\subsection{Satz\label{sub:Satz-aufloesbareGruppeUG_NT}}
 
 Sei $G$ eine endliche Gruppe.
 
@@ -9100,9 +8885,7 @@ Dann sind $W\left(\gamma_{1}\right),\ldots,W\left(\gamma_{2}\right)$
 die Bahnen bezüglich $\sigma$, also $r=s$ und ohne Einschränkung
 $W\left(\gamma_{i}\right)=C_{i}$.
 
-Dann muss auch $\gamma_{i}=\varrho_{i}$ gelten.
-
-\qqed
+Dann muss auch $\gamma_{i}=\varrho_{i}$ gelten.\qqed
 
 
 \subsection{Bemerkung}
@@ -9234,12 +9017,10 @@ v & c & a\end{array}\right)=\left(\begin{array}{ccc}
 a & b & c\end{array}\right)
 \end{align*}
 Also ist $\left(\begin{array}{ccc}
-a & b & c\end{array}\right)\in N$.
-
-\qqed
+a & b & c\end{array}\right)\in N$.\qqed
 
 
-\subsection{Satz \textmd{(Auflösbarkeit von $S_{n}$)}}
+\subsection{Satz \textmd{(Auflösbarkeit von $S_{n}$)\label{sub:Satz-AufloesbarkeitVonSn}}}
 
 Die Gruppe $S_{n}$ ist genau dann auflösbar, wenn $n\le4$ ist.
 
@@ -9284,9 +9065,7 @@ mit $\modulo{G_{i-1}}{G_{i}}$ abelsch.
 Nach \ref{sub:Lem-aufl=0000F6sbar} wäre induktiv jeder Dreierzykel
 in jedem $G_{i}$ enthalten.
 
-Dies ist ein Widerspruch zu $G_{m}=\left\{ e\right\} $.
-
-\qqed
+Dies ist ein Widerspruch zu $G_{m}=\left\{ e\right\} $.\qqed
 
 
 \subsection{Definition \textmd{(einfache Gruppe)}}
@@ -9596,9 +9375,7 @@ Dann ist $\winkel M$ ein Teilkörper von $\mathbb{C}$.
 
 \subsubsection*{Beweis}
 
-Dies folgt sofort aus \ref{sec:Prop-WinkelM}.
-
-\qqed
+Dies folgt sofort aus \ref{sec:Prop-WinkelM}.\qqed
 
 
 \section{Proposition\label{sec:Prop-quadrM}}
@@ -9634,9 +9411,7 @@ Aus dem Höhensatz folgt:
 \begin{align*}
 x^{2} & =1\cdot r
 \end{align*}
-Also ist $x=\sqrt{r}$.
-
-\qqed
+Also ist $x=\sqrt{r}$.\qqed
 
 
 \section{Proposition und Definition \textmd{(komplex konjugierte Menge)\label{sec:PuD-komplexKonjugierteMenge}}}
@@ -9825,9 +9600,7 @@ sukzessive:
 \begin{align*}
 K=K_{0} & \subseteq\winkel M & K_{1} & \subseteq\winkel M &  & \ldots & K_{n} & \subseteq\winkel M
 \end{align*}
-Also ist $z\in\winkel M$.
-
-\qqed
+Also ist $z\in\winkel M$.\qqed
 
 
 \section{Beispiele}
@@ -9888,9 +9661,7 @@ $m=m_{1}\cdot m_{2}$ mit $m_{2}>1$ und ungerade. Dann ist aber
 p & =1-\left(-2^{m_{1}}\right)^{m_{2}}=\left(1+2^{m_{1}}\right)\left(1-2^{m_{1}}+2^{2m_{1}}-\ldots+2^{m_{1}\left(m_{2}-1\right)}\right)
 \end{align*}
 ein Produkt zweier Zahlen, die größer als 1 sind, was ein Widerspruch
-zur Primzahleigenschaft von $p$ ist.
-
-\qqed[Lemma]
+zur Primzahleigenschaft von $p$ ist.\qqed[Lemma]
 
 Also $p_{k}=2^{2^{k}}+1$. Zum Beispiel sind $3,5,17,257,65537$ solche
 Primzahlen.
@@ -9951,9 +9722,7 @@ Subtraktion von $\chi_{1}\left(g\right)\cdot\eqref{eq:achi0}$ liefert
 eine nicht-triviale Relation kleinerer Länge im Widerspruch zur Minimalität
 von $n$.
 
-Daher können die $\chi_{i}$ nicht linear abhängig sein.
-
-\qqed
+Daher können die $\chi_{i}$ nicht linear abhängig sein.\qqed
 
 
 \section{Zyklische Erweiterungen}
@@ -9988,7 +9757,7 @@ N_{\moduloScript{E}{K}}\left(a\cdot b\right) & =\prod_{\sigma\in\text{Gal}\left(
 
 
 
-\subsection{Satz \textmd{(Hilbert 90)}}
+\subsection{Satz \textmd{(Hilbert 90)\label{sub:Satz-Hilbert_90}}}
 
 Seien $\modulo{L}{K}$ eine endliche zyklische Galoiserweiterung,
 $\sigma\in\text{Gal}\left(\modulo{L}{K}\right)$ ein erzeugendes Element.
@@ -10038,15 +9807,13 @@ und:
 \begin{align*}
 b\cdot\sigma\left(b\right)\cdot\ldots\cdot\sigma^{n-1}\left(b\right) & =N_{\moduloScript{L}{K}}\left(b\right)=1
 \end{align*}
-Also ist ${\displaystyle b=\frac{a}{\sigma\left(a\right)}}$.
-
-\qqed
+Also ist ${\displaystyle b=\frac{a}{\sigma\left(a\right)}}$.\qqed
 
 
-\subsection{Satz}
+\subsection{Satz \textmd{(zyklische Galoiserweiterung)\label{sub:Satz-zyklischeGaloiserweiterung}}}
 
 Sei $\modulo{L}{K}$ eine Körpererweiterung, $n\in\mathbb{N}_{>0}$
-mit $\text{char}\left(K\right)\!\not|\, n$ und $K$ enthalte eine
+mit $\text{char}\left(K\right)\not\!|\, n$ und $K$ enthalte eine
 primitive $n$-te Einheitswurzel.
 
 \begin{iiilist}
@@ -10054,10 +9821,332 @@ primitive $n$-te Einheitswurzel.
 \iii Ist $\modulo{L}{K}$ eine zyklische Galoiserweiterung vom Grad
 $n$, so gilt $L=K\left(a\right)$ für ein Element $a\in L$, dessen
 Minimalpolynom über $K$ von der Form $X^{n}-c$ mit $c\in K$ ist.
+%DATE Fr 03.02.2012
 
-\iii 
+\iii Gilt $L=K\left(\alpha\right)$ für ein $\alpha\in L$, das Nullstelle
+eines Polynoms $X^{n}-c\in K\left[X\right]$ ist, so ist $\modulo{L}{K}$
+eine zyklische Galoiserweiterung von $K$.
+
+Weiterhin ist $d:=\left[L:K\right]$ ein Teiler von $n$ und es gilt
+$a^{d}\in K$, sodass $X^{d}-a^{d}\in K\left[X\right]$ das Minimalpolynom
+von $a$ über $K$ ist.
 
 \end{iiilist}
+
+
+\subsubsection*{Beweis}
+
+Sei $\zeta\in K$ eine primitive $n$-te Einheitswurzel.
+
+\begin{iiilist}
+
+\iii $\modulo{L}{K}$ ist zyklisch vom Grad $n$ und wegen $\zeta^{-1}\in K$
+und
+\begin{align*}
+\zeta^{-n} & =\left(\zeta^{n}\right)^{-1}=1^{-1}=1
+\end{align*}
+gilt:
+\begin{align*}
+N_{\moduloScript{L}{K}}\left(\zeta^{-1}\right) & =\prod_{\sigma\in\text{Gal}\left(\moduloScript{L}{K}\right)}\sigma\left(\zeta^{-1}\right)=\prod_{k=1}^{n}\zeta^{-1}=\zeta^{-n}=1
+\end{align*}
+Aus \ref{sub:Satz-Hilbert_90} folgt, dass es ein $a\in L^{*}$ mit
+${\displaystyle \zeta^{-1}=\frac{a}{\sigma\left(a\right)}}$ gibt,
+also $\sigma\left(a\right)=\zeta a$, für einen Erzeuger $\sigma$
+von $\text{Gal}\left(\modulo{L}{K}\right)$.
+
+Damit folgt für $i\in\left\{ 0,\ldots,n-1\right\} $:
+\begin{align*}
+\sigma^{i}\left(a\right) & =\zeta^{i}a
+\end{align*}
+Also sind $\sigma^{0}\left(a\right),\ldots,\sigma^{n-1}\left(a\right)$
+paarweise verschieden und somit $\left[K\left(a\right):K\right]\ge n$,
+also $K\left(a\right)=L$.
+
+Es ist $\sigma\left(a^{n}\right)=\sigma\left(a\right)^{n}=\zeta^{n}a^{n}=a^{n}$,
+also $a^{n}\in K$ und $a$ ist eine Nullstelle von $X^{n}-a^{n}$,
+weswegen dies das Minimalpolynom von $a$ über $K$ ist.\qqed[\roman{ale2})]
+
+\iii $\modulo{K\left(a\right)}{K}$ ist galoissch.
+
+\textcolor{green}{TODO: Beweis einfügen (Blatt 13 Aufgabe 4?)}
+
+\begin{align*}
+\varphi:\text{Gal}\left(\modulo{K\left(a\right)}{K}\right) & \hookrightarrow\left\{ \zeta^{k}\middle|k\in\left\{ 1,\ldots,n\right\} \right\} \subseteq K^{*}
+\end{align*}
+Also gilt $d:=\left[L:K\right]\big|n$ und $\text{Gal}\left(\modulo{L}{K}\right)$
+ist zyklisch.
+
+Ist $\sigma\in\text{Gal}\left(\modulo{L}{K}\right)$ ein Erzeuger,
+so ist $\varphi\left(\sigma\right)$ eine primitive $d$-te Einheitswurzel
+und es gilt:
+\begin{align*}
+\sigma\left(a^{d}\right) & =\sigma\left(a\right)^{d}=\varphi\left(\sigma\right)^{d}a^{d}=a^{d}
+\end{align*}
+Daher folgt $a^{d}\in K$ und somit die Behauptung.
+
+\end{iiilist}
+
+\qqed
+
+
+\section{Auflösbarkeit}
+
+Im gesamten Abschnitt betrachten wir nur Körper mit der Charakteristik
+0.
+
+
+\subsection{Definition \textmd{(Radikale, auflösbar)}}
+
+\begin{iiilist}
+
+\iii Eine endliche Körpererweiterung $\modulo{L}{K}$ heißt \emph{durch
+Radikale auflösbar}, wenn es zu $L$ einen Erweiterungskörper $E$,
+sowie eine Körperkette
+\begin{align*}
+K=E_{0} & \subseteq E_{1}\subseteq\ldots\subseteq E_{m}=E
+\end{align*}
+gibt, sodass $E_{i+1}$ jeweils aus $E_{i}$ durch Adjunktion einer
+Nullstelle eines Polynoms $X^{n}-a\in E_{i}\left[X\right]$ entsteht.
+
+\iii Eine endliche Körpererweiterung heißt \emph{auflösbar}, wenn
+es einen Oberkörper $E\supseteq L$ gibt, sodass $\modulo{E}{K}$
+eine endliche Galoiserweiterung mit auflösbarer Galoisgruppe ist.
+
+\end{iiilist}
+
+
+\subsection{Satz \textmd{(auflösbar $\Leftrightarrow$ durch Radikale auflösbar)\label{sub:Satz-aufloesbarRadikale}}}
+
+Eine endliche Körpererweiterung ist genau dann auflösbar, wenn sie
+durch Radikale auflösbar ist.
+
+
+\subsubsection*{Beweis}
+
+Sei zunächst $\modulo{L}{K}$ auflösbar. Ohne Einschränkung ist $\modulo{L}{K}$
+galoissch mit auflösbarer Galoisgruppe, sonst betrachte einen Erweiterungskörper
+mit auflösbarer Galoisgruppe.
+
+Sei $n$ das Produkt der Primzahlen, die $\left[L:K\right]$ teilen
+und $\modulo{F}{K}$ entstehe durch Adjunktion der $n$-ten Einheitswurzeln
+und ist offenbar durch Radikale auflösbar. Wähle eine Einbettung $L\hookrightarrow\overline{F}$,
+dann ist $\modulo{LF}{F}$ galoissch.
+
+Da jedes $\sigma\in\text{Gal}\left(\modulo{LF}{F}\right)$ die Identität
+auf $F$ und somit auf $K$ ist und weil $\modulo{L}{K}$ normal ist,
+ist die Abbildung
+\begin{align*}
+\varphi:\text{Gal}\left(\modulo{LF}{F}\right) & \hookrightarrow\text{Gal}\left(\modulo{L}{K}\right)\\
+\sigma & \mapsto\sigma|_{L}
+\end{align*}
+wohldefiniert und ein Homomorphismus. Wegen $FL=F\left(L\right)$
+ist
+\begin{align*}
+\text{ker}\left(\varphi\right) & =\left\{ \sigma\in\text{Gal}\left(\modulo{LF}{F}\right)\middle|\sigma\big|_{L}=\text{id}_{L}\right\} =\\
+ & \negthickspace\negthickspace\negthickspace\negthickspace\stackrel{\sigma|_{F}=\text{id}_{F}}{=}\left\{ \sigma\in\text{Gal}\left(\modulo{LF}{F}\right)\middle|\sigma=\text{id}_{LF}=e\right\} =\left\{ e\right\} 
+\end{align*}
+und daher ist $\varphi$ injektiv und wir können $\text{Gal}\left(\modulo{LF}{F}\right)$
+als Untergruppe von $\text{Gal}\left(\modulo{L}{K}\right)$ auffassen,
+die wie jede Untergruppe von $\text{Gal}\left(\modulo{L}{K}\right)$
+auflösbar ist.
+
+Wähle
+\begin{align*}
+\text{Gal}\left(\modulo{LF}{F}\right)=G_{0} & \supseteq G_{1}\supseteq\ldots\supseteq G_{m}=\left\{ e\right\} 
+\end{align*}
+so, dass $G_{i}\unlhd G_{i-1}$ und $\left[G_{i-1}:G_{i}\right]$
+eine Primzahl ist. Also liegt wegen
+\begin{align*}
+\left[G_{i-1}:G_{i}\right]\, & \big|\,\left|\text{Gal}\left(\modulo{L}{K}\right)\right|=\left[L:K\right]
+\end{align*}
+und weil $\left[G_{i-1}:G_{i}\right]$ eine Primzahl ist, also $\left[G_{i-1}:G_{i}\right]\big|n$
+gilt, eine $\left[G_{i-1}:G_{i}\right]$-te primitive Einheitswurzeln
+in $F$.
+
+Sei
+\begin{align*}
+F=F_{0} & \subseteq F_{1}\subseteq\ldots\subseteq F_{m}=L\cdot F
+\end{align*}
+die entsprechende Körperkette.
+
+Aus \ref{sub:Satz-zyklischeGaloiserweiterung} i) folgt, dass $\modulo{F_{i}}{F_{i-1}}$
+durch Adjunktion einer Nullstelle eines Polynoms $X^{\left[G_{i-1}:G_{i}\right]}-a$
+entsteht.
+
+Außerdem entsteht $F$ aus $K$ durch Adjunktion einer Nullstelle
+von $X^{n}-1$, weswegen $\modulo{LF}{K}$ und somit wegen $L\subseteq LF$
+auch $\modulo{L}{K}$ durch Radikale auflösbar ist.
+
+Sei nun $\modulo{L}{K}$ durch Radikale auflösbar. Seien ohne Einschränkung
+\begin{align*}
+K=L_{0} & \subseteq L_{1}\subseteq\ldots\subseteq L_{m}=L
+\end{align*}
+so, dass $L_{i}$ durch Adjunktion einer $n_{i}$-ten Wurzel, genauer
+einer Nullstelle von $X^{n_{i}}-a_{i}\in L_{i-1}\left[X\right]$,
+aus $L_{i-1}$ entsteht.
+
+Sei $n$ das kleinste gemeinsame Vielfache aller $n_{i}$, $F$ entstehe
+aus $K$ durch Adjunktion aller $n$-ten Einheitswurzeln und wähle
+eine Einbettung $L\hookrightarrow\overline{F}$.
+
+Für alle $1\le i\le m$ sei $E_{i}$ eine normale Hülle von $L_{i}\cdot F$
+über $K$.
+\begin{description}
+\item [{Behauptung}] $\modulo{E_{i}}{F}$ hat eine auflösbare Galoisgruppe.
+\item [{Beweis}] Führe eine Induktion über $i$ durch:\\
+\emph{Induktionsanfang:} Da wegen $K=L_{0}\subseteq F$ schon $F=L_{0}\cdot F$
+gilt, ist $E_{0}=F$ eine normale Hülle von $F$ und $\modulo{E_{0}=F}{F}$
+hat die triviale Galoisgruppe, die offenbar auflösbar ist.\\
+\emph{Induktionsschritt:} Angenommen dies wurde für $\modulo{E_{i-1}}{F}$
+schon gezeigt, so seien $a_{i}=a_{i}^{1},\ldots,a_{i}^{s}$ die Galoiskonjugierten
+von $a_{i}$ in $E_{i-1}$ bezüglich $\text{Gal}\left(\modulo{E_{i-1}}{K}\right)$.
+Dann gilt:
+\begin{align*}
+E_{i} & =E_{i-1}\left(\sqrt[n_{i}]{a_{i}^{1}},\ldots,\sqrt[n_{i}]{a_{i}^{s}}\right)
+\end{align*}
+Daher ist $\text{Gal}\left(\modulo{E_{i}}{E_{i-1}}\right)$ auflösbar
+und somit auch $\text{Gal}\left(\modulo{E_{i}}{F}\right)$. \qqed[Behauptung]
+\end{description}
+Da $\text{Gal}\left(\modulo{F}{K}\right)$ auflösbar ist, ist auch
+$\text{Gal}\left(\modulo{E_{m}}{K}\right)$ auflösbar und wegen $L\subseteq E_{m}$
+auch $\modulo{L}{K}$.
+
+\qqed
+
+
+\subsection{Korollar}
+
+Es sei $\modulo{L}{K}$ eine Körpererweiterung höchstens vom Grad
+4.
+
+Dann ist $\modulo{L}{K}$ auflösbar und insbesondere auch durch Radikale
+auflösbar.
+
+
+\subsubsection*{Beweis}
+
+Nach dem Satz vom primitiven Element gibt es ein $\alpha\in L$ mit
+$L=K\left(\alpha\right)$ und $f:=\text{Mipo}_{K}\left(\alpha\right)$.
+
+Sei $L'$ ein Zerfällungskörper von $f$ über $K$, so gibt es wegen
+$\deg\left(f\right)\le4$ eine Einbettung:
+\begin{align*}
+\text{Gal}\left(\modulo{L'}{K}\right) & \hookrightarrow S_{4}
+\end{align*}
+Da $S_{4}$ nach \ref{sub:Satz-AufloesbarkeitVonSn} auflösbar ist,
+so ist nach \ref{sub:Satz-aufloesbareGruppeUG_NT} i) auch $\text{Gal}\left(\modulo{L'}{K}\right)$
+auflösbar, also auch $\modulo{L'}{K}$ und damit $\modulo{L}{K}$.
+Aus \ref{sub:Satz-aufloesbarRadikale}, dass $\modulo{L}{K}$ ebenfalls
+durch Radikale auflösbar ist.\qqed
+
+
+\subsection{Korollar}
+
+Es existieren endliche Körpererweiterungen, die nicht durch Radikale
+auflösbar sind.
+
+Beispielsweise ist die allgemeine Gleichung $n$-ten Grades für $n\ge5$
+nicht durch Radikale auflösbar.
+
+
+\subsubsection*{Beweis}
+
+Die allgemeine Gleichung $n$-ten Grades, also
+\begin{align*}
+f\left(X\right) & :=X^{n}-\mathcal{S}_{1}X^{n-1}+\ldots+\left(-1\right)^{n}\mathcal{S}_{n}=0
+\end{align*}
+mit $f\in k\left(\mathcal{S}_{1},\ldots,\mathcal{S}_{n}\right)\left[X\right]$
+für einen Körper $k$, hat als Galoisgruppe $S_{n}$, welche für $n\ge5$
+nach \ref{sub:Satz-AufloesbarkeitVonSn} nicht auflösbar ist.
+
+Deswegen ist auch die dazugehörige Körpererweiterung nicht durch Radikale
+auflösbar.\qqed
+
+
+\subsection{Lemma und Definition \textmd{(transitive Operation)}}
+
+Für eine Primzahl $p$ sei $G\subseteq S_{p}$ eine Untergruppe, die
+\emph{transitiv} auf $\left\{ 1,\ldots,p\right\} $ operiere, dass
+heißt es gibt genau eine $G$-Bahn, oder anders ausgedrückt gibt es
+zu je zwei Elementen $i,j\in\left\{ 1,\ldots,p\right\} $ ein Element
+$g\in G$ mit $g\cdot i=j$.
+
+Dann enthält $G$ eine Untergruppe $H$ der Ordnung $p$.
+
+Ist $G$ auflösbar, so ist $H$ eindeutig bestimmt und insbesondere
+ein Normalteiler in $G$.
+
+
+\subsubsection*{Beweis}
+
+Die Operation ist transitiv, hat genau eine $G$-Bahn $Gj$, welche
+$p$ Elemente hat, und daher folgt aus der Bahnengleichung
+\begin{align*}
+p=\text{ord}\left(Gj\right) & =\left(G:G_{j}\right)=\frac{\left|G\right|}{\left|G_{j}\right|} & \Rightarrow\quad p\, & \big|\,\left|G\right|
+\end{align*}
+und wegen
+\begin{align*}
+p^{2} & {\not\big|\:}p!=\left|S_{p}\right|
+\end{align*}
+auch schon:
+\begin{align*}
+p^{2} & {\not\big|\:}\left|G\right|\,\big|\,\left|S_{p}\right|
+\end{align*}
+Also hat $G$ eine Untergruppe der Ordnung $p$, nämlich eine $p$-Sylowgruppe.
+
+Ist $G$ auflösbar, so gibt es eine Kette
+\begin{align*}
+G=G_{0} & \supseteq\ldots\supseteq G_{n}=\left\{ e\right\} 
+\end{align*}
+so, dass $G_{i}\unlhd G_{i-1}$ und $ $$\left[G_{i}:G_{i-1}\right]$
+eine Primzahl ist.
+\begin{description}
+\item [{Behauptung}] $G_{i}$ operiert auf $\left\{ 1,\ldots,p\right\} $
+transitiv für $i<n$.
+\item [{Beweis}] Führe eine Induktion nach $i$ durch:\\
+\emph{Induktionsanfang:} $G_{0}=G$ operiert nach Voraussetzung transitiv
+auf $\left\{ 1,\ldots,p\right\} $.\\
+\emph{Induktionsschritt:} Seien $i\in\mathbb{N}_{\ge1}$ und $B_{1},\ldots,B_{r}$
+Bahnen der Operation von $G_{i}$ auf $\left\{ 1,\ldots,p\right\} $,
+so gilt:
+\begin{align*}
+p & =\sum_{j=1}^{r}\left|B_{j}\right|
+\end{align*}
+Nach Induktionsvoraussetzung operiert $G_{i-1}$ transitiv auf $\left\{ 1,\ldots,p\right\} $.\\
+Da $G_{i}\unlhd G_{i-1}$ ist, ergibt sich für $g\in G_{i-1}$ und
+$x\in\left\{ 1,\ldots,p\right\} $ die Gleichung $g\left(G_{i}x\right)=G_{i}\left(gx\right)$,
+also operiert $G_{i-1}$ auf der Menge der Bahnen $\left\{ B_{1},\ldots,B_{r}\right\} $
+transitiv. Damit folgt $\left|B_{j}\right|=\left|B_{k}\right|$ für
+alle $j,k\in\left\{ 1,\ldots,p\right\} $, und es gilt:
+\begin{align*}
+p & =\sum_{j=1}^{r}\left|B_{j}\right|=r\cdot\left|B_{1}\right|
+\end{align*}
+Da $p$ eine Primzahl ist, folgt also $r=1$ oder $\left|B_{1}\right|=1$.
+Für $i<n$ ist $G_{i}\not=\left\{ e\right\} $, also $\left|B_{j}\right|>1$,
+weswegen schon $r=1$ gelten muss, das heißt $G_{i}$ operiert transitiv
+auf $\left\{ 1,\ldots,p\right\} $. \qqed[Behauptung]
+\end{description}
+Wie oben enthält damit $G_{i}$ für $i<n$ eine Untergruppe der Ordnung
+$p$ und daher ist $G_{n-1}\stackrel{\sim}{=}\modlo{Z}{p}$.
+
+Für $i\in\left\{ 0,1,\ldots,n-2\right\} $ folgt:
+\begin{align*}
+p & {\not\big|\:}\left[G_{i}:G_{i-1}\right]
+\end{align*}
+Ist nun $H\subseteq G_{0}$ mit $\left|H\right|=p$, so erhält man
+induktiv $H\subseteq G_{i}$ für $i\in\left\{ 0,1,\ldots,n-1\right\} $,
+da die Abbildung
+\begin{align*}
+H\hookrightarrow G_{i} & \to\modulo{G_{i}}{G_{i+1}}
+\end{align*}
+für $i\in\left\{ 0,1,\ldots,n-2\right\} $ trivial ist.
+
+Also ist $H=G_{n-1}$ und somit eindeutig bestimmt.
+
+Dann ist aber $H$ schon invariant unter Konjugation und somit ein
+Normalteiler von $G$.
+
+\qqed
 
 
 \part*{Anhang\thispagestyle{empty}}

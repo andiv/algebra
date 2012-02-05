@@ -49,7 +49,8 @@
 
 %QED-Zeichen (Box)
 \newcommand{\qed}{\ensuremath{\Box}}
-\newcommand{\qqed}[1][\arabic{chapter}.\arabic{section}\ifnum\arabic{subsection}>0{.\arabic{subsection}}\fi]{\begin{flushright}\qed\ensuremath{_{\text{#1}}}\end{flushright}}
+\newcommand{\qqed}[1][\arabic{chapter}.\arabic{section}\ifnum\arabic{subsection}>0{.\arabic{subsection}}\fi]{\hfill\qed\ensuremath{_{\text{#1}}}}
+%\newcommand{\qqed}[1][\arabic{chapter}.\arabic{section}\ifnum\arabic{subsection}>0{.\arabic{subsection}}\fi]{\begin{flushright}\qed\ensuremath{_{\text{#1}}}\end{flushright}}
 
 % Definitons-Zeichen
 \newcommand{\dfn}{\mathrel{\mathop:}=}
@@ -1565,9 +1566,6 @@ end{iiilist}
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -2264,15 +2262,23 @@ Linksnebenklasse von
 
 \emph default
 .
- Wir schreiben 
-\begin_inset Formula $\modulo{G}{H}:=\left\{ gH|g\in G\right\} $
+ Wir schreiben
+\begin_inset Formula 
+\begin{align*}
+\modulo{G}{H} & :=\left\{ gH|g\in G\right\} 
+\end{align*}
+
 \end_inset
 
-, und 
-\begin_inset Formula $\left(G:H\right):=\left|\modulo{G}{H}\right|$
+und
+\begin_inset Formula 
+\begin{align*}
+\left(G:H\right) & :=\left|\modulo{G}{H}\right|
+\end{align*}
+
 \end_inset
 
- heißt der 
+heißt der 
 \emph on
 Index von 
 \begin_inset Formula $H$
@@ -2561,9 +2567,6 @@ Daraus folgen direkt i) und iii).
 
 \begin_layout Standard
 ii) ist klar.
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -3014,9 +3017,6 @@ reference "sec:Prop-kerNormalTeiler"
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -3577,9 +3577,6 @@ reference "sec:PuD-ker"
 \end_inset
 
  injektiv, also ein Isomorphismus ist.
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -3960,9 +3957,6 @@ Ist
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -4131,9 +4125,6 @@ ii)
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -4546,9 +4537,6 @@ Also ist
 \end_inset
 
  ist zyklisch.
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -5699,9 +5687,6 @@ Das heißt es gibt ein
 \end_inset
 
  ist zyklisch.
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -5808,9 +5793,6 @@ Das ist klar, denn das Polynom
 \end_inset
 
  nach linearer Algebra II.
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -7071,9 +7053,6 @@ Rechne zum Beispiel
 \end_inset
 
 Der Rest geht analog.
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -7938,9 +7917,6 @@ reference "sec:KuD-QuotRing"
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -8463,9 +8439,6 @@ Es folgt
 \end_inset
 
  injektiv.
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -8835,9 +8808,6 @@ TODO: Restlichen Beweis einfügen
 
 \begin_layout Standard
 Es folgt die Exaktheit der ersten Zeile.
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -9799,9 +9769,6 @@ Daher sind
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -9942,9 +9909,6 @@ Also gilt
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -11051,9 +11015,6 @@ Also ist
 \end_inset
 
  ein Primelement.
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -11219,9 +11180,6 @@ Damit ist
 \end_inset
 
  sind.
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -11432,9 +11390,6 @@ in
 \end_inset
 
 , was ein Widerspruch ist.
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -12558,9 +12513,6 @@ Dies ist ein Widerspruch zur Voraussetzung
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -12679,9 +12631,6 @@ Man sagt: „
 \end_inset
 
  ist Eisenstein bezüglich 2.“
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -12763,9 +12712,6 @@ reference "sec:Kor-Eisenstein"
 \end_inset
 
  ist primitiv, da es normiert ist.
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -12961,9 +12907,6 @@ Insbesondere ist
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -13041,9 +12984,6 @@ reference "sec:Satz-RedKrit"
 \end_inset
 
  folgt die Behauptung.
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -13136,9 +13076,6 @@ reference "sec:Kor-Eisenstein"
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -13343,9 +13280,6 @@ reference "eq:overf"
 
 , und keines dieser Polynome besitzt Grad 2.
  Dies ist ein Widerspruch zu der angenommenen Reduzibilität.
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -13530,9 +13464,6 @@ G_{p^{r}}\left(X\right) & \stackrel{\text{Def.}}{=}F_{p^{r}}\left(X+1\right)=\\
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -13831,9 +13762,6 @@ Also gilt:
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -14063,9 +13991,6 @@ iii
 \end_inset
 
  ist eine Primzahl folgt.
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -14633,9 +14558,6 @@ Damit ist
 \end_inset
 
  injektiv.
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -14675,9 +14597,6 @@ iii
 \end_inset
 
 , ist surjektiv.
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -15585,9 +15504,6 @@ Weil dabei
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -16444,9 +16360,6 @@ Insbesondere ist
 
 \begin_layout Standard
 Es folgten i) und ii).
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -16572,9 +16485,6 @@ jedes
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -17275,9 +17185,6 @@ reference "sec:Satz-endlKEalg"
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -17728,9 +17635,6 @@ reference "eq:gf"
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -17891,9 +17795,6 @@ bijektiv ist, und man prüft, dass die resultierende Bijektion
 \end_inset
 
 wie angegeben ist.
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -18423,9 +18324,6 @@ Wäre
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -18496,9 +18394,6 @@ reference "sub:Bsp-Zorn"
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -18985,9 +18880,6 @@ Nach Definition von
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -19071,9 +18963,6 @@ ii) folgt, da jedes Element von
 \end_inset
 
  liegt.
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -19416,9 +19305,6 @@ Die zweite Aussage folgt aus
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -19706,9 +19592,6 @@ reference "sec:Def-algKE"
 \end_inset
 
  ist surjektiv, also ein Isomorphismus.
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -19785,9 +19668,6 @@ reference "sec:SuD-Fortsetzung"
 \end_inset
 
  wie gegeben schon die Behauptung.
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -20436,9 +20316,6 @@ reference "sec:PuD-algAbges"
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -20636,9 +20513,6 @@ Und da sowohl
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -21149,10 +21023,6 @@ reference "sec:Def-ZK"
 \end_inset
 
 .
-\begin_inset Newline newline
-\end_inset
-
-
 \begin_inset ERT
 status open
 
@@ -21348,9 +21218,6 @@ reference "sec:PuD-algAbges"
 \end_inset
 
  iii).
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -21585,9 +21452,6 @@ f\left(X\right) & =\left(X-\alpha\right)\left(X-\underbrace{\left(a-\alpha\right
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -21780,9 +21644,6 @@ reference "sec:SuD-normKE"
 \end_inset
 
  iii)) nicht normal sein.
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -23392,9 +23253,6 @@ b)
 \end_inset
 
  c)
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -23647,9 +23505,6 @@ reference "sec:Lem-mNst"
 \end_inset
 
  ii) folgt die Behauptung.
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -24419,9 +24274,6 @@ f\left(X\right) & =g\left(X^{p}\right)=\sum a_{i}\left(X^{p}\right)^{i}=\sum b_{
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -24903,10 +24755,6 @@ reference "eq:plus"
 \end_inset
 
 .
-\begin_inset Newline newline
-\end_inset
-
-
 \begin_inset ERT
 status open
 
@@ -25254,9 +25102,6 @@ reference "sec:Lem-sepNst"
 \end_inset
 
 “).
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -25503,9 +25348,6 @@ Daher ist
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -26214,9 +26056,6 @@ reference "sec:PuD-Charakteristik"
 \end_inset
 
 )
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -26269,9 +26108,6 @@ iii
 
 .
  
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -26598,10 +26434,6 @@ hspace*{1mm}
 \end_inset
 
 Daraus folgt die Behauptung.
-\begin_inset Newline newline
-\end_inset
-
-
 \begin_inset ERT
 status open
 
@@ -26650,9 +26482,6 @@ reference "sec:SuD-mNst"
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -26786,9 +26615,6 @@ folgt
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -26980,10 +26806,7 @@ Ist
 \begin_inset Formula $F_{q}\left(\alpha\right)=\alpha^{q}\stackrel{\ref{sec:SuD-ZkXpn}}{=}\alpha$
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
+.
 \begin_inset ERT
 status open
 
@@ -27587,9 +27410,6 @@ Zusammen bedeutet das, dass
 \end_inset
 
  galoissch ist.
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -27860,9 +27680,6 @@ reference "sec:Kor-sepTransitiv"
 
 \begin_layout Standard
 Der Rest ist klar.
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -28113,9 +27930,6 @@ reference "sec:Satz-endlSepAequivSepEZS"
 \end_inset
 
  i).
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -28435,9 +28249,6 @@ Daher hat
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -28474,9 +28285,6 @@ Zeige nun, dass
 \end_inset
 
  variabel).
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -29013,9 +28821,6 @@ Damit folgt
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -30088,9 +29893,6 @@ Jeder Zwischenkörper von
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -30714,9 +30516,6 @@ iii
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -30772,9 +30571,6 @@ E^{H_{1}\cap H_{2}} & \subseteq K_{1}\cdot K_{2}
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -31565,9 +31361,6 @@ Und damit folgt:
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -31673,9 +31466,6 @@ reference "sec:Satz-UG-kerImZyklG"
 \end_inset
 
  ii)) ist.
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -32604,9 +32394,6 @@ Wegen
 \end_inset
 
  irreduzibel.
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -33055,9 +32842,6 @@ reference "sec:Prop-sigmaInGalKommutiertNSt"
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -33277,9 +33061,6 @@ reference "sec:Prop-sigmaInGalKommutiertNSt"
 
 \begin_layout Standard
 b) ist klar.
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -33474,9 +33255,6 @@ Da
 \end_inset
 
  ein Isomorphismus ist, folgt die Behauptung.
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -33661,9 +33439,6 @@ reference "eq:sigalphai"
 \end_inset
 
  als Anzahl der Fehlstände.
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -33991,9 +33766,6 @@ reference "sec:Kor-GalE_EGistG"
 \end_inset
 
  i).
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -34698,10 +34470,6 @@ Wegen
 \end_inset
 
  ist.
-\begin_inset Newline newline
-\end_inset
-
-
 \begin_inset ERT
 status open
 
@@ -34775,10 +34543,6 @@ reference "sec:PuD-symRatFkt"
 \end_inset
 
 .
-\begin_inset Newline newline
-\end_inset
-
-
 \begin_inset ERT
 status open
 
@@ -35134,9 +34898,6 @@ reference "sec:PuD-symRatFkt"
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -35390,9 +35151,6 @@ reference "sec:Kor-endlUGzykl"
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -35883,10 +35641,6 @@ Also ist
 \end_inset
 
  primitiv.
-\begin_inset Newline newline
-\end_inset
-
-
 \begin_inset ERT
 status open
 
@@ -36734,9 +36488,6 @@ reference "eq:Un"
 \end_inset
 
  injektiv.
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -36777,9 +36528,6 @@ Zu i): Wegen ii) und iii) ist
 \end_inset
 
  abelsch.
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -37487,9 +37235,6 @@ Beweis
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -37698,9 +37443,6 @@ reference "sec:Prop-zetaPsiInUnm"
 
 \begin_layout Standard
 Der Rest ist klar.
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -37947,9 +37689,6 @@ Also folgt wegen
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -38649,9 +38388,6 @@ reference "sec:Kor-hfgNormiert"
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -39274,9 +39010,6 @@ reference "sec:SuD-relatFrob"
 \end_inset
 
  ii))
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -39312,9 +39045,6 @@ iii
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -39361,9 +39091,6 @@ iii
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -39904,9 +39631,6 @@ Dies ist ein Widerspruch zur Endlichkeit von
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -39965,9 +39689,6 @@ reference "sec:Lem-PfInfty"
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -40303,9 +40024,6 @@ e\cdot x & \stackrel{\text{Def.}}{=}\underbrace{\varrho\left(e\right)}_{=\text{i
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -40345,9 +40063,6 @@ g\cdot\left(h\cdot x\right) & \stackrel{\text{Def.}}{=}\varrho\left(g\right)\lef
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -40479,9 +40194,6 @@ Also gilt
 \end_inset
 
  ein Gruppenhomomorphismus.
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -40598,9 +40310,6 @@ reference "sub:PuD-Operation"
 \end_inset
 
 )
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -40954,9 +40663,6 @@ Also gilt
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -41061,9 +40767,6 @@ gilt, also
 \end_inset
 
  ist.
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -41352,9 +41055,6 @@ Also ist
 \end_inset
 
 , und die zweite Aussage ist klar.
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -41557,9 +41257,6 @@ reference "eq:GModG_xToGx"
 
 \begin_layout Standard
 Der Rest ist klar.
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -41640,9 +41337,6 @@ reference "sub:Prop-sGxSx"
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -41799,9 +41493,6 @@ reference "sub:Satz-Bahngleichung"
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -41951,9 +41642,6 @@ Daher ist
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -42222,9 +41910,6 @@ G & =H_{0}\supseteq\ldots\supseteq H_{m}=\left\{ e\right\}
 \end_inset
 
 eine Kette der gewünschten Art ist.
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -42383,9 +42068,6 @@ Daher operiert
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -42583,9 +42265,6 @@ Da
 \end_inset
 
  gilt, folgt daraus die Behauptung.
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -42945,9 +42624,6 @@ Da
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -43071,9 +42747,6 @@ reference "sub:Lem-FixpunkteModP"
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -43145,9 +42818,6 @@ reference "sub:Lem-NgH=GHmodP"
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -43322,9 +42992,6 @@ reference "sub:Satz-Cauchy"
 \end_inset
 
  mit den geforderten Eigenschaften.
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -43490,9 +43157,6 @@ Die erste Aussage ist damit bewiesen, die zweite folgt, da je zwei
 \end_inset
 
 -Sylowgruppen die gleiche Ordnung besitzen.
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -43724,9 +43388,6 @@ reference "sub:Lem-FixpunkteModP"
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -43832,7 +43493,7 @@ von Untergruppen von
 \begin_inset Formula $G$
 \end_inset
 
- gibt, sodass für 
+, sodass für 
 \begin_inset Formula $i\in\left\{ 1,\ldots,r\right\} $
 \end_inset
 
@@ -43844,7 +43505,7 @@ von Untergruppen von
 \begin_inset Formula $\modulo{H_{i}}{H_{i-1}}$
 \end_inset
 
- eine endliche, zyklisch von Primzahlordnung ist.
+ endlich und zyklisch von Primzahlordnung ist.
 \end_layout
 
 \begin_layout Standard
@@ -43980,6 +43641,13 @@ end{iiilist}
 
 \begin_layout Subsection
 Satz
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Satz-aufloesbareGruppeUG_NT"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -44712,9 +44380,6 @@ Dann muss auch
 \end_inset
 
  gelten.
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -45203,9 +44868,6 @@ a & b & c\end{array}\right)\in N$
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -45229,6 +44891,13 @@ Satz
 \end_inset
 
 )
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Satz-AufloesbarkeitVonSn"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -45408,9 +45077,6 @@ Dies ist ein Widerspruch zu
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -47015,9 +46681,6 @@ reference "sec:Prop-WinkelM"
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -47210,9 +46873,6 @@ Also ist
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -48194,9 +47854,6 @@ Also ist
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -48468,9 +48125,6 @@ ein Produkt zweier Zahlen, die größer als 1 sind, was ein Widerspruch zur
 \end_inset
 
  ist.
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -48760,9 +48414,6 @@ Daher können die
 \end_inset
 
  nicht linear abhängig sein.
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -48875,6 +48526,13 @@ N_{\moduloScript{E}{K}}\left(a\cdot b\right) & =\prod_{\sigma\in\text{Gal}\left(
 Satz 
 \series medium
 (Hilbert 90)
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Satz-Hilbert_90"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -49086,9 +48744,6 @@ Also ist
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -49105,7 +48760,16 @@ qqed
 \end_layout
 
 \begin_layout Subsection
-Satz
+Satz 
+\series medium
+(zyklische Galoiserweiterung)
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Satz-zyklischeGaloiserweiterung"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -49118,7 +48782,7 @@ Sei
 \end_inset
 
  mit 
-\begin_inset Formula $\text{char}\left(K\right)\!\not|\, n$
+\begin_inset Formula $\text{char}\left(K\right)\not\!|\, n$
 \end_inset
 
  und 
@@ -49190,6 +48854,130 @@ iii
 \end_inset
 
  ist.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+%DATE Fr 03.02.2012
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Gilt 
+\begin_inset Formula $L=K\left(\alpha\right)$
+\end_inset
+
+ für ein 
+\begin_inset Formula $\alpha\in L$
+\end_inset
+
+, das Nullstelle eines Polynoms 
+\begin_inset Formula $X^{n}-c\in K\left[X\right]$
+\end_inset
+
+ ist, so ist 
+\begin_inset Formula $\modulo{L}{K}$
+\end_inset
+
+ eine zyklische Galoiserweiterung von 
+\begin_inset Formula $K$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Weiterhin ist 
+\begin_inset Formula $d:=\left[L:K\right]$
+\end_inset
+
+ ein Teiler von 
+\begin_inset Formula $n$
+\end_inset
+
+ und es gilt 
+\begin_inset Formula $a^{d}\in K$
+\end_inset
+
+, sodass 
+\begin_inset Formula $X^{d}-a^{d}\in K\left[X\right]$
+\end_inset
+
+ das Minimalpolynom von 
+\begin_inset Formula $a$
+\end_inset
+
+ über 
+\begin_inset Formula $K$
+\end_inset
+
+ ist.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Beweis
+\end_layout
+
+\begin_layout Standard
+Sei 
+\begin_inset Formula $\zeta\in K$
+\end_inset
+
+ eine primitive 
+\begin_inset Formula $n$
+\end_inset
+
+-te Einheitswurzel.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{iiilist}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -49206,6 +48994,205 @@ iii
 \end_inset
 
  
+\begin_inset Formula $\modulo{L}{K}$
+\end_inset
+
+ ist zyklisch vom Grad 
+\begin_inset Formula $n$
+\end_inset
+
+ und wegen 
+\begin_inset Formula $\zeta^{-1}\in K$
+\end_inset
+
+ und
+\begin_inset Formula 
+\begin{align*}
+\zeta^{-n} & =\left(\zeta^{n}\right)^{-1}=1^{-1}=1
+\end{align*}
+
+\end_inset
+
+gilt:
+\begin_inset Formula 
+\begin{align*}
+N_{\moduloScript{L}{K}}\left(\zeta^{-1}\right) & =\prod_{\sigma\in\text{Gal}\left(\moduloScript{L}{K}\right)}\sigma\left(\zeta^{-1}\right)=\prod_{k=1}^{n}\zeta^{-1}=\zeta^{-n}=1
+\end{align*}
+
+\end_inset
+
+Aus 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Satz-Hilbert_90"
+
+\end_inset
+
+ folgt, dass es ein 
+\begin_inset Formula $a\in L^{*}$
+\end_inset
+
+ mit 
+\begin_inset Formula ${\displaystyle \zeta^{-1}=\frac{a}{\sigma\left(a\right)}}$
+\end_inset
+
+ gibt, also 
+\begin_inset Formula $\sigma\left(a\right)=\zeta a$
+\end_inset
+
+, für einen Erzeuger 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ von 
+\begin_inset Formula $\text{Gal}\left(\modulo{L}{K}\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Damit folgt für 
+\begin_inset Formula $i\in\left\{ 0,\ldots,n-1\right\} $
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{align*}
+\sigma^{i}\left(a\right) & =\zeta^{i}a
+\end{align*}
+
+\end_inset
+
+Also sind 
+\begin_inset Formula $\sigma^{0}\left(a\right),\ldots,\sigma^{n-1}\left(a\right)$
+\end_inset
+
+ paarweise verschieden und somit 
+\begin_inset Formula $\left[K\left(a\right):K\right]\ge n$
+\end_inset
+
+, also 
+\begin_inset Formula $K\left(a\right)=L$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Es ist 
+\begin_inset Formula $\sigma\left(a^{n}\right)=\sigma\left(a\right)^{n}=\zeta^{n}a^{n}=a^{n}$
+\end_inset
+
+, also 
+\begin_inset Formula $a^{n}\in K$
+\end_inset
+
+ und 
+\begin_inset Formula $a$
+\end_inset
+
+ ist eine Nullstelle von 
+\begin_inset Formula $X^{n}-a^{n}$
+\end_inset
+
+, weswegen dies das Minimalpolynom von 
+\begin_inset Formula $a$
+\end_inset
+
+ über 
+\begin_inset Formula $K$
+\end_inset
+
+ ist.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed[
+\backslash
+roman{ale2})]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $\modulo{K\left(a\right)}{K}$
+\end_inset
+
+ ist galoissch.
+\end_layout
+
+\begin_layout Standard
+
+\color green
+TODO: Beweis einfügen (Blatt 13 Aufgabe 4?)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\varphi:\text{Gal}\left(\modulo{K\left(a\right)}{K}\right) & \hookrightarrow\left\{ \zeta^{k}\middle|k\in\left\{ 1,\ldots,n\right\} \right\} \subseteq K^{*}
+\end{align*}
+
+\end_inset
+
+Also gilt 
+\begin_inset Formula $d:=\left[L:K\right]\big|n$
+\end_inset
+
+ und 
+\begin_inset Formula $\text{Gal}\left(\modulo{L}{K}\right)$
+\end_inset
+
+ ist zyklisch.
+\end_layout
+
+\begin_layout Standard
+Ist 
+\begin_inset Formula $\sigma\in\text{Gal}\left(\modulo{L}{K}\right)$
+\end_inset
+
+ ein Erzeuger, so ist 
+\begin_inset Formula $\varphi\left(\sigma\right)$
+\end_inset
+
+ eine primitive 
+\begin_inset Formula $d$
+\end_inset
+
+-te Einheitswurzel und es gilt:
+\begin_inset Formula 
+\begin{align*}
+\sigma\left(a^{d}\right) & =\sigma\left(a\right)^{d}=\varphi\left(\sigma\right)^{d}a^{d}=a^{d}
+\end{align*}
+
+\end_inset
+
+Daher folgt 
+\begin_inset Formula $a^{d}\in K$
+\end_inset
+
+ und somit die Behauptung.
 \end_layout
 
 \begin_layout Standard
@@ -49217,6 +49204,1239 @@ status open
 
 \backslash
 end{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Auflösbarkeit
+\end_layout
+
+\begin_layout Standard
+Im gesamten Abschnitt betrachten wir nur Körper mit der Charakteristik 0.
+\end_layout
+
+\begin_layout Subsection
+Definition 
+\series medium
+(Radikale, auflösbar)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Eine endliche Körpererweiterung 
+\begin_inset Formula $\modulo{L}{K}$
+\end_inset
+
+ heißt 
+\emph on
+durch Radikale auflösbar
+\emph default
+, wenn es zu 
+\begin_inset Formula $L$
+\end_inset
+
+ einen Erweiterungskörper 
+\begin_inset Formula $E$
+\end_inset
+
+, sowie eine Körperkette
+\begin_inset Formula 
+\begin{align*}
+K=E_{0} & \subseteq E_{1}\subseteq\ldots\subseteq E_{m}=E
+\end{align*}
+
+\end_inset
+
+gibt, sodass 
+\begin_inset Formula $E_{i+1}$
+\end_inset
+
+ jeweils aus 
+\begin_inset Formula $E_{i}$
+\end_inset
+
+ durch Adjunktion einer Nullstelle eines Polynoms 
+\begin_inset Formula $X^{n}-a\in E_{i}\left[X\right]$
+\end_inset
+
+ entsteht.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Eine endliche Körpererweiterung heißt 
+\emph on
+auflösbar
+\emph default
+, wenn es einen Oberkörper 
+\begin_inset Formula $E\supseteq L$
+\end_inset
+
+ gibt, sodass 
+\begin_inset Formula $\modulo{E}{K}$
+\end_inset
+
+ eine endliche Galoiserweiterung mit auflösbarer Galoisgruppe ist.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Satz 
+\series medium
+(auflösbar 
+\begin_inset Formula $\Leftrightarrow$
+\end_inset
+
+ durch Radikale auflösbar)
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Satz-aufloesbarRadikale"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Eine endliche Körpererweiterung ist genau dann auflösbar, wenn sie durch
+ Radikale auflösbar ist.
+\end_layout
+
+\begin_layout Subsubsection*
+Beweis
+\end_layout
+
+\begin_layout Standard
+Sei zunächst 
+\begin_inset Formula $\modulo{L}{K}$
+\end_inset
+
+ auflösbar.
+ Ohne Einschränkung ist 
+\begin_inset Formula $\modulo{L}{K}$
+\end_inset
+
+ galoissch mit auflösbarer Galoisgruppe, sonst betrachte einen Erweiterungskörpe
+r mit auflösbarer Galoisgruppe.
+\end_layout
+
+\begin_layout Standard
+Sei 
+\begin_inset Formula $n$
+\end_inset
+
+ das Produkt der Primzahlen, die 
+\begin_inset Formula $\left[L:K\right]$
+\end_inset
+
+ teilen und 
+\begin_inset Formula $\modulo{F}{K}$
+\end_inset
+
+ entstehe durch Adjunktion der 
+\begin_inset Formula $n$
+\end_inset
+
+-ten Einheitswurzeln und ist offenbar durch Radikale auflösbar.
+ Wähle eine Einbettung 
+\begin_inset Formula $L\hookrightarrow\overline{F}$
+\end_inset
+
+, dann ist 
+\begin_inset Formula $\modulo{LF}{F}$
+\end_inset
+
+ galoissch.
+\end_layout
+
+\begin_layout Standard
+Da jedes 
+\begin_inset Formula $\sigma\in\text{Gal}\left(\modulo{LF}{F}\right)$
+\end_inset
+
+ die Identität auf 
+\begin_inset Formula $F$
+\end_inset
+
+ und somit auf 
+\begin_inset Formula $K$
+\end_inset
+
+ ist und weil 
+\begin_inset Formula $\modulo{L}{K}$
+\end_inset
+
+ normal ist, ist die Abbildung
+\begin_inset Formula 
+\begin{align*}
+\varphi:\text{Gal}\left(\modulo{LF}{F}\right) & \hookrightarrow\text{Gal}\left(\modulo{L}{K}\right)\\
+\sigma & \mapsto\sigma|_{L}
+\end{align*}
+
+\end_inset
+
+wohldefiniert und ein Homomorphismus.
+ Wegen 
+\begin_inset Formula $FL=F\left(L\right)$
+\end_inset
+
+ ist
+\begin_inset Formula 
+\begin{align*}
+\text{ker}\left(\varphi\right) & =\left\{ \sigma\in\text{Gal}\left(\modulo{LF}{F}\right)\middle|\sigma\big|_{L}=\text{id}_{L}\right\} =\\
+ & \negthickspace\negthickspace\negthickspace\negthickspace\stackrel{\sigma|_{F}=\text{id}_{F}}{=}\left\{ \sigma\in\text{Gal}\left(\modulo{LF}{F}\right)\middle|\sigma=\text{id}_{LF}=e\right\} =\left\{ e\right\} 
+\end{align*}
+
+\end_inset
+
+und daher ist 
+\begin_inset Formula $\varphi$
+\end_inset
+
+ injektiv und wir können 
+\begin_inset Formula $\text{Gal}\left(\modulo{LF}{F}\right)$
+\end_inset
+
+ als Untergruppe von 
+\begin_inset Formula $\text{Gal}\left(\modulo{L}{K}\right)$
+\end_inset
+
+ auffassen, die wie jede Untergruppe von 
+\begin_inset Formula $\text{Gal}\left(\modulo{L}{K}\right)$
+\end_inset
+
+ auflösbar ist.
+\end_layout
+
+\begin_layout Standard
+Wähle
+\begin_inset Formula 
+\begin{align*}
+\text{Gal}\left(\modulo{LF}{F}\right)=G_{0} & \supseteq G_{1}\supseteq\ldots\supseteq G_{m}=\left\{ e\right\} 
+\end{align*}
+
+\end_inset
+
+so, dass 
+\begin_inset Formula $G_{i}\unlhd G_{i-1}$
+\end_inset
+
+ und 
+\begin_inset Formula $\left[G_{i-1}:G_{i}\right]$
+\end_inset
+
+ eine Primzahl ist.
+ Also liegt wegen
+\begin_inset Formula 
+\begin{align*}
+\left[G_{i-1}:G_{i}\right]\, & \big|\,\left|\text{Gal}\left(\modulo{L}{K}\right)\right|=\left[L:K\right]
+\end{align*}
+
+\end_inset
+
+und weil 
+\begin_inset Formula $\left[G_{i-1}:G_{i}\right]$
+\end_inset
+
+ eine Primzahl ist, also 
+\begin_inset Formula $\left[G_{i-1}:G_{i}\right]\big|n$
+\end_inset
+
+ gilt, eine 
+\begin_inset Formula $\left[G_{i-1}:G_{i}\right]$
+\end_inset
+
+-te primitive Einheitswurzeln in 
+\begin_inset Formula $F$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Sei
+\begin_inset Formula 
+\begin{align*}
+F=F_{0} & \subseteq F_{1}\subseteq\ldots\subseteq F_{m}=L\cdot F
+\end{align*}
+
+\end_inset
+
+die entsprechende Körperkette.
+\end_layout
+
+\begin_layout Standard
+Aus 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Satz-zyklischeGaloiserweiterung"
+
+\end_inset
+
+ i) folgt, dass 
+\begin_inset Formula $\modulo{F_{i}}{F_{i-1}}$
+\end_inset
+
+ durch Adjunktion einer Nullstelle eines Polynoms 
+\begin_inset Formula $X^{\left[G_{i-1}:G_{i}\right]}-a$
+\end_inset
+
+ entsteht.
+\end_layout
+
+\begin_layout Standard
+Außerdem entsteht 
+\begin_inset Formula $F$
+\end_inset
+
+ aus 
+\begin_inset Formula $K$
+\end_inset
+
+ durch Adjunktion einer Nullstelle von 
+\begin_inset Formula $X^{n}-1$
+\end_inset
+
+, weswegen 
+\begin_inset Formula $\modulo{LF}{K}$
+\end_inset
+
+ und somit wegen 
+\begin_inset Formula $L\subseteq LF$
+\end_inset
+
+ auch 
+\begin_inset Formula $\modulo{L}{K}$
+\end_inset
+
+ durch Radikale auflösbar ist.
+\end_layout
+
+\begin_layout Standard
+Sei nun 
+\begin_inset Formula $\modulo{L}{K}$
+\end_inset
+
+ durch Radikale auflösbar.
+ Seien ohne Einschränkung
+\begin_inset Formula 
+\begin{align*}
+K=L_{0} & \subseteq L_{1}\subseteq\ldots\subseteq L_{m}=L
+\end{align*}
+
+\end_inset
+
+so, dass 
+\begin_inset Formula $L_{i}$
+\end_inset
+
+ durch Adjunktion einer 
+\begin_inset Formula $n_{i}$
+\end_inset
+
+-ten Wurzel, genauer einer Nullstelle von 
+\begin_inset Formula $X^{n_{i}}-a_{i}\in L_{i-1}\left[X\right]$
+\end_inset
+
+, aus 
+\begin_inset Formula $L_{i-1}$
+\end_inset
+
+ entsteht.
+\end_layout
+
+\begin_layout Standard
+Sei 
+\begin_inset Formula $n$
+\end_inset
+
+ das kleinste gemeinsame Vielfache aller 
+\begin_inset Formula $n_{i}$
+\end_inset
+
+, 
+\begin_inset Formula $F$
+\end_inset
+
+ entstehe aus 
+\begin_inset Formula $K$
+\end_inset
+
+ durch Adjunktion aller 
+\begin_inset Formula $n$
+\end_inset
+
+-ten Einheitswurzeln und wähle eine Einbettung 
+\begin_inset Formula $L\hookrightarrow\overline{F}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Für alle 
+\begin_inset Formula $1\le i\le m$
+\end_inset
+
+ sei 
+\begin_inset Formula $E_{i}$
+\end_inset
+
+ eine normale Hülle von 
+\begin_inset Formula $L_{i}\cdot F$
+\end_inset
+
+ über 
+\begin_inset Formula $K$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Description
+Behauptung 
+\begin_inset Formula $\modulo{E_{i}}{F}$
+\end_inset
+
+ hat eine auflösbare Galoisgruppe.
+\end_layout
+
+\begin_layout Description
+Beweis Führe eine Induktion über 
+\begin_inset Formula $i$
+\end_inset
+
+ durch:
+\begin_inset Newline newline
+\end_inset
+
+
+\emph on
+Induktionsanfang:
+\emph default
+ Da wegen 
+\begin_inset Formula $K=L_{0}\subseteq F$
+\end_inset
+
+ schon 
+\begin_inset Formula $F=L_{0}\cdot F$
+\end_inset
+
+ gilt, ist 
+\begin_inset Formula $E_{0}=F$
+\end_inset
+
+ eine normale Hülle von 
+\begin_inset Formula $F$
+\end_inset
+
+ und 
+\begin_inset Formula $\modulo{E_{0}=F}{F}$
+\end_inset
+
+ hat die triviale Galoisgruppe, die offenbar auflösbar ist.
+\begin_inset Newline newline
+\end_inset
+
+
+\emph on
+Induktionsschritt:
+\emph default
+ Angenommen dies wurde für 
+\begin_inset Formula $\modulo{E_{i-1}}{F}$
+\end_inset
+
+ schon gezeigt, so seien 
+\begin_inset Formula $a_{i}=a_{i}^{1},\ldots,a_{i}^{s}$
+\end_inset
+
+ die Galoiskonjugierten von 
+\begin_inset Formula $a_{i}$
+\end_inset
+
+ in 
+\begin_inset Formula $E_{i-1}$
+\end_inset
+
+ bezüglich 
+\begin_inset Formula $\text{Gal}\left(\modulo{E_{i-1}}{K}\right)$
+\end_inset
+
+.
+ Dann gilt:
+\begin_inset Formula 
+\begin{align*}
+E_{i} & =E_{i-1}\left(\sqrt[n_{i}]{a_{i}^{1}},\ldots,\sqrt[n_{i}]{a_{i}^{s}}\right)
+\end{align*}
+
+\end_inset
+
+Daher ist 
+\begin_inset Formula $\text{Gal}\left(\modulo{E_{i}}{E_{i-1}}\right)$
+\end_inset
+
+ auflösbar und somit auch 
+\begin_inset Formula $\text{Gal}\left(\modulo{E_{i}}{F}\right)$
+\end_inset
+
+.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed[Behauptung]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Da 
+\begin_inset Formula $\text{Gal}\left(\modulo{F}{K}\right)$
+\end_inset
+
+ auflösbar ist, ist auch 
+\begin_inset Formula $\text{Gal}\left(\modulo{E_{m}}{K}\right)$
+\end_inset
+
+ auflösbar und wegen 
+\begin_inset Formula $L\subseteq E_{m}$
+\end_inset
+
+ auch 
+\begin_inset Formula $\modulo{L}{K}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Korollar
+\end_layout
+
+\begin_layout Standard
+Es sei 
+\begin_inset Formula $\modulo{L}{K}$
+\end_inset
+
+ eine Körpererweiterung höchstens vom Grad 4.
+\end_layout
+
+\begin_layout Standard
+Dann ist 
+\begin_inset Formula $\modulo{L}{K}$
+\end_inset
+
+ auflösbar und insbesondere auch durch Radikale auflösbar.
+\end_layout
+
+\begin_layout Subsubsection*
+Beweis
+\end_layout
+
+\begin_layout Standard
+Nach dem Satz vom primitiven Element gibt es ein 
+\begin_inset Formula $\alpha\in L$
+\end_inset
+
+ mit 
+\begin_inset Formula $L=K\left(\alpha\right)$
+\end_inset
+
+ und 
+\begin_inset Formula $f:=\text{Mipo}_{K}\left(\alpha\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Sei 
+\begin_inset Formula $L'$
+\end_inset
+
+ ein Zerfällungskörper von 
+\begin_inset Formula $f$
+\end_inset
+
+ über 
+\begin_inset Formula $K$
+\end_inset
+
+, so gibt es wegen 
+\begin_inset Formula $\deg\left(f\right)\le4$
+\end_inset
+
+ eine Einbettung:
+\begin_inset Formula 
+\begin{align*}
+\text{Gal}\left(\modulo{L'}{K}\right) & \hookrightarrow S_{4}
+\end{align*}
+
+\end_inset
+
+Da 
+\begin_inset Formula $S_{4}$
+\end_inset
+
+ nach 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Satz-AufloesbarkeitVonSn"
+
+\end_inset
+
+ auflösbar ist, so ist nach 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Satz-aufloesbareGruppeUG_NT"
+
+\end_inset
+
+ i) auch 
+\begin_inset Formula $\text{Gal}\left(\modulo{L'}{K}\right)$
+\end_inset
+
+ auflösbar, also auch 
+\begin_inset Formula $\modulo{L'}{K}$
+\end_inset
+
+ und damit 
+\begin_inset Formula $\modulo{L}{K}$
+\end_inset
+
+.
+ Aus 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Satz-aufloesbarRadikale"
+
+\end_inset
+
+, dass 
+\begin_inset Formula $\modulo{L}{K}$
+\end_inset
+
+ ebenfalls durch Radikale auflösbar ist.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Korollar
+\end_layout
+
+\begin_layout Standard
+Es existieren endliche Körpererweiterungen, die nicht durch Radikale auflösbar
+ sind.
+\end_layout
+
+\begin_layout Standard
+Beispielsweise ist die allgemeine Gleichung 
+\begin_inset Formula $n$
+\end_inset
+
+-ten Grades für 
+\begin_inset Formula $n\ge5$
+\end_inset
+
+ nicht durch Radikale auflösbar.
+\end_layout
+
+\begin_layout Subsubsection*
+Beweis
+\end_layout
+
+\begin_layout Standard
+Die allgemeine Gleichung 
+\begin_inset Formula $n$
+\end_inset
+
+-ten Grades, also
+\begin_inset Formula 
+\begin{align*}
+f\left(X\right) & :=X^{n}-\mathcal{S}_{1}X^{n-1}+\ldots+\left(-1\right)^{n}\mathcal{S}_{n}=0
+\end{align*}
+
+\end_inset
+
+mit 
+\begin_inset Formula $f\in k\left(\mathcal{S}_{1},\ldots,\mathcal{S}_{n}\right)\left[X\right]$
+\end_inset
+
+ für einen Körper 
+\begin_inset Formula $k$
+\end_inset
+
+, hat als Galoisgruppe 
+\begin_inset Formula $S_{n}$
+\end_inset
+
+, welche für 
+\begin_inset Formula $n\ge5$
+\end_inset
+
+ nach 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Satz-AufloesbarkeitVonSn"
+
+\end_inset
+
+ nicht auflösbar ist.
+\end_layout
+
+\begin_layout Standard
+Deswegen ist auch die dazugehörige Körpererweiterung nicht durch Radikale
+ auflösbar.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Lemma und Definition 
+\series medium
+(transitive Operation)
+\end_layout
+
+\begin_layout Standard
+Für eine Primzahl 
+\begin_inset Formula $p$
+\end_inset
+
+ sei 
+\begin_inset Formula $G\subseteq S_{p}$
+\end_inset
+
+ eine Untergruppe, die 
+\emph on
+transitiv
+\emph default
+ auf 
+\begin_inset Formula $\left\{ 1,\ldots,p\right\} $
+\end_inset
+
+ operiere, dass heißt es gibt genau eine 
+\begin_inset Formula $G$
+\end_inset
+
+-Bahn, oder anders ausgedrückt gibt es zu je zwei Elementen 
+\begin_inset Formula $i,j\in\left\{ 1,\ldots,p\right\} $
+\end_inset
+
+ ein Element 
+\begin_inset Formula $g\in G$
+\end_inset
+
+ mit 
+\begin_inset Formula $g\cdot i=j$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Dann enthält 
+\begin_inset Formula $G$
+\end_inset
+
+ eine Untergruppe 
+\begin_inset Formula $H$
+\end_inset
+
+ der Ordnung 
+\begin_inset Formula $p$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Ist 
+\begin_inset Formula $G$
+\end_inset
+
+ auflösbar, so ist 
+\begin_inset Formula $H$
+\end_inset
+
+ eindeutig bestimmt und insbesondere ein Normalteiler in 
+\begin_inset Formula $G$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection*
+Beweis
+\end_layout
+
+\begin_layout Standard
+Die Operation ist transitiv, hat genau eine 
+\begin_inset Formula $G$
+\end_inset
+
+-Bahn 
+\begin_inset Formula $Gj$
+\end_inset
+
+, welche 
+\begin_inset Formula $p$
+\end_inset
+
+ Elemente hat, und daher folgt aus der Bahnengleichung
+\begin_inset Formula 
+\begin{align*}
+p=\text{ord}\left(Gj\right) & =\left(G:G_{j}\right)=\frac{\left|G\right|}{\left|G_{j}\right|} & \Rightarrow\quad p\, & \big|\,\left|G\right|
+\end{align*}
+
+\end_inset
+
+und wegen
+\begin_inset Formula 
+\begin{align*}
+p^{2} & {\not\big|\:}p!=\left|S_{p}\right|
+\end{align*}
+
+\end_inset
+
+auch schon:
+\begin_inset Formula 
+\begin{align*}
+p^{2} & {\not\big|\:}\left|G\right|\,\big|\,\left|S_{p}\right|
+\end{align*}
+
+\end_inset
+
+Also hat 
+\begin_inset Formula $G$
+\end_inset
+
+ eine Untergruppe der Ordnung 
+\begin_inset Formula $p$
+\end_inset
+
+, nämlich eine 
+\begin_inset Formula $p$
+\end_inset
+
+-Sylowgruppe.
+\end_layout
+
+\begin_layout Standard
+Ist 
+\begin_inset Formula $G$
+\end_inset
+
+ auflösbar, so gibt es eine Kette
+\begin_inset Formula 
+\begin{align*}
+G=G_{0} & \supseteq\ldots\supseteq G_{n}=\left\{ e\right\} 
+\end{align*}
+
+\end_inset
+
+so, dass 
+\begin_inset Formula $G_{i}\unlhd G_{i-1}$
+\end_inset
+
+ und 
+\begin_inset Formula $ $
+\end_inset
+
+
+\begin_inset Formula $\left[G_{i}:G_{i-1}\right]$
+\end_inset
+
+ eine Primzahl ist.
+\end_layout
+
+\begin_layout Description
+Behauptung 
+\begin_inset Formula $G_{i}$
+\end_inset
+
+ operiert auf 
+\begin_inset Formula $\left\{ 1,\ldots,p\right\} $
+\end_inset
+
+ transitiv für 
+\begin_inset Formula $i<n$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Description
+Beweis Führe eine Induktion nach 
+\begin_inset Formula $i$
+\end_inset
+
+ durch:
+\begin_inset Newline newline
+\end_inset
+
+
+\emph on
+Induktionsanfang:
+\emph default
+ 
+\begin_inset Formula $G_{0}=G$
+\end_inset
+
+ operiert nach Voraussetzung transitiv auf 
+\begin_inset Formula $\left\{ 1,\ldots,p\right\} $
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\emph on
+Induktionsschritt:
+\emph default
+ Seien 
+\begin_inset Formula $i\in\mathbb{N}_{\ge1}$
+\end_inset
+
+ und 
+\begin_inset Formula $B_{1},\ldots,B_{r}$
+\end_inset
+
+ Bahnen der Operation von 
+\begin_inset Formula $G_{i}$
+\end_inset
+
+ auf 
+\begin_inset Formula $\left\{ 1,\ldots,p\right\} $
+\end_inset
+
+, so gilt:
+\begin_inset Formula 
+\begin{align*}
+p & =\sum_{j=1}^{r}\left|B_{j}\right|
+\end{align*}
+
+\end_inset
+
+Nach Induktionsvoraussetzung operiert 
+\begin_inset Formula $G_{i-1}$
+\end_inset
+
+ transitiv auf 
+\begin_inset Formula $\left\{ 1,\ldots,p\right\} $
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+Da 
+\begin_inset Formula $G_{i}\unlhd G_{i-1}$
+\end_inset
+
+ ist, ergibt sich für 
+\begin_inset Formula $g\in G_{i-1}$
+\end_inset
+
+ und 
+\begin_inset Formula $x\in\left\{ 1,\ldots,p\right\} $
+\end_inset
+
+ die Gleichung 
+\begin_inset Formula $g\left(G_{i}x\right)=G_{i}\left(gx\right)$
+\end_inset
+
+, also operiert 
+\begin_inset Formula $G_{i-1}$
+\end_inset
+
+ auf der Menge der Bahnen 
+\begin_inset Formula $\left\{ B_{1},\ldots,B_{r}\right\} $
+\end_inset
+
+ transitiv.
+ Damit folgt 
+\begin_inset Formula $\left|B_{j}\right|=\left|B_{k}\right|$
+\end_inset
+
+ für alle 
+\begin_inset Formula $j,k\in\left\{ 1,\ldots,p\right\} $
+\end_inset
+
+, und es gilt:
+\begin_inset Formula 
+\begin{align*}
+p & =\sum_{j=1}^{r}\left|B_{j}\right|=r\cdot\left|B_{1}\right|
+\end{align*}
+
+\end_inset
+
+Da 
+\begin_inset Formula $p$
+\end_inset
+
+ eine Primzahl ist, folgt also 
+\begin_inset Formula $r=1$
+\end_inset
+
+ oder 
+\begin_inset Formula $\left|B_{1}\right|=1$
+\end_inset
+
+.
+ Für 
+\begin_inset Formula $i<n$
+\end_inset
+
+ ist 
+\begin_inset Formula $G_{i}\not=\left\{ e\right\} $
+\end_inset
+
+, also 
+\begin_inset Formula $\left|B_{j}\right|>1$
+\end_inset
+
+, weswegen schon 
+\begin_inset Formula $r=1$
+\end_inset
+
+ gelten muss, das heißt 
+\begin_inset Formula $G_{i}$
+\end_inset
+
+ operiert transitiv auf 
+\begin_inset Formula $\left\{ 1,\ldots,p\right\} $
+\end_inset
+
+.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed[Behauptung]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Wie oben enthält damit 
+\begin_inset Formula $G_{i}$
+\end_inset
+
+ für 
+\begin_inset Formula $i<n$
+\end_inset
+
+ eine Untergruppe der Ordnung 
+\begin_inset Formula $p$
+\end_inset
+
+ und daher ist 
+\begin_inset Formula $G_{n-1}\stackrel{\sim}{=}\modlo{Z}{p}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Für 
+\begin_inset Formula $i\in\left\{ 0,1,\ldots,n-2\right\} $
+\end_inset
+
+ folgt:
+\begin_inset Formula 
+\begin{align*}
+p & {\not\big|\:}\left[G_{i}:G_{i-1}\right]
+\end{align*}
+
+\end_inset
+
+Ist nun 
+\begin_inset Formula $H\subseteq G_{0}$
+\end_inset
+
+ mit 
+\begin_inset Formula $\left|H\right|=p$
+\end_inset
+
+, so erhält man induktiv 
+\begin_inset Formula $H\subseteq G_{i}$
+\end_inset
+
+ für 
+\begin_inset Formula $i\in\left\{ 0,1,\ldots,n-1\right\} $
+\end_inset
+
+, da die Abbildung
+\begin_inset Formula 
+\begin{align*}
+H\hookrightarrow G_{i} & \to\modulo{G_{i}}{G_{i+1}}
+\end{align*}
+
+\end_inset
+
+für 
+\begin_inset Formula $i\in\left\{ 0,1,\ldots,n-2\right\} $
+\end_inset
+
+ trivial ist.
+\end_layout
+
+\begin_layout Standard
+Also ist 
+\begin_inset Formula $H=G_{n-1}$
+\end_inset
+
+ und somit eindeutig bestimmt.
+\end_layout
+
+\begin_layout Standard
+Dann ist aber 
+\begin_inset Formula $H$
+\end_inset
+
+ schon invariant unter Konjugation und somit ein Normalteiler von 
+\begin_inset Formula $G$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed
 \end_layout
 
 \end_inset
