@@ -41,7 +41,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
 \usepackage{tikz}
 \usetikzlibrary{matrix,arrows,calc}
-\usepackage{latexsym,stmaryrd,stackrel,array,tabularx,multirow}
+\usepackage{latexsym,stmaryrd,stackrel,array,tabularx,multirow,icomma,braket}
 \usepackage[explicit]{titlesec}
 %\usepackage{polynom} % momentan nicht benötigt
 
@@ -6532,7 +6532,7 @@ und das eindeutige $\sigma\in\text{Gal}\left(\modulo{E}{k}\right)\setminus\left\
 ist durch $\sigma\left(\alpha\right)=-\alpha-a$ eindeutig bestimmt.
 
 
-\section{Kubische Gleichungen}
+\section{Kubische Gleichungen\label{sec:KubischeGleichungen}}
 
 Es gelte $\text{char}\left(k\right)\not=2,3$ und $F\left(X\right)=X^{3}+AX^{2}+BX+C\in k\left[X\right]$
 besitze keine Nullstellen in $k$.
@@ -7137,7 +7137,7 @@ Es gelten:
 
 Insbesondere gilt:
 \begin{align*}
-\varphi\left(n\right) & =\left|\left\{ 0\le a<n-1|\text{ggT}\left(a,n\right)=1\right\} \right|
+\varphi\left(n\right) & =\left|\left\{ 0<a<n-1|\text{ggT}\left(a,n\right)=1\right\} \right|
 \end{align*}
 
 
@@ -10014,7 +10014,7 @@ auch $\modulo{L}{K}$.
 \qqed
 
 
-\subsection{Korollar}
+\subsection{Korollar \textmd{(Erweiterungen bis Grad 4 sind auflösbar)}}
 
 Es sei $\modulo{L}{K}$ eine Körpererweiterung höchstens vom Grad
 4.
@@ -10063,7 +10063,7 @@ Deswegen ist auch die dazugehörige Körpererweiterung nicht durch Radikale
 auflösbar.\qqed
 
 
-\subsection{Lemma und Definition \textmd{(transitive Operation)}}
+\subsection{Lemma und Definition \textmd{(transitive Operation)\label{sub:LuD-transOp}}}
 
 Für eine Primzahl $p$ sei $G\subseteq S_{p}$ eine Untergruppe, die
 \emph{transitiv} auf $\left\{ 1,\ldots,p\right\} $ operiere, dass
@@ -10144,9 +10144,653 @@ für $i\in\left\{ 0,1,\ldots,n-2\right\} $ trivial ist.
 Also ist $H=G_{n-1}$ und somit eindeutig bestimmt.
 
 Dann ist aber $H$ schon invariant unter Konjugation und somit ein
-Normalteiler von $G$.
+Normalteiler von $G$.\qqed
+
+%DATE: Di 07.2.12
+
+
+\subsection{Lemma}
+
+Sei $G$ wie in \ref{sub:LuD-transOp} auflösbar.
+
+Hat $\sigma\in G$ zwei verschiedene Fixpunkte auf $\left\{ 1,\ldots,p\right\} $,
+so folgt $\sigma=\text{id}$.
+
+
+\subsubsection*{Beweis}
+
+Nach \ref{sub:LuD-transOp} gibt es genau eine Untergruppe $H\subseteq G$
+mit $\left|H\right|=p$ und diese ist insbesondere ein Normalteiler.
+
+$H$ ist zyklisch, also gibt es ein $\pi\in H$ mit $H=\left\langle \pi\right\rangle $
+und aus der Zykelzerlegung für $\pi$ und wegen $\text{ord}\left(\pi\right)=p$
+folgt, dass $\pi$ ein $p$-Zykel ist.
+
+Ohne Einschränkung sei $\pi=\left(0,1,\ldots,p-1\right)$. Wir schreiben
+jetzt $S_{p}=\text{Aut}\left(\left\{ 0,\ldots,p-1\right\} \right)$.
+Hat $\sigma\in G$ zwei verschiedene Fixpunkte, so ist ohne Einschränkung
+0 einer von diesen. Dann ist $i$ mit $0<i<p$ ein weiterer und weil
+$H$ ein Normalteiler ist, gilt:
+\begin{align*}
+\sigma\circ\pi\circ\sigma^{-1} & =\left(\sigma\left(0\right),\ldots,\sigma\left(p-1\right)\right)\in H
+\end{align*}
+Weil $H$ zyklisch ist, gibt es zudem ein $0\le r<p$ mit
+\begin{align*}
+\sigma\circ\pi\circ\sigma^{-1} & =\pi^{r}
+\end{align*}
+also:
+\begin{align*}
+\left(\sigma\left(0\right),\ldots,\sigma\left(p-1\right)\right) & =\left(0,\overline{r\cdot1},\ldots,\overline{r\cdot\left(p-1\right)}\right)
+\end{align*}
+Es folgt unmittelbar:
+\begin{align*}
+\sigma\left(0\right) & =0 & \sigma\left(i\right) & =\overline{r\cdot i}
+\end{align*}
+Aber $i$ ist ein Fixpunkt, also $\sigma\left(i\right)=i$ und wegen
+$i,r<p$ folgt damit schon $r=1$, also $\sigma=\text{id}$.\qqed
+
+
+\subsection{Satz\label{sub:Satz-irredPrimzahlgradAufloesbar}}
+
+Sei $k$ ein Körper und $f\in k\left[X\right]$ ein irreduzibles Polynom
+vom Primzahlgrad $p$. Die zugehörige Galoisgruppe $\text{Gal}\left(f\right)$
+sei auflösbar.
+
+Ist dann $L$ ein Zerfällungskörper von $f$ über $k$ und sind $\alpha,\beta\in L$
+zwei verschiedene Nullstellen von $f$, so gilt $L=K\left(\alpha,\beta\right)$
+.
+
+
+\subsubsection*{Beweis}
+
+$\modulo{L}{K}$ ist galoissch, denn wegen $\text{char}\left(k\right)=0$
+sind alle irreduziblen Polynome separabel.
+\begin{align*}
+G & :=\text{Gal}\left(\modulo{L}{K}\right)
+\end{align*}
+Seien $\alpha_{1},\ldots,\alpha_{p}$ die Nullstellen von $f$ in
+$L$. Betrachte die Abbildung.
+\begin{align*}
+G & \hookrightarrow\text{Aut}\left(\left\{ \alpha_{1},\ldots,\alpha_{p}\right\} \right)\stackrel{\sim}{=}S_{p}
+\end{align*}
+Da $f$ irreduzibel ist, operiert $G$ transitiv auf $\left\{ \alpha_{1},\ldots,\alpha_{p}\right\} $.
+
+Weil $G$ auflösbar ist, gilt für alle $\sigma\in G$ schon $\sigma\big|_{K\left(\alpha,\beta\right)}=\text{id}\big|_{K\left(\alpha,\beta\right)}$.
+
+Also ist
+\begin{align*}
+\text{Gal}\left(\modulo{L}{K\left(\alpha,\beta\right)}\right) & =\left\{ e\right\} 
+\end{align*}
+und daher $K\left(\alpha,\beta\right)=L$ nach dem Hauptsatz.\qqed
+
+
+\subsection{Beispiel}
+
+Sei $f\in\mathbb{Q}\left[X\right]$ ein irreduzibles Polynom und $\deg\left(f\right)=p\ge5$
+eine Primzahl.
+
+$f$ besitze mindestens zwei reelle sowie eine nicht-reelle Nullstelle
+in $\mathbb{C}$.
+
+Angenommen der Zerfällungskörper $L$ von $f$ wäre auflösbar, dann
+würde nach \ref{sub:Satz-irredPrimzahlgradAufloesbar} schon folgen,
+dass $L$ aus $K$ durch die Adjunktion der beiden reellen Nullstellen
+entsteht, also reell ist. Dies ist ein Widerspruch dazu, dass es eine
+nicht-reelle Nullstelle von $f$ gibt.
+
+Betrachte zum Beispiel für eine Primzahl $p\ge5$ das Polynom:
+\begin{align*}
+X^{p}-4X+2 & \in\mathbb{Q}\left[X\right]
+\end{align*}
+Dieses ist Eisenstein bezüglich 2 und somit irreduzibel.
+
+$f$ ist also separabel, da $\mathbb{Q}$ vollkommen ist, das heißt
+$f$ hat nur einfache Nullstellen.
+\begin{description}
+\item [{Behauptung:}] $f$ hat genau 3 reelle Nullstellen.
+\item [{Beweis:}] Die Ableitung ist:
+\begin{align*}
+f'\left(X\right) & =pX^{p-1}-4
+\end{align*}
+Nach dem Zwischenwertsatz gibt es ein $t\in\mathbb{R}$ mit $f'\left(t\right)=0$,
+denn $f'\left(0\right)=-4<0$ und $f'\stackrel{X\to\infty}{\longrightarrow}\infty$.\\
+Dies ist äquivalent zu
+\begin{align*}
+t^{p-1} & =\frac{4}{p}
+\end{align*}
+und dies wiederum zu:
+\begin{align*}
+t & =\pm\sqrt[p-1]{\frac{4}{p}}
+\end{align*}
+Also hat $f$ höchstens 3 verschiedene reelle Nullstellen.\qqed[Behauptung]\\
+\textcolor{green}{TODO: Wieso folgt \quotedblbase{}genau\textquotedblleft{}
+3?}
+\end{description}
+Also ist die Galoisgruppe eines Zerfällungskörpers von $f$ nicht
+auflösbar.
+
+
+\section{Gleichungen vom Grad 3 und 4}
+
+Seien $k$ ein Körper, $f\in K\left[X\right]$ normiert $\modulo{L}{K}$
+ein Zerfällungskörper von $f$ und $\alpha_{1},\ldots,\alpha_{n}\in L$
+die Nullstellen von $f$, also:
+\begin{align*}
+f\left(X\right) & =\left(X-\alpha_{1}\right)\cdots\left(X-\alpha_{n}\right)
+\end{align*}
+
+
+
+\subsection{Proposition und Definition \textmd{(Diskriminante)}}
+
+\begin{iiilist}
+
+\iii Der Ausdruck
+\begin{align*}
+\Delta\left(f\right) & :=\prod_{1\le i<j\le n}\left(\alpha_{i}-\alpha_{j}\right)^{2}\in K
+\end{align*}
+heißt die \emph{Diskriminante von $f$}.
+
+\iii Für
+\begin{align*}
+\delta\left(f\right) & :=\prod_{1\le i<j\le n}\left(\alpha_{i}-\alpha_{j}\right)\in L
+\end{align*}
+gilt:
+
+\begin{abclist}
+
+\abc $\sigma\left(\delta\left(f\right)\right)=\text{sgn}\left(\sigma\right)\cdot\delta\left(f\right)$
+(Benutze hierbei $\text{Gal}\left(\modulo{L}{K}\right)\hookrightarrow S_{n}$.)
+
+\abc $\text{Gal}\left(\modulo{L}{K}\right)\subseteq A_{n}\Rightarrow\delta\left(f\right)\in K$
+
+Die Umkehrung gilt, falls $f$ separabel ist.
+
+\abc Ist $f$ separabel, so ist $K\left(\delta\left(f\right)\right)$
+der Fixkörper von $\text{Gal}\left(\modulo{L}{K}\right)\cap A_{n}$.
+
+\end{abclist}
+
+\end{iiilist}
+
+
+\subsubsection*{Beweis}
+
+\begin{iiilist}
+
+\iii $\modulo{L}{K}$ ist galoissch und $\Delta\left(f\right)$ ist
+invariant unter $\text{Gal}\left(\modulo{L}{K}\right)$. Also ist
+$\Delta\left(f\right)\in K$.\qqed[\roman{ale2})]
+
+\iii 
+
+\begin{abclist}
+
+\abc Dies ist klar nach der Definition von $\text{sgn}$ und $\delta\left(f\right)$.
+
+\abc Diese Aussage folgt direkt aus a).
+
+\abc Dies ist klar, falls $\text{Gal}\left(\modulo{L}{K}\right)\subseteq A_{n}$
+ist, denn dann ist $\delta\left(f\right)\in K$ und somit:
+\begin{align*}
+K\left(\delta\left(f\right)\right) & =K=L^{\text{Gal}\left(\moduloScript{L}{K}\right)}
+\end{align*}
+Ist $\text{Gal}\left(\modulo{L}{K}\right)\not\subseteq A_{n}$, so
+gilt:
+\begin{align*}
+\left[\text{Gal}\left(\modulo{L}{K}\right):\text{Gal}\left(\modulo{L}{K}\right)\cap A_{n}\right] & =2
+\end{align*}
+Aber es gilt:
+\begin{align*}
+\left[K\left(\delta\left(f\right)\right):K\right] & =2
+\end{align*}
+Damit folgt die Behauptung aus dem Hauptsatz, denn $K\left(\delta\left(f\right)\right)\subseteq L^{\text{Gal}\left(\moduloScript{L}{K}\right)\cap A_{n}}$,
+da für jedes Element $\sigma\in A_{n}$ gilt:
+\begin{align*}
+\sigma\left(\delta\left(f\right)\right) & =\text{sgn}\left(\sigma\right)\cdot\delta\left(f\right)\stackrel{\sigma\in A_{n}}{=}\delta\left(f\right)
+\end{align*}
+
+
+\end{abclist}
+
+\end{iiilist}
 
 \qqed
+
+
+\subsection{Proposition}
+
+Für $f=X^{3}+pX+q\in k\left[X\right]$ gilt:
+\begin{align*}
+\Delta\left(f\right) & =-27q^{2}-4p^{3}
+\end{align*}
+Siehe \ref{sec:KubischeGleichungen}.
+
+
+\subsubsection*{Beweis}
+
+Seien $L$ ein Zerfällungskörper von $f$ und $\alpha_{1},\alpha_{2},\alpha_{3}\in L$
+die Nullstellen von $f$, also:
+\begin{align*}
+f & =\left(X-\alpha_{1}\right)\left(X-\alpha_{2}\right)\left(X-\alpha_{3}\right)
+\end{align*}
+Für alle $i,j,k$ mit $\left\{ i,j,k\right\} =\left\{ 1,2,3\right\} $
+kann einerseits die Produktregel anwenden und andererseits das Polynom
+direkt ableiten und erhält:
+\begin{align*}
+\left(\alpha_{i}-\alpha_{j}\right)\left(\alpha_{i}-\alpha_{k}\right) & =f'\left(\alpha_{i}\right)=3\alpha_{i}^{2}+p=\frac{1}{\alpha_{i}}\left(3\alpha_{i}^{3}+p\alpha_{i}\right)=\\
+ & \negthickspace\negthickspace\negthickspace\negthickspace\negthickspace\negthickspace\stackrel{\alpha_{i}^{3}=-p\alpha_{i}-q}{=}-\frac{1}{\alpha_{i}}\left(-3p\alpha_{i}-3q+p\alpha_{i}\right)=\frac{2p}{\alpha_{i}}\left(-\frac{3q}{2p}-\alpha_{i}\right)
+\end{align*}
+Also:
+\begin{align*}
+\Delta\left(f\right) & =\left(\alpha_{1}-\alpha_{2}\right)^{2}\left(\alpha_{2}-\alpha_{3}\right)^{2}\left(\alpha_{3}-\alpha_{1}\right)^{2}=\\
+ & =\left(-1\right)^{3}f'\left(\alpha_{1}\right)f'\left(\alpha_{2}\right)f'\left(\alpha_{3}\right)=\frac{-8p^{3}}{\alpha_{1}\alpha_{2}\alpha_{3}}f\left(\frac{-3q}{2p}\right)=\\
+ & \negthickspace\negthickspace\negthickspace\negthickspace\negthickspace\stackrel{-\alpha_{1}\alpha_{2}\alpha_{3}=q}{=}\frac{8p^{3}}{q}\left(-\left(\frac{3q}{2p}\right)^{3}-\frac{3}{2}q+q\right)=-27q^{2}-4p^{3}
+\end{align*}
+\qqed
+
+
+\subsection{Lösungsformel für allgemeine Polynome 3. Grades\label{sub:Loesung3terGrad}}
+
+Betrachte:
+
+\begin{align*}
+g & =X^{3}+t_{1}X^{2}+t_{2}X+t_{3}\in E\left[X\right]
+\end{align*}
+Dabei ist $E=k\left(t_{1},\ldots,t_{3}\right)$ und $t_{i}$ Unbestimmte.
+
+Sei $L$ ein Zerfällungskörper und $\beta_{1},\beta_{2},\beta_{3}\in L$
+die Nullstellen von $g$, also $L=\left(\beta_{1},\beta_{2},\beta_{3}\right)$
+und:
+\begin{align*}
+g & =\left(X-\beta_{1}\right)\left(X-\beta_{2}\right)\left(X-\beta_{3}\right)
+\end{align*}
+Betrachte das Polynom
+\begin{align*}
+f\left(X\right) & =g\left(X-\frac{t_{1}}{3}\right)=X^{3}+pX+q\in E\left[X\right]
+\end{align*}
+mit:
+\begin{align*}
+p & =t_{2}-\frac{t_{1}^{2}}{3}\\
+q & =\frac{2t_{1}^{3}}{27}-\frac{t_{1}t_{2}}{3}+t_{3}
+\end{align*}
+Dann sind ${\displaystyle \alpha_{i}=\beta_{i}+\frac{t_{1}}{3}}$
+sind die Nullstellen von $f$. Die Diskrimante von $f$ ist:
+\begin{align*}
+\Delta\left(f\right) & =-27q^{2}-4p^{3}
+\end{align*}
+$K$ enthalte eine primitive 3. Einheitswurzel $\zeta$ und es sei:
+\begin{align*}
+\sigma & =\left(123\right)\in A_{3}\subseteq S_{3}=\text{Gal}\left(\modulo{L}{K}\right)
+\end{align*}
+Definiere:
+\begin{align*}
+a & :=\alpha_{1}+3\sigma\left(\alpha_{1}\right)+\zeta^{2}
+\end{align*}
+Es gilt:
+\begin{align*}
+\sigma^{2}\left(\alpha_{1}\right) & =\alpha_{1}+\zeta\alpha_{2}+\zeta^{2}\alpha_{3}\not=0
+\end{align*}
+\textcolor{green}{TODO: Wieso gilt das?}
+
+Denn die $\alpha_{i}$ sind linear unabhängig über $K$.
+
+Sei $\tau=\left(23\right)$, so gilt:
+\begin{align*}
+b & =\tau\left(a\right)=\alpha_{1}+\zeta\alpha_{3}+\zeta^{2}\alpha_{2}\not=0
+\end{align*}
+\begin{align*}
+\sigma\left(a\right) & =\zeta^{-1}a & \sigma\left(b\right) & =\zeta^{2}b
+\end{align*}
+\textcolor{green}{TODO: Wieso gilt das?}
+
+Es folgt:
+\begin{align*}
+a^{3},b^{3} & \in F:=L^{A_{3}}
+\end{align*}
+
+
+\textcolor{green}{TODO: Wieso gilt das?}
+
+Wegen $\alpha_{1}+\alpha_{2}+\alpha_{3}=0$ und $1+\zeta+\zeta^{2}=0$
+gilt $a+b=2\alpha_{1}-\zeta\alpha_{1}-\zeta^{2}\alpha_{1}=3\alpha_{1}$.
+
+Analog folgt $\zeta^{2}a+\zeta b=3\alpha_{2}$ und $\zeta a+\zeta^{2}b=3\alpha_{3}$.
+
+Also genügt es, um $\alpha_{1},\,\alpha_{2}$ und $\alpha_{3}$ zu
+bestimmen, $a$ und $b$ zu bestimmen.
+
+Wegen $\tau\left(a\right)=b$, $\tau^{2}=\text{id}$ und $S_{3}=\left\langle \sigma,\tau\right\rangle $
+sind $a^{3}$ und $b^{3}$ Wurzeln des Polynoms:
+\begin{align*}
+h\left(X\right) & :=\left(X-a^{3}\right)\left(X-b^{3}\right)=X^{2}-\left(a^{3}+b^{3}\right)X+a^{3}b^{3}\in E\left[X\right]
+\end{align*}
+Nun gilt:
+\begin{align*}
+ab & =\left(\alpha_{1}+\zeta\alpha_{2}+\zeta^{2}\alpha_{3}\right)\cdot\left(\alpha_{1}+\zeta\alpha_{3}+\zeta^{2}\alpha_{2}\right)=\\
+ & =\alpha_{1}^{2}+\alpha_{2}^{2}+\alpha_{3}^{2}+\left(\zeta+\zeta^{2}\right)\left(\alpha_{1}\alpha_{2}+\alpha_{2}\alpha_{3}+\alpha_{3}\alpha_{1}\right)=\\
+ & =\left(\alpha_{1}+\alpha_{2}+\alpha_{3}\right)^{2}-\zeta\left(\alpha_{1}\alpha_{2}+\alpha_{2}\alpha_{3}+\alpha_{3}\alpha_{1}\right)=-3p
+\end{align*}
+Die Wurzeln von $X^{3}+1$ sind $-1,-\zeta,-\zeta^{2}$ also $X^{3}+1=\left(X+1\right)\left(X+\zeta\right)\left(X+\zeta^{2}\right)$.\\
+Die Wahl ${\displaystyle X=\frac{a}{b}}$ und Multiplikation mit $b^{3}$
+liefert:
+\begin{align*}
+a^{3}+b^{3} & =\left(a+b\right)\left(a+\zeta b\right)\left(a+\zeta^{2}b\right)=\zeta\alpha_{1}\zeta\alpha_{2}\zeta\alpha_{3}=-27q
+\end{align*}
+Also ist 
+\begin{align*}
+h & =X^{2}+27qX-27p^{3}
+\end{align*}
+und damit:
+\begin{align*}
+a^{3},b^{3} & =-\frac{27}{2}\pm\sqrt{\left(\frac{27}{2}\right)^{2}q^{2}+27p^{3}}
+\end{align*}
+Aus dieser Gleichung und aus
+\begin{align*}
+a+b & =3\alpha_{1}\\
+\zeta^{2}a+\zeta b & =3\alpha_{2}\\
+\zeta a+\zeta^{2}b & =3\alpha_{3}
+\end{align*}
+ergeben sich die Lösungsformeln:
+\begin{align*}
+\left(\frac{a}{3}\right)^{3},\left(\frac{b}{3}\right)^{3} & =-\frac{q}{2}\pm\sqrt{\left(\frac{q}{2}\right)^{2}+\left(\frac{p}{3}\right)^{3}}
+\end{align*}
+\qqed
+
+
+\subsection{Satz \textmd{(Cardano)}}
+
+Seien
+\begin{align*}
+u,v & =\sqrt[3]{-\frac{q}{2}\pm\sqrt{\left(\frac{q}{2}\right)^{2}+\left(\frac{p}{3}\right)^{3}}}
+\end{align*}
+wobei die 3. Wurzeln so gewählt sind, dass ${\displaystyle u\cdot v=-\frac{p}{3}}$
+gilt.
+
+Dann sind die Lösungen der Gleichung
+\begin{align*}
+X^{3}+pX+q & \in K\left[X\right]
+\end{align*}
+gegeben durch:
+\begin{align*}
+\alpha_{1} & =u+v\\
+\alpha_{2} & =\zeta^{2}u+\zeta v\\
+\alpha_{3} & =\zeta u+\zeta^{2}v
+\end{align*}
+
+
+
+\subsubsection*{Beweis}
+
+Dies wurde in \ref{sub:Loesung3terGrad} gezeigt.\qqed
+
+%DATE: Fr 10.2.12
+
+
+\subsection{Lösungsformel für allgemeine Polynome 4. Grades\label{sub:Loesung4terGrad}}
+
+Betrachte die allgemeine Gleichung 4. Grades:
+\begin{align*}
+g\left(X\right) & =X^{4}+t_{1}X^{3}+t_{2}X^{2}+t_{3}X+t_{4}\in E\left[X\right]
+\end{align*}
+\begin{align*}
+E & :=K\left(t_{1},t_{2},t_{3},t_{4}\right)
+\end{align*}
+Betrachte
+\begin{align*}
+f\left(X\right) & :=g\left(X-\frac{t_{1}}{4}\right)=X^{4}+pX^{2}+qX+r
+\end{align*}
+mit:
+\begin{align*}
+p & =\\
+q & =\\
+r & =
+\end{align*}
+\textcolor{green}{TODO: $p,q,r$ angeben.}
+
+Seien $\modulo{L}{E}$ ein Zerfällungskörper von $f$ und $\alpha_{1},\ldots,\alpha_{4}$
+die Nullstellen von $f$ in $L$. Es gilt:
+
+\begin{align*}
+L & =K\left(\alpha_{1},\ldots,\alpha_{4}\right)\\
+\text{Gal}\left(\modulo{L}{E}\right) & \stackrel{\sim}{=}S_{4}
+\end{align*}
+Betrachte $1\unlhd V_{4}\unlhd A_{4}\unlhd S_{4}$ und die zugehörige
+Körperkette sei $E=L_{0}\subseteq L_{1}\subseteq L_{2}\subseteq L_{3}=L$
+und die Elemente:
+\begin{align*}
+z_{1} & :=\left(\alpha_{1}+\alpha_{2}\right)\left(\alpha_{3}+\alpha_{4}\right)\\
+z_{2} & :=\left(\alpha_{1}+\alpha_{3}\right)\left(\alpha_{2}+\alpha_{4}\right)\\
+z_{3} & :=\left(\alpha_{1}+\alpha_{4}\right)\left(\alpha_{2}+\alpha_{3}\right)
+\end{align*}
+Diese Elemente bleiben fest unter $V_{4}$, und liegen daher in $L_{2}=E^{V_{4}}$.
+
+Außerdem bleiben $z_{1},z_{2},z_{3}$ bei keinem weiteren Elemente
+aus $S_{4}\setminus V_{4}$ sämtlich fixiert.
+
+Also folgt:
+\begin{align*}
+L_{2} & =L_{0}\left(z_{1},z_{2},z_{3}\right)
+\end{align*}
+Das Polynom
+\begin{align*}
+h & :=\left(X-z_{1}\right)\left(X-z_{2}\right)\left(X-z_{3}\right)
+\end{align*}
+ist symmetrisch in $\alpha_{1},\ldots,\alpha_{4}$. Also ist $h\in L_{0}\left[X\right]$.
+
+Eine längere Rechnung liefert:
+\begin{align*}
+h\left(X\right) & =X^{3}-\left(-z_{1}-z_{2}-z_{3}\right)X^{2}+\left(z_{1}z_{2}+z_{2}z_{3}+z_{3}z_{1}\right)X-z_{1}z_{2}z_{3}=\\
+ & =X^{3}-2\cdot\sum_{1\le i\le j\le4}\alpha_{i}\alpha_{j}X^{2}+\ldots=\\
+ & =X^{3}-2pX^{2}+\left(p^{2}-4r\right)X+q^{2}
+\end{align*}
+Dies ist ein Polynom dritten Grades, weswegen man $z_{1},z_{2},z_{3}$
+mit Hilfe der Cardanoschen Formel bestimmen kann.
+
+$V_{4}$ hat die nicht-trivialen Untergruppen $\left\langle \left(12\right)\left(34\right)\right\rangle ,\left\langle \left(13\right)\left(24\right)\right\rangle ,\left\langle \left(14\right)\left(23\right)\right\rangle $.
+Die dazugehörige Zwischenkörper werden über $L_{2}$ erzeugt $u_{1}=\alpha_{1}+\alpha_{2}$,
+$u_{2}=\alpha_{1}+\alpha_{3}$ und $u_{3}=\alpha_{1}+\alpha_{4}$.
+
+Wegen $\sum_{i}\alpha_{i}=0$ gilt:
+\begin{align*}
+u_{1}^{2} & =\left(\alpha_{1}+\alpha_{2}\right)\left(\alpha_{1}+\alpha_{2}\right)=-\left(\alpha_{1}+\alpha_{2}\right)\left(\alpha_{3}+\alpha_{4}\right)=-z_{1}\\
+u_{2}^{2} & =-z_{2}\\
+u_{3}^{2} & =-z_{3}
+\end{align*}
+Außerdem folgt aus diesem linearen Gleichungssystem:
+\begin{align*}
+\alpha_{1} & =\frac{1}{2}\left(u_{1}+u_{2}+u_{3}\right)\\
+\alpha_{2} & =\frac{1}{2}\left(u_{1}-u_{2}-u_{3}\right)\\
+\alpha_{3} & =\frac{1}{2}\left(-u_{1}-u_{2}+u_{3}\right)
+\end{align*}
+Dabei sind die Wurzeln $u_{1},u_{2},u_{3}$ so zu wählen, dass $u_{1}u_{2}u_{3}=-q$
+ist, denn:
+\begin{align*}
+u_{1}u_{2}u_{3} & =\left(\alpha_{1}+\alpha_{2}\right)\left(\alpha_{1}+\alpha_{3}\right)\left(\alpha_{1}+\alpha_{4}\right)=\\
+ & =\underbrace{\alpha_{1}^{3}+\alpha_{1}^{2}\alpha_{2}+\alpha_{1}^{2}\alpha_{3}+\alpha_{1}^{2}\alpha_{4}}_{=0}+\alpha_{1}\alpha_{3}\alpha_{4}+\alpha_{1}\alpha_{2}\alpha_{3}+\alpha_{2}\alpha_{3}\alpha_{4}=-q
+\end{align*}
+Dies liefert Lösungen von $f$.
+
+
+\section{Positive Charakteristik \textmd{(Ausblick)}}
+
+Hier lassen wir die Voraussetzung $\text{char}\left(K\right)=0$ fallen.
+
+
+\subsection{Proposition und Definition \textmd{(Spur)}}
+
+Seien $\modulo{L}{K}$ eine endliche Galoiserweiterung und $a\in L$.
+
+Dann heißt
+\begin{align*}
+\text{Sp}_{\moduloScript{L}{K}}\left(a\right) & :=\sum_{\sigma\in\text{Gal}\left(\moduloScript{L}{K}\right)}\sigma\left(a\right)\in K
+\end{align*}
+die \emph{Spur} von $a$ bezüglich $\modulo{L}{K}$.
+\begin{align*}
+\text{Sp}_{\moduloScript{L}{K}}:L & \to K
+\end{align*}
+ist ein Homomorphismus abelscher Gruppen.
+
+\textcolor{green}{TODO: $L$ und $K$ sind Körper und keine Gruppen!?}
+
+
+\subsubsection*{Beweis}
+
+Sei $\tau\in\text{Gal}\left(\modulo{L}{K}\right)$, so gilt:
+
+\begin{align*}
+\tau\left(\sum_{\sigma\in\text{Gal}\left(\moduloScript{L}{K}\right)}\sigma\left(a\right)\right) & =\sum_{\sigma\in\text{Gal}\left(\moduloScript{L}{K}\right)}\left(\tau\circ\sigma\right)\left(a\right)=\text{Sp}_{\moduloScript{L}{K}}\left(a\right)
+\end{align*}
+Also ist $\text{Sp}_{\moduloScript{L}{K}}\in K$.
+
+Dass $\text{Sp}_{\moduloScript{L}{K}}$ ein Homomorphismus ist, kann
+man direkt an der Definition ablesen.\qqed
+
+
+\subsection{Satz \textmd{(Hilbert 90-Analogon für Spur)}\label{sub:Satz-Spur0}}
+
+Sei $\modulo{L}{K}$ eine endliche zyklische Galoiserweiterung und
+$\sigma\in\text{Gal}\left(\modulo{L}{K}\right)$ ein Erzeuger.
+
+Für $b\in L$ ist dann äquivalent:
+
+\begin{iiilist}
+
+\iii $\text{Sp}_{\moduloScript{L}{K}}\left(b\right)=0$
+
+\iii Es gibt ein $a\in L$ mit $b=a-\sigma\left(a\right)$.
+
+\end{iiilist}
+
+
+\subsubsection*{Beweis}
+
+Ähnlich wie der Beweis von \ref{sub:Satz-Hilbert_90}.\qqed
+
+
+\subsection{Satz \textmd{(Artin-Schreier)\label{sub:Satz-Artin_Schreier}}}
+
+Es sei $\modulo{L}{K}$ eine Körpererweiterung und $\text{char}\left(K\right)=p>0$.
+
+\begin{iiilist}
+
+\iii Ist $\modulo{L}{K}$ eine zyklische Galoiserweiterung vom Grad
+$p$, so gilt
+\begin{align*}
+L & =K\left(a\right)
+\end{align*}
+für ein $a\in L$, dessen Minimalpolynom über $K$ von der Form $X^{p}-X-c\in K\left[X\right]$
+mit $c\in K$ ist.
+
+\iii Gilt umgekehrt $L=K\left(a\right)$ für ein $a\in L$, das Nullstelle
+eines Polynoms der Form $X^{p}-X-c\in K\left[X\right]$ ist, so ist
+$\modulo{L}{K}$ eine zyklische Galoiserweiterung.
+
+Es zerfällt $X^{p}-X-c$ über $K$ entweder vollständig in Linearfaktoren,
+oder aber dieses Polynom ist irreduzibel. In letzteren Fall ist $\modulo{L}{K}$
+eine zyklische Galoiserweiterung vom Grad $p$.
+
+\end{iiilist}
+
+
+\subsubsection*{Beweis}
+
+\begin{iiilist}
+
+\iii Für $c\in K$ gilt:
+\begin{align*}
+\text{Sp}_{\moduloScript{L}{K}}\left(c\right) & =\sum_{\sigma\in\text{Gal}\left(\moduloScript{L}{K}\right)}c=pc=0
+\end{align*}
+Insbesondere ist $\text{Sp}_{\moduloScript{L}{K}}\left(1\right)=0$.
+
+Aus \ref{sub:Satz-Spur0} folgt, dass es ein $a\in L$ mit
+\begin{align*}
+\sigma\left(a\right)-a & =1
+\end{align*}
+wobei $\sigma\in\text{Gal}\left(\modulo{L}{K}\right)$ ein Erzeuger
+ist.
+
+Also folgt:
+\begin{align*}
+\sigma^{i}\left(a\right) & =a+i
+\end{align*}
+für $i\in\left\{ 0,\ldots,p-1\right\} $.
+
+$\sigma^{0}\left(a\right),\ldots,\sigma^{p-1}\left(a\right)$ sind
+paarweise verschieden, weswegen gilt:
+\begin{align*}
+\left[K\left(a\right):K\right] & \ge p
+\end{align*}
+Daher ist $L=K\left(a\right)$.
+
+Weiter gilt
+\begin{align*}
+\sigma\left(a^{p}-a\right) & =\sigma\left(a\right)^{p}-\sigma\left(a\right)=\left(a+1\right)^{p}-\left(a+1\right)=a^{p}-a
+\end{align*}
+und damit:
+\begin{align*}
+c & :=a^{p}-a\in K
+\end{align*}
+Daher ist $a$ eine Nullstelle des Polynoms:
+\begin{align*}
+X^{p}-X-c & \in K\left[X\right]
+\end{align*}
+Da dieses Polynom Grad $p$ hat, muss es aus Gradgründen schon das
+Minimalpolynom von $a$ sein.\qqed[\roman{ale2})]
+
+\iii Ist $L=K\left(a\right)$ und $a$ eine Nullstelle von $f=X^{p}-X-c\in K\left[X\right]$.
+
+Dann sind $\left(a+1\right),\left(a+2\right),\ldots,\left(a+\left(p-1\right)\right)\in L$
+ebenfalls Nullstellen von $f$ und diese sind paarweise verschieden,
+also sind es alle Nullstellen von $f$.
+
+Hat $f$ eine Nullstelle in $K$, so liegen daher alle Nullstellen
+in $K$.
+
+$L$ ist ein Zerfällungskörper des separablen Polynoms $f$, denn
+für die Ableitung gilt:
+\begin{align*}
+f'\left(X\right) & =pX^{p-1}-1=-1\not=0
+\end{align*}
+Also ist $\modulo{L}{K}$ galoissch.
+
+Falls $L=K$ ist, so ist diese Erweiterung auch zyklisch.
+
+Habe $f$ keine Nullstelle in $K$, so gilt:
+\begin{description}
+\item [{Behauptung:}] $f$ ist irreduzibel.
+\item [{Beweis:}] Wäre $f=gh\in K\left[X\right]$ und $g,h\in K\left[X\right]$
+nicht-konstante, normierte Polynome.\\
+Es gilt:
+\begin{align*}
+f= & \prod_{i=0}^{p-1}\underbrace{\left(X-a-i\right)}_{\in L\left[X\right]}
+\end{align*}
+Sei $d:=\deg\left(g\right)$. Der Koeffizient von $X^{d-1}$ in $g$
+ist von der Form:
+\begin{align*}
+-da+j & \in K
+\end{align*}
+mit $j\in\mathbb{F}_{p}$. Aus $p\not|d$ folgt $a\in K$, was ein
+Widerspruch ist.\qqed[Behauptung]
+\end{description}
+Wähle ein $\sigma\in\text{Gal}\left(\modulo{L}{K}\right)$ mit $\sigma\left(a\right)=a+1$.
+Dann ist $\text{ord}\left(\sigma\right)\ge p$. Also ist $\modulo{L}{K}$
+zyklisch vom Grad $p$.
+
+\end{iiilist}
+
+\qqed
+
+Mit Hilfe von \ref{sub:Satz-Artin_Schreier} lässt sich die Theorie
+von auflösbaren und durch Radikale auflösbaren Erweiterungen auf beliebige
+Charakteristik ausdehnen.
+
+Es gilt dann wieder, dass auflösbar äquivalent zu durch Radikale auflösbar
+ist.
+
+Für durch Radikale aufläsbar nimmt man Erweiterungen von der Form
+$\modulo{K\left(a\right)}{K}$, wobei $\text{Mipo}_{K}\left(a\right)=X^{p}-X-c\in K\left[X\right]$
+ist, hinzu.
 
 
 \part*{Anhang\thispagestyle{empty}}
@@ -10155,6 +10799,24 @@ Normalteiler von $G$.
 
 \fancyhead[R]{Index}
 \fancyhead[C]{Anhang}
+
+
+\chapter*{Danksagungen}
+
+\addcontentsline{toc}{section}{\hspace*{2.7em}Danksagungen}
+
+\fancyhead[R]{Danksagungen}
+
+Mein besonderer Dank geht an Professor Naumann, der diese Vorlesung
+hielt und es mir gestattete, diese Vorlesungsmitschrift zu veröffentlichen.
+
+Außerdem möchte ich mich ganz herzlich bei allen bedanken, die durch
+aufmerksames Lesen Fehler gefunden und mir diese mitgeteilt haben.
+
+\vspace{1cm}
+
+
+\hfill{}Andreas Völklein
 
 \selectlanguage{english}%
 

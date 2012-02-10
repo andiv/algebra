@@ -6,7 +6,7 @@
 \begin_preamble
 \usepackage{tikz}
 \usetikzlibrary{matrix,arrows,calc}
-\usepackage{latexsym,stmaryrd,stackrel,array,tabularx,multirow}
+\usepackage{latexsym,stmaryrd,stackrel,array,tabularx,multirow,icomma,braket}
 \usepackage[explicit]{titlesec}
 %\usepackage{polynom} % momentan nicht benötigt
 
@@ -33180,6 +33180,13 @@ Dann ist
 
 \begin_layout Section
 Kubische Gleichungen
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:KubischeGleichungen"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -35788,7 +35795,7 @@ iii
 Insbesondere gilt:
 \begin_inset Formula 
 \begin{align*}
-\varphi\left(n\right) & =\left|\left\{ 0\le a<n-1|\text{ggT}\left(a,n\right)=1\right\} \right|
+\varphi\left(n\right) & =\left|\left\{ 0<a<n-1|\text{ggT}\left(a,n\right)=1\right\} \right|
 \end{align*}
 
 \end_inset
@@ -49806,7 +49813,9 @@ qqed
 \end_layout
 
 \begin_layout Subsection
-Korollar
+Korollar 
+\series medium
+(Erweiterungen bis Grad 4 sind auflösbar)
 \end_layout
 
 \begin_layout Standard
@@ -50014,6 +50023,13 @@ qqed
 Lemma und Definition 
 \series medium
 (transitive Operation)
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:LuD-transOp"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -50426,6 +50442,1052 @@ Dann ist aber
 \end_inset
 
 .
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+%DATE: Di 07.2.12
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Lemma
+\end_layout
+
+\begin_layout Standard
+Sei 
+\begin_inset Formula $G$
+\end_inset
+
+ wie in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:LuD-transOp"
+
+\end_inset
+
+ auflösbar.
+\end_layout
+
+\begin_layout Standard
+Hat 
+\begin_inset Formula $\sigma\in G$
+\end_inset
+
+ zwei verschiedene Fixpunkte auf 
+\begin_inset Formula $\left\{ 1,\ldots,p\right\} $
+\end_inset
+
+, so folgt 
+\begin_inset Formula $\sigma=\text{id}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection*
+Beweis
+\end_layout
+
+\begin_layout Standard
+Nach 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:LuD-transOp"
+
+\end_inset
+
+ gibt es genau eine Untergruppe 
+\begin_inset Formula $H\subseteq G$
+\end_inset
+
+ mit 
+\begin_inset Formula $\left|H\right|=p$
+\end_inset
+
+ und diese ist insbesondere ein Normalteiler.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $H$
+\end_inset
+
+ ist zyklisch, also gibt es ein 
+\begin_inset Formula $\pi\in H$
+\end_inset
+
+ mit 
+\begin_inset Formula $H=\left\langle \pi\right\rangle $
+\end_inset
+
+ und aus der Zykelzerlegung für 
+\begin_inset Formula $\pi$
+\end_inset
+
+ und wegen 
+\begin_inset Formula $\text{ord}\left(\pi\right)=p$
+\end_inset
+
+ folgt, dass 
+\begin_inset Formula $\pi$
+\end_inset
+
+ ein 
+\begin_inset Formula $p$
+\end_inset
+
+-Zykel ist.
+\end_layout
+
+\begin_layout Standard
+Ohne Einschränkung sei 
+\begin_inset Formula $\pi=\left(0,1,\ldots,p-1\right)$
+\end_inset
+
+.
+ Wir schreiben jetzt 
+\begin_inset Formula $S_{p}=\text{Aut}\left(\left\{ 0,\ldots,p-1\right\} \right)$
+\end_inset
+
+.
+ Hat 
+\begin_inset Formula $\sigma\in G$
+\end_inset
+
+ zwei verschiedene Fixpunkte, so ist ohne Einschränkung 0 einer von diesen.
+ Dann ist 
+\begin_inset Formula $i$
+\end_inset
+
+ mit 
+\begin_inset Formula $0<i<p$
+\end_inset
+
+ ein weiterer und weil 
+\begin_inset Formula $H$
+\end_inset
+
+ ein Normalteiler ist, gilt:
+\begin_inset Formula 
+\begin{align*}
+\sigma\circ\pi\circ\sigma^{-1} & =\left(\sigma\left(0\right),\ldots,\sigma\left(p-1\right)\right)\in H
+\end{align*}
+
+\end_inset
+
+Weil 
+\begin_inset Formula $H$
+\end_inset
+
+ zyklisch ist, gibt es zudem ein 
+\begin_inset Formula $0\le r<p$
+\end_inset
+
+ mit
+\begin_inset Formula 
+\begin{align*}
+\sigma\circ\pi\circ\sigma^{-1} & =\pi^{r}
+\end{align*}
+
+\end_inset
+
+also:
+\begin_inset Formula 
+\begin{align*}
+\left(\sigma\left(0\right),\ldots,\sigma\left(p-1\right)\right) & =\left(0,\overline{r\cdot1},\ldots,\overline{r\cdot\left(p-1\right)}\right)
+\end{align*}
+
+\end_inset
+
+Es folgt unmittelbar:
+\begin_inset Formula 
+\begin{align*}
+\sigma\left(0\right) & =0 & \sigma\left(i\right) & =\overline{r\cdot i}
+\end{align*}
+
+\end_inset
+
+Aber 
+\begin_inset Formula $i$
+\end_inset
+
+ ist ein Fixpunkt, also 
+\begin_inset Formula $\sigma\left(i\right)=i$
+\end_inset
+
+ und wegen 
+\begin_inset Formula $i,r<p$
+\end_inset
+
+ folgt damit schon 
+\begin_inset Formula $r=1$
+\end_inset
+
+, also 
+\begin_inset Formula $\sigma=\text{id}$
+\end_inset
+
+.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Satz
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Satz-irredPrimzahlgradAufloesbar"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Sei 
+\begin_inset Formula $k$
+\end_inset
+
+ ein Körper und 
+\begin_inset Formula $f\in k\left[X\right]$
+\end_inset
+
+ ein irreduzibles Polynom vom Primzahlgrad 
+\begin_inset Formula $p$
+\end_inset
+
+.
+ Die zugehörige Galoisgruppe 
+\begin_inset Formula $\text{Gal}\left(f\right)$
+\end_inset
+
+ sei auflösbar.
+\end_layout
+
+\begin_layout Standard
+Ist dann 
+\begin_inset Formula $L$
+\end_inset
+
+ ein Zerfällungskörper von 
+\begin_inset Formula $f$
+\end_inset
+
+ über 
+\begin_inset Formula $k$
+\end_inset
+
+ und sind 
+\begin_inset Formula $\alpha,\beta\in L$
+\end_inset
+
+ zwei verschiedene Nullstellen von 
+\begin_inset Formula $f$
+\end_inset
+
+, so gilt 
+\begin_inset Formula $L=K\left(\alpha,\beta\right)$
+\end_inset
+
+ .
+\end_layout
+
+\begin_layout Subsubsection*
+Beweis
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\modulo{L}{K}$
+\end_inset
+
+ ist galoissch, denn wegen 
+\begin_inset Formula $\text{char}\left(k\right)=0$
+\end_inset
+
+ sind alle irreduziblen Polynome separabel.
+\begin_inset Formula 
+\begin{align*}
+G & :=\text{Gal}\left(\modulo{L}{K}\right)
+\end{align*}
+
+\end_inset
+
+Seien 
+\begin_inset Formula $\alpha_{1},\ldots,\alpha_{p}$
+\end_inset
+
+ die Nullstellen von 
+\begin_inset Formula $f$
+\end_inset
+
+ in 
+\begin_inset Formula $L$
+\end_inset
+
+.
+ Betrachte die Abbildung.
+\begin_inset Formula 
+\begin{align*}
+G & \hookrightarrow\text{Aut}\left(\left\{ \alpha_{1},\ldots,\alpha_{p}\right\} \right)\stackrel{\sim}{=}S_{p}
+\end{align*}
+
+\end_inset
+
+Da 
+\begin_inset Formula $f$
+\end_inset
+
+ irreduzibel ist, operiert 
+\begin_inset Formula $G$
+\end_inset
+
+ transitiv auf 
+\begin_inset Formula $\left\{ \alpha_{1},\ldots,\alpha_{p}\right\} $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Weil 
+\begin_inset Formula $G$
+\end_inset
+
+ auflösbar ist, gilt für alle 
+\begin_inset Formula $\sigma\in G$
+\end_inset
+
+ schon 
+\begin_inset Formula $\sigma\big|_{K\left(\alpha,\beta\right)}=\text{id}\big|_{K\left(\alpha,\beta\right)}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Also ist
+\begin_inset Formula 
+\begin{align*}
+\text{Gal}\left(\modulo{L}{K\left(\alpha,\beta\right)}\right) & =\left\{ e\right\} 
+\end{align*}
+
+\end_inset
+
+und daher 
+\begin_inset Formula $K\left(\alpha,\beta\right)=L$
+\end_inset
+
+ nach dem Hauptsatz.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Beispiel
+\end_layout
+
+\begin_layout Standard
+Sei 
+\begin_inset Formula $f\in\mathbb{Q}\left[X\right]$
+\end_inset
+
+ ein irreduzibles Polynom und 
+\begin_inset Formula $\deg\left(f\right)=p\ge5$
+\end_inset
+
+ eine Primzahl.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $f$
+\end_inset
+
+ besitze mindestens zwei reelle sowie eine nicht-reelle Nullstelle in 
+\begin_inset Formula $\mathbb{C}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Angenommen der Zerfällungskörper 
+\begin_inset Formula $L$
+\end_inset
+
+ von 
+\begin_inset Formula $f$
+\end_inset
+
+ wäre auflösbar, dann würde nach 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Satz-irredPrimzahlgradAufloesbar"
+
+\end_inset
+
+ schon folgen, dass 
+\begin_inset Formula $L$
+\end_inset
+
+ aus 
+\begin_inset Formula $K$
+\end_inset
+
+ durch die Adjunktion der beiden reellen Nullstellen entsteht, also reell
+ ist.
+ Dies ist ein Widerspruch dazu, dass es eine nicht-reelle Nullstelle von
+ 
+\begin_inset Formula $f$
+\end_inset
+
+ gibt.
+\end_layout
+
+\begin_layout Standard
+Betrachte zum Beispiel für eine Primzahl 
+\begin_inset Formula $p\ge5$
+\end_inset
+
+ das Polynom:
+\begin_inset Formula 
+\begin{align*}
+X^{p}-4X+2 & \in\mathbb{Q}\left[X\right]
+\end{align*}
+
+\end_inset
+
+Dieses ist Eisenstein bezüglich 2 und somit irreduzibel.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $f$
+\end_inset
+
+ ist also separabel, da 
+\begin_inset Formula $\mathbb{Q}$
+\end_inset
+
+ vollkommen ist, das heißt 
+\begin_inset Formula $f$
+\end_inset
+
+ hat nur einfache Nullstellen.
+\end_layout
+
+\begin_layout Description
+Behauptung: 
+\begin_inset Formula $f$
+\end_inset
+
+ hat genau 3 reelle Nullstellen.
+\end_layout
+
+\begin_layout Description
+Beweis: Die Ableitung ist:
+\begin_inset Formula 
+\begin{align*}
+f'\left(X\right) & =pX^{p-1}-4
+\end{align*}
+
+\end_inset
+
+Nach dem Zwischenwertsatz gibt es ein 
+\begin_inset Formula $t\in\mathbb{R}$
+\end_inset
+
+ mit 
+\begin_inset Formula $f'\left(t\right)=0$
+\end_inset
+
+, denn 
+\begin_inset Formula $f'\left(0\right)=-4<0$
+\end_inset
+
+ und 
+\begin_inset Formula $f'\stackrel{X\to\infty}{\longrightarrow}\infty$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+Dies ist äquivalent zu
+\begin_inset Formula 
+\begin{align*}
+t^{p-1} & =\frac{4}{p}
+\end{align*}
+
+\end_inset
+
+und dies wiederum zu:
+\begin_inset Formula 
+\begin{align*}
+t & =\pm\sqrt[p-1]{\frac{4}{p}}
+\end{align*}
+
+\end_inset
+
+Also hat 
+\begin_inset Formula $f$
+\end_inset
+
+ höchstens 3 verschiedene reelle Nullstellen.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed[Behauptung]
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\color green
+TODO: Wieso folgt „genau“ 3?
+\end_layout
+
+\begin_layout Standard
+Also ist die Galoisgruppe eines Zerfällungskörpers von 
+\begin_inset Formula $f$
+\end_inset
+
+ nicht auflösbar.
+\end_layout
+
+\begin_layout Section
+Gleichungen vom Grad 3 und 4
+\end_layout
+
+\begin_layout Standard
+Seien 
+\begin_inset Formula $k$
+\end_inset
+
+ ein Körper, 
+\begin_inset Formula $f\in K\left[X\right]$
+\end_inset
+
+ normiert 
+\begin_inset Formula $\modulo{L}{K}$
+\end_inset
+
+ ein Zerfällungskörper von 
+\begin_inset Formula $f$
+\end_inset
+
+ und 
+\begin_inset Formula $\alpha_{1},\ldots,\alpha_{n}\in L$
+\end_inset
+
+ die Nullstellen von 
+\begin_inset Formula $f$
+\end_inset
+
+, also:
+\begin_inset Formula 
+\begin{align*}
+f\left(X\right) & =\left(X-\alpha_{1}\right)\cdots\left(X-\alpha_{n}\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Proposition und Definition 
+\series medium
+(Diskriminante)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Der Ausdruck
+\begin_inset Formula 
+\begin{align*}
+\Delta\left(f\right) & :=\prod_{1\le i<j\le n}\left(\alpha_{i}-\alpha_{j}\right)^{2}\in K
+\end{align*}
+
+\end_inset
+
+heißt die 
+\emph on
+Diskriminante von 
+\begin_inset Formula $f$
+\end_inset
+
+
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Für
+\begin_inset Formula 
+\begin{align*}
+\delta\left(f\right) & :=\prod_{1\le i<j\le n}\left(\alpha_{i}-\alpha_{j}\right)\in L
+\end{align*}
+
+\end_inset
+
+gilt:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{abclist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abc
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $\sigma\left(\delta\left(f\right)\right)=\text{sgn}\left(\sigma\right)\cdot\delta\left(f\right)$
+\end_inset
+
+ (Benutze hierbei 
+\begin_inset Formula $\text{Gal}\left(\modulo{L}{K}\right)\hookrightarrow S_{n}$
+\end_inset
+
+.)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abc
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $\text{Gal}\left(\modulo{L}{K}\right)\subseteq A_{n}\Rightarrow\delta\left(f\right)\in K$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Die Umkehrung gilt, falls 
+\begin_inset Formula $f$
+\end_inset
+
+ separabel ist.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abc
+\end_layout
+
+\end_inset
+
+ Ist 
+\begin_inset Formula $f$
+\end_inset
+
+ separabel, so ist 
+\begin_inset Formula $K\left(\delta\left(f\right)\right)$
+\end_inset
+
+ der Fixkörper von 
+\begin_inset Formula $\text{Gal}\left(\modulo{L}{K}\right)\cap A_{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{abclist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Beweis
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $\modulo{L}{K}$
+\end_inset
+
+ ist galoissch und 
+\begin_inset Formula $\Delta\left(f\right)$
+\end_inset
+
+ ist invariant unter 
+\begin_inset Formula $\text{Gal}\left(\modulo{L}{K}\right)$
+\end_inset
+
+.
+ Also ist 
+\begin_inset Formula $\Delta\left(f\right)\in K$
+\end_inset
+
+.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed[
+\backslash
+roman{ale2})]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{abclist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abc
+\end_layout
+
+\end_inset
+
+ Dies ist klar nach der Definition von 
+\begin_inset Formula $\text{sgn}$
+\end_inset
+
+ und 
+\begin_inset Formula $\delta\left(f\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abc
+\end_layout
+
+\end_inset
+
+ Diese Aussage folgt direkt aus a).
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+abc
+\end_layout
+
+\end_inset
+
+ Dies ist klar, falls 
+\begin_inset Formula $\text{Gal}\left(\modulo{L}{K}\right)\subseteq A_{n}$
+\end_inset
+
+ ist, denn dann ist 
+\begin_inset Formula $\delta\left(f\right)\in K$
+\end_inset
+
+ und somit:
+\begin_inset Formula 
+\begin{align*}
+K\left(\delta\left(f\right)\right) & =K=L^{\text{Gal}\left(\moduloScript{L}{K}\right)}
+\end{align*}
+
+\end_inset
+
+Ist 
+\begin_inset Formula $\text{Gal}\left(\modulo{L}{K}\right)\not\subseteq A_{n}$
+\end_inset
+
+, so gilt:
+\begin_inset Formula 
+\begin{align*}
+\left[\text{Gal}\left(\modulo{L}{K}\right):\text{Gal}\left(\modulo{L}{K}\right)\cap A_{n}\right] & =2
+\end{align*}
+
+\end_inset
+
+Aber es gilt:
+\begin_inset Formula 
+\begin{align*}
+\left[K\left(\delta\left(f\right)\right):K\right] & =2
+\end{align*}
+
+\end_inset
+
+Damit folgt die Behauptung aus dem Hauptsatz, denn 
+\begin_inset Formula $K\left(\delta\left(f\right)\right)\subseteq L^{\text{Gal}\left(\moduloScript{L}{K}\right)\cap A_{n}}$
+\end_inset
+
+, da für jedes Element 
+\begin_inset Formula $\sigma\in A_{n}$
+\end_inset
+
+ gilt:
+\begin_inset Formula 
+\begin{align*}
+\sigma\left(\delta\left(f\right)\right) & =\text{sgn}\left(\sigma\right)\cdot\delta\left(f\right)\stackrel{\sigma\in A_{n}}{=}\delta\left(f\right)
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{abclist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{iiilist}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -50442,6 +51504,1673 @@ qqed
 \end_inset
 
 
+\end_layout
+
+\begin_layout Subsection
+Proposition
+\end_layout
+
+\begin_layout Standard
+Für 
+\begin_inset Formula $f=X^{3}+pX+q\in k\left[X\right]$
+\end_inset
+
+ gilt:
+\begin_inset Formula 
+\begin{align*}
+\Delta\left(f\right) & =-27q^{2}-4p^{3}
+\end{align*}
+
+\end_inset
+
+Siehe 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:KubischeGleichungen"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection*
+Beweis
+\end_layout
+
+\begin_layout Standard
+Seien 
+\begin_inset Formula $L$
+\end_inset
+
+ ein Zerfällungskörper von 
+\begin_inset Formula $f$
+\end_inset
+
+ und 
+\begin_inset Formula $\alpha_{1},\alpha_{2},\alpha_{3}\in L$
+\end_inset
+
+ die Nullstellen von 
+\begin_inset Formula $f$
+\end_inset
+
+, also:
+\begin_inset Formula 
+\begin{align*}
+f & =\left(X-\alpha_{1}\right)\left(X-\alpha_{2}\right)\left(X-\alpha_{3}\right)
+\end{align*}
+
+\end_inset
+
+Für alle 
+\begin_inset Formula $i,j,k$
+\end_inset
+
+ mit 
+\begin_inset Formula $\left\{ i,j,k\right\} =\left\{ 1,2,3\right\} $
+\end_inset
+
+ kann einerseits die Produktregel anwenden und andererseits das Polynom
+ direkt ableiten und erhält:
+\begin_inset Formula 
+\begin{align*}
+\left(\alpha_{i}-\alpha_{j}\right)\left(\alpha_{i}-\alpha_{k}\right) & =f'\left(\alpha_{i}\right)=3\alpha_{i}^{2}+p=\frac{1}{\alpha_{i}}\left(3\alpha_{i}^{3}+p\alpha_{i}\right)=\\
+ & \negthickspace\negthickspace\negthickspace\negthickspace\negthickspace\negthickspace\stackrel{\alpha_{i}^{3}=-p\alpha_{i}-q}{=}-\frac{1}{\alpha_{i}}\left(-3p\alpha_{i}-3q+p\alpha_{i}\right)=\frac{2p}{\alpha_{i}}\left(-\frac{3q}{2p}-\alpha_{i}\right)
+\end{align*}
+
+\end_inset
+
+Also:
+\begin_inset Formula 
+\begin{align*}
+\Delta\left(f\right) & =\left(\alpha_{1}-\alpha_{2}\right)^{2}\left(\alpha_{2}-\alpha_{3}\right)^{2}\left(\alpha_{3}-\alpha_{1}\right)^{2}=\\
+ & =\left(-1\right)^{3}f'\left(\alpha_{1}\right)f'\left(\alpha_{2}\right)f'\left(\alpha_{3}\right)=\frac{-8p^{3}}{\alpha_{1}\alpha_{2}\alpha_{3}}f\left(\frac{-3q}{2p}\right)=\\
+ & \negthickspace\negthickspace\negthickspace\negthickspace\negthickspace\stackrel{-\alpha_{1}\alpha_{2}\alpha_{3}=q}{=}\frac{8p^{3}}{q}\left(-\left(\frac{3q}{2p}\right)^{3}-\frac{3}{2}q+q\right)=-27q^{2}-4p^{3}
+\end{align*}
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Lösungsformel für allgemeine Polynome 3.
+ Grades
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Loesung3terGrad"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Betrachte:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+g & =X^{3}+t_{1}X^{2}+t_{2}X+t_{3}\in E\left[X\right]
+\end{align*}
+
+\end_inset
+
+Dabei ist 
+\begin_inset Formula $E=k\left(t_{1},\ldots,t_{3}\right)$
+\end_inset
+
+ und 
+\begin_inset Formula $t_{i}$
+\end_inset
+
+ Unbestimmte.
+\end_layout
+
+\begin_layout Standard
+Sei 
+\begin_inset Formula $L$
+\end_inset
+
+ ein Zerfällungskörper und 
+\begin_inset Formula $\beta_{1},\beta_{2},\beta_{3}\in L$
+\end_inset
+
+ die Nullstellen von 
+\begin_inset Formula $g$
+\end_inset
+
+, also 
+\begin_inset Formula $L=\left(\beta_{1},\beta_{2},\beta_{3}\right)$
+\end_inset
+
+ und:
+\begin_inset Formula 
+\begin{align*}
+g & =\left(X-\beta_{1}\right)\left(X-\beta_{2}\right)\left(X-\beta_{3}\right)
+\end{align*}
+
+\end_inset
+
+Betrachte das Polynom
+\begin_inset Formula 
+\begin{align*}
+f\left(X\right) & =g\left(X-\frac{t_{1}}{3}\right)=X^{3}+pX+q\in E\left[X\right]
+\end{align*}
+
+\end_inset
+
+mit:
+\begin_inset Formula 
+\begin{align*}
+p & =t_{2}-\frac{t_{1}^{2}}{3}\\
+q & =\frac{2t_{1}^{3}}{27}-\frac{t_{1}t_{2}}{3}+t_{3}
+\end{align*}
+
+\end_inset
+
+Dann sind 
+\begin_inset Formula ${\displaystyle \alpha_{i}=\beta_{i}+\frac{t_{1}}{3}}$
+\end_inset
+
+ sind die Nullstellen von 
+\begin_inset Formula $f$
+\end_inset
+
+.
+ Die Diskrimante von 
+\begin_inset Formula $f$
+\end_inset
+
+ ist:
+\begin_inset Formula 
+\begin{align*}
+\Delta\left(f\right) & =-27q^{2}-4p^{3}
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Formula $K$
+\end_inset
+
+ enthalte eine primitive 3.
+ Einheitswurzel 
+\begin_inset Formula $\zeta$
+\end_inset
+
+ und es sei:
+\begin_inset Formula 
+\begin{align*}
+\sigma & =\left(123\right)\in A_{3}\subseteq S_{3}=\text{Gal}\left(\modulo{L}{K}\right)
+\end{align*}
+
+\end_inset
+
+Definiere:
+\begin_inset Formula 
+\begin{align*}
+a & :=\alpha_{1}+3\sigma\left(\alpha_{1}\right)+\zeta^{2}
+\end{align*}
+
+\end_inset
+
+Es gilt:
+\begin_inset Formula 
+\begin{align*}
+\sigma^{2}\left(\alpha_{1}\right) & =\alpha_{1}+\zeta\alpha_{2}+\zeta^{2}\alpha_{3}\not=0
+\end{align*}
+
+\end_inset
+
+
+\color green
+TODO: Wieso gilt das?
+\end_layout
+
+\begin_layout Standard
+Denn die 
+\begin_inset Formula $\alpha_{i}$
+\end_inset
+
+ sind linear unabhängig über 
+\begin_inset Formula $K$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Sei 
+\begin_inset Formula $\tau=\left(23\right)$
+\end_inset
+
+, so gilt:
+\begin_inset Formula 
+\begin{align*}
+b & =\tau\left(a\right)=\alpha_{1}+\zeta\alpha_{3}+\zeta^{2}\alpha_{2}\not=0
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+\sigma\left(a\right) & =\zeta^{-1}a & \sigma\left(b\right) & =\zeta^{2}b
+\end{align*}
+
+\end_inset
+
+
+\color green
+TODO: Wieso gilt das?
+\end_layout
+
+\begin_layout Standard
+Es folgt:
+\begin_inset Formula 
+\begin{align*}
+a^{3},b^{3} & \in F:=L^{A_{3}}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\color green
+TODO: Wieso gilt das?
+\end_layout
+
+\begin_layout Standard
+Wegen 
+\begin_inset Formula $\alpha_{1}+\alpha_{2}+\alpha_{3}=0$
+\end_inset
+
+ und 
+\begin_inset Formula $1+\zeta+\zeta^{2}=0$
+\end_inset
+
+ gilt 
+\begin_inset Formula $a+b=2\alpha_{1}-\zeta\alpha_{1}-\zeta^{2}\alpha_{1}=3\alpha_{1}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Analog folgt 
+\begin_inset Formula $\zeta^{2}a+\zeta b=3\alpha_{2}$
+\end_inset
+
+ und 
+\begin_inset Formula $\zeta a+\zeta^{2}b=3\alpha_{3}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Also genügt es, um 
+\begin_inset Formula $\alpha_{1},\,\alpha_{2}$
+\end_inset
+
+ und 
+\begin_inset Formula $\alpha_{3}$
+\end_inset
+
+ zu bestimmen, 
+\begin_inset Formula $a$
+\end_inset
+
+ und 
+\begin_inset Formula $b$
+\end_inset
+
+ zu bestimmen.
+\end_layout
+
+\begin_layout Standard
+Wegen 
+\begin_inset Formula $\tau\left(a\right)=b$
+\end_inset
+
+, 
+\begin_inset Formula $\tau^{2}=\text{id}$
+\end_inset
+
+ und 
+\begin_inset Formula $S_{3}=\left\langle \sigma,\tau\right\rangle $
+\end_inset
+
+ sind 
+\begin_inset Formula $a^{3}$
+\end_inset
+
+ und 
+\begin_inset Formula $b^{3}$
+\end_inset
+
+ Wurzeln des Polynoms:
+\begin_inset Formula 
+\begin{align*}
+h\left(X\right) & :=\left(X-a^{3}\right)\left(X-b^{3}\right)=X^{2}-\left(a^{3}+b^{3}\right)X+a^{3}b^{3}\in E\left[X\right]
+\end{align*}
+
+\end_inset
+
+Nun gilt:
+\begin_inset Formula 
+\begin{align*}
+ab & =\left(\alpha_{1}+\zeta\alpha_{2}+\zeta^{2}\alpha_{3}\right)\cdot\left(\alpha_{1}+\zeta\alpha_{3}+\zeta^{2}\alpha_{2}\right)=\\
+ & =\alpha_{1}^{2}+\alpha_{2}^{2}+\alpha_{3}^{2}+\left(\zeta+\zeta^{2}\right)\left(\alpha_{1}\alpha_{2}+\alpha_{2}\alpha_{3}+\alpha_{3}\alpha_{1}\right)=\\
+ & =\left(\alpha_{1}+\alpha_{2}+\alpha_{3}\right)^{2}-\zeta\left(\alpha_{1}\alpha_{2}+\alpha_{2}\alpha_{3}+\alpha_{3}\alpha_{1}\right)=-3p
+\end{align*}
+
+\end_inset
+
+Die Wurzeln von 
+\begin_inset Formula $X^{3}+1$
+\end_inset
+
+ sind 
+\begin_inset Formula $-1,-\zeta,-\zeta^{2}$
+\end_inset
+
+ also 
+\begin_inset Formula $X^{3}+1=\left(X+1\right)\left(X+\zeta\right)\left(X+\zeta^{2}\right)$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+Die Wahl 
+\begin_inset Formula ${\displaystyle X=\frac{a}{b}}$
+\end_inset
+
+ und Multiplikation mit 
+\begin_inset Formula $b^{3}$
+\end_inset
+
+ liefert:
+\begin_inset Formula 
+\begin{align*}
+a^{3}+b^{3} & =\left(a+b\right)\left(a+\zeta b\right)\left(a+\zeta^{2}b\right)=\zeta\alpha_{1}\zeta\alpha_{2}\zeta\alpha_{3}=-27q
+\end{align*}
+
+\end_inset
+
+Also ist 
+\begin_inset Formula 
+\begin{align*}
+h & =X^{2}+27qX-27p^{3}
+\end{align*}
+
+\end_inset
+
+und damit:
+\begin_inset Formula 
+\begin{align*}
+a^{3},b^{3} & =-\frac{27}{2}\pm\sqrt{\left(\frac{27}{2}\right)^{2}q^{2}+27p^{3}}
+\end{align*}
+
+\end_inset
+
+Aus dieser Gleichung und aus
+\begin_inset Formula 
+\begin{align*}
+a+b & =3\alpha_{1}\\
+\zeta^{2}a+\zeta b & =3\alpha_{2}\\
+\zeta a+\zeta^{2}b & =3\alpha_{3}
+\end{align*}
+
+\end_inset
+
+ergeben sich die Lösungsformeln:
+\begin_inset Formula 
+\begin{align*}
+\left(\frac{a}{3}\right)^{3},\left(\frac{b}{3}\right)^{3} & =-\frac{q}{2}\pm\sqrt{\left(\frac{q}{2}\right)^{2}+\left(\frac{p}{3}\right)^{3}}
+\end{align*}
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Satz 
+\series medium
+(Cardano)
+\end_layout
+
+\begin_layout Standard
+Seien
+\begin_inset Formula 
+\begin{align*}
+u,v & =\sqrt[3]{-\frac{q}{2}\pm\sqrt{\left(\frac{q}{2}\right)^{2}+\left(\frac{p}{3}\right)^{3}}}
+\end{align*}
+
+\end_inset
+
+wobei die 3.
+ Wurzeln so gewählt sind, dass 
+\begin_inset Formula ${\displaystyle u\cdot v=-\frac{p}{3}}$
+\end_inset
+
+ gilt.
+\end_layout
+
+\begin_layout Standard
+Dann sind die Lösungen der Gleichung
+\begin_inset Formula 
+\begin{align*}
+X^{3}+pX+q & \in K\left[X\right]
+\end{align*}
+
+\end_inset
+
+gegeben durch:
+\begin_inset Formula 
+\begin{align*}
+\alpha_{1} & =u+v\\
+\alpha_{2} & =\zeta^{2}u+\zeta v\\
+\alpha_{3} & =\zeta u+\zeta^{2}v
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Beweis
+\end_layout
+
+\begin_layout Standard
+Dies wurde in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Loesung3terGrad"
+
+\end_inset
+
+ gezeigt.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+%DATE: Fr 10.2.12
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Lösungsformel für allgemeine Polynome 4.
+ Grades
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Loesung4terGrad"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Betrachte die allgemeine Gleichung 4.
+ Grades:
+\begin_inset Formula 
+\begin{align*}
+g\left(X\right) & =X^{4}+t_{1}X^{3}+t_{2}X^{2}+t_{3}X+t_{4}\in E\left[X\right]
+\end{align*}
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align*}
+E & :=K\left(t_{1},t_{2},t_{3},t_{4}\right)
+\end{align*}
+
+\end_inset
+
+Betrachte
+\begin_inset Formula 
+\begin{align*}
+f\left(X\right) & :=g\left(X-\frac{t_{1}}{4}\right)=X^{4}+pX^{2}+qX+r
+\end{align*}
+
+\end_inset
+
+mit:
+\begin_inset Formula 
+\begin{align*}
+p & =\\
+q & =\\
+r & =
+\end{align*}
+
+\end_inset
+
+
+\color green
+TODO: 
+\begin_inset Formula $p,q,r$
+\end_inset
+
+ angeben.
+\end_layout
+
+\begin_layout Standard
+Seien 
+\begin_inset Formula $\modulo{L}{E}$
+\end_inset
+
+ ein Zerfällungskörper von 
+\begin_inset Formula $f$
+\end_inset
+
+ und 
+\begin_inset Formula $\alpha_{1},\ldots,\alpha_{4}$
+\end_inset
+
+ die Nullstellen von 
+\begin_inset Formula $f$
+\end_inset
+
+ in 
+\begin_inset Formula $L$
+\end_inset
+
+.
+ Es gilt:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+L & =K\left(\alpha_{1},\ldots,\alpha_{4}\right)\\
+\text{Gal}\left(\modulo{L}{E}\right) & \stackrel{\sim}{=}S_{4}
+\end{align*}
+
+\end_inset
+
+Betrachte 
+\begin_inset Formula $1\unlhd V_{4}\unlhd A_{4}\unlhd S_{4}$
+\end_inset
+
+ und die zugehörige Körperkette sei 
+\begin_inset Formula $E=L_{0}\subseteq L_{1}\subseteq L_{2}\subseteq L_{3}=L$
+\end_inset
+
+ und die Elemente:
+\begin_inset Formula 
+\begin{align*}
+z_{1} & :=\left(\alpha_{1}+\alpha_{2}\right)\left(\alpha_{3}+\alpha_{4}\right)\\
+z_{2} & :=\left(\alpha_{1}+\alpha_{3}\right)\left(\alpha_{2}+\alpha_{4}\right)\\
+z_{3} & :=\left(\alpha_{1}+\alpha_{4}\right)\left(\alpha_{2}+\alpha_{3}\right)
+\end{align*}
+
+\end_inset
+
+Diese Elemente bleiben fest unter 
+\begin_inset Formula $V_{4}$
+\end_inset
+
+, und liegen daher in 
+\begin_inset Formula $L_{2}=E^{V_{4}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Außerdem bleiben 
+\begin_inset Formula $z_{1},z_{2},z_{3}$
+\end_inset
+
+ bei keinem weiteren Elemente aus 
+\begin_inset Formula $S_{4}\setminus V_{4}$
+\end_inset
+
+ sämtlich fixiert.
+\end_layout
+
+\begin_layout Standard
+Also folgt:
+\begin_inset Formula 
+\begin{align*}
+L_{2} & =L_{0}\left(z_{1},z_{2},z_{3}\right)
+\end{align*}
+
+\end_inset
+
+Das Polynom
+\begin_inset Formula 
+\begin{align*}
+h & :=\left(X-z_{1}\right)\left(X-z_{2}\right)\left(X-z_{3}\right)
+\end{align*}
+
+\end_inset
+
+ist symmetrisch in 
+\begin_inset Formula $\alpha_{1},\ldots,\alpha_{4}$
+\end_inset
+
+.
+ Also ist 
+\begin_inset Formula $h\in L_{0}\left[X\right]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Eine längere Rechnung liefert:
+\begin_inset Formula 
+\begin{align*}
+h\left(X\right) & =X^{3}-\left(-z_{1}-z_{2}-z_{3}\right)X^{2}+\left(z_{1}z_{2}+z_{2}z_{3}+z_{3}z_{1}\right)X-z_{1}z_{2}z_{3}=\\
+ & =X^{3}-2\cdot\sum_{1\le i\le j\le4}\alpha_{i}\alpha_{j}X^{2}+\ldots=\\
+ & =X^{3}-2pX^{2}+\left(p^{2}-4r\right)X+q^{2}
+\end{align*}
+
+\end_inset
+
+Dies ist ein Polynom dritten Grades, weswegen man 
+\begin_inset Formula $z_{1},z_{2},z_{3}$
+\end_inset
+
+ mit Hilfe der Cardanoschen Formel bestimmen kann.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $V_{4}$
+\end_inset
+
+ hat die nicht-trivialen Untergruppen 
+\begin_inset Formula $\left\langle \left(12\right)\left(34\right)\right\rangle ,\left\langle \left(13\right)\left(24\right)\right\rangle ,\left\langle \left(14\right)\left(23\right)\right\rangle $
+\end_inset
+
+.
+ Die dazugehörige Zwischenkörper werden über 
+\begin_inset Formula $L_{2}$
+\end_inset
+
+ erzeugt 
+\begin_inset Formula $u_{1}=\alpha_{1}+\alpha_{2}$
+\end_inset
+
+, 
+\begin_inset Formula $u_{2}=\alpha_{1}+\alpha_{3}$
+\end_inset
+
+ und 
+\begin_inset Formula $u_{3}=\alpha_{1}+\alpha_{4}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Wegen 
+\begin_inset Formula $\sum_{i}\alpha_{i}=0$
+\end_inset
+
+ gilt:
+\begin_inset Formula 
+\begin{align*}
+u_{1}^{2} & =\left(\alpha_{1}+\alpha_{2}\right)\left(\alpha_{1}+\alpha_{2}\right)=-\left(\alpha_{1}+\alpha_{2}\right)\left(\alpha_{3}+\alpha_{4}\right)=-z_{1}\\
+u_{2}^{2} & =-z_{2}\\
+u_{3}^{2} & =-z_{3}
+\end{align*}
+
+\end_inset
+
+Außerdem folgt aus diesem linearen Gleichungssystem:
+\begin_inset Formula 
+\begin{align*}
+\alpha_{1} & =\frac{1}{2}\left(u_{1}+u_{2}+u_{3}\right)\\
+\alpha_{2} & =\frac{1}{2}\left(u_{1}-u_{2}-u_{3}\right)\\
+\alpha_{3} & =\frac{1}{2}\left(-u_{1}-u_{2}+u_{3}\right)
+\end{align*}
+
+\end_inset
+
+Dabei sind die Wurzeln 
+\begin_inset Formula $u_{1},u_{2},u_{3}$
+\end_inset
+
+ so zu wählen, dass 
+\begin_inset Formula $u_{1}u_{2}u_{3}=-q$
+\end_inset
+
+ ist, denn:
+\begin_inset Formula 
+\begin{align*}
+u_{1}u_{2}u_{3} & =\left(\alpha_{1}+\alpha_{2}\right)\left(\alpha_{1}+\alpha_{3}\right)\left(\alpha_{1}+\alpha_{4}\right)=\\
+ & =\underbrace{\alpha_{1}^{3}+\alpha_{1}^{2}\alpha_{2}+\alpha_{1}^{2}\alpha_{3}+\alpha_{1}^{2}\alpha_{4}}_{=0}+\alpha_{1}\alpha_{3}\alpha_{4}+\alpha_{1}\alpha_{2}\alpha_{3}+\alpha_{2}\alpha_{3}\alpha_{4}=-q
+\end{align*}
+
+\end_inset
+
+Dies liefert Lösungen von 
+\begin_inset Formula $f$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Positive Charakteristik 
+\series medium
+(Ausblick)
+\end_layout
+
+\begin_layout Standard
+Hier lassen wir die Voraussetzung 
+\begin_inset Formula $\text{char}\left(K\right)=0$
+\end_inset
+
+ fallen.
+\end_layout
+
+\begin_layout Subsection
+Proposition und Definition 
+\series medium
+(Spur)
+\end_layout
+
+\begin_layout Standard
+Seien 
+\begin_inset Formula $\modulo{L}{K}$
+\end_inset
+
+ eine endliche Galoiserweiterung und 
+\begin_inset Formula $a\in L$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Dann heißt
+\begin_inset Formula 
+\begin{align*}
+\text{Sp}_{\moduloScript{L}{K}}\left(a\right) & :=\sum_{\sigma\in\text{Gal}\left(\moduloScript{L}{K}\right)}\sigma\left(a\right)\in K
+\end{align*}
+
+\end_inset
+
+die 
+\emph on
+Spur
+\emph default
+ von 
+\begin_inset Formula $a$
+\end_inset
+
+ bezüglich 
+\begin_inset Formula $\modulo{L}{K}$
+\end_inset
+
+.
+\begin_inset Formula 
+\begin{align*}
+\text{Sp}_{\moduloScript{L}{K}}:L & \to K
+\end{align*}
+
+\end_inset
+
+ist ein Homomorphismus abelscher Gruppen.
+\end_layout
+
+\begin_layout Standard
+
+\color green
+TODO: 
+\begin_inset Formula $L$
+\end_inset
+
+ und 
+\begin_inset Formula $K$
+\end_inset
+
+ sind Körper und keine Gruppen!?
+\end_layout
+
+\begin_layout Subsubsection*
+Beweis
+\end_layout
+
+\begin_layout Standard
+Sei 
+\begin_inset Formula $\tau\in\text{Gal}\left(\modulo{L}{K}\right)$
+\end_inset
+
+, so gilt:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\tau\left(\sum_{\sigma\in\text{Gal}\left(\moduloScript{L}{K}\right)}\sigma\left(a\right)\right) & =\sum_{\sigma\in\text{Gal}\left(\moduloScript{L}{K}\right)}\left(\tau\circ\sigma\right)\left(a\right)=\text{Sp}_{\moduloScript{L}{K}}\left(a\right)
+\end{align*}
+
+\end_inset
+
+Also ist 
+\begin_inset Formula $\text{Sp}_{\moduloScript{L}{K}}\in K$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Dass 
+\begin_inset Formula $\text{Sp}_{\moduloScript{L}{K}}$
+\end_inset
+
+ ein Homomorphismus ist, kann man direkt an der Definition ablesen.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Satz 
+\series medium
+(Hilbert 90-Analogon für Spur)
+\series default
+
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Satz-Spur0"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Sei 
+\begin_inset Formula $\modulo{L}{K}$
+\end_inset
+
+ eine endliche zyklische Galoiserweiterung und 
+\begin_inset Formula $\sigma\in\text{Gal}\left(\modulo{L}{K}\right)$
+\end_inset
+
+ ein Erzeuger.
+\end_layout
+
+\begin_layout Standard
+Für 
+\begin_inset Formula $b\in L$
+\end_inset
+
+ ist dann äquivalent:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $\text{Sp}_{\moduloScript{L}{K}}\left(b\right)=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Es gibt ein 
+\begin_inset Formula $a\in L$
+\end_inset
+
+ mit 
+\begin_inset Formula $b=a-\sigma\left(a\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Beweis
+\end_layout
+
+\begin_layout Standard
+Ähnlich wie der Beweis von 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Satz-Hilbert_90"
+
+\end_inset
+
+.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Satz 
+\series medium
+(Artin-Schreier)
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Satz-Artin_Schreier"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Es sei 
+\begin_inset Formula $\modulo{L}{K}$
+\end_inset
+
+ eine Körpererweiterung und 
+\begin_inset Formula $\text{char}\left(K\right)=p>0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Ist 
+\begin_inset Formula $\modulo{L}{K}$
+\end_inset
+
+ eine zyklische Galoiserweiterung vom Grad 
+\begin_inset Formula $p$
+\end_inset
+
+, so gilt
+\begin_inset Formula 
+\begin{align*}
+L & =K\left(a\right)
+\end{align*}
+
+\end_inset
+
+für ein 
+\begin_inset Formula $a\in L$
+\end_inset
+
+, dessen Minimalpolynom über 
+\begin_inset Formula $K$
+\end_inset
+
+ von der Form 
+\begin_inset Formula $X^{p}-X-c\in K\left[X\right]$
+\end_inset
+
+ mit 
+\begin_inset Formula $c\in K$
+\end_inset
+
+ ist.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Gilt umgekehrt 
+\begin_inset Formula $L=K\left(a\right)$
+\end_inset
+
+ für ein 
+\begin_inset Formula $a\in L$
+\end_inset
+
+, das Nullstelle eines Polynoms der Form 
+\begin_inset Formula $X^{p}-X-c\in K\left[X\right]$
+\end_inset
+
+ ist, so ist 
+\begin_inset Formula $\modulo{L}{K}$
+\end_inset
+
+ eine zyklische Galoiserweiterung.
+\end_layout
+
+\begin_layout Standard
+Es zerfällt 
+\begin_inset Formula $X^{p}-X-c$
+\end_inset
+
+ über 
+\begin_inset Formula $K$
+\end_inset
+
+ entweder vollständig in Linearfaktoren, oder aber dieses Polynom ist irreduzibe
+l.
+ In letzteren Fall ist 
+\begin_inset Formula $\modulo{L}{K}$
+\end_inset
+
+ eine zyklische Galoiserweiterung vom Grad 
+\begin_inset Formula $p$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Beweis
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Für 
+\begin_inset Formula $c\in K$
+\end_inset
+
+ gilt:
+\begin_inset Formula 
+\begin{align*}
+\text{Sp}_{\moduloScript{L}{K}}\left(c\right) & =\sum_{\sigma\in\text{Gal}\left(\moduloScript{L}{K}\right)}c=pc=0
+\end{align*}
+
+\end_inset
+
+Insbesondere ist 
+\begin_inset Formula $\text{Sp}_{\moduloScript{L}{K}}\left(1\right)=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Aus 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Satz-Spur0"
+
+\end_inset
+
+ folgt, dass es ein 
+\begin_inset Formula $a\in L$
+\end_inset
+
+ mit
+\begin_inset Formula 
+\begin{align*}
+\sigma\left(a\right)-a & =1
+\end{align*}
+
+\end_inset
+
+wobei 
+\begin_inset Formula $\sigma\in\text{Gal}\left(\modulo{L}{K}\right)$
+\end_inset
+
+ ein Erzeuger ist.
+\end_layout
+
+\begin_layout Standard
+Also folgt:
+\begin_inset Formula 
+\begin{align*}
+\sigma^{i}\left(a\right) & =a+i
+\end{align*}
+
+\end_inset
+
+für 
+\begin_inset Formula $i\in\left\{ 0,\ldots,p-1\right\} $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\sigma^{0}\left(a\right),\ldots,\sigma^{p-1}\left(a\right)$
+\end_inset
+
+ sind paarweise verschieden, weswegen gilt:
+\begin_inset Formula 
+\begin{align*}
+\left[K\left(a\right):K\right] & \ge p
+\end{align*}
+
+\end_inset
+
+Daher ist 
+\begin_inset Formula $L=K\left(a\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Weiter gilt
+\begin_inset Formula 
+\begin{align*}
+\sigma\left(a^{p}-a\right) & =\sigma\left(a\right)^{p}-\sigma\left(a\right)=\left(a+1\right)^{p}-\left(a+1\right)=a^{p}-a
+\end{align*}
+
+\end_inset
+
+und damit:
+\begin_inset Formula 
+\begin{align*}
+c & :=a^{p}-a\in K
+\end{align*}
+
+\end_inset
+
+Daher ist 
+\begin_inset Formula $a$
+\end_inset
+
+ eine Nullstelle des Polynoms:
+\begin_inset Formula 
+\begin{align*}
+X^{p}-X-c & \in K\left[X\right]
+\end{align*}
+
+\end_inset
+
+Da dieses Polynom Grad 
+\begin_inset Formula $p$
+\end_inset
+
+ hat, muss es aus Gradgründen schon das Minimalpolynom von 
+\begin_inset Formula $a$
+\end_inset
+
+ sein.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed[
+\backslash
+roman{ale2})]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+iii
+\end_layout
+
+\end_inset
+
+ Ist 
+\begin_inset Formula $L=K\left(a\right)$
+\end_inset
+
+ und 
+\begin_inset Formula $a$
+\end_inset
+
+ eine Nullstelle von 
+\begin_inset Formula $f=X^{p}-X-c\in K\left[X\right]$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Dann sind 
+\begin_inset Formula $\left(a+1\right),\left(a+2\right),\ldots,\left(a+\left(p-1\right)\right)\in L$
+\end_inset
+
+ ebenfalls Nullstellen von 
+\begin_inset Formula $f$
+\end_inset
+
+ und diese sind paarweise verschieden, also sind es alle Nullstellen von
+ 
+\begin_inset Formula $f$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Hat 
+\begin_inset Formula $f$
+\end_inset
+
+ eine Nullstelle in 
+\begin_inset Formula $K$
+\end_inset
+
+, so liegen daher alle Nullstellen in 
+\begin_inset Formula $K$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $L$
+\end_inset
+
+ ist ein Zerfällungskörper des separablen Polynoms 
+\begin_inset Formula $f$
+\end_inset
+
+, denn für die Ableitung gilt:
+\begin_inset Formula 
+\begin{align*}
+f'\left(X\right) & =pX^{p-1}-1=-1\not=0
+\end{align*}
+
+\end_inset
+
+Also ist 
+\begin_inset Formula $\modulo{L}{K}$
+\end_inset
+
+ galoissch.
+\end_layout
+
+\begin_layout Standard
+Falls 
+\begin_inset Formula $L=K$
+\end_inset
+
+ ist, so ist diese Erweiterung auch zyklisch.
+\end_layout
+
+\begin_layout Standard
+Habe 
+\begin_inset Formula $f$
+\end_inset
+
+ keine Nullstelle in 
+\begin_inset Formula $K$
+\end_inset
+
+, so gilt:
+\end_layout
+
+\begin_layout Description
+Behauptung: 
+\begin_inset Formula $f$
+\end_inset
+
+ ist irreduzibel.
+\end_layout
+
+\begin_layout Description
+Beweis: Wäre 
+\begin_inset Formula $f=gh\in K\left[X\right]$
+\end_inset
+
+ und 
+\begin_inset Formula $g,h\in K\left[X\right]$
+\end_inset
+
+ nicht-konstante, normierte Polynome.
+\begin_inset Newline newline
+\end_inset
+
+Es gilt:
+\begin_inset Formula 
+\begin{align*}
+f= & \prod_{i=0}^{p-1}\underbrace{\left(X-a-i\right)}_{\in L\left[X\right]}
+\end{align*}
+
+\end_inset
+
+Sei 
+\begin_inset Formula $d:=\deg\left(g\right)$
+\end_inset
+
+.
+ Der Koeffizient von 
+\begin_inset Formula $X^{d-1}$
+\end_inset
+
+ in 
+\begin_inset Formula $g$
+\end_inset
+
+ ist von der Form:
+\begin_inset Formula 
+\begin{align*}
+-da+j & \in K
+\end{align*}
+
+\end_inset
+
+mit 
+\begin_inset Formula $j\in\mathbb{F}_{p}$
+\end_inset
+
+.
+ Aus 
+\begin_inset Formula $p\not|d$
+\end_inset
+
+ folgt 
+\begin_inset Formula $a\in K$
+\end_inset
+
+, was ein Widerspruch ist.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed[Behauptung]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Wähle ein 
+\begin_inset Formula $\sigma\in\text{Gal}\left(\modulo{L}{K}\right)$
+\end_inset
+
+ mit 
+\begin_inset Formula $\sigma\left(a\right)=a+1$
+\end_inset
+
+.
+ Dann ist 
+\begin_inset Formula $\text{ord}\left(\sigma\right)\ge p$
+\end_inset
+
+.
+ Also ist 
+\begin_inset Formula $\modulo{L}{K}$
+\end_inset
+
+ zyklisch vom Grad 
+\begin_inset Formula $p$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{iiilist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+qqed
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Mit Hilfe von 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Satz-Artin_Schreier"
+
+\end_inset
+
+ lässt sich die Theorie von auflösbaren und durch Radikale auflösbaren Erweiteru
+ngen auf beliebige Charakteristik ausdehnen.
+\end_layout
+
+\begin_layout Standard
+Es gilt dann wieder, dass auflösbar äquivalent zu durch Radikale auflösbar
+ ist.
+\end_layout
+
+\begin_layout Standard
+Für durch Radikale aufläsbar nimmt man Erweiterungen von der Form 
+\begin_inset Formula $\modulo{K\left(a\right)}{K}$
+\end_inset
+
+, wobei 
+\begin_inset Formula $\text{Mipo}_{K}\left(a\right)=X^{p}-X-c\in K\left[X\right]$
+\end_inset
+
+ ist, hinzu.
 \end_layout
 
 \begin_layout Part*
@@ -50498,6 +53227,68 @@ fancyhead[C]{Anhang}
 \end_inset
 
 
+\end_layout
+
+\begin_layout Chapter*
+Danksagungen
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{section}{
+\backslash
+hspace*{2.7em}Danksagungen}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+fancyhead[R]{Danksagungen}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Mein besonderer Dank geht an Professor Naumann, der diese Vorlesung hielt
+ und es mir gestattete, diese Vorlesungsmitschrift zu veröffentlichen.
+\end_layout
+
+\begin_layout Standard
+Außerdem möchte ich mich ganz herzlich bei allen bedanken, die durch aufmerksame
+s Lesen Fehler gefunden und mir diese mitgeteilt haben.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hfill{}
+\end_inset
+
+Andreas Völklein
 \end_layout
 
 \begin_layout Chapter*
